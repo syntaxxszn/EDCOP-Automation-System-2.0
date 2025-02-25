@@ -1,0 +1,1002 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CD2A104E-6ACA-465E-B9A1-1B2954FB8370}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>EDCOP_Project_Monitoring_System.My.MyApplication</StartupObject>
+    <RootNamespace>EDCOP_Project_Monitoring_System</RootNamespace>
+    <AssemblyName>EDCOP Project Monitoring System</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\192.168.0.250\references\DIMS_APPS_INST\E-PCM System\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>\\192.168.0.250\references\DIMS_APPS_INST\E-PCM System\</UpdateUrl>
+    <ApplicationRevision>32</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>EDCOP Project Monitoring System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>EDCOP Project Monitoring System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D1DDDFA3BC1AE4F0BD444015E730333F1D401400</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>EDCOP Project Charge Monitoring System_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>sssss.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FMIS\Cash Journal\frmAccounting_CashJournalMain.Designer.vb">
+      <DependentUpon>frmAccounting_CashJournalMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Cash Journal\frmAccounting_CashJournalMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Cash Journal\SubMenu\CashDisbursementSubMenu.Designer.vb">
+      <DependentUpon>CashDisbursementSubMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Cash Journal\SubMenu\CashDisbursementSubMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Cash Journal\SubMenu\RequestForPaymentSubMenu.Designer.vb">
+      <DependentUpon>RequestForPaymentSubMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Cash Journal\SubMenu\RequestForPaymentSubMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Check Ledger\Request For Payment\Add Record\frmAccounting_RequestForPayment_AddNew.Designer.vb">
+      <DependentUpon>frmAccounting_RequestForPayment_AddNew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Check Ledger\Request For Payment\Add Record\frmAccounting_RequestForPayment_AddNew.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Check Ledger\Request For Payment\View\frmAccounting_RequestForPayment.Designer.vb">
+      <DependentUpon>frmAccounting_RequestForPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Check Ledger\Request For Payment\View\frmAccounting_RequestForPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\PettyCash\SubMenu\PettyCashSubMenu.Designer.vb">
+      <DependentUpon>PettyCashSubMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\PettyCash\SubMenu\PettyCashSubMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Purchase Journal\SubMenu\CashAdvanceSubMenu.Designer.vb">
+      <DependentUpon>CashAdvanceSubMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Purchase Journal\SubMenu\CashAdvanceSubMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Purchase Journal\SubMenu\PurchaseRequisitionSubMenu.Designer.vb">
+      <DependentUpon>PurchaseRequisitionSubMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Purchase Journal\SubMenu\PurchaseRequisitionSubMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Report\UI Forms for Report\frmAccounting_ReportTab.Designer.vb">
+      <DependentUpon>frmAccounting_ReportTab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Report\UI Forms for Report\frmAccounting_ReportTab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Report\UI Forms for Report\frmAccounting_DialogTrialBalance.Designer.vb">
+      <DependentUpon>frmAccounting_DialogTrialBalance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Report\UI Forms for Report\frmAccounting_DialogTrialBalance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Report\RPT\rpt_Administrator_RevFund_Summary.vb">
+      <DependentUpon>rpt_Administrator_RevFund_Summary.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Administrator\Add Record\frmAccounting_RevolvingFund_AcccountValidation.Designer.vb">
+      <DependentUpon>frmAccounting_RevolvingFund_AcccountValidation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Administrator\Add Record\frmAccounting_RevolvingFund_AcccountValidation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Administrator\Summary of RFP\frmAccounting_SummaryOfRP_Main.Designer.vb">
+      <DependentUpon>frmAccounting_SummaryOfRP_Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Administrator\Summary of RFP\frmAccounting_SummaryOfRP_Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Administrator\View\frmAccounting_SummaryOfRP_Preview.Designer.vb">
+      <DependentUpon>frmAccounting_SummaryOfRP_Preview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Administrator\View\frmAccounting_SummaryOfRP_Preview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Client\Add record\frmAccounting_AddRF_Replenishment_details.Designer.vb">
+      <DependentUpon>frmAccounting_AddRF_Replenishment_details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Client\Add record\frmAccounting_AddRF_Replenishment_details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Client\Update record\frmAccounting_UpdateRF_Replenishment_details.Designer.vb">
+      <DependentUpon>frmAccounting_UpdateRF_Replenishment_details.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Client\Update record\frmAccounting_UpdateRF_Replenishment_details.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Client\View\frmAccounting_RevolvingFund_Advances.Designer.vb">
+      <DependentUpon>frmAccounting_RevolvingFund_Advances.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Client\View\frmAccounting_RevolvingFund_Advances.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Client\View\frmAccounting_RevolvingFund_Client.Designer.vb">
+      <DependentUpon>frmAccounting_RevolvingFund_Client.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Client\View\frmAccounting_RevolvingFund_Client.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Administrator\View\frmAccounting_RevolvingFund_Administrator.Designer.vb">
+      <DependentUpon>frmAccounting_RevolvingFund_Administrator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Administrator\View\frmAccounting_RevolvingFund_Administrator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Client\Add record\frmAccounting_AddRF_ReplenishmentAmount.Designer.vb">
+      <DependentUpon>frmAccounting_AddRF_ReplenishmentAmount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Revolving Fund\Client\Add record\frmAccounting_AddRF_ReplenishmentAmount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain_revise.Designer.vb">
+      <DependentUpon>frmMain_revise.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain_revise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Department\Add New\frmHR_AddNewDepartment.Designer.vb">
+      <DependentUpon>frmHR_AddNewDepartment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Department\Add New\frmHR_AddNewDepartment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Department\frmHR_Setup_Department.Designer.vb">
+      <DependentUpon>frmHR_Setup_Department.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Department\frmHR_Setup_Department.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddForeignAddress.Designer.vb">
+      <DependentUpon>frmHR_AddForeignAddress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddForeignAddress.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_SearchFilter.Designer.vb">
+      <DependentUpon>frmHR_Transaction_SearchFilter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_SearchFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_Dependents.Designer.vb">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_Dependents.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_Dependents.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\frmHR_SetupMain.Designer.vb">
+      <DependentUpon>frmHR_SetupMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\frmHR_SetupMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Job Title\frmHR_Setup_JobTitle.Designer.vb">
+      <DependentUpon>frmHR_Setup_JobTitle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Job Title\frmHR_Setup_JobTitle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Credit\Add New\frmHR_AddNewLeaveCredit.Designer.vb">
+      <DependentUpon>frmHR_AddNewLeaveCredit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Credit\Add New\frmHR_AddNewLeaveCredit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Type\Add New\frmHR_AddNewLeaveType.Designer.vb">
+      <DependentUpon>frmHR_AddNewLeaveType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Type\Add New\frmHR_AddNewLeaveType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Type\frmHR_Setup_LeaveType.Designer.vb">
+      <DependentUpon>frmHR_Setup_LeaveType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Type\frmHR_Setup_LeaveType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Credit\frmHR_Setup_LeaveCredit.Designer.vb">
+      <DependentUpon>frmHR_Setup_LeaveCredit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Credit\frmHR_Setup_LeaveCredit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Shift\Add New\frmHR_AddNewShift.Designer.vb">
+      <DependentUpon>frmHR_AddNewShift.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Shift\Add New\frmHR_AddNewShift.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Shift\frmHR_Setup_Shift.Designer.vb">
+      <DependentUpon>frmHR_Setup_Shift.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Shift\frmHR_Setup_Shift.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_EducationBackground.Designer.vb">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_EducationBackground.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_EducationBackground.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_PersonalInformation.Designer.vb">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_PersonalInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_PersonalInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdateDetailsPersonnel.Designer.vb">
+      <DependentUpon>frmHR_UpdateDetailsPersonnel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdateDetailsPersonnel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\FMM\frmMainPanelFMM.Designer.vb">
+      <DependentUpon>frmMainPanelFMM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\FMM\frmMainPanelFMM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\FMM\frmMainPanelFMMDetail.Designer.vb">
+      <DependentUpon>frmMainPanelFMMDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\FMM\frmMainPanelFMMDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\HRM\frmMainPanelHRM.Designer.vb">
+      <DependentUpon>frmMainPanelHRM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\HRM\frmMainPanelHRM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\HRM\frmMainPanelHRMDetail.Designer.vb">
+      <DependentUpon>frmMainPanelHRMDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\HRM\frmMainPanelHRMDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\PMM\frmMainPanelPMM.Designer.vb">
+      <DependentUpon>frmMainPanelPMM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\PMM\frmMainPanelPMM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\PMM\frmMainPanelPMMDetail.Designer.vb">
+      <DependentUpon>frmMainPanelPMMDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\PMM\frmMainPanelPMMDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_Accounting.vb" />
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="FMIS\Report\RPT\rpttrialbalancenew.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpttrialbalancenew.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails.Designer.vb">
+      <DependentUpon>frmHR_PreviewPersonnelDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHR_ReportTab_Dialog.Designer.vb">
+      <DependentUpon>frmHR_ReportTab_Dialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHR_ReportTab_Dialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_RecentItemManage.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Dialog\frmDialog_Ok_InsertProjectCharge.Designer.vb">
+      <DependentUpon>frmDialog_Ok_InsertProjectCharge.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Dialog\frmDialog_Ok_InsertProjectCharge.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\AboutBox1.Designer.vb">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\AboutBox1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\frmPMS_Administrator_AddNew_Activity.Designer.vb">
+      <DependentUpon>frmPMS_Administrator_AddNew_Activity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\frmPMS_Administrator_AddNew_Activity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\frmPMS_Administrator_SummaryOfCharge_PerEmployeeProject.Designer.vb">
+      <DependentUpon>frmPMS_Administrator_SummaryOfCharge_PerEmployeeProject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\frmPMS_Administrator_SummaryOfCharge_PerEmployeeProject.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\frmPMS_Administrator_SummaryOfCharge_PerProjectDept.Designer.vb">
+      <DependentUpon>frmPMS_Administrator_SummaryOfCharge_PerProjectDept.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\frmPMS_Administrator_SummaryOfCharge_PerProjectDept.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\frmPMS_Administrator_SummaryOfCharge_AllProject.Designer.vb">
+      <DependentUpon>frmPMS_Administrator_SummaryOfCharge_AllProject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\frmPMS_Administrator_SummaryOfCharge_AllProject.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\frmPMS_Administrator.Designer.vb">
+      <DependentUpon>frmPMS_Administrator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\frmPMS_Administrator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\FrmPMS_Administrator_ViewPrint.Designer.vb">
+      <DependentUpon>FrmPMS_Administrator_ViewPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\FrmPMS_Administrator_ViewPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\frmPMS_Administrator_SummaryOfCharge_PerProjectEmployee.Designer.vb">
+      <DependentUpon>frmPMS_Administrator_SummaryOfCharge_PerProjectEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Administrator\For Administrator\frmPMS_Administrator_SummaryOfCharge_PerProjectEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\FrmPMS_Administrator_AddNew_Help.Designer.vb">
+      <DependentUpon>FrmPMS_Administrator_AddNew_Help.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\FrmPMS_Administrator_AddNew_Help.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\frmPMS_Help.Designer.vb">
+      <DependentUpon>frmPMS_Help.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\frmPMS_Help.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\FrmPMS_Individual_AddNew_Activity.Designer.vb">
+      <DependentUpon>FrmPMS_Individual_AddNew_Activity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\FrmPMS_Individual_AddNew_Activity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\FrmPMS_Individual_ViewPrint.Designer.vb">
+      <DependentUpon>FrmPMS_Individual_ViewPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\FrmPMS_Individual_ViewPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\FrmPMS_Individual_ViewActivity.Designer.vb">
+      <DependentUpon>FrmPMS_Individual_ViewActivity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\FrmPMS_Individual_ViewActivity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\Update forms\FrmPMS_Individual_Update_Activity.Designer.vb">
+      <DependentUpon>FrmPMS_Individual_Update_Activity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\Update forms\FrmPMS_Individual_Update_Activity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="For TimeSheet forms\frmTS_Edit.Designer.vb">
+      <DependentUpon>frmTS_Edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="For TimeSheet forms\frmTS_Edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\frmPMS_Individual.Designer.vb">
+      <DependentUpon>frmPMS_Individual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PCM\Individual\For Individual\frmPMS_Individual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddNewPersonnel.Designer.vb">
+      <DependentUpon>frmHR_AddNewPersonnel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddNewPersonnel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_EmployeeFile.Designer.vb">
+      <DependentUpon>frmHR_Transaction_EmployeeFile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_EmployeeFile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHR_ReportTab.Designer.vb">
+      <DependentUpon>frmHR_ReportTab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHR_ReportTab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_HRIS.vb" />
+    <Compile Include="Module_Dialog.vb" />
+    <Compile Include="Module_TimeSheet.vb" />
+    <Compile Include="Permission\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Permission\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCM\Reports\rpt_Administrator_AllProjectSummary.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Administrator_AllProjectSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PCM\Reports\rpt_Administrator_PerDepartmentProjectSummary.vb">
+      <DependentUpon>rpt_Administrator_PerDepartmentProjectSummary.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PCM\Reports\rpt_Administrator_PerProjectSummary - EmployeeFirst.vb">
+      <DependentUpon>rpt_Administrator_PerProjectSummary - EmployeeFirst.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PCM\Reports\rpt_Administrator_PerProjectSummary.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Administrator_PerProjectSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PCM\Reports\rpt_ATA_TimesheetByEmployeeFlexi.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ATA_TimesheetByEmployeeFlexi.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PCM\Reports\rpt_ATA_TimesheetByEmployeeFlexi_Revise1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_ATA_TimesheetByEmployeeFlexi_Revise1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PCM\Reports\rpt_IdnvidualProjectTag_SummaryProjectPerCutOff.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_IdnvidualProjectTag_SummaryProjectPerCutOff.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PCM\Reports\rpt_IndividualProjectTag_Summary2.vb">
+      <DependentUpon>rpt_IndividualProjectTag_Summary2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PCM\Reports\rpt_IndividualProjectTag_Summary.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_IndividualProjectTag_Summary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System Login and User Registration\frmPMS_Login.Designer.vb">
+      <DependentUpon>frmPMS_Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System Login and User Registration\frmPMS_Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_Connection.vb" />
+    <Compile Include="Module_PCMS.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="System Login and User Registration\frmPMS_UserRegistration.Designer.vb">
+      <DependentUpon>frmPMS_UserRegistration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System Login and User Registration\frmPMS_UserRegistration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trail Logs\frmTrailLogs_List.Designer.vb">
+      <DependentUpon>frmTrailLogs_List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Trail Logs\frmTrailLogs_List.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FMIS\Cash Journal\frmAccounting_CashJournalMain.resx">
+      <DependentUpon>frmAccounting_CashJournalMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Cash Journal\SubMenu\CashDisbursementSubMenu.resx">
+      <DependentUpon>CashDisbursementSubMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Cash Journal\SubMenu\RequestForPaymentSubMenu.resx">
+      <DependentUpon>RequestForPaymentSubMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Check Ledger\Request For Payment\Add Record\frmAccounting_RequestForPayment_AddNew.resx">
+      <DependentUpon>frmAccounting_RequestForPayment_AddNew.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Check Ledger\Request For Payment\View\frmAccounting_RequestForPayment.resx">
+      <DependentUpon>frmAccounting_RequestForPayment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\PettyCash\SubMenu\PettyCashSubMenu.resx">
+      <DependentUpon>PettyCashSubMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Purchase Journal\SubMenu\CashAdvanceSubMenu.resx">
+      <DependentUpon>CashAdvanceSubMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Purchase Journal\SubMenu\PurchaseRequisitionSubMenu.resx">
+      <DependentUpon>PurchaseRequisitionSubMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Report\UI Forms for Report\frmAccounting_ReportTab.resx">
+      <DependentUpon>frmAccounting_ReportTab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Report\UI Forms for Report\frmAccounting_DialogTrialBalance.resx">
+      <DependentUpon>frmAccounting_DialogTrialBalance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Report\RPT\rpt_Administrator_RevFund_Summary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Administrator_RevFund_Summary.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Revolving Fund\Administrator\Add Record\frmAccounting_RevolvingFund_AcccountValidation.resx">
+      <DependentUpon>frmAccounting_RevolvingFund_AcccountValidation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Revolving Fund\Administrator\Summary of RFP\frmAccounting_SummaryOfRP_Main.resx">
+      <DependentUpon>frmAccounting_SummaryOfRP_Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Revolving Fund\Administrator\View\frmAccounting_SummaryOfRP_Preview.resx">
+      <DependentUpon>frmAccounting_SummaryOfRP_Preview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Revolving Fund\Client\Add record\frmAccounting_AddRF_Replenishment_details.resx">
+      <DependentUpon>frmAccounting_AddRF_Replenishment_details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Revolving Fund\Client\Update record\frmAccounting_UpdateRF_Replenishment_details.resx">
+      <DependentUpon>frmAccounting_UpdateRF_Replenishment_details.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Revolving Fund\Client\View\frmAccounting_RevolvingFund_Advances.resx">
+      <DependentUpon>frmAccounting_RevolvingFund_Advances.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Revolving Fund\Client\View\frmAccounting_RevolvingFund_Client.resx">
+      <DependentUpon>frmAccounting_RevolvingFund_Client.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Revolving Fund\Administrator\View\frmAccounting_RevolvingFund_Administrator.resx">
+      <DependentUpon>frmAccounting_RevolvingFund_Administrator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Revolving Fund\Client\Add record\frmAccounting_AddRF_ReplenishmentAmount.resx">
+      <DependentUpon>frmAccounting_AddRF_ReplenishmentAmount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Report\RPT\rpttrialbalancenew.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpttrialbalancenew.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain_revise.resx">
+      <DependentUpon>frmMain_revise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Department\Add New\frmHR_AddNewDepartment.resx">
+      <DependentUpon>frmHR_AddNewDepartment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Department\frmHR_Setup_Department.resx">
+      <DependentUpon>frmHR_Setup_Department.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddForeignAddress.resx">
+      <DependentUpon>frmHR_AddForeignAddress.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_SearchFilter.resx">
+      <DependentUpon>frmHR_Transaction_SearchFilter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails.resx">
+      <DependentUpon>frmHR_PreviewPersonnelDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_Dependents.resx">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_Dependents.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\frmHR_ReportTab_Dialog.resx">
+      <DependentUpon>frmHR_ReportTab_Dialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\frmHR_SetupMain.resx">
+      <DependentUpon>frmHR_SetupMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Job Title\frmHR_Setup_JobTitle.resx">
+      <DependentUpon>frmHR_Setup_JobTitle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Leave Credit\Add New\frmHR_AddNewLeaveCredit.resx">
+      <DependentUpon>frmHR_AddNewLeaveCredit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Leave Type\Add New\frmHR_AddNewLeaveType.resx">
+      <DependentUpon>frmHR_AddNewLeaveType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Leave Type\frmHR_Setup_LeaveType.resx">
+      <DependentUpon>frmHR_Setup_LeaveType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Leave Credit\frmHR_Setup_LeaveCredit.resx">
+      <DependentUpon>frmHR_Setup_LeaveCredit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Shift\Add New\frmHR_AddNewShift.resx">
+      <DependentUpon>frmHR_AddNewShift.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Shift\frmHR_Setup_Shift.resx">
+      <DependentUpon>frmHR_Setup_Shift.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_EducationBackground.resx">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_EducationBackground.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_PersonalInformation.resx">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_PersonalInformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdateDetailsPersonnel.resx">
+      <DependentUpon>frmHR_UpdateDetailsPersonnel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\FMM\frmMainPanelFMM.resx">
+      <DependentUpon>frmMainPanelFMM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\FMM\frmMainPanelFMMDetail.resx">
+      <DependentUpon>frmMainPanelFMMDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\HRM\frmMainPanelHRM.resx">
+      <DependentUpon>frmMainPanelHRM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\HRM\frmMainPanelHRMDetail.resx">
+      <DependentUpon>frmMainPanelHRMDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\PMM\frmMainPanelPMM.resx">
+      <DependentUpon>frmMainPanelPMM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\PMM\frmMainPanelPMMDetail.resx">
+      <DependentUpon>frmMainPanelPMMDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Dialog\frmDialog_Ok_InsertProjectCharge.resx">
+      <DependentUpon>frmDialog_Ok_InsertProjectCharge.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Administrator\For Administrator\AboutBox1.resx">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Administrator\For Administrator\frmPMS_Administrator_AddNew_Activity.resx">
+      <DependentUpon>frmPMS_Administrator_AddNew_Activity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Administrator\For Administrator\frmPMS_Administrator_SummaryOfCharge_PerEmployeeProject.resx">
+      <DependentUpon>frmPMS_Administrator_SummaryOfCharge_PerEmployeeProject.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Administrator\For Administrator\frmPMS_Administrator_SummaryOfCharge_PerProjectDept.resx">
+      <DependentUpon>frmPMS_Administrator_SummaryOfCharge_PerProjectDept.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Administrator\For Administrator\frmPMS_Administrator_SummaryOfCharge_AllProject.resx">
+      <DependentUpon>frmPMS_Administrator_SummaryOfCharge_AllProject.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Administrator\For Administrator\frmPMS_Administrator.resx">
+      <DependentUpon>frmPMS_Administrator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Administrator\For Administrator\FrmPMS_Administrator_ViewPrint.resx">
+      <DependentUpon>FrmPMS_Administrator_ViewPrint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Administrator\For Administrator\frmPMS_Administrator_SummaryOfCharge_PerProjectEmployee.resx">
+      <DependentUpon>frmPMS_Administrator_SummaryOfCharge_PerProjectEmployee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Individual\For Individual\FrmPMS_Administrator_AddNew_Help.resx">
+      <DependentUpon>FrmPMS_Administrator_AddNew_Help.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Individual\For Individual\frmPMS_Help.resx">
+      <DependentUpon>frmPMS_Help.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Individual\For Individual\FrmPMS_Individual_AddNew_Activity.resx">
+      <DependentUpon>FrmPMS_Individual_AddNew_Activity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Individual\For Individual\FrmPMS_Individual_ViewPrint.resx">
+      <DependentUpon>FrmPMS_Individual_ViewPrint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Individual\For Individual\FrmPMS_Individual_ViewActivity.resx">
+      <DependentUpon>FrmPMS_Individual_ViewActivity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Individual\For Individual\Update forms\FrmPMS_Individual_Update_Activity.resx">
+      <DependentUpon>FrmPMS_Individual_Update_Activity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="For TimeSheet forms\frmTS_Edit.resx">
+      <DependentUpon>frmTS_Edit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Individual\For Individual\frmPMS_Individual.resx">
+      <DependentUpon>frmPMS_Individual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddNewPersonnel.resx">
+      <DependentUpon>frmHR_AddNewPersonnel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_EmployeeFile.resx">
+      <DependentUpon>frmHR_Transaction_EmployeeFile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\frmHR_ReportTab.resx">
+      <DependentUpon>frmHR_ReportTab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Permission\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Reports\rpt_Administrator_AllProjectSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Administrator_AllProjectSummary.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Reports\rpt_Administrator_PerDepartmentProjectSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Administrator_PerDepartmentProjectSummary.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Reports\rpt_Administrator_PerProjectSummary - EmployeeFirst.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Administrator_PerProjectSummary - EmployeeFirst.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Reports\rpt_Administrator_PerProjectSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Administrator_PerProjectSummary.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Reports\rpt_ATA_TimesheetByEmployeeFlexi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ATA_TimesheetByEmployeeFlexi.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Reports\rpt_ATA_TimesheetByEmployeeFlexi_Revise1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_ATA_TimesheetByEmployeeFlexi_Revise1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Reports\rpt_IdnvidualProjectTag_SummaryProjectPerCutOff.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_IdnvidualProjectTag_SummaryProjectPerCutOff.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Reports\rpt_IndividualProjectTag_Summary2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_IndividualProjectTag_Summary2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCM\Reports\rpt_IndividualProjectTag_Summary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_IndividualProjectTag_Summary.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System Login and User Registration\frmPMS_Login.resx">
+      <DependentUpon>frmPMS_Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System Login and User Registration\frmPMS_UserRegistration.resx">
+      <DependentUpon>frmPMS_UserRegistration.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trail Logs\frmTrailLogs_List.resx">
+      <DependentUpon>frmTrailLogs_List.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include="EDCOP Project Charge Monitoring System_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-close-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-refresh-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\web-page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loudspeaker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\schedule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yes.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\overtime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updated.png" />
+    <None Include="Resources\structure.png" />
+    <None Include="Resources\suitcase.png" />
+    <None Include="Resources\HABUNAL.jpg" />
+    <None Include="Resources\arrow-right.png" />
+    <None Include="Resources\icons8-dismissal-64.png" />
+    <None Include="Resources\EDCOP_Logo.png" />
+    <None Include="Resources\exit-door.png" />
+    <None Include="Resources\passive-candidate.png" />
+    <None Include="Resources\exit-door1.png" />
+    <None Include="Resources\people.png" />
+    <None Include="Resources\HABUNAL1.jpg" />
+    <Content Include="sssss.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

@@ -1,0 +1,151 @@
+﻿Imports System.Windows.Forms
+
+Public Class FrmPMS_Individual_AddNew_Activity
+
+    Private Sub FrmPMS_Adding_details_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        txtboxDate.Enabled = False
+        Sel_projectList(dgvEmployeeList)
+
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+
+        If MessageBox.Show("Discard input?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
+            ProjectCharge_Clear()
+            Insert_PayrollPeriod_Details(frmPMS_Individual.dgvPayrollPeriodDetails)
+            _strWorkdate = Nothing
+            Me.Dispose()
+        End If
+
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
+        'If txtboxProject.Text = "" Then
+        '    MessageBox.Show("Please Select Project to tag.", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    Return
+        'End If
+
+        If txtboxHourRender.Text = Nothing Then
+            MessageBox.Show("Please input Hour / time rendered.", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        If txtboxActivity.Text = Nothing Then
+            MessageBox.Show("Please input Actvity.", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        If dgvEmployeeList.SelectedRows.Count = 0 Then
+            MessageBox.Show("tests")
+            Return
+        End If
+
+        If txtboxProject.TextLength < 8 Then
+            MessageBox.Show("Please Select Project to tag .", "Required", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        If _strFiledDocs = "VL" Then
+            If txtboxHourRender.Text > 4 Then
+                MessageBox.Show("Cannot tag more than 4 hours (half day).", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Return
+            End If
+
+            If _strFiledDocs = "SL" Then
+                If txtboxHourRender.Text > 4 Then
+                    MessageBox.Show("Cannot tag more than 4 hours (half day).", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Return
+                End If
+            End If
+        End If
+
+        If _strIsFlexiSched = "False" Then
+            If txtboxHourRender.Text > 8 Then
+                MessageBox.Show("Cannot tag more than 8 Regular hours .", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Return
+            End If
+        End If
+
+        Insert_ProjectCharge()
+
+    End Sub
+
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+        ProjectCharge_Clear()
+    End Sub
+
+    Private Sub txtboxHourRender_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtboxHourRender.KeyPress
+
+        '// Only to accept Numbers and Dot. 07/28/2023
+        Dim DecimalSeparator As String = Application.CurrentCulture.NumberFormat.NumberDecimalSeparator
+        e.Handled = Not (Char.IsDigit(e.KeyChar) Or
+                     Asc(e.KeyChar) = 8 Or
+                     (e.KeyChar = DecimalSeparator And sender.Text.IndexOf(DecimalSeparator) = -1))
+
+    End Sub
+
+    Private Sub txtboxActivity_TextChanged(sender As Object, e As EventArgs) Handles txtboxActivity.TextChanged
+
+    End Sub
+
+    Private Sub txtboxActivity_KeyDown(sender As Object, e As KeyEventArgs) Handles txtboxActivity.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnSave.PerformClick()
+        End If
+    End Sub
+
+    Private Sub cmbboxProjectList_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub bntLoadProject_Click(sender As Object, e As EventArgs) Handles bntLoadProject.Click
+
+        Search_projectList(dgvEmployeeList, txtboxProject)
+
+    End Sub
+
+    Private Sub txtboxProject_TextChanged(sender As Object, e As EventArgs) Handles txtboxProject.TextChanged
+
+    End Sub
+
+    Private Sub txtboxProject_KeyDown(sender As Object, e As KeyEventArgs) Handles txtboxProject.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            bntLoadProject.PerformClick()
+        End If
+    End Sub
+
+    Private Sub dgvEmployeeList_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmployeeList.CellContentClick
+
+    End Sub
+
+    Private Sub dgvEmployeeList_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmployeeList.CellClick
+        If e.ColumnIndex = -1 Or e.RowIndex = -1 Then Return   ''This code is to prevent from error when clicking header of DGV button. 8/22/2022
+
+        If _strUserLevel = "Individual" Then
+            If dgvEmployeeList.Columns(e.ColumnIndex).Name = "Column4" Then
+                txtboxProject.Text = dgvEmployeeList.Rows(e.RowIndex).Cells(1).Value.ToString() + " - " + dgvEmployeeList.Rows(e.RowIndex).Cells(2).Value.ToString()
+            End If
+        End If
+
+        If dgvEmployeeList.SelectedRows.Count > 0 Then
+            Dim selectedRow = dgvEmployeeList.SelectedRows(0)
+            txtboxProject.Text = dgvEmployeeList.Rows(e.RowIndex).Cells(1).Value.ToString() + " - " + dgvEmployeeList.Rows(e.RowIndex).Cells(2).Value.ToString()
+        End If
+
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        txtboxProject.Clear()
+        Search_projectList(dgvEmployeeList, txtboxProject)
+    End Sub
+
+    Private Sub FrmPMS_Individual_AddNew_Activity_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Me.Dispose()
+    End Sub
+
+    Private Sub txtboxHourRender_TextChanged(sender As Object, e As EventArgs) Handles txtboxHourRender.TextChanged
+        IsNumeric(txtboxHourRender.Text)
+    End Sub
+End Class
