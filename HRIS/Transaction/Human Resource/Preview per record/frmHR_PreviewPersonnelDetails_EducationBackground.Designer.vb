@@ -22,9 +22,11 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -43,6 +45,12 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.dgvEducationalSchool = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -54,13 +62,8 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
         Me.btnSeniorHighEducation = New System.Windows.Forms.Button()
         Me.btnSecondaryEducation = New System.Windows.Forms.Button()
         Me.btnPrimaryEducation = New System.Windows.Forms.Button()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.dgvEducationalSchool, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +72,7 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.Panel7)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -98,6 +102,26 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(833, 613)
         Me.Panel1.TabIndex = 0
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.Navy
+        Me.Panel7.Controls.Add(Me.Label4)
+        Me.Panel7.Location = New System.Drawing.Point(12, 12)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(809, 30)
+        Me.Panel7.TabIndex = 100
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(3, 8)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(207, 13)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "E D U C A T I O N   B A C K G R O U N D"
         '
         'Label7
         '
@@ -254,9 +278,9 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
         Me.Panel14.Controls.Add(Me.Panel4)
         Me.Panel14.Controls.Add(Me.Panel3)
         Me.Panel14.Controls.Add(Me.Panel2)
-        Me.Panel14.Location = New System.Drawing.Point(21, 99)
+        Me.Panel14.Location = New System.Drawing.Point(21, 127)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(789, 253)
+        Me.Panel14.Size = New System.Drawing.Size(789, 232)
         Me.Panel14.TabIndex = 84
         '
         'Panel6
@@ -265,7 +289,7 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(3, 3)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(781, 245)
+        Me.Panel6.Size = New System.Drawing.Size(781, 224)
         Me.Panel6.TabIndex = 4
         '
         'dgvEducationalSchool
@@ -277,14 +301,14 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
         Me.dgvEducationalSchool.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvEducationalSchool.BackgroundColor = System.Drawing.Color.White
         Me.dgvEducationalSchool.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvEducationalSchool.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvEducationalSchool.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvEducationalSchool.ColumnHeadersHeight = 35
         Me.dgvEducationalSchool.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvEducationalSchool.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
@@ -297,142 +321,8 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
         Me.dgvEducationalSchool.RowTemplate.Height = 30
         Me.dgvEducationalSchool.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvEducationalSchool.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvEducationalSchool.Size = New System.Drawing.Size(781, 245)
+        Me.dgvEducationalSchool.Size = New System.Drawing.Size(781, 224)
         Me.dgvEducationalSchool.TabIndex = 17
-        '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.Color.LightGray
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(3, 248)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(781, 3)
-        Me.Panel5.TabIndex = 3
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.LightGray
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(3, 0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(781, 3)
-        Me.Panel4.TabIndex = 2
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.LightGray
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(784, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(3, 251)
-        Me.Panel3.TabIndex = 1
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.LightGray
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(3, 251)
-        Me.Panel2.TabIndex = 0
-        '
-        'btnVocationalEducation
-        '
-        Me.btnVocationalEducation.BackColor = System.Drawing.Color.White
-        Me.btnVocationalEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.btnVocationalEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnVocationalEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVocationalEducation.ForeColor = System.Drawing.Color.Black
-        Me.btnVocationalEducation.Location = New System.Drawing.Point(417, 48)
-        Me.btnVocationalEducation.Name = "btnVocationalEducation"
-        Me.btnVocationalEducation.Size = New System.Drawing.Size(153, 30)
-        Me.btnVocationalEducation.TabIndex = 83
-        Me.btnVocationalEducation.Text = "&Vocational Education"
-        Me.btnVocationalEducation.UseVisualStyleBackColor = False
-        '
-        'btnDoctorateEducation
-        '
-        Me.btnDoctorateEducation.BackColor = System.Drawing.Color.White
-        Me.btnDoctorateEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.btnDoctorateEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDoctorateEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDoctorateEducation.ForeColor = System.Drawing.Color.Black
-        Me.btnDoctorateEducation.Location = New System.Drawing.Point(258, 48)
-        Me.btnDoctorateEducation.Name = "btnDoctorateEducation"
-        Me.btnDoctorateEducation.Size = New System.Drawing.Size(153, 30)
-        Me.btnDoctorateEducation.TabIndex = 82
-        Me.btnDoctorateEducation.Text = "&Doctorate Education"
-        Me.btnDoctorateEducation.UseVisualStyleBackColor = False
-        '
-        'btnMasteralEducation
-        '
-        Me.btnMasteralEducation.BackColor = System.Drawing.Color.White
-        Me.btnMasteralEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.btnMasteralEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMasteralEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMasteralEducation.ForeColor = System.Drawing.Color.Black
-        Me.btnMasteralEducation.Location = New System.Drawing.Point(657, 12)
-        Me.btnMasteralEducation.Name = "btnMasteralEducation"
-        Me.btnMasteralEducation.Size = New System.Drawing.Size(153, 30)
-        Me.btnMasteralEducation.TabIndex = 81
-        Me.btnMasteralEducation.Text = "&Masteral Education"
-        Me.btnMasteralEducation.UseVisualStyleBackColor = False
-        '
-        'btnTertiaryEducation
-        '
-        Me.btnTertiaryEducation.BackColor = System.Drawing.Color.White
-        Me.btnTertiaryEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.btnTertiaryEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTertiaryEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTertiaryEducation.ForeColor = System.Drawing.Color.Black
-        Me.btnTertiaryEducation.Location = New System.Drawing.Point(498, 12)
-        Me.btnTertiaryEducation.Name = "btnTertiaryEducation"
-        Me.btnTertiaryEducation.Size = New System.Drawing.Size(153, 30)
-        Me.btnTertiaryEducation.TabIndex = 79
-        Me.btnTertiaryEducation.Text = "&Tertiary Education"
-        Me.btnTertiaryEducation.UseVisualStyleBackColor = False
-        '
-        'btnSeniorHighEducation
-        '
-        Me.btnSeniorHighEducation.BackColor = System.Drawing.Color.White
-        Me.btnSeniorHighEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.btnSeniorHighEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSeniorHighEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSeniorHighEducation.ForeColor = System.Drawing.Color.Black
-        Me.btnSeniorHighEducation.Location = New System.Drawing.Point(339, 12)
-        Me.btnSeniorHighEducation.Name = "btnSeniorHighEducation"
-        Me.btnSeniorHighEducation.Size = New System.Drawing.Size(153, 30)
-        Me.btnSeniorHighEducation.TabIndex = 78
-        Me.btnSeniorHighEducation.Text = "&Senior High Education"
-        Me.btnSeniorHighEducation.UseVisualStyleBackColor = False
-        '
-        'btnSecondaryEducation
-        '
-        Me.btnSecondaryEducation.BackColor = System.Drawing.Color.White
-        Me.btnSecondaryEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.btnSecondaryEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSecondaryEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSecondaryEducation.ForeColor = System.Drawing.Color.Black
-        Me.btnSecondaryEducation.Location = New System.Drawing.Point(180, 12)
-        Me.btnSecondaryEducation.Name = "btnSecondaryEducation"
-        Me.btnSecondaryEducation.Size = New System.Drawing.Size(153, 30)
-        Me.btnSecondaryEducation.TabIndex = 73
-        Me.btnSecondaryEducation.Text = "&Secondary Education"
-        Me.btnSecondaryEducation.UseVisualStyleBackColor = False
-        '
-        'btnPrimaryEducation
-        '
-        Me.btnPrimaryEducation.BackColor = System.Drawing.Color.White
-        Me.btnPrimaryEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
-        Me.btnPrimaryEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPrimaryEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrimaryEducation.ForeColor = System.Drawing.Color.Black
-        Me.btnPrimaryEducation.Location = New System.Drawing.Point(21, 12)
-        Me.btnPrimaryEducation.Name = "btnPrimaryEducation"
-        Me.btnPrimaryEducation.Size = New System.Drawing.Size(153, 30)
-        Me.btnPrimaryEducation.TabIndex = 72
-        Me.btnPrimaryEducation.Text = "&Primary Education"
-        Me.btnPrimaryEducation.UseVisualStyleBackColor = False
         '
         'Column1
         '
@@ -442,8 +332,8 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
         '
         'Column2
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column2.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column2.DefaultCellStyle = DataGridViewCellStyle2
         Me.Column2.HeaderText = "Inclusive Dates"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
@@ -475,6 +365,140 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
         Me.Column6.ReadOnly = True
         Me.Column6.Visible = False
         '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.LightGray
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel5.Location = New System.Drawing.Point(3, 227)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(781, 3)
+        Me.Panel5.TabIndex = 3
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.LightGray
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(3, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(781, 3)
+        Me.Panel4.TabIndex = 2
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.LightGray
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel3.Location = New System.Drawing.Point(784, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(3, 230)
+        Me.Panel3.TabIndex = 1
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.LightGray
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(3, 230)
+        Me.Panel2.TabIndex = 0
+        '
+        'btnVocationalEducation
+        '
+        Me.btnVocationalEducation.BackColor = System.Drawing.Color.White
+        Me.btnVocationalEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.btnVocationalEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVocationalEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVocationalEducation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnVocationalEducation.Location = New System.Drawing.Point(656, 50)
+        Me.btnVocationalEducation.Name = "btnVocationalEducation"
+        Me.btnVocationalEducation.Size = New System.Drawing.Size(153, 30)
+        Me.btnVocationalEducation.TabIndex = 83
+        Me.btnVocationalEducation.Text = "&Vocational Education"
+        Me.btnVocationalEducation.UseVisualStyleBackColor = False
+        '
+        'btnDoctorateEducation
+        '
+        Me.btnDoctorateEducation.BackColor = System.Drawing.Color.White
+        Me.btnDoctorateEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.btnDoctorateEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDoctorateEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDoctorateEducation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnDoctorateEducation.Location = New System.Drawing.Point(413, 86)
+        Me.btnDoctorateEducation.Name = "btnDoctorateEducation"
+        Me.btnDoctorateEducation.Size = New System.Drawing.Size(153, 30)
+        Me.btnDoctorateEducation.TabIndex = 82
+        Me.btnDoctorateEducation.Text = "&Doctorate Education"
+        Me.btnDoctorateEducation.UseVisualStyleBackColor = False
+        '
+        'btnMasteralEducation
+        '
+        Me.btnMasteralEducation.BackColor = System.Drawing.Color.White
+        Me.btnMasteralEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.btnMasteralEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMasteralEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMasteralEducation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnMasteralEducation.Location = New System.Drawing.Point(497, 50)
+        Me.btnMasteralEducation.Name = "btnMasteralEducation"
+        Me.btnMasteralEducation.Size = New System.Drawing.Size(153, 30)
+        Me.btnMasteralEducation.TabIndex = 81
+        Me.btnMasteralEducation.Text = "&Masteral Education"
+        Me.btnMasteralEducation.UseVisualStyleBackColor = False
+        '
+        'btnTertiaryEducation
+        '
+        Me.btnTertiaryEducation.BackColor = System.Drawing.Color.White
+        Me.btnTertiaryEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.btnTertiaryEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTertiaryEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTertiaryEducation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnTertiaryEducation.Location = New System.Drawing.Point(338, 50)
+        Me.btnTertiaryEducation.Name = "btnTertiaryEducation"
+        Me.btnTertiaryEducation.Size = New System.Drawing.Size(153, 30)
+        Me.btnTertiaryEducation.TabIndex = 79
+        Me.btnTertiaryEducation.Text = "&Tertiary Education"
+        Me.btnTertiaryEducation.UseVisualStyleBackColor = False
+        '
+        'btnSeniorHighEducation
+        '
+        Me.btnSeniorHighEducation.BackColor = System.Drawing.Color.White
+        Me.btnSeniorHighEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.btnSeniorHighEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSeniorHighEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSeniorHighEducation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnSeniorHighEducation.Location = New System.Drawing.Point(254, 86)
+        Me.btnSeniorHighEducation.Name = "btnSeniorHighEducation"
+        Me.btnSeniorHighEducation.Size = New System.Drawing.Size(153, 30)
+        Me.btnSeniorHighEducation.TabIndex = 78
+        Me.btnSeniorHighEducation.Text = "&Senior High Education"
+        Me.btnSeniorHighEducation.UseVisualStyleBackColor = False
+        '
+        'btnSecondaryEducation
+        '
+        Me.btnSecondaryEducation.BackColor = System.Drawing.Color.White
+        Me.btnSecondaryEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.btnSecondaryEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSecondaryEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSecondaryEducation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnSecondaryEducation.Location = New System.Drawing.Point(179, 50)
+        Me.btnSecondaryEducation.Name = "btnSecondaryEducation"
+        Me.btnSecondaryEducation.Size = New System.Drawing.Size(153, 30)
+        Me.btnSecondaryEducation.TabIndex = 73
+        Me.btnSecondaryEducation.Text = "&Secondary Education"
+        Me.btnSecondaryEducation.UseVisualStyleBackColor = False
+        '
+        'btnPrimaryEducation
+        '
+        Me.btnPrimaryEducation.BackColor = System.Drawing.Color.White
+        Me.btnPrimaryEducation.FlatAppearance.BorderColor = System.Drawing.Color.DimGray
+        Me.btnPrimaryEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPrimaryEducation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrimaryEducation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnPrimaryEducation.Location = New System.Drawing.Point(20, 50)
+        Me.btnPrimaryEducation.Name = "btnPrimaryEducation"
+        Me.btnPrimaryEducation.Size = New System.Drawing.Size(153, 30)
+        Me.btnPrimaryEducation.TabIndex = 72
+        Me.btnPrimaryEducation.Text = "&Primary Education"
+        Me.btnPrimaryEducation.UseVisualStyleBackColor = False
+        '
         'frmHR_PreviewPersonnelDetails_EducationBackground
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -489,6 +513,8 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
         Me.Text = "frmHR_PreviewPersonnelDetails_EducationBackground"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
         Me.Panel14.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         CType(Me.dgvEducationalSchool, System.ComponentModel.ISupportInitialize).EndInit()
@@ -532,4 +558,6 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Label4 As Label
 End Class

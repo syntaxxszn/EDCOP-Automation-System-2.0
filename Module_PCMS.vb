@@ -1,4 +1,7 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
+
+
 Module Module_PCMS
 
     Public CurrentForm As Form
@@ -1209,6 +1212,26 @@ Module Module_PCMS
 
     ''--->>> Clear / Reset Form Controls <<<---
 
+    ' look and clear through nested panels
+    Sub ResetTextBoxBackgroundColors(container As Control)
+        For Each control As Control In container.Controls
+            If TypeOf control Is TextBox Then
+                control.BackColor = Color.White
+            ElseIf control.HasChildren Then
+                ResetTextBoxBackgroundColors(control)
+            End If
+        Next
+    End Sub
+
+    Sub ResetAllControlInForm(frm As Control)
+        ClearTextBoxes(frm)
+        ResetComboBoxes(frm)
+        ResetDatePickers(frm)
+        UncheckCheckBoxes(frm)
+        ResetRadioButtons(frm)
+        ClearDataGridViewRows(frm)
+    End Sub
+
     Sub ClearTextBoxes(container As Control)
         For Each control As Control In container.Controls
             If TypeOf control Is TextBox Then
@@ -1218,5 +1241,142 @@ Module Module_PCMS
             End If
         Next
     End Sub
+
+    Sub ResetComboBoxes(container As Control)
+        For Each control As Control In container.Controls
+            If TypeOf control Is ComboBox Then
+                Dim comboBox = DirectCast(control, ComboBox)
+                comboBox.SelectedIndex = -1
+                comboBox.Tag = Nothing
+            ElseIf control.HasChildren Then
+                ResetComboBoxes(control)
+            End If
+        Next
+    End Sub
+
+    Sub ResetDatePickers(container As Control)
+        For Each control As Control In container.Controls
+            If TypeOf control Is DateTimePicker Then
+                DirectCast(control, DateTimePicker).Value = New DateTime(1990, 1, 1)
+            ElseIf control.HasChildren Then
+                ResetDatePickers(control)
+            End If
+        Next
+    End Sub
+
+    Sub UncheckCheckBoxes(container As Control)
+        For Each control As Control In container.Controls
+            If TypeOf control Is CheckBox Then
+                DirectCast(control, CheckBox).Checked = False
+            ElseIf control.HasChildren Then
+                UncheckCheckBoxes(control)
+            End If
+        Next
+    End Sub
+
+    Sub ResetRadioButtons(container As Control)
+        For Each control As Control In container.Controls
+            If TypeOf control Is RadioButton Then
+                DirectCast(control, RadioButton).Checked = False
+            ElseIf control.HasChildren Then
+                ResetRadioButtons(control)
+            End If
+        Next
+    End Sub
+
+    Sub ClearDataGridViewRows(container As Control)
+        For Each control As Control In container.Controls
+            If TypeOf control Is DataGridView Then
+                DirectCast(control, DataGridView).Rows.Clear()
+            ElseIf control.HasChildren Then
+                ClearDataGridViewRows(control)
+            End If
+        Next
+    End Sub
+
+    Sub EmailRegEx_Color(_txtSample As TextBox)
+        Dim emailPattern As String = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        If Regex.IsMatch(_txtSample.Text, emailPattern) Then
+            _txtSample.BackColor = Color.White
+        Else
+            _txtSample.BackColor = Color.LightCoral
+        End If
+
+    End Sub
+
+    Sub BlankRegEx_Color(_txtLastname As TextBox)
+        If String.IsNullOrWhiteSpace(_txtLastname.Text) Then
+            _txtLastname.BackColor = Color.LightCoral
+        Else
+            _txtLastname.BackColor = Color.White
+        End If
+    End Sub
+
+    Sub MobileNumber_Color(txt As TextBox)
+        If String.IsNullOrWhiteSpace(txt.Text) Then
+            txt.BackColor = Color.White
+        ElseIf txt.Text.All(AddressOf Char.IsDigit) AndAlso txt.Text.Length = 11 Then
+            txt.BackColor = Color.White
+        Else
+            txt.BackColor = Color.LightCoral
+        End If
+    End Sub
+
+    Sub TelephoneNumber_Color(txt As TextBox)
+        If String.IsNullOrWhiteSpace(txt.Text) Then
+            txt.BackColor = Color.White
+        ElseIf txt.Text.All(AddressOf Char.IsDigit) AndAlso (txt.Text.Length = 10 OrElse txt.Text.Length = 8) Then
+            txt.BackColor = Color.White
+        Else
+            txt.BackColor = Color.LightCoral
+        End If
+    End Sub
+
+    Sub ZipCode_Color(txt As TextBox)
+        If String.IsNullOrWhiteSpace(txt.Text) Then
+            txt.BackColor = Color.White
+        ElseIf txt.Text.All(AddressOf Char.IsDigit) AndAlso txt.Text.Length = 4 Then
+            txt.BackColor = Color.White
+        Else
+            txt.BackColor = Color.LightCoral
+        End If
+    End Sub
+
+    Sub SetControlsReadOnly(parent As Control)
+        For Each ctrl As Control In parent.Controls
+            Select Case True
+                Case TypeOf ctrl Is TextBox
+                    DirectCast(ctrl, TextBox).ReadOnly = True
+                    DirectCast(ctrl, TextBox).Cursor = Cursors.No
+                Case TypeOf ctrl Is ComboBox, TypeOf ctrl Is DateTimePicker, TypeOf ctrl Is CheckBox
+                    ctrl.Enabled = False
+            End Select
+
+            ' Recursively check inside nested containers (Panels, GroupBoxes, etc.)
+            If ctrl.HasChildren Then
+                SetControlsReadOnly(ctrl)
+            End If
+        Next
+    End Sub
+
+    Sub SetControlsEditable(parent As Control)
+        For Each ctrl As Control In parent.Controls
+            Select Case True
+                Case TypeOf ctrl Is TextBox
+                    DirectCast(ctrl, TextBox).ReadOnly = False
+                    DirectCast(ctrl, TextBox).Cursor = Cursors.IBeam
+                Case TypeOf ctrl Is ComboBox, TypeOf ctrl Is DateTimePicker, TypeOf ctrl Is CheckBox
+                    ctrl.Enabled = True
+                    ctrl.Cursor = Cursors.Hand
+            End Select
+
+            ' Recursively check inside nested containers (Panels, GroupBoxes, etc.)
+            If ctrl.HasChildren Then
+                SetControlsEditable(ctrl)
+            End If
+        Next
+    End Sub
+
+
 
 End Module

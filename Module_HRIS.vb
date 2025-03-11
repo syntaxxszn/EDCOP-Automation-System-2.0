@@ -11,39 +11,60 @@ Module Module_HRIS
 	Public isForceBreak As Integer
 	Public _strShiftID As Integer
 
-	Private isEdit As Boolean = False
+	Public isEdit As Boolean = False
 	Public PanelTagID As Integer = 0
 	Private originalReadOnly As New Dictionary(Of TextBox, Boolean)
 
+	Public _PersonnelPSID1 As Integer
+	Public _PersonnelPSID2 As Integer = 1000000
+	Public _PersonnelSCID1 As Integer
+	Public _PersonnelSCID2 As Integer = 1000000
+
+	Public _PersonnelEducationID1 As Integer
+	Public _PersonnelEducationID2 As Integer = 1000000
+
+	Public _PersonnelCharRefID1 As Integer
+	Public _PersonnelCharRefID2 As Integer = 1000000
+
+	Public _ContractID1 As Integer
+	Public _ContractID2 As Integer = 1000000
+
 
 	Sub FunctionBtnEdit_Enable()
-
 		isEdit = Not isEdit
 		If PanelTagID = 101 Then
-			For Each textBox As TextBox In frmHR_PreviewPersonnelDetails_PersonalInformation.groupboxPersonalInfo.Controls.OfType(Of TextBox)().Where(Function(t) t.Name.StartsWith("txt"))
-				If isEdit Then
-					' Add to dictionary only if not present
-					If Not originalReadOnly.ContainsKey(textBox) Then
-						originalReadOnly(textBox) = textBox.Enabled = False   ' Save original state
-					End If
-					textBox.ReadOnly = False
-					textBox.Cursor = Cursors.IBeam
-					frmHR_PreviewPersonnelDetails.btnSave.Visible = True
-					frmHR_PreviewPersonnelDetails.btnDiscard.Visible = True
-					Call frmHR_PreviewPersonnelDetails_PersonalInformation.function_ReadOnly_isFalse()
-				Else
-					' Check if it exists in the dictionary
-					If originalReadOnly.ContainsKey(textBox) Then
-						textBox.ReadOnly = originalReadOnly(textBox) ' Restore original state
-						textBox.Cursor = Cursors.No
-						Call frmHR_PreviewPersonnelDetails.Function_btnUpdates_Hide()
-						Call frmHR_PreviewPersonnelDetails_PersonalInformation.Function_ReadOnly_isTrue()
-					End If
-				End If
-			Next
+			If isEdit Then
+				Call frmHR_PreviewPersonnelDetails.Function_btnUpdates_Show()
+				Call frmHR_PreviewPersonnelDetails_PersonalInformation.function_ReadOnly_isFalse()
+			Else
+				Call frmHR_PreviewPersonnelDetails.Function_btnUpdates_Hide()
+				Call frmHR_PreviewPersonnelDetails_PersonalInformation.Function_ReadOnly_isTrue()
+			End If
+		ElseIf PanelTagID = 102 Then
+			If isEdit Then
+				Call frmHR_PreviewPersonnelDetails.switchPanel(frmHR_UpdatePersonnelDetails_Contracts) 'call edit form
+				Call frmHR_PreviewPersonnelDetails.Function_btnUpdates_Show()
+			Else
+				Call frmHR_PreviewPersonnelDetails.switchPanel(frmHR_PreviewPersonnelDetails_Contracts) 'call non-edit form
+				Call frmHR_PreviewPersonnelDetails.Function_btnUpdates_Hide()
+			End If
+		ElseIf PanelTagID = 103 Then
+			If isEdit Then
+				Call frmHR_PreviewPersonnelDetails.switchPanel(frmHR_UpdatePersonnelDetails_CharacterReference)
+				Call frmHR_PreviewPersonnelDetails.Function_btnUpdates_Show()
+			Else
+				Call frmHR_PreviewPersonnelDetails.switchPanel(frmHR_PreviewPersonnelDetails_CharacterReference)
+				Call frmHR_PreviewPersonnelDetails.Function_btnUpdates_Hide()
+			End If
+		ElseIf PanelTagID = 104 Then
+			If isEdit Then
+				Call frmHR_PreviewPersonnelDetails.switchPanel(frmHR_UpdatePersonnelDetails_EducationBackground)
+				Call frmHR_PreviewPersonnelDetails.Function_btnUpdates_Show()
+			Else
+				Call frmHR_PreviewPersonnelDetails.switchPanel(frmHR_PreviewPersonnelDetails_EducationBackground)
+				Call frmHR_PreviewPersonnelDetails.Function_btnUpdates_Hide()
+			End If
 		End If
-
-
 	End Sub
 
 	Sub Sel_Personnel_Active(dgvPersonnelList As DataGridView)
@@ -64,10 +85,9 @@ Module Module_HRIS
 			dr.GetString(1),
 			dr.GetString(2),
 			dr.GetString(3),
-			dr.GetString(4))
-			'dr.GetString(5),
-			'dr.GetString(6))
-
+			dr.GetString(4),
+			dr.GetString(5),
+			dr.GetString(6))
 		End While
 		dr.Close()
 		Conn.Close()
@@ -138,19 +158,62 @@ Module Module_HRIS
 			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrCountry1.Text = dr.GetString(18)
 			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrZip1.Text = dr.GetString(19)
 
-			_strSameAsAddressValidation = dr.GetInt32(20)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.cbPresentAdr.CheckState = If(dr.GetInt32(20) = 1, CheckState.Checked, CheckState.Unchecked)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.cbForeignAddr.CheckState = If(dr.GetInt32(21) = 1, CheckState.Checked, CheckState.Unchecked)
+			frmHR_AddUpdForeignAddress.txtForeignAddress.Text = dr.GetString(22)
+			' Name : Dela Pena, Jerome [2024-1435]
+			' Date Created : 02-24-25
 
-			If _strSameAsAddressValidation = 1 Then
-				frmHR_PreviewPersonnelDetails_PersonalInformation.cbPresentAdr.CheckState = CheckState.Checked
-			End If
+			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrStreet2.Text = dr.GetString(23)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrBrgy2.Text = dr.GetString(24)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrRegion2.Text = dr.GetString(25)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrProvince2.Text = dr.GetString(26)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrCity2.Text = dr.GetString(27)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrCountry2.Text = dr.GetString(28)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrZip2.Text = dr.GetString(29)
+
+			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxSSSNo.Text = dr.GetString(30)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxTIN.Text = dr.GetString(31)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPhilHealth.Text = dr.GetString(32)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxHDMF.Text = dr.GetString(33)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPRCNo.Text = dr.GetString(34)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPRCIssuanceDate.Value = If(dr.IsDBNull(35), DateTime.Now, dr.GetDateTime(35))
+			frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPRCExpiryDate.Value = If(dr.IsDBNull(36), DateTime.Now, dr.GetDateTime(36))
+			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPTRNo.Text = dr.GetString(37)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPTRIssuanceDate.Value = If(dr.IsDBNull(38), DateTime.Now, dr.GetDateTime(38))
+			frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPTRExpiryDate.Value = If(dr.IsDBNull(39), DateTime.Now, dr.GetDateTime(39))
+			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPayrollAccountNo.Text = dr.GetString(40)
+			''No Bank Accouunt and Payroll Category 
+
+			frmHR_PreviewPersonnelDetails_PersonalInformation.txtTelephone.Text = dr.GetString(41)
+			frmHR_PreviewPersonnelDetails_PersonalInformation.txtMobileNumber.Text = dr.GetString(42)
+
 		End While
 		dr.Close()
 		Conn.Close()
 		cmd.Parameters.Clear()
 	End Sub
 
-	Sub GetImageProfile(_profilePicImage As PictureBox)
+	Sub BrowseProfilePic(_profilePicImage As PictureBox)
+		Dim basePath As String = "\\192.168.0.250\references\DIMS_APPS_INST\Images Profile\"
+		Using ofd As New OpenFileDialog With {.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp|All files|*.*"}
+			If ofd.ShowDialog() = DialogResult.OK Then
+				Dim destPath As String = basePath & IO.Path.GetFileName(ofd.FileName)
+				' Check if file exists
+				If IO.File.Exists(destPath) Then
+					MessageBox.Show("Image already exists in the destination!", "Duplicate Image", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+					Return
+				Else
+					IO.File.Copy(ofd.FileName, destPath) ' Copy if not exists
+				End If
+				FilePath = destPath
+				_profilePicImage.Image = Image.FromFile(destPath)
+				_profilePicImage.SizeMode = PictureBoxSizeMode.StretchImage
+			End If
+		End Using
+	End Sub
 
+	Sub GetImageProfile(_profilePicImage As PictureBox)
 		If System.IO.File.Exists(FilePath) Then
 			_profilePicImage.SizeMode = PictureBoxSizeMode.StretchImage
 			_profilePicImage.Image = Image.FromFile(FilePath)
@@ -158,7 +221,6 @@ Module Module_HRIS
 			_profilePicImage.SizeMode = PictureBoxSizeMode.StretchImage
 			'_profilePicImage.Image = Image.FromFile("D:\SOFT DEV TEAM WORK\ROME\6-5-2024\JD\EDCOP Project Monitoring System\Resources\pc14.png")
 		End If
-
 	End Sub
 
 	Sub Sel_Personnel_PersonalInformationDependent_ByEmployeeID()
@@ -187,33 +249,104 @@ Module Module_HRIS
 
 	End Sub
 
-	Sub Sel_Personnel_PersonalInformationDependentSiblings_ByEmployeeID()
 
-		frmHR_PreviewPersonnelDetails_Dependents.dgvPrevSiblingsDetails.Rows.Clear()
+	Sub Family_Background_Relationship_DropDownList()
 		Conn = New SqlConnection(StrConn)
 		Conn.Open()
 		cmd = Conn.CreateCommand
-		cmd.CommandText = "[spSelEmployeeSiblings]"
+		cmd.CommandText = "[spSelHRIS_FamilyRelationshipDropDownList]"
 		cmd = New SqlCommand(cmd.CommandText, Conn) With {
-						.CommandType = CommandType.StoredProcedure
-						}
-		cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
-		dr = cmd.ExecuteReader()
-		While dr.Read()
+		.CommandType = CommandType.StoredProcedure
+	}
+		frmHR_PreviewPersonnelDetails_PersonalInformation.cbRelationshipPS.Items.Clear()
+		frmHR_PreviewPersonnelDetails_PersonalInformation.cbSRelationhipSC.Items.Clear()
 
-			frmHR_PreviewPersonnelDetails_Dependents.dgvPrevSiblingsDetails.Rows.Add(
-			dr.GetInt32(0),
-			 dr.GetString(1),
-			 dr.GetString(2),
-			 dr.GetString(3),
-			 dr.GetString(5))
+		Dim DependentsDictionaryPS As New Dictionary(Of String, Integer)()
+		Dim DependentsDictionarySC As New Dictionary(Of String, Integer)()
 
-		End While
-		dr.Close()
+		Using reader As SqlDataReader = cmd.ExecuteReader()
+			While reader.Read()
+				Dim id As Integer = reader.GetInt32(0)
+				Dim dependents As String = reader.GetString(1)
+				If id >= 718 AndAlso id <= 723 Then
+					frmHR_PreviewPersonnelDetails_PersonalInformation.cbRelationshipPS.Items.Add(dependents)
+					DependentsDictionaryPS.Add(dependents, id)
+				End If
+				If id >= 724 AndAlso id <= 726 Then
+					frmHR_PreviewPersonnelDetails_PersonalInformation.cbSRelationhipSC.Items.Add(dependents)
+					DependentsDictionarySC.Add(dependents, id)
+				End If
+			End While
+		End Using
+		frmHR_PreviewPersonnelDetails_PersonalInformation.cbRelationshipPS.Tag = DependentsDictionaryPS
+		frmHR_PreviewPersonnelDetails_PersonalInformation.cbSRelationhipSC.Tag = DependentsDictionarySC
 		Conn.Close()
-		cmd.Parameters.Clear()
-
 	End Sub
+
+	Sub SelUpd_FamilyBackground(dgvParentsAndSiblings As DataGridView, dgvSpouseAndChildren As DataGridView)
+		dgvParentsAndSiblings.Rows.Clear()
+		dgvSpouseAndChildren.Rows.Clear()
+
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spSelUpdHRIS_Personnel_FamilyBackground_PreviewDetailsByID]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+				Using dr As SqlDataReader = cmd.ExecuteReader()
+					While dr.Read()
+						dgvParentsAndSiblings.Rows.Add(
+						Convert.ToInt32(dr(0)),
+						dr(1).ToString(),
+						dr(2).ToString(),
+						Convert.ToDateTime(dr(3)),
+						Convert.ToInt32(dr(4)),
+						dr(5).ToString())
+					End While
+
+					dr.NextResult()
+					While dr.Read()
+						dgvSpouseAndChildren.Rows.Add(
+						Convert.ToInt32(dr(0)),
+						dr(1).ToString(),
+						dr(2).ToString(),
+						Convert.ToDateTime(dr(3)),
+						Convert.ToInt32(dr(4)),
+						dr(5).ToString())
+					End While
+				End Using
+				dgvParentsAndSiblings.ClearSelection()
+				dgvSpouseAndChildren.ClearSelection()
+			End Using
+		End Using
+	End Sub
+
+	'Sub Sel_Personnel_PersonalInformationDependentSiblings_ByEmployeeID()
+
+	'	frmHR_PreviewPersonnelDetails_Dependents.dgvPrevSiblingsDetails.Rows.Clear()
+	'	Conn = New SqlConnection(StrConn)
+	'	Conn.Open()
+	'	cmd = Conn.CreateCommand
+	'	cmd.CommandText = "[spSelEmployeeSiblings]"
+	'	cmd = New SqlCommand(cmd.CommandText, Conn) With {
+	'					.CommandType = CommandType.StoredProcedure
+	'					}
+	'	cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
+	'	dr = cmd.ExecuteReader()
+	'	While dr.Read()
+
+	'		frmHR_PreviewPersonnelDetails_Dependents.dgvPrevSiblingsDetails.Rows.Add(
+	'		dr.GetInt32(0),
+	'		 dr.GetString(1),
+	'		 dr.GetString(2),
+	'		 dr.GetString(3),
+	'		 dr.GetString(5))
+
+	'	End While
+	'	dr.Close()
+	'	Conn.Close()
+	'	cmd.Parameters.Clear()
+
+	'End Sub
 
 	Sub Sel_Personnel_EducationalBG_ByEmployeeID()
 
@@ -304,9 +437,9 @@ Module Module_HRIS
 			dr.GetString(1),
 			dr.GetString(2),
 			dr.GetString(3),
-			dr.GetString(4))
-				'dr.GetString(5)
-				')
+			dr.GetString(4),
+			dr.GetString(5),
+			dr.GetString(6))
 
 			End While
 
@@ -363,6 +496,7 @@ Module Module_HRIS
 		dgv.ClearSelection()
 
 	End Sub
+
 	Sub Sel_Personnel_TransferHistory_ByEmployeeID(_dgvTransferHistory As DataGridView)
 
 		_dgvTransferHistory.Rows.Clear()
@@ -448,7 +582,6 @@ Module Module_HRIS
 
 	Sub Ins_Personnel_ProfilePic()
 
-
 		Conn = New SqlConnection(StrConn)
 		Conn.Open()
 		cmd = Conn.CreateCommand
@@ -456,7 +589,7 @@ Module Module_HRIS
 		cmd = New SqlCommand(cmd.CommandText, Conn) With {
 					.CommandType = CommandType.StoredProcedure
 				}
-		cmd.Parameters.AddWithValue("@EmployeeID", _strPersonnelID)
+		cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
 		cmd.Parameters.AddWithValue("@CreatedBy", frmMain.ToolStripEmployeeNo.Text)
 		cmd.Parameters.AddWithValue("@FilePath", FilePath)
 		cmd.ExecuteNonQuery()
@@ -506,89 +639,11 @@ Module Module_HRIS
 		cmd.Parameters.AddWithValue("@ModifiedBy", frmMain.ToolStripEmployeeNo.Text)
 
 		If cmd.ExecuteNonQuery = -1 Then
-			' MessageBox.Show("OK")
+			MessageBox.Show("OK")
 		Else
 			MessageBox.Show("Invalid")
 		End If
 		Conn.Close()
-
-	End Sub
-
-	Sub InsUpd_PersonnelDetails()
-
-		Conn = New SqlConnection(StrConn)
-		Conn.Open()
-		cmd.Connection.CreateCommand()
-		cmd.CommandText = "[spInsUpdHRIS_Personnel_details]"
-		cmd = New SqlCommand(cmd.CommandText, Conn) With {
-					.CommandType = CommandType.StoredProcedure
-					}
-
-		cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
-		cmd.Parameters.AddWithValue("@Birthdate", frmHR_PreviewPersonnelDetails_PersonalInformation.dtpDateofBirth.Text)
-		cmd.Parameters.AddWithValue("@BirthPlace", frmHR_PreviewPersonnelDetails_PersonalInformation.txtPlaceofBirth.Text)
-		cmd.Parameters.AddWithValue("@Gender", frmHR_PreviewPersonnelDetails_PersonalInformation.cbGender.Text)
-		cmd.Parameters.AddWithValue("@Height", frmHR_PreviewPersonnelDetails_PersonalInformation.txtHeight.Text)
-		cmd.Parameters.AddWithValue("@Weight", frmHR_PreviewPersonnelDetails_PersonalInformation.txtWeight.Text)
-		cmd.Parameters.AddWithValue("@Citizenship", frmHR_PreviewPersonnelDetails_PersonalInformation.cbCitizenship.Text)
-		cmd.Parameters.AddWithValue("@CivilStatus", frmHR_PreviewPersonnelDetails_PersonalInformation.cbCivilStatus.Text)
-		cmd.Parameters.AddWithValue("@Religion", frmHR_PreviewPersonnelDetails_PersonalInformation.cbReligion.Text)
-		cmd.Parameters.AddWithValue("@TelNo", frmHR_PreviewPersonnelDetails_PersonalInformation.txtTelephone.Text)
-		cmd.Parameters.AddWithValue("@CellphoneNo", frmHR_PreviewPersonnelDetails_PersonalInformation.txtMobileNumber.Text)
-		cmd.Parameters.AddWithValue("@EmailAddress", frmHR_PreviewPersonnelDetails_PersonalInformation.txtEmailAddress.Text)
-
-		'cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
-
-		If cmd.ExecuteNonQuery = -1 Then
-
-			'CAll Select_ActivityDetails(FrmPMS_Individual_ViewActivity.dgvProjectTagList)
-			MessageBox.Show("OK")
-			Call InsUpd_PersonnelDetails_Address()
-			Call FunctionBtnEdit_Enable()
-		Else
-
-			MessageBox.Show("Cannot update, Something went wrong. ", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
-		End If
-		Conn.Close()
-		cmd.Parameters.Clear()
-		Call frmHR_PreviewPersonnelDetails_PersonalInformation.Function_ReadOnly_isTrue()
-	End Sub
-
-	Sub InsUpd_PersonnelDetails_Address()
-
-		Conn = New SqlConnection(StrConn)
-		Conn.Open()
-		cmd.Connection.CreateCommand()
-		cmd.CommandText = "[spInsUpdHRIS_Personnel_AddressDetails]"
-		cmd = New SqlCommand(cmd.CommandText, Conn) With {
-					.CommandType = CommandType.StoredProcedure
-					}
-
-		cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
-		cmd.Parameters.AddWithValue("@StreetAdd1", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrStreet1.Text)
-		cmd.Parameters.AddWithValue("@BrgyAdd1", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrBrgy1.Text)
-		cmd.Parameters.AddWithValue("@MunicipalityName1", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrCity1.Text)
-		cmd.Parameters.AddWithValue("@ProvinceName1", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrProvince1.Text)
-		cmd.Parameters.AddWithValue("@RegionName1", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrRegion1.Text)
-		cmd.Parameters.AddWithValue("@PostalCode1", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrZip1.Text)
-		cmd.Parameters.AddWithValue("@Country1", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrCountry1.Text)
-
-		cmd.Parameters.AddWithValue("@SameAsPresentAdd", _strSameAsAddressValidation)
-
-		cmd.Parameters.AddWithValue("@StreetAdd2", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrStreet2.Text)
-		cmd.Parameters.AddWithValue("@BrgyAdd2", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrBrgy2.Text)
-		cmd.Parameters.AddWithValue("@MunicipalityName2", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrCity2.Text)
-		cmd.Parameters.AddWithValue("@ProvinceName2", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrProvince2.Text)
-		cmd.Parameters.AddWithValue("@RegionName2", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrRegion2.Text)
-		cmd.Parameters.AddWithValue("@PostalCode2", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrZip2.Text)
-		cmd.Parameters.AddWithValue("@Country2", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrCountry2.Text)
-
-		cmd.Parameters.AddWithValue("@ModifiedBy", frmMain.ToolStripEmployeeNo.Text)
-
-		cmd.ExecuteNonQuery()
-		Conn.Close()
-		cmd.Parameters.Clear()
 
 	End Sub
 
@@ -636,12 +691,12 @@ Module Module_HRIS
 		Conn = New SqlConnection(StrConn)
 		Conn.Open()
 		cmd = Conn.CreateCommand
-		cmd.CommandText = "[spInsHRIS_Personnel_Identifications]"
+		cmd.CommandText = "[spInsUpdHRIS_Personnel_Identifications]"
 		cmd = New SqlCommand(cmd.CommandText, Conn) With {
 					.CommandType = CommandType.StoredProcedure
 				}
 
-		cmd.Parameters.AddWithValue("@PersonnelID", _strPersonnelID)
+		cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
 		cmd.Parameters.AddWithValue("@SocialSecNo", frmHR_AddNewPersonnel.txtboxSSSNo.Text)
 		cmd.Parameters.AddWithValue("@TIN", frmHR_AddNewPersonnel.txtboxTIN.Text)
 		cmd.Parameters.AddWithValue("@PhilHealthNo", frmHR_AddNewPersonnel.txtboxPhilHealth.Text)
@@ -652,12 +707,28 @@ Module Module_HRIS
 		cmd.Parameters.AddWithValue("@PTRNo", frmHR_AddNewPersonnel.txtboxPTRNo.Text)
 		cmd.Parameters.AddWithValue("@PTRNoIssuanceDate", frmHR_AddNewPersonnel.dtpPTRIssuanceDate.Value.Date)
 		cmd.Parameters.AddWithValue("@PTRNoExpiryDate", frmHR_AddNewPersonnel.dtpPTRExpiryDate.Value.Date)
-		cmd.Parameters.AddWithValue("@CreatedBy", frmMain.ToolStripEmployeeNo.Text)
+		cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
 		cmd.ExecuteNonQuery()
 
 		Conn.Close()
 		cmd.Parameters.Clear()
+	End Sub
 
+	Sub InsUpd_ForeignAddress()
+
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spInsUpdHRIS_Personnel_ForeignAddress]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+						}
+		cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+		cmd.Parameters.AddWithValue("@ForeignAddress", frmHR_AddUpdForeignAddress.txtForeignAddress.Text)
+		cmd.ExecuteNonQuery()
+		Conn.Close()
+		cmd.Parameters.Clear()
+		frmHR_AddUpdForeignAddress.Close()
 	End Sub
 
 	Sub ProcessDataGridViewParentsAndSiblings(dataGridView As DataGridView)
@@ -666,17 +737,18 @@ Module Module_HRIS
 
 		Using Conn As New SqlConnection(StrConn)
 			Conn.Open()
-			Using cmd As New SqlCommand("[spInsHRIS_Personnel_ParentsSiblings]", Conn)
+			Using cmd As New SqlCommand("[spInsUpdHRIS_Personnel_ParentsSiblings]", Conn)
 				cmd.CommandType = CommandType.StoredProcedure
 
 				For Each row As DataGridViewRow In dataGridView.Rows
 
-					cmd.Parameters.AddWithValue("@EmployeeID", _strPersonnelID)
-					cmd.Parameters.AddWithValue("@Relationship", If(row.Cells(0).Value IsNot DBNull.Value, row.Cells(0).Value.ToString(), ""))
-					cmd.Parameters.AddWithValue("@Name", If(row.Cells(1).Value IsNot DBNull.Value, row.Cells(1).Value.ToString(), ""))
-					cmd.Parameters.AddWithValue("@BirthDate", If(row.Cells(2).Value IsNot DBNull.Value, row.Cells(2).Value.ToString(), ""))
+					cmd.Parameters.AddWithValue("@ID", If(row.Cells(0).Value IsNot DBNull.Value, row.Cells(0).Value.ToString(), ""))
+					cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
+					cmd.Parameters.AddWithValue("@Relationship", If(row.Cells(1).Value IsNot DBNull.Value, row.Cells(1).Value.ToString(), ""))
+					cmd.Parameters.AddWithValue("@Name", If(row.Cells(2).Value IsNot DBNull.Value, row.Cells(2).Value.ToString(), ""))
+					cmd.Parameters.AddWithValue("@BirthDate", If(row.Cells(3).Value IsNot DBNull.Value, row.Cells(3).Value.ToString(), ""))
 					' cmd.Parameters.AddWithValue("@Age", If(row.Cells(3).Value IsNot DBNull.Value, row.Cells(3).Value.ToString(), ""))
-					cmd.Parameters.AddWithValue("@ContactNo", If(row.Cells(4).Value IsNot DBNull.Value, row.Cells(4).Value.ToString(), ""))
+					cmd.Parameters.AddWithValue("@ContactNo", If(row.Cells(5).Value IsNot DBNull.Value, row.Cells(5).Value.ToString(), ""))
 					cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
 
 					cmd.ExecuteNonQuery()
@@ -693,17 +765,18 @@ Module Module_HRIS
 
 		Using Conn As New SqlConnection(StrConn)
 			Conn.Open()
-			Using cmd As New SqlCommand("[spInsHRIS_Personnel_Dependents]", Conn)
+			Using cmd As New SqlCommand("[spInsUpdHRIS_Personnel_Dependents]", Conn)
 				cmd.CommandType = CommandType.StoredProcedure
 
 				For Each row As DataGridViewRow In dataGridView.Rows
 
-					cmd.Parameters.AddWithValue("@EmployeeID", _strPersonnelID)
-					cmd.Parameters.AddWithValue("@Relationship", If(row.Cells(0).Value IsNot DBNull.Value, row.Cells(0).Value.ToString(), ""))
-					cmd.Parameters.AddWithValue("@Name", If(row.Cells(1).Value IsNot DBNull.Value, row.Cells(1).Value.ToString(), ""))
-					cmd.Parameters.AddWithValue("@BirthDate", If(row.Cells(2).Value IsNot DBNull.Value, row.Cells(2).Value.ToString(), ""))
-					'  cmd.Parameters.AddWithValue("@Age", If(row.Cells(3).Value IsNot DBNull.Value, row.Cells(3).Value.ToString(), ""))
-					cmd.Parameters.AddWithValue("@ContactNo", If(row.Cells(4).Value IsNot DBNull.Value, row.Cells(4).Value.ToString(), ""))
+					cmd.Parameters.AddWithValue("@ID", If(row.Cells(0).Value IsNot DBNull.Value, row.Cells(0).Value.ToString(), ""))
+					cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
+					cmd.Parameters.AddWithValue("@Relationship", If(row.Cells(1).Value IsNot DBNull.Value, row.Cells(1).Value.ToString(), ""))
+					cmd.Parameters.AddWithValue("@Name", If(row.Cells(2).Value IsNot DBNull.Value, row.Cells(2).Value.ToString(), ""))
+					cmd.Parameters.AddWithValue("@BirthDate", If(row.Cells(3).Value IsNot DBNull.Value, row.Cells(3).Value.ToString(), ""))
+					' cmd.Parameters.AddWithValue("@Age", If(row.Cells(3).Value IsNot DBNull.Value, row.Cells(3).Value.ToString(), ""))
+					cmd.Parameters.AddWithValue("@ContactNo", If(row.Cells(5).Value IsNot DBNull.Value, row.Cells(5).Value.ToString(), ""))
 					cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
 
 					cmd.ExecuteNonQuery()
@@ -713,6 +786,148 @@ Module Module_HRIS
 		End Using
 	End Sub
 
+	'--->>> Personnel Information Update <<<---
+
+	Sub InsUpd_PersonnelDetails()
+
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd.Connection.CreateCommand()
+		cmd.CommandText = "[spInsUpdHRIS_Personnel_details]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+					.CommandType = CommandType.StoredProcedure
+					}
+
+		cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
+		cmd.Parameters.AddWithValue("@Birthdate", frmHR_PreviewPersonnelDetails_PersonalInformation.dtpDateofBirth.Text)
+		cmd.Parameters.AddWithValue("@BirthPlace", frmHR_PreviewPersonnelDetails_PersonalInformation.txtPlaceofBirth.Text)
+		cmd.Parameters.AddWithValue("@Gender", frmHR_PreviewPersonnelDetails_PersonalInformation.cbGender.Text)
+		cmd.Parameters.AddWithValue("@Height", frmHR_PreviewPersonnelDetails_PersonalInformation.txtHeight.Text)
+		cmd.Parameters.AddWithValue("@Weight", frmHR_PreviewPersonnelDetails_PersonalInformation.txtWeight.Text)
+		cmd.Parameters.AddWithValue("@Citizenship", frmHR_PreviewPersonnelDetails_PersonalInformation.cbCitizenship.Text)
+		cmd.Parameters.AddWithValue("@CivilStatus", frmHR_PreviewPersonnelDetails_PersonalInformation.cbCivilStatus.Text)
+		cmd.Parameters.AddWithValue("@Religion", frmHR_PreviewPersonnelDetails_PersonalInformation.cbReligion.Text)
+		cmd.Parameters.AddWithValue("@TelNo", frmHR_PreviewPersonnelDetails_PersonalInformation.txtTelephone.Text)
+		cmd.Parameters.AddWithValue("@CellphoneNo", frmHR_PreviewPersonnelDetails_PersonalInformation.txtMobileNumber.Text)
+		cmd.Parameters.AddWithValue("@EmailAddress", frmHR_PreviewPersonnelDetails_PersonalInformation.txtEmailAddress.Text)
+
+		'cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+
+		If cmd.ExecuteNonQuery = -1 Then
+			Call FunctionBtnEdit_Enable()
+			MessageBox.Show("Saved.")
+			frmHR_PreviewPersonnelDetails.btnEdit.PerformClick()
+			If frmHR_Transaction_EmployeeFile.txtboxSearch.Text <> "" Then
+				Call Search_DGVPersonnel(frmHR_Transaction_EmployeeFile.dgvEmployeeList, frmHR_Transaction_EmployeeFile.txtboxSearch)
+			Else
+				Call frmHR_Transaction_EmployeeFile.EmployeeList_Active()
+			End If
+		Else
+				MessageBox.Show("Cannot update, Something went wrong. ", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		End If
+
+		Conn.Close()
+		cmd.Parameters.Clear()
+		Call frmHR_PreviewPersonnelDetails_PersonalInformation.Function_ReadOnly_isTrue()
+	End Sub
+
+	Sub InsUpd_PersonnelDetails_Address()
+
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd.Connection.CreateCommand()
+		cmd.CommandText = "[spInsUpdHRIS_Personnel_AddressDetails]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+					.CommandType = CommandType.StoredProcedure
+					}
+
+		cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+		cmd.Parameters.AddWithValue("@StreetAdd1", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrStreet1.Text)
+		cmd.Parameters.AddWithValue("@BrgyAdd1", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrBrgy1.Text)
+		cmd.Parameters.AddWithValue("@MunicipalityName1", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrCity1.Text)
+		cmd.Parameters.AddWithValue("@ProvinceName1", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrProvince1.Text)
+		cmd.Parameters.AddWithValue("@RegionName1", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrRegion1.Text)
+		cmd.Parameters.AddWithValue("@PostalCode1", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrZip1.Text)
+		cmd.Parameters.AddWithValue("@Country1", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrCountry1.Text)
+
+		cmd.Parameters.AddWithValue("@SameAsPresentAdd", _strSameAsAddressValidation)
+
+		cmd.Parameters.AddWithValue("@StreetAdd2", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrStreet2.Text)
+		cmd.Parameters.AddWithValue("@BrgyAdd2", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrBrgy2.Text)
+		cmd.Parameters.AddWithValue("@MunicipalityName2", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrCity2.Text)
+		cmd.Parameters.AddWithValue("@ProvinceName2", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrProvince2.Text)
+		cmd.Parameters.AddWithValue("@RegionName2", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrRegion2.Text)
+		cmd.Parameters.AddWithValue("@PostalCode2", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrZip2.Text)
+		cmd.Parameters.AddWithValue("@Country2", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrCountry2.Text)
+
+		cmd.Parameters.AddWithValue("@ModifiedBy", frmMain.ToolStripEmployeeNo.Text)
+
+		cmd.ExecuteNonQuery()
+		Conn.Close()
+		cmd.Parameters.Clear()
+	End Sub
+
+	Sub InsUpd_Personnel_Identification()
+
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spInsUpdHRIS_Personnel_Identifications]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+					.CommandType = CommandType.StoredProcedure
+				}
+
+		cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+		cmd.Parameters.AddWithValue("@SocialSecNo", frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxSSSNo.Text)
+		cmd.Parameters.AddWithValue("@TIN", frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxTIN.Text)
+		cmd.Parameters.AddWithValue("@PhilHealthNo", frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPhilHealth.Text)
+		cmd.Parameters.AddWithValue("@PagIbigNo", frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxHDMF.Text)
+		cmd.Parameters.AddWithValue("@PRCNo", frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPRCNo.Text)
+		cmd.Parameters.AddWithValue("@PRCNoIssuanceDate", frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPRCIssuanceDate.Value.Date)
+		cmd.Parameters.AddWithValue("@PRCNoExpiryDate", frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPRCExpiryDate.Value.Date)
+		cmd.Parameters.AddWithValue("@PTRNo", frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPTRNo.Text)
+		cmd.Parameters.AddWithValue("@PTRNoIssuanceDate", frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPTRIssuanceDate.Value.Date)
+		cmd.Parameters.AddWithValue("@PTRNoExpiryDate", frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPTRExpiryDate.Value.Date)
+		cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+		cmd.ExecuteNonQuery()
+
+		Conn.Close()
+		cmd.Parameters.Clear()
+	End Sub
+
+	Sub Del_Personnel_ParentsAndSiblings_ByID(dgv As DataGridView)
+		If MessageBox.Show("Are you sure you want to delete this from the list?", "Warning Message", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spDelHRIS_Personnel_ParentsAndSiblings]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", _PersonnelPSID1)
+				cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+				cmd.ExecuteNonQuery()
+				MsgBox("Deletion Success!")
+			End Using
+		End Using
+		dgv.Rows.Remove(dgv.SelectedRows(0))
+	End Sub
+
+	Sub Del_Personnel_SpouseAndChildren_ByID(dgv As DataGridView)
+		If MessageBox.Show("Are you sure you want to delete this from the list?", "Warning Message", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spDelHRIS_Personnel_SpouseAndChildren]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", _PersonnelSCID1)
+				cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+				cmd.ExecuteNonQuery()
+				MsgBox("Deletion Success!")
+			End Using
+		End Using
+		dgv.Rows.Remove(dgv.SelectedRows(0))
+	End Sub
+
+
+
+	'--->>> Drop Down Lists <<<---
 	Sub DropDownListGender(_strGender As ComboBox)
 
 		Dim col As New AutoCompleteStringCollection()
@@ -993,6 +1208,190 @@ Module Module_HRIS
 
 	End Sub
 
+
+	Sub DropDownListEducationBackground(cBox As ComboBox)
+
+		Dim col As New AutoCompleteStringCollection()
+		Conn = New SqlConnection(StrConn)
+		cBox.Items.Clear()
+		cmd.CommandText = "[spSelHRIS_EducationBackgroundDropDownList]"
+		cmd = New SqlCommand(cmd.CommandText, Conn)
+		Conn.Open()
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			Dim a = dr.GetString(0)
+			col.Add(a)
+			cBox.Items.Add(a)
+
+		End While
+		cBox.AutoCompleteCustomSource = col
+		dr.Close()
+		Conn.Close()
+
+	End Sub
+
+	Sub DropDownListEmploymentType(cBox As ComboBox)
+
+		Dim col As New AutoCompleteStringCollection()
+		Conn = New SqlConnection(StrConn)
+		cBox.Items.Clear()
+		cmd.CommandText = "[spSelHRIS_EmployeeType]"
+		cmd = New SqlCommand(cmd.CommandText, Conn)
+		Conn.Open()
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			Dim a = dr.GetString(0)
+			col.Add(a)
+			cBox.Items.Add(a)
+
+		End While
+		cBox.AutoCompleteCustomSource = col
+		dr.Close()
+		Conn.Close()
+
+	End Sub
+
+	Sub DropDownListDepartment(cBox As ComboBox)
+
+		Dim col As New AutoCompleteStringCollection()
+		Conn = New SqlConnection(StrConn)
+		cBox.Items.Clear()
+		cmd.CommandText = "[spSelHRIS_Department]"
+		cmd = New SqlCommand(cmd.CommandText, Conn)
+		Conn.Open()
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			Dim a = dr.GetString(0)
+			col.Add(a)
+			cBox.Items.Add(a)
+
+		End While
+		cBox.AutoCompleteCustomSource = col
+		dr.Close()
+		Conn.Close()
+
+	End Sub
+
+	Sub DropDownListJobPosition(cBox As ComboBox)
+
+		Dim col As New AutoCompleteStringCollection()
+		Conn = New SqlConnection(StrConn)
+		cBox.Items.Clear()
+		cmd.CommandText = "[spSelHRIS_JobPosition]"
+		cmd = New SqlCommand(cmd.CommandText, Conn)
+		Conn.Open()
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			Dim a = dr.GetString(0)
+			col.Add(a)
+			cBox.Items.Add(a)
+
+		End While
+		cBox.AutoCompleteCustomSource = col
+		dr.Close()
+		Conn.Close()
+
+	End Sub
+
+	Sub DropDownListJobClass(cBox As ComboBox)
+
+		Dim col As New AutoCompleteStringCollection()
+		Conn = New SqlConnection(StrConn)
+		cBox.Items.Clear()
+		cmd.CommandText = "[spSelHRIS_JobClass]"
+		cmd = New SqlCommand(cmd.CommandText, Conn)
+		Conn.Open()
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			Dim a = dr.GetString(0)
+			col.Add(a)
+			cBox.Items.Add(a)
+
+		End While
+		cBox.AutoCompleteCustomSource = col
+		dr.Close()
+		Conn.Close()
+
+	End Sub
+
+	Sub DropDownListSupervisorEmployeeName(cBox As ComboBox)
+
+		Dim col As New AutoCompleteStringCollection()
+		Conn = New SqlConnection(StrConn)
+		cBox.Items.Clear()
+		cmd.CommandText = "[spSelHRIS_SupervisorEmployeeName]"
+		cmd = New SqlCommand(cmd.CommandText, Conn)
+		Conn.Open()
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			Dim a = dr.GetString(0)
+			col.Add(a)
+			cBox.Items.Add(a)
+
+		End While
+		cBox.AutoCompleteCustomSource = col
+		dr.Close()
+		Conn.Close()
+
+	End Sub
+
+	Sub DropDownListLocation(cBox As ComboBox)
+
+		Dim col As New AutoCompleteStringCollection()
+		Conn = New SqlConnection(StrConn)
+		cBox.Items.Clear()
+		cmd.CommandText = "[spSelHRIS_Location]"
+		cmd = New SqlCommand(cmd.CommandText, Conn)
+		Conn.Open()
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			Dim a = dr.GetString(0)
+			col.Add(a)
+			cBox.Items.Add(a)
+
+		End While
+		cBox.AutoCompleteCustomSource = col
+		dr.Close()
+		Conn.Close()
+
+	End Sub
+
+	Sub DropDownListSignatoryEmployeeName(cBox As ComboBox)
+
+		Dim col As New AutoCompleteStringCollection()
+		Conn = New SqlConnection(StrConn)
+		cBox.Items.Clear()
+		cmd.CommandText = "[spSelHRIS_Signatories]"
+		cmd = New SqlCommand(cmd.CommandText, Conn)
+		Conn.Open()
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			Dim a = dr.GetString(0)
+			col.Add(a)
+			cBox.Items.Add(a)
+
+		End While
+		cBox.AutoCompleteCustomSource = col
+		dr.Close()
+		Conn.Close()
+
+	End Sub
+
+
+
+
+
+
+
+
 	Sub Ins_PersonnelTempRecord()
 
 		' 1st Proc. : Insert temporary rows to table.
@@ -1009,7 +1408,7 @@ Module Module_HRIS
 		''2nd Proc. : Call the 'dr = cmd.ExecuteReader' to get the Max Primary key of the table based on @@Indentity.
 		dr = cmd.ExecuteReader()
 		While dr.Read()
-			frmHR_AddNewPersonnel.Label7.Text = dr.GetInt32(0)
+			_strPersonnelID = dr.GetInt32(0)
 		End While
 
 		Conn.Close()
@@ -1017,23 +1416,22 @@ Module Module_HRIS
 
 	End Sub
 
+	'Sub Sel_PersonnelID() 'removed as the select in Ins_PersonnelTempRecord will be directly assigned as ID
 
-	Sub Sel_PersonnelID()
+	'	Conn = New SqlConnection(StrConn)
+	'	Conn.Open()
+	'	cmd = Conn.CreateCommand
+	'	cmd.CommandText = "[spSelHRIS_Personnel_ByID]"
+	'	cmd = New SqlCommand(cmd.CommandText, Conn) With {
+	'					.CommandType = CommandType.StoredProcedure
+	'					}
 
-		Conn = New SqlConnection(StrConn)
-		Conn.Open()
-		cmd = Conn.CreateCommand
-		cmd.CommandText = "[spSelHRIS_Personnel_ByID]"
-		cmd = New SqlCommand(cmd.CommandText, Conn) With {
-						.CommandType = CommandType.StoredProcedure
-						}
+	'	_strPersonnelID = cmd.ExecuteScalar
 
-		_strPersonnelID = cmd.ExecuteScalar
+	'	Conn.Close()
+	'	cmd.Parameters.Clear()
 
-		Conn.Close()
-		cmd.Parameters.Clear()
-
-	End Sub
+	'End Sub
 
 	Sub Delete_PersonnelTempRecord()
 
@@ -1048,7 +1446,6 @@ Module Module_HRIS
 		cmd.ExecuteNonQuery()
 		Conn.Close()
 		cmd.Parameters.Clear()
-
 	End Sub
 
 	Sub Delete_ShiftTempRecord()
@@ -1316,7 +1713,7 @@ Module Module_HRIS
 			Try
 				Conn.Open()
 				Using cmd As SqlCommand = Conn.CreateCommand()
-					cmd.CommandText = "[spSelHRIS_EducationBackground_By_EmployeeID]"
+					cmd.CommandText = "[spSelHRIS_EducationBackground_ByEmployeeID]"
 					cmd.CommandType = CommandType.StoredProcedure
 					cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
 					dataSet.Clear()
@@ -1345,13 +1742,301 @@ Module Module_HRIS
 					row(5).ToString())
 				Next
 				frmHR_PreviewPersonnelDetails_EducationBackground.dgvEducationalSchool.ClearSelection()
-			Else
-				MessageBox.Show("No data found.", "System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 			End If
 		Else
 			MessageBox.Show("Invalid table index.")
 		End If
 	End Sub
+
+	Sub SelUpd_HRIS_Personnel_EducationBackground_ByID(dgv As DataGridView)
+		dgv.Rows.Clear()
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spSelUpdHRIS_EducationBackground_ByEmployeeID]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+				Using dr As SqlDataReader = cmd.ExecuteReader()
+					While dr.Read()
+						dgv.Rows.Add(
+							Convert.ToInt32(dr(0)),
+							dr(1).ToString(),
+							dr(2).ToString(),
+							Convert.ToDateTime(dr(3)),
+							Convert.ToDateTime(dr(4)),
+							dr(5).ToString(),
+							dr(6).ToString(),
+							dr(7).ToString(),
+							dr(8).ToString(),
+							dr(9).ToString()
+						)
+					End While
+				End Using
+				dgv.ClearSelection()
+			End Using
+		End Using
+	End Sub
+
+	Sub ProcessDataGridViewEducationBackground(dataGridView As DataGridView)
+		'\\ Credit by Jerome Dela Pena [2024-1435]:
+		'\\ Added Try Catch to store/show errors
+		Try
+			Using Conn As New SqlConnection(StrConn)
+				Conn.Open()
+				Using cmd As New SqlCommand("[spInsUpdHRIS_Personnel_EducationBackground]", Conn)
+					cmd.CommandType = CommandType.StoredProcedure
+
+					For Each row As DataGridViewRow In dataGridView.Rows
+						cmd.Parameters.AddWithValue("@ID", If(row.Cells(0).Value IsNot DBNull.Value, row.Cells(0).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
+						cmd.Parameters.AddWithValue("@Attainment", If(row.Cells(1).Value IsNot DBNull.Value, row.Cells(1).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@SchoolUniversity", If(row.Cells(2).Value IsNot DBNull.Value, row.Cells(2).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@EducFrom", If(row.Cells(3).Value IsNot DBNull.Value, row.Cells(3).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@EducTo", If(row.Cells(4).Value IsNot DBNull.Value, row.Cells(4).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@SchoolAddress", If(row.Cells(5).Value IsNot DBNull.Value, row.Cells(5).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@FOSDegree", If(row.Cells(6).Value IsNot DBNull.Value, row.Cells(6).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@AwardsRecogCerti", If(row.Cells(7).Value IsNot DBNull.Value, row.Cells(7).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@SchoolEmailAdr", If(row.Cells(8).Value IsNot DBNull.Value, row.Cells(8).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@SchoolTelNo", If(row.Cells(9).Value IsNot DBNull.Value, row.Cells(9).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+						cmd.ExecuteNonQuery()
+						cmd.Parameters.Clear()
+					Next
+				End Using
+			End Using
+			MessageBox.Show("Saved!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+			frmHR_PreviewPersonnelDetails.btnEdit.PerformClick()
+		Catch ex As Exception
+			' Show error message if something goes wrong
+			MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		End Try
+	End Sub
+
+	Sub Del_Personnel_EducationBackground_ByID(dgv As DataGridView)
+		If MessageBox.Show("Are you sure you want to delete this from the list? This cannot be undone.", "Warning Message", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spDelHRIS_Personnel_EducationBackground]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", _PersonnelEducationID1)
+				cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+				cmd.ExecuteNonQuery()
+				MsgBox("Deletion Success!")
+			End Using
+		End Using
+		dgv.Rows.Remove(dgv.SelectedRows(0))
+	End Sub
+
+	''--->>> Character References <<<---
+
+	Sub SelUpd_HRIS_Personnel_CharacterReference_ByID(dgv As DataGridView)
+		dgv.Rows.Clear()
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spSelUpdHRIS_CharacterReference_ByEmployeeID]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+				Using dr As SqlDataReader = cmd.ExecuteReader()
+					While dr.Read()
+						dgv.Rows.Add(
+							Convert.ToInt32(dr(0)),
+							dr(1).ToString(),
+							dr(2).ToString(),
+							dr(3).ToString(),
+							dr(4).ToString(),
+							dr(5).ToString(),
+							dr(6).ToString(),
+							dr(7).ToString(),
+							dr(8).ToString()
+						)
+					End While
+				End Using
+				dgv.ClearSelection()
+			End Using
+		End Using
+	End Sub
+
+	Sub ProcessDataGridViewCharacterReference(dataGridView As DataGridView)
+		'\\ Credit by Jerome Dela Pena [2024-1435]:
+		'\\ Added Try Catch to store/show errors
+		Try
+			Using Conn As New SqlConnection(StrConn)
+				Conn.Open()
+				Using cmd As New SqlCommand("[spInsUpdHRIS_Personnel_CharacterReference]", Conn)
+					cmd.CommandType = CommandType.StoredProcedure
+
+					For Each row As DataGridViewRow In dataGridView.Rows
+						cmd.Parameters.AddWithValue("@ID", If(row.Cells(0).Value IsNot DBNull.Value, row.Cells(0).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
+						cmd.Parameters.AddWithValue("@Company", If(row.Cells(1).Value IsNot DBNull.Value, row.Cells(1).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@FullName", If(row.Cells(2).Value IsNot DBNull.Value, row.Cells(2).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@JobTitle", If(row.Cells(3).Value IsNot DBNull.Value, row.Cells(3).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Department", If(row.Cells(4).Value IsNot DBNull.Value, row.Cells(4).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@MobileNumber", If(row.Cells(5).Value IsNot DBNull.Value, row.Cells(5).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@EmailAddress", If(row.Cells(6).Value IsNot DBNull.Value, row.Cells(6).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@CompanyAddress", If(row.Cells(7).Value IsNot DBNull.Value, row.Cells(7).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Relationship", If(row.Cells(8).Value IsNot DBNull.Value, row.Cells(8).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+						cmd.ExecuteNonQuery()
+						cmd.Parameters.Clear()
+					Next
+				End Using
+			End Using
+			MessageBox.Show("Saved!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+			frmHR_PreviewPersonnelDetails.btnEdit.PerformClick()
+		Catch ex As Exception
+			' Show error message if something goes wrong
+			MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		End Try
+	End Sub
+
+	Sub Del_Personnel_CharacterReference_ByID(dgv As DataGridView)
+		If MessageBox.Show("Are you sure you want to delete this from the list? This cannot be undone.", "Warning Message", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spDelHRIS_Personnel_CharacterReference]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", _PersonnelCharRefID1)
+				cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+				cmd.ExecuteNonQuery()
+				MsgBox("Deletion Success!")
+			End Using
+		End Using
+		dgv.Rows.Remove(dgv.SelectedRows(0))
+	End Sub
+
+
+	''--->>> Contracts <<<---
+
+	Sub Sel_HRIS_Personnel_ContractHistory_ByID(dgv As DataGridView) 'for preview
+		dgv.Rows.Clear()
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spSelHRIS_ContractHistory_ByEmployeeID]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
+				Using dr As SqlDataReader = cmd.ExecuteReader()
+					While dr.Read()
+						dgv.Rows.Add(
+							dr.GetInt32(0),
+							dr.GetString(1),
+							dr.GetString(2),
+							dr.GetString(3),
+							dr.GetString(4),
+							dr.GetString(5),
+							dr.GetString(6),
+							dr.GetString(7),
+							dr.GetString(8),
+							dr.GetDecimal(9),
+							dr.GetString(10),
+							dr.GetString(11),
+							dr.GetString(12)
+						)
+					End While
+				End Using
+				dgv.ClearSelection()
+			End Using
+		End Using
+	End Sub
+
+	Sub SelUpd_HRIS_Personnel_ContractHistory_ByID(dgv As DataGridView) 'for update
+		dgv.Rows.Clear()
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spSelUpdHRIS_ContractHistory_ByEmployeeID]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
+				Using dr As SqlDataReader = cmd.ExecuteReader()
+					While dr.Read()
+						dgv.Rows.Add(
+							dr.GetInt32(0),
+							dr.GetString(1),
+							dr.GetString(2),
+							dr.GetString(3),
+							dr.GetString(4),
+							dr.GetString(5),
+							dr.GetDecimal(6),
+							dr.GetDecimal(7),
+							dr.GetString(8),
+							dr.GetString(9),
+							dr.GetString(10),
+							dr.GetString(11),
+							dr.GetDecimal(12),
+							dr.GetString(13),
+							dr.GetString(14),
+							dr.GetString(15),
+							dr.GetString(16),
+							dr.GetString(17),
+							dr.GetString(18),
+							dr.GetString(19))
+					End While
+				End Using
+				dgv.ClearSelection()
+			End Using
+		End Using
+	End Sub
+
+	Sub ProcessDataGridViewContractHistory(dataGridView As DataGridView)
+		'\\ Credit by Jerome Dela Pena [2024-1435]:
+		'\\ Added Try Catch to store/show errors
+		Try
+			Using Conn As New SqlConnection(StrConn)
+				Conn.Open()
+				Using cmd As New SqlCommand("[spInsUpdHRIS_Personnel_ContractHistory]", Conn)
+					cmd.CommandType = CommandType.StoredProcedure
+
+					For Each row As DataGridViewRow In dataGridView.Rows
+						cmd.Parameters.AddWithValue("@ID", If(row.Cells(0).Value IsNot DBNull.Value, row.Cells(0).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
+						cmd.Parameters.AddWithValue("@Type", If(row.Cells(2).Value IsNot DBNull.Value, row.Cells(2).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Department", If(row.Cells(3).Value IsNot DBNull.Value, row.Cells(3).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@StartDate", If(row.Cells(4).Value IsNot DBNull.Value, row.Cells(4).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@EndDate", If(row.Cells(5).Value IsNot DBNull.Value, row.Cells(5).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@MonthlyRate", If(IsNumeric(row.Cells(6).Value), Convert.ToDecimal(row.Cells(6).Value), DBNull.Value))
+						cmd.Parameters.AddWithValue("@ProjectDiff", If(IsNumeric(row.Cells(7).Value), Convert.ToDecimal(row.Cells(7).Value), DBNull.Value))
+						cmd.Parameters.AddWithValue("@JobTitle", If(row.Cells(8).Value IsNot DBNull.Value, row.Cells(8).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Class", If(row.Cells(9).Value IsNot DBNull.Value, row.Cells(9).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Supervisor", If(row.Cells(10).Value IsNot DBNull.Value, row.Cells(10).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Location", If(row.Cells(11).Value IsNot DBNull.Value, row.Cells(11).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@FieldAllowance", If(IsNumeric(row.Cells(12).Value), Convert.ToDecimal(row.Cells(12).Value), DBNull.Value))
+						cmd.Parameters.AddWithValue("@ContractNotes", If(row.Cells(13).Value IsNot DBNull.Value, row.Cells(13).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@ProjectNotes", If(row.Cells(14).Value IsNot DBNull.Value, row.Cells(14).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Remarks", If(row.Cells(15).Value IsNot DBNull.Value, row.Cells(15).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Signatory1", If(row.Cells(16).Value IsNot DBNull.Value, row.Cells(16).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Signatory2", If(row.Cells(17).Value IsNot DBNull.Value, row.Cells(17).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Default", If(row.Cells(18).Value IsNot DBNull.Value, row.Cells(18).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Overtime", If(row.Cells(19).Value IsNot DBNull.Value, row.Cells(19).Value.ToString(), ""))
+						cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+						cmd.ExecuteNonQuery()
+						cmd.Parameters.Clear()
+					Next
+
+				End Using
+			End Using
+			MessageBox.Show("Saved!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+			frmHR_PreviewPersonnelDetails.btnEdit.PerformClick()
+		Catch ex As Exception
+			' Show error message if something goes wrong
+			MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		End Try
+	End Sub
+
+	Sub Del_Personnel_ContractsHistory_ByID(dgv As DataGridView)
+		If MessageBox.Show("Are you sure you want to delete this from the list? This cannot be undone.", "Warning Message", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spDelHRIS_Personnel_ContractHistory]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", _ContractID1)
+				cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+				cmd.ExecuteNonQuery()
+				MsgBox("Deletion Success!")
+			End Using
+		End Using
+		dgv.Rows.Remove(dgv.SelectedRows(0))
+	End Sub
+
+
+
 
 
 

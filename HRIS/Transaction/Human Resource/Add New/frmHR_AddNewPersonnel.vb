@@ -2,8 +2,10 @@
 
 Public Class frmHR_AddNewPersonnel
 
-    Private Sub frmHR_AddNewPersonnel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public isFormSubmitted As Boolean = False
 
+    Private Sub frmHR_AddNewPersonnel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'MsgBox(_strPersonnelID)
     End Sub
 
     Private Sub btnPersonalInformation_Click(sender As Object, e As EventArgs) Handles btnPersonalInformation.Click
@@ -45,21 +47,9 @@ Public Class frmHR_AddNewPersonnel
     End Sub
 
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
-        BrowseProfilePic()
+        BrowseProfilePic(PictureBoxAddProfile)
     End Sub
 
-    Sub BrowseProfilePic()
-        Dim ImagePath As String = ""
-        Dim openFileDialog As New OpenFileDialog()
-        openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.bmp)|*.jpg; *.jpeg; *.png; *.bmp|All files (*.*)|*.*"
-        If openFileDialog.ShowDialog() = DialogResult.OK Then
-            ImagePath = openFileDialog.FileName
-            PictureBoxAddProfile.Image = Image.FromFile(ImagePath)
-            PictureBoxAddProfile.SizeMode = PictureBoxSizeMode.StretchImage
-            FilePath = ImagePath
-        End If
-
-    End Sub
 
     Private Sub btnNextTab1_Click(sender As Object, e As EventArgs) Handles btnNextTab1.Click
         TabControl1.SelectedTab = TabPage2
@@ -78,8 +68,7 @@ Public Class frmHR_AddNewPersonnel
     End Sub
 
     Private Sub btnDiscard_Click(sender As Object, e As EventArgs) Handles btnDiscard.Click
-        Delete_PersonnelTempRecord()
-        Me.Dispose()
+        Me.Close()
     End Sub
 
     Private Sub cbGender_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbGender.SelectedIndexChanged
@@ -276,29 +265,23 @@ Public Class frmHR_AddNewPersonnel
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
 
-
-
         'If PictureBoxAddProfile.Image Is Nothing AndAlso PictureBoxAddProfile.Tag IsNot Nothing Then
         '    FilePath = PictureBoxAddProfile.Tag.ToString()
         'End If
 
         If Not PictureBoxAddProfile.Image Is Nothing Then
             MessageBox.Show("No Image has been Load")
-
         Else
             Ins_Personnel_ProfilePic()
             Ins_PersonnelDetails()
             Ins_Personnel_AddressDetails()
-            Ins_Personnel_Identification()
+            'InsUpd_Personnel_Identification() Not updated as stored procedure is edited to accept insert and update
             ProcessDataGridViewParentsAndSiblings(dgvParentsAndSiblings)
             ProcessDataGridViewSpouseAndChildren(dgvSpouseAndChildren)
             Ins_PersonnelTempRecord()
-            Sel_PersonnelID()
-
+            'Sel_PersonnelID()
+            isFormSubmitted = True
         End If
-
-
-
     End Sub
 
     Private Sub cbRelationshipPS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbRelationshipPS.SelectedIndexChanged
@@ -407,7 +390,17 @@ Public Class frmHR_AddNewPersonnel
 
     Private Sub cbForeignAddr_CheckedChanged(sender As Object, e As EventArgs) Handles cbForeignAddr.CheckedChanged
         If cbForeignAddr.CheckState = CheckState.Checked Then
-            frmHR_AddForeignAddress.ShowDialog()
+            frmHR_AddUpdForeignAddress.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub frmHR_AddNewPersonnel_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        isFormSubmitted = False
+    End Sub
+
+    Private Sub frmHR_AddNewPersonnel_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If Not isFormSubmitted Then
+            Delete_PersonnelTempRecord()
         End If
     End Sub
 End Class

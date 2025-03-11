@@ -43,7 +43,6 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.panelDGVRight = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.PanelHolder = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
@@ -52,12 +51,13 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.PanelSideButton = New System.Windows.Forms.Panel()
+        Me.btnExport = New System.Windows.Forms.Button()
+        Me.btnPrintContract = New System.Windows.Forms.Button()
         Me.btnDiscard = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.ImageListSideBtn = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.ImageListTabCtrl = New System.Windows.Forms.ImageList(Me.components)
-        Me.panelDGVTop = New System.Windows.Forms.Panel()
         Me.panelDGVLeft = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnContracts = New System.Windows.Forms.Button()
@@ -71,11 +71,11 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxProfilePic = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxHelp = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.Panel18.SuspendLayout()
@@ -83,11 +83,13 @@ Partial Class frmHR_PreviewPersonnelDetails
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxProfilePic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxHelp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.PictureBoxHelp)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -121,7 +123,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel6.Location = New System.Drawing.Point(1067, 75)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(12, 845)
+        Me.Panel6.Size = New System.Drawing.Size(12, 794)
         Me.Panel6.TabIndex = 55
         '
         'Panel3
@@ -130,14 +132,14 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 75)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(12, 845)
+        Me.Panel3.Size = New System.Drawing.Size(12, 794)
         Me.Panel3.TabIndex = 54
         '
         'Panel8
         '
         Me.Panel8.BackColor = System.Drawing.Color.White
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel8.Location = New System.Drawing.Point(12, 908)
+        Me.Panel8.Location = New System.Drawing.Point(12, 857)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(1055, 12)
         Me.Panel8.TabIndex = 56
@@ -156,7 +158,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.Panel2.Controls.Add(Me.lblJobPosition)
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Controls.Add(Me.lblFullName)
-        Me.Panel2.Controls.Add(Me.PictureBox1)
+        Me.Panel2.Controls.Add(Me.PictureBoxProfilePic)
         Me.Panel2.Controls.Add(Me.Panel7)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(12, 75)
@@ -256,16 +258,16 @@ Partial Class frmHR_PreviewPersonnelDetails
         '
         Me.panelDGVRight.BackColor = System.Drawing.Color.Navy
         Me.panelDGVRight.Dock = System.Windows.Forms.DockStyle.Right
-        Me.panelDGVRight.Location = New System.Drawing.Point(1065, 232)
+        Me.panelDGVRight.Location = New System.Drawing.Point(1065, 230)
         Me.panelDGVRight.Name = "panelDGVRight"
-        Me.panelDGVRight.Size = New System.Drawing.Size(2, 676)
+        Me.panelDGVRight.Size = New System.Drawing.Size(2, 627)
         Me.panelDGVRight.TabIndex = 59
         '
         'Panel10
         '
         Me.Panel10.BackColor = System.Drawing.Color.Navy
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel10.Location = New System.Drawing.Point(14, 906)
+        Me.Panel10.Location = New System.Drawing.Point(14, 855)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(1051, 2)
         Me.Panel10.TabIndex = 61
@@ -273,13 +275,11 @@ Partial Class frmHR_PreviewPersonnelDetails
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer1.Location = New System.Drawing.Point(14, 232)
+        Me.SplitContainer1.IsSplitterFixed = True
+        Me.SplitContainer1.Location = New System.Drawing.Point(14, 230)
         Me.SplitContainer1.Name = "SplitContainer1"
         Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
-        '
-        'SplitContainer1.Panel1
-        '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Label9)
+        Me.SplitContainer1.Panel1Collapsed = True
         '
         'SplitContainer1.Panel2
         '
@@ -287,19 +287,9 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel11)
         Me.SplitContainer1.Panel2.Controls.Add(Me.PanelSideButton)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel5)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1051, 674)
-        Me.SplitContainer1.SplitterDistance = 45
+        Me.SplitContainer1.Size = New System.Drawing.Size(1051, 625)
+        Me.SplitContainer1.SplitterDistance = 25
         Me.SplitContainer1.TabIndex = 92
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label9.Location = New System.Drawing.Point(16, 15)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(139, 17)
-        Me.Label9.TabIndex = 3
-        Me.Label9.Text = "Personal Information"
         '
         'Panel18
         '
@@ -367,6 +357,8 @@ Partial Class frmHR_PreviewPersonnelDetails
         'PanelSideButton
         '
         Me.PanelSideButton.BackColor = System.Drawing.Color.White
+        Me.PanelSideButton.Controls.Add(Me.btnExport)
+        Me.PanelSideButton.Controls.Add(Me.btnPrintContract)
         Me.PanelSideButton.Controls.Add(Me.btnDiscard)
         Me.PanelSideButton.Controls.Add(Me.btnSave)
         Me.PanelSideButton.Controls.Add(Me.Button1)
@@ -382,6 +374,34 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.PanelSideButton.Size = New System.Drawing.Size(206, 623)
         Me.PanelSideButton.TabIndex = 60
         '
+        'btnExport
+        '
+        Me.btnExport.BackColor = System.Drawing.Color.Navy
+        Me.btnExport.FlatAppearance.BorderColor = System.Drawing.Color.Navy
+        Me.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExport.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExport.ForeColor = System.Drawing.Color.White
+        Me.btnExport.Location = New System.Drawing.Point(13, 573)
+        Me.btnExport.Name = "btnExport"
+        Me.btnExport.Size = New System.Drawing.Size(182, 32)
+        Me.btnExport.TabIndex = 106
+        Me.btnExport.Text = "&Export Data"
+        Me.btnExport.UseVisualStyleBackColor = False
+        '
+        'btnPrintContract
+        '
+        Me.btnPrintContract.BackColor = System.Drawing.Color.Navy
+        Me.btnPrintContract.FlatAppearance.BorderColor = System.Drawing.Color.Navy
+        Me.btnPrintContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPrintContract.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrintContract.ForeColor = System.Drawing.Color.White
+        Me.btnPrintContract.Location = New System.Drawing.Point(13, 535)
+        Me.btnPrintContract.Name = "btnPrintContract"
+        Me.btnPrintContract.Size = New System.Drawing.Size(182, 32)
+        Me.btnPrintContract.TabIndex = 105
+        Me.btnPrintContract.Text = "&Print Contract"
+        Me.btnPrintContract.UseVisualStyleBackColor = False
+        '
         'btnDiscard
         '
         Me.btnDiscard.BackColor = System.Drawing.Color.Maroon
@@ -389,7 +409,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnDiscard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDiscard.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDiscard.ForeColor = System.Drawing.Color.White
-        Me.btnDiscard.Location = New System.Drawing.Point(19, 511)
+        Me.btnDiscard.Location = New System.Drawing.Point(17, 484)
         Me.btnDiscard.Name = "btnDiscard"
         Me.btnDiscard.Size = New System.Drawing.Size(167, 32)
         Me.btnDiscard.TabIndex = 104
@@ -403,7 +423,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(13, 473)
+        Me.btnSave.Location = New System.Drawing.Point(13, 446)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(182, 32)
         Me.btnSave.TabIndex = 103
@@ -443,22 +463,13 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.ImageListTabCtrl.Images.SetKeyName(1, "idennum.png")
         Me.ImageListTabCtrl.Images.SetKeyName(2, "info.png")
         '
-        'panelDGVTop
-        '
-        Me.panelDGVTop.BackColor = System.Drawing.Color.Navy
-        Me.panelDGVTop.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelDGVTop.Location = New System.Drawing.Point(12, 230)
-        Me.panelDGVTop.Name = "panelDGVTop"
-        Me.panelDGVTop.Size = New System.Drawing.Size(1055, 2)
-        Me.panelDGVTop.TabIndex = 58
-        '
         'panelDGVLeft
         '
         Me.panelDGVLeft.BackColor = System.Drawing.Color.Navy
         Me.panelDGVLeft.Dock = System.Windows.Forms.DockStyle.Left
-        Me.panelDGVLeft.Location = New System.Drawing.Point(12, 232)
+        Me.panelDGVLeft.Location = New System.Drawing.Point(12, 230)
         Me.panelDGVLeft.Name = "panelDGVLeft"
-        Me.panelDGVLeft.Size = New System.Drawing.Size(2, 676)
+        Me.panelDGVLeft.Size = New System.Drawing.Size(2, 627)
         Me.panelDGVLeft.TabIndex = 60
         '
         'Button1
@@ -470,7 +481,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.ImageIndex = 9
         Me.Button1.ImageList = Me.ImageListSideBtn
-        Me.Button1.Location = New System.Drawing.Point(13, 290)
+        Me.Button1.Location = New System.Drawing.Point(13, 263)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(182, 36)
         Me.Button1.TabIndex = 10
@@ -487,7 +498,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnContracts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnContracts.ImageIndex = 8
         Me.btnContracts.ImageList = Me.ImageListSideBtn
-        Me.btnContracts.Location = New System.Drawing.Point(13, 80)
+        Me.btnContracts.Location = New System.Drawing.Point(13, 53)
         Me.btnContracts.Name = "btnContracts"
         Me.btnContracts.Size = New System.Drawing.Size(182, 36)
         Me.btnContracts.TabIndex = 9
@@ -504,7 +515,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnTrainingHistory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTrainingHistory.ImageIndex = 7
         Me.btnTrainingHistory.ImageList = Me.ImageListSideBtn
-        Me.btnTrainingHistory.Location = New System.Drawing.Point(13, 248)
+        Me.btnTrainingHistory.Location = New System.Drawing.Point(13, 221)
         Me.btnTrainingHistory.Name = "btnTrainingHistory"
         Me.btnTrainingHistory.Size = New System.Drawing.Size(182, 36)
         Me.btnTrainingHistory.TabIndex = 8
@@ -521,7 +532,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnResume.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnResume.ImageIndex = 2
         Me.btnResume.ImageList = Me.ImageListSideBtn
-        Me.btnResume.Location = New System.Drawing.Point(13, 206)
+        Me.btnResume.Location = New System.Drawing.Point(13, 179)
         Me.btnResume.Name = "btnResume"
         Me.btnResume.Size = New System.Drawing.Size(182, 36)
         Me.btnResume.TabIndex = 7
@@ -538,7 +549,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnCharRef.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCharRef.ImageIndex = 3
         Me.btnCharRef.ImageList = Me.ImageListSideBtn
-        Me.btnCharRef.Location = New System.Drawing.Point(13, 122)
+        Me.btnCharRef.Location = New System.Drawing.Point(13, 95)
         Me.btnCharRef.Name = "btnCharRef"
         Me.btnCharRef.Size = New System.Drawing.Size(182, 36)
         Me.btnCharRef.TabIndex = 6
@@ -556,7 +567,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnEducBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnEducBack.ImageIndex = 6
         Me.btnEducBack.ImageList = Me.ImageListSideBtn
-        Me.btnEducBack.Location = New System.Drawing.Point(13, 164)
+        Me.btnEducBack.Location = New System.Drawing.Point(13, 137)
         Me.btnEducBack.Name = "btnEducBack"
         Me.btnEducBack.Size = New System.Drawing.Size(182, 36)
         Me.btnEducBack.TabIndex = 0
@@ -574,7 +585,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnPersonalInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnPersonalInformation.ImageIndex = 10
         Me.btnPersonalInformation.ImageList = Me.ImageListSideBtn
-        Me.btnPersonalInformation.Location = New System.Drawing.Point(13, 36)
+        Me.btnPersonalInformation.Location = New System.Drawing.Point(13, 11)
         Me.btnPersonalInformation.Name = "btnPersonalInformation"
         Me.btnPersonalInformation.Size = New System.Drawing.Size(182, 36)
         Me.btnPersonalInformation.TabIndex = 0
@@ -618,7 +629,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         '
         'PictureBox4
         '
-        Me.PictureBox4.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.database
+        Me.PictureBox4.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.request
         Me.PictureBox4.Location = New System.Drawing.Point(171, 64)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(30, 30)
@@ -628,6 +639,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         '
         'PictureBox3
         '
+        Me.PictureBox3.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.addothers
         Me.PictureBox3.Location = New System.Drawing.Point(371, 64)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
@@ -645,14 +657,25 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.PictureBox2.TabIndex = 7
         Me.PictureBox2.TabStop = False
         '
-        'PictureBox1
+        'PictureBoxProfilePic
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(18, 18)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(121, 112)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.PictureBoxProfilePic.InitialImage = CType(resources.GetObject("PictureBoxProfilePic.InitialImage"), System.Drawing.Image)
+        Me.PictureBoxProfilePic.Location = New System.Drawing.Point(19, 21)
+        Me.PictureBoxProfilePic.Name = "PictureBoxProfilePic"
+        Me.PictureBoxProfilePic.Size = New System.Drawing.Size(120, 109)
+        Me.PictureBoxProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBoxProfilePic.TabIndex = 0
+        Me.PictureBoxProfilePic.TabStop = False
+        '
+        'PictureBoxHelp
+        '
+        Me.PictureBoxHelp.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.help
+        Me.PictureBoxHelp.Location = New System.Drawing.Point(1029, 25)
+        Me.PictureBoxHelp.Name = "PictureBoxHelp"
+        Me.PictureBoxHelp.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBoxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBoxHelp.TabIndex = 144
+        Me.PictureBoxHelp.TabStop = False
         '
         'frmHR_PreviewPersonnelDetails
         '
@@ -660,12 +683,11 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1079, 920)
+        Me.ClientSize = New System.Drawing.Size(1079, 869)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.Panel10)
         Me.Controls.Add(Me.panelDGVLeft)
         Me.Controls.Add(Me.panelDGVRight)
-        Me.Controls.Add(Me.panelDGVTop)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel6)
@@ -678,13 +700,11 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.Name = "frmHR_PreviewPersonnelDetails"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "frmHR_PreviewPersonnelDetails"
+        Me.Text = "Personnel"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.SplitContainer1.Panel1.ResumeLayout(False)
-        Me.SplitContainer1.Panel1.PerformLayout()
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
@@ -693,7 +713,8 @@ Partial Class frmHR_PreviewPersonnelDetails
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxProfilePic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxHelp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -707,7 +728,7 @@ Partial Class frmHR_PreviewPersonnelDetails
     Friend WithEvents Panel2 As Panel
     Friend WithEvents panelDGVRight As Panel
     Friend WithEvents Panel10 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBoxProfilePic As PictureBox
     Friend WithEvents lblFullName As Label
     Friend WithEvents lblJobPosition As Label
     Friend WithEvents Panel4 As Panel
@@ -721,13 +742,11 @@ Partial Class frmHR_PreviewPersonnelDetails
     Friend WithEvents btnSavePicture As Button
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents Panel11 As Panel
-    Friend WithEvents Label9 As Label
     Friend WithEvents ImageListBtn As ImageList
     Friend WithEvents Label11 As Label
     Friend WithEvents lblEmpStatus As Label
     Friend WithEvents ImageListSideBtn As ImageList
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents panelDGVTop As Panel
     Friend WithEvents PanelSideButton As Panel
     Friend WithEvents Button1 As Button
     Friend WithEvents btnContracts As Button
@@ -746,4 +765,7 @@ Partial Class frmHR_PreviewPersonnelDetails
     Friend WithEvents Panel13 As Panel
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Panel9 As Panel
+    Friend WithEvents btnExport As Button
+    Friend WithEvents btnPrintContract As Button
+    Friend WithEvents PictureBoxHelp As PictureBox
 End Class

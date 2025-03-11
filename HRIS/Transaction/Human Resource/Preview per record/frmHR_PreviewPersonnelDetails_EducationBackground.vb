@@ -10,23 +10,20 @@
         btnMasteralEducation.BackColor = Color.FromArgb(250, 146, 172)
         btnDoctorateEducation.BackColor = Color.FromArgb(250, 122, 166)
         btnVocationalEducation.BackColor = Color.FromArgb(249, 98, 160)
-        LoadAndDisplayEducationLevel(0)
-    End Sub
-
-    Private Sub frmHR_PreviewPersonnelDetails_EducationBackground_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-
+        isEdit = False
+        btnPrimaryEducation.PerformClick()
     End Sub
 
     Private Sub LoadAndDisplayEducationLevel(tableIndex As Integer)
-        Try
-            dgvEducationalSchool.ClearSelection()
-            dgvEducationalSchool.Rows.Clear()
-            ClearTextBoxes(Me)
-            Preview_Personnel_EducationBackground_ByID(dataSet)
-            DisplayEducationLevel(tableIndex, dataSet)
-        Catch ex As Exception
-            MessageBox.Show("An error occurred: " & ex.Message)
-        End Try
+        dgvEducationalSchool.ClearSelection()
+        dgvEducationalSchool.Rows.Clear()
+        ClearTextBoxes(Me)
+        Preview_Personnel_EducationBackground_ByID(dataSet)
+        DisplayEducationLevel(tableIndex, dataSet)
+        If dgvEducationalSchool.Rows.Count = 0 Then
+            txtSchool.Text = "No Data Found."
+            txtSchool.ForeColor = Color.Red
+        End If
     End Sub
 
     Private Sub btnPrimaryEducation_Click(sender As Object, e As EventArgs) Handles btnPrimaryEducation.Click
@@ -62,6 +59,7 @@
             Dim selectedRow = dgvEducationalSchool.SelectedRows(0)
             With Me
                 .txtSchool.Text = selectedRow.Cells(0).Value
+                txtSchool.ForeColor = Color.Black
                 .txtDegree.Text = selectedRow.Cells(3).Value
                 .txtSchoolAddress.Text = selectedRow.Cells(2).Value
                 .txtSchoolContact.Text = selectedRow.Cells(4).Value

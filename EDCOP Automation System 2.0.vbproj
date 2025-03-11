@@ -238,6 +238,12 @@
     <Compile Include="FMIS\Revolving Fund\Client\Add record\frmAccounting_AddRF_ReplenishmentAmount.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmLoading.Designer.vb">
+      <DependentUpon>frmLoading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoading.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMain_revise.Designer.vb">
       <DependentUpon>frmMain_revise.vb</DependentUpon>
     </Compile>
@@ -256,16 +262,34 @@
     <Compile Include="HRIS\Setup\Department\frmHR_Setup_Department.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddForeignAddress.Designer.vb">
-      <DependentUpon>frmHR_AddForeignAddress.vb</DependentUpon>
+    <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddUpdForeignAddress.Designer.vb">
+      <DependentUpon>frmHR_AddUpdForeignAddress.vb</DependentUpon>
     </Compile>
-    <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddForeignAddress.vb">
+    <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddUpdForeignAddress.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_SearchFilter.Designer.vb">
       <DependentUpon>frmHR_Transaction_SearchFilter.vb</DependentUpon>
     </Compile>
     <Compile Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_SearchFilter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_CharacterReference.Designer.vb">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_CharacterReference.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_CharacterReference.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_Contracts.Designer.vb">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_Contracts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_Contracts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_CharacterReference.Designer.vb">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_CharacterReference.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_CharacterReference.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_Dependents.Designer.vb">
@@ -338,6 +362,18 @@
       <DependentUpon>frmHR_UpdateDetailsPersonnel.vb</DependentUpon>
     </Compile>
     <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdateDetailsPersonnel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_Contracts.Designer.vb">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_Contracts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_Contracts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_EducationBackground.Designer.vb">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_EducationBackground.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_EducationBackground.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainSubMenu\FMM\frmMainPanelFMM.Designer.vb">
@@ -690,6 +726,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpttrialbalancenew.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLoading.resx">
+      <DependentUpon>frmLoading.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain_revise.resx">
       <DependentUpon>frmMain_revise.vb</DependentUpon>
     </EmbeddedResource>
@@ -699,14 +738,23 @@
     <EmbeddedResource Include="HRIS\Setup\Department\frmHR_Setup_Department.resx">
       <DependentUpon>frmHR_Setup_Department.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddForeignAddress.resx">
-      <DependentUpon>frmHR_AddForeignAddress.vb</DependentUpon>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddUpdForeignAddress.resx">
+      <DependentUpon>frmHR_AddUpdForeignAddress.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_SearchFilter.resx">
       <DependentUpon>frmHR_Transaction_SearchFilter.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails.resx">
       <DependentUpon>frmHR_PreviewPersonnelDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_CharacterReference.resx">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_CharacterReference.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_Contracts.resx">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_Contracts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_CharacterReference.resx">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_CharacterReference.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_Dependents.resx">
       <DependentUpon>frmHR_PreviewPersonnelDetails_Dependents.vb</DependentUpon>
@@ -746,6 +794,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdateDetailsPersonnel.resx">
       <DependentUpon>frmHR_UpdateDetailsPersonnel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_Contracts.resx">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_Contracts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_EducationBackground.resx">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_EducationBackground.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainSubMenu\FMM\frmMainPanelFMM.resx">
       <DependentUpon>frmMainPanelFMM.vb</DependentUpon>
@@ -928,12 +982,12 @@
   <ItemGroup>
     <PublishFile Include="log4net">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
@@ -996,6 +1050,13 @@
     <None Include="Resources\exit-door1.png" />
     <None Include="Resources\people.png" />
     <None Include="Resources\HABUNAL1.jpg" />
+    <None Include="Resources\addothers.png" />
+    <None Include="Resources\request.png" />
+    <None Include="Resources\loading.gif" />
+    <None Include="Resources\loading1.png" />
+    <None Include="Resources\cute.png" />
+    <None Include="Resources\gear.png" />
+    <None Include="Resources\help.png" />
     <Content Include="sssss.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

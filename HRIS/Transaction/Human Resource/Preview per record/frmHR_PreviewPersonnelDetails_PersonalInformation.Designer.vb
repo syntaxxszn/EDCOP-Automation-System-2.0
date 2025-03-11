@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,22 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHR_PreviewPersonnelDetails_PersonalInformation))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPageMain = New System.Windows.Forms.TabPage()
+        Me.LinkLabelViewForeignAddress = New System.Windows.Forms.LinkLabel()
         Me.cbForeignAddr = New System.Windows.Forms.CheckBox()
         Me.btnNextTab1 = New System.Windows.Forms.Button()
         Me.Label73 = New System.Windows.Forms.Label()
@@ -48,7 +57,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label28 = New System.Windows.Forms.Label()
         Me.txtAdrStreet1 = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.gbPresentAdr = New System.Windows.Forms.GroupBox()
+        Me.gbPermanentAdr = New System.Windows.Forms.GroupBox()
         Me.txtAdrCountry2 = New System.Windows.Forms.TextBox()
         Me.cbAdrProvince2 = New System.Windows.Forms.ComboBox()
         Me.Label29 = New System.Windows.Forms.Label()
@@ -65,12 +74,12 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label31 = New System.Windows.Forms.Label()
         Me.txtAdrBrgy2 = New System.Windows.Forms.TextBox()
         Me.groupboxPersonalInfo = New System.Windows.Forms.GroupBox()
+        Me.cbTaxCode = New System.Windows.Forms.ComboBox()
         Me.Label63 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.txtAge = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.cbTaxCode = New System.Windows.Forms.ComboBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.txtEmailAddress = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -103,6 +112,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label70 = New System.Windows.Forms.Label()
         Me.Label66 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.cbPayrollCategory = New System.Windows.Forms.ComboBox()
         Me.cbBank = New System.Windows.Forms.ComboBox()
         Me.dtpPTRExpiryDate = New System.Windows.Forms.DateTimePicker()
         Me.dtpPTRIssuanceDate = New System.Windows.Forms.DateTimePicker()
@@ -113,7 +123,6 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.txtboxPTRNo = New System.Windows.Forms.TextBox()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
-        Me.cbPayrollCategory = New System.Windows.Forms.ComboBox()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.txtboxPayrollAccountNo = New System.Windows.Forms.TextBox()
@@ -138,6 +147,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.gbSpouseAndChildren = New System.Windows.Forms.GroupBox()
         Me.Label52 = New System.Windows.Forms.Label()
         Me.dgvSpouseAndChildren = New System.Windows.Forms.DataGridView()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.scRelationship = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.scName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.scBirthDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -147,7 +157,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label49 = New System.Windows.Forms.Label()
         Me.txtAgeSC = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
-        Me.btnClearSC = New System.Windows.Forms.Button()
+        Me.btnRemoveSC = New System.Windows.Forms.Button()
         Me.btnAddSC = New System.Windows.Forms.Button()
         Me.txtMobileNoSC = New System.Windows.Forms.TextBox()
         Me.dtpBirthDateSC = New System.Windows.Forms.DateTimePicker()
@@ -159,6 +169,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.gbParentsAndSiblings = New System.Windows.Forms.GroupBox()
         Me.Label51 = New System.Windows.Forms.Label()
         Me.dgvParentsAndSiblings = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.psRelationship = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.psFullName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.psBirthDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -168,7 +179,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label56 = New System.Windows.Forms.Label()
         Me.txtAgePS = New System.Windows.Forms.TextBox()
         Me.Label57 = New System.Windows.Forms.Label()
-        Me.btnClearPS = New System.Windows.Forms.Button()
+        Me.btnRemovePS = New System.Windows.Forms.Button()
         Me.btnAddPS = New System.Windows.Forms.Button()
         Me.txtMobileNoPS = New System.Windows.Forms.TextBox()
         Me.dtpBirthDatePS = New System.Windows.Forms.DateTimePicker()
@@ -179,12 +190,13 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label62 = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.ImageListTabCtrl = New System.Windows.Forms.ImageList(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPageMain.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        Me.gbPresentAdr.SuspendLayout()
+        Me.gbPermanentAdr.SuspendLayout()
         Me.groupboxPersonalInfo.SuspendLayout()
         Me.TabPagePIN.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -225,13 +237,14 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         'TabPageMain
         '
         Me.TabPageMain.BackColor = System.Drawing.Color.White
+        Me.TabPageMain.Controls.Add(Me.LinkLabelViewForeignAddress)
         Me.TabPageMain.Controls.Add(Me.cbForeignAddr)
         Me.TabPageMain.Controls.Add(Me.btnNextTab1)
         Me.TabPageMain.Controls.Add(Me.Label73)
         Me.TabPageMain.Controls.Add(Me.PictureBox5)
         Me.TabPageMain.Controls.Add(Me.Label69)
         Me.TabPageMain.Controls.Add(Me.GroupBox1)
-        Me.TabPageMain.Controls.Add(Me.gbPresentAdr)
+        Me.TabPageMain.Controls.Add(Me.gbPermanentAdr)
         Me.TabPageMain.Controls.Add(Me.groupboxPersonalInfo)
         Me.TabPageMain.Controls.Add(Me.cbPresentAdr)
         Me.TabPageMain.ImageIndex = 2
@@ -241,6 +254,18 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.TabPageMain.Size = New System.Drawing.Size(825, 575)
         Me.TabPageMain.TabIndex = 0
         Me.TabPageMain.Text = "Main Info"
+        '
+        'LinkLabelViewForeignAddress
+        '
+        Me.LinkLabelViewForeignAddress.AutoSize = True
+        Me.LinkLabelViewForeignAddress.Cursor = System.Windows.Forms.Cursors.Help
+        Me.LinkLabelViewForeignAddress.Location = New System.Drawing.Point(730, 281)
+        Me.LinkLabelViewForeignAddress.Name = "LinkLabelViewForeignAddress"
+        Me.LinkLabelViewForeignAddress.Size = New System.Drawing.Size(76, 13)
+        Me.LinkLabelViewForeignAddress.TabIndex = 112
+        Me.LinkLabelViewForeignAddress.TabStop = True
+        Me.LinkLabelViewForeignAddress.Text = "View Address"
+        Me.LinkLabelViewForeignAddress.Visible = False
         '
         'cbForeignAddr
         '
@@ -473,30 +498,30 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label25.TabIndex = 88
         Me.Label25.Text = "No./Block/Street*:"
         '
-        'gbPresentAdr
+        'gbPermanentAdr
         '
-        Me.gbPresentAdr.Controls.Add(Me.txtAdrCountry2)
-        Me.gbPresentAdr.Controls.Add(Me.cbAdrProvince2)
-        Me.gbPresentAdr.Controls.Add(Me.Label29)
-        Me.gbPresentAdr.Controls.Add(Me.txtAdrZip2)
-        Me.gbPresentAdr.Controls.Add(Me.Label32)
-        Me.gbPresentAdr.Controls.Add(Me.cbAdrRegion2)
-        Me.gbPresentAdr.Controls.Add(Me.Label33)
-        Me.gbPresentAdr.Controls.Add(Me.cbAdrCity2)
-        Me.gbPresentAdr.Controls.Add(Me.Label75)
-        Me.gbPresentAdr.Controls.Add(Me.Label65)
-        Me.gbPresentAdr.Controls.Add(Me.Label26)
-        Me.gbPresentAdr.Controls.Add(Me.Label27)
-        Me.gbPresentAdr.Controls.Add(Me.txtAdrStreet2)
-        Me.gbPresentAdr.Controls.Add(Me.Label31)
-        Me.gbPresentAdr.Controls.Add(Me.txtAdrBrgy2)
-        Me.gbPresentAdr.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbPresentAdr.Location = New System.Drawing.Point(430, 306)
-        Me.gbPresentAdr.Name = "gbPresentAdr"
-        Me.gbPresentAdr.Size = New System.Drawing.Size(376, 220)
-        Me.gbPresentAdr.TabIndex = 44
-        Me.gbPresentAdr.TabStop = False
-        Me.gbPresentAdr.Text = "Permanent Address"
+        Me.gbPermanentAdr.Controls.Add(Me.txtAdrCountry2)
+        Me.gbPermanentAdr.Controls.Add(Me.cbAdrProvince2)
+        Me.gbPermanentAdr.Controls.Add(Me.Label29)
+        Me.gbPermanentAdr.Controls.Add(Me.txtAdrZip2)
+        Me.gbPermanentAdr.Controls.Add(Me.Label32)
+        Me.gbPermanentAdr.Controls.Add(Me.cbAdrRegion2)
+        Me.gbPermanentAdr.Controls.Add(Me.Label33)
+        Me.gbPermanentAdr.Controls.Add(Me.cbAdrCity2)
+        Me.gbPermanentAdr.Controls.Add(Me.Label75)
+        Me.gbPermanentAdr.Controls.Add(Me.Label65)
+        Me.gbPermanentAdr.Controls.Add(Me.Label26)
+        Me.gbPermanentAdr.Controls.Add(Me.Label27)
+        Me.gbPermanentAdr.Controls.Add(Me.txtAdrStreet2)
+        Me.gbPermanentAdr.Controls.Add(Me.Label31)
+        Me.gbPermanentAdr.Controls.Add(Me.txtAdrBrgy2)
+        Me.gbPermanentAdr.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbPermanentAdr.Location = New System.Drawing.Point(430, 306)
+        Me.gbPermanentAdr.Name = "gbPermanentAdr"
+        Me.gbPermanentAdr.Size = New System.Drawing.Size(376, 220)
+        Me.gbPermanentAdr.TabIndex = 44
+        Me.gbPermanentAdr.TabStop = False
+        Me.gbPermanentAdr.Text = "Permanent Address"
         '
         'txtAdrCountry2
         '
@@ -656,12 +681,13 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         'groupboxPersonalInfo
         '
         Me.groupboxPersonalInfo.BackColor = System.Drawing.Color.White
+        Me.groupboxPersonalInfo.Controls.Add(Me.Label1)
+        Me.groupboxPersonalInfo.Controls.Add(Me.cbTaxCode)
         Me.groupboxPersonalInfo.Controls.Add(Me.Label63)
         Me.groupboxPersonalInfo.Controls.Add(Me.Label18)
         Me.groupboxPersonalInfo.Controls.Add(Me.txtAge)
         Me.groupboxPersonalInfo.Controls.Add(Me.Label17)
         Me.groupboxPersonalInfo.Controls.Add(Me.Label13)
-        Me.groupboxPersonalInfo.Controls.Add(Me.cbTaxCode)
         Me.groupboxPersonalInfo.Controls.Add(Me.Label16)
         Me.groupboxPersonalInfo.Controls.Add(Me.txtEmailAddress)
         Me.groupboxPersonalInfo.Controls.Add(Me.Label15)
@@ -693,6 +719,16 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.groupboxPersonalInfo.TabIndex = 40
         Me.groupboxPersonalInfo.TabStop = False
         Me.groupboxPersonalInfo.Text = "Personal Information"
+        '
+        'cbTaxCode
+        '
+        Me.cbTaxCode.BackColor = System.Drawing.Color.Navy
+        Me.cbTaxCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbTaxCode.FormattingEnabled = True
+        Me.cbTaxCode.Location = New System.Drawing.Point(118, 374)
+        Me.cbTaxCode.Name = "cbTaxCode"
+        Me.cbTaxCode.Size = New System.Drawing.Size(226, 21)
+        Me.cbTaxCode.TabIndex = 82
         '
         'Label63
         '
@@ -744,19 +780,6 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label13.Size = New System.Drawing.Size(58, 15)
         Me.Label13.TabIndex = 78
         Me.Label13.Text = "Tax Code:"
-        '
-        'cbTaxCode
-        '
-        Me.cbTaxCode.BackColor = System.Drawing.Color.Navy
-        Me.cbTaxCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbTaxCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cbTaxCode.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbTaxCode.ForeColor = System.Drawing.Color.White
-        Me.cbTaxCode.FormattingEnabled = True
-        Me.cbTaxCode.Location = New System.Drawing.Point(118, 370)
-        Me.cbTaxCode.Name = "cbTaxCode"
-        Me.cbTaxCode.Size = New System.Drawing.Size(226, 21)
-        Me.cbTaxCode.TabIndex = 77
         '
         'Label16
         '
@@ -905,7 +928,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(312, 185)
+        Me.Label20.Location = New System.Drawing.Point(309, 165)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(25, 13)
         Me.Label20.TabIndex = 60
@@ -1082,6 +1105,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.White
+        Me.GroupBox3.Controls.Add(Me.cbPayrollCategory)
         Me.GroupBox3.Controls.Add(Me.cbBank)
         Me.GroupBox3.Controls.Add(Me.dtpPTRExpiryDate)
         Me.GroupBox3.Controls.Add(Me.dtpPTRIssuanceDate)
@@ -1092,7 +1116,6 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.GroupBox3.Controls.Add(Me.txtboxPTRNo)
         Me.GroupBox3.Controls.Add(Me.Label36)
         Me.GroupBox3.Controls.Add(Me.Label37)
-        Me.GroupBox3.Controls.Add(Me.cbPayrollCategory)
         Me.GroupBox3.Controls.Add(Me.Label38)
         Me.GroupBox3.Controls.Add(Me.Label39)
         Me.GroupBox3.Controls.Add(Me.txtboxPayrollAccountNo)
@@ -1116,14 +1139,20 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Personal Identification Number"
         '
+        'cbPayrollCategory
+        '
+        Me.cbPayrollCategory.BackColor = System.Drawing.Color.Navy
+        Me.cbPayrollCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbPayrollCategory.FormattingEnabled = True
+        Me.cbPayrollCategory.Location = New System.Drawing.Point(166, 349)
+        Me.cbPayrollCategory.Name = "cbPayrollCategory"
+        Me.cbPayrollCategory.Size = New System.Drawing.Size(215, 21)
+        Me.cbPayrollCategory.TabIndex = 88
+        '
         'cbBank
         '
         Me.cbBank.BackColor = System.Drawing.Color.Navy
-        Me.cbBank.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbBank.DropDownWidth = 270
         Me.cbBank.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cbBank.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbBank.ForeColor = System.Drawing.Color.White
         Me.cbBank.FormattingEnabled = True
         Me.cbBank.Location = New System.Drawing.Point(166, 322)
         Me.cbBank.Name = "cbBank"
@@ -1212,19 +1241,6 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label37.Size = New System.Drawing.Size(97, 15)
         Me.Label37.TabIndex = 78
         Me.Label37.Text = "Payroll Category:"
-        '
-        'cbPayrollCategory
-        '
-        Me.cbPayrollCategory.BackColor = System.Drawing.Color.Navy
-        Me.cbPayrollCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbPayrollCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cbPayrollCategory.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbPayrollCategory.ForeColor = System.Drawing.Color.White
-        Me.cbPayrollCategory.FormattingEnabled = True
-        Me.cbPayrollCategory.Location = New System.Drawing.Point(166, 348)
-        Me.cbPayrollCategory.Name = "cbPayrollCategory"
-        Me.cbPayrollCategory.Size = New System.Drawing.Size(215, 21)
-        Me.cbPayrollCategory.TabIndex = 77
         '
         'Label38
         '
@@ -1448,7 +1464,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.gbSpouseAndChildren.Controls.Add(Me.Label49)
         Me.gbSpouseAndChildren.Controls.Add(Me.txtAgeSC)
         Me.gbSpouseAndChildren.Controls.Add(Me.Label50)
-        Me.gbSpouseAndChildren.Controls.Add(Me.btnClearSC)
+        Me.gbSpouseAndChildren.Controls.Add(Me.btnRemoveSC)
         Me.gbSpouseAndChildren.Controls.Add(Me.btnAddSC)
         Me.gbSpouseAndChildren.Controls.Add(Me.txtMobileNoSC)
         Me.gbSpouseAndChildren.Controls.Add(Me.dtpBirthDateSC)
@@ -1477,15 +1493,38 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         '
         Me.dgvSpouseAndChildren.AllowUserToAddRows = False
         Me.dgvSpouseAndChildren.AllowUserToDeleteRows = False
-        Me.dgvSpouseAndChildren.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.dgvSpouseAndChildren.AllowUserToResizeColumns = False
+        Me.dgvSpouseAndChildren.AllowUserToResizeRows = False
+        Me.dgvSpouseAndChildren.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvSpouseAndChildren.BackgroundColor = System.Drawing.Color.White
-        Me.dgvSpouseAndChildren.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.scRelationship, Me.scName, Me.scBirthDate, Me.scAge, Me.scContactNo})
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSpouseAndChildren.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvSpouseAndChildren.ColumnHeadersHeight = 35
+        Me.dgvSpouseAndChildren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvSpouseAndChildren.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.scRelationship, Me.scName, Me.scBirthDate, Me.scAge, Me.scContactNo})
         Me.dgvSpouseAndChildren.Location = New System.Drawing.Point(6, 240)
+        Me.dgvSpouseAndChildren.MultiSelect = False
         Me.dgvSpouseAndChildren.Name = "dgvSpouseAndChildren"
         Me.dgvSpouseAndChildren.ReadOnly = True
         Me.dgvSpouseAndChildren.RowHeadersVisible = False
+        Me.dgvSpouseAndChildren.RowTemplate.Height = 30
+        Me.dgvSpouseAndChildren.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvSpouseAndChildren.Size = New System.Drawing.Size(390, 189)
         Me.dgvSpouseAndChildren.TabIndex = 85
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "ID"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Visible = False
+        Me.Column3.Width = 43
         '
         'scRelationship
         '
@@ -1499,17 +1538,22 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.scName.HeaderText = "Full Name"
         Me.scName.Name = "scName"
         Me.scName.ReadOnly = True
-        Me.scName.Width = 83
+        Me.scName.Width = 77
         '
         'scBirthDate
         '
+        DataGridViewCellStyle2.Format = "D"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.scBirthDate.DefaultCellStyle = DataGridViewCellStyle2
         Me.scBirthDate.HeaderText = "Birth Date"
         Me.scBirthDate.Name = "scBirthDate"
         Me.scBirthDate.ReadOnly = True
-        Me.scBirthDate.Width = 83
+        Me.scBirthDate.Width = 77
         '
         'scAge
         '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.scAge.DefaultCellStyle = DataGridViewCellStyle3
         Me.scAge.HeaderText = "Age"
         Me.scAge.Name = "scAge"
         Me.scAge.ReadOnly = True
@@ -1517,10 +1561,12 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         '
         'scContactNo
         '
-        Me.scContactNo.HeaderText = "Contact Number"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.scContactNo.DefaultCellStyle = DataGridViewCellStyle4
+        Me.scContactNo.HeaderText = "Mobile Number"
         Me.scContactNo.Name = "scContactNo"
         Me.scContactNo.ReadOnly = True
-        Me.scContactNo.Width = 116
+        Me.scContactNo.Width = 103
         '
         'Label68
         '
@@ -1550,6 +1596,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.txtAgeSC.Name = "txtAgeSC"
         Me.txtAgeSC.Size = New System.Drawing.Size(70, 22)
         Me.txtAgeSC.TabIndex = 72
+        Me.txtAgeSC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label50
         '
@@ -1560,19 +1607,19 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label50.TabIndex = 71
         Me.Label50.Text = "Mobile Number :"
         '
-        'btnClearSC
+        'btnRemoveSC
         '
-        Me.btnClearSC.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.btnClearSC.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace
-        Me.btnClearSC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClearSC.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClearSC.ForeColor = System.Drawing.Color.White
-        Me.btnClearSC.Location = New System.Drawing.Point(264, 156)
-        Me.btnClearSC.Name = "btnClearSC"
-        Me.btnClearSC.Size = New System.Drawing.Size(113, 26)
-        Me.btnClearSC.TabIndex = 69
-        Me.btnClearSC.Text = "&Clear Last Input"
-        Me.btnClearSC.UseVisualStyleBackColor = False
+        Me.btnRemoveSC.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.btnRemoveSC.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace
+        Me.btnRemoveSC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRemoveSC.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRemoveSC.ForeColor = System.Drawing.Color.White
+        Me.btnRemoveSC.Location = New System.Drawing.Point(264, 156)
+        Me.btnRemoveSC.Name = "btnRemoveSC"
+        Me.btnRemoveSC.Size = New System.Drawing.Size(113, 26)
+        Me.btnRemoveSC.TabIndex = 69
+        Me.btnRemoveSC.Text = "&Remove"
+        Me.btnRemoveSC.UseVisualStyleBackColor = False
         '
         'btnAddSC
         '
@@ -1585,7 +1632,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.btnAddSC.Name = "btnAddSC"
         Me.btnAddSC.Size = New System.Drawing.Size(113, 26)
         Me.btnAddSC.TabIndex = 67
-        Me.btnAddSC.Text = "&Add"
+        Me.btnAddSC.Text = "Add / Update"
         Me.btnAddSC.UseVisualStyleBackColor = False
         '
         'txtMobileNoSC
@@ -1633,7 +1680,9 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         '
         'cbSRelationhipSC
         '
-        Me.cbSRelationhipSC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbSRelationhipSC.BackColor = System.Drawing.Color.Navy
+        Me.cbSRelationhipSC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbSRelationhipSC.ForeColor = System.Drawing.Color.White
         Me.cbSRelationhipSC.FormattingEnabled = True
         Me.cbSRelationhipSC.Location = New System.Drawing.Point(142, 42)
         Me.cbSRelationhipSC.Name = "cbSRelationhipSC"
@@ -1657,7 +1706,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.gbParentsAndSiblings.Controls.Add(Me.Label56)
         Me.gbParentsAndSiblings.Controls.Add(Me.txtAgePS)
         Me.gbParentsAndSiblings.Controls.Add(Me.Label57)
-        Me.gbParentsAndSiblings.Controls.Add(Me.btnClearPS)
+        Me.gbParentsAndSiblings.Controls.Add(Me.btnRemovePS)
         Me.gbParentsAndSiblings.Controls.Add(Me.btnAddPS)
         Me.gbParentsAndSiblings.Controls.Add(Me.txtMobileNoPS)
         Me.gbParentsAndSiblings.Controls.Add(Me.dtpBirthDatePS)
@@ -1686,15 +1735,38 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         '
         Me.dgvParentsAndSiblings.AllowUserToAddRows = False
         Me.dgvParentsAndSiblings.AllowUserToDeleteRows = False
-        Me.dgvParentsAndSiblings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.dgvParentsAndSiblings.AllowUserToResizeColumns = False
+        Me.dgvParentsAndSiblings.AllowUserToResizeRows = False
+        Me.dgvParentsAndSiblings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvParentsAndSiblings.BackgroundColor = System.Drawing.Color.White
-        Me.dgvParentsAndSiblings.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.psRelationship, Me.psFullName, Me.psBirthDate, Me.psAge, Me.psContactNo})
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvParentsAndSiblings.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvParentsAndSiblings.ColumnHeadersHeight = 35
+        Me.dgvParentsAndSiblings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvParentsAndSiblings.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.psRelationship, Me.psFullName, Me.psBirthDate, Me.psAge, Me.psContactNo})
         Me.dgvParentsAndSiblings.Location = New System.Drawing.Point(9, 240)
+        Me.dgvParentsAndSiblings.MultiSelect = False
         Me.dgvParentsAndSiblings.Name = "dgvParentsAndSiblings"
         Me.dgvParentsAndSiblings.ReadOnly = True
         Me.dgvParentsAndSiblings.RowHeadersVisible = False
+        Me.dgvParentsAndSiblings.RowTemplate.Height = 30
+        Me.dgvParentsAndSiblings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvParentsAndSiblings.Size = New System.Drawing.Size(374, 189)
         Me.dgvParentsAndSiblings.TabIndex = 84
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        Me.Column1.Width = 43
         '
         'psRelationship
         '
@@ -1708,17 +1780,22 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.psFullName.HeaderText = "Full Name"
         Me.psFullName.Name = "psFullName"
         Me.psFullName.ReadOnly = True
-        Me.psFullName.Width = 83
+        Me.psFullName.Width = 77
         '
         'psBirthDate
         '
+        DataGridViewCellStyle6.Format = "D"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.psBirthDate.DefaultCellStyle = DataGridViewCellStyle6
         Me.psBirthDate.HeaderText = "Birth Date"
         Me.psBirthDate.Name = "psBirthDate"
         Me.psBirthDate.ReadOnly = True
-        Me.psBirthDate.Width = 83
+        Me.psBirthDate.Width = 77
         '
         'psAge
         '
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.psAge.DefaultCellStyle = DataGridViewCellStyle7
         Me.psAge.HeaderText = "Age"
         Me.psAge.Name = "psAge"
         Me.psAge.ReadOnly = True
@@ -1726,10 +1803,12 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         '
         'psContactNo
         '
-        Me.psContactNo.HeaderText = "Contact Number"
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.psContactNo.DefaultCellStyle = DataGridViewCellStyle8
+        Me.psContactNo.HeaderText = "Mobile Number"
         Me.psContactNo.Name = "psContactNo"
         Me.psContactNo.ReadOnly = True
-        Me.psContactNo.Width = 116
+        Me.psContactNo.Width = 103
         '
         'Label67
         '
@@ -1759,6 +1838,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.txtAgePS.Name = "txtAgePS"
         Me.txtAgePS.Size = New System.Drawing.Size(62, 22)
         Me.txtAgePS.TabIndex = 74
+        Me.txtAgePS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label57
         '
@@ -1769,19 +1849,19 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label57.TabIndex = 70
         Me.Label57.Text = "Mobile Number :"
         '
-        'btnClearPS
+        'btnRemovePS
         '
-        Me.btnClearPS.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.btnClearPS.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace
-        Me.btnClearPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClearPS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClearPS.ForeColor = System.Drawing.Color.White
-        Me.btnClearPS.Location = New System.Drawing.Point(252, 156)
-        Me.btnClearPS.Name = "btnClearPS"
-        Me.btnClearPS.Size = New System.Drawing.Size(113, 26)
-        Me.btnClearPS.TabIndex = 68
-        Me.btnClearPS.Text = "&Clear Last Input"
-        Me.btnClearPS.UseVisualStyleBackColor = False
+        Me.btnRemovePS.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.btnRemovePS.FlatAppearance.BorderColor = System.Drawing.SystemColors.AppWorkspace
+        Me.btnRemovePS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRemovePS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRemovePS.ForeColor = System.Drawing.Color.White
+        Me.btnRemovePS.Location = New System.Drawing.Point(252, 156)
+        Me.btnRemovePS.Name = "btnRemovePS"
+        Me.btnRemovePS.Size = New System.Drawing.Size(113, 26)
+        Me.btnRemovePS.TabIndex = 68
+        Me.btnRemovePS.Text = "&Remove"
+        Me.btnRemovePS.UseVisualStyleBackColor = False
         '
         'btnAddPS
         '
@@ -1794,7 +1874,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.btnAddPS.Name = "btnAddPS"
         Me.btnAddPS.Size = New System.Drawing.Size(108, 26)
         Me.btnAddPS.TabIndex = 67
-        Me.btnAddPS.Text = "&Add"
+        Me.btnAddPS.Text = "Add / Update"
         Me.btnAddPS.UseVisualStyleBackColor = False
         '
         'txtMobileNoPS
@@ -1842,7 +1922,9 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         '
         'cbRelationshipPS
         '
-        Me.cbRelationshipPS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbRelationshipPS.BackColor = System.Drawing.Color.Navy
+        Me.cbRelationshipPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbRelationshipPS.ForeColor = System.Drawing.Color.White
         Me.cbRelationshipPS.FormattingEnabled = True
         Me.cbRelationshipPS.Location = New System.Drawing.Point(138, 42)
         Me.cbRelationshipPS.Name = "cbRelationshipPS"
@@ -1876,6 +1958,16 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.ImageListTabCtrl.Images.SetKeyName(1, "idennum.png")
         Me.ImageListTabCtrl.Images.SetKeyName(2, "info.png")
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(309, 191)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(23, 13)
+        Me.Label1.TabIndex = 83
+        Me.Label1.Text = "kg."
+        '
         'frmHR_PreviewPersonnelDetails_PersonalInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1896,8 +1988,8 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.gbPresentAdr.ResumeLayout(False)
-        Me.gbPresentAdr.PerformLayout()
+        Me.gbPermanentAdr.ResumeLayout(False)
+        Me.gbPermanentAdr.PerformLayout()
         Me.groupboxPersonalInfo.ResumeLayout(False)
         Me.groupboxPersonalInfo.PerformLayout()
         Me.TabPagePIN.ResumeLayout(False)
@@ -1942,7 +2034,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
     Friend WithEvents Label28 As Label
     Friend WithEvents txtAdrStreet1 As TextBox
     Friend WithEvents Label25 As Label
-    Friend WithEvents gbPresentAdr As GroupBox
+    Friend WithEvents gbPermanentAdr As GroupBox
     Friend WithEvents txtAdrCountry2 As TextBox
     Friend WithEvents cbAdrProvince2 As ComboBox
     Friend WithEvents Label29 As Label
@@ -1964,7 +2056,6 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
     Friend WithEvents txtAge As TextBox
     Friend WithEvents Label17 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents cbTaxCode As ComboBox
     Friend WithEvents Label16 As Label
     Friend WithEvents txtEmailAddress As TextBox
     Friend WithEvents Label15 As Label
@@ -1997,7 +2088,6 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
     Friend WithEvents Label70 As Label
     Friend WithEvents Label66 As Label
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents cbBank As ComboBox
     Friend WithEvents dtpPTRExpiryDate As DateTimePicker
     Friend WithEvents dtpPTRIssuanceDate As DateTimePicker
     Friend WithEvents dtpPRCExpiryDate As DateTimePicker
@@ -2007,7 +2097,6 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
     Friend WithEvents txtboxPTRNo As TextBox
     Friend WithEvents Label36 As Label
     Friend WithEvents Label37 As Label
-    Friend WithEvents cbPayrollCategory As ComboBox
     Friend WithEvents Label38 As Label
     Friend WithEvents Label39 As Label
     Friend WithEvents txtboxPayrollAccountNo As TextBox
@@ -2032,16 +2121,11 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
     Friend WithEvents gbSpouseAndChildren As GroupBox
     Friend WithEvents Label52 As Label
     Friend WithEvents dgvSpouseAndChildren As DataGridView
-    Friend WithEvents scRelationship As DataGridViewTextBoxColumn
-    Friend WithEvents scName As DataGridViewTextBoxColumn
-    Friend WithEvents scBirthDate As DataGridViewTextBoxColumn
-    Friend WithEvents scAge As DataGridViewTextBoxColumn
-    Friend WithEvents scContactNo As DataGridViewTextBoxColumn
     Friend WithEvents Label68 As Label
     Friend WithEvents Label49 As Label
     Friend WithEvents txtAgeSC As TextBox
     Friend WithEvents Label50 As Label
-    Friend WithEvents btnClearSC As Button
+    Friend WithEvents btnRemoveSC As Button
     Friend WithEvents btnAddSC As Button
     Friend WithEvents txtMobileNoSC As TextBox
     Friend WithEvents dtpBirthDateSC As DateTimePicker
@@ -2053,16 +2137,11 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
     Friend WithEvents gbParentsAndSiblings As GroupBox
     Friend WithEvents Label51 As Label
     Friend WithEvents dgvParentsAndSiblings As DataGridView
-    Friend WithEvents psRelationship As DataGridViewTextBoxColumn
-    Friend WithEvents psFullName As DataGridViewTextBoxColumn
-    Friend WithEvents psBirthDate As DataGridViewTextBoxColumn
-    Friend WithEvents psAge As DataGridViewTextBoxColumn
-    Friend WithEvents psContactNo As DataGridViewTextBoxColumn
     Friend WithEvents Label67 As Label
     Friend WithEvents Label56 As Label
     Friend WithEvents txtAgePS As TextBox
     Friend WithEvents Label57 As Label
-    Friend WithEvents btnClearPS As Button
+    Friend WithEvents btnRemovePS As Button
     Friend WithEvents btnAddPS As Button
     Friend WithEvents txtMobileNoPS As TextBox
     Friend WithEvents dtpBirthDatePS As DateTimePicker
@@ -2073,4 +2152,21 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
     Friend WithEvents Label62 As Label
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents ImageListTabCtrl As ImageList
+    Friend WithEvents cbTaxCode As ComboBox
+    Friend WithEvents cbPayrollCategory As ComboBox
+    Friend WithEvents cbBank As ComboBox
+    Friend WithEvents LinkLabelViewForeignAddress As LinkLabel
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents scRelationship As DataGridViewTextBoxColumn
+    Friend WithEvents scName As DataGridViewTextBoxColumn
+    Friend WithEvents scBirthDate As DataGridViewTextBoxColumn
+    Friend WithEvents scAge As DataGridViewTextBoxColumn
+    Friend WithEvents scContactNo As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents psRelationship As DataGridViewTextBoxColumn
+    Friend WithEvents psFullName As DataGridViewTextBoxColumn
+    Friend WithEvents psBirthDate As DataGridViewTextBoxColumn
+    Friend WithEvents psAge As DataGridViewTextBoxColumn
+    Friend WithEvents psContactNo As DataGridViewTextBoxColumn
+    Friend WithEvents Label1 As Label
 End Class
