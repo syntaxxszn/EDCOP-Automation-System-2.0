@@ -15,6 +15,10 @@ Public Class frmHR_PreviewPersonnelDetails
         ''\\ set color of employee status.
         lblEmpStatus.ForeColor = If(lblEmpStatus.Text = "Inactive", Color.Red, Color.Green)
         isEdit = False
+
+        Dim isActive As Boolean = (lblEmpStatus.Text <> "Inactive")
+        btnSetInactive.Enabled = isActive
+        btnEdit.Enabled = isActive
     End Sub
 
 
@@ -65,7 +69,6 @@ Public Class frmHR_PreviewPersonnelDetails
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If PanelTagID = 101 Then
             '\\  Personnel Information Tab
-            Call Ins_Personnel_ProfilePic()
             Call InsUpd_PersonnelDetails()
             Call InsUpd_PersonnelDetails_Address()
             Call InsUpd_ForeignAddress()
@@ -82,8 +85,15 @@ Public Class frmHR_PreviewPersonnelDetails
         ElseIf PanelTagID = 104 Then
             ProcessDataGridViewEducationBackground(frmHR_UpdatePersonnelDetails_EducationBackground.dgvEducationBackground)
         ElseIf PanelTagID = 105 Then
+            ProcessDataGridViewResume(frmHR_UpdatePersonnelDetails_Resume.dgvResume)
         ElseIf PanelTagID = 106 Then
+
         ElseIf PanelTagID = 107 Then
+
+        ElseIf PanelTagID = 108 Then
+            ProcessDataGridViewEmploymentHistory(frmHR_UpdatePersonnelDetails_EmploymentHistory.dgvEmploymentHistory)
+        ElseIf PanelTagID = 109 Then
+            ProcessDataGridView201Checklist(frmHR_UpdatePersonnelDetails_201FileChecklist.dgv201CheckList)
         Else
             MessageBox.Show("Unexpected Error Occured.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
@@ -92,6 +102,7 @@ Public Class frmHR_PreviewPersonnelDetails
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         '\\  Button Edit
         Call FunctionBtnEdit_Enable()
+        frmHR_PreviewPersonnelDetails_PersonalInformation.LinkLabelViewForeignAddress.Text = If(isEdit, "Add Address", "View Address")
     End Sub
 
     Private Sub btnPersonalInformation_Click(sender As Object, e As EventArgs) Handles btnPersonalInformation.Click
@@ -102,12 +113,24 @@ Public Class frmHR_PreviewPersonnelDetails
         switchPanel(frmHR_PreviewPersonnelDetails_EducationBackground)
     End Sub
 
+    Private Sub btnEmployementHistory_Click(sender As Object, e As EventArgs) Handles btnEmployementHistory.Click
+        switchPanel(frmHR_PreviewPersonnelDetails_EmploymentHistory)
+    End Sub
+
     Private Sub btnCharRef_Click(sender As Object, e As EventArgs) Handles btnCharRef.Click
         switchPanel(frmHR_PreviewPersonnelDetails_CharacterReference)
     End Sub
 
     Private Sub btnContracts_Click(sender As Object, e As EventArgs) Handles btnContracts.Click
         switchPanel(frmHR_PreviewPersonnelDetails_Contracts)
+    End Sub
+
+    Private Sub btnResume_Click(sender As Object, e As EventArgs) Handles btnResume.Click
+        switchPanel(frmHR_PreviewPersonnelDetails_Resume)
+    End Sub
+
+    Private Sub btnCheckList_Click(sender As Object, e As EventArgs) Handles btnCheckList.Click
+        switchPanel(frmHR_PreviewPersonnelDetails_201FileChecklist)
     End Sub
 
     Private Sub frmHR_PreviewPersonnelDetails_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -129,13 +152,11 @@ Public Class frmHR_PreviewPersonnelDetails
         ResetAllControlInForm(frmHR_UpdatePersonnelDetails_Contracts)
     End Sub
 
-    Private Sub btnSavePicture_Click(sender As Object, e As EventArgs) Handles btnSavePicture.Click
+    Private Sub btnSetInactive_Click(sender As Object, e As EventArgs) Handles btnSetInactive.Click
 
-
-        'If MessageBox.Show("Continue to Set Inactive this employee? ", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-        '    Call InsUpd_ChangePersonnelActiveStatus()
-        'End If
-
+        If MessageBox.Show("Are you sure you want to set this Employee to inactive? This action is cannot be undone.", "Critical Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            Call Upd_EmployeeStatus_To_Inactive()
+        End If
 
     End Sub
 
@@ -149,4 +170,6 @@ Public Class frmHR_PreviewPersonnelDetails
     Private Sub PictureBoxHelp_Click(sender As Object, e As EventArgs) Handles PictureBoxHelp.Click, PictureBoxHelp.MouseHover
         tooltip.SetToolTip(PictureBoxHelp, "Thank you for not calling DIMS! <3")
     End Sub
+
+
 End Class

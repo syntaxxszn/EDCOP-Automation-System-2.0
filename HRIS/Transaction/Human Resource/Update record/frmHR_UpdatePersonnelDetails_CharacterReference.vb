@@ -1,7 +1,7 @@
 ﻿Public Class frmHR_UpdatePersonnelDetails_CharacterReference
     Private Sub frmHR_UpdatePersonnelDetails_CharacterReference_Load(sender As Object, e As EventArgs) Handles Me.Load
-        SelUpd_HRIS_Personnel_CharacterReference_ByID(dgvCharRef)
-        ClearTextBoxes(Me)
+        Call SelUpd_HRIS_Personnel_CharacterReference_ByID(dgvCharRef)
+        Call ClearTextBoxes(Me)
     End Sub
 
     Private Sub dgvCharRef_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCharRef.CellDoubleClick

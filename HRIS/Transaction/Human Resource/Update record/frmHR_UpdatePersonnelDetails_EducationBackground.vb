@@ -1,11 +1,13 @@
-﻿Public Class frmHR_UpdatePersonnelDetails_EducationBackground
+﻿Imports System.ComponentModel
+
+Public Class frmHR_UpdatePersonnelDetails_EducationBackground
 
     Private Sub frmHR_UpdatePersonnelDetails_EducationBackground_Load(sender As Object, e As EventArgs) Handles Me.Load
         Call SelUpd_HRIS_Personnel_EducationBackground_ByID(dgvEducationBackground)
         Call DropDownListEducationBackground(cbEducationAttainment)
-        ClearTextBoxes(Me)
-        ResetDatePickers(Me)
-        ResetComboBoxes(Me)
+        Call ClearTextBoxes(Me)
+        Call ResetDatePickers(Me)
+        Call ResetComboBoxes(Me)
     End Sub
 
     Private Sub dgvEducationBackground_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEducationBackground.CellDoubleClick

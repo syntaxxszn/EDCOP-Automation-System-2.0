@@ -22,14 +22,18 @@ Partial Class frmHR_PreviewPersonnelDetails_Contracts
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHR_PreviewPersonnelDetails_Contracts))
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnAddNewContract = New System.Windows.Forms.Button()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.dgvContracts = New System.Windows.Forms.DataGridView()
@@ -62,6 +66,7 @@ Partial Class frmHR_PreviewPersonnelDetails_Contracts
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.btnAddNewContract)
         Me.Panel1.Controls.Add(Me.Panel14)
         Me.Panel1.Controls.Add(Me.Panel7)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -69,6 +74,30 @@ Partial Class frmHR_PreviewPersonnelDetails_Contracts
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(833, 613)
         Me.Panel1.TabIndex = 0
+        '
+        'btnAddNewContract
+        '
+        Me.btnAddNewContract.BackColor = System.Drawing.Color.DarkGreen
+        Me.btnAddNewContract.FlatAppearance.BorderColor = System.Drawing.Color.Green
+        Me.btnAddNewContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddNewContract.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddNewContract.ForeColor = System.Drawing.Color.White
+        Me.btnAddNewContract.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAddNewContract.ImageIndex = 0
+        Me.btnAddNewContract.ImageList = Me.ImageList1
+        Me.btnAddNewContract.Location = New System.Drawing.Point(649, 12)
+        Me.btnAddNewContract.Name = "btnAddNewContract"
+        Me.btnAddNewContract.Size = New System.Drawing.Size(172, 30)
+        Me.btnAddNewContract.TabIndex = 91
+        Me.btnAddNewContract.Text = "  &Add New Contract"
+        Me.btnAddNewContract.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAddNewContract.UseVisualStyleBackColor = False
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "green-plus.png")
         '
         'Panel14
         '
@@ -133,10 +162,10 @@ Partial Class frmHR_PreviewPersonnelDetails_Contracts
         '
         'Column3
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.Format = "D"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.Format = "D"
+        DataGridViewCellStyle8.NullValue = Nothing
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle8
         Me.Column3.HeaderText = "StartDate"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
@@ -144,10 +173,10 @@ Partial Class frmHR_PreviewPersonnelDetails_Contracts
         '
         'Column4
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.Format = "D"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.Format = "D"
+        DataGridViewCellStyle9.NullValue = Nothing
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle9
         Me.Column4.HeaderText = "EndDate"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
@@ -155,8 +184,8 @@ Partial Class frmHR_PreviewPersonnelDetails_Contracts
         '
         'Column5
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle10
         Me.Column5.HeaderText = "Default?"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
@@ -164,8 +193,8 @@ Partial Class frmHR_PreviewPersonnelDetails_Contracts
         '
         'Column6
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column6.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column6.DefaultCellStyle = DataGridViewCellStyle11
         Me.Column6.HeaderText = "Employement Type"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
@@ -187,8 +216,8 @@ Partial Class frmHR_PreviewPersonnelDetails_Contracts
         '
         'Column9
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column9.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column9.DefaultCellStyle = DataGridViewCellStyle12
         Me.Column9.HeaderText = "Employment Class"
         Me.Column9.Name = "Column9"
         Me.Column9.ReadOnly = True
@@ -196,10 +225,10 @@ Partial Class frmHR_PreviewPersonnelDetails_Contracts
         '
         'Column10
         '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.Format = "N2"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.Column10.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.Format = "N2"
+        DataGridViewCellStyle13.NullValue = Nothing
+        Me.Column10.DefaultCellStyle = DataGridViewCellStyle13
         Me.Column10.HeaderText = "Monthly Rate"
         Me.Column10.Name = "Column10"
         Me.Column10.ReadOnly = True
@@ -214,8 +243,8 @@ Partial Class frmHR_PreviewPersonnelDetails_Contracts
         '
         'Column12
         '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column12.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column12.DefaultCellStyle = DataGridViewCellStyle14
         Me.Column12.HeaderText = "Location"
         Me.Column12.Name = "Column12"
         Me.Column12.ReadOnly = True
@@ -270,7 +299,7 @@ Partial Class frmHR_PreviewPersonnelDetails_Contracts
         Me.Panel7.Controls.Add(Me.Label1)
         Me.Panel7.Location = New System.Drawing.Point(12, 12)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(809, 30)
+        Me.Panel7.Size = New System.Drawing.Size(631, 30)
         Me.Panel7.TabIndex = 89
         '
         'Label1
@@ -330,4 +359,6 @@ Partial Class frmHR_PreviewPersonnelDetails_Contracts
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
     Friend WithEvents Column13 As DataGridViewTextBoxColumn
+    Friend WithEvents btnAddNewContract As Button
+    Friend WithEvents ImageList1 As ImageList
 End Class

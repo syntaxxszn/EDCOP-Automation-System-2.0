@@ -1,175 +1,175 @@
 ﻿Public Class frmMain
 
-    'Private MouseIsDown As Boolean = False
-    'Private MouseIsDownLoc As Point = Nothing
-
-    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub frmMain_revise_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Me.Bounds = Screen.GetWorkingArea(Me)
-        'Me.fullsc
-        OpenChildForm(frmHR_Transaction_EmployeeFile)
-        ' OpenChildForm(frmAccounting_RevolvingFund_Client)
-        ' OpenChildForm(frmAccounting_SummaryOfRP_Main)
-        'Select_ActivityLog()
+        WindowState = FormWindowState.Maximized
         CustomDesign()
+        'OpenChildForm_Revision(frmHRIS_Transaction_EmployeeFile)
 
     End Sub
 
-    Private Sub CustomDesign()
+    Public Sub CustomDesign()
 
-        panelPMM.Visible = False
-        panelHRIS.Visible = False
-        PanelFMM.Visible = False
-        PanelTrailLog.Visible = False
-        SubPanel_RF.Visible = False
-        SubPanel_HRIS_Trans.Visible = False
-        SubPanel_HRIS_Report.Visible = False
+        ' <> Panel for Human Resource Module only.
+        panelSubHRM.Visible = False
 
+        'panelSubHRIS_SetupDetails.Visible = False
+        'panelSubHRIS_TransactionDetails.Visible = False
+        'panelSubHRIS_Reports.Visible = False
 
-        btnHRIS_Trans_HumRes_EmpFile.Visible = False
-        btnHRIS_Trans_SchedManage_SchedAssign.Visible = False
+        ' </>
 
-        btnHRIS_Trans_TrainManage_Enroll.Visible = False
-        btnHRIS_Trans_TrainManage_Feedback.Visible = False
-        btnHRIS_Trans_TrainManage_Request.Visible = False
-
-        btnHRIS_Trans_PerformanceManage_PMAS.Visible = False
+        ' <> Panel for Finance Management Module only.
+        panelSubFMM.Visible = False
+        panelSubPMM.Visible = False
+        panelSubTKM.Visible = False
+        panelSubBDM.Visible = False
+        panelSubTL.Visible = False
+        panelSubSS.Visible = False
+        panelSubCU.Visible = False
+        panelSubAU.Visible = False
+        '</>
 
     End Sub
 
     Private Sub HideSubMenu()
-
-        If panelPMM.Visible = True Then
-            panelPMM.Visible = False
+        ' This Code handle the hiding of Panel. Combined to ShowSubMenu.
+        If panelSubHRM.Visible = True Then
+            panelSubHRM.Visible = False
         End If
-        If panelHRIS.Visible = True Then
-            panelHRIS.Visible = False
+        If panelSubFMM.Visible = True Then
+            panelSubFMM.Visible = False
         End If
-        If PanelFMM.Visible = True Then
-            PanelFMM.Visible = False
+        If panelSubPMM.Visible = True Then
+            panelSubPMM.Visible = False
         End If
-        If PanelTrailLog.Visible = True Then
-            PanelTrailLog.Visible = False
+        If panelSubTKM.Visible = True Then
+            panelSubTKM.Visible = False
         End If
-
+        If panelSubBDM.Visible = True Then
+            panelSubBDM.Visible = False
+        End If
+        If panelSubTL.Visible = True Then
+            panelSubTL.Visible = False
+        End If
+        If panelSubSS.Visible = True Then
+            panelSubSS.Visible = False
+        End If
+        If panelSubCU.Visible = True Then
+            panelSubCU.Visible = False
+        End If
+        If panelSubAU.Visible = True Then
+            panelSubAU.Visible = False
+        End If
+        PanelHolder.Controls.Clear()
     End Sub
 
     Private Sub ShowSubMenu(subMenu As Panel)
+
+        '\\ This Code handle the Main Button Menu for Menu like Human Resource Modul btn.
+
         If subMenu.Visible = False Then
             HideSubMenu()
             subMenu.Visible = True
         Else
             subMenu.Visible = False
         End If
-    End Sub
-
-    Private Sub btnHumanResourceModule_Click(sender As Object, e As EventArgs) Handles btnHumanResourceModule.Click
-        ShowSubMenu(panelHRIS)
-    End Sub
-
-
-    Private Sub btnHRIS_Setup_Click(sender As Object, e As EventArgs) Handles btnHRIS_Setup.Click
-        ' ShowSubMenu2(SubPanel_HRIS_Setup)
-
-        OpenChildForm(frmHR_SetupMain)
-    End Sub
-
-    Private Sub HideButton()
-
-        If btnHRIS_Trans_HumRes_EmpFile.Visible = True Then
-            btnHRIS_Trans_HumRes_EmpFile.Visible = False
-        End If
-
-        If btnHRIS_Trans_SchedManage_SchedAssign.Visible = True Then
-            btnHRIS_Trans_SchedManage_SchedAssign.Visible = False
-        End If
-
-        If btnHRIS_Trans_PerformanceManage_PMAS.Visible = True Then
-            btnHRIS_Trans_PerformanceManage_PMAS.Visible = False
-        End If
 
     End Sub
 
-    Private Sub HideButtons()
+    Public Sub switchPanelHolder(ByVal panel As Panel)
+        Dim originalLocation As Point = PanelHolder.Location ' Store original location of holder
+        PanelHolder.Controls.Clear()
 
-        '\\ Hide more than 1 Button.
-        btnHRIS_Trans_TrainManage_Enroll.Visible = False
-        btnHRIS_Trans_TrainManage_Feedback.Visible = False
-        btnHRIS_Trans_TrainManage_Request.Visible = False
-
-    End Sub
-
-    Private Sub ShowSubButton(subButton As Button, subPanel As Panel, subPanelOpenHeight As Integer, subPanelCloseHeight As Integer)
-
-        If subButton.Visible = False Then
-            HideButton()
-            subButton.Visible = True
-            subPanel.Height = subPanelOpenHeight
+        If panel Is frmMainPanelFMMDetail.panelSubFMM_NewReportsDetails OrElse panel Is frmMainPanelFMMDetail.panelSubFMM_LedgerReportsDetails OrElse panel Is frmMainPanelFMMDetail.panelSubFMM_SetupDetails Then
+            PanelHolder.AutoScroll = True
         Else
-            subButton.Visible = False
-            subPanel.Height = subPanelCloseHeight
+            PanelHolder.AutoScroll = False
         End If
 
+        panel.Dock = DockStyle.None ' Prevent automatic resizing
+        PanelHolder.Controls.Add(panel)
+        panel.Location = originalLocation ' Restore original location
+        panel.BringToFront()
     End Sub
 
-    Private Sub btnHRIS_Trans_HumRes_Click(sender As Object, e As EventArgs) Handles btnHRIS_Trans_HumRes.Click
-        ShowSubButton(btnHRIS_Trans_HumRes_EmpFile, SubPanel_HRIS_Trans, 170, 140)
-        HideButtons()
+    Private Sub switchPanelFMM(ByVal panel As Panel)
+        Dim originalLocation As Point = panelSubFMM.Location
+        panelSubFMM.Size = New Size(284, 300)
+        panelSubFMM.Controls.Clear()
+        panel.Dock = DockStyle.Fill
+        panelSubFMM.Controls.Add(panel)
+        panel.Location = originalLocation
+        panel.BringToFront()
     End Sub
 
-    Private Sub btnHRIS_Trans_SchedManage_Click(sender As Object, e As EventArgs) Handles btnHRIS_Trans_SchedManage.Click
-        ShowSubButton(btnHRIS_Trans_SchedManage_SchedAssign, SubPanel_HRIS_Trans, 170, 140)
-        HideButtons()
+    Private Sub switchPanelHRM(ByVal panel As Panel)
+        Dim originalLocation As Point = panelSubHRM.Location
+        panelSubHRM.Size = New Size(284, 160)
+        panelSubHRM.Controls.Clear()
+        panel.Dock = DockStyle.Fill
+        panelSubHRM.Controls.Add(panel)
+        panel.Location = originalLocation
+        panel.BringToFront()
     End Sub
 
-    Private Sub btnHRIS_Trans_TrainManage_Click(sender As Object, e As EventArgs) Handles btnHRIS_Trans_TrainManage.Click
-
-        ShowSubButton(btnHRIS_Trans_TrainManage_Enroll, SubPanel_HRIS_Trans, 224, 140)
-        ShowSubButton(btnHRIS_Trans_TrainManage_Feedback, SubPanel_HRIS_Trans, 224, 140)
-        ShowSubButton(btnHRIS_Trans_TrainManage_Request, SubPanel_HRIS_Trans, 224, 140)
-
+    Private Sub switchPanelPMM(ByVal panel As Panel)
+        Dim originalLocation As Point = panelSubPMM.Location
+        panelSubPMM.Size = New Size(284, 50)
+        panelSubPMM.Controls.Clear()
+        panel.Dock = DockStyle.Fill
+        panelSubPMM.Controls.Add(panel)
+        panel.Location = originalLocation
+        panel.BringToFront()
     End Sub
 
-    Private Sub btnHRIS_Trans_PerformanceManage_Click(sender As Object, e As EventArgs) Handles btnHRIS_Trans_PerformanceManage.Click
-        ShowSubButton(btnHRIS_Trans_PerformanceManage_PMAS, SubPanel_HRIS_Trans, 170, 140)
-        HideButtons()
+    Private Sub switchPanelTKM(ByVal panel As Panel)
+        Dim originalLocation As Point = panelSubTKM.Location
+        panelSubTKM.Size = New Size(284, 160)
+        panelSubTKM.Controls.Clear()
+        panel.Dock = DockStyle.Fill
+        panelSubTKM.Controls.Add(panel)
+        panel.Location = originalLocation
+        panel.BringToFront()
     End Sub
 
-    Private Sub Btn_Close_Click(sender As Object, e As EventArgs) Handles Btn_Close.Click
-        Me.Dispose()
-    End Sub
+    Private Sub btnHRM_Click(sender As Object, e As EventArgs) Handles btnHRM.Click
 
-    Private Sub btnHRIS_Trans_HumRes_EmpFile_Click(sender As Object, e As EventArgs) Handles btnHRIS_Trans_HumRes_EmpFile.Click
-        OpenChildForm(frmHR_Transaction_EmployeeFile)
-    End Sub
+        'If Not isHRISAcess Then
+        '    MessageBox.Show("Oooppsss..." & vbNewLine & "" & vbNewLine & "You don't have previledge to access this module. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    Return
+        'End If
 
-    Private Sub btnHRIS_Setup_Department_Click(sender As Object, e As EventArgs)
-        OpenChildForm(frmHR_Setup_Department)
-    End Sub
-
-    Private Sub btnHRIS_Setup_Shift_Click(sender As Object, e As EventArgs)
-        OpenChildForm(frmHR_Setup_Shift)
-    End Sub
-
-
-    Private Sub btnHRIS_Setup_LeaveType_Click(sender As Object, e As EventArgs)
-        OpenChildForm(frmHR_Setup_LeaveType)
-    End Sub
-
-
-    Private Sub btnHRIS_Setup_LeaveCredit_Click(sender As Object, e As EventArgs)
-        OpenChildForm(frmHR_Setup_LeaveCredit)
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-
-    End Sub
-
-    Private Sub btnTimeSheetPreparation_Click(sender As Object, e As EventArgs) Handles btnTimeSheetPreparation.Click
+        ShowSubMenu(panelSubHRM)
+        switchPanelHRM(frmMainPanelHRM.PanelHRM)
+        'frmMainPanelHRM.btnSetup.PerformClick()
 
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+    Private Sub btnFMM_Click(sender As Object, e As EventArgs) Handles btnFMM.Click
+        ShowSubMenu(panelSubFMM)
+        switchPanelFMM(frmMainPanelFMM.PanelFMM)
+        'frmMainPanelFMM.btnSetup.PerformClick()
+    End Sub
+
+    Private Sub btnPMM_Click(sender As Object, e As EventArgs) Handles btnPMM.Click
+        ShowSubMenu(panelSubPMM)
+        switchPanelPMM(frmMainPanelPMM.PanelPMM)
+    End Sub
+
+    Private Sub btnTKM_Click(sender As Object, e As EventArgs) Handles btnTKM.Click
+        ShowSubMenu(panelSubTKM)
+        switchPanelTKM(frmMainPanelTKM.PanelTKM)
+    End Sub
+
+    Private Sub frmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+
+        If e.CloseReason = CloseReason.UserClosing Then
+            e.Cancel = True  ' Cancel the close
+            Me.Hide()        ' Just hide the form instead
+            Call CloseAllForms_isClosed() 'to close all forms
+            frmPMS_Login.Show()
+        End If
 
     End Sub
 End Class

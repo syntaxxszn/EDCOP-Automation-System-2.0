@@ -8,7 +8,7 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Function_ReadOnly_isTrue()
         Call Sel_Personnel_PersonalInformation_ByEmployeeID()
         Call SelUpd_FamilyBackground(dgvParentsAndSiblings, dgvSpouseAndChildren)
-        Call Family_Background_Relationship_DropDownList()
+        Call Family_Background_Relationship_DropDownList(cbRelationshipPS, cbSRelationhipSC)
         frmHR_PreviewPersonnelDetails.Function_btnUpdates_Hide()
         TabControl1.SelectedTab = TabPageMain
         isEdit = False
@@ -267,12 +267,6 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Next
     End Sub
 
-    Private Sub txtMobileNumber_TextChanged(sender As Object, e As EventArgs) Handles txtMobileNumber.TextChanged
-        If Not txtMobileNumber.Enabled Then
-            Call MobileNumber_Color(txtMobileNumber)
-        End If
-    End Sub
-
     Private Sub cbBank_DropDown(sender As Object, e As EventArgs) Handles cbBank.DropDown
         Call DropDownListBank()
     End Sub
@@ -315,22 +309,21 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
         tooltip.SetToolTip(txtMobileNumber, "Format: 09XXXXXXXXX (11 digits only)")
     End Sub
 
-    Private Sub txtTelephone_TextChanged(sender As Object, e As EventArgs) Handles txtTelephone.TextChanged
-        If Not txtTelephone.Enabled Then
-            Call TelephoneNumber_Color(txtTelephone)
-        End If
+    Private Sub txtMobileNumber_Validating(sender As Object, e As CancelEventArgs) Handles txtMobileNumber.Validating
+        Call MobileNumber_Color(txtMobileNumber, e.Cancel)
     End Sub
 
-    Private Sub txtAdrZip1_TextChanged(sender As Object, e As EventArgs) Handles txtAdrZip1.TextChanged
-        If Not txtAdrZip1.Enabled Then
-            Call ZipCode_Color(txtAdrZip1)
-        End If
+    Private Sub txtTelephone_Validating(sender As Object, e As CancelEventArgs) Handles txtTelephone.Validating
+        Call TelephoneNumber_Color(txtTelephone, e.Cancel)
     End Sub
 
-    Private Sub txtAdrZip2_TextChanged(sender As Object, e As EventArgs) Handles txtAdrZip2.TextChanged
-        If Not txtAdrZip2.Enabled Then
-            Call ZipCode_Color(txtAdrZip2)
-        End If
+    Private Sub txtAdrZip1_Validating(sender As Object, e As CancelEventArgs) Handles txtAdrZip1.Validating
+        Call ZipCode_Color(txtAdrZip1, e.Cancel)
     End Sub
+
+    Private Sub txtAdrZip2_Validating(sender As Object, e As CancelEventArgs) Handles txtAdrZip2.Validating
+        Call ZipCode_Color(txtAdrZip2, e.Cancel)
+    End Sub
+
 
 End Class

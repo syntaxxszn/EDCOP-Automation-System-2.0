@@ -214,7 +214,7 @@ Partial Class frmHR_AddUpdForeignAddress
         Me.Name = "frmHR_AddUpdForeignAddress"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "frmHR_AddForeignAddress"
+        Me.Text = "Foreign Address"
         Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

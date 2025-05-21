@@ -1,4 +1,6 @@
-﻿Public Class frmHR_UpdatePersonnelDetails_Contracts
+﻿Imports System.ComponentModel
+
+Public Class frmHR_UpdatePersonnelDetails_Contracts
 
     Private Sub frmHR_UpdatePersonnelDetails_Contracts_Load(sender As Object, e As EventArgs) Handles Me.Load
         'Call SelUpd_HRIS_Personnel_ContractHistory_ByID(dgvContracts)
@@ -110,6 +112,14 @@
     End Sub
 
     Private Sub btnAddUpdContract_Click(sender As Object, e As EventArgs) Handles btnAddUpdContract.Click
+
+        If chDefaultContract.Checked Then
+            ' Clear value in column 18 for all rows if checkbox is checked
+            For Each row As DataGridViewRow In dgvContracts.Rows
+                row.Cells(18).Value = ""  ' Clear value in column 18 for all rows
+            Next
+        End If
+
         If String.IsNullOrWhiteSpace(cbEmploymentType.Text) OrElse
             String.IsNullOrWhiteSpace(cbDepartment.Text) OrElse
             String.IsNullOrWhiteSpace(dtpContractStart.Text) OrElse
@@ -150,7 +160,7 @@
                 selectedRow.Cells(18).Value = If(chDefaultContract.Checked, "Yes", "No")
                 selectedRow.Cells(19).Value = If(chOverTimeAllowed.Checked, "Yes", "No")
             End If
-            Else
+        Else
             Dim newRowIndex As Integer = dgvContracts.Rows.Add(_ContractID2, "New", cbEmploymentType.Text, cbDepartment.Text, dtpContractStart.Text,
                                                                If(chContractEnd.Checked, dtpContractEnd.Text, ""), txtMonthlyRate.Text, txtProjectDiff.Text,
                                                                cbJobPosition.Text, cbJobClassLevel.Text, cbSuperior.Text, cbLocation.Text, txtFieldAllowance.Text,
@@ -175,4 +185,17 @@
             ClearTransactionField()
         End If
     End Sub
+
+    Private Sub txtMonthlyRate_Validating(sender As Object, e As CancelEventArgs) Handles txtMonthlyRate.Validating
+        Textbox_NumericFormat(txtMonthlyRate, e.Cancel)
+    End Sub
+
+    Private Sub txtProjectDiff_Validating(sender As Object, e As CancelEventArgs) Handles txtProjectDiff.Validating
+        Textbox_NumericFormat(txtProjectDiff, e.Cancel)
+    End Sub
+
+    Private Sub txtFieldAllowance_Validating(sender As Object, e As CancelEventArgs) Handles txtFieldAllowance.Validating
+        Textbox_NumericFormat(txtFieldAllowance, e.Cancel)
+    End Sub
+
 End Class

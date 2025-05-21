@@ -244,16 +244,335 @@
     <Compile Include="frmLoading.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain_revise.Designer.vb">
-      <DependentUpon>frmMain_revise.vb</DependentUpon>
+    <Compile Include="frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmMain_revise.vb">
+    <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HRIS\Setup\Department\Add New\frmHR_AddNewDepartment.Designer.vb">
-      <DependentUpon>frmHR_AddNewDepartment.vb</DependentUpon>
+    <Compile Include="HRIS\Reports\Files\HRIS_COE_SEPARATED_AND_NOT_CLEARED.vb">
+      <DependentUpon>HRIS_COE_SEPARATED_AND_NOT_CLEARED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Setup\Department\Add New\frmHR_AddNewDepartment.vb">
+    <Compile Include="HRIS\Reports\Files\HRIS_COE_SEPARATED_AND_CLEARED.vb">
+      <DependentUpon>HRIS_COE_SEPARATED_AND_CLEARED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\ListofParticipant.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListofParticipant.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_Employee201FileCheckList.vb">
+      <DependentUpon>rptHRIS_Employee201FileCheckList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_Employee201_File.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHRIS_Employee201_File.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeAdhocInfo_List.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHRIS_EmployeeAdhocInfo_List.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_Employee201FileCheckListx .vb">
+      <DependentUpon>rptHRIS_Employee201FileCheckListx .rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeByJobPosition_List.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHRIS_EmployeeByJobPosition_List.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeLeaveBalances_List.vb">
+      <DependentUpon>rptHRIS_EmployeeLeaveBalances_List.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeBirthdate_List.vb">
+      <DependentUpon>rptHRIS_EmployeeBirthdate_List.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeLeaveEncashment_List.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHRIS_EmployeeLeaveEncashment_List.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_isActiveEmployee_List.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHRIS_isActiveEmployee_List.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeByDepartment_List.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHRIS_EmployeeByDepartment_List.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\TrainingEvaluationR1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrainingEvaluationR1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\TrainingRequest.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrainingRequest.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHRIS_Report_JobPosition.Designer.vb">
+      <DependentUpon>frmHRIS_Report_JobPosition.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHRIS_Report_JobPosition.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Preview\frmHRIS_Report_MainPreview.Designer.vb">
+      <DependentUpon>frmHRIS_Report_MainPreview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Reports\Preview\frmHRIS_Report_MainPreview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Company\Add Update\frmHR_Setup_AddUpdCompany.Designer.vb">
+      <DependentUpon>frmHR_Setup_AddUpdCompany.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Company\Add Update\frmHR_Setup_AddUpdCompany.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Company\frmHR_Setup_Company.Designer.vb">
+      <DependentUpon>frmHR_Setup_Company.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Company\frmHR_Setup_Company.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Hierarchy\Add Update\frmHR_Setup_AddUpdApprovalHierarchy.Designer.vb">
+      <DependentUpon>frmHR_Setup_AddUpdApprovalHierarchy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Hierarchy\Add Update\frmHR_Setup_AddUpdApprovalHierarchy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Hierarchy\Add Update\frmHR_Setup_AddUpdApprovalHierarchyDetail.Designer.vb">
+      <DependentUpon>frmHR_Setup_AddUpdApprovalHierarchyDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Hierarchy\Add Update\frmHR_Setup_AddUpdApprovalHierarchyDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Hierarchy\frmHR_Setup_ApprovalHierarchy.Designer.vb">
+      <DependentUpon>frmHR_Setup_ApprovalHierarchy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Hierarchy\frmHR_Setup_ApprovalHierarchy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Job Title\Add Update\frmHR_Setup_AddUpdJobTitle.Designer.vb">
+      <DependentUpon>frmHR_Setup_AddUpdJobTitle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Job Title\Add Update\frmHR_Setup_AddUpdJobTitle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_201FileChecklist.Designer.vb">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_201FileChecklist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_201FileChecklist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_201FileChecklistPreviewFile.Designer.vb">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_201FileChecklistPreviewFile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_201FileChecklistPreviewFile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_EmploymentHistory.Designer.vb">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_EmploymentHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_EmploymentHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_201FileChecklist.Designer.vb">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_201FileChecklist.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_201FileChecklist.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_201FileChecklistRemarks.Designer.vb">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_201FileChecklistRemarks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_201FileChecklistRemarks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_EmploymentHistory.Designer.vb">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_EmploymentHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_EmploymentHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Enrollment\Add Update\frmHRIS_TE_AddUpdateTrainingDetail_Master.Designer.vb">
+      <DependentUpon>frmHRIS_TE_AddUpdateTrainingDetail_Master.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Enrollment\Add Update\frmHRIS_TE_AddUpdateTrainingDetail_Master.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Enrollment\Add Update\frmHRIS_TE_AddUpdateTrainingEnrollee_Master.Designer.vb">
+      <DependentUpon>frmHRIS_TE_AddUpdateTrainingEnrollee_Master.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Enrollment\Add Update\frmHRIS_TE_AddUpdateTrainingEnrollee_Master.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Enrollment\Add Update\frmHRIS_TE_AddUpdateTraining_Master.Designer.vb">
+      <DependentUpon>frmHRIS_TE_AddUpdateTraining_Master.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Enrollment\Add Update\frmHRIS_TE_AddUpdateTraining_Master.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Enrollment\Main View\frmHRIS_Transaction_TrainingEnrollment.Designer.vb">
+      <DependentUpon>frmHRIS_Transaction_TrainingEnrollment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Enrollment\Main View\frmHRIS_Transaction_TrainingEnrollment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Evaluation\Add Update\frmHRIS_TEF_Feedback_BySuperior.Designer.vb">
+      <DependentUpon>frmHRIS_TEF_Feedback_BySuperior.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Evaluation\Add Update\frmHRIS_TEF_Feedback_BySuperior.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Evaluation\Add Update\frmHRIS_TEF_Feedback_Form_Part1.Designer.vb">
+      <DependentUpon>frmHRIS_TEF_Feedback_Form_Part1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Evaluation\Add Update\frmHRIS_TEF_Feedback_Form_Part1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Evaluation\Add Update\frmHRIS_TEF_Feedback_Form_Part2.Designer.vb">
+      <DependentUpon>frmHRIS_TEF_Feedback_Form_Part2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Evaluation\Add Update\frmHRIS_TEF_Feedback_Form_Part2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Evaluation\Main View\frmHRIS_Transaction_TrainingEvaluation.Designer.vb">
+      <DependentUpon>frmHRIS_Transaction_TrainingEvaluation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Evaluation\Main View\frmHRIS_Transaction_TrainingEvaluation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Request\Add Update\frmHRIS_TR_AddUpdTrainingParticipants.Designer.vb">
+      <DependentUpon>frmHRIS_TR_AddUpdTrainingParticipants.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Request\Add Update\frmHRIS_TR_AddUpdTrainingParticipants.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Request\Add Update\frmHRIS_TR_AddUpdateTrainingRequest.Designer.vb">
+      <DependentUpon>frmHRIS_TR_AddUpdateTrainingRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Request\Add Update\frmHRIS_TR_AddUpdateTrainingRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Request\Add Update\frmHRIS_TR_UpdateStatusAndRemarks.Designer.vb">
+      <DependentUpon>frmHRIS_TR_UpdateStatusAndRemarks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Request\Add Update\frmHRIS_TR_UpdateStatusAndRemarks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Request\Main View\frmHRIS_Transaction_TrainingRequest.Designer.vb">
+      <DependentUpon>frmHRIS_Transaction_TrainingRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Training Management\Training Request\Main View\frmHRIS_Transaction_TrainingRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\HRM\SubMenu\HumanResourceReportSubMenu_Employee.Designer.vb">
+      <DependentUpon>HumanResourceReportSubMenu_Employee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\HRM\SubMenu\HumanResourceReportSubMenu_Employee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\HRM\SubMenu\TrainingManagementSubMenu_Indiv.Designer.vb">
+      <DependentUpon>TrainingManagementSubMenu_Indiv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\HRM\SubMenu\TrainingManagementSubMenu_Indiv.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\HRM\SubMenu\TrainingManagementSubMenu_Master.Designer.vb">
+      <DependentUpon>TrainingManagementSubMenu_Master.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\HRM\SubMenu\TrainingManagementSubMenu_Master.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Module_GlobalVariables.vb" />
+    <Compile Include="System Login and User Registration\frmPMS_Login.Designer.vb">
+      <DependentUpon>frmPMS_Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System Login and User Registration\frmPMS_Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED.vb">
+      <DependentUpon>HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED.vb">
+      <DependentUpon>HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED_WITH_GAP.vb">
+      <DependentUpon>HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED_WITH_GAP.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED_WITH_GAP.vb">
+      <DependentUpon>HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED_WITH_GAP.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_GAP.vb">
+      <DependentUpon>HRIS_COE_CURRENT_WITH_GAP.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\HRIS_COE_CURRENT_NO_GAP.vb">
+      <DependentUpon>HRIS_COE_CURRENT_NO_GAP.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHRIS_Report_RequestPurpose.Designer.vb">
+      <DependentUpon>frmHRIS_Report_RequestPurpose.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHRIS_Report_RequestPurpose.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Preview\frmHRIS_Report_COE_PreviewList.Designer.vb">
+      <DependentUpon>frmHRIS_Report_COE_PreviewList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Reports\Preview\frmHRIS_Report_COE_PreviewList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Department\Add Update\frmHR_Setup_AddUpdDepartment.Designer.vb">
+      <DependentUpon>frmHR_Setup_AddUpdDepartment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Department\Add Update\frmHR_Setup_AddUpdDepartment.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HRIS\Setup\Department\frmHR_Setup_Department.Designer.vb">
@@ -262,16 +581,28 @@
     <Compile Include="HRIS\Setup\Department\frmHR_Setup_Department.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="HRIS\Setup\Shift\Add New\frmHR_AddNewShiftEffectivity.Designer.vb">
+      <DependentUpon>frmHR_AddNewShiftEffectivity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Shift\Add New\frmHR_AddNewShiftEffectivity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddNewContract.Designer.vb">
+      <DependentUpon>frmHR_AddNewContract.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddNewContract.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddUpdForeignAddress.Designer.vb">
       <DependentUpon>frmHR_AddUpdForeignAddress.vb</DependentUpon>
     </Compile>
     <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddUpdForeignAddress.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_SearchFilter.Designer.vb">
-      <DependentUpon>frmHR_Transaction_SearchFilter.vb</DependentUpon>
+    <Compile Include="HRIS\Transaction\Human Resource\Main View\frmHRIS_Transaction_SearchFilter.Designer.vb">
+      <DependentUpon>frmHRIS_Transaction_SearchFilter.vb</DependentUpon>
     </Compile>
-    <Compile Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_SearchFilter.vb">
+    <Compile Include="HRIS\Transaction\Human Resource\Main View\frmHRIS_Transaction_SearchFilter.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_CharacterReference.Designer.vb">
@@ -284,6 +615,12 @@
       <DependentUpon>frmHR_PreviewPersonnelDetails_Contracts.vb</DependentUpon>
     </Compile>
     <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_Contracts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_Resume.Designer.vb">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_Resume.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_Resume.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_CharacterReference.Designer.vb">
@@ -310,16 +647,16 @@
     <Compile Include="HRIS\Setup\Job Title\frmHR_Setup_JobTitle.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HRIS\Setup\Leave Credit\Add New\frmHR_AddNewLeaveCredit.Designer.vb">
-      <DependentUpon>frmHR_AddNewLeaveCredit.vb</DependentUpon>
+    <Compile Include="HRIS\Setup\Leave Credit\Add New\frmHR_Setup_AddUpdLeaveCredit.Designer.vb">
+      <DependentUpon>frmHR_Setup_AddUpdLeaveCredit.vb</DependentUpon>
     </Compile>
-    <Compile Include="HRIS\Setup\Leave Credit\Add New\frmHR_AddNewLeaveCredit.vb">
+    <Compile Include="HRIS\Setup\Leave Credit\Add New\frmHR_Setup_AddUpdLeaveCredit.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HRIS\Setup\Leave Type\Add New\frmHR_AddNewLeaveType.Designer.vb">
-      <DependentUpon>frmHR_AddNewLeaveType.vb</DependentUpon>
+    <Compile Include="HRIS\Setup\Leave Type\Add New\frmHR_Setup_AddUpdateLeaveType.Designer.vb">
+      <DependentUpon>frmHR_Setup_AddUpdateLeaveType.vb</DependentUpon>
     </Compile>
-    <Compile Include="HRIS\Setup\Leave Type\Add New\frmHR_AddNewLeaveType.vb">
+    <Compile Include="HRIS\Setup\Leave Type\Add New\frmHR_Setup_AddUpdateLeaveType.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HRIS\Setup\Leave Type\frmHR_Setup_LeaveType.Designer.vb">
@@ -376,6 +713,30 @@
     <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_EducationBackground.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_Resume.Designer.vb">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_Resume.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_Resume.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Schedule Management\AssignTransfer\frmHR_AssignScheduleType.Designer.vb">
+      <DependentUpon>frmHR_AssignScheduleType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Schedule Management\AssignTransfer\frmHR_AssignScheduleType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Schedule Management\AssignTransfer\frmHR_TransferScheduleType.Designer.vb">
+      <DependentUpon>frmHR_TransferScheduleType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Schedule Management\AssignTransfer\frmHR_TransferScheduleType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Schedule Management\Main View\frmHRIS_Transaction_AssignEmployeeSchedule.Designer.vb">
+      <DependentUpon>frmHRIS_Transaction_AssignEmployeeSchedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Schedule Management\Main View\frmHRIS_Transaction_AssignEmployeeSchedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainSubMenu\FMM\frmMainPanelFMM.Designer.vb">
       <DependentUpon>frmMainPanelFMM.vb</DependentUpon>
     </Compile>
@@ -400,6 +761,24 @@
     <Compile Include="MainSubMenu\HRM\frmMainPanelHRMDetail.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MainSubMenu\HRM\SubMenu\CertificateOfEmploymentSubMenu.Designer.vb">
+      <DependentUpon>CertificateOfEmploymentSubMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\HRM\SubMenu\CertificateOfEmploymentSubMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHRIS_Report_CrystalReportsHolder.Designer.vb">
+      <DependentUpon>frmHRIS_Report_CrystalReportsHolder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHRIS_Report_CrystalReportsHolder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHRIS_Report_EmployeeList.Designer.vb">
+      <DependentUpon>frmHRIS_Report_EmployeeList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHRIS_Report_EmployeeList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainSubMenu\PMM\frmMainPanelPMM.Designer.vb">
       <DependentUpon>frmMainPanelPMM.vb</DependentUpon>
     </Compile>
@@ -412,7 +791,19 @@
     <Compile Include="MainSubMenu\PMM\frmMainPanelPMMDetail.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module_Accounting.vb" />
+    <Compile Include="MainSubMenu\TKM\frmMainPanelTKM.Designer.vb">
+      <DependentUpon>frmMainPanelTKM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\TKM\frmMainPanelTKM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\TKM\frmMainPanelTKMDetail.Designer.vb">
+      <DependentUpon>frmMainPanelTKMDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\TKM\frmMainPanelTKMDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\Module_Accounting.vb" />
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="FMIS\Report\RPT\rpttrialbalancenew.vb">
       <AutoGen>True</AutoGen>
@@ -432,7 +823,7 @@
     <Compile Include="HRIS\Reports\frmHR_ReportTab_Dialog.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module_RecentItemManage.vb" />
+    <Compile Include="Modules\Module_RecentItemManage.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -534,13 +925,6 @@
     <Compile Include="For TimeSheet forms\frmTS_Edit.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMain.Designer.vb">
-      <DependentUpon>frmMain.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="PCM\Individual\For Individual\frmPMS_Individual.Designer.vb">
       <DependentUpon>frmPMS_Individual.vb</DependentUpon>
     </Compile>
@@ -553,10 +937,10 @@
     <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddNewPersonnel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_EmployeeFile.Designer.vb">
-      <DependentUpon>frmHR_Transaction_EmployeeFile.vb</DependentUpon>
+    <Compile Include="HRIS\Transaction\Human Resource\Main View\frmHRIS_Transaction_EmployeeFile.Designer.vb">
+      <DependentUpon>frmHRIS_Transaction_EmployeeFile.vb</DependentUpon>
     </Compile>
-    <Compile Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_EmployeeFile.vb">
+    <Compile Include="HRIS\Transaction\Human Resource\Main View\frmHRIS_Transaction_EmployeeFile.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HRIS\Reports\frmHR_ReportTab.Designer.vb">
@@ -565,9 +949,9 @@
     <Compile Include="HRIS\Reports\frmHR_ReportTab.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module_HRIS.vb" />
-    <Compile Include="Module_Dialog.vb" />
-    <Compile Include="Module_TimeSheet.vb" />
+    <Compile Include="Modules\Module_HRIS.vb" />
+    <Compile Include="Modules\Module_Dialog.vb" />
+    <Compile Include="Modules\Module_TimeSheet.vb" />
     <Compile Include="Permission\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
@@ -628,14 +1012,8 @@
       <DependentUpon>rpt_IndividualProjectTag_Summary.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="System Login and User Registration\frmPMS_Login.Designer.vb">
-      <DependentUpon>frmPMS_Login.vb</DependentUpon>
-    </Compile>
-    <Compile Include="System Login and User Registration\frmPMS_Login.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Module_Connection.vb" />
-    <Compile Include="Module_PCMS.vb" />
+    <Compile Include="Modules\Module_Connection.vb" />
+    <Compile Include="Modules\Module_PCMS.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -651,6 +1029,108 @@
       <DependentUpon>frmPMS_UserRegistration.vb</DependentUpon>
     </Compile>
     <Compile Include="System Login and User Registration\frmPMS_UserRegistration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\OT\frmTK_AddUpdOverTime.Designer.vb">
+      <DependentUpon>frmTK_AddUpdOverTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\OT\frmTK_AddUpdOverTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\OB\frmTK_AddUpdOfficialBusiness.Designer.vb">
+      <DependentUpon>frmTK_AddUpdOfficialBusiness.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\OB\frmTK_AddUpdOfficialBusiness.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\OB\frmTK_AddUpdOtherEmployeesOfficialBusiness.Designer.vb">
+      <DependentUpon>frmTK_AddUpdOtherEmployeesOfficialBusiness.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\OB\frmTK_AddUpdOtherEmployeesOfficialBusiness.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\frmTK_UpdateLeaveStatus.Designer.vb">
+      <DependentUpon>frmTK_UpdateLeaveStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\frmTK_UpdateLeaveStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\PTO\frmTK_AddUpdLeaveCredits.Designer.vb">
+      <DependentUpon>frmTK_AddUpdLeaveCredits.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\PTO\frmTK_AddUpdLeaveCredits.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\PTO\frmTK_AddUpdLeave.Designer.vb">
+      <DependentUpon>frmTK_AddUpdLeave.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\PTO\frmTK_AddUpdLeave.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\UT\frmTK_AddUpdUnderTime.Designer.vb">
+      <DependentUpon>frmTK_AddUpdUnderTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\UT\frmTK_AddUpdUnderTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewLeave.Designer.vb">
+      <DependentUpon>frmTK_DataGridViewLeave.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewLeave.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewOfficialBusiness.Designer.vb">
+      <DependentUpon>frmTK_DataGridViewOfficialBusiness.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewOfficialBusiness.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewOverTime.Designer.vb">
+      <DependentUpon>frmTK_DataGridViewOverTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewOverTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewUnderTime.Designer.vb">
+      <DependentUpon>frmTK_DataGridViewUnderTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewUnderTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Main View\frmTimeKeeping_Transaction_EmployeeLeave.Designer.vb">
+      <DependentUpon>frmTimeKeeping_Transaction_EmployeeLeave.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Main View\frmTimeKeeping_Transaction_EmployeeLeave.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Main View\Preview\frmTK_PrevEmployeeLeave.Designer.vb">
+      <DependentUpon>frmTK_PrevEmployeeLeave.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Main View\Preview\frmTK_PrevEmployeeLeave.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewLeaveCredits.Designer.vb">
+      <DependentUpon>frmTK_DataGridViewLeaveCredits.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewLeaveCredits.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Main View\Preview\frmTK_PrevEmployeeOfficialBusiness.Designer.vb">
+      <DependentUpon>frmTK_PrevEmployeeOfficialBusiness.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Main View\Preview\frmTK_PrevEmployeeOfficialBusiness.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Main View\Preview\frmTK_PrevEmployeeOverTime.Designer.vb">
+      <DependentUpon>frmTK_PrevEmployeeOverTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Main View\Preview\frmTK_PrevEmployeeOverTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Main View\Preview\frmTK_PrevEmployeeUnderTime.Designer.vb">
+      <DependentUpon>frmTK_PrevEmployeeUnderTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TKM\Transaction\EmployeeLeave\Main View\Preview\frmTK_PrevEmployeeUnderTime.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Trail Logs\frmTrailLogs_List.Designer.vb">
@@ -729,20 +1209,209 @@
     <EmbeddedResource Include="frmLoading.resx">
       <DependentUpon>frmLoading.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain_revise.resx">
-      <DependentUpon>frmMain_revise.vb</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Setup\Department\Add New\frmHR_AddNewDepartment.resx">
-      <DependentUpon>frmHR_AddNewDepartment.vb</DependentUpon>
+    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_SEPARATED_AND_NOT_CLEARED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HRIS_COE_SEPARATED_AND_NOT_CLEARED.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_SEPARATED_AND_CLEARED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HRIS_COE_SEPARATED_AND_CLEARED.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\ListofParticipant.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListofParticipant.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_Employee201FileCheckList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_Employee201FileCheckList.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_Employee201_File.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_Employee201_File.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeAdhocInfo_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_EmployeeAdhocInfo_List.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_Employee201FileCheckListx .rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_Employee201FileCheckListx .vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeByJobPosition_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_EmployeeByJobPosition_List.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeLeaveBalances_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_EmployeeLeaveBalances_List.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeBirthdate_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_EmployeeBirthdate_List.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeLeaveEncashment_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_EmployeeLeaveEncashment_List.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_isActiveEmployee_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_isActiveEmployee_List.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeByDepartment_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_EmployeeByDepartment_List.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\TrainingEvaluationR1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TrainingEvaluationR1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\TrainingRequest.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TrainingRequest.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\frmHRIS_Report_JobPosition.resx">
+      <DependentUpon>frmHRIS_Report_JobPosition.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Preview\frmHRIS_Report_MainPreview.resx">
+      <DependentUpon>frmHRIS_Report_MainPreview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Company\Add Update\frmHR_Setup_AddUpdCompany.resx">
+      <DependentUpon>frmHR_Setup_AddUpdCompany.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Company\frmHR_Setup_Company.resx">
+      <DependentUpon>frmHR_Setup_Company.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Hierarchy\Add Update\frmHR_Setup_AddUpdApprovalHierarchy.resx">
+      <DependentUpon>frmHR_Setup_AddUpdApprovalHierarchy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Hierarchy\Add Update\frmHR_Setup_AddUpdApprovalHierarchyDetail.resx">
+      <DependentUpon>frmHR_Setup_AddUpdApprovalHierarchyDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Hierarchy\frmHR_Setup_ApprovalHierarchy.resx">
+      <DependentUpon>frmHR_Setup_ApprovalHierarchy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Job Title\Add Update\frmHR_Setup_AddUpdJobTitle.resx">
+      <DependentUpon>frmHR_Setup_AddUpdJobTitle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_201FileChecklist.resx">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_201FileChecklist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_201FileChecklistPreviewFile.resx">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_201FileChecklistPreviewFile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_EmploymentHistory.resx">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_EmploymentHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_201FileChecklist.resx">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_201FileChecklist.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_201FileChecklistRemarks.resx">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_201FileChecklistRemarks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_EmploymentHistory.resx">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_EmploymentHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Training Management\Training Enrollment\Add Update\frmHRIS_TE_AddUpdateTrainingDetail_Master.resx">
+      <DependentUpon>frmHRIS_TE_AddUpdateTrainingDetail_Master.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Training Management\Training Enrollment\Add Update\frmHRIS_TE_AddUpdateTrainingEnrollee_Master.resx">
+      <DependentUpon>frmHRIS_TE_AddUpdateTrainingEnrollee_Master.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Training Management\Training Enrollment\Add Update\frmHRIS_TE_AddUpdateTraining_Master.resx">
+      <DependentUpon>frmHRIS_TE_AddUpdateTraining_Master.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Training Management\Training Enrollment\Main View\frmHRIS_Transaction_TrainingEnrollment.resx">
+      <DependentUpon>frmHRIS_Transaction_TrainingEnrollment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Training Management\Training Evaluation\Add Update\frmHRIS_TEF_Feedback_BySuperior.resx">
+      <DependentUpon>frmHRIS_TEF_Feedback_BySuperior.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Training Management\Training Evaluation\Add Update\frmHRIS_TEF_Feedback_Form_Part1.resx">
+      <DependentUpon>frmHRIS_TEF_Feedback_Form_Part1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Training Management\Training Evaluation\Add Update\frmHRIS_TEF_Feedback_Form_Part2.resx">
+      <DependentUpon>frmHRIS_TEF_Feedback_Form_Part2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Training Management\Training Evaluation\Main View\frmHRIS_Transaction_TrainingEvaluation.resx">
+      <DependentUpon>frmHRIS_Transaction_TrainingEvaluation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Training Management\Training Request\Add Update\frmHRIS_TR_AddUpdateTrainingRequest.resx">
+      <DependentUpon>frmHRIS_TR_AddUpdateTrainingRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Training Management\Training Request\Add Update\frmHRIS_TR_AddUpdTrainingParticipants.resx">
+      <DependentUpon>frmHRIS_TR_AddUpdTrainingParticipants.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Training Management\Training Request\Add Update\frmHRIS_TR_UpdateStatusAndRemarks.resx">
+      <DependentUpon>frmHRIS_TR_UpdateStatusAndRemarks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Training Management\Training Request\Main View\frmHRIS_Transaction_TrainingRequest.resx">
+      <DependentUpon>frmHRIS_Transaction_TrainingRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\HRM\SubMenu\HumanResourceReportSubMenu_Employee.resx">
+      <DependentUpon>HumanResourceReportSubMenu_Employee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\HRM\SubMenu\TrainingManagementSubMenu_Indiv.resx">
+      <DependentUpon>TrainingManagementSubMenu_Indiv.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\HRM\SubMenu\TrainingManagementSubMenu_Master.resx">
+      <DependentUpon>TrainingManagementSubMenu_Master.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System Login and User Registration\frmPMS_Login.resx">
+      <DependentUpon>frmPMS_Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED_WITH_GAP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED_WITH_GAP.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED_WITH_GAP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED_WITH_GAP.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_GAP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HRIS_COE_CURRENT_WITH_GAP.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_CURRENT_NO_GAP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HRIS_COE_CURRENT_NO_GAP.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\frmHRIS_Report_CrystalReportsHolder.resx">
+      <DependentUpon>frmHRIS_Report_CrystalReportsHolder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\frmHRIS_Report_RequestPurpose.resx">
+      <DependentUpon>frmHRIS_Report_RequestPurpose.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Preview\frmHRIS_Report_COE_PreviewList.resx">
+      <DependentUpon>frmHRIS_Report_COE_PreviewList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Department\Add Update\frmHR_Setup_AddUpdDepartment.resx">
+      <DependentUpon>frmHR_Setup_AddUpdDepartment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Setup\Department\frmHR_Setup_Department.resx">
       <DependentUpon>frmHR_Setup_Department.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Shift\Add New\frmHR_AddNewShiftEffectivity.resx">
+      <DependentUpon>frmHR_AddNewShiftEffectivity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddNewContract.resx">
+      <DependentUpon>frmHR_AddNewContract.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddUpdForeignAddress.resx">
       <DependentUpon>frmHR_AddUpdForeignAddress.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_SearchFilter.resx">
-      <DependentUpon>frmHR_Transaction_SearchFilter.vb</DependentUpon>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Main View\frmHRIS_Transaction_SearchFilter.resx">
+      <DependentUpon>frmHRIS_Transaction_SearchFilter.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails.resx">
       <DependentUpon>frmHR_PreviewPersonnelDetails.vb</DependentUpon>
@@ -752,6 +1421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_Contracts.resx">
       <DependentUpon>frmHR_PreviewPersonnelDetails_Contracts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_Resume.resx">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_Resume.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_CharacterReference.resx">
       <DependentUpon>frmHR_UpdatePersonnelDetails_CharacterReference.vb</DependentUpon>
@@ -768,11 +1440,11 @@
     <EmbeddedResource Include="HRIS\Setup\Job Title\frmHR_Setup_JobTitle.resx">
       <DependentUpon>frmHR_Setup_JobTitle.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Setup\Leave Credit\Add New\frmHR_AddNewLeaveCredit.resx">
-      <DependentUpon>frmHR_AddNewLeaveCredit.vb</DependentUpon>
+    <EmbeddedResource Include="HRIS\Setup\Leave Credit\Add New\frmHR_Setup_AddUpdLeaveCredit.resx">
+      <DependentUpon>frmHR_Setup_AddUpdLeaveCredit.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Setup\Leave Type\Add New\frmHR_AddNewLeaveType.resx">
-      <DependentUpon>frmHR_AddNewLeaveType.vb</DependentUpon>
+    <EmbeddedResource Include="HRIS\Setup\Leave Type\Add New\frmHR_Setup_AddUpdateLeaveType.resx">
+      <DependentUpon>frmHR_Setup_AddUpdateLeaveType.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Setup\Leave Type\frmHR_Setup_LeaveType.resx">
       <DependentUpon>frmHR_Setup_LeaveType.vb</DependentUpon>
@@ -801,6 +1473,18 @@
     <EmbeddedResource Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_EducationBackground.resx">
       <DependentUpon>frmHR_UpdatePersonnelDetails_EducationBackground.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Update record\frmHR_UpdatePersonnelDetails_Resume.resx">
+      <DependentUpon>frmHR_UpdatePersonnelDetails_Resume.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Schedule Management\AssignTransfer\frmHR_AssignScheduleType.resx">
+      <DependentUpon>frmHR_AssignScheduleType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Schedule Management\AssignTransfer\frmHR_TransferScheduleType.resx">
+      <DependentUpon>frmHR_TransferScheduleType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Schedule Management\Main View\frmHRIS_Transaction_AssignEmployeeSchedule.resx">
+      <DependentUpon>frmHRIS_Transaction_AssignEmployeeSchedule.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainSubMenu\FMM\frmMainPanelFMM.resx">
       <DependentUpon>frmMainPanelFMM.vb</DependentUpon>
     </EmbeddedResource>
@@ -813,11 +1497,23 @@
     <EmbeddedResource Include="MainSubMenu\HRM\frmMainPanelHRMDetail.resx">
       <DependentUpon>frmMainPanelHRMDetail.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\HRM\SubMenu\CertificateOfEmploymentSubMenu.resx">
+      <DependentUpon>CertificateOfEmploymentSubMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\frmHRIS_Report_EmployeeList.resx">
+      <DependentUpon>frmHRIS_Report_EmployeeList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainSubMenu\PMM\frmMainPanelPMM.resx">
       <DependentUpon>frmMainPanelPMM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainSubMenu\PMM\frmMainPanelPMMDetail.resx">
       <DependentUpon>frmMainPanelPMMDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\TKM\frmMainPanelTKM.resx">
+      <DependentUpon>frmMainPanelTKM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\TKM\frmMainPanelTKMDetail.resx">
+      <DependentUpon>frmMainPanelTKMDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PCM\Dialog\frmDialog_Ok_InsertProjectCharge.resx">
       <DependentUpon>frmDialog_Ok_InsertProjectCharge.vb</DependentUpon>
@@ -867,17 +1563,14 @@
     <EmbeddedResource Include="For TimeSheet forms\frmTS_Edit.resx">
       <DependentUpon>frmTS_Edit.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PCM\Individual\For Individual\frmPMS_Individual.resx">
       <DependentUpon>frmPMS_Individual.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddNewPersonnel.resx">
       <DependentUpon>frmHR_AddNewPersonnel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Main view\frmHR_Transaction_EmployeeFile.resx">
-      <DependentUpon>frmHR_Transaction_EmployeeFile.vb</DependentUpon>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Main View\frmHRIS_Transaction_EmployeeFile.resx">
+      <DependentUpon>frmHRIS_Transaction_EmployeeFile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Reports\frmHR_ReportTab.resx">
       <DependentUpon>frmHR_ReportTab.vb</DependentUpon>
@@ -921,9 +1614,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_IndividualProjectTag_Summary.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="System Login and User Registration\frmPMS_Login.resx">
-      <DependentUpon>frmPMS_Login.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
@@ -932,6 +1622,57 @@
     </EmbeddedResource>
     <EmbeddedResource Include="System Login and User Registration\frmPMS_UserRegistration.resx">
       <DependentUpon>frmPMS_UserRegistration.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Add Update\OB\frmTK_AddUpdOfficialBusiness.resx">
+      <DependentUpon>frmTK_AddUpdOfficialBusiness.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Add Update\OB\frmTK_AddUpdOtherEmployeesOfficialBusiness.resx">
+      <DependentUpon>frmTK_AddUpdOtherEmployeesOfficialBusiness.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Add Update\frmTK_UpdateLeaveStatus.resx">
+      <DependentUpon>frmTK_UpdateLeaveStatus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Add Update\OT\frmTK_AddUpdOverTime.resx">
+      <DependentUpon>frmTK_AddUpdOverTime.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Add Update\PTO\frmTK_AddUpdLeaveCredits.resx">
+      <DependentUpon>frmTK_AddUpdLeaveCredits.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Add Update\PTO\frmTK_AddUpdLeave.resx">
+      <DependentUpon>frmTK_AddUpdLeave.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Add Update\UT\frmTK_AddUpdUnderTime.resx">
+      <DependentUpon>frmTK_AddUpdUnderTime.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewLeave.resx">
+      <DependentUpon>frmTK_DataGridViewLeave.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewOfficialBusiness.resx">
+      <DependentUpon>frmTK_DataGridViewOfficialBusiness.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewOverTime.resx">
+      <DependentUpon>frmTK_DataGridViewOverTime.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewUnderTime.resx">
+      <DependentUpon>frmTK_DataGridViewUnderTime.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Main View\frmTimeKeeping_Transaction_EmployeeLeave.resx">
+      <DependentUpon>frmTimeKeeping_Transaction_EmployeeLeave.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Main View\Preview\frmTK_PrevEmployeeLeave.resx">
+      <DependentUpon>frmTK_PrevEmployeeLeave.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Leave\frmTK_DataGridViewLeaveCredits.resx">
+      <DependentUpon>frmTK_DataGridViewLeaveCredits.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Main View\Preview\frmTK_PrevEmployeeOfficialBusiness.resx">
+      <DependentUpon>frmTK_PrevEmployeeOfficialBusiness.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Main View\Preview\frmTK_PrevEmployeeOverTime.resx">
+      <DependentUpon>frmTK_PrevEmployeeOverTime.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Main View\Preview\frmTK_PrevEmployeeUnderTime.resx">
+      <DependentUpon>frmTK_PrevEmployeeUnderTime.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Trail Logs\frmTrailLogs_List.resx">
       <DependentUpon>frmTrailLogs_List.vb</DependentUpon>
@@ -982,12 +1723,12 @@
   <ItemGroup>
     <PublishFile Include="log4net">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
@@ -1027,7 +1768,26 @@
   <ItemGroup>
     <None Include="Resources\yes.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\find.png" />
   </ItemGroup>
@@ -1057,7 +1817,27 @@
     <None Include="Resources\cute.png" />
     <None Include="Resources\gear.png" />
     <None Include="Resources\help.png" />
+    <None Include="Resources\icons8-view.gif" />
+    <None Include="Resources\icons8-gears.gif" />
+    <None Include="Resources\icons8-search-folder.gif" />
+    <None Include="Resources\icons8-search.gif" />
+    <None Include="Resources\office-chair.png" />
+    <None Include="Resources\timesheetmonitoring.png" />
+    <None Include="Resources\computer-set.png" />
+    <None Include="Resources\login_bg.png" />
+    <None Include="Resources\login-bg2.png" />
+    <None Include="Resources\user2.png" />
+    <None Include="Resources\icons8-worker-94.png" />
+    <None Include="Resources\icons8-admin-settings-male.gif" />
+    <None Include="Resources\icons8-key.gif" />
+    <None Include="Resources\icons8-name-tag.gif" />
+    <None Include="Resources\icons8-lock-50.png" />
     <Content Include="sssss.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TKM\Reports\" />
+    <Folder Include="TKM\Transaction\TimeSheetManualEntry\" />
+    <Folder Include="TKM\Transaction\TimeSheetPreparation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

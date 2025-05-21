@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmHR_Setup_LeaveType
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,27 +20,36 @@ Partial Class frmHR_Setup_LeaveType
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHR_Setup_LeaveType))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.toolstripBtnNew = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripBtnRefresh = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripLabel7 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripBtnClose = New System.Windows.Forms.ToolStripButton()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ToolStripButtonHelp = New System.Windows.Forms.ToolStripButton()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.cmboboxDepartment = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnSearch = New System.Windows.Forms.Button()
-        Me.txtboxSearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnSearchFilter = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtboxSearch = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnEdit = New System.Windows.Forms.Button()
+        Me.ImageListBtn = New System.Windows.Forms.ImageList(Me.components)
+        Me.btnCreateNew = New System.Windows.Forms.Button()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.toolstriplabelNoOfRecord = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
@@ -48,67 +57,30 @@ Partial Class frmHR_Setup_LeaveType
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.dgvLeaveType = New System.Windows.Forms.DataGridView()
+        Me.Panel25 = New System.Windows.Forms.Panel()
+        Me.Panel24 = New System.Windows.Forms.Panel()
+        Me.Panel21 = New System.Windows.Forms.Panel()
+        Me.Panel22 = New System.Windows.Forms.Panel()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Panel28 = New System.Windows.Forms.Panel()
+        Me.Panel29 = New System.Windows.Forms.Panel()
+        Me.dgvLeaveTypeList = New System.Windows.Forms.DataGridView()
+        Me.ShiftID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ToolStripLabel7 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStrip1.SuspendLayout()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
+        Me.ToolStrip1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.ToolStrip2.SuspendLayout()
-        Me.Panel5.SuspendLayout()
-        CType(Me.dgvLeaveType, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvLeaveTypeList, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ToolStripSeparator1, Me.toolstripBtnNew, Me.ToolStripBtnRefresh, Me.ToolStripLabel7, Me.ToolStripBtnClose})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1074, 31)
-        Me.ToolStrip1.TabIndex = 0
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(289, 28)
-        Me.ToolStripLabel1.Text = "Human Resources Management > Setup > Leave Type"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 31)
-        '
-        'toolstripBtnNew
-        '
-        Me.toolstripBtnNew.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_add_96
-        Me.toolstripBtnNew.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.toolstripBtnNew.Name = "toolstripBtnNew"
-        Me.toolstripBtnNew.Size = New System.Drawing.Size(50, 28)
-        Me.toolstripBtnNew.Text = "New"
-        '
-        'ToolStripBtnRefresh
-        '
-        Me.ToolStripBtnRefresh.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_refresh_96
-        Me.ToolStripBtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripBtnRefresh.Name = "ToolStripBtnRefresh"
-        Me.ToolStripBtnRefresh.Size = New System.Drawing.Size(66, 28)
-        Me.ToolStripBtnRefresh.Text = "Refresh"
-        '
-        'ToolStripBtnClose
-        '
-        Me.ToolStripBtnClose.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
-        Me.ToolStripBtnClose.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripBtnClose.Name = "ToolStripBtnClose"
-        Me.ToolStripBtnClose.Size = New System.Drawing.Size(55, 28)
-        Me.ToolStripBtnClose.Text = "Close"
         '
         'Panel1
         '
@@ -117,119 +89,221 @@ Partial Class frmHR_Setup_LeaveType
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1076, 33)
-        Me.Panel1.TabIndex = 36
+        Me.Panel1.Size = New System.Drawing.Size(1076, 37)
+        Me.Panel1.TabIndex = 23
         '
-        'Panel6
+        'ToolStrip1
         '
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel6.Location = New System.Drawing.Point(10, 725)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1056, 10)
-        Me.Panel6.TabIndex = 81
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ToolStripSeparator1, Me.ToolStripBtnRefresh, Me.ToolStripLabel7, Me.ToolStripBtnClose, Me.ToolStripButtonHelp})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(1074, 35)
+        Me.ToolStrip1.TabIndex = 0
+        Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'Panel3
+        'ToolStripLabel1
         '
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(1066, 33)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(10, 702)
-        Me.Panel3.TabIndex = 80
+        Me.ToolStripLabel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(260, 32)
+        Me.ToolStripLabel1.Text = "Human Resources Module > Setup > Leave Type"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 35)
+        '
+        'ToolStripBtnRefresh
+        '
+        Me.ToolStripBtnRefresh.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_refresh_96
+        Me.ToolStripBtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripBtnRefresh.Name = "ToolStripBtnRefresh"
+        Me.ToolStripBtnRefresh.Size = New System.Drawing.Size(66, 32)
+        Me.ToolStripBtnRefresh.Text = "Refresh"
+        '
+        'ToolStripLabel7
+        '
+        Me.ToolStripLabel7.Name = "ToolStripLabel7"
+        Me.ToolStripLabel7.Size = New System.Drawing.Size(109, 32)
+        Me.ToolStripLabel7.Text = "                                  "
+        '
+        'ToolStripBtnClose
+        '
+        Me.ToolStripBtnClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripBtnClose.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
+        Me.ToolStripBtnClose.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripBtnClose.Name = "ToolStripBtnClose"
+        Me.ToolStripBtnClose.Size = New System.Drawing.Size(55, 32)
+        Me.ToolStripBtnClose.Text = "Close"
+        '
+        'ToolStripButtonHelp
+        '
+        Me.ToolStripButtonHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripButtonHelp.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.question
+        Me.ToolStripButtonHelp.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButtonHelp.Name = "ToolStripButtonHelp"
+        Me.ToolStripButtonHelp.Size = New System.Drawing.Size(51, 32)
+        Me.ToolStripButtonHelp.Text = "Help"
         '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 33)
+        Me.Panel2.Location = New System.Drawing.Point(0, 37)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(10, 702)
-        Me.Panel2.TabIndex = 79
+        Me.Panel2.Size = New System.Drawing.Size(10, 566)
+        Me.Panel2.TabIndex = 80
+        '
+        'Panel6
+        '
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel6.Location = New System.Drawing.Point(10, 593)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(1066, 10)
+        Me.Panel6.TabIndex = 86
+        '
+        'Panel3
+        '
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel3.Location = New System.Drawing.Point(1066, 37)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(10, 556)
+        Me.Panel3.TabIndex = 87
         '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.Label3)
-        Me.Panel4.Controls.Add(Me.cmboboxDepartment)
-        Me.Panel4.Controls.Add(Me.Label2)
-        Me.Panel4.Controls.Add(Me.btnSearch)
-        Me.Panel4.Controls.Add(Me.txtboxSearch)
         Me.Panel4.Controls.Add(Me.Label1)
+        Me.Panel4.Controls.Add(Me.btnSearchFilter)
+        Me.Panel4.Controls.Add(Me.Label2)
+        Me.Panel4.Controls.Add(Me.txtboxSearch)
+        Me.Panel4.Controls.Add(Me.Label4)
+        Me.Panel4.Controls.Add(Me.btnEdit)
+        Me.Panel4.Controls.Add(Me.btnCreateNew)
         Me.Panel4.Controls.Add(Me.ToolStrip2)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(10, 33)
+        Me.Panel4.Location = New System.Drawing.Point(10, 37)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1056, 93)
-        Me.Panel4.TabIndex = 82
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(17, 40)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(154, 13)
-        Me.Label3.TabIndex = 43
-        Me.Label3.Text = "Filter based on Parent Field :"
-        '
-        'cmboboxDepartment
-        '
-        Me.cmboboxDepartment.BackColor = System.Drawing.Color.Gray
-        Me.cmboboxDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmboboxDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmboboxDepartment.FormattingEnabled = True
-        Me.cmboboxDepartment.Location = New System.Drawing.Point(177, 36)
-        Me.cmboboxDepartment.Name = "cmboboxDepartment"
-        Me.cmboboxDepartment.Size = New System.Drawing.Size(203, 21)
-        Me.cmboboxDepartment.TabIndex = 42
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 7.5!)
-        Me.Label2.Location = New System.Drawing.Point(499, 17)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(202, 12)
-        Me.Label2.TabIndex = 41
-        Me.Label2.Text = "You may search any value on the search bar."
-        '
-        'btnSearch
-        '
-        Me.btnSearch.BackColor = System.Drawing.Color.Navy
-        Me.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.Navy
-        Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSearch.ForeColor = System.Drawing.Color.White
-        Me.btnSearch.Location = New System.Drawing.Point(742, 35)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
-        Me.btnSearch.TabIndex = 40
-        Me.btnSearch.Text = "&Go"
-        Me.btnSearch.UseVisualStyleBackColor = False
-        '
-        'txtboxSearch
-        '
-        Me.txtboxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtboxSearch.Location = New System.Drawing.Point(496, 36)
-        Me.txtboxSearch.Name = "txtboxSearch"
-        Me.txtboxSearch.Size = New System.Drawing.Size(236, 22)
-        Me.txtboxSearch.TabIndex = 39
+        Me.Panel4.TabIndex = 88
         '
         'Label1
         '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(446, 40)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 7.5!)
+        Me.Label1.Location = New System.Drawing.Point(900, 12)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 13)
-        Me.Label1.TabIndex = 38
-        Me.Label1.Text = "Search "
+        Me.Label1.Size = New System.Drawing.Size(36, 12)
+        Me.Label1.TabIndex = 53
+        Me.Label1.Text = "Mode :"
+        '
+        'btnSearchFilter
+        '
+        Me.btnSearchFilter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSearchFilter.BackColor = System.Drawing.Color.Navy
+        Me.btnSearchFilter.FlatAppearance.BorderColor = System.Drawing.Color.Navy
+        Me.btnSearchFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSearchFilter.ForeColor = System.Drawing.Color.White
+        Me.btnSearchFilter.Location = New System.Drawing.Point(902, 28)
+        Me.btnSearchFilter.Name = "btnSearchFilter"
+        Me.btnSearchFilter.Size = New System.Drawing.Size(137, 23)
+        Me.btnSearchFilter.TabIndex = 52
+        Me.btnSearchFilter.Text = "Type"
+        Me.btnSearchFilter.UseVisualStyleBackColor = False
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 7.5!)
+        Me.Label2.Location = New System.Drawing.Point(664, 12)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(202, 12)
+        Me.Label2.TabIndex = 51
+        Me.Label2.Text = "You may search any value on the search bar."
+        '
+        'txtboxSearch
+        '
+        Me.txtboxSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtboxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtboxSearch.Location = New System.Drawing.Point(648, 29)
+        Me.txtboxSearch.Name = "txtboxSearch"
+        Me.txtboxSearch.Size = New System.Drawing.Size(236, 22)
+        Me.txtboxSearch.TabIndex = 50
+        '
+        'Label4
+        '
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(598, 33)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(44, 13)
+        Me.Label4.TabIndex = 49
+        Me.Label4.Text = "Search "
+        '
+        'btnEdit
+        '
+        Me.btnEdit.BackColor = System.Drawing.Color.White
+        Me.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.Navy
+        Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEdit.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEdit.ForeColor = System.Drawing.Color.Navy
+        Me.btnEdit.ImageIndex = 1
+        Me.btnEdit.ImageList = Me.ImageListBtn
+        Me.btnEdit.Location = New System.Drawing.Point(127, 14)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(115, 39)
+        Me.btnEdit.TabIndex = 48
+        Me.btnEdit.Text = " &Edit"
+        Me.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnEdit.UseVisualStyleBackColor = False
+        '
+        'ImageListBtn
+        '
+        Me.ImageListBtn.ImageStream = CType(resources.GetObject("ImageListBtn.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageListBtn.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageListBtn.Images.SetKeyName(0, "icons8-add-96.png")
+        Me.ImageListBtn.Images.SetKeyName(1, "pen.png")
+        '
+        'btnCreateNew
+        '
+        Me.btnCreateNew.BackColor = System.Drawing.Color.White
+        Me.btnCreateNew.FlatAppearance.BorderColor = System.Drawing.Color.Navy
+        Me.btnCreateNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCreateNew.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCreateNew.ForeColor = System.Drawing.Color.Navy
+        Me.btnCreateNew.ImageIndex = 0
+        Me.btnCreateNew.ImageList = Me.ImageListBtn
+        Me.btnCreateNew.Location = New System.Drawing.Point(6, 14)
+        Me.btnCreateNew.Name = "btnCreateNew"
+        Me.btnCreateNew.Size = New System.Drawing.Size(115, 39)
+        Me.btnCreateNew.TabIndex = 47
+        Me.btnCreateNew.Text = " &Create New"
+        Me.btnCreateNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCreateNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCreateNew.UseVisualStyleBackColor = False
         '
         'ToolStrip2
         '
         Me.ToolStrip2.BackColor = System.Drawing.Color.Navy
         Me.ToolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel2, Me.toolstriplabelNoOfRecord, Me.ToolStripLabel4})
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel2, Me.toolstriplabelNoOfRecord, Me.ToolStripLabel4})
         Me.ToolStrip2.Location = New System.Drawing.Point(0, 68)
         Me.ToolStrip2.Name = "ToolStrip2"
         Me.ToolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         Me.ToolStrip2.Size = New System.Drawing.Size(1056, 25)
         Me.ToolStrip2.TabIndex = 37
         Me.ToolStrip2.Text = "ToolStrip2"
+        '
+        'ToolStripLabel3
+        '
+        Me.ToolStripLabel3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripLabel3.ForeColor = System.Drawing.Color.White
+        Me.ToolStripLabel3.Name = "ToolStripLabel3"
+        Me.ToolStripLabel3.Size = New System.Drawing.Size(250, 22)
+        Me.ToolStripLabel3.Text = "L E A V E   /   P A I D   T I M E   O F F   T Y P E S"
         '
         'ToolStripLabel2
         '
@@ -241,7 +315,7 @@ Partial Class frmHR_Setup_LeaveType
         'toolstriplabelNoOfRecord
         '
         Me.toolstriplabelNoOfRecord.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.toolstriplabelNoOfRecord.ForeColor = System.Drawing.Color.White
+        Me.toolstriplabelNoOfRecord.ForeColor = System.Drawing.Color.Gold
         Me.toolstriplabelNoOfRecord.Name = "toolstriplabelNoOfRecord"
         Me.toolstriplabelNoOfRecord.Size = New System.Drawing.Size(150, 22)
         Me.toolstriplabelNoOfRecord.Text = "toolstriplabelNoOfRecord"
@@ -257,173 +331,288 @@ Partial Class frmHR_Setup_LeaveType
         '
         Me.Panel8.BackColor = System.Drawing.Color.Navy
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel8.Location = New System.Drawing.Point(10, 126)
+        Me.Panel8.Location = New System.Drawing.Point(10, 130)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(1056, 3)
-        Me.Panel8.TabIndex = 83
+        Me.Panel8.TabIndex = 89
         '
         'Panel10
         '
         Me.Panel10.BackColor = System.Drawing.Color.Navy
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel10.Location = New System.Drawing.Point(10, 129)
+        Me.Panel10.Location = New System.Drawing.Point(10, 133)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(3, 596)
-        Me.Panel10.TabIndex = 84
+        Me.Panel10.Size = New System.Drawing.Size(3, 460)
+        Me.Panel10.TabIndex = 90
         '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.Navy
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel7.Location = New System.Drawing.Point(13, 722)
+        Me.Panel7.Location = New System.Drawing.Point(13, 590)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1053, 3)
-        Me.Panel7.TabIndex = 85
+        Me.Panel7.TabIndex = 91
         '
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.Navy
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel9.Location = New System.Drawing.Point(1063, 129)
+        Me.Panel9.Location = New System.Drawing.Point(1063, 133)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(3, 593)
-        Me.Panel9.TabIndex = 86
+        Me.Panel9.Size = New System.Drawing.Size(3, 457)
+        Me.Panel9.TabIndex = 92
         '
-        'Panel5
+        'Panel25
         '
-        Me.Panel5.Controls.Add(Me.dgvLeaveType)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.Location = New System.Drawing.Point(13, 129)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1050, 593)
-        Me.Panel5.TabIndex = 87
+        Me.Panel25.BackColor = System.Drawing.Color.LightGray
+        Me.Panel25.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel25.Location = New System.Drawing.Point(13, 133)
+        Me.Panel25.Name = "Panel25"
+        Me.Panel25.Size = New System.Drawing.Size(1050, 5)
+        Me.Panel25.TabIndex = 93
         '
-        'dgvLeaveType
+        'Panel24
         '
-        Me.dgvLeaveType.AllowUserToAddRows = False
-        Me.dgvLeaveType.AllowUserToDeleteRows = False
-        Me.dgvLeaveType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
-        Me.dgvLeaveType.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.dgvLeaveType.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Panel24.BackColor = System.Drawing.Color.LightGray
+        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel24.Location = New System.Drawing.Point(13, 138)
+        Me.Panel24.Name = "Panel24"
+        Me.Panel24.Size = New System.Drawing.Size(5, 452)
+        Me.Panel24.TabIndex = 94
+        '
+        'Panel21
+        '
+        Me.Panel21.BackColor = System.Drawing.Color.LightGray
+        Me.Panel21.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel21.Location = New System.Drawing.Point(18, 585)
+        Me.Panel21.Name = "Panel21"
+        Me.Panel21.Size = New System.Drawing.Size(1045, 5)
+        Me.Panel21.TabIndex = 95
+        '
+        'Panel22
+        '
+        Me.Panel22.BackColor = System.Drawing.Color.LightGray
+        Me.Panel22.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel22.Location = New System.Drawing.Point(1058, 138)
+        Me.Panel22.Name = "Panel22"
+        Me.Panel22.Size = New System.Drawing.Size(5, 447)
+        Me.Panel22.TabIndex = 96
+        '
+        'Panel12
+        '
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel12.Location = New System.Drawing.Point(18, 138)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(1040, 5)
+        Me.Panel12.TabIndex = 97
+        '
+        'Panel14
+        '
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel14.Location = New System.Drawing.Point(18, 143)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(5, 442)
+        Me.Panel14.TabIndex = 98
+        '
+        'Panel28
+        '
+        Me.Panel28.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel28.Location = New System.Drawing.Point(23, 580)
+        Me.Panel28.Name = "Panel28"
+        Me.Panel28.Size = New System.Drawing.Size(1035, 5)
+        Me.Panel28.TabIndex = 99
+        '
+        'Panel29
+        '
+        Me.Panel29.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel29.Location = New System.Drawing.Point(1053, 143)
+        Me.Panel29.Name = "Panel29"
+        Me.Panel29.Size = New System.Drawing.Size(5, 437)
+        Me.Panel29.TabIndex = 100
+        '
+        'dgvLeaveTypeList
+        '
+        Me.dgvLeaveTypeList.AllowUserToAddRows = False
+        Me.dgvLeaveTypeList.AllowUserToDeleteRows = False
+        Me.dgvLeaveTypeList.AllowUserToResizeColumns = False
+        Me.dgvLeaveTypeList.AllowUserToResizeRows = False
+        Me.dgvLeaveTypeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvLeaveTypeList.BackgroundColor = System.Drawing.Color.White
+        Me.dgvLeaveTypeList.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvLeaveType.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvLeaveType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLeaveType.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
-        Me.dgvLeaveType.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvLeaveType.Location = New System.Drawing.Point(0, 0)
-        Me.dgvLeaveType.MultiSelect = False
-        Me.dgvLeaveType.Name = "dgvLeaveType"
-        Me.dgvLeaveType.ReadOnly = True
-        Me.dgvLeaveType.RowTemplate.Height = 30
-        Me.dgvLeaveType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLeaveType.Size = New System.Drawing.Size(1050, 593)
-        Me.dgvLeaveType.TabIndex = 79
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvLeaveTypeList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvLeaveTypeList.ColumnHeadersHeight = 35
+        Me.dgvLeaveTypeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvLeaveTypeList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ShiftID, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
+        Me.dgvLeaveTypeList.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.dgvLeaveTypeList.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvLeaveTypeList.Location = New System.Drawing.Point(23, 143)
+        Me.dgvLeaveTypeList.MultiSelect = False
+        Me.dgvLeaveTypeList.Name = "dgvLeaveTypeList"
+        Me.dgvLeaveTypeList.ReadOnly = True
+        Me.dgvLeaveTypeList.RowHeadersVisible = False
+        Me.dgvLeaveTypeList.RowTemplate.Height = 30
+        Me.dgvLeaveTypeList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvLeaveTypeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvLeaveTypeList.Size = New System.Drawing.Size(1030, 437)
+        Me.dgvLeaveTypeList.TabIndex = 101
+        '
+        'ShiftID
+        '
+        Me.ShiftID.HeaderText = "ID"
+        Me.ShiftID.Name = "ShiftID"
+        Me.ShiftID.ReadOnly = True
+        Me.ShiftID.Visible = False
+        Me.ShiftID.Width = 43
         '
         'Column1
         '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column1.HeaderText = "ID"
+        Me.Column1.HeaderText = "Name"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        Me.Column1.Width = 5
+        Me.Column1.Width = 61
         '
         'Column2
         '
-        Me.Column2.HeaderText = "Leave Type"
+        Me.Column2.HeaderText = "Description"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
-        Me.Column2.Width = 86
+        Me.Column2.Width = 91
         '
         'Column3
         '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column3.HeaderText = "Description"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column3.HeaderText = "is Cummulative?"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 250
+        Me.Column3.Width = 105
         '
         'Column4
         '
-        Me.Column4.HeaderText = "Paid?"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column4.HeaderText = "is Incremental?"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
-        Me.Column4.Width = 59
+        Me.Column4.Width = 99
         '
-        'ToolStripLabel7
+        'Column5
         '
-        Me.ToolStripLabel7.Name = "ToolStripLabel7"
-        Me.ToolStripLabel7.Size = New System.Drawing.Size(109, 28)
-        Me.ToolStripLabel7.Text = "                                  "
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Column5.HeaderText = "is Paid?"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 65
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(113, 26)
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DeleteToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'frmHR_Setup_LeaveType
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1076, 735)
-        Me.Controls.Add(Me.Panel5)
+        Me.ClientSize = New System.Drawing.Size(1076, 603)
+        Me.Controls.Add(Me.dgvLeaveTypeList)
+        Me.Controls.Add(Me.Panel29)
+        Me.Controls.Add(Me.Panel28)
+        Me.Controls.Add(Me.Panel14)
+        Me.Controls.Add(Me.Panel12)
+        Me.Controls.Add(Me.Panel22)
+        Me.Controls.Add(Me.Panel21)
+        Me.Controls.Add(Me.Panel24)
+        Me.Controls.Add(Me.Panel25)
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel10)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel4)
-        Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmHR_Setup_LeaveType"
-        Me.Text = "frmHR_Setup_LeaveType"
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
+        Me.Text = "Setup - Leave Types"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.ToolStrip2.ResumeLayout(False)
         Me.ToolStrip2.PerformLayout()
-        Me.Panel5.ResumeLayout(False)
-        CType(Me.dgvLeaveType, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvLeaveTypeList, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
+
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
-    Friend WithEvents toolstripBtnNew As ToolStripButton
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStripBtnRefresh As ToolStripButton
+    Friend WithEvents ToolStripLabel7 As ToolStripLabel
     Friend WithEvents ToolStripBtnClose As ToolStripButton
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents ToolStripButtonHelp As ToolStripButton
+    Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label3 As Label
-    Friend WithEvents cmboboxDepartment As ComboBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents btnSearch As Button
-    Friend WithEvents txtboxSearch As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnSearchFilter As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtboxSearch As TextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents btnEdit As Button
+    Friend WithEvents btnCreateNew As Button
     Friend WithEvents ToolStrip2 As ToolStrip
+    Friend WithEvents ToolStripLabel3 As ToolStripLabel
     Friend WithEvents ToolStripLabel2 As ToolStripLabel
     Friend WithEvents toolstriplabelNoOfRecord As ToolStripLabel
     Friend WithEvents ToolStripLabel4 As ToolStripLabel
+    Friend WithEvents ImageListBtn As ImageList
     Friend WithEvents Panel8 As Panel
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Panel9 As Panel
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents dgvLeaveType As DataGridView
+    Friend WithEvents Panel25 As Panel
+    Friend WithEvents Panel24 As Panel
+    Friend WithEvents Panel21 As Panel
+    Friend WithEvents Panel22 As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Panel14 As Panel
+    Friend WithEvents Panel28 As Panel
+    Friend WithEvents Panel29 As Panel
+    Friend WithEvents dgvLeaveTypeList As DataGridView
+    Friend WithEvents ShiftID As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents ToolStripLabel7 As ToolStripLabel
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -181,7 +181,7 @@ Partial Class frmMainPanelFMMDetail
         Me.panelSubFMM_SetupDetails.Controls.Add(Me.Panel10)
         Me.panelSubFMM_SetupDetails.Location = New System.Drawing.Point(12, 12)
         Me.panelSubFMM_SetupDetails.Name = "panelSubFMM_SetupDetails"
-        Me.panelSubFMM_SetupDetails.Size = New System.Drawing.Size(266, 707)
+        Me.panelSubFMM_SetupDetails.Size = New System.Drawing.Size(282, 707)
         Me.panelSubFMM_SetupDetails.TabIndex = 5
         '
         'Button19
@@ -195,7 +195,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button19.Location = New System.Drawing.Point(0, 664)
         Me.Button19.Name = "Button19"
         Me.Button19.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button19.Size = New System.Drawing.Size(266, 35)
+        Me.Button19.Size = New System.Drawing.Size(282, 35)
         Me.Button19.TabIndex = 23
         Me.Button19.Text = "   Account Mapping"
         Me.Button19.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -240,7 +240,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button18.Location = New System.Drawing.Point(0, 629)
         Me.Button18.Name = "Button18"
         Me.Button18.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button18.Size = New System.Drawing.Size(266, 35)
+        Me.Button18.Size = New System.Drawing.Size(282, 35)
         Me.Button18.TabIndex = 22
         Me.Button18.Text = "   Account Balances"
         Me.Button18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -257,7 +257,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button17.Location = New System.Drawing.Point(0, 594)
         Me.Button17.Name = "Button17"
         Me.Button17.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button17.Size = New System.Drawing.Size(266, 35)
+        Me.Button17.Size = New System.Drawing.Size(282, 35)
         Me.Button17.TabIndex = 21
         Me.Button17.Text = "   Voucher Status"
         Me.Button17.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -274,7 +274,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button16.Location = New System.Drawing.Point(0, 559)
         Me.Button16.Name = "Button16"
         Me.Button16.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button16.Size = New System.Drawing.Size(266, 35)
+        Me.Button16.Size = New System.Drawing.Size(282, 35)
         Me.Button16.TabIndex = 20
         Me.Button16.Text = "   Approver Setup"
         Me.Button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -291,7 +291,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button15.Location = New System.Drawing.Point(0, 524)
         Me.Button15.Name = "Button15"
         Me.Button15.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button15.Size = New System.Drawing.Size(266, 35)
+        Me.Button15.Size = New System.Drawing.Size(282, 35)
         Me.Button15.TabIndex = 19
         Me.Button15.Text = "   Year End Closing"
         Me.Button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -308,7 +308,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button14.Location = New System.Drawing.Point(0, 489)
         Me.Button14.Name = "Button14"
         Me.Button14.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button14.Size = New System.Drawing.Size(266, 35)
+        Me.Button14.Size = New System.Drawing.Size(282, 35)
         Me.Button14.TabIndex = 18
         Me.Button14.Text = "   Transaction Closing"
         Me.Button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -325,7 +325,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button13.Location = New System.Drawing.Point(0, 454)
         Me.Button13.Name = "Button13"
         Me.Button13.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button13.Size = New System.Drawing.Size(266, 35)
+        Me.Button13.Size = New System.Drawing.Size(282, 35)
         Me.Button13.TabIndex = 17
         Me.Button13.Text = "   Beginning Subsidiaries"
         Me.Button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -342,7 +342,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button12.Location = New System.Drawing.Point(0, 419)
         Me.Button12.Name = "Button12"
         Me.Button12.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button12.Size = New System.Drawing.Size(266, 35)
+        Me.Button12.Size = New System.Drawing.Size(282, 35)
         Me.Button12.TabIndex = 16
         Me.Button12.Text = "   Beginning Project"
         Me.Button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -359,7 +359,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button11.Location = New System.Drawing.Point(0, 384)
         Me.Button11.Name = "Button11"
         Me.Button11.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button11.Size = New System.Drawing.Size(266, 35)
+        Me.Button11.Size = New System.Drawing.Size(282, 35)
         Me.Button11.TabIndex = 15
         Me.Button11.Text = "   Items"
         Me.Button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -376,7 +376,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button10.Location = New System.Drawing.Point(0, 349)
         Me.Button10.Name = "Button10"
         Me.Button10.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button10.Size = New System.Drawing.Size(266, 35)
+        Me.Button10.Size = New System.Drawing.Size(282, 35)
         Me.Button10.TabIndex = 14
         Me.Button10.Text = "   Tax Rates"
         Me.Button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -393,7 +393,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button9.Location = New System.Drawing.Point(0, 314)
         Me.Button9.Name = "Button9"
         Me.Button9.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button9.Size = New System.Drawing.Size(266, 35)
+        Me.Button9.Size = New System.Drawing.Size(282, 35)
         Me.Button9.TabIndex = 13
         Me.Button9.Text = "   Supplier"
         Me.Button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -410,7 +410,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button4.Location = New System.Drawing.Point(0, 279)
         Me.Button4.Name = "Button4"
         Me.Button4.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button4.Size = New System.Drawing.Size(266, 35)
+        Me.Button4.Size = New System.Drawing.Size(282, 35)
         Me.Button4.TabIndex = 12
         Me.Button4.Text = "   Subisidiary"
         Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -427,7 +427,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button8.Location = New System.Drawing.Point(0, 244)
         Me.Button8.Name = "Button8"
         Me.Button8.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button8.Size = New System.Drawing.Size(266, 35)
+        Me.Button8.Size = New System.Drawing.Size(282, 35)
         Me.Button8.TabIndex = 11
         Me.Button8.Text = "   Bank Accounts"
         Me.Button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -444,7 +444,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button7.Location = New System.Drawing.Point(0, 209)
         Me.Button7.Name = "Button7"
         Me.Button7.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button7.Size = New System.Drawing.Size(266, 35)
+        Me.Button7.Size = New System.Drawing.Size(282, 35)
         Me.Button7.TabIndex = 10
         Me.Button7.Text = "   Chart of Accounts"
         Me.Button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -461,7 +461,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button6.Location = New System.Drawing.Point(0, 174)
         Me.Button6.Name = "Button6"
         Me.Button6.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button6.Size = New System.Drawing.Size(266, 35)
+        Me.Button6.Size = New System.Drawing.Size(282, 35)
         Me.Button6.TabIndex = 9
         Me.Button6.Text = "   Account Category"
         Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -478,7 +478,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button5.Location = New System.Drawing.Point(0, 139)
         Me.Button5.Name = "Button5"
         Me.Button5.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button5.Size = New System.Drawing.Size(266, 35)
+        Me.Button5.Size = New System.Drawing.Size(282, 35)
         Me.Button5.TabIndex = 8
         Me.Button5.Text = "   Cost Center"
         Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -495,7 +495,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button3.Location = New System.Drawing.Point(0, 104)
         Me.Button3.Name = "Button3"
         Me.Button3.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button3.Size = New System.Drawing.Size(266, 35)
+        Me.Button3.Size = New System.Drawing.Size(282, 35)
         Me.Button3.TabIndex = 7
         Me.Button3.Text = "   Cash Flow Category"
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -512,7 +512,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button2.Location = New System.Drawing.Point(0, 69)
         Me.Button2.Name = "Button2"
         Me.Button2.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button2.Size = New System.Drawing.Size(266, 35)
+        Me.Button2.Size = New System.Drawing.Size(282, 35)
         Me.Button2.TabIndex = 6
         Me.Button2.Text = "   Fiscal Period"
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -529,7 +529,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button1.Location = New System.Drawing.Point(0, 34)
         Me.Button1.Name = "Button1"
         Me.Button1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button1.Size = New System.Drawing.Size(266, 35)
+        Me.Button1.Size = New System.Drawing.Size(282, 35)
         Me.Button1.TabIndex = 5
         Me.Button1.Text = "   Company"
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -541,7 +541,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(266, 34)
+        Me.Panel10.Size = New System.Drawing.Size(282, 34)
         Me.Panel10.TabIndex = 1
         '
         'Label5
@@ -562,7 +562,7 @@ Partial Class frmMainPanelFMMDetail
         Me.panelSubFMM_ProjectStatusDetails.Controls.Add(Me.Button37)
         Me.panelSubFMM_ProjectStatusDetails.Controls.Add(Me.Button38)
         Me.panelSubFMM_ProjectStatusDetails.Controls.Add(Me.Panel2)
-        Me.panelSubFMM_ProjectStatusDetails.Location = New System.Drawing.Point(284, 12)
+        Me.panelSubFMM_ProjectStatusDetails.Location = New System.Drawing.Point(300, 12)
         Me.panelSubFMM_ProjectStatusDetails.Name = "panelSubFMM_ProjectStatusDetails"
         Me.panelSubFMM_ProjectStatusDetails.Size = New System.Drawing.Size(282, 218)
         Me.panelSubFMM_ProjectStatusDetails.TabIndex = 24
@@ -678,7 +678,7 @@ Partial Class frmMainPanelFMMDetail
         Me.panelSubFMM_BudgetManagementDetails.Controls.Add(Me.Button24)
         Me.panelSubFMM_BudgetManagementDetails.Controls.Add(Me.Button25)
         Me.panelSubFMM_BudgetManagementDetails.Controls.Add(Me.Panel3)
-        Me.panelSubFMM_BudgetManagementDetails.Location = New System.Drawing.Point(284, 236)
+        Me.panelSubFMM_BudgetManagementDetails.Location = New System.Drawing.Point(300, 236)
         Me.panelSubFMM_BudgetManagementDetails.Name = "panelSubFMM_BudgetManagementDetails"
         Me.panelSubFMM_BudgetManagementDetails.Size = New System.Drawing.Size(282, 182)
         Me.panelSubFMM_BudgetManagementDetails.TabIndex = 25
@@ -775,7 +775,7 @@ Partial Class frmMainPanelFMMDetail
         Me.panelSubFMM_PettyCashDetails.Controls.Add(Me.Button27)
         Me.panelSubFMM_PettyCashDetails.Controls.Add(Me.btnPettyCash)
         Me.panelSubFMM_PettyCashDetails.Controls.Add(Me.Panel4)
-        Me.panelSubFMM_PettyCashDetails.Location = New System.Drawing.Point(284, 424)
+        Me.panelSubFMM_PettyCashDetails.Location = New System.Drawing.Point(300, 424)
         Me.panelSubFMM_PettyCashDetails.Name = "panelSubFMM_PettyCashDetails"
         Me.panelSubFMM_PettyCashDetails.Size = New System.Drawing.Size(282, 112)
         Me.panelSubFMM_PettyCashDetails.TabIndex = 26
@@ -840,7 +840,7 @@ Partial Class frmMainPanelFMMDetail
         Me.panelSubFMM_CashAdvanceDetails.Controls.Add(Me.Button21)
         Me.panelSubFMM_CashAdvanceDetails.Controls.Add(Me.Button26)
         Me.panelSubFMM_CashAdvanceDetails.Controls.Add(Me.Panel5)
-        Me.panelSubFMM_CashAdvanceDetails.Location = New System.Drawing.Point(578, 12)
+        Me.panelSubFMM_CashAdvanceDetails.Location = New System.Drawing.Point(588, 12)
         Me.panelSubFMM_CashAdvanceDetails.Name = "panelSubFMM_CashAdvanceDetails"
         Me.panelSubFMM_CashAdvanceDetails.Size = New System.Drawing.Size(282, 182)
         Me.panelSubFMM_CashAdvanceDetails.TabIndex = 27
@@ -938,7 +938,7 @@ Partial Class frmMainPanelFMMDetail
         Me.panelSubFMM_CashJournalDetails.Controls.Add(Me.btnCashReceipts)
         Me.panelSubFMM_CashJournalDetails.Controls.Add(Me.btnRequestForPayment)
         Me.panelSubFMM_CashJournalDetails.Controls.Add(Me.Panel7)
-        Me.panelSubFMM_CashJournalDetails.Location = New System.Drawing.Point(578, 200)
+        Me.panelSubFMM_CashJournalDetails.Location = New System.Drawing.Point(588, 200)
         Me.panelSubFMM_CashJournalDetails.Name = "panelSubFMM_CashJournalDetails"
         Me.panelSubFMM_CashJournalDetails.Size = New System.Drawing.Size(282, 147)
         Me.panelSubFMM_CashJournalDetails.TabIndex = 28
@@ -1023,7 +1023,7 @@ Partial Class frmMainPanelFMMDetail
         Me.panelSubFMM_GeneralJournalDetails.Controls.Add(Me.Button32)
         Me.panelSubFMM_GeneralJournalDetails.Controls.Add(Me.Button33)
         Me.panelSubFMM_GeneralJournalDetails.Controls.Add(Me.Panel6)
-        Me.panelSubFMM_GeneralJournalDetails.Location = New System.Drawing.Point(578, 353)
+        Me.panelSubFMM_GeneralJournalDetails.Location = New System.Drawing.Point(588, 353)
         Me.panelSubFMM_GeneralJournalDetails.Name = "panelSubFMM_GeneralJournalDetails"
         Me.panelSubFMM_GeneralJournalDetails.Size = New System.Drawing.Size(282, 183)
         Me.panelSubFMM_GeneralJournalDetails.TabIndex = 29
@@ -1253,7 +1253,7 @@ Partial Class frmMainPanelFMMDetail
         Me.panelSubFMM_NewReportsDetails.Controls.Add(Me.Panel9)
         Me.panelSubFMM_NewReportsDetails.Location = New System.Drawing.Point(876, 236)
         Me.panelSubFMM_NewReportsDetails.Name = "panelSubFMM_NewReportsDetails"
-        Me.panelSubFMM_NewReportsDetails.Size = New System.Drawing.Size(265, 428)
+        Me.panelSubFMM_NewReportsDetails.Size = New System.Drawing.Size(282, 428)
         Me.panelSubFMM_NewReportsDetails.TabIndex = 30
         '
         'Button54
@@ -1267,7 +1267,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button54.Location = New System.Drawing.Point(0, 384)
         Me.Button54.Name = "Button54"
         Me.Button54.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button54.Size = New System.Drawing.Size(265, 35)
+        Me.Button54.Size = New System.Drawing.Size(282, 35)
         Me.Button54.TabIndex = 15
         Me.Button54.Text = "   Project Savings"
         Me.Button54.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1284,7 +1284,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button53.Location = New System.Drawing.Point(0, 349)
         Me.Button53.Name = "Button53"
         Me.Button53.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button53.Size = New System.Drawing.Size(265, 35)
+        Me.Button53.Size = New System.Drawing.Size(282, 35)
         Me.Button53.TabIndex = 14
         Me.Button53.Text = "   Deposits From Clients"
         Me.Button53.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1301,7 +1301,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button52.Location = New System.Drawing.Point(0, 314)
         Me.Button52.Name = "Button52"
         Me.Button52.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button52.Size = New System.Drawing.Size(265, 35)
+        Me.Button52.Size = New System.Drawing.Size(282, 35)
         Me.Button52.TabIndex = 13
         Me.Button52.Text = "   Project Year To Date"
         Me.Button52.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1318,7 +1318,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button51.Location = New System.Drawing.Point(0, 279)
         Me.Button51.Name = "Button51"
         Me.Button51.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button51.Size = New System.Drawing.Size(265, 35)
+        Me.Button51.Size = New System.Drawing.Size(282, 35)
         Me.Button51.TabIndex = 12
         Me.Button51.Text = "   Retainers And Consultants Fee"
         Me.Button51.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1335,7 +1335,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button50.Location = New System.Drawing.Point(0, 244)
         Me.Button50.Name = "Button50"
         Me.Button50.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button50.Size = New System.Drawing.Size(265, 35)
+        Me.Button50.Size = New System.Drawing.Size(282, 35)
         Me.Button50.TabIndex = 11
         Me.Button50.Text = "   Cash Advance Status Report"
         Me.Button50.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1352,7 +1352,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button49.Location = New System.Drawing.Point(0, 209)
         Me.Button49.Name = "Button49"
         Me.Button49.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button49.Size = New System.Drawing.Size(265, 35)
+        Me.Button49.Size = New System.Drawing.Size(282, 35)
         Me.Button49.TabIndex = 10
         Me.Button49.Text = "   Disbursed Cash Advances"
         Me.Button49.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1369,7 +1369,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button44.Location = New System.Drawing.Point(0, 174)
         Me.Button44.Name = "Button44"
         Me.Button44.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button44.Size = New System.Drawing.Size(265, 35)
+        Me.Button44.Size = New System.Drawing.Size(282, 35)
         Me.Button44.TabIndex = 9
         Me.Button44.Text = "   GAE By All Department"
         Me.Button44.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1386,7 +1386,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button45.Location = New System.Drawing.Point(0, 139)
         Me.Button45.Name = "Button45"
         Me.Button45.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button45.Size = New System.Drawing.Size(265, 35)
+        Me.Button45.Size = New System.Drawing.Size(282, 35)
         Me.Button45.TabIndex = 8
         Me.Button45.Text = "   PFSSR By Department"
         Me.Button45.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1403,7 +1403,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button46.Location = New System.Drawing.Point(0, 104)
         Me.Button46.Name = "Button46"
         Me.Button46.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button46.Size = New System.Drawing.Size(265, 35)
+        Me.Button46.Size = New System.Drawing.Size(282, 35)
         Me.Button46.TabIndex = 7
         Me.Button46.Text = "   Project Financial Status Summary"
         Me.Button46.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1420,7 +1420,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button47.Location = New System.Drawing.Point(0, 69)
         Me.Button47.Name = "Button47"
         Me.Button47.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button47.Size = New System.Drawing.Size(265, 35)
+        Me.Button47.Size = New System.Drawing.Size(282, 35)
         Me.Button47.TabIndex = 6
         Me.Button47.Text = "   Expense By All Department"
         Me.Button47.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1437,7 +1437,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button48.Location = New System.Drawing.Point(0, 34)
         Me.Button48.Name = "Button48"
         Me.Button48.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button48.Size = New System.Drawing.Size(265, 35)
+        Me.Button48.Size = New System.Drawing.Size(282, 35)
         Me.Button48.TabIndex = 5
         Me.Button48.Text = "   Revenue By All Department"
         Me.Button48.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1449,7 +1449,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(265, 34)
+        Me.Panel9.Size = New System.Drawing.Size(282, 34)
         Me.Panel9.TabIndex = 1
         '
         'Label9
@@ -1479,7 +1479,7 @@ Partial Class frmMainPanelFMMDetail
         Me.panelSubFMM_LedgerReportsDetails.Controls.Add(Me.x)
         Me.panelSubFMM_LedgerReportsDetails.Location = New System.Drawing.Point(1175, 12)
         Me.panelSubFMM_LedgerReportsDetails.Name = "panelSubFMM_LedgerReportsDetails"
-        Me.panelSubFMM_LedgerReportsDetails.Size = New System.Drawing.Size(265, 425)
+        Me.panelSubFMM_LedgerReportsDetails.Size = New System.Drawing.Size(282, 425)
         Me.panelSubFMM_LedgerReportsDetails.TabIndex = 31
         '
         'Button65
@@ -1493,7 +1493,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button65.Location = New System.Drawing.Point(0, 384)
         Me.Button65.Name = "Button65"
         Me.Button65.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button65.Size = New System.Drawing.Size(265, 35)
+        Me.Button65.Size = New System.Drawing.Size(282, 35)
         Me.Button65.TabIndex = 15
         Me.Button65.Text = "   Income And Expense Per Department"
         Me.Button65.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1510,7 +1510,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button64.Location = New System.Drawing.Point(0, 349)
         Me.Button64.Name = "Button64"
         Me.Button64.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button64.Size = New System.Drawing.Size(265, 35)
+        Me.Button64.Size = New System.Drawing.Size(282, 35)
         Me.Button64.TabIndex = 14
         Me.Button64.Text = "   Revenue By Department"
         Me.Button64.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1527,7 +1527,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button63.Location = New System.Drawing.Point(0, 314)
         Me.Button63.Name = "Button63"
         Me.Button63.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button63.Size = New System.Drawing.Size(265, 35)
+        Me.Button63.Size = New System.Drawing.Size(282, 35)
         Me.Button63.TabIndex = 13
         Me.Button63.Text = "   Ledger By Project"
         Me.Button63.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1544,7 +1544,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button62.Location = New System.Drawing.Point(0, 279)
         Me.Button62.Name = "Button62"
         Me.Button62.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button62.Size = New System.Drawing.Size(265, 35)
+        Me.Button62.Size = New System.Drawing.Size(282, 35)
         Me.Button62.TabIndex = 12
         Me.Button62.Text = "   GAE By Department"
         Me.Button62.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1561,7 +1561,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button61.Location = New System.Drawing.Point(0, 244)
         Me.Button61.Name = "Button61"
         Me.Button61.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button61.Size = New System.Drawing.Size(265, 35)
+        Me.Button61.Size = New System.Drawing.Size(282, 35)
         Me.Button61.TabIndex = 11
         Me.Button61.Text = "   Subsidiary Ledger By Subsidiary"
         Me.Button61.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1578,7 +1578,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button60.Location = New System.Drawing.Point(0, 209)
         Me.Button60.Name = "Button60"
         Me.Button60.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button60.Size = New System.Drawing.Size(265, 35)
+        Me.Button60.Size = New System.Drawing.Size(282, 35)
         Me.Button60.TabIndex = 10
         Me.Button60.Text = "   Subsidiary Ledger Account By Subsidiary"
         Me.Button60.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1595,7 +1595,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button55.Location = New System.Drawing.Point(0, 174)
         Me.Button55.Name = "Button55"
         Me.Button55.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button55.Size = New System.Drawing.Size(265, 35)
+        Me.Button55.Size = New System.Drawing.Size(282, 35)
         Me.Button55.TabIndex = 9
         Me.Button55.Text = "   Subsidiary Ledger By Account"
         Me.Button55.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1612,7 +1612,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button56.Location = New System.Drawing.Point(0, 139)
         Me.Button56.Name = "Button56"
         Me.Button56.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button56.Size = New System.Drawing.Size(265, 35)
+        Me.Button56.Size = New System.Drawing.Size(282, 35)
         Me.Button56.TabIndex = 8
         Me.Button56.Text = "   Subsidiary Ledger"
         Me.Button56.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1629,7 +1629,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button57.Location = New System.Drawing.Point(0, 104)
         Me.Button57.Name = "Button57"
         Me.Button57.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button57.Size = New System.Drawing.Size(265, 35)
+        Me.Button57.Size = New System.Drawing.Size(282, 35)
         Me.Button57.TabIndex = 7
         Me.Button57.Text = "   General Ledger By Multiple Account"
         Me.Button57.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1646,7 +1646,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button58.Location = New System.Drawing.Point(0, 69)
         Me.Button58.Name = "Button58"
         Me.Button58.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button58.Size = New System.Drawing.Size(265, 35)
+        Me.Button58.Size = New System.Drawing.Size(282, 35)
         Me.Button58.TabIndex = 6
         Me.Button58.Text = "   General Ledger By Account"
         Me.Button58.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1663,7 +1663,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Button59.Location = New System.Drawing.Point(0, 34)
         Me.Button59.Name = "Button59"
         Me.Button59.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button59.Size = New System.Drawing.Size(265, 35)
+        Me.Button59.Size = New System.Drawing.Size(282, 35)
         Me.Button59.TabIndex = 5
         Me.Button59.Text = "   General Ledger"
         Me.Button59.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1675,7 +1675,7 @@ Partial Class frmMainPanelFMMDetail
         Me.x.Dock = System.Windows.Forms.DockStyle.Top
         Me.x.Location = New System.Drawing.Point(0, 0)
         Me.x.Name = "x"
-        Me.x.Size = New System.Drawing.Size(265, 34)
+        Me.x.Size = New System.Drawing.Size(282, 34)
         Me.x.TabIndex = 1
         '
         'Label10

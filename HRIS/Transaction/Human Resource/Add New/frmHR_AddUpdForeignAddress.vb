@@ -12,10 +12,12 @@ Public Class frmHR_AddUpdForeignAddress
         Else
             lblTitle.Text = "Add Foreign Address"
         End If
+
     End Sub
 
     Private Sub btnDiscard_Click(sender As Object, e As EventArgs) Handles btnDiscard.Click
-        Me.Close()
+        isEdit = False
+        Me.Dispose()
         'frmHR_AddNewPersonnel.cbForeignAddr.CheckState = CheckState.Unchecked
         'frmHR_PreviewPersonnelDetails_PersonalInformation.cbForeignAddr.CheckState = CheckState.Unchecked
     End Sub
@@ -25,6 +27,7 @@ Public Class frmHR_AddUpdForeignAddress
             frmHR_PreviewPersonnelDetails_PersonalInformation.cbForeignAddr.Checked = False
         End If
         Me.Close()
+        isEdit = False
     End Sub
 
 End Class

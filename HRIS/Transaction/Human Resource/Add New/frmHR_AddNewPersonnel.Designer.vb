@@ -24,8 +24,15 @@ Partial Class frmHR_AddNewPersonnel
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHR_AddNewPersonnel))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -36,7 +43,7 @@ Partial Class frmHR_AddNewPersonnel
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.panelDGVLeft = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.PictureBoxAddProfile = New System.Windows.Forms.PictureBox()
+        Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.btnBrowse = New System.Windows.Forms.Button()
         Me.txtMiddleName = New System.Windows.Forms.TextBox()
@@ -54,21 +61,16 @@ Partial Class frmHR_AddNewPersonnel
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.cbPronouns = New System.Windows.Forms.ComboBox()
         Me.Label59 = New System.Windows.Forms.Label()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label58 = New System.Windows.Forms.Label()
         Me.btnDiscard = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.ImageListSideBtn = New System.Windows.Forms.ImageList(Me.components)
-        Me.btnDependentsAndSiblings = New System.Windows.Forms.Button()
-        Me.btnPersonalInformation = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.cbForeignAddr = New System.Windows.Forms.CheckBox()
         Me.btnNextTab1 = New System.Windows.Forms.Button()
         Me.Label73 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label69 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtAdrCountry1 = New System.Windows.Forms.TextBox()
@@ -86,7 +88,7 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label28 = New System.Windows.Forms.Label()
         Me.txtAdrStreet1 = New System.Windows.Forms.TextBox()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.gbPresentAdr = New System.Windows.Forms.GroupBox()
+        Me.gbPermanentAdr = New System.Windows.Forms.GroupBox()
         Me.txtAdrCountry2 = New System.Windows.Forms.TextBox()
         Me.cbAdrProvince2 = New System.Windows.Forms.ComboBox()
         Me.Label29 = New System.Windows.Forms.Label()
@@ -167,20 +169,21 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label46 = New System.Windows.Forms.Label()
         Me.Label47 = New System.Windows.Forms.Label()
         Me.Label48 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.btnBackTab3 = New System.Windows.Forms.Button()
         Me.Label72 = New System.Windows.Forms.Label()
         Me.Label71 = New System.Windows.Forms.Label()
         Me.gbSpouseAndChildren = New System.Windows.Forms.GroupBox()
-        Me.Label52 = New System.Windows.Forms.Label()
         Me.dgvSpouseAndChildren = New System.Windows.Forms.DataGridView()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.scRelationship = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.scName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.scBirthDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.scAge = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.scContactNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cbSRelationhipSC = New System.Windows.Forms.ComboBox()
+        Me.Label52 = New System.Windows.Forms.Label()
         Me.Label68 = New System.Windows.Forms.Label()
         Me.Label49 = New System.Windows.Forms.Label()
         Me.txtAgeSC = New System.Windows.Forms.TextBox()
@@ -192,16 +195,17 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label53 = New System.Windows.Forms.Label()
         Me.txtFullNameSC = New System.Windows.Forms.TextBox()
         Me.Label54 = New System.Windows.Forms.Label()
-        Me.cbSRelationhipSC = New System.Windows.Forms.ComboBox()
         Me.Label55 = New System.Windows.Forms.Label()
         Me.gbParentsAndSiblings = New System.Windows.Forms.GroupBox()
-        Me.Label51 = New System.Windows.Forms.Label()
         Me.dgvParentsAndSiblings = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.psRelationship = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.psFullName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.psBirthDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.psAge = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.psContactNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cbRelationshipPS = New System.Windows.Forms.ComboBox()
+        Me.Label51 = New System.Windows.Forms.Label()
         Me.Label67 = New System.Windows.Forms.Label()
         Me.Label56 = New System.Windows.Forms.Label()
         Me.txtAgePS = New System.Windows.Forms.TextBox()
@@ -213,35 +217,45 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label60 = New System.Windows.Forms.Label()
         Me.txtFullNamePS = New System.Windows.Forms.TextBox()
         Me.Label61 = New System.Windows.Forms.Label()
-        Me.cbRelationshipPS = New System.Windows.Forms.ComboBox()
         Me.Label62 = New System.Windows.Forms.Label()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnDependentsAndSiblings = New System.Windows.Forms.Button()
+        Me.btnPersonalInformation = New System.Windows.Forms.Button()
+        Me.PictureBoxAddProfile = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxHelp = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
-        CType(Me.PictureBoxAddProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        Me.gbPresentAdr.SuspendLayout()
+        Me.gbPermanentAdr.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         Me.gbSpouseAndChildren.SuspendLayout()
         CType(Me.dgvSpouseAndChildren, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbParentsAndSiblings.SuspendLayout()
         CType(Me.dgvParentsAndSiblings, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxAddProfile, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxHelp, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.PictureBoxHelp)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -250,16 +264,6 @@ Partial Class frmHR_AddNewPersonnel
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1094, 70)
         Me.Panel1.TabIndex = 0
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.folder
-        Me.PictureBox1.Location = New System.Drawing.Point(14, 15)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(40, 40)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
         '
         'Label1
         '
@@ -345,6 +349,7 @@ Partial Class frmHR_AddNewPersonnel
         '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.Panel11)
         Me.Panel4.Controls.Add(Me.PictureBoxAddProfile)
         Me.Panel4.Controls.Add(Me.Panel7)
         Me.Panel4.Controls.Add(Me.btnBrowse)
@@ -366,13 +371,14 @@ Partial Class frmHR_AddNewPersonnel
         Me.Panel4.Size = New System.Drawing.Size(1066, 156)
         Me.Panel4.TabIndex = 59
         '
-        'PictureBoxAddProfile
+        'Panel11
         '
-        Me.PictureBoxAddProfile.Location = New System.Drawing.Point(56, 10)
-        Me.PictureBoxAddProfile.Name = "PictureBoxAddProfile"
-        Me.PictureBoxAddProfile.Size = New System.Drawing.Size(121, 104)
-        Me.PictureBoxAddProfile.TabIndex = 77
-        Me.PictureBoxAddProfile.TabStop = False
+        Me.Panel11.BackColor = System.Drawing.Color.Navy
+        Me.Panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel11.Location = New System.Drawing.Point(198, 10)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(3, 125)
+        Me.Panel11.TabIndex = 78
         '
         'Panel7
         '
@@ -390,7 +396,7 @@ Partial Class frmHR_AddNewPersonnel
         Me.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBrowse.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBrowse.ForeColor = System.Drawing.Color.White
-        Me.btnBrowse.Location = New System.Drawing.Point(56, 121)
+        Me.btnBrowse.Location = New System.Drawing.Point(47, 121)
         Me.btnBrowse.Name = "btnBrowse"
         Me.btnBrowse.Size = New System.Drawing.Size(121, 26)
         Me.btnBrowse.TabIndex = 75
@@ -400,7 +406,7 @@ Partial Class frmHR_AddNewPersonnel
         'txtMiddleName
         '
         Me.txtMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtMiddleName.Location = New System.Drawing.Point(868, 88)
+        Me.txtMiddleName.Location = New System.Drawing.Point(865, 82)
         Me.txtMiddleName.Name = "txtMiddleName"
         Me.txtMiddleName.Size = New System.Drawing.Size(172, 22)
         Me.txtMiddleName.TabIndex = 11
@@ -408,7 +414,7 @@ Partial Class frmHR_AddNewPersonnel
         'txtCode
         '
         Me.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCode.Location = New System.Drawing.Point(312, 23)
+        Me.txtCode.Location = New System.Drawing.Point(319, 18)
         Me.txtCode.Name = "txtCode"
         Me.txtCode.Size = New System.Drawing.Size(172, 22)
         Me.txtCode.TabIndex = 1
@@ -417,7 +423,7 @@ Partial Class frmHR_AddNewPersonnel
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label8.Location = New System.Drawing.Point(783, 92)
+        Me.Label8.Location = New System.Drawing.Point(775, 87)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(84, 13)
         Me.Label8.TabIndex = 10
@@ -427,7 +433,7 @@ Partial Class frmHR_AddNewPersonnel
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(234, 28)
+        Me.Label3.Location = New System.Drawing.Point(241, 23)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 13)
         Me.Label3.TabIndex = 0
@@ -436,7 +442,7 @@ Partial Class frmHR_AddNewPersonnel
         'txtFirstName
         '
         Me.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtFirstName.Location = New System.Drawing.Point(579, 88)
+        Me.txtFirstName.Location = New System.Drawing.Point(582, 82)
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.Size = New System.Drawing.Size(183, 22)
         Me.txtFirstName.TabIndex = 9
@@ -448,7 +454,7 @@ Partial Class frmHR_AddNewPersonnel
         Me.cbPrefix.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbPrefix.ForeColor = System.Drawing.Color.White
         Me.cbPrefix.FormattingEnabled = True
-        Me.cbPrefix.Location = New System.Drawing.Point(312, 56)
+        Me.cbPrefix.Location = New System.Drawing.Point(319, 51)
         Me.cbPrefix.Name = "cbPrefix"
         Me.cbPrefix.Size = New System.Drawing.Size(111, 21)
         Me.cbPrefix.TabIndex = 2
@@ -457,7 +463,7 @@ Partial Class frmHR_AddNewPersonnel
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label7.Location = New System.Drawing.Point(503, 92)
+        Me.Label7.Location = New System.Drawing.Point(502, 86)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(74, 13)
         Me.Label7.TabIndex = 8
@@ -467,7 +473,7 @@ Partial Class frmHR_AddNewPersonnel
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(233, 60)
+        Me.Label4.Location = New System.Drawing.Point(240, 55)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(48, 13)
         Me.Label4.TabIndex = 3
@@ -476,7 +482,7 @@ Partial Class frmHR_AddNewPersonnel
         'txtLastName
         '
         Me.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLastName.Location = New System.Drawing.Point(312, 87)
+        Me.txtLastName.Location = New System.Drawing.Point(319, 82)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(174, 22)
         Me.txtLastName.TabIndex = 7
@@ -488,7 +494,7 @@ Partial Class frmHR_AddNewPersonnel
         Me.cbSuffix.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbSuffix.ForeColor = System.Drawing.Color.White
         Me.cbSuffix.FormattingEnabled = True
-        Me.cbSuffix.Location = New System.Drawing.Point(312, 119)
+        Me.cbSuffix.Location = New System.Drawing.Point(319, 114)
         Me.cbSuffix.Name = "cbSuffix"
         Me.cbSuffix.Size = New System.Drawing.Size(111, 21)
         Me.cbSuffix.TabIndex = 4
@@ -497,7 +503,7 @@ Partial Class frmHR_AddNewPersonnel
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label6.Location = New System.Drawing.Point(233, 92)
+        Me.Label6.Location = New System.Drawing.Point(240, 87)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(73, 13)
         Me.Label6.TabIndex = 6
@@ -507,7 +513,7 @@ Partial Class frmHR_AddNewPersonnel
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.Label5.Location = New System.Drawing.Point(236, 123)
+        Me.Label5.Location = New System.Drawing.Point(243, 118)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(43, 13)
         Me.Label5.TabIndex = 5
@@ -549,16 +555,6 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label59.Size = New System.Drawing.Size(149, 15)
         Me.Label59.TabIndex = 104
         Me.Label59.Text = "What are your pronouns? "
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.people
-        Me.PictureBox5.Location = New System.Drawing.Point(11, 177)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(88, 83)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 103
-        Me.PictureBox5.TabStop = False
         '
         'Label58
         '
@@ -607,24 +603,6 @@ Partial Class frmHR_AddNewPersonnel
         Me.Panel9.Size = New System.Drawing.Size(2, 588)
         Me.Panel9.TabIndex = 57
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Navy
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Navy
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.ImageIndex = 5
-        Me.Button1.ImageList = Me.ImageListSideBtn
-        Me.Button1.Location = New System.Drawing.Point(11, 64)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(198, 36)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "    Personal Identification No."
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'ImageListSideBtn
         '
         Me.ImageListSideBtn.ImageStream = CType(resources.GetObject("ImageListSideBtn.ImageStream"), System.Windows.Forms.ImageListStreamer)
@@ -640,41 +618,6 @@ Partial Class frmHR_AddNewPersonnel
         Me.ImageListSideBtn.Images.SetKeyName(8, "stock.png")
         Me.ImageListSideBtn.Images.SetKeyName(9, "evaluation.png")
         Me.ImageListSideBtn.Images.SetKeyName(10, "user (2).png")
-        '
-        'btnDependentsAndSiblings
-        '
-        Me.btnDependentsAndSiblings.FlatAppearance.BorderColor = System.Drawing.Color.Navy
-        Me.btnDependentsAndSiblings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDependentsAndSiblings.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDependentsAndSiblings.ForeColor = System.Drawing.Color.Navy
-        Me.btnDependentsAndSiblings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDependentsAndSiblings.ImageIndex = 3
-        Me.btnDependentsAndSiblings.ImageList = Me.ImageListSideBtn
-        Me.btnDependentsAndSiblings.Location = New System.Drawing.Point(11, 108)
-        Me.btnDependentsAndSiblings.Name = "btnDependentsAndSiblings"
-        Me.btnDependentsAndSiblings.Size = New System.Drawing.Size(198, 36)
-        Me.btnDependentsAndSiblings.TabIndex = 13
-        Me.btnDependentsAndSiblings.Text = "    Dependent and Siblings"
-        Me.btnDependentsAndSiblings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnDependentsAndSiblings.UseVisualStyleBackColor = True
-        '
-        'btnPersonalInformation
-        '
-        Me.btnPersonalInformation.BackColor = System.Drawing.Color.White
-        Me.btnPersonalInformation.FlatAppearance.BorderColor = System.Drawing.Color.Navy
-        Me.btnPersonalInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPersonalInformation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPersonalInformation.ForeColor = System.Drawing.Color.Navy
-        Me.btnPersonalInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPersonalInformation.ImageIndex = 10
-        Me.btnPersonalInformation.ImageList = Me.ImageListSideBtn
-        Me.btnPersonalInformation.Location = New System.Drawing.Point(11, 22)
-        Me.btnPersonalInformation.Name = "btnPersonalInformation"
-        Me.btnPersonalInformation.Size = New System.Drawing.Size(198, 36)
-        Me.btnPersonalInformation.TabIndex = 12
-        Me.btnPersonalInformation.Text = "    Personal Information"
-        Me.btnPersonalInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnPersonalInformation.UseVisualStyleBackColor = False
         '
         'TabControl1
         '
@@ -697,7 +640,7 @@ Partial Class frmHR_AddNewPersonnel
         Me.TabPage1.Controls.Add(Me.PictureBox2)
         Me.TabPage1.Controls.Add(Me.Label69)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
-        Me.TabPage1.Controls.Add(Me.gbPresentAdr)
+        Me.TabPage1.Controls.Add(Me.gbPermanentAdr)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.cbPresentAdr)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
@@ -710,7 +653,7 @@ Partial Class frmHR_AddNewPersonnel
         '
         Me.cbForeignAddr.AutoSize = True
         Me.cbForeignAddr.BackColor = System.Drawing.Color.Transparent
-        Me.cbForeignAddr.Location = New System.Drawing.Point(637, 279)
+        Me.cbForeignAddr.Location = New System.Drawing.Point(634, 270)
         Me.cbForeignAddr.Name = "cbForeignAddr"
         Me.cbForeignAddr.Size = New System.Drawing.Size(151, 17)
         Me.cbForeignAddr.TabIndex = 111
@@ -736,16 +679,6 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label73.Size = New System.Drawing.Size(57, 15)
         Me.Label73.TabIndex = 95
         Me.Label73.Text = "1 out of 3"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.arrow_right
-        Me.PictureBox2.Location = New System.Drawing.Point(6, 6)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(25, 25)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 46
-        Me.PictureBox2.TabStop = False
         '
         'Label69
         '
@@ -775,7 +708,7 @@ Partial Class frmHR_AddNewPersonnel
         Me.GroupBox1.Controls.Add(Me.txtAdrStreet1)
         Me.GroupBox1.Controls.Add(Me.Label25)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(430, 40)
+        Me.GroupBox1.Location = New System.Drawing.Point(430, 27)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(376, 222)
         Me.GroupBox1.TabIndex = 43
@@ -808,7 +741,7 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label64.AutoSize = True
         Me.Label64.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
         Me.Label64.ForeColor = System.Drawing.Color.Green
-        Me.Label64.Location = New System.Drawing.Point(9, 0)
+        Me.Label64.Location = New System.Drawing.Point(6, 0)
         Me.Label64.Name = "Label64"
         Me.Label64.Size = New System.Drawing.Size(97, 15)
         Me.Label64.TabIndex = 82
@@ -940,30 +873,30 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label25.TabIndex = 88
         Me.Label25.Text = "No./Block/Street*:"
         '
-        'gbPresentAdr
+        'gbPermanentAdr
         '
-        Me.gbPresentAdr.Controls.Add(Me.txtAdrCountry2)
-        Me.gbPresentAdr.Controls.Add(Me.cbAdrProvince2)
-        Me.gbPresentAdr.Controls.Add(Me.Label29)
-        Me.gbPresentAdr.Controls.Add(Me.txtAdrZip2)
-        Me.gbPresentAdr.Controls.Add(Me.Label32)
-        Me.gbPresentAdr.Controls.Add(Me.cbAdrRegion2)
-        Me.gbPresentAdr.Controls.Add(Me.Label33)
-        Me.gbPresentAdr.Controls.Add(Me.cbAdrCity2)
-        Me.gbPresentAdr.Controls.Add(Me.Label75)
-        Me.gbPresentAdr.Controls.Add(Me.Label65)
-        Me.gbPresentAdr.Controls.Add(Me.Label26)
-        Me.gbPresentAdr.Controls.Add(Me.Label27)
-        Me.gbPresentAdr.Controls.Add(Me.txtAdrStreet2)
-        Me.gbPresentAdr.Controls.Add(Me.Label31)
-        Me.gbPresentAdr.Controls.Add(Me.txtAdrBrgy2)
-        Me.gbPresentAdr.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbPresentAdr.Location = New System.Drawing.Point(430, 306)
-        Me.gbPresentAdr.Name = "gbPresentAdr"
-        Me.gbPresentAdr.Size = New System.Drawing.Size(376, 220)
-        Me.gbPresentAdr.TabIndex = 44
-        Me.gbPresentAdr.TabStop = False
-        Me.gbPresentAdr.Text = "Permanent Address"
+        Me.gbPermanentAdr.Controls.Add(Me.txtAdrCountry2)
+        Me.gbPermanentAdr.Controls.Add(Me.cbAdrProvince2)
+        Me.gbPermanentAdr.Controls.Add(Me.Label29)
+        Me.gbPermanentAdr.Controls.Add(Me.txtAdrZip2)
+        Me.gbPermanentAdr.Controls.Add(Me.Label32)
+        Me.gbPermanentAdr.Controls.Add(Me.cbAdrRegion2)
+        Me.gbPermanentAdr.Controls.Add(Me.Label33)
+        Me.gbPermanentAdr.Controls.Add(Me.cbAdrCity2)
+        Me.gbPermanentAdr.Controls.Add(Me.Label75)
+        Me.gbPermanentAdr.Controls.Add(Me.Label65)
+        Me.gbPermanentAdr.Controls.Add(Me.Label26)
+        Me.gbPermanentAdr.Controls.Add(Me.Label27)
+        Me.gbPermanentAdr.Controls.Add(Me.txtAdrStreet2)
+        Me.gbPermanentAdr.Controls.Add(Me.Label31)
+        Me.gbPermanentAdr.Controls.Add(Me.txtAdrBrgy2)
+        Me.gbPermanentAdr.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbPermanentAdr.Location = New System.Drawing.Point(430, 294)
+        Me.gbPermanentAdr.Name = "gbPermanentAdr"
+        Me.gbPermanentAdr.Size = New System.Drawing.Size(376, 220)
+        Me.gbPermanentAdr.TabIndex = 44
+        Me.gbPermanentAdr.TabStop = False
+        Me.gbPermanentAdr.Text = "Permanent Address"
         '
         'txtAdrCountry2
         '
@@ -1477,7 +1410,7 @@ Partial Class frmHR_AddNewPersonnel
         '
         Me.cbPresentAdr.AutoSize = True
         Me.cbPresentAdr.BackColor = System.Drawing.Color.Transparent
-        Me.cbPresentAdr.Location = New System.Drawing.Point(442, 279)
+        Me.cbPresentAdr.Location = New System.Drawing.Point(430, 270)
         Me.cbPresentAdr.Name = "cbPresentAdr"
         Me.cbPresentAdr.Size = New System.Drawing.Size(152, 17)
         Me.cbPresentAdr.TabIndex = 109
@@ -1844,16 +1777,6 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label48.TabIndex = 50
         Me.Label48.Text = "Social Security No.:"
         '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.arrow_right
-        Me.PictureBox3.Location = New System.Drawing.Point(6, 6)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(25, 25)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 90
-        Me.PictureBox3.TabStop = False
-        '
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.Color.White
@@ -1912,8 +1835,9 @@ Partial Class frmHR_AddNewPersonnel
         '
         'gbSpouseAndChildren
         '
-        Me.gbSpouseAndChildren.Controls.Add(Me.Label52)
         Me.gbSpouseAndChildren.Controls.Add(Me.dgvSpouseAndChildren)
+        Me.gbSpouseAndChildren.Controls.Add(Me.cbSRelationhipSC)
+        Me.gbSpouseAndChildren.Controls.Add(Me.Label52)
         Me.gbSpouseAndChildren.Controls.Add(Me.Label68)
         Me.gbSpouseAndChildren.Controls.Add(Me.Label49)
         Me.gbSpouseAndChildren.Controls.Add(Me.txtAgeSC)
@@ -1925,7 +1849,6 @@ Partial Class frmHR_AddNewPersonnel
         Me.gbSpouseAndChildren.Controls.Add(Me.Label53)
         Me.gbSpouseAndChildren.Controls.Add(Me.txtFullNameSC)
         Me.gbSpouseAndChildren.Controls.Add(Me.Label54)
-        Me.gbSpouseAndChildren.Controls.Add(Me.cbSRelationhipSC)
         Me.gbSpouseAndChildren.Controls.Add(Me.Label55)
         Me.gbSpouseAndChildren.Location = New System.Drawing.Point(417, 55)
         Me.gbSpouseAndChildren.Name = "gbSpouseAndChildren"
@@ -1934,28 +1857,42 @@ Partial Class frmHR_AddNewPersonnel
         Me.gbSpouseAndChildren.TabStop = False
         Me.gbSpouseAndChildren.Text = "Spouse And Children"
         '
-        'Label52
-        '
-        Me.Label52.AutoSize = True
-        Me.Label52.Location = New System.Drawing.Point(10, 213)
-        Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(192, 13)
-        Me.Label52.TabIndex = 88
-        Me.Label52.Text = "Details of Spouse and Dependents :"
-        '
         'dgvSpouseAndChildren
         '
         Me.dgvSpouseAndChildren.AllowUserToAddRows = False
         Me.dgvSpouseAndChildren.AllowUserToDeleteRows = False
-        Me.dgvSpouseAndChildren.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.dgvSpouseAndChildren.AllowUserToResizeColumns = False
+        Me.dgvSpouseAndChildren.AllowUserToResizeRows = False
+        Me.dgvSpouseAndChildren.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvSpouseAndChildren.BackgroundColor = System.Drawing.Color.White
-        Me.dgvSpouseAndChildren.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.scRelationship, Me.scName, Me.scBirthDate, Me.scAge, Me.scContactNo})
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSpouseAndChildren.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvSpouseAndChildren.ColumnHeadersHeight = 35
+        Me.dgvSpouseAndChildren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvSpouseAndChildren.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.scRelationship, Me.scName, Me.scBirthDate, Me.scAge, Me.scContactNo})
         Me.dgvSpouseAndChildren.Location = New System.Drawing.Point(6, 240)
+        Me.dgvSpouseAndChildren.MultiSelect = False
         Me.dgvSpouseAndChildren.Name = "dgvSpouseAndChildren"
         Me.dgvSpouseAndChildren.ReadOnly = True
         Me.dgvSpouseAndChildren.RowHeadersVisible = False
+        Me.dgvSpouseAndChildren.RowTemplate.Height = 30
+        Me.dgvSpouseAndChildren.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvSpouseAndChildren.Size = New System.Drawing.Size(390, 189)
-        Me.dgvSpouseAndChildren.TabIndex = 85
+        Me.dgvSpouseAndChildren.TabIndex = 90
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "ID"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Visible = False
+        Me.Column3.Width = 43
         '
         'scRelationship
         '
@@ -1969,17 +1906,22 @@ Partial Class frmHR_AddNewPersonnel
         Me.scName.HeaderText = "Full Name"
         Me.scName.Name = "scName"
         Me.scName.ReadOnly = True
-        Me.scName.Width = 83
+        Me.scName.Width = 77
         '
         'scBirthDate
         '
+        DataGridViewCellStyle2.Format = "D"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.scBirthDate.DefaultCellStyle = DataGridViewCellStyle2
         Me.scBirthDate.HeaderText = "Birth Date"
         Me.scBirthDate.Name = "scBirthDate"
         Me.scBirthDate.ReadOnly = True
-        Me.scBirthDate.Width = 83
+        Me.scBirthDate.Width = 77
         '
         'scAge
         '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.scAge.DefaultCellStyle = DataGridViewCellStyle3
         Me.scAge.HeaderText = "Age"
         Me.scAge.Name = "scAge"
         Me.scAge.ReadOnly = True
@@ -1987,10 +1929,32 @@ Partial Class frmHR_AddNewPersonnel
         '
         'scContactNo
         '
-        Me.scContactNo.HeaderText = "Contact Number"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.scContactNo.DefaultCellStyle = DataGridViewCellStyle4
+        Me.scContactNo.HeaderText = "Mobile Number"
         Me.scContactNo.Name = "scContactNo"
         Me.scContactNo.ReadOnly = True
-        Me.scContactNo.Width = 116
+        Me.scContactNo.Width = 103
+        '
+        'cbSRelationhipSC
+        '
+        Me.cbSRelationhipSC.BackColor = System.Drawing.Color.Navy
+        Me.cbSRelationhipSC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbSRelationhipSC.ForeColor = System.Drawing.Color.White
+        Me.cbSRelationhipSC.FormattingEnabled = True
+        Me.cbSRelationhipSC.Location = New System.Drawing.Point(142, 40)
+        Me.cbSRelationhipSC.Name = "cbSRelationhipSC"
+        Me.cbSRelationhipSC.Size = New System.Drawing.Size(235, 21)
+        Me.cbSRelationhipSC.TabIndex = 89
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Location = New System.Drawing.Point(10, 213)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(192, 13)
+        Me.Label52.TabIndex = 88
+        Me.Label52.Text = "Details of Spouse and Dependents :"
         '
         'Label68
         '
@@ -2101,15 +2065,6 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label54.TabIndex = 2
         Me.Label54.Text = "Name :"
         '
-        'cbSRelationhipSC
-        '
-        Me.cbSRelationhipSC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbSRelationhipSC.FormattingEnabled = True
-        Me.cbSRelationhipSC.Location = New System.Drawing.Point(142, 42)
-        Me.cbSRelationhipSC.Name = "cbSRelationhipSC"
-        Me.cbSRelationhipSC.Size = New System.Drawing.Size(235, 21)
-        Me.cbSRelationhipSC.TabIndex = 1
-        '
         'Label55
         '
         Me.Label55.AutoSize = True
@@ -2121,8 +2076,9 @@ Partial Class frmHR_AddNewPersonnel
         '
         'gbParentsAndSiblings
         '
-        Me.gbParentsAndSiblings.Controls.Add(Me.Label51)
         Me.gbParentsAndSiblings.Controls.Add(Me.dgvParentsAndSiblings)
+        Me.gbParentsAndSiblings.Controls.Add(Me.cbRelationshipPS)
+        Me.gbParentsAndSiblings.Controls.Add(Me.Label51)
         Me.gbParentsAndSiblings.Controls.Add(Me.Label67)
         Me.gbParentsAndSiblings.Controls.Add(Me.Label56)
         Me.gbParentsAndSiblings.Controls.Add(Me.txtAgePS)
@@ -2134,7 +2090,6 @@ Partial Class frmHR_AddNewPersonnel
         Me.gbParentsAndSiblings.Controls.Add(Me.Label60)
         Me.gbParentsAndSiblings.Controls.Add(Me.txtFullNamePS)
         Me.gbParentsAndSiblings.Controls.Add(Me.Label61)
-        Me.gbParentsAndSiblings.Controls.Add(Me.cbRelationshipPS)
         Me.gbParentsAndSiblings.Controls.Add(Me.Label62)
         Me.gbParentsAndSiblings.Location = New System.Drawing.Point(20, 55)
         Me.gbParentsAndSiblings.Name = "gbParentsAndSiblings"
@@ -2143,28 +2098,42 @@ Partial Class frmHR_AddNewPersonnel
         Me.gbParentsAndSiblings.TabStop = False
         Me.gbParentsAndSiblings.Text = "Parents and Siblings"
         '
-        'Label51
-        '
-        Me.Label51.AutoSize = True
-        Me.Label51.Location = New System.Drawing.Point(6, 213)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(170, 13)
-        Me.Label51.TabIndex = 87
-        Me.Label51.Text = "Details of Parents and Siblings :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
         'dgvParentsAndSiblings
         '
         Me.dgvParentsAndSiblings.AllowUserToAddRows = False
         Me.dgvParentsAndSiblings.AllowUserToDeleteRows = False
-        Me.dgvParentsAndSiblings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.dgvParentsAndSiblings.AllowUserToResizeColumns = False
+        Me.dgvParentsAndSiblings.AllowUserToResizeRows = False
+        Me.dgvParentsAndSiblings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvParentsAndSiblings.BackgroundColor = System.Drawing.Color.White
-        Me.dgvParentsAndSiblings.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.psRelationship, Me.psFullName, Me.psBirthDate, Me.psAge, Me.psContactNo})
-        Me.dgvParentsAndSiblings.Location = New System.Drawing.Point(9, 240)
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvParentsAndSiblings.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvParentsAndSiblings.ColumnHeadersHeight = 35
+        Me.dgvParentsAndSiblings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvParentsAndSiblings.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.psRelationship, Me.psFullName, Me.psBirthDate, Me.psAge, Me.psContactNo})
+        Me.dgvParentsAndSiblings.Location = New System.Drawing.Point(8, 240)
+        Me.dgvParentsAndSiblings.MultiSelect = False
         Me.dgvParentsAndSiblings.Name = "dgvParentsAndSiblings"
         Me.dgvParentsAndSiblings.ReadOnly = True
         Me.dgvParentsAndSiblings.RowHeadersVisible = False
+        Me.dgvParentsAndSiblings.RowTemplate.Height = 30
+        Me.dgvParentsAndSiblings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvParentsAndSiblings.Size = New System.Drawing.Size(374, 189)
-        Me.dgvParentsAndSiblings.TabIndex = 84
+        Me.dgvParentsAndSiblings.TabIndex = 89
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        Me.Column1.Width = 43
         '
         'psRelationship
         '
@@ -2178,17 +2147,22 @@ Partial Class frmHR_AddNewPersonnel
         Me.psFullName.HeaderText = "Full Name"
         Me.psFullName.Name = "psFullName"
         Me.psFullName.ReadOnly = True
-        Me.psFullName.Width = 83
+        Me.psFullName.Width = 77
         '
         'psBirthDate
         '
+        DataGridViewCellStyle6.Format = "D"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.psBirthDate.DefaultCellStyle = DataGridViewCellStyle6
         Me.psBirthDate.HeaderText = "Birth Date"
         Me.psBirthDate.Name = "psBirthDate"
         Me.psBirthDate.ReadOnly = True
-        Me.psBirthDate.Width = 83
+        Me.psBirthDate.Width = 77
         '
         'psAge
         '
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.psAge.DefaultCellStyle = DataGridViewCellStyle7
         Me.psAge.HeaderText = "Age"
         Me.psAge.Name = "psAge"
         Me.psAge.ReadOnly = True
@@ -2196,10 +2170,32 @@ Partial Class frmHR_AddNewPersonnel
         '
         'psContactNo
         '
-        Me.psContactNo.HeaderText = "Contact Number"
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.psContactNo.DefaultCellStyle = DataGridViewCellStyle8
+        Me.psContactNo.HeaderText = "Mobile Number"
         Me.psContactNo.Name = "psContactNo"
         Me.psContactNo.ReadOnly = True
-        Me.psContactNo.Width = 116
+        Me.psContactNo.Width = 103
+        '
+        'cbRelationshipPS
+        '
+        Me.cbRelationshipPS.BackColor = System.Drawing.Color.Navy
+        Me.cbRelationshipPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbRelationshipPS.ForeColor = System.Drawing.Color.White
+        Me.cbRelationshipPS.FormattingEnabled = True
+        Me.cbRelationshipPS.Location = New System.Drawing.Point(139, 42)
+        Me.cbRelationshipPS.Name = "cbRelationshipPS"
+        Me.cbRelationshipPS.Size = New System.Drawing.Size(226, 21)
+        Me.cbRelationshipPS.TabIndex = 88
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Location = New System.Drawing.Point(6, 213)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(170, 13)
+        Me.Label51.TabIndex = 87
+        Me.Label51.Text = "Details of Parents and Siblings :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label67
         '
@@ -2310,15 +2306,6 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label61.TabIndex = 2
         Me.Label61.Text = "Name :"
         '
-        'cbRelationshipPS
-        '
-        Me.cbRelationshipPS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbRelationshipPS.FormattingEnabled = True
-        Me.cbRelationshipPS.Location = New System.Drawing.Point(138, 42)
-        Me.cbRelationshipPS.Name = "cbRelationshipPS"
-        Me.cbRelationshipPS.Size = New System.Drawing.Size(228, 21)
-        Me.cbRelationshipPS.TabIndex = 1
-        '
         'Label62
         '
         Me.Label62.AutoSize = True
@@ -2327,6 +2314,34 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label62.Size = New System.Drawing.Size(118, 13)
         Me.Label62.TabIndex = 0
         Me.Label62.Text = "Type of Relationship :"
+        '
+        'Panel2
+        '
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(241, 228)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(839, 10)
+        Me.Panel2.TabIndex = 66
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.arrow_right
+        Me.PictureBox2.Location = New System.Drawing.Point(6, 6)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(25, 25)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 46
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.arrow_right
+        Me.PictureBox3.Location = New System.Drawing.Point(6, 6)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(25, 25)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 90
+        Me.PictureBox3.TabStop = False
         '
         'PictureBox4
         '
@@ -2338,13 +2353,96 @@ Partial Class frmHR_AddNewPersonnel
         Me.PictureBox4.TabIndex = 92
         Me.PictureBox4.TabStop = False
         '
-        'Panel2
+        'PictureBox5
         '
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(241, 228)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(839, 10)
-        Me.Panel2.TabIndex = 66
+        Me.PictureBox5.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.people
+        Me.PictureBox5.Location = New System.Drawing.Point(11, 177)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(88, 83)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 103
+        Me.PictureBox5.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Navy
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Navy
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.ImageIndex = 5
+        Me.Button1.ImageList = Me.ImageListSideBtn
+        Me.Button1.Location = New System.Drawing.Point(14, 59)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(198, 36)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "    Personal Identification No."
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'btnDependentsAndSiblings
+        '
+        Me.btnDependentsAndSiblings.FlatAppearance.BorderColor = System.Drawing.Color.Navy
+        Me.btnDependentsAndSiblings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDependentsAndSiblings.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDependentsAndSiblings.ForeColor = System.Drawing.Color.Navy
+        Me.btnDependentsAndSiblings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDependentsAndSiblings.ImageIndex = 3
+        Me.btnDependentsAndSiblings.ImageList = Me.ImageListSideBtn
+        Me.btnDependentsAndSiblings.Location = New System.Drawing.Point(14, 103)
+        Me.btnDependentsAndSiblings.Name = "btnDependentsAndSiblings"
+        Me.btnDependentsAndSiblings.Size = New System.Drawing.Size(198, 36)
+        Me.btnDependentsAndSiblings.TabIndex = 13
+        Me.btnDependentsAndSiblings.Text = "    Dependent and Siblings"
+        Me.btnDependentsAndSiblings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDependentsAndSiblings.UseVisualStyleBackColor = True
+        '
+        'btnPersonalInformation
+        '
+        Me.btnPersonalInformation.BackColor = System.Drawing.Color.White
+        Me.btnPersonalInformation.FlatAppearance.BorderColor = System.Drawing.Color.Navy
+        Me.btnPersonalInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPersonalInformation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPersonalInformation.ForeColor = System.Drawing.Color.Navy
+        Me.btnPersonalInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnPersonalInformation.ImageIndex = 10
+        Me.btnPersonalInformation.ImageList = Me.ImageListSideBtn
+        Me.btnPersonalInformation.Location = New System.Drawing.Point(14, 17)
+        Me.btnPersonalInformation.Name = "btnPersonalInformation"
+        Me.btnPersonalInformation.Size = New System.Drawing.Size(198, 36)
+        Me.btnPersonalInformation.TabIndex = 12
+        Me.btnPersonalInformation.Text = "    Personal Information"
+        Me.btnPersonalInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPersonalInformation.UseVisualStyleBackColor = False
+        '
+        'PictureBoxAddProfile
+        '
+        Me.PictureBoxAddProfile.Location = New System.Drawing.Point(47, 8)
+        Me.PictureBoxAddProfile.Name = "PictureBoxAddProfile"
+        Me.PictureBoxAddProfile.Size = New System.Drawing.Size(121, 104)
+        Me.PictureBoxAddProfile.TabIndex = 77
+        Me.PictureBoxAddProfile.TabStop = False
+        '
+        'PictureBoxHelp
+        '
+        Me.PictureBoxHelp.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.help
+        Me.PictureBoxHelp.Location = New System.Drawing.Point(1050, 18)
+        Me.PictureBoxHelp.Name = "PictureBoxHelp"
+        Me.PictureBoxHelp.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBoxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBoxHelp.TabIndex = 145
+        Me.PictureBoxHelp.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.folder
+        Me.PictureBox1.Location = New System.Drawing.Point(14, 15)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
         '
         'frmHR_AddNewPersonnel
         '
@@ -2374,28 +2472,23 @@ Partial Class frmHR_AddNewPersonnel
         Me.Text = "Add New Personnel"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        CType(Me.PictureBoxAddProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.gbPresentAdr.ResumeLayout(False)
-        Me.gbPresentAdr.PerformLayout()
+        Me.gbPermanentAdr.ResumeLayout(False)
+        Me.gbPermanentAdr.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.gbSpouseAndChildren.ResumeLayout(False)
@@ -2404,7 +2497,13 @@ Partial Class frmHR_AddNewPersonnel
         Me.gbParentsAndSiblings.ResumeLayout(False)
         Me.gbParentsAndSiblings.PerformLayout()
         CType(Me.dgvParentsAndSiblings, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxAddProfile, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxHelp, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2483,7 +2582,7 @@ Partial Class frmHR_AddNewPersonnel
     Friend WithEvents Label28 As Label
     Friend WithEvents txtAdrStreet1 As TextBox
     Friend WithEvents Label25 As Label
-    Friend WithEvents gbPresentAdr As GroupBox
+    Friend WithEvents gbPermanentAdr As GroupBox
     Friend WithEvents cbPresentAdr As CheckBox
     Friend WithEvents Label26 As Label
     Friend WithEvents Label27 As Label
@@ -2529,7 +2628,6 @@ Partial Class frmHR_AddNewPersonnel
     Friend WithEvents Label53 As Label
     Friend WithEvents txtFullNameSC As TextBox
     Friend WithEvents Label54 As Label
-    Friend WithEvents cbSRelationhipSC As ComboBox
     Friend WithEvents Label55 As Label
     Friend WithEvents gbParentsAndSiblings As GroupBox
     Friend WithEvents Label57 As Label
@@ -2540,7 +2638,6 @@ Partial Class frmHR_AddNewPersonnel
     Friend WithEvents Label60 As Label
     Friend WithEvents txtFullNamePS As TextBox
     Friend WithEvents Label61 As Label
-    Friend WithEvents cbRelationshipPS As ComboBox
     Friend WithEvents Label62 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label64 As Label
@@ -2578,22 +2675,10 @@ Partial Class frmHR_AddNewPersonnel
     Friend WithEvents Label75 As Label
     Friend WithEvents btnNextTab2 As Button
     Friend WithEvents Label34 As Label
-    Friend WithEvents dgvSpouseAndChildren As DataGridView
-    Friend WithEvents dgvParentsAndSiblings As DataGridView
     Friend WithEvents Label56 As Label
     Friend WithEvents txtAgePS As TextBox
     Friend WithEvents Label52 As Label
     Friend WithEvents Label51 As Label
-    Friend WithEvents psRelationship As DataGridViewTextBoxColumn
-    Friend WithEvents psFullName As DataGridViewTextBoxColumn
-    Friend WithEvents psBirthDate As DataGridViewTextBoxColumn
-    Friend WithEvents psAge As DataGridViewTextBoxColumn
-    Friend WithEvents psContactNo As DataGridViewTextBoxColumn
-    Friend WithEvents scRelationship As DataGridViewTextBoxColumn
-    Friend WithEvents scName As DataGridViewTextBoxColumn
-    Friend WithEvents scBirthDate As DataGridViewTextBoxColumn
-    Friend WithEvents scAge As DataGridViewTextBoxColumn
-    Friend WithEvents scContactNo As DataGridViewTextBoxColumn
     Friend WithEvents txtAdrCountry1 As TextBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Label58 As Label
@@ -2602,4 +2687,22 @@ Partial Class frmHR_AddNewPersonnel
     Friend WithEvents PictureBoxAddProfile As PictureBox
     Friend WithEvents cbForeignAddr As CheckBox
     Friend WithEvents txtAdrCountry2 As TextBox
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents cbRelationshipPS As ComboBox
+    Friend WithEvents cbSRelationhipSC As ComboBox
+    Friend WithEvents dgvParentsAndSiblings As DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents psRelationship As DataGridViewTextBoxColumn
+    Friend WithEvents psFullName As DataGridViewTextBoxColumn
+    Friend WithEvents psBirthDate As DataGridViewTextBoxColumn
+    Friend WithEvents psAge As DataGridViewTextBoxColumn
+    Friend WithEvents psContactNo As DataGridViewTextBoxColumn
+    Friend WithEvents dgvSpouseAndChildren As DataGridView
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents scRelationship As DataGridViewTextBoxColumn
+    Friend WithEvents scName As DataGridViewTextBoxColumn
+    Friend WithEvents scBirthDate As DataGridViewTextBoxColumn
+    Friend WithEvents scAge As DataGridViewTextBoxColumn
+    Friend WithEvents scContactNo As DataGridViewTextBoxColumn
+    Friend WithEvents PictureBoxHelp As PictureBox
 End Class

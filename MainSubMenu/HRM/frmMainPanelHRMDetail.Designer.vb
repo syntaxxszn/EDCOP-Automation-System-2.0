@@ -36,9 +36,11 @@ Partial Class frmMainPanelHRMDetail
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.panelSubHRIS_Reports = New System.Windows.Forms.Panel()
-        Me.Button21 = New System.Windows.Forms.Button()
         Me.Button20 = New System.Windows.Forms.Button()
-        Me.Button24 = New System.Windows.Forms.Button()
+        Me.btnCertificateOfEmployment = New System.Windows.Forms.Button()
+        Me.Button21 = New System.Windows.Forms.Button()
+        Me.btnCompanyReport = New System.Windows.Forms.Button()
+        Me.btnEmployee = New System.Windows.Forms.Button()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.panelSubHRIS_TransactionDetails = New System.Windows.Forms.Panel()
@@ -106,6 +108,10 @@ Partial Class frmMainPanelHRMDetail
         Me.ImageListSubMenuIcon.Images.SetKeyName(10, "benefit_Administration.png")
         Me.ImageListSubMenuIcon.Images.SetKeyName(11, "Performance_Management.png")
         Me.ImageListSubMenuIcon.Images.SetKeyName(12, "Report_Document.png")
+        Me.ImageListSubMenuIcon.Images.SetKeyName(13, "birthday.png")
+        Me.ImageListSubMenuIcon.Images.SetKeyName(14, "certificate.png")
+        Me.ImageListSubMenuIcon.Images.SetKeyName(15, "dept.png")
+        Me.ImageListSubMenuIcon.Images.SetKeyName(16, "employees.png")
         '
         'btnLeaveType
         '
@@ -232,31 +238,16 @@ Partial Class frmMainPanelHRMDetail
         '
         'panelSubHRIS_Reports
         '
-        Me.panelSubHRIS_Reports.Controls.Add(Me.Button21)
         Me.panelSubHRIS_Reports.Controls.Add(Me.Button20)
-        Me.panelSubHRIS_Reports.Controls.Add(Me.Button24)
+        Me.panelSubHRIS_Reports.Controls.Add(Me.btnCertificateOfEmployment)
+        Me.panelSubHRIS_Reports.Controls.Add(Me.Button21)
+        Me.panelSubHRIS_Reports.Controls.Add(Me.btnCompanyReport)
+        Me.panelSubHRIS_Reports.Controls.Add(Me.btnEmployee)
         Me.panelSubHRIS_Reports.Controls.Add(Me.Panel11)
-        Me.panelSubHRIS_Reports.Location = New System.Drawing.Point(18, 359)
+        Me.panelSubHRIS_Reports.Location = New System.Drawing.Point(18, 382)
         Me.panelSubHRIS_Reports.Name = "panelSubHRIS_Reports"
-        Me.panelSubHRIS_Reports.Size = New System.Drawing.Size(282, 150)
+        Me.panelSubHRIS_Reports.Size = New System.Drawing.Size(282, 223)
         Me.panelSubHRIS_Reports.TabIndex = 6
-        '
-        'Button21
-        '
-        Me.Button21.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button21.FlatAppearance.BorderSize = 0
-        Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button21.ImageIndex = 12
-        Me.Button21.ImageList = Me.ImageListSubMenuIcon
-        Me.Button21.Location = New System.Drawing.Point(0, 104)
-        Me.Button21.Name = "Button21"
-        Me.Button21.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button21.Size = New System.Drawing.Size(282, 35)
-        Me.Button21.TabIndex = 13
-        Me.Button21.Text = "   List of Birthday"
-        Me.Button21.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button21.UseVisualStyleBackColor = True
         '
         'Button20
         '
@@ -264,33 +255,84 @@ Partial Class frmMainPanelHRMDetail
         Me.Button20.FlatAppearance.BorderSize = 0
         Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button20.ImageIndex = 12
+        Me.Button20.ImageKey = "Performance_Management.png"
         Me.Button20.ImageList = Me.ImageListSubMenuIcon
-        Me.Button20.Location = New System.Drawing.Point(0, 69)
+        Me.Button20.Location = New System.Drawing.Point(0, 174)
         Me.Button20.Name = "Button20"
         Me.Button20.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.Button20.Size = New System.Drawing.Size(282, 35)
         Me.Button20.TabIndex = 12
-        Me.Button20.Text = "   List of Employee"
+        Me.Button20.Text = "   Training"
         Me.Button20.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button20.UseVisualStyleBackColor = True
         '
-        'Button24
+        'btnCertificateOfEmployment
         '
-        Me.Button24.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button24.FlatAppearance.BorderSize = 0
-        Me.Button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button24.ImageIndex = 12
-        Me.Button24.ImageList = Me.ImageListSubMenuIcon
-        Me.Button24.Location = New System.Drawing.Point(0, 34)
-        Me.Button24.Name = "Button24"
-        Me.Button24.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button24.Size = New System.Drawing.Size(282, 35)
-        Me.Button24.TabIndex = 11
-        Me.Button24.Text = "   Contract Summary"
-        Me.Button24.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button24.UseVisualStyleBackColor = True
+        Me.btnCertificateOfEmployment.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCertificateOfEmployment.FlatAppearance.BorderSize = 0
+        Me.btnCertificateOfEmployment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCertificateOfEmployment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCertificateOfEmployment.ImageKey = "certificate.png"
+        Me.btnCertificateOfEmployment.ImageList = Me.ImageListSubMenuIcon
+        Me.btnCertificateOfEmployment.Location = New System.Drawing.Point(0, 139)
+        Me.btnCertificateOfEmployment.Name = "btnCertificateOfEmployment"
+        Me.btnCertificateOfEmployment.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnCertificateOfEmployment.Size = New System.Drawing.Size(282, 35)
+        Me.btnCertificateOfEmployment.TabIndex = 14
+        Me.btnCertificateOfEmployment.Text = "   COE"
+        Me.btnCertificateOfEmployment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCertificateOfEmployment.UseVisualStyleBackColor = True
+        '
+        'Button21
+        '
+        Me.Button21.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button21.FlatAppearance.BorderSize = 0
+        Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button21.ImageKey = "dept.png"
+        Me.Button21.ImageList = Me.ImageListSubMenuIcon
+        Me.Button21.Location = New System.Drawing.Point(0, 104)
+        Me.Button21.Name = "Button21"
+        Me.Button21.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.Button21.Size = New System.Drawing.Size(282, 35)
+        Me.Button21.TabIndex = 13
+        Me.Button21.Text = "   Department"
+        Me.Button21.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button21.UseVisualStyleBackColor = True
+        '
+        'btnCompanyReport
+        '
+        Me.btnCompanyReport.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCompanyReport.FlatAppearance.BorderSize = 0
+        Me.btnCompanyReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCompanyReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCompanyReport.ImageKey = "Company.png"
+        Me.btnCompanyReport.ImageList = Me.ImageListSubMenuIcon
+        Me.btnCompanyReport.Location = New System.Drawing.Point(0, 69)
+        Me.btnCompanyReport.Name = "btnCompanyReport"
+        Me.btnCompanyReport.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnCompanyReport.Size = New System.Drawing.Size(282, 35)
+        Me.btnCompanyReport.TabIndex = 16
+        Me.btnCompanyReport.Text = "   Company"
+        Me.btnCompanyReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCompanyReport.UseVisualStyleBackColor = True
+        '
+        'btnEmployee
+        '
+        Me.btnEmployee.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnEmployee.FlatAppearance.BorderSize = 0
+        Me.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnEmployee.ImageIndex = 16
+        Me.btnEmployee.ImageList = Me.ImageListSubMenuIcon
+        Me.btnEmployee.Location = New System.Drawing.Point(0, 34)
+        Me.btnEmployee.Name = "btnEmployee"
+        Me.btnEmployee.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnEmployee.Size = New System.Drawing.Size(282, 35)
+        Me.btnEmployee.TabIndex = 15
+        Me.btnEmployee.Text = "   Employee"
+        Me.btnEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnEmployee.UseVisualStyleBackColor = True
         '
         'Panel11
         '
@@ -433,7 +475,7 @@ Partial Class frmMainPanelHRMDetail
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(637, 528)
+        Me.ClientSize = New System.Drawing.Size(637, 718)
         Me.Controls.Add(Me.panelSubHRIS_SetupDetails)
         Me.Controls.Add(Me.panelSubHRIS_Reports)
         Me.Controls.Add(Me.panelSubHRIS_TransactionDetails)
@@ -468,8 +510,6 @@ Partial Class frmMainPanelHRMDetail
     Friend WithEvents Label2 As Label
     Friend WithEvents panelSubHRIS_Reports As Panel
     Friend WithEvents Button21 As Button
-    Friend WithEvents Button20 As Button
-    Friend WithEvents Button24 As Button
     Friend WithEvents Panel11 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents panelSubHRIS_TransactionDetails As Panel
@@ -481,4 +521,8 @@ Partial Class frmMainPanelHRMDetail
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents ImageListSubMenuIcon As ImageList
+    Friend WithEvents btnCertificateOfEmployment As Button
+    Friend WithEvents btnEmployee As Button
+    Friend WithEvents btnCompanyReport As Button
+    Friend WithEvents Button20 As Button
 End Class

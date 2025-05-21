@@ -74,6 +74,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label31 = New System.Windows.Forms.Label()
         Me.txtAdrBrgy2 = New System.Windows.Forms.TextBox()
         Me.groupboxPersonalInfo = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.cbTaxCode = New System.Windows.Forms.ComboBox()
         Me.Label63 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -190,7 +191,6 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label62 = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.ImageListTabCtrl = New System.Windows.Forms.ImageList(Me.components)
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPageMain.SuspendLayout()
@@ -719,6 +719,16 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.groupboxPersonalInfo.TabIndex = 40
         Me.groupboxPersonalInfo.TabStop = False
         Me.groupboxPersonalInfo.Text = "Personal Information"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(309, 191)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(23, 13)
+        Me.Label1.TabIndex = 83
+        Me.Label1.Text = "kg."
         '
         'cbTaxCode
         '
@@ -1420,7 +1430,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         '
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(423, 34)
+        Me.Label34.Location = New System.Drawing.Point(416, 34)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(179, 15)
         Me.Label34.TabIndex = 101
@@ -1473,7 +1483,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.gbSpouseAndChildren.Controls.Add(Me.Label54)
         Me.gbSpouseAndChildren.Controls.Add(Me.cbSRelationhipSC)
         Me.gbSpouseAndChildren.Controls.Add(Me.Label55)
-        Me.gbSpouseAndChildren.Location = New System.Drawing.Point(417, 55)
+        Me.gbSpouseAndChildren.Location = New System.Drawing.Point(410, 55)
         Me.gbSpouseAndChildren.Name = "gbSpouseAndChildren"
         Me.gbSpouseAndChildren.Size = New System.Drawing.Size(402, 459)
         Me.gbSpouseAndChildren.TabIndex = 72
@@ -1715,7 +1725,7 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.gbParentsAndSiblings.Controls.Add(Me.Label61)
         Me.gbParentsAndSiblings.Controls.Add(Me.cbRelationshipPS)
         Me.gbParentsAndSiblings.Controls.Add(Me.Label62)
-        Me.gbParentsAndSiblings.Location = New System.Drawing.Point(20, 55)
+        Me.gbParentsAndSiblings.Location = New System.Drawing.Point(13, 55)
         Me.gbParentsAndSiblings.Name = "gbParentsAndSiblings"
         Me.gbParentsAndSiblings.Size = New System.Drawing.Size(391, 459)
         Me.gbParentsAndSiblings.TabIndex = 71
@@ -1957,16 +1967,6 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.ImageListTabCtrl.Images.SetKeyName(0, "addfamily.png")
         Me.ImageListTabCtrl.Images.SetKeyName(1, "idennum.png")
         Me.ImageListTabCtrl.Images.SetKeyName(2, "info.png")
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(309, 191)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(23, 13)
-        Me.Label1.TabIndex = 83
-        Me.Label1.Text = "kg."
         '
         'frmHR_PreviewPersonnelDetails_PersonalInformation
         '
