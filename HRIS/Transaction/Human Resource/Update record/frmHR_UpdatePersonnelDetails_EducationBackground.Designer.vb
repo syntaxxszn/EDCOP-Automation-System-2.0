@@ -22,8 +22,8 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelUpdEducationBackground = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -153,10 +153,10 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         '
         'Column4
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.Format = "D"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.Format = "D"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle1
         Me.Column4.HeaderText = "From"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
@@ -164,10 +164,10 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         '
         'Column5
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.Format = "D"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.Format = "D"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle2
         Me.Column5.HeaderText = "To"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
@@ -279,8 +279,8 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         '
         'btnAddUpdEducation
         '
-        Me.btnAddUpdEducation.BackColor = System.Drawing.Color.DarkGoldenrod
-        Me.btnAddUpdEducation.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnAddUpdEducation.BackColor = System.Drawing.Color.DarkGreen
+        Me.btnAddUpdEducation.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen
         Me.btnAddUpdEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddUpdEducation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddUpdEducation.ForeColor = System.Drawing.Color.White
@@ -293,8 +293,8 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         '
         'btnClearTextFields
         '
-        Me.btnClearTextFields.BackColor = System.Drawing.Color.Teal
-        Me.btnClearTextFields.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan
+        Me.btnClearTextFields.BackColor = System.Drawing.Color.Gray
+        Me.btnClearTextFields.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray
         Me.btnClearTextFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearTextFields.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearTextFields.ForeColor = System.Drawing.Color.White
@@ -307,8 +307,8 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         '
         'btnDelEducation
         '
-        Me.btnDelEducation.BackColor = System.Drawing.Color.Crimson
-        Me.btnDelEducation.FlatAppearance.BorderColor = System.Drawing.Color.Maroon
+        Me.btnDelEducation.BackColor = System.Drawing.Color.Maroon
+        Me.btnDelEducation.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed
         Me.btnDelEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelEducation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelEducation.ForeColor = System.Drawing.Color.White

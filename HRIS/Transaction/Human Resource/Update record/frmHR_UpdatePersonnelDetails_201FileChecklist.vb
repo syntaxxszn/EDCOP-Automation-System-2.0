@@ -14,6 +14,8 @@
     Private Sub btnAddNewFile_Click(sender As Object, e As EventArgs) Handles btnAddNewFile.Click
         If dgv201CheckList.SelectedRows.Count > 0 Then
             Browse201Files(dgv201CheckList)
+        Else
+            MessageBox.Show("Please select from the list to add file on it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
@@ -33,9 +35,9 @@
             If IO.File.Exists(filePath) Then
                 Try
                     IO.File.Delete(filePath)
-                    selectedRow.Cells(3).Value = "No"
-                    selectedRow.Cells(4).Value = ""
-                    selectedRow.Cells(5).Value = ""
+                    'selectedRow.Cells(3).Value = "No"
+                    'selectedRow.Cells(4).Value = ""
+                    'selectedRow.Cells(5).Value = ""
                     Del_Personnel_201FileChecklist_ByID(fileid)
                     MessageBox.Show("File deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Catch ex As Exception
@@ -50,28 +52,21 @@
                     MessageBox.Show("Error deleting file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
             End If
+            Call Sel_HRIS_Personnel_201FileChecklist_ByID(dgv201CheckList)
         End If
     End Sub
 
     Private Sub SetToCompleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetToCompleteToolStripMenuItem.Click
         If dgv201CheckList.SelectedRows.Count > 0 Then
             With dgv201CheckList.SelectedRows(0).Cells(3)
-                ' Toggle the value
-                .Value = If(.Value?.ToString().Trim().ToLower() = "yes", "No", "Yes")
-
-                ' Apply formatting if value is Yes
-                If .Value.ToString().Trim().ToLower() = "yes" Then
-                    .Style.BackColor = Color.DarkGreen
-                    .Style.ForeColor = Color.White
-                    .Style.Font = New Font(dgv201CheckList.Font, FontStyle.Bold)
-                Else
-                    ' Optional: reset to default formatting
+                If .Value?.ToString().Trim().ToLower() <> "no" Then
+                    .Value = "No"
                     .Style.BackColor = Color.White
                     .Style.ForeColor = Color.Black
                     .Style.Font = dgv201CheckList.Font
+                    btnRemoveFile.PerformClick() ' Call to remove the file from the server
                 End If
             End With
-
             dgv201CheckList.ClearSelection()
         End If
     End Sub

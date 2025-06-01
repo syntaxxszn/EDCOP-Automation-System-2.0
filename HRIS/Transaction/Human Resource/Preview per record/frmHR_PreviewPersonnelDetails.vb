@@ -86,14 +86,12 @@ Public Class frmHR_PreviewPersonnelDetails
             ProcessDataGridViewEducationBackground(frmHR_UpdatePersonnelDetails_EducationBackground.dgvEducationBackground)
         ElseIf PanelTagID = 105 Then
             ProcessDataGridViewResume(frmHR_UpdatePersonnelDetails_Resume.dgvResume)
-        ElseIf PanelTagID = 106 Then
-
-        ElseIf PanelTagID = 107 Then
-
         ElseIf PanelTagID = 108 Then
             ProcessDataGridViewEmploymentHistory(frmHR_UpdatePersonnelDetails_EmploymentHistory.dgvEmploymentHistory)
         ElseIf PanelTagID = 109 Then
             ProcessDataGridView201Checklist(frmHR_UpdatePersonnelDetails_201FileChecklist.dgv201CheckList)
+        ElseIf PanelTagID = 111 Then
+            ProcessDataGridViewPerformanceAppraisal(frmHR_UpdatePersonnelDetails_PerformanceAppraisal.dgvPerformanceAppraisal)
         Else
             MessageBox.Show("Unexpected Error Occured.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
@@ -102,7 +100,6 @@ Public Class frmHR_PreviewPersonnelDetails
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         '\\  Button Edit
         Call FunctionBtnEdit_Enable()
-        frmHR_PreviewPersonnelDetails_PersonalInformation.LinkLabelViewForeignAddress.Text = If(isEdit, "Add Address", "View Address")
     End Sub
 
     Private Sub btnPersonalInformation_Click(sender As Object, e As EventArgs) Handles btnPersonalInformation.Click
@@ -129,8 +126,16 @@ Public Class frmHR_PreviewPersonnelDetails
         switchPanel(frmHR_PreviewPersonnelDetails_Resume)
     End Sub
 
+    Private Sub btnTrainingHistory_Click(sender As Object, e As EventArgs) Handles btnTrainingHistory.Click
+        switchPanel(frmHR_PreviewPersonnelDetails_TrainingHistory)
+    End Sub
+
     Private Sub btnCheckList_Click(sender As Object, e As EventArgs) Handles btnCheckList.Click
         switchPanel(frmHR_PreviewPersonnelDetails_201FileChecklist)
+    End Sub
+
+    Private Sub btnPerformanceAppraisal_Click(sender As Object, e As EventArgs) Handles btnPerformanceAppraisal.Click
+        switchPanel(frmHR_PreviewPersonnelDetails_PerformanceAppraisal)
     End Sub
 
     Private Sub frmHR_PreviewPersonnelDetails_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -170,6 +175,5 @@ Public Class frmHR_PreviewPersonnelDetails
     Private Sub PictureBoxHelp_Click(sender As Object, e As EventArgs) Handles PictureBoxHelp.Click, PictureBoxHelp.MouseHover
         tooltip.SetToolTip(PictureBoxHelp, "Thank you for not calling DIMS! <3")
     End Sub
-
 
 End Class

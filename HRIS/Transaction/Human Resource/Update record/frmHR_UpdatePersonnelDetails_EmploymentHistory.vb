@@ -144,10 +144,10 @@ Public Class frmHR_UpdatePersonnelDetails_EmploymentHistory
     End Sub
 
     Private Sub txtSalary_Validating(sender As Object, e As CancelEventArgs) Handles txtSalary.Validating
-        Textbox_NumericFormat(txtSalary, e.Cancel)
+        Call Textbox_NumericFormat(txtSalary, e.Cancel)
     End Sub
 
     Private Sub txtAllowances_Validating(sender As Object, e As CancelEventArgs) Handles txtAllowances.Validating
-        Textbox_NumericFormat(txtAllowances, e.Cancel)
+        Call Textbox_NumericFormat(txtAllowances, e.Cancel)
     End Sub
 End Class

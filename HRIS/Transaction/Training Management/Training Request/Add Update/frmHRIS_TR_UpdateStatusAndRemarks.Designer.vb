@@ -264,8 +264,8 @@ Partial Class frmHRIS_TR_UpdateStatusAndRemarks
         '
         'btnSubmit
         '
-        Me.btnSubmit.BackColor = System.Drawing.Color.DarkGoldenrod
-        Me.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnSubmit.BackColor = System.Drawing.Color.DarkGreen
+        Me.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.Green
         Me.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubmit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubmit.ForeColor = System.Drawing.Color.White

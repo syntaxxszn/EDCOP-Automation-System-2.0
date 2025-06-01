@@ -5,7 +5,6 @@ Public Class frmHR_UpdatePersonnelDetails_Contracts
     Private Sub frmHR_UpdatePersonnelDetails_Contracts_Load(sender As Object, e As EventArgs) Handles Me.Load
         'Call SelUpd_HRIS_Personnel_ContractHistory_ByID(dgvContracts)
         'Call DropDownLists()
-
     End Sub
 
     Protected Overrides Sub OnLoad(e As EventArgs)

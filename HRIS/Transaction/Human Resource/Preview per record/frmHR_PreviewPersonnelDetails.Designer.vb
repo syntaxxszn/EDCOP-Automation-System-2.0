@@ -35,6 +35,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblEmpStatus = New System.Windows.Forms.Label()
         Me.btnEdit = New System.Windows.Forms.Button()
+        Me.ImageListBtn = New System.Windows.Forms.ImageList(Me.components)
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnSetInactive = New System.Windows.Forms.Button()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
@@ -65,7 +66,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnPrintContract = New System.Windows.Forms.Button()
         Me.btnDiscard = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnPerformanceAppraisal = New System.Windows.Forms.Button()
         Me.btnContracts = New System.Windows.Forms.Button()
         Me.btnTrainingHistory = New System.Windows.Forms.Button()
         Me.btnResume = New System.Windows.Forms.Button()
@@ -74,7 +75,6 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnPersonalInformation = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.panelDGVLeft = New System.Windows.Forms.Panel()
-        Me.ImageListBtn = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxHelp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -217,6 +217,13 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnEdit.Text = "     &Edit Profile"
         Me.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEdit.UseVisualStyleBackColor = False
+        '
+        'ImageListBtn
+        '
+        Me.ImageListBtn.ImageStream = CType(resources.GetObject("ImageListBtn.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageListBtn.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageListBtn.Images.SetKeyName(0, "edit.jpg")
+        Me.ImageListBtn.Images.SetKeyName(1, "exit-door.png")
         '
         'Label11
         '
@@ -454,7 +461,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.PanelSideButton.Controls.Add(Me.btnPrintContract)
         Me.PanelSideButton.Controls.Add(Me.btnDiscard)
         Me.PanelSideButton.Controls.Add(Me.btnSave)
-        Me.PanelSideButton.Controls.Add(Me.Button1)
+        Me.PanelSideButton.Controls.Add(Me.btnPerformanceAppraisal)
         Me.PanelSideButton.Controls.Add(Me.btnContracts)
         Me.PanelSideButton.Controls.Add(Me.btnTrainingHistory)
         Me.PanelSideButton.Controls.Add(Me.btnResume)
@@ -576,22 +583,22 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnSave.Text = "&Save Changes"
         Me.btnSave.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnPerformanceAppraisal
         '
-        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Navy
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Navy
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.ImageIndex = 9
-        Me.Button1.ImageList = Me.ImageListSideBtn
-        Me.Button1.Location = New System.Drawing.Point(12, 308)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(182, 36)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "    Performance Appraisal"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnPerformanceAppraisal.FlatAppearance.BorderColor = System.Drawing.Color.Navy
+        Me.btnPerformanceAppraisal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPerformanceAppraisal.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPerformanceAppraisal.ForeColor = System.Drawing.Color.Navy
+        Me.btnPerformanceAppraisal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnPerformanceAppraisal.ImageIndex = 9
+        Me.btnPerformanceAppraisal.ImageList = Me.ImageListSideBtn
+        Me.btnPerformanceAppraisal.Location = New System.Drawing.Point(12, 308)
+        Me.btnPerformanceAppraisal.Name = "btnPerformanceAppraisal"
+        Me.btnPerformanceAppraisal.Size = New System.Drawing.Size(182, 36)
+        Me.btnPerformanceAppraisal.TabIndex = 10
+        Me.btnPerformanceAppraisal.Text = "    Performance Appraisal"
+        Me.btnPerformanceAppraisal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPerformanceAppraisal.UseVisualStyleBackColor = True
         '
         'btnContracts
         '
@@ -715,13 +722,6 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.panelDGVLeft.Size = New System.Drawing.Size(2, 627)
         Me.panelDGVLeft.TabIndex = 60
         '
-        'ImageListBtn
-        '
-        Me.ImageListBtn.ImageStream = CType(resources.GetObject("ImageListBtn.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageListBtn.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageListBtn.Images.SetKeyName(0, "edit.jpg")
-        Me.ImageListBtn.Images.SetKeyName(1, "exit-door.png")
-        '
         'frmHR_PreviewPersonnelDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -793,7 +793,7 @@ Partial Class frmHR_PreviewPersonnelDetails
     Friend WithEvents ImageListSideBtn As ImageList
     Friend WithEvents Panel5 As Panel
     Friend WithEvents PanelSideButton As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnPerformanceAppraisal As Button
     Friend WithEvents btnContracts As Button
     Friend WithEvents btnTrainingHistory As Button
     Friend WithEvents btnResume As Button

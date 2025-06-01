@@ -23,29 +23,29 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle45 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHRIS_Transaction_AssignEmployeeSchedule))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
@@ -272,14 +272,14 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         Me.dgvAllShift.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvAllShift.BackgroundColor = System.Drawing.Color.White
         Me.dgvAllShift.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.75!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvAllShift.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Segoe UI", 8.75!)
+        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvAllShift.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle24
         Me.dgvAllShift.ColumnHeadersHeight = 35
         Me.dgvAllShift.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvAllShift.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ShiftID, Me.Code, Me.Column1, Me.Description, Me.TimeFrom, Me.TimeTo, Me.WorkHours, Me.SlideTimeMins, Me.BreakIn, Me.BreakOut, Me.BreakMins, Me.IsForceBreak, Me.IsFlexi, Me.Column2})
@@ -304,9 +304,9 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'Code
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Code.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle25.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Code.DefaultCellStyle = DataGridViewCellStyle25
         Me.Code.FillWeight = 108.8849!
         Me.Code.HeaderText = "Code"
         Me.Code.Name = "Code"
@@ -328,8 +328,8 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'TimeFrom
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.TimeFrom.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.TimeFrom.DefaultCellStyle = DataGridViewCellStyle26
         Me.TimeFrom.FillWeight = 84.74657!
         Me.TimeFrom.HeaderText = "Time From"
         Me.TimeFrom.Name = "TimeFrom"
@@ -337,8 +337,8 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'TimeTo
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.TimeTo.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.TimeTo.DefaultCellStyle = DataGridViewCellStyle27
         Me.TimeTo.FillWeight = 82.4318!
         Me.TimeTo.HeaderText = "Time To"
         Me.TimeTo.Name = "TimeTo"
@@ -346,8 +346,8 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'WorkHours
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.WorkHours.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.WorkHours.DefaultCellStyle = DataGridViewCellStyle28
         Me.WorkHours.FillWeight = 78.19162!
         Me.WorkHours.HeaderText = "Work Hours"
         Me.WorkHours.Name = "WorkHours"
@@ -355,8 +355,8 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'SlideTimeMins
         '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.SlideTimeMins.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.SlideTimeMins.DefaultCellStyle = DataGridViewCellStyle29
         Me.SlideTimeMins.FillWeight = 89.85121!
         Me.SlideTimeMins.HeaderText = "SlideTimeMins"
         Me.SlideTimeMins.Name = "SlideTimeMins"
@@ -364,8 +364,8 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'BreakIn
         '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.BreakIn.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.BreakIn.DefaultCellStyle = DataGridViewCellStyle30
         Me.BreakIn.FillWeight = 91.30048!
         Me.BreakIn.HeaderText = "BreakIn"
         Me.BreakIn.Name = "BreakIn"
@@ -373,8 +373,8 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'BreakOut
         '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.BreakOut.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.BreakOut.DefaultCellStyle = DataGridViewCellStyle31
         Me.BreakOut.FillWeight = 93.87638!
         Me.BreakOut.HeaderText = "Break Out"
         Me.BreakOut.Name = "BreakOut"
@@ -382,8 +382,8 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'BreakMins
         '
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.BreakMins.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.BreakMins.DefaultCellStyle = DataGridViewCellStyle32
         Me.BreakMins.FillWeight = 92.63942!
         Me.BreakMins.HeaderText = "Break Mins"
         Me.BreakMins.Name = "BreakMins"
@@ -391,8 +391,8 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'IsForceBreak
         '
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.IsForceBreak.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.IsForceBreak.DefaultCellStyle = DataGridViewCellStyle33
         Me.IsForceBreak.FillWeight = 78.95995!
         Me.IsForceBreak.HeaderText = "IsForceBreak"
         Me.IsForceBreak.Name = "IsForceBreak"
@@ -400,8 +400,8 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'IsFlexi
         '
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.IsFlexi.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.IsFlexi.DefaultCellStyle = DataGridViewCellStyle34
         Me.IsFlexi.FillWeight = 61.06078!
         Me.IsFlexi.HeaderText = "IsFlexi"
         Me.IsFlexi.Name = "IsFlexi"
@@ -431,7 +431,7 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         Me.lblShiftType.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblShiftType.AutoSize = True
         Me.lblShiftType.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblShiftType.ForeColor = System.Drawing.Color.LightCoral
+        Me.lblShiftType.ForeColor = System.Drawing.Color.Gold
         Me.lblShiftType.Location = New System.Drawing.Point(224, 4)
         Me.lblShiftType.Name = "lblShiftType"
         Me.lblShiftType.Size = New System.Drawing.Size(14, 15)
@@ -517,13 +517,13 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         Me.dgvEffectivityDate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvEffectivityDate.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvEffectivityDate.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI", 8.75!)
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvEffectivityDate.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle35.Font = New System.Drawing.Font("Segoe UI", 8.75!)
+        DataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvEffectivityDate.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle35
         Me.dgvEffectivityDate.ColumnHeadersHeight = 35
         Me.dgvEffectivityDate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvEffectivityDate.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.Column3})
@@ -549,8 +549,8 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'DataGridViewTextBoxColumn9
         '
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle36
         Me.DataGridViewTextBoxColumn9.FillWeight = 108.6295!
         Me.DataGridViewTextBoxColumn9.HeaderText = "Start Date"
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
@@ -558,8 +558,8 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'Column3
         '
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle37
         Me.Column3.FillWeight = 91.37057!
         Me.Column3.HeaderText = "End Date"
         Me.Column3.Name = "Column3"
@@ -701,14 +701,14 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         Me.dgvShiftSubDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvShiftSubDetails.BackgroundColor = System.Drawing.Color.White
         Me.dgvShiftSubDetails.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI", 8.75!)
-        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvShiftSubDetails.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle38.Font = New System.Drawing.Font("Segoe UI", 8.75!)
+        DataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvShiftSubDetails.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle38
         Me.dgvShiftSubDetails.ColumnHeadersHeight = 35
         Me.dgvShiftSubDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvShiftSubDetails.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.EmployeeID, Me.EmployeeCode, Me.EmployeeName, Me.EmployeePosition, Me.EmployeeDepartment, Me.ShiftCode, Me.RestDay, Me.Remarks})
@@ -718,8 +718,8 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         Me.dgvShiftSubDetails.Name = "dgvShiftSubDetails"
         Me.dgvShiftSubDetails.ReadOnly = True
         Me.dgvShiftSubDetails.RowHeadersVisible = False
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvShiftSubDetails.RowsDefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle46.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvShiftSubDetails.RowsDefaultCellStyle = DataGridViewCellStyle46
         Me.dgvShiftSubDetails.RowTemplate.Height = 30
         Me.dgvShiftSubDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvShiftSubDetails.Size = New System.Drawing.Size(1154, 227)
@@ -734,9 +734,9 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'EmployeeCode
         '
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EmployeeCode.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle39.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeCode.DefaultCellStyle = DataGridViewCellStyle39
         Me.EmployeeCode.FillWeight = 58.68224!
         Me.EmployeeCode.HeaderText = "EmployeeCode"
         Me.EmployeeCode.Name = "EmployeeCode"
@@ -744,9 +744,9 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'EmployeeName
         '
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EmployeeName.DefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle40.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeName.DefaultCellStyle = DataGridViewCellStyle40
         Me.EmployeeName.FillWeight = 147.7462!
         Me.EmployeeName.HeaderText = "Employee Name"
         Me.EmployeeName.Name = "EmployeeName"
@@ -754,9 +754,9 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'EmployeePosition
         '
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EmployeePosition.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle41.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeePosition.DefaultCellStyle = DataGridViewCellStyle41
         Me.EmployeePosition.FillWeight = 90.96561!
         Me.EmployeePosition.HeaderText = "Employee Position"
         Me.EmployeePosition.Name = "EmployeePosition"
@@ -764,9 +764,9 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'EmployeeDepartment
         '
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EmployeeDepartment.DefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle42.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmployeeDepartment.DefaultCellStyle = DataGridViewCellStyle42
         Me.EmployeeDepartment.FillWeight = 144.85!
         Me.EmployeeDepartment.HeaderText = "Employee Department"
         Me.EmployeeDepartment.Name = "EmployeeDepartment"
@@ -774,9 +774,9 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'ShiftCode
         '
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ShiftCode.DefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle43.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ShiftCode.DefaultCellStyle = DataGridViewCellStyle43
         Me.ShiftCode.FillWeight = 106.599!
         Me.ShiftCode.HeaderText = "Shift Code"
         Me.ShiftCode.Name = "ShiftCode"
@@ -784,9 +784,9 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'RestDay
         '
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle21.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RestDay.DefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle44.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RestDay.DefaultCellStyle = DataGridViewCellStyle44
         Me.RestDay.FillWeight = 68.02334!
         Me.RestDay.HeaderText = "Rest Day"
         Me.RestDay.Name = "RestDay"
@@ -794,9 +794,9 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         'Remarks
         '
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle22.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Remarks.DefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle45.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Remarks.DefaultCellStyle = DataGridViewCellStyle45
         Me.Remarks.FillWeight = 83.13357!
         Me.Remarks.HeaderText = "Remarks"
         Me.Remarks.Name = "Remarks"
@@ -819,7 +819,7 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         Me.lblShiftEffectivityDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblShiftEffectivityDate.AutoSize = True
         Me.lblShiftEffectivityDate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblShiftEffectivityDate.ForeColor = System.Drawing.Color.LightCoral
+        Me.lblShiftEffectivityDate.ForeColor = System.Drawing.Color.Gold
         Me.lblShiftEffectivityDate.Location = New System.Drawing.Point(258, 4)
         Me.lblShiftEffectivityDate.Name = "lblShiftEffectivityDate"
         Me.lblShiftEffectivityDate.Size = New System.Drawing.Size(14, 15)
@@ -956,6 +956,7 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 7.5!)
+        Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(1026, 14)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 12)
@@ -1024,6 +1025,7 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 7.5!)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(796, 14)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(202, 12)
@@ -1043,6 +1045,7 @@ Partial Class frmHRIS_Transaction_AssignEmployeeSchedule
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(730, 35)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 13)

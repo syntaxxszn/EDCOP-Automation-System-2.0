@@ -21,6 +21,12 @@
 	Public _strLeaveTypeID As Integer
 	Public _strHierarchyID As Integer
 	Public _strHierarchyDetailID As Integer
+	Public _strSystemSettingsID As Integer
+
+	Public _strPerformancePart1Form1ID As Integer
+	Public _strPerformancePart1Form2ID As Integer
+
+	Public _strPerformancePart2FormAID As Integer
 
 	Public _TrainingListID As Integer
 	Public _TrainingBatchListID As Integer
@@ -50,7 +56,19 @@
 	Public _PersonnelEmploymentHistoryID1 As Integer
 	Public _PersonnelEmploymentHistoryID2 As Integer = 1000000
 
+	Public _PersonnelAppraisalID1 As Integer
+	Public _PersonnelAppraisalID2 As Integer = 1000000
+
 	Public _201FileID As Integer
+
+	Public _isEmpTechnical As Boolean = False
+	Public _EmployeeName As String
+	Public _EmployeeDepartment As String
+	Public _EmployeePosition As String
+	Public _StartDate As DateTime = Date.Now
+	Public _EndDate As DateTime = Date.Now
+	Public _ReviewDate As DateTime = Date.Now
+	Public _ProjectDesignation As String
 
 	''--->>> End of Module_HRIS <<<---
 

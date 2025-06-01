@@ -97,11 +97,11 @@ Partial Class frmHRIS_TE_AddUpdateTraining_Master
         '
         'btnClearTextFields
         '
-        Me.btnClearTextFields.BackColor = System.Drawing.Color.White
+        Me.btnClearTextFields.BackColor = System.Drawing.Color.Teal
         Me.btnClearTextFields.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan
         Me.btnClearTextFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearTextFields.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClearTextFields.ForeColor = System.Drawing.Color.Teal
+        Me.btnClearTextFields.ForeColor = System.Drawing.Color.White
         Me.btnClearTextFields.Location = New System.Drawing.Point(200, 232)
         Me.btnClearTextFields.Name = "btnClearTextFields"
         Me.btnClearTextFields.Size = New System.Drawing.Size(120, 26)
@@ -111,11 +111,11 @@ Partial Class frmHRIS_TE_AddUpdateTraining_Master
         '
         'btnSubmit
         '
-        Me.btnSubmit.BackColor = System.Drawing.Color.White
+        Me.btnSubmit.BackColor = System.Drawing.Color.DarkGreen
         Me.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen
         Me.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubmit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSubmit.ForeColor = System.Drawing.Color.DarkGreen
+        Me.btnSubmit.ForeColor = System.Drawing.Color.White
         Me.btnSubmit.Location = New System.Drawing.Point(74, 232)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(122, 26)

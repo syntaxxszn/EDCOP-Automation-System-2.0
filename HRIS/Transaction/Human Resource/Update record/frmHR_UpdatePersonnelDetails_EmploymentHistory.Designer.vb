@@ -350,8 +350,8 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         '
         'btnClearTextFields
         '
-        Me.btnClearTextFields.BackColor = System.Drawing.Color.Teal
-        Me.btnClearTextFields.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan
+        Me.btnClearTextFields.BackColor = System.Drawing.Color.Gray
+        Me.btnClearTextFields.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray
         Me.btnClearTextFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearTextFields.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearTextFields.ForeColor = System.Drawing.Color.White
@@ -364,8 +364,8 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         '
         'btnDelEmploymentHistory
         '
-        Me.btnDelEmploymentHistory.BackColor = System.Drawing.Color.Crimson
-        Me.btnDelEmploymentHistory.FlatAppearance.BorderColor = System.Drawing.Color.Maroon
+        Me.btnDelEmploymentHistory.BackColor = System.Drawing.Color.Maroon
+        Me.btnDelEmploymentHistory.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed
         Me.btnDelEmploymentHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelEmploymentHistory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDelEmploymentHistory.ForeColor = System.Drawing.Color.White
@@ -387,8 +387,8 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         '
         'btnAddUpdEducation
         '
-        Me.btnAddUpdEducation.BackColor = System.Drawing.Color.DarkGoldenrod
-        Me.btnAddUpdEducation.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnAddUpdEducation.BackColor = System.Drawing.Color.DarkGreen
+        Me.btnAddUpdEducation.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen
         Me.btnAddUpdEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddUpdEducation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddUpdEducation.ForeColor = System.Drawing.Color.White

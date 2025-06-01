@@ -702,8 +702,8 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
         '
         'btnAddUpdContract
         '
-        Me.btnAddUpdContract.BackColor = System.Drawing.Color.DarkGoldenrod
-        Me.btnAddUpdContract.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnAddUpdContract.BackColor = System.Drawing.Color.DarkGreen
+        Me.btnAddUpdContract.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen
         Me.btnAddUpdContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddUpdContract.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddUpdContract.ForeColor = System.Drawing.Color.White
@@ -716,8 +716,8 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
         '
         'btnClearTextFields
         '
-        Me.btnClearTextFields.BackColor = System.Drawing.Color.Teal
-        Me.btnClearTextFields.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan
+        Me.btnClearTextFields.BackColor = System.Drawing.Color.Gray
+        Me.btnClearTextFields.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray
         Me.btnClearTextFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearTextFields.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearTextFields.ForeColor = System.Drawing.Color.White
@@ -730,7 +730,7 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
         '
         'btnDelEducation
         '
-        Me.btnDelEducation.BackColor = System.Drawing.Color.Crimson
+        Me.btnDelEducation.BackColor = System.Drawing.Color.Maroon
         Me.btnDelEducation.FlatAppearance.BorderColor = System.Drawing.Color.Maroon
         Me.btnDelEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelEducation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

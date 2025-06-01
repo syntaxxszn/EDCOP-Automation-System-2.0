@@ -26,6 +26,15 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.dgvCharRef = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -50,15 +59,6 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCompany = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelUpdCharacterReference.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -122,6 +122,70 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         Me.dgvCharRef.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCharRef.Size = New System.Drawing.Size(801, 423)
         Me.dgvCharRef.TabIndex = 85
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        Me.Column1.Width = 43
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Company / Employer"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 125
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Full Name"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 77
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Job Title"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 69
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Department"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 93
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Mobile Number"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 103
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Email Address"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 95
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "Company Address"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Width = 114
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "Relationship"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        Me.Column9.Width = 97
         '
         'Panel5
         '
@@ -190,8 +254,8 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         '
         'btnClearTextFields
         '
-        Me.btnClearTextFields.BackColor = System.Drawing.Color.Teal
-        Me.btnClearTextFields.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan
+        Me.btnClearTextFields.BackColor = System.Drawing.Color.Gray
+        Me.btnClearTextFields.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray
         Me.btnClearTextFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearTextFields.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearTextFields.ForeColor = System.Drawing.Color.White
@@ -204,7 +268,7 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         '
         'btnDelEmployee
         '
-        Me.btnDelEmployee.BackColor = System.Drawing.Color.Crimson
+        Me.btnDelEmployee.BackColor = System.Drawing.Color.Maroon
         Me.btnDelEmployee.FlatAppearance.BorderColor = System.Drawing.Color.Maroon
         Me.btnDelEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDelEmployee.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -218,8 +282,8 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         '
         'btnAddUpdCharRef
         '
-        Me.btnAddUpdCharRef.BackColor = System.Drawing.Color.DarkGoldenrod
-        Me.btnAddUpdCharRef.FlatAppearance.BorderColor = System.Drawing.Color.Gold
+        Me.btnAddUpdCharRef.BackColor = System.Drawing.Color.DarkGreen
+        Me.btnAddUpdCharRef.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen
         Me.btnAddUpdCharRef.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddUpdCharRef.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddUpdCharRef.ForeColor = System.Drawing.Color.White
@@ -359,70 +423,6 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         Me.Label1.Size = New System.Drawing.Size(131, 15)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Company / Employer* :"
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        Me.Column1.Width = 43
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Company / Employer"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 125
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Full Name"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 77
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Job Title"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 69
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Department"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 93
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Mobile Number"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 103
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "Email Address"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 95
-        '
-        'Column8
-        '
-        Me.Column8.HeaderText = "Company Address"
-        Me.Column8.Name = "Column8"
-        Me.Column8.ReadOnly = True
-        Me.Column8.Width = 114
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "Relationship"
-        Me.Column9.Name = "Column9"
-        Me.Column9.ReadOnly = True
-        Me.Column9.Width = 97
         '
         'frmHR_UpdatePersonnelDetails_CharacterReference
         '

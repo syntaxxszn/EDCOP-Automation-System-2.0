@@ -29,13 +29,6 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.dgv201CheckList = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContextMenuStrip201FileChecklist = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SetToCompleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddRemarksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,6 +38,13 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnRemoveFile = New System.Windows.Forms.Button()
         Me.btnAddNewFile = New System.Windows.Forms.Button()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -124,79 +124,25 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
         Me.dgv201CheckList.Size = New System.Drawing.Size(801, 545)
         Me.dgv201CheckList.TabIndex = 88
         '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        Me.Column1.Width = 43
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "FileID"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Visible = False
-        Me.Column7.Width = 59
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "File Type"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 70
-        '
-        'Column4
-        '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Column4.HeaderText = "Completed"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 88
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Remarks"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 75
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "File Name"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 76
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "File Path"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Visible = False
-        Me.Column6.Width = 68
-        '
         'ContextMenuStrip201FileChecklist
         '
         Me.ContextMenuStrip201FileChecklist.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ContextMenuStrip201FileChecklist.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SetToCompleteToolStripMenuItem, Me.AddRemarksToolStripMenuItem})
         Me.ContextMenuStrip201FileChecklist.Name = "ContextMenuStrip201FileChecklist"
-        Me.ContextMenuStrip201FileChecklist.Size = New System.Drawing.Size(171, 48)
+        Me.ContextMenuStrip201FileChecklist.Size = New System.Drawing.Size(179, 48)
         '
         'SetToCompleteToolStripMenuItem
         '
-        Me.SetToCompleteToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.yes
+        Me.SetToCompleteToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
         Me.SetToCompleteToolStripMenuItem.Name = "SetToCompleteToolStripMenuItem"
-        Me.SetToCompleteToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
-        Me.SetToCompleteToolStripMenuItem.Text = "Set to Complete"
+        Me.SetToCompleteToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
+        Me.SetToCompleteToolStripMenuItem.Text = "Set to Incomplete"
         '
         'AddRemarksToolStripMenuItem
         '
         Me.AddRemarksToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.pen
         Me.AddRemarksToolStripMenuItem.Name = "AddRemarksToolStripMenuItem"
-        Me.AddRemarksToolStripMenuItem.Size = New System.Drawing.Size(170, 22)
+        Me.AddRemarksToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AddRemarksToolStripMenuItem.Text = "Add Remarks"
         '
         'Panel5
@@ -237,11 +183,11 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
         '
         'btnRemoveFile
         '
-        Me.btnRemoveFile.BackColor = System.Drawing.Color.White
-        Me.btnRemoveFile.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.btnRemoveFile.BackColor = System.Drawing.Color.Maroon
+        Me.btnRemoveFile.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed
         Me.btnRemoveFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRemoveFile.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRemoveFile.ForeColor = System.Drawing.Color.DarkRed
+        Me.btnRemoveFile.ForeColor = System.Drawing.Color.White
         Me.btnRemoveFile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnRemoveFile.ImageIndex = 0
         Me.btnRemoveFile.Location = New System.Drawing.Point(139, 12)
@@ -254,11 +200,11 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
         '
         'btnAddNewFile
         '
-        Me.btnAddNewFile.BackColor = System.Drawing.Color.White
+        Me.btnAddNewFile.BackColor = System.Drawing.Color.DarkGreen
         Me.btnAddNewFile.FlatAppearance.BorderColor = System.Drawing.Color.Green
         Me.btnAddNewFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddNewFile.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddNewFile.ForeColor = System.Drawing.Color.DarkGreen
+        Me.btnAddNewFile.ForeColor = System.Drawing.Color.White
         Me.btnAddNewFile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnAddNewFile.ImageIndex = 1
         Me.btnAddNewFile.Location = New System.Drawing.Point(12, 12)
@@ -268,6 +214,60 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
         Me.btnAddNewFile.Text = " Add File"
         Me.btnAddNewFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAddNewFile.UseVisualStyleBackColor = False
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        Me.Column1.Width = 43
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "FileID"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Visible = False
+        Me.Column7.Width = 61
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "File Type"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 70
+        '
+        'Column4
+        '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Column4.HeaderText = "Completed"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 88
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Remarks"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 75
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "File Name"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 76
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "File Path"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Visible = False
+        Me.Column6.Width = 70
         '
         'frmHR_UpdatePersonnelDetails_201FileChecklist
         '
@@ -305,6 +305,7 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
     Friend WithEvents ContextMenuStrip201FileChecklist As ContextMenuStrip
     Friend WithEvents SetToCompleteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AddRemarksToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label1 As Label
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
@@ -312,5 +313,4 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Label1 As Label
 End Class

@@ -14,4 +14,8 @@
     Private Sub btnReport_Click(sender As Object, e As EventArgs) Handles btnReport.Click
         frmMain.switchPanelHolder(frmMainPanelHRMDetail.panelSubHRIS_Reports)
     End Sub
+
+    Private Sub btnOption_Click(sender As Object, e As EventArgs) Handles btnOption.Click
+        OpenChildForm_Revision(frmHRIS_Options_MainView)
+    End Sub
 End Class

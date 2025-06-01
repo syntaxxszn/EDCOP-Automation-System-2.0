@@ -25,12 +25,6 @@ Partial Class frmHR_PreviewPersonnelDetails_EmploymentHistory
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvEmploymentHistory = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,11 +43,17 @@ Partial Class frmHR_PreviewPersonnelDetails_EmploymentHistory
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel6.SuspendLayout()
-        Me.Panel7.SuspendLayout()
         CType(Me.dgvEmploymentHistory, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -89,62 +89,6 @@ Partial Class frmHR_PreviewPersonnelDetails_EmploymentHistory
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(801, 545)
         Me.Panel6.TabIndex = 4
-        '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.Color.LightGray
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(3, 548)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(801, 3)
-        Me.Panel5.TabIndex = 3
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.LightGray
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(3, 0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(801, 3)
-        Me.Panel4.TabIndex = 2
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.LightGray
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(804, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(3, 551)
-        Me.Panel3.TabIndex = 1
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.LightGray
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(3, 551)
-        Me.Panel2.TabIndex = 0
-        '
-        'Panel7
-        '
-        Me.Panel7.BackColor = System.Drawing.Color.Navy
-        Me.Panel7.Controls.Add(Me.Label1)
-        Me.Panel7.Location = New System.Drawing.Point(12, 12)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(809, 30)
-        Me.Panel7.TabIndex = 89
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(3, 8)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(180, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "E M P LO Y M E N T   H I S T O R Y"
         '
         'dgvEmploymentHistory
         '
@@ -289,6 +233,62 @@ Partial Class frmHR_PreviewPersonnelDetails_EmploymentHistory
         Me.Column18.ReadOnly = True
         Me.Column18.Width = 105
         '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.LightGray
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel5.Location = New System.Drawing.Point(3, 548)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(801, 3)
+        Me.Panel5.TabIndex = 3
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.LightGray
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel4.Location = New System.Drawing.Point(3, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(801, 3)
+        Me.Panel4.TabIndex = 2
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.LightGray
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel3.Location = New System.Drawing.Point(804, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(3, 551)
+        Me.Panel3.TabIndex = 1
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.LightGray
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(3, 551)
+        Me.Panel2.TabIndex = 0
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.Navy
+        Me.Panel7.Controls.Add(Me.Label1)
+        Me.Panel7.Location = New System.Drawing.Point(12, 12)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(809, 30)
+        Me.Panel7.TabIndex = 89
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(3, 8)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(180, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "E M P LO Y M E N T   H I S T O R Y"
+        '
         'frmHR_PreviewPersonnelDetails_EmploymentHistory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -305,9 +305,9 @@ Partial Class frmHR_PreviewPersonnelDetails_EmploymentHistory
         Me.Panel1.ResumeLayout(False)
         Me.Panel14.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
+        CType(Me.dgvEmploymentHistory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
-        CType(Me.dgvEmploymentHistory, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -22,8 +22,6 @@ Partial Class frmHR_UpdatePersonnelDetails_Resume
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHR_UpdatePersonnelDetails_Resume))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -31,6 +29,9 @@ Partial Class frmHR_UpdatePersonnelDetails_Resume
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.dgvResume = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.wbResume = New System.Windows.Forms.WebBrowser()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -38,11 +39,7 @@ Partial Class frmHR_UpdatePersonnelDetails_Resume
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnRemove = New System.Windows.Forms.Button()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.btnPersonalInformation = New System.Windows.Forms.Button()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -149,6 +146,26 @@ Partial Class frmHR_UpdatePersonnelDetails_Resume
         Me.dgvResume.Size = New System.Drawing.Size(185, 545)
         Me.dgvResume.TabIndex = 87
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "File Path"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "File Name"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
         'Panel8
         '
         Me.Panel8.Controls.Add(Me.wbResume)
@@ -205,14 +222,13 @@ Partial Class frmHR_UpdatePersonnelDetails_Resume
         '
         'btnRemove
         '
-        Me.btnRemove.BackColor = System.Drawing.Color.White
-        Me.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.btnRemove.BackColor = System.Drawing.Color.Maroon
+        Me.btnRemove.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed
         Me.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRemove.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRemove.ForeColor = System.Drawing.Color.DarkRed
+        Me.btnRemove.ForeColor = System.Drawing.Color.White
         Me.btnRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnRemove.ImageIndex = 0
-        Me.btnRemove.ImageList = Me.ImageList1
         Me.btnRemove.Location = New System.Drawing.Point(139, 12)
         Me.btnRemove.Name = "btnRemove"
         Me.btnRemove.Size = New System.Drawing.Size(121, 30)
@@ -221,23 +237,15 @@ Partial Class frmHR_UpdatePersonnelDetails_Resume
         Me.btnRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnRemove.UseVisualStyleBackColor = False
         '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "inactive.png")
-        Me.ImageList1.Images.SetKeyName(1, "plus.png")
-        '
         'btnPersonalInformation
         '
-        Me.btnPersonalInformation.BackColor = System.Drawing.Color.White
+        Me.btnPersonalInformation.BackColor = System.Drawing.Color.DarkGreen
         Me.btnPersonalInformation.FlatAppearance.BorderColor = System.Drawing.Color.Green
         Me.btnPersonalInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPersonalInformation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPersonalInformation.ForeColor = System.Drawing.Color.DarkGreen
+        Me.btnPersonalInformation.ForeColor = System.Drawing.Color.White
         Me.btnPersonalInformation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnPersonalInformation.ImageIndex = 1
-        Me.btnPersonalInformation.ImageList = Me.ImageList1
         Me.btnPersonalInformation.Location = New System.Drawing.Point(12, 12)
         Me.btnPersonalInformation.Name = "btnPersonalInformation"
         Me.btnPersonalInformation.Size = New System.Drawing.Size(121, 30)
@@ -245,26 +253,6 @@ Partial Class frmHR_UpdatePersonnelDetails_Resume
         Me.btnPersonalInformation.Text = " Add File"
         Me.btnPersonalInformation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnPersonalInformation.UseVisualStyleBackColor = False
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Visible = False
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "File Path"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "File Name"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
         '
         'frmHR_UpdatePersonnelDetails_Resume
         '
@@ -295,7 +283,6 @@ Partial Class frmHR_UpdatePersonnelDetails_Resume
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnPersonalInformation As Button
-    Friend WithEvents ImageList1 As ImageList
     Friend WithEvents btnRemove As Button
     Friend WithEvents Panel14 As Panel
     Friend WithEvents Panel6 As Panel

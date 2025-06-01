@@ -25,32 +25,32 @@ Partial Class frmMainPanelHRMDetail
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMainPanelHRMDetail))
         Me.panelSubHRIS_SetupDetails = New System.Windows.Forms.Panel()
-        Me.btnLeaveCredit = New System.Windows.Forms.Button()
         Me.ImageListSubMenuIcon = New System.Windows.Forms.ImageList(Me.components)
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.panelSubHRIS_Reports = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.panelSubHRIS_TransactionDetails = New System.Windows.Forms.Panel()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnLeaveCredit = New System.Windows.Forms.Button()
         Me.btnLeaveType = New System.Windows.Forms.Button()
         Me.btnShift = New System.Windows.Forms.Button()
         Me.btnApprovalHierarchy = New System.Windows.Forms.Button()
         Me.btnJobtitle = New System.Windows.Forms.Button()
         Me.btnDepartment = New System.Windows.Forms.Button()
         Me.btnCompany = New System.Windows.Forms.Button()
-        Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.panelSubHRIS_Reports = New System.Windows.Forms.Panel()
-        Me.Button20 = New System.Windows.Forms.Button()
+        Me.btnTrainingReport = New System.Windows.Forms.Button()
         Me.btnCertificateOfEmployment = New System.Windows.Forms.Button()
-        Me.Button21 = New System.Windows.Forms.Button()
+        Me.btnDepartmentReport = New System.Windows.Forms.Button()
         Me.btnCompanyReport = New System.Windows.Forms.Button()
         Me.btnEmployee = New System.Windows.Forms.Button()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.panelSubHRIS_TransactionDetails = New System.Windows.Forms.Panel()
         Me.btnPerformanceManagement = New System.Windows.Forms.Button()
         Me.btnBenefitAdmin = New System.Windows.Forms.Button()
         Me.btnTrainingManagement = New System.Windows.Forms.Button()
         Me.btnSchedManagement = New System.Windows.Forms.Button()
         Me.btnHumanResource = New System.Windows.Forms.Button()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.panelSubHRIS_SetupDetails.SuspendLayout()
         Me.Panel13.SuspendLayout()
         Me.panelSubHRIS_Reports.SuspendLayout()
@@ -74,23 +74,6 @@ Partial Class frmMainPanelHRMDetail
         Me.panelSubHRIS_SetupDetails.Size = New System.Drawing.Size(282, 299)
         Me.panelSubHRIS_SetupDetails.TabIndex = 4
         '
-        'btnLeaveCredit
-        '
-        Me.btnLeaveCredit.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnLeaveCredit.FlatAppearance.BorderSize = 0
-        Me.btnLeaveCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLeaveCredit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLeaveCredit.ImageIndex = 6
-        Me.btnLeaveCredit.ImageList = Me.ImageListSubMenuIcon
-        Me.btnLeaveCredit.Location = New System.Drawing.Point(0, 244)
-        Me.btnLeaveCredit.Name = "btnLeaveCredit"
-        Me.btnLeaveCredit.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnLeaveCredit.Size = New System.Drawing.Size(282, 35)
-        Me.btnLeaveCredit.TabIndex = 10
-        Me.btnLeaveCredit.Text = "   Leave Credit"
-        Me.btnLeaveCredit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnLeaveCredit.UseVisualStyleBackColor = True
-        '
         'ImageListSubMenuIcon
         '
         Me.ImageListSubMenuIcon.ImageStream = CType(resources.GetObject("ImageListSubMenuIcon.ImageStream"), System.Windows.Forms.ImageListStreamer)
@@ -112,6 +95,106 @@ Partial Class frmMainPanelHRMDetail
         Me.ImageListSubMenuIcon.Images.SetKeyName(14, "certificate.png")
         Me.ImageListSubMenuIcon.Images.SetKeyName(15, "dept.png")
         Me.ImageListSubMenuIcon.Images.SetKeyName(16, "employees.png")
+        '
+        'Panel13
+        '
+        Me.Panel13.Controls.Add(Me.Label2)
+        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel13.Location = New System.Drawing.Point(0, 0)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(282, 34)
+        Me.Panel13.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.Label2.Location = New System.Drawing.Point(16, 10)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(82, 15)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "HRIS > Setup"
+        '
+        'panelSubHRIS_Reports
+        '
+        Me.panelSubHRIS_Reports.Controls.Add(Me.btnTrainingReport)
+        Me.panelSubHRIS_Reports.Controls.Add(Me.btnCertificateOfEmployment)
+        Me.panelSubHRIS_Reports.Controls.Add(Me.btnDepartmentReport)
+        Me.panelSubHRIS_Reports.Controls.Add(Me.btnCompanyReport)
+        Me.panelSubHRIS_Reports.Controls.Add(Me.btnEmployee)
+        Me.panelSubHRIS_Reports.Controls.Add(Me.Panel11)
+        Me.panelSubHRIS_Reports.Location = New System.Drawing.Point(18, 382)
+        Me.panelSubHRIS_Reports.Name = "panelSubHRIS_Reports"
+        Me.panelSubHRIS_Reports.Size = New System.Drawing.Size(282, 223)
+        Me.panelSubHRIS_Reports.TabIndex = 6
+        '
+        'Panel11
+        '
+        Me.Panel11.Controls.Add(Me.Label3)
+        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel11.Location = New System.Drawing.Point(0, 0)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(282, 34)
+        Me.Panel11.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.Label3.Location = New System.Drawing.Point(16, 10)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(88, 15)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "HRIS > Report"
+        '
+        'panelSubHRIS_TransactionDetails
+        '
+        Me.panelSubHRIS_TransactionDetails.Controls.Add(Me.btnPerformanceManagement)
+        Me.panelSubHRIS_TransactionDetails.Controls.Add(Me.btnBenefitAdmin)
+        Me.panelSubHRIS_TransactionDetails.Controls.Add(Me.btnTrainingManagement)
+        Me.panelSubHRIS_TransactionDetails.Controls.Add(Me.btnSchedManagement)
+        Me.panelSubHRIS_TransactionDetails.Controls.Add(Me.btnHumanResource)
+        Me.panelSubHRIS_TransactionDetails.Controls.Add(Me.Panel12)
+        Me.panelSubHRIS_TransactionDetails.Location = New System.Drawing.Point(325, 20)
+        Me.panelSubHRIS_TransactionDetails.Name = "panelSubHRIS_TransactionDetails"
+        Me.panelSubHRIS_TransactionDetails.Size = New System.Drawing.Size(282, 233)
+        Me.panelSubHRIS_TransactionDetails.TabIndex = 5
+        '
+        'Panel12
+        '
+        Me.Panel12.Controls.Add(Me.Label1)
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel12.Location = New System.Drawing.Point(0, 0)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(282, 34)
+        Me.Panel12.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Location = New System.Drawing.Point(16, 10)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(112, 15)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "HRIS > Transaction"
+        '
+        'btnLeaveCredit
+        '
+        Me.btnLeaveCredit.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnLeaveCredit.FlatAppearance.BorderSize = 0
+        Me.btnLeaveCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLeaveCredit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLeaveCredit.ImageIndex = 6
+        Me.btnLeaveCredit.ImageList = Me.ImageListSubMenuIcon
+        Me.btnLeaveCredit.Location = New System.Drawing.Point(0, 244)
+        Me.btnLeaveCredit.Name = "btnLeaveCredit"
+        Me.btnLeaveCredit.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnLeaveCredit.Size = New System.Drawing.Size(282, 35)
+        Me.btnLeaveCredit.TabIndex = 10
+        Me.btnLeaveCredit.Text = "   Leave Credit"
+        Me.btnLeaveCredit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLeaveCredit.UseVisualStyleBackColor = True
         '
         'btnLeaveType
         '
@@ -217,54 +300,22 @@ Partial Class frmMainPanelHRMDetail
         Me.btnCompany.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCompany.UseVisualStyleBackColor = True
         '
-        'Panel13
+        'btnTrainingReport
         '
-        Me.Panel13.Controls.Add(Me.Label2)
-        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel13.Location = New System.Drawing.Point(0, 0)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(282, 34)
-        Me.Panel13.TabIndex = 0
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(16, 10)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(82, 15)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "HRIS > Setup"
-        '
-        'panelSubHRIS_Reports
-        '
-        Me.panelSubHRIS_Reports.Controls.Add(Me.Button20)
-        Me.panelSubHRIS_Reports.Controls.Add(Me.btnCertificateOfEmployment)
-        Me.panelSubHRIS_Reports.Controls.Add(Me.Button21)
-        Me.panelSubHRIS_Reports.Controls.Add(Me.btnCompanyReport)
-        Me.panelSubHRIS_Reports.Controls.Add(Me.btnEmployee)
-        Me.panelSubHRIS_Reports.Controls.Add(Me.Panel11)
-        Me.panelSubHRIS_Reports.Location = New System.Drawing.Point(18, 382)
-        Me.panelSubHRIS_Reports.Name = "panelSubHRIS_Reports"
-        Me.panelSubHRIS_Reports.Size = New System.Drawing.Size(282, 223)
-        Me.panelSubHRIS_Reports.TabIndex = 6
-        '
-        'Button20
-        '
-        Me.Button20.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button20.FlatAppearance.BorderSize = 0
-        Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button20.ImageKey = "Performance_Management.png"
-        Me.Button20.ImageList = Me.ImageListSubMenuIcon
-        Me.Button20.Location = New System.Drawing.Point(0, 174)
-        Me.Button20.Name = "Button20"
-        Me.Button20.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button20.Size = New System.Drawing.Size(282, 35)
-        Me.Button20.TabIndex = 12
-        Me.Button20.Text = "   Training"
-        Me.Button20.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button20.UseVisualStyleBackColor = True
+        Me.btnTrainingReport.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnTrainingReport.FlatAppearance.BorderSize = 0
+        Me.btnTrainingReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTrainingReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTrainingReport.ImageKey = "Performance_Management.png"
+        Me.btnTrainingReport.ImageList = Me.ImageListSubMenuIcon
+        Me.btnTrainingReport.Location = New System.Drawing.Point(0, 174)
+        Me.btnTrainingReport.Name = "btnTrainingReport"
+        Me.btnTrainingReport.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnTrainingReport.Size = New System.Drawing.Size(282, 35)
+        Me.btnTrainingReport.TabIndex = 12
+        Me.btnTrainingReport.Text = "   Training"
+        Me.btnTrainingReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnTrainingReport.UseVisualStyleBackColor = True
         '
         'btnCertificateOfEmployment
         '
@@ -283,22 +334,22 @@ Partial Class frmMainPanelHRMDetail
         Me.btnCertificateOfEmployment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCertificateOfEmployment.UseVisualStyleBackColor = True
         '
-        'Button21
+        'btnDepartmentReport
         '
-        Me.Button21.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button21.FlatAppearance.BorderSize = 0
-        Me.Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button21.ImageKey = "dept.png"
-        Me.Button21.ImageList = Me.ImageListSubMenuIcon
-        Me.Button21.Location = New System.Drawing.Point(0, 104)
-        Me.Button21.Name = "Button21"
-        Me.Button21.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button21.Size = New System.Drawing.Size(282, 35)
-        Me.Button21.TabIndex = 13
-        Me.Button21.Text = "   Department"
-        Me.Button21.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button21.UseVisualStyleBackColor = True
+        Me.btnDepartmentReport.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnDepartmentReport.FlatAppearance.BorderSize = 0
+        Me.btnDepartmentReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDepartmentReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDepartmentReport.ImageKey = "dept.png"
+        Me.btnDepartmentReport.ImageList = Me.ImageListSubMenuIcon
+        Me.btnDepartmentReport.Location = New System.Drawing.Point(0, 104)
+        Me.btnDepartmentReport.Name = "btnDepartmentReport"
+        Me.btnDepartmentReport.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnDepartmentReport.Size = New System.Drawing.Size(282, 35)
+        Me.btnDepartmentReport.TabIndex = 13
+        Me.btnDepartmentReport.Text = "   Department"
+        Me.btnDepartmentReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDepartmentReport.UseVisualStyleBackColor = True
         '
         'btnCompanyReport
         '
@@ -333,38 +384,6 @@ Partial Class frmMainPanelHRMDetail
         Me.btnEmployee.Text = "   Employee"
         Me.btnEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEmployee.UseVisualStyleBackColor = True
-        '
-        'Panel11
-        '
-        Me.Panel11.Controls.Add(Me.Label3)
-        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel11.Location = New System.Drawing.Point(0, 0)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(282, 34)
-        Me.Panel11.TabIndex = 1
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(16, 10)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(88, 15)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "HRIS > Report"
-        '
-        'panelSubHRIS_TransactionDetails
-        '
-        Me.panelSubHRIS_TransactionDetails.Controls.Add(Me.btnPerformanceManagement)
-        Me.panelSubHRIS_TransactionDetails.Controls.Add(Me.btnBenefitAdmin)
-        Me.panelSubHRIS_TransactionDetails.Controls.Add(Me.btnTrainingManagement)
-        Me.panelSubHRIS_TransactionDetails.Controls.Add(Me.btnSchedManagement)
-        Me.panelSubHRIS_TransactionDetails.Controls.Add(Me.btnHumanResource)
-        Me.panelSubHRIS_TransactionDetails.Controls.Add(Me.Panel12)
-        Me.panelSubHRIS_TransactionDetails.Location = New System.Drawing.Point(325, 20)
-        Me.panelSubHRIS_TransactionDetails.Name = "panelSubHRIS_TransactionDetails"
-        Me.panelSubHRIS_TransactionDetails.Size = New System.Drawing.Size(282, 233)
-        Me.panelSubHRIS_TransactionDetails.TabIndex = 5
         '
         'btnPerformanceManagement
         '
@@ -451,25 +470,6 @@ Partial Class frmMainPanelHRMDetail
         Me.btnHumanResource.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnHumanResource.UseVisualStyleBackColor = True
         '
-        'Panel12
-        '
-        Me.Panel12.Controls.Add(Me.Label1)
-        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel12.Location = New System.Drawing.Point(0, 0)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(282, 34)
-        Me.Panel12.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(16, 10)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(112, 15)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "HRIS > Transaction"
-        '
         'frmMainPanelHRMDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -509,7 +509,7 @@ Partial Class frmMainPanelHRMDetail
     Friend WithEvents Panel13 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents panelSubHRIS_Reports As Panel
-    Friend WithEvents Button21 As Button
+    Friend WithEvents btnDepartmentReport As Button
     Friend WithEvents Panel11 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents panelSubHRIS_TransactionDetails As Panel
@@ -524,5 +524,5 @@ Partial Class frmMainPanelHRMDetail
     Friend WithEvents btnCertificateOfEmployment As Button
     Friend WithEvents btnEmployee As Button
     Friend WithEvents btnCompanyReport As Button
-    Friend WithEvents Button20 As Button
+    Friend WithEvents btnTrainingReport As Button
 End Class

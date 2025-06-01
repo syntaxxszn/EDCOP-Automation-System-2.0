@@ -27,7 +27,6 @@ Public Class frmHR_AddUpdForeignAddress
             frmHR_PreviewPersonnelDetails_PersonalInformation.cbForeignAddr.Checked = False
         End If
         Me.Close()
-        isEdit = False
     End Sub
 
 End Class
