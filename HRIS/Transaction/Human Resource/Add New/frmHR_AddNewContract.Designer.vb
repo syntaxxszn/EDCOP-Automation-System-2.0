@@ -22,8 +22,24 @@ Partial Class frmHR_AddNewContract
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHR_AddNewContract))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.btnAddNewOmnibusProject = New System.Windows.Forms.Button()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.dgvParentsAndSiblings = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.psRelationship = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.psFullName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.psBirthDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.psContactNo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.psAge = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.btnDiscard = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
@@ -33,13 +49,6 @@ Partial Class frmHR_AddNewContract
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.chContractEnd = New System.Windows.Forms.CheckBox()
@@ -96,8 +105,8 @@ Partial Class frmHR_AddNewContract
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel10.SuspendLayout()
+        CType(Me.dgvParentsAndSiblings, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel11.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBoxHelp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,6 +132,8 @@ Partial Class frmHR_AddNewContract
         '
         'Panel10
         '
+        Me.Panel10.Controls.Add(Me.btnAddNewOmnibusProject)
+        Me.Panel10.Controls.Add(Me.dgvParentsAndSiblings)
         Me.Panel10.Controls.Add(Me.Panel13)
         Me.Panel10.Controls.Add(Me.btnDiscard)
         Me.Panel10.Controls.Add(Me.btnSave)
@@ -131,7 +142,6 @@ Partial Class frmHR_AddNewContract
         Me.Panel10.Controls.Add(Me.cbSignatory1)
         Me.Panel10.Controls.Add(Me.Label23)
         Me.Panel10.Controls.Add(Me.Panel11)
-        Me.Panel10.Controls.Add(Me.DataGridView1)
         Me.Panel10.Controls.Add(Me.Label7)
         Me.Panel10.Controls.Add(Me.Label18)
         Me.Panel10.Controls.Add(Me.chContractEnd)
@@ -179,6 +189,114 @@ Partial Class frmHR_AddNewContract
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(748, 676)
         Me.Panel10.TabIndex = 8
+        '
+        'btnAddNewOmnibusProject
+        '
+        Me.btnAddNewOmnibusProject.BackColor = System.Drawing.Color.DarkGreen
+        Me.btnAddNewOmnibusProject.FlatAppearance.BorderColor = System.Drawing.Color.Green
+        Me.btnAddNewOmnibusProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddNewOmnibusProject.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddNewOmnibusProject.ForeColor = System.Drawing.Color.White
+        Me.btnAddNewOmnibusProject.ImageIndex = 0
+        Me.btnAddNewOmnibusProject.ImageList = Me.ImageList1
+        Me.btnAddNewOmnibusProject.Location = New System.Drawing.Point(226, 297)
+        Me.btnAddNewOmnibusProject.Name = "btnAddNewOmnibusProject"
+        Me.btnAddNewOmnibusProject.Size = New System.Drawing.Size(29, 27)
+        Me.btnAddNewOmnibusProject.TabIndex = 249
+        Me.btnAddNewOmnibusProject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAddNewOmnibusProject.UseVisualStyleBackColor = False
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "green-plus.png")
+        '
+        'dgvParentsAndSiblings
+        '
+        Me.dgvParentsAndSiblings.AllowUserToAddRows = False
+        Me.dgvParentsAndSiblings.AllowUserToDeleteRows = False
+        Me.dgvParentsAndSiblings.AllowUserToResizeColumns = False
+        Me.dgvParentsAndSiblings.AllowUserToResizeRows = False
+        Me.dgvParentsAndSiblings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.dgvParentsAndSiblings.BackgroundColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvParentsAndSiblings.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvParentsAndSiblings.ColumnHeadersHeight = 35
+        Me.dgvParentsAndSiblings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvParentsAndSiblings.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.psRelationship, Me.psFullName, Me.psBirthDate, Me.psContactNo, Me.psAge, Me.Column2})
+        Me.dgvParentsAndSiblings.Location = New System.Drawing.Point(17, 335)
+        Me.dgvParentsAndSiblings.MultiSelect = False
+        Me.dgvParentsAndSiblings.Name = "dgvParentsAndSiblings"
+        Me.dgvParentsAndSiblings.ReadOnly = True
+        Me.dgvParentsAndSiblings.RowHeadersVisible = False
+        Me.dgvParentsAndSiblings.RowTemplate.Height = 30
+        Me.dgvParentsAndSiblings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvParentsAndSiblings.Size = New System.Drawing.Size(711, 105)
+        Me.dgvParentsAndSiblings.TabIndex = 246
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        Me.Column1.Width = 43
+        '
+        'psRelationship
+        '
+        Me.psRelationship.HeaderText = "Project Name"
+        Me.psRelationship.Name = "psRelationship"
+        Me.psRelationship.ReadOnly = True
+        Me.psRelationship.Width = 91
+        '
+        'psFullName
+        '
+        Me.psFullName.HeaderText = "Project Differential"
+        Me.psFullName.Name = "psFullName"
+        Me.psFullName.ReadOnly = True
+        Me.psFullName.Width = 117
+        '
+        'psBirthDate
+        '
+        DataGridViewCellStyle2.Format = "D"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.psBirthDate.DefaultCellStyle = DataGridViewCellStyle2
+        Me.psBirthDate.HeaderText = "Man-Months"
+        Me.psBirthDate.Name = "psBirthDate"
+        Me.psBirthDate.ReadOnly = True
+        Me.psBirthDate.Width = 99
+        '
+        'psContactNo
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.psContactNo.DefaultCellStyle = DataGridViewCellStyle3
+        Me.psContactNo.HeaderText = "Man-Hours"
+        Me.psContactNo.Name = "psContactNo"
+        Me.psContactNo.ReadOnly = True
+        Me.psContactNo.Width = 90
+        '
+        'psAge
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.psAge.DefaultCellStyle = DataGridViewCellStyle4
+        Me.psAge.HeaderText = "Reference IHB"
+        Me.psAge.Name = "psAge"
+        Me.psAge.ReadOnly = True
+        Me.psAge.Width = 95
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Balance"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 71
         '
         'Panel13
         '
@@ -258,7 +376,7 @@ Partial Class frmHR_AddNewContract
         '
         Me.Panel11.BackColor = System.Drawing.Color.Navy
         Me.Panel11.Controls.Add(Me.Label21)
-        Me.Panel11.Location = New System.Drawing.Point(17, 302)
+        Me.Panel11.Location = New System.Drawing.Point(17, 297)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(205, 27)
         Me.Panel11.TabIndex = 238
@@ -273,58 +391,6 @@ Partial Class frmHR_AddNewContract
         Me.Label21.Size = New System.Drawing.Size(155, 15)
         Me.Label21.TabIndex = 189
         Me.Label21.Text = "Project Omnibus Contracts"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
-        Me.DataGridView1.Location = New System.Drawing.Point(17, 336)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(710, 99)
-        Me.DataGridView1.TabIndex = 237
-        '
-        'Column1
-        '
-        Me.Column1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox
-        Me.Column1.HeaderText = "Column1"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Column2"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Column3"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Column4"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Column5"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Column6"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
         '
         'Label7
         '
@@ -827,13 +893,12 @@ Partial Class frmHR_AddNewContract
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Contract"
         Me.Panel1.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
+        CType(Me.dgvParentsAndSiblings, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBoxHelp, System.ComponentModel.ISupportInitialize).EndInit()
@@ -861,13 +926,6 @@ Partial Class frmHR_AddNewContract
     Friend WithEvents Label23 As Label
     Friend WithEvents Panel11 As Panel
     Friend WithEvents Label21 As Label
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Column1 As DataGridViewComboBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Label7 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents chContractEnd As CheckBox
@@ -914,4 +972,14 @@ Partial Class frmHR_AddNewContract
     Friend WithEvents btnSave As Button
     Friend WithEvents Panel13 As Panel
     Friend WithEvents PictureBoxHelp As PictureBox
+    Friend WithEvents dgvParentsAndSiblings As DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents psRelationship As DataGridViewTextBoxColumn
+    Friend WithEvents psFullName As DataGridViewTextBoxColumn
+    Friend WithEvents psBirthDate As DataGridViewTextBoxColumn
+    Friend WithEvents psContactNo As DataGridViewTextBoxColumn
+    Friend WithEvents psAge As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents btnAddNewOmnibusProject As Button
+    Friend WithEvents ImageList1 As ImageList
 End Class

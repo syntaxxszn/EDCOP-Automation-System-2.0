@@ -50,6 +50,8 @@
     End Sub
 
     Private Sub frmHRIS_TR_AddUpdTrainingParticipants_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        If Not Me.IsDisposed Then Me.Dispose()
+        ClearDataGridViewRows(Me)
+        ClearTextBoxes(Me)
+        isUpdate = False
     End Sub
 End Class

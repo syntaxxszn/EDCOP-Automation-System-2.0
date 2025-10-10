@@ -118,124 +118,172 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FMIS\Cash Journal\frmAccounting_CashJournalMain.Designer.vb">
-      <DependentUpon>frmAccounting_CashJournalMain.vb</DependentUpon>
+    <Compile Include="FMIS\Setup\Account Category\Add Update\frmFMIS_Setup_AddUpdAccountCategory.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdAccountCategory.vb</DependentUpon>
     </Compile>
-    <Compile Include="FMIS\Cash Journal\frmAccounting_CashJournalMain.vb">
+    <Compile Include="FMIS\Setup\Account Category\Add Update\frmFMIS_Setup_AddUpdAccountCategory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMIS\Cash Journal\SubMenu\CashDisbursementSubMenu.Designer.vb">
+    <Compile Include="FMIS\Setup\Account Category\Add Update\frmFMIS_Setup_AddUpdAccountCategoryDetail.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdAccountCategoryDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Account Category\Add Update\frmFMIS_Setup_AddUpdAccountCategoryDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Account Category\frmFMIS_Setup_AccountCategory.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AccountCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Account Category\frmFMIS_Setup_AccountCategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Bank Accounts\frmFMIS_Setup_BankAccount.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_BankAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Bank Accounts\frmFMIS_Setup_BankAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Cash Flow Category\Add Update\frmFMIS_Setup_AddUpdCashFlowCategoryDetail.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdCashFlowCategoryDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Cash Flow Category\Add Update\frmFMIS_Setup_AddUpdCashFlowCategoryDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Cash Flow Category\Add Update\frmFMIS_Setup_AddUpdCashFlowCategorySubdetail.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdCashFlowCategorySubdetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Cash Flow Category\Add Update\frmFMIS_Setup_AddUpdCashFlowCategorySubdetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Cash Flow Category\Add Update\frmFMIS_Setup_AddUpdCashFlowCategoryType.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdCashFlowCategoryType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Cash Flow Category\Add Update\frmFMIS_Setup_AddUpdCashFlowCategoryType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Cash Flow Category\frmFMIS_Setup_CashFlowCategory.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_CashFlowCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Cash Flow Category\frmFMIS_Setup_CashFlowCategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Chart of Accounts\Add Update\frmFMIS_Setup_AddUpdChartOfAccounts.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdChartOfAccounts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Chart of Accounts\Add Update\frmFMIS_Setup_AddUpdChartOfAccounts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Chart of Accounts\frmFMIS_Setup_ChartOfAccounts.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_ChartOfAccounts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Chart of Accounts\frmFMIS_Setup_ChartOfAccounts.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Chart of Accounts\frmFMIS_Setup_ChartOfAccounts_Internal.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_ChartOfAccounts_Internal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Chart of Accounts\frmFMIS_Setup_ChartOfAccounts_Internal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Cost Center\Add Update\frmFMIS_Setup_AddUpdCostCenter.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdCostCenter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Cost Center\Add Update\frmFMIS_Setup_AddUpdCostCenter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Cost Center\frmFMIS_Setup_CostCenter.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_CostCenter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Cost Center\frmFMIS_Setup_CostCenter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeBirthdate_List.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHRIS_EmployeeBirthdate_List.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Credit\Add New\frmHRIS_Setup_SelectDateLeaveCredit.Designer.vb">
+      <DependentUpon>frmHRIS_Setup_SelectDateLeaveCredit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Credit\Add New\frmHRIS_Setup_SelectDateLeaveCredit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Credit\frmHRIS_Setup_PreviewLeaveBalances.Designer.vb">
+      <DependentUpon>frmHRIS_Setup_PreviewLeaveBalances.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Credit\frmHRIS_Setup_PreviewLeaveBalances.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Credit\frmHRIS_Setup_PreviewLeaveTaken.Designer.vb">
+      <DependentUpon>frmHRIS_Setup_PreviewLeaveTaken.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Leave Credit\frmHRIS_Setup_PreviewLeaveTaken.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Setup\Shift\Add New\frmHRIS_AssignScheduleType.Designer.vb">
+      <DependentUpon>frmHRIS_AssignScheduleType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Setup\Shift\Add New\frmHRIS_AssignScheduleType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddNewOmnibusProject.Designer.vb">
+      <DependentUpon>frmHR_AddNewOmnibusProject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddNewOmnibusProject.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_OneTimePasscode.Designer.vb">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_OneTimePasscode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_OneTimePasscode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\FMM\SubMenu\CashDisbursementSubMenu.Designer.vb">
       <DependentUpon>CashDisbursementSubMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="FMIS\Cash Journal\SubMenu\CashDisbursementSubMenu.vb">
+    <Compile Include="MainSubMenu\FMM\SubMenu\CashDisbursementSubMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMIS\Cash Journal\SubMenu\RequestForPaymentSubMenu.Designer.vb">
+    <Compile Include="MainSubMenu\FMM\SubMenu\ChartOfAccountsSubMenu.Designer.vb">
+      <DependentUpon>ChartOfAccountsSubMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\FMM\SubMenu\ChartOfAccountsSubMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\FMM\SubMenu\RequestForPaymentSubMenu.Designer.vb">
       <DependentUpon>RequestForPaymentSubMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="FMIS\Cash Journal\SubMenu\RequestForPaymentSubMenu.vb">
+    <Compile Include="MainSubMenu\FMM\SubMenu\RequestForPaymentSubMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMIS\Check Ledger\Request For Payment\Add Record\frmAccounting_RequestForPayment_AddNew.Designer.vb">
-      <DependentUpon>frmAccounting_RequestForPayment_AddNew.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FMIS\Check Ledger\Request For Payment\Add Record\frmAccounting_RequestForPayment_AddNew.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMIS\Check Ledger\Request For Payment\View\frmAccounting_RequestForPayment.Designer.vb">
-      <DependentUpon>frmAccounting_RequestForPayment.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FMIS\Check Ledger\Request For Payment\View\frmAccounting_RequestForPayment.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMIS\PettyCash\SubMenu\PettyCashSubMenu.Designer.vb">
+    <Compile Include="MainSubMenu\FMM\SubMenu\PettyCashSubMenu.Designer.vb">
       <DependentUpon>PettyCashSubMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="FMIS\PettyCash\SubMenu\PettyCashSubMenu.vb">
+    <Compile Include="MainSubMenu\FMM\SubMenu\PettyCashSubMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMIS\Purchase Journal\SubMenu\CashAdvanceSubMenu.Designer.vb">
+    <Compile Include="MainSubMenu\FMM\SubMenu\CashAdvanceSubMenu.Designer.vb">
       <DependentUpon>CashAdvanceSubMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="FMIS\Purchase Journal\SubMenu\CashAdvanceSubMenu.vb">
+    <Compile Include="MainSubMenu\FMM\SubMenu\CashAdvanceSubMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMIS\Purchase Journal\SubMenu\PurchaseRequisitionSubMenu.Designer.vb">
+    <Compile Include="MainSubMenu\FMM\SubMenu\PurchaseRequisitionSubMenu.Designer.vb">
       <DependentUpon>PurchaseRequisitionSubMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="FMIS\Purchase Journal\SubMenu\PurchaseRequisitionSubMenu.vb">
+    <Compile Include="MainSubMenu\FMM\SubMenu\PurchaseRequisitionSubMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMIS\Report\UI Forms for Report\frmAccounting_ReportTab.Designer.vb">
-      <DependentUpon>frmAccounting_ReportTab.vb</DependentUpon>
+    <Compile Include="FMIS\Setup\Fiscal Period\Add Update\frmFMIS_Setup_AddUpdFiscalPeriod.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdFiscalPeriod.vb</DependentUpon>
     </Compile>
-    <Compile Include="FMIS\Report\UI Forms for Report\frmAccounting_ReportTab.vb">
+    <Compile Include="FMIS\Setup\Fiscal Period\Add Update\frmFMIS_Setup_AddUpdFiscalPeriod.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMIS\Report\UI Forms for Report\frmAccounting_DialogTrialBalance.Designer.vb">
-      <DependentUpon>frmAccounting_DialogTrialBalance.vb</DependentUpon>
+    <Compile Include="FMIS\Setup\Fiscal Period\frmFMIS_Setup_FiscalPeriod.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_FiscalPeriod.vb</DependentUpon>
     </Compile>
-    <Compile Include="FMIS\Report\UI Forms for Report\frmAccounting_DialogTrialBalance.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMIS\Report\RPT\rpt_Administrator_RevFund_Summary.vb">
-      <DependentUpon>rpt_Administrator_RevFund_Summary.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Administrator\Add Record\frmAccounting_RevolvingFund_AcccountValidation.Designer.vb">
-      <DependentUpon>frmAccounting_RevolvingFund_AcccountValidation.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Administrator\Add Record\frmAccounting_RevolvingFund_AcccountValidation.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Administrator\Summary of RFP\frmAccounting_SummaryOfRP_Main.Designer.vb">
-      <DependentUpon>frmAccounting_SummaryOfRP_Main.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Administrator\Summary of RFP\frmAccounting_SummaryOfRP_Main.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Administrator\View\frmAccounting_SummaryOfRP_Preview.Designer.vb">
-      <DependentUpon>frmAccounting_SummaryOfRP_Preview.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Administrator\View\frmAccounting_SummaryOfRP_Preview.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Client\Add record\frmAccounting_AddRF_Replenishment_details.Designer.vb">
-      <DependentUpon>frmAccounting_AddRF_Replenishment_details.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Client\Add record\frmAccounting_AddRF_Replenishment_details.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Client\Update record\frmAccounting_UpdateRF_Replenishment_details.Designer.vb">
-      <DependentUpon>frmAccounting_UpdateRF_Replenishment_details.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Client\Update record\frmAccounting_UpdateRF_Replenishment_details.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Client\View\frmAccounting_RevolvingFund_Advances.Designer.vb">
-      <DependentUpon>frmAccounting_RevolvingFund_Advances.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Client\View\frmAccounting_RevolvingFund_Advances.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Client\View\frmAccounting_RevolvingFund_Client.Designer.vb">
-      <DependentUpon>frmAccounting_RevolvingFund_Client.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Client\View\frmAccounting_RevolvingFund_Client.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Administrator\View\frmAccounting_RevolvingFund_Administrator.Designer.vb">
-      <DependentUpon>frmAccounting_RevolvingFund_Administrator.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Administrator\View\frmAccounting_RevolvingFund_Administrator.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Client\Add record\frmAccounting_AddRF_ReplenishmentAmount.Designer.vb">
-      <DependentUpon>frmAccounting_AddRF_ReplenishmentAmount.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FMIS\Revolving Fund\Client\Add record\frmAccounting_AddRF_ReplenishmentAmount.vb">
+    <Compile Include="FMIS\Setup\Fiscal Period\frmFMIS_Setup_FiscalPeriod.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLoading.Designer.vb">
@@ -278,6 +326,48 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListofParticipant.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHRIS_PMAS_Part1_Form1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form2_POSS.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHRIS_PMAS_Part1_Form2_POSS.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form2_Projects8.vb">
+      <DependentUpon>rptHRIS_PMAS_Part1_Form2_Projects8.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form2_Projects4.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHRIS_PMAS_Part1_Form2_Projects4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part2_Factor_C.vb">
+      <DependentUpon>rptHRIS_PMAS_Part2_Factor_C.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part2_Factor_B.vb">
+      <DependentUpon>rptHRIS_PMAS_Part2_Factor_B.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part2_Factor_A.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptHRIS_PMAS_Part2_Factor_A.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="HRIS\Reports\Files\rptHRIS_Training_Masterlist.vb">
@@ -334,8 +424,8 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeBirthdate_List.vb">
-      <DependentUpon>rptHRIS_EmployeeBirthdate_List.rpt</DependentUpon>
+    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeBirthdate_Listx.vb">
+      <DependentUpon>rptHRIS_EmployeeBirthdate_Listx.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -508,16 +598,40 @@
     <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part1\frmHRIS_PerformanceManagement_SelectPart1Form1ToPart2Form2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormAValues.Designer.vb">
-      <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormAValues.vb</DependentUpon>
+    <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.Designer.vb">
+      <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.vb</DependentUpon>
     </Compile>
-    <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormAValues.vb">
+    <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.Designer.vb">
       <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.vb</DependentUpon>
     </Compile>
     <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.Designer.vb">
+      <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.Designer.vb">
+      <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.Designer.vb">
+      <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.Designer.vb">
+      <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HRIS\Transaction\Performance Management\Main View\frmHRIS_Transaction_PerformanceManagement_Part1.Designer.vb">
@@ -638,6 +752,18 @@
       <DependentUpon>TrainingManagementSubMenu_Master.vb</DependentUpon>
     </Compile>
     <Compile Include="MainSubMenu\HRM\SubMenu\TrainingManagementSubMenu_Master.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\SSS\frmMainPanelSSM.Designer.vb">
+      <DependentUpon>frmMainPanelSSM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\SSS\frmMainPanelSSM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainSubMenu\SSS\frmMainPanelSSMDetail.Designer.vb">
+      <DependentUpon>frmMainPanelSSMDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSubMenu\SSS\frmMainPanelSSMDetail.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\Module_GlobalVariables.vb" />
@@ -923,14 +1049,8 @@
     <Compile Include="MainSubMenu\TKM\frmMainPanelTKMDetail.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modules\Module_Accounting.vb" />
+    <Compile Include="Modules\Module_FMIS.vb" />
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="FMIS\Report\RPT\rpttrialbalancenew.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpttrialbalancenew.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails.Designer.vb">
       <DependentUpon>frmHR_PreviewPersonnelDetails.vb</DependentUpon>
     </Compile>
@@ -1151,6 +1271,24 @@
     <Compile Include="System Login and User Registration\frmPMS_UserRegistration.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SystemSettings\Transaction\Add Update\frmSSM_SystemUserAccess_AddUpdAccess.Designer.vb">
+      <DependentUpon>frmSSM_SystemUserAccess_AddUpdAccess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSettings\Transaction\Add Update\frmSSM_SystemUserAccess_AddUpdAccess.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSettings\Transaction\frmSSM_SystemGroupAccessMain.Designer.vb">
+      <DependentUpon>frmSSM_SystemGroupAccessMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSettings\Transaction\frmSSM_SystemGroupAccessMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemSettings\Transaction\frmSSM_SystemUserAccessMain.Designer.vb">
+      <DependentUpon>frmSSM_SystemUserAccessMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SystemSettings\Transaction\frmSSM_SystemUserAccessMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TKM\Transaction\EmployeeLeave\Add Update\OT\frmTK_AddUpdOverTime.Designer.vb">
       <DependentUpon>frmTK_AddUpdOverTime.vb</DependentUpon>
     </Compile>
@@ -1261,70 +1399,90 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FMIS\Cash Journal\frmAccounting_CashJournalMain.resx">
-      <DependentUpon>frmAccounting_CashJournalMain.vb</DependentUpon>
+    <EmbeddedResource Include="FMIS\Setup\Account Category\Add Update\frmFMIS_Setup_AddUpdAccountCategory.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdAccountCategory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Cash Journal\SubMenu\CashDisbursementSubMenu.resx">
+    <EmbeddedResource Include="FMIS\Setup\Account Category\Add Update\frmFMIS_Setup_AddUpdAccountCategoryDetail.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdAccountCategoryDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Account Category\frmFMIS_Setup_AccountCategory.resx">
+      <DependentUpon>frmFMIS_Setup_AccountCategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Bank Accounts\frmFMIS_Setup_BankAccount.resx">
+      <DependentUpon>frmFMIS_Setup_BankAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Cash Flow Category\Add Update\frmFMIS_Setup_AddUpdCashFlowCategoryDetail.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdCashFlowCategoryDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Cash Flow Category\Add Update\frmFMIS_Setup_AddUpdCashFlowCategorySubdetail.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdCashFlowCategorySubdetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Cash Flow Category\Add Update\frmFMIS_Setup_AddUpdCashFlowCategoryType.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdCashFlowCategoryType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Cash Flow Category\frmFMIS_Setup_CashFlowCategory.resx">
+      <DependentUpon>frmFMIS_Setup_CashFlowCategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Chart of Accounts\Add Update\frmFMIS_Setup_AddUpdChartOfAccounts.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdChartOfAccounts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Chart of Accounts\frmFMIS_Setup_ChartOfAccounts.resx">
+      <DependentUpon>frmFMIS_Setup_ChartOfAccounts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Chart of Accounts\frmFMIS_Setup_ChartOfAccounts_Internal.resx">
+      <DependentUpon>frmFMIS_Setup_ChartOfAccounts_Internal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Cost Center\Add Update\frmFMIS_Setup_AddUpdCostCenter.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdCostCenter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Cost Center\frmFMIS_Setup_CostCenter.resx">
+      <DependentUpon>frmFMIS_Setup_CostCenter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeBirthdate_List.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_EmployeeBirthdate_List.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Leave Credit\Add New\frmHRIS_Setup_SelectDateLeaveCredit.resx">
+      <DependentUpon>frmHRIS_Setup_SelectDateLeaveCredit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Leave Credit\frmHRIS_Setup_PreviewLeaveBalances.resx">
+      <DependentUpon>frmHRIS_Setup_PreviewLeaveBalances.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Leave Credit\frmHRIS_Setup_PreviewLeaveTaken.resx">
+      <DependentUpon>frmHRIS_Setup_PreviewLeaveTaken.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Setup\Shift\Add New\frmHRIS_AssignScheduleType.resx">
+      <DependentUpon>frmHRIS_AssignScheduleType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Add New\frmHR_AddNewOmnibusProject.resx">
+      <DependentUpon>frmHR_AddNewOmnibusProject.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_OneTimePasscode.resx">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_OneTimePasscode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\FMM\SubMenu\CashDisbursementSubMenu.resx">
       <DependentUpon>CashDisbursementSubMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Cash Journal\SubMenu\RequestForPaymentSubMenu.resx">
+    <EmbeddedResource Include="MainSubMenu\FMM\SubMenu\ChartOfAccountsSubMenu.resx">
+      <DependentUpon>ChartOfAccountsSubMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\FMM\SubMenu\RequestForPaymentSubMenu.resx">
       <DependentUpon>RequestForPaymentSubMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Check Ledger\Request For Payment\Add Record\frmAccounting_RequestForPayment_AddNew.resx">
-      <DependentUpon>frmAccounting_RequestForPayment_AddNew.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Check Ledger\Request For Payment\View\frmAccounting_RequestForPayment.resx">
-      <DependentUpon>frmAccounting_RequestForPayment.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\PettyCash\SubMenu\PettyCashSubMenu.resx">
+    <EmbeddedResource Include="MainSubMenu\FMM\SubMenu\PettyCashSubMenu.resx">
       <DependentUpon>PettyCashSubMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Purchase Journal\SubMenu\CashAdvanceSubMenu.resx">
+    <EmbeddedResource Include="MainSubMenu\FMM\SubMenu\CashAdvanceSubMenu.resx">
       <DependentUpon>CashAdvanceSubMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Purchase Journal\SubMenu\PurchaseRequisitionSubMenu.resx">
+    <EmbeddedResource Include="MainSubMenu\FMM\SubMenu\PurchaseRequisitionSubMenu.resx">
       <DependentUpon>PurchaseRequisitionSubMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Report\UI Forms for Report\frmAccounting_ReportTab.resx">
-      <DependentUpon>frmAccounting_ReportTab.vb</DependentUpon>
+    <EmbeddedResource Include="FMIS\Setup\Fiscal Period\Add Update\frmFMIS_Setup_AddUpdFiscalPeriod.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdFiscalPeriod.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Report\UI Forms for Report\frmAccounting_DialogTrialBalance.resx">
-      <DependentUpon>frmAccounting_DialogTrialBalance.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Report\RPT\rpt_Administrator_RevFund_Summary.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpt_Administrator_RevFund_Summary.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Revolving Fund\Administrator\Add Record\frmAccounting_RevolvingFund_AcccountValidation.resx">
-      <DependentUpon>frmAccounting_RevolvingFund_AcccountValidation.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Revolving Fund\Administrator\Summary of RFP\frmAccounting_SummaryOfRP_Main.resx">
-      <DependentUpon>frmAccounting_SummaryOfRP_Main.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Revolving Fund\Administrator\View\frmAccounting_SummaryOfRP_Preview.resx">
-      <DependentUpon>frmAccounting_SummaryOfRP_Preview.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Revolving Fund\Client\Add record\frmAccounting_AddRF_Replenishment_details.resx">
-      <DependentUpon>frmAccounting_AddRF_Replenishment_details.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Revolving Fund\Client\Update record\frmAccounting_UpdateRF_Replenishment_details.resx">
-      <DependentUpon>frmAccounting_UpdateRF_Replenishment_details.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Revolving Fund\Client\View\frmAccounting_RevolvingFund_Advances.resx">
-      <DependentUpon>frmAccounting_RevolvingFund_Advances.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Revolving Fund\Client\View\frmAccounting_RevolvingFund_Client.resx">
-      <DependentUpon>frmAccounting_RevolvingFund_Client.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Revolving Fund\Administrator\View\frmAccounting_RevolvingFund_Administrator.resx">
-      <DependentUpon>frmAccounting_RevolvingFund_Administrator.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Revolving Fund\Client\Add record\frmAccounting_AddRF_ReplenishmentAmount.resx">
-      <DependentUpon>frmAccounting_AddRF_ReplenishmentAmount.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FMIS\Report\RPT\rpttrialbalancenew.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpttrialbalancenew.vb</LastGenOutput>
+    <EmbeddedResource Include="FMIS\Setup\Fiscal Period\frmFMIS_Setup_FiscalPeriod.resx">
+      <DependentUpon>frmFMIS_Setup_FiscalPeriod.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoading.resx">
       <DependentUpon>frmLoading.vb</DependentUpon>
@@ -1349,6 +1507,34 @@
     <EmbeddedResource Include="HRIS\Reports\Files\ListofParticipant.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListofParticipant.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_PMAS_Part1_Form1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form2_POSS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_PMAS_Part1_Form2_POSS.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form2_Projects8.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_PMAS_Part1_Form2_Projects8.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form2_Projects4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_PMAS_Part1_Form2_Projects4.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part2_Factor_C.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_PMAS_Part2_Factor_C.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part2_Factor_B.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_PMAS_Part2_Factor_B.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part2_Factor_A.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_PMAS_Part2_Factor_A.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_Training_Masterlist.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1386,9 +1572,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_EmployeeLeaveBalances_List.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeBirthdate_List.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeBirthdate_Listx.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptHRIS_EmployeeBirthdate_List.vb</LastGenOutput>
+      <LastGenOutput>rptHRIS_EmployeeBirthdate_Listx.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeLeaveEncashment_List.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1482,8 +1668,20 @@
     <EmbeddedResource Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.resx">
       <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormAValues.resx">
-      <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormAValues.vb</DependentUpon>
+    <EmbeddedResource Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.resx">
+      <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.resx">
+      <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.resx">
+      <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.resx">
+      <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Performance Management\Add Update\Part2\frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.resx">
+      <DependentUpon>frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Transaction\Performance Management\Main View\frmHRIS_Transaction_PerformanceManagement_Part1.resx">
       <DependentUpon>frmHRIS_Transaction_PerformanceManagement_Part1.vb</DependentUpon>
@@ -1545,6 +1743,12 @@
     <EmbeddedResource Include="MainSubMenu\HRM\SubMenu\TrainingManagementSubMenu_Master.resx">
       <DependentUpon>TrainingManagementSubMenu_Master.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\SSS\frmMainPanelSSM.resx">
+      <DependentUpon>frmMainPanelSSM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSubMenu\SSS\frmMainPanelSSMDetail.resx">
+      <DependentUpon>frmMainPanelSSMDetail.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="System Login and User Registration\frmPMS_Login.resx">
       <DependentUpon>frmPMS_Login.vb</DependentUpon>
     </EmbeddedResource>
@@ -1570,7 +1774,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_CURRENT_NO_GAP.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>HRIS_COE_CURRENT_NO_GAP.vb</LastGenOutput>
+      <LastGenOutput>HRIS_COE_CURRENT_NO_GAP1.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Reports\frmHRIS_Report_CrystalReportsHolder.resx">
       <DependentUpon>frmHRIS_Report_CrystalReportsHolder.vb</DependentUpon>
@@ -1806,6 +2010,15 @@
     <EmbeddedResource Include="System Login and User Registration\frmPMS_UserRegistration.resx">
       <DependentUpon>frmPMS_UserRegistration.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SystemSettings\Transaction\Add Update\frmSSM_SystemUserAccess_AddUpdAccess.resx">
+      <DependentUpon>frmSSM_SystemUserAccess_AddUpdAccess.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSettings\Transaction\frmSSM_SystemGroupAccessMain.resx">
+      <DependentUpon>frmSSM_SystemGroupAccessMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemSettings\Transaction\frmSSM_SystemUserAccessMain.resx">
+      <DependentUpon>frmSSM_SystemUserAccessMain.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TKM\Transaction\EmployeeLeave\Add Update\OB\frmTK_AddUpdOfficialBusiness.resx">
       <DependentUpon>frmTK_AddUpdOfficialBusiness.vb</DependentUpon>
     </EmbeddedResource>
@@ -2016,6 +2229,13 @@
     <None Include="Resources\icons8-name-tag.gif" />
     <None Include="Resources\icons8-lock-50.png" />
     <None Include="Resources\icons8-check-50.png" />
+    <None Include="Resources\requisition.png" />
+    <None Include="Resources\document.png" />
+    <None Include="Resources\timesheetcorrection.png" />
+    <None Include="Resources\icons8-calendar.gif" />
+    <None Include="Resources\icons8-lock.gif" />
+    <None Include="Resources\open_eye.png" />
+    <None Include="Resources\close_eye.png" />
     <Content Include="sssss.ico" />
   </ItemGroup>
   <ItemGroup>

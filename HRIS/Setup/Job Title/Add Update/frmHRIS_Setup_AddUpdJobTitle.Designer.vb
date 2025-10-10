@@ -62,6 +62,7 @@ Partial Class frmHRIS_Setup_AddUpdJobTitle
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.lblHeader)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -175,7 +176,7 @@ Partial Class frmHRIS_Setup_AddUpdJobTitle
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(10, 70)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(398, 5)
+        Me.Panel5.Size = New System.Drawing.Size(398, 3)
         Me.Panel5.TabIndex = 74
         '
         'Panel8
@@ -183,36 +184,36 @@ Partial Class frmHRIS_Setup_AddUpdJobTitle
         Me.Panel8.BackColor = System.Drawing.Color.Gray
         Me.Panel8.Controls.Add(Me.Panel6)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel8.Location = New System.Drawing.Point(10, 75)
+        Me.Panel8.Location = New System.Drawing.Point(10, 73)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(5, 258)
+        Me.Panel8.Size = New System.Drawing.Size(3, 260)
         Me.Panel8.TabIndex = 75
         '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.Gray
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel6.Location = New System.Drawing.Point(0, 253)
+        Me.Panel6.Location = New System.Drawing.Point(0, 255)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(5, 5)
+        Me.Panel6.Size = New System.Drawing.Size(3, 5)
         Me.Panel6.TabIndex = 75
         '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.Gray
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel7.Location = New System.Drawing.Point(15, 328)
+        Me.Panel7.Location = New System.Drawing.Point(13, 330)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(393, 5)
+        Me.Panel7.Size = New System.Drawing.Size(395, 3)
         Me.Panel7.TabIndex = 76
         '
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.Gray
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel9.Location = New System.Drawing.Point(403, 75)
+        Me.Panel9.Location = New System.Drawing.Point(405, 73)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(5, 253)
+        Me.Panel9.Size = New System.Drawing.Size(3, 257)
         Me.Panel9.TabIndex = 77
         '
         'txtSalaryFrom
@@ -309,7 +310,7 @@ Partial Class frmHRIS_Setup_AddUpdJobTitle
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.Label1.Location = New System.Drawing.Point(30, 206)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(63, 13)
+        Me.Label1.Size = New System.Drawing.Size(62, 13)
         Me.Label1.TabIndex = 97
         Me.Label1.Text = "Salary To *:"
         '
@@ -381,10 +382,11 @@ Partial Class frmHRIS_Setup_AddUpdJobTitle
         Me.Label10.TabIndex = 104
         Me.Label10.Text = "Cluster Group :"
         '
-        'frmHR_Setup_AddUpdJobTitle
+        'frmHRIS_Setup_AddUpdJobTitle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(418, 394)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.cbCluster)
@@ -415,7 +417,7 @@ Partial Class frmHRIS_Setup_AddUpdJobTitle
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "frmHR_Setup_AddUpdJobTitle"
+        Me.Name = "frmHRIS_Setup_AddUpdJobTitle"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

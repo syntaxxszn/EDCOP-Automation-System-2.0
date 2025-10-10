@@ -79,10 +79,12 @@
     End Sub
 
     Private Sub btnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
+        If Not HasUserAccess("insert") Then Return
         frmHR_AssignScheduleType.ShowDialog()
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        If Not HasUserAccess("update") Then Return
         If dgvShiftSubDetails.SelectedRows.Count > 0 Then
             Dim selectedRow = dgvShiftSubDetails.SelectedRows(0)
             _strShiftEmployeeID = selectedRow.Cells(0).Value
@@ -96,6 +98,7 @@
     End Sub
 
     Private Sub dgvShiftSubDetails_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvShiftSubDetails.CellDoubleClick
+        If Not HasUserAccess("update") Then Return
         Dim selectedRow = dgvShiftSubDetails.SelectedRows(0)
         _strShiftEmployeeID = selectedRow.Cells(0).Value
         frmHR_TransferScheduleType.txtName.Text = selectedRow.Cells(2).Value

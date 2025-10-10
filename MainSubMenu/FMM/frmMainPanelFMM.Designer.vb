@@ -25,17 +25,17 @@ Partial Class frmMainPanelFMM
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMainPanelFMM))
         Me.PanelFMM = New System.Windows.Forms.Panel()
-        Me.btn = New System.Windows.Forms.Button()
+        Me.btnOptions = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.btnCashFlow = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
+        Me.btnIHBM = New System.Windows.Forms.Button()
+        Me.btnBankRecon = New System.Windows.Forms.Button()
         Me.btnOtherReports = New System.Windows.Forms.Button()
         Me.btnNewReports = New System.Windows.Forms.Button()
         Me.btnLedgerReports = New System.Windows.Forms.Button()
         Me.btnFinancialStatement = New System.Windows.Forms.Button()
         Me.btnGeneralJournal = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btnSalesJournal = New System.Windows.Forms.Button()
         Me.btnCashLedger = New System.Windows.Forms.Button()
         Me.btnCashAdvance = New System.Windows.Forms.Button()
         Me.btnPettyCash = New System.Windows.Forms.Button()
@@ -49,16 +49,16 @@ Partial Class frmMainPanelFMM
         '
         Me.PanelFMM.AutoScroll = True
         Me.PanelFMM.BackColor = System.Drawing.Color.White
-        Me.PanelFMM.Controls.Add(Me.btn)
+        Me.PanelFMM.Controls.Add(Me.btnOptions)
         Me.PanelFMM.Controls.Add(Me.btnCashFlow)
-        Me.PanelFMM.Controls.Add(Me.Button12)
-        Me.PanelFMM.Controls.Add(Me.Button11)
+        Me.PanelFMM.Controls.Add(Me.btnIHBM)
+        Me.PanelFMM.Controls.Add(Me.btnBankRecon)
         Me.PanelFMM.Controls.Add(Me.btnOtherReports)
         Me.PanelFMM.Controls.Add(Me.btnNewReports)
         Me.PanelFMM.Controls.Add(Me.btnLedgerReports)
         Me.PanelFMM.Controls.Add(Me.btnFinancialStatement)
         Me.PanelFMM.Controls.Add(Me.btnGeneralJournal)
-        Me.PanelFMM.Controls.Add(Me.Button5)
+        Me.PanelFMM.Controls.Add(Me.btnSalesJournal)
         Me.PanelFMM.Controls.Add(Me.btnCashLedger)
         Me.PanelFMM.Controls.Add(Me.btnCashAdvance)
         Me.PanelFMM.Controls.Add(Me.btnPettyCash)
@@ -68,29 +68,30 @@ Partial Class frmMainPanelFMM
         Me.PanelFMM.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelFMM.Location = New System.Drawing.Point(0, 0)
         Me.PanelFMM.Name = "PanelFMM"
-        Me.PanelFMM.Size = New System.Drawing.Size(265, 650)
+        Me.PanelFMM.Size = New System.Drawing.Size(265, 657)
         Me.PanelFMM.TabIndex = 1
         '
-        'btn
+        'btnOptions
         '
-        Me.btn.BackColor = System.Drawing.Color.White
-        Me.btn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn.FlatAppearance.BorderSize = 0
-        Me.btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn.ForeColor = System.Drawing.Color.Black
-        Me.btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn.ImageIndex = 15
-        Me.btn.ImageList = Me.ImageList1
-        Me.btn.Location = New System.Drawing.Point(0, 598)
-        Me.btn.Name = "btn"
-        Me.btn.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.btn.Size = New System.Drawing.Size(265, 42)
-        Me.btn.TabIndex = 32
-        Me.btn.Text = "   Options"
-        Me.btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btn.UseVisualStyleBackColor = False
+        Me.btnOptions.BackColor = System.Drawing.Color.White
+        Me.btnOptions.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnOptions.FlatAppearance.BorderSize = 0
+        Me.btnOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOptions.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOptions.ForeColor = System.Drawing.Color.Black
+        Me.btnOptions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnOptions.ImageIndex = 15
+        Me.btnOptions.ImageList = Me.ImageList1
+        Me.btnOptions.Location = New System.Drawing.Point(0, 602)
+        Me.btnOptions.Name = "btnOptions"
+        Me.btnOptions.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
+        Me.btnOptions.Size = New System.Drawing.Size(265, 42)
+        Me.btnOptions.TabIndex = 32
+        Me.btnOptions.Tag = "2170000000"
+        Me.btnOptions.Text = "   Options"
+        Me.btnOptions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnOptions.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnOptions.UseVisualStyleBackColor = False
         '
         'ImageList1
         '
@@ -124,57 +125,60 @@ Partial Class frmMainPanelFMM
         Me.btnCashFlow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCashFlow.ImageIndex = 13
         Me.btnCashFlow.ImageList = Me.ImageList1
-        Me.btnCashFlow.Location = New System.Drawing.Point(0, 556)
+        Me.btnCashFlow.Location = New System.Drawing.Point(0, 560)
         Me.btnCashFlow.Name = "btnCashFlow"
         Me.btnCashFlow.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnCashFlow.Size = New System.Drawing.Size(265, 42)
         Me.btnCashFlow.TabIndex = 31
+        Me.btnCashFlow.Tag = "2160000000"
         Me.btnCashFlow.Text = "   Cash Flow"
         Me.btnCashFlow.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCashFlow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCashFlow.UseVisualStyleBackColor = False
         '
-        'Button12
+        'btnIHBM
         '
-        Me.Button12.BackColor = System.Drawing.Color.White
-        Me.Button12.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button12.FlatAppearance.BorderSize = 0
-        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button12.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button12.ForeColor = System.Drawing.Color.Black
-        Me.Button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button12.ImageIndex = 12
-        Me.Button12.ImageList = Me.ImageList1
-        Me.Button12.Location = New System.Drawing.Point(0, 514)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.Button12.Size = New System.Drawing.Size(265, 42)
-        Me.Button12.TabIndex = 30
-        Me.Button12.Text = "   In-House Budget Monitoring"
-        Me.Button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button12.UseVisualStyleBackColor = False
+        Me.btnIHBM.BackColor = System.Drawing.Color.White
+        Me.btnIHBM.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnIHBM.FlatAppearance.BorderSize = 0
+        Me.btnIHBM.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnIHBM.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIHBM.ForeColor = System.Drawing.Color.Black
+        Me.btnIHBM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnIHBM.ImageIndex = 12
+        Me.btnIHBM.ImageList = Me.ImageList1
+        Me.btnIHBM.Location = New System.Drawing.Point(0, 518)
+        Me.btnIHBM.Name = "btnIHBM"
+        Me.btnIHBM.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
+        Me.btnIHBM.Size = New System.Drawing.Size(265, 42)
+        Me.btnIHBM.TabIndex = 30
+        Me.btnIHBM.Tag = "2150000000"
+        Me.btnIHBM.Text = "   In-House Budget Monitoring"
+        Me.btnIHBM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnIHBM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnIHBM.UseVisualStyleBackColor = False
         '
-        'Button11
+        'btnBankRecon
         '
-        Me.Button11.BackColor = System.Drawing.Color.White
-        Me.Button11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button11.FlatAppearance.BorderSize = 0
-        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button11.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button11.ForeColor = System.Drawing.Color.Black
-        Me.Button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button11.ImageIndex = 11
-        Me.Button11.ImageList = Me.ImageList1
-        Me.Button11.Location = New System.Drawing.Point(0, 472)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.Button11.Size = New System.Drawing.Size(265, 42)
-        Me.Button11.TabIndex = 29
-        Me.Button11.Text = "   Bank Recon"
-        Me.Button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button11.UseVisualStyleBackColor = False
+        Me.btnBankRecon.BackColor = System.Drawing.Color.White
+        Me.btnBankRecon.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnBankRecon.FlatAppearance.BorderSize = 0
+        Me.btnBankRecon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBankRecon.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBankRecon.ForeColor = System.Drawing.Color.Black
+        Me.btnBankRecon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBankRecon.ImageIndex = 11
+        Me.btnBankRecon.ImageList = Me.ImageList1
+        Me.btnBankRecon.Location = New System.Drawing.Point(0, 476)
+        Me.btnBankRecon.Name = "btnBankRecon"
+        Me.btnBankRecon.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
+        Me.btnBankRecon.Size = New System.Drawing.Size(265, 42)
+        Me.btnBankRecon.TabIndex = 29
+        Me.btnBankRecon.Tag = "2140000000"
+        Me.btnBankRecon.Text = "   Bank Recon"
+        Me.btnBankRecon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBankRecon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBankRecon.UseVisualStyleBackColor = False
         '
         'btnOtherReports
         '
@@ -187,11 +191,12 @@ Partial Class frmMainPanelFMM
         Me.btnOtherReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnOtherReports.ImageIndex = 9
         Me.btnOtherReports.ImageList = Me.ImageList1
-        Me.btnOtherReports.Location = New System.Drawing.Point(0, 430)
+        Me.btnOtherReports.Location = New System.Drawing.Point(0, 434)
         Me.btnOtherReports.Name = "btnOtherReports"
         Me.btnOtherReports.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnOtherReports.Size = New System.Drawing.Size(265, 42)
         Me.btnOtherReports.TabIndex = 28
+        Me.btnOtherReports.Tag = "2130000000"
         Me.btnOtherReports.Text = "   Other Reports"
         Me.btnOtherReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnOtherReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -208,11 +213,12 @@ Partial Class frmMainPanelFMM
         Me.btnNewReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNewReports.ImageIndex = 10
         Me.btnNewReports.ImageList = Me.ImageList1
-        Me.btnNewReports.Location = New System.Drawing.Point(0, 388)
+        Me.btnNewReports.Location = New System.Drawing.Point(0, 392)
         Me.btnNewReports.Name = "btnNewReports"
         Me.btnNewReports.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnNewReports.Size = New System.Drawing.Size(265, 42)
         Me.btnNewReports.TabIndex = 27
+        Me.btnNewReports.Tag = "2120000000"
         Me.btnNewReports.Text = "   New Reports"
         Me.btnNewReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNewReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -229,11 +235,12 @@ Partial Class frmMainPanelFMM
         Me.btnLedgerReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLedgerReports.ImageIndex = 8
         Me.btnLedgerReports.ImageList = Me.ImageList1
-        Me.btnLedgerReports.Location = New System.Drawing.Point(0, 346)
+        Me.btnLedgerReports.Location = New System.Drawing.Point(0, 350)
         Me.btnLedgerReports.Name = "btnLedgerReports"
         Me.btnLedgerReports.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnLedgerReports.Size = New System.Drawing.Size(265, 42)
         Me.btnLedgerReports.TabIndex = 26
+        Me.btnLedgerReports.Tag = "2110000000"
         Me.btnLedgerReports.Text = "   Ledger Reports"
         Me.btnLedgerReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLedgerReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -250,11 +257,12 @@ Partial Class frmMainPanelFMM
         Me.btnFinancialStatement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnFinancialStatement.ImageIndex = 7
         Me.btnFinancialStatement.ImageList = Me.ImageList1
-        Me.btnFinancialStatement.Location = New System.Drawing.Point(0, 308)
+        Me.btnFinancialStatement.Location = New System.Drawing.Point(0, 312)
         Me.btnFinancialStatement.Name = "btnFinancialStatement"
         Me.btnFinancialStatement.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnFinancialStatement.Size = New System.Drawing.Size(265, 38)
         Me.btnFinancialStatement.TabIndex = 25
+        Me.btnFinancialStatement.Tag = "2900000000"
         Me.btnFinancialStatement.Text = "   Financial Statements"
         Me.btnFinancialStatement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnFinancialStatement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -271,36 +279,38 @@ Partial Class frmMainPanelFMM
         Me.btnGeneralJournal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGeneralJournal.ImageIndex = 6
         Me.btnGeneralJournal.ImageList = Me.ImageList1
-        Me.btnGeneralJournal.Location = New System.Drawing.Point(0, 270)
+        Me.btnGeneralJournal.Location = New System.Drawing.Point(0, 274)
         Me.btnGeneralJournal.Name = "btnGeneralJournal"
         Me.btnGeneralJournal.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnGeneralJournal.Size = New System.Drawing.Size(265, 38)
         Me.btnGeneralJournal.TabIndex = 24
+        Me.btnGeneralJournal.Tag = "2800000000"
         Me.btnGeneralJournal.Text = "   General Journal"
         Me.btnGeneralJournal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnGeneralJournal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnGeneralJournal.UseVisualStyleBackColor = False
         '
-        'Button5
+        'btnSalesJournal
         '
-        Me.Button5.BackColor = System.Drawing.Color.White
-        Me.Button5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.Black
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.ImageIndex = 5
-        Me.Button5.ImageList = Me.ImageList1
-        Me.Button5.Location = New System.Drawing.Point(0, 232)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.Button5.Size = New System.Drawing.Size(265, 38)
-        Me.Button5.TabIndex = 23
-        Me.Button5.Text = "   Sales Journal"
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.btnSalesJournal.BackColor = System.Drawing.Color.White
+        Me.btnSalesJournal.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSalesJournal.FlatAppearance.BorderSize = 0
+        Me.btnSalesJournal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalesJournal.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalesJournal.ForeColor = System.Drawing.Color.Black
+        Me.btnSalesJournal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSalesJournal.ImageIndex = 5
+        Me.btnSalesJournal.ImageList = Me.ImageList1
+        Me.btnSalesJournal.Location = New System.Drawing.Point(0, 236)
+        Me.btnSalesJournal.Name = "btnSalesJournal"
+        Me.btnSalesJournal.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
+        Me.btnSalesJournal.Size = New System.Drawing.Size(265, 38)
+        Me.btnSalesJournal.TabIndex = 23
+        Me.btnSalesJournal.Tag = "2700000000"
+        Me.btnSalesJournal.Text = "   Sales Journal"
+        Me.btnSalesJournal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSalesJournal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSalesJournal.UseVisualStyleBackColor = False
         '
         'btnCashLedger
         '
@@ -313,11 +323,12 @@ Partial Class frmMainPanelFMM
         Me.btnCashLedger.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCashLedger.ImageIndex = 4
         Me.btnCashLedger.ImageList = Me.ImageList1
-        Me.btnCashLedger.Location = New System.Drawing.Point(0, 194)
+        Me.btnCashLedger.Location = New System.Drawing.Point(0, 198)
         Me.btnCashLedger.Name = "btnCashLedger"
         Me.btnCashLedger.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnCashLedger.Size = New System.Drawing.Size(265, 38)
         Me.btnCashLedger.TabIndex = 22
+        Me.btnCashLedger.Tag = "2600000000"
         Me.btnCashLedger.Text = "   Cash Journal"
         Me.btnCashLedger.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCashLedger.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -334,11 +345,12 @@ Partial Class frmMainPanelFMM
         Me.btnCashAdvance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCashAdvance.ImageIndex = 3
         Me.btnCashAdvance.ImageList = Me.ImageList1
-        Me.btnCashAdvance.Location = New System.Drawing.Point(0, 156)
+        Me.btnCashAdvance.Location = New System.Drawing.Point(0, 160)
         Me.btnCashAdvance.Name = "btnCashAdvance"
         Me.btnCashAdvance.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnCashAdvance.Size = New System.Drawing.Size(265, 38)
         Me.btnCashAdvance.TabIndex = 21
+        Me.btnCashAdvance.Tag = "2500000000"
         Me.btnCashAdvance.Text = "   Cash Advance"
         Me.btnCashAdvance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCashAdvance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -355,11 +367,12 @@ Partial Class frmMainPanelFMM
         Me.btnPettyCash.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnPettyCash.ImageIndex = 2
         Me.btnPettyCash.ImageList = Me.ImageList1
-        Me.btnPettyCash.Location = New System.Drawing.Point(0, 118)
+        Me.btnPettyCash.Location = New System.Drawing.Point(0, 122)
         Me.btnPettyCash.Name = "btnPettyCash"
         Me.btnPettyCash.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnPettyCash.Size = New System.Drawing.Size(265, 38)
         Me.btnPettyCash.TabIndex = 20
+        Me.btnPettyCash.Tag = "2400000000"
         Me.btnPettyCash.Text = "   Petty Cash"
         Me.btnPettyCash.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnPettyCash.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -376,11 +389,12 @@ Partial Class frmMainPanelFMM
         Me.btnBudgetManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBudgetManagement.ImageIndex = 1
         Me.btnBudgetManagement.ImageList = Me.ImageList1
-        Me.btnBudgetManagement.Location = New System.Drawing.Point(0, 80)
+        Me.btnBudgetManagement.Location = New System.Drawing.Point(0, 84)
         Me.btnBudgetManagement.Name = "btnBudgetManagement"
         Me.btnBudgetManagement.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnBudgetManagement.Size = New System.Drawing.Size(265, 38)
         Me.btnBudgetManagement.TabIndex = 19
+        Me.btnBudgetManagement.Tag = "2300000000"
         Me.btnBudgetManagement.Text = "   Bugdget Management"
         Me.btnBudgetManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnBudgetManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -397,11 +411,12 @@ Partial Class frmMainPanelFMM
         Me.btnProjectStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnProjectStatus.ImageIndex = 14
         Me.btnProjectStatus.ImageList = Me.ImageList1
-        Me.btnProjectStatus.Location = New System.Drawing.Point(0, 38)
+        Me.btnProjectStatus.Location = New System.Drawing.Point(0, 42)
         Me.btnProjectStatus.Name = "btnProjectStatus"
         Me.btnProjectStatus.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnProjectStatus.Size = New System.Drawing.Size(265, 42)
         Me.btnProjectStatus.TabIndex = 18
+        Me.btnProjectStatus.Tag = "2200000000"
         Me.btnProjectStatus.Text = "   Project Status"
         Me.btnProjectStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnProjectStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -421,8 +436,9 @@ Partial Class frmMainPanelFMM
         Me.btnSetup.Location = New System.Drawing.Point(0, 0)
         Me.btnSetup.Name = "btnSetup"
         Me.btnSetup.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
-        Me.btnSetup.Size = New System.Drawing.Size(265, 38)
+        Me.btnSetup.Size = New System.Drawing.Size(265, 42)
         Me.btnSetup.TabIndex = 4
+        Me.btnSetup.Tag = "2100000000"
         Me.btnSetup.Text = "   Setup"
         Me.btnSetup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSetup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -432,7 +448,7 @@ Partial Class frmMainPanelFMM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(265, 650)
+        Me.ClientSize = New System.Drawing.Size(265, 657)
         Me.Controls.Add(Me.PanelFMM)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -446,16 +462,16 @@ Partial Class frmMainPanelFMM
     End Sub
 
     Friend WithEvents PanelFMM As Panel
-    Friend WithEvents btn As Button
+    Friend WithEvents btnOptions As Button
     Friend WithEvents btnCashFlow As Button
-    Friend WithEvents Button12 As Button
-    Friend WithEvents Button11 As Button
+    Friend WithEvents btnIHBM As Button
+    Friend WithEvents btnBankRecon As Button
     Friend WithEvents btnOtherReports As Button
     Friend WithEvents btnNewReports As Button
     Friend WithEvents btnLedgerReports As Button
     Friend WithEvents btnFinancialStatement As Button
     Friend WithEvents btnGeneralJournal As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents btnSalesJournal As Button
     Friend WithEvents btnCashLedger As Button
     Friend WithEvents btnCashAdvance As Button
     Friend WithEvents btnPettyCash As Button

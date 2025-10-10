@@ -26,7 +26,7 @@ Public Class frmHR_PreviewPersonnelDetails
         btnSave.Visible = False
         btnDiscard.Visible = False
         btnPrintContract.Visible = True
-        btnExport.Visible = True
+        btnOneTimePasscode.Visible = True
     End Sub
 
     Public Sub Function_btnUpdates_Show()
@@ -36,7 +36,7 @@ Public Class frmHR_PreviewPersonnelDetails
         btnSave.Visible = True
         btnDiscard.Visible = True
         btnPrintContract.Visible = False
-        btnExport.Visible = False
+        btnOneTimePasscode.Visible = False
     End Sub
 
     Public Sub switchPanel(ByVal panel As Form)
@@ -63,21 +63,23 @@ Public Class frmHR_PreviewPersonnelDetails
     End Sub
 
     Private Sub btnDiscard_Click(sender As Object, e As EventArgs) Handles btnDiscard.Click
-        Me.Dispose()
+        Me.Close()
+        'Call FunctionBtnEdit_Enable()
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        If Not HasUserAccess("insert") Then Return
         If PanelTagID = 101 Then
             '\\  Personnel Information Tab
             Call InsUpd_PersonnelDetails()
             Call InsUpd_PersonnelDetails_Address()
             Call InsUpd_ForeignAddress()
             Call InsUpd_Personnel_Identification()
+            Call InsUpd_EmergencyContact()
             Call ProcessDataGridViewParentsAndSiblings(frmHR_PreviewPersonnelDetails_PersonalInformation.dgvParentsAndSiblings)
             Call ProcessDataGridViewSpouseAndChildren(frmHR_PreviewPersonnelDetails_PersonalInformation.dgvSpouseAndChildren)
             'this will update the dgv in personal information --> family background to align id
             Call SelUpd_FamilyBackground(frmHR_PreviewPersonnelDetails_PersonalInformation.dgvParentsAndSiblings, frmHR_PreviewPersonnelDetails_PersonalInformation.dgvSpouseAndChildren)
-
         ElseIf PanelTagID = 102 Then
             ProcessDataGridViewContractHistory(frmHR_UpdatePersonnelDetails_Contracts.dgvContracts)
         ElseIf PanelTagID = 103 Then
@@ -99,6 +101,7 @@ Public Class frmHR_PreviewPersonnelDetails
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         '\\  Button Edit
+        If Not HasUserAccess("update") Then Return
         Call FunctionBtnEdit_Enable()
     End Sub
 
@@ -139,10 +142,8 @@ Public Class frmHR_PreviewPersonnelDetails
     End Sub
 
     Private Sub frmHR_PreviewPersonnelDetails_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        Me.Close()
-
         'Personal Information Fields
-        ResetAllControlInForm(Me)
+        ResetAllControlInForm(frmHR_PreviewPersonnelDetails_PersonalInformation)
 
         'Education Background Fields
         ResetAllControlInForm(frmHR_PreviewPersonnelDetails_EducationBackground)
@@ -155,10 +156,24 @@ Public Class frmHR_PreviewPersonnelDetails
         'Contract Fields
         ResetAllControlInForm(frmHR_PreviewPersonnelDetails_Contracts)
         ResetAllControlInForm(frmHR_UpdatePersonnelDetails_Contracts)
+
+        'Employment History
+        ResetAllControlInForm(frmHR_PreviewPersonnelDetails_EmploymentHistory)
+        ResetAllControlInForm(frmHR_UpdatePersonnelDetails_EmploymentHistory)
+
+
+
+        If frmHRIS_Transaction_EmployeeFile.txtboxSearch.Text <> "" Then
+            Call Search_DGVPersonnel(frmHRIS_Transaction_EmployeeFile.dgvEmployeeList, frmHRIS_Transaction_EmployeeFile.txtboxSearch, False)
+        Else
+            Call frmHRIS_Transaction_EmployeeFile.EmployeeList_Active()
+        End If
+
     End Sub
 
     Private Sub btnSetInactive_Click(sender As Object, e As EventArgs) Handles btnSetInactive.Click
 
+        If Not HasUserAccess("delete") Then Return
         If MessageBox.Show("Are you sure you want to set this Employee to inactive? This action is cannot be undone.", "Critical Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Call Upd_EmployeeStatus_To_Inactive()
         End If
@@ -166,6 +181,7 @@ Public Class frmHR_PreviewPersonnelDetails
     End Sub
 
     Private Sub PictureBoxProfilePic_Click(sender As Object, e As EventArgs) Handles PictureBoxProfilePic.Click
+        If Not HasUserAccess("update") Then Return
         If Not isEdit Then
             Return
         End If
@@ -176,4 +192,22 @@ Public Class frmHR_PreviewPersonnelDetails
         tooltip.SetToolTip(PictureBoxHelp, "Thank you for not calling DIMS! <3")
     End Sub
 
+    Private Sub frmHR_PreviewPersonnelDetails_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If btnSave.Visible Then
+            Dim result As DialogResult = MessageBox.Show(
+            "Changes won't be saved. Do you want to close anyway?",
+            "Unsaved Changes",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning
+        )
+
+            If result = DialogResult.No Then
+                e.Cancel = True ' Cancel the close
+            End If
+        End If
+    End Sub
+
+    Private Sub btnOneTimePasscode_Click(sender As Object, e As EventArgs) Handles btnOneTimePasscode.Click
+        frmHR_PreviewPersonnelDetails_OneTimePasscode.ShowDialog()
+    End Sub
 End Class

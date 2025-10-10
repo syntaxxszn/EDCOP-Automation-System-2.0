@@ -91,7 +91,8 @@
     End Sub
 
     Private Sub btnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
-        frmHRIS_TE_AddUpdateTraining_Master.isUpdate = False
+        If Not HasUserAccess("insert") Then Return
+        isUpdate = False
         frmHRIS_TE_AddUpdateTraining_Master.ShowDialog()
     End Sub
 
@@ -100,8 +101,9 @@
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        If Not HasUserAccess("update") Then Return
         If dgvTrainingList.SelectedRows.Count > 0 Then
-            frmHRIS_TE_AddUpdateTraining_Master.isUpdate = True
+            isUpdate = True
             frmHRIS_TE_AddUpdateTraining_Master.ShowDialog()
         Else
             MessageBox.Show("Error Occured, please select training from the list first.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -109,16 +111,19 @@
     End Sub
 
     Private Sub AddNewTrainingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddNewTrainingToolStripMenuItem.Click
-        frmHRIS_TE_AddUpdateTraining_Master.isUpdate = False
+        If Not HasUserAccess("insert") Then Return
+        isUpdate = False
         frmHRIS_TE_AddUpdateTraining_Master.ShowDialog()
     End Sub
 
     Private Sub dgvTrainingList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTrainingList.CellDoubleClick
-        frmHRIS_TE_AddUpdateTraining_Master.isUpdate = True
+        If Not HasUserAccess("update") Then Return
+        isUpdate = True
         frmHRIS_TE_AddUpdateTraining_Master.ShowDialog()
     End Sub
 
     Private Sub DeleteThisTrainingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteThisTrainingToolStripMenuItem.Click
+        If Not HasUserAccess("delete") Then Return
         If dgvTrainingBatchList.Rows.Count <> 0 Then
             MessageBox.Show("This training cannot be deleted because it is a parent training and has associated batch(es).", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
@@ -128,12 +133,14 @@
     End Sub
 
     Private Sub AddNewBatchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddNewBatchToolStripMenuItem.Click
-        frmHRIS_TE_AddUpdateTrainingDetail_Master.isUpdate = False
+        If Not HasUserAccess("insert") Then Return
+        isUpdate = False
         frmHRIS_TE_AddUpdateTrainingDetail_Master.ShowDialog()
     End Sub
 
     Private Sub btnAddNewBatch_Click(sender As Object, e As EventArgs) Handles btnAddNewBatch.Click
-        frmHRIS_TE_AddUpdateTrainingDetail_Master.isUpdate = False
+        If Not HasUserAccess("insert") Then Return
+        isUpdate = False
         frmHRIS_TE_AddUpdateTrainingDetail_Master.ShowDialog()
     End Sub
 
@@ -142,8 +149,9 @@
     End Sub
 
     Private Sub btnEditBatch_Click(sender As Object, e As EventArgs) Handles btnEditBatch.Click
+        If Not HasUserAccess("update") Then Return
         If dgvTrainingBatchList.SelectedRows.Count > 0 Then
-            frmHRIS_TE_AddUpdateTrainingDetail_Master.isUpdate = True
+            isUpdate = True
             frmHRIS_TE_AddUpdateTrainingDetail_Master.ShowDialog()
         Else
             MessageBox.Show("Error Occured, please select training from the batch list.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -151,11 +159,13 @@
     End Sub
 
     Private Sub dgvTrainingBatchList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTrainingBatchList.CellDoubleClick
-        frmHRIS_TE_AddUpdateTrainingDetail_Master.isUpdate = True
+        If Not HasUserAccess("update") Then Return
+        isUpdate = True
         frmHRIS_TE_AddUpdateTrainingDetail_Master.ShowDialog()
     End Sub
 
     Private Sub DeleteThisBatchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteThisBatchToolStripMenuItem.Click
+        If Not HasUserAccess("delete") Then Return
         If dgvEnrolledEmployee.Rows.Count <> 0 Then
             MessageBox.Show("This training batch cannot be deleted because it has enrolled employee(s).", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
@@ -165,6 +175,7 @@
     End Sub
 
     Private Sub btnEnrollEmployee_Click(sender As Object, e As EventArgs) Handles btnEnrollEmployee.Click
+        If Not HasUserAccess("insert") Then Return
         If Not lblTrainingBatch.Visible Then
             MessageBox.Show("Please select from the Batch List or Create a new one.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
@@ -177,6 +188,7 @@
     End Sub
 
     Private Sub EnrollEmployeesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EnrollEmployeesToolStripMenuItem.Click
+        If Not HasUserAccess("insert") Then Return
         frmHRIS_TE_AddUpdateTrainingEnrollee_Master.ShowDialog()
     End Sub
 
@@ -185,6 +197,7 @@
     End Sub
 
     Private Sub RemoveEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RemoveEmployeeToolStripMenuItem.Click
+        If Not HasUserAccess("delete") Then Return
         Call DelEmployeeTrainingEnrollment()
         Call Select_TE_EnrolledList_Master(dgvEnrolledEmployee)
     End Sub
@@ -242,7 +255,6 @@
         End If
     End Sub
 
-
     Private Sub dgvTrainingList_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles dgvTrainingList.RowsAdded
         dgvTrainingBatchList.Rows.Clear()
         dgvEnrolledEmployee.Rows.Clear()
@@ -261,5 +273,11 @@
         dgvEnrolledEmployee.Rows.Clear()
     End Sub
 
+    Private Sub btnUpdateResult_Click(sender As Object, e As EventArgs) Handles btnUpdateResult.Click
+        If Not HasUserAccess("update") Then Return
+    End Sub
 
+    Private Sub UpdateTrainingResultToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateTrainingResultToolStripMenuItem.Click
+        If Not HasUserAccess("update") Then Return
+    End Sub
 End Class

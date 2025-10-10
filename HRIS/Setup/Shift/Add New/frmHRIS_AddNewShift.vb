@@ -3,9 +3,6 @@ Imports System.Windows.Forms
 
 Public Class frmHRIS_AddNewShift
 
-    Public isUpdate As Boolean = False
-    Public isPopulating As Boolean = False
-
     Private Sub frmHR_AddNewShift_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblHeader.Text = "Add New Shift"
         textboxReadOnly()
@@ -127,5 +124,8 @@ Public Class frmHRIS_AddNewShift
 
     Private Sub frmHR_AddNewShift_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         isUpdate = False
+        ClearTextBoxes(Me)
+        ResetDatePickers(Me)
+        UncheckCheckBoxes(Me)
     End Sub
 End Class

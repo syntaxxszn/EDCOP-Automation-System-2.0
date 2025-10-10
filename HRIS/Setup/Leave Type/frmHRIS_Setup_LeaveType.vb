@@ -13,13 +13,15 @@
     End Sub
 
     Private Sub btnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
+        If Not HasUserAccess("insert") Then Return
         dgvLeaveTypeList.ClearSelection()
         frmHRIS_Setup_AddUpdateLeaveType.ShowDialog()
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If dgvLeaveTypeList.SelectedRows.Count > 0 Then
-            frmHRIS_Setup_AddUpdateLeaveType.isUpdate = True
+            If Not HasUserAccess("update") Then Return
+            isUpdate = True
             frmHRIS_Setup_AddUpdateLeaveType.ShowDialog()
         Else
             MessageBox.Show("Please select from the leave types table before starting to edit.", "Edit Forbidden", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -39,11 +41,13 @@
     End Sub
 
     Private Sub dgvLeaveTypeList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvLeaveTypeList.CellDoubleClick
-        frmHRIS_Setup_AddUpdateLeaveType.isUpdate = True
+        If Not HasUserAccess("update") Then Return
+        isUpdate = True
         frmHRIS_Setup_AddUpdateLeaveType.ShowDialog()
     End Sub
 
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
-
+        If Not HasUserAccess("delete") Then Return
+        MessageBox.Show("On-going process.", "Exit", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class

@@ -1,30 +1,68 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Text.RegularExpressions
+Imports System.Security.Cryptography
 
 Module Module_PCMS
 
-    Public CurrentForm As Form
-    Public currentSubMenuForm As Form = Nothing
-    Public _strPayPeriodID As Integer
-    Public _strWorkdate As String = Nothing
-    Public _strEmployeeID As Integer
-    Public _strProjectChargeID As Integer = 0
-    Dim strEmpIDforInsert As Integer
-    Public strEmployeeNumber As String
-    Public _strUserLevel As String = Nothing
-    Public _strProjectDeptID As Integer = 0
-    Public _strFiledDocs As String = Nothing
-    Public _strIsFlexiSched As Boolean
-    Public _strAttendanceFrom As String
-    Public _strAttendanceTo As String
-    Public _strTimeSheetID As Integer
-    Public _strTimeIn As String = Nothing
+    Function HasMenuAccess(btn As Button) As Boolean
+        Return MenuAccessList.Contains(btn.Tag.ToString())
+    End Function
 
+    Function HasSubMenuAccess(btn As Button) As Boolean
+        Return SubMenuAccessList.Contains(btn.Tag.ToString())
+    End Function
 
     Public Function EncodeBase64(input As String) As String
         Return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(input))
     End Function
 
+    Function GenerateSecurePin() As String
+        Dim bytes(3) As Byte
+        Using rng As New RNGCryptoServiceProvider()
+            rng.GetBytes(bytes)
+        End Using
+        Dim value As Integer = BitConverter.ToUInt32(bytes, 0) Mod 900000 + 100000
+        Return value.ToString()
+    End Function
+
+    Public Function HasUserAccess(action As String) As Boolean
+        Select Case action.ToLower()
+            Case "insert"
+                If Not _AllowInsert Then
+                    MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return False
+                End If
+            Case "update"
+                If Not _AllowUpdate Then
+                    MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return False
+                End If
+            Case "delete"
+                If Not _AllowDelete Then
+                    MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return False
+                End If
+            Case "view"
+                If Not _AllowView Then
+                    MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return False
+                End If
+            Case "print"
+                If Not _AllowPrint Then
+                    MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return False
+                End If
+            Case "post"
+                If Not _AllowPost Then
+                    MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return False
+                End If
+            Case Else
+                MessageBox.Show("Unknown access type.", "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return False
+        End Select
+        Return True
+    End Function
 
     'Sub OpenChildForm(childForm As Form)
 
@@ -40,7 +78,6 @@ Module Module_PCMS
     'End Sub
 
     Public Sub OpenChildForm_Revision(childForm As Form)
-
         If Not IsFormOpened(childForm) Then
 
             CurrentForm = childForm
@@ -67,7 +104,6 @@ Module Module_PCMS
     Private Function IsFormOpened(form As Form) As Boolean
         Return OpenedForms.Any(Function(f) f.Text = form.Text)
     End Function
-
 
     ' this is to show sub menu
     Public Sub ShowSubMenu(subMenuForm As Form, button As Button)
@@ -136,26 +172,18 @@ Module Module_PCMS
             frmPMS_Login.txtEmployeeCode.Clear()
             frmPMS_Login.txtPassword.Clear()
 
+
+            frmMain.lblWelcomeName.Text = "Welcome! " & frmMain.ToolStripEmployeeName.Text
+
             If frmMain Is Nothing OrElse frmMain.IsDisposed Then
                 frmMain = New frmMain()
             End If
 
-            If _strUserLevel = "Master" Then
-                frmMain.Show()
-                ''frmMain.treeViewIndividual.Visible = False
-
-            Else
-
-                If _strUserLevel = "Individual" Then
-                    'frmMain.btnHRM.Visible = False
-                    'frmMain.btnFMM.Visible = False
-                    'frmMain.btnPMM.Visible = False
-                    'frmMain.btnBDM.Visible = False
-                    frmMain.Show()
-                    ''   frmMain.treeViewMaster.Visible = False
-                End If
-
-            End If
+            Call frmMain.CustomDesign()
+            Call frmMain.HideModuleButtons()
+            Call GroupAccessByCode()
+            Call UserAccessByCode()
+            Call frmMain.Show()
 
         Else
 
@@ -169,6 +197,297 @@ Module Module_PCMS
         Conn.Close()
 
     End Sub
+
+    Sub GroupAccessByCode()
+        Using Conn As New SqlConnection(StrConn)
+            Conn.Open()
+            Using cmd As New SqlCommand("[spSelSSM_GroupAccess_ByGroupCode]", Conn)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@GroupName", _strUserLevel)
+                Using dr As SqlDataReader = cmd.ExecuteReader()
+                    While dr.Read()
+                        EnableButtonByTag(dr(0).ToString(), Convert.ToBoolean(dr(1)))
+                    End While
+                End Using
+            End Using
+        End Using
+    End Sub
+
+    Sub EnableButtonByTag(ModuleCode As String, AccessType As Boolean)
+        Select Case ModuleCode
+            Case "1000000000"
+                frmMain.btnHRM.Visible = AccessType
+            Case "2000000000"
+                frmMain.btnFMM.Visible = AccessType
+            Case "3000000000"
+                frmMain.btnPMM.Visible = AccessType
+            Case "4000000000"
+                frmMain.btnTKM.Visible = AccessType
+            Case "5000000000"
+                frmMain.btnBDM.Visible = AccessType
+            Case "7000000000"
+                frmMain.btnSSS.Visible = AccessType
+        End Select
+    End Sub
+
+    Sub MenuLoadAccess(btn As Button)
+        MenuAccessList.Clear()
+        Using conn As New SqlConnection(StrConn),
+          cmd As New SqlCommand("[spSelSSM_UserAccess_ByButtonTag]", conn)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@Tag", btn.Tag)
+            cmd.Parameters.AddWithValue("@GroupName", _strUserLevel)
+            conn.Open()
+            Using dr = cmd.ExecuteReader()
+                While dr.Read()
+                    MenuAccessList.Add(dr(0).ToString())
+                End While
+            End Using
+        End Using
+    End Sub
+
+    Sub SubMenuLoadAccess(btn As Button)
+        SubMenuAccessList.Clear()
+        Using conn As New SqlConnection(StrConn),
+          cmd As New SqlCommand("[spSelSSM_UserAccess_ByButtonTag]", conn)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@Tag", btn.Tag)
+            cmd.Parameters.AddWithValue("@GroupName", _strUserLevel)
+            conn.Open()
+            Using dr = cmd.ExecuteReader()
+                While dr.Read()
+                    SubMenuAccessList.Add(dr(0).ToString())
+                End While
+            End Using
+        End Using
+    End Sub
+
+    Sub Sel_SystemGroups(dgv As DataGridView)
+        dgv.Rows.Clear()
+        Conn = New SqlConnection(StrConn)
+        Conn.Open()
+        cmd = Conn.CreateCommand
+        cmd.CommandText = "[spSelSSM_AllSystemGroup]"
+        cmd = New SqlCommand(cmd.CommandText, Conn) With {
+                        .CommandType = CommandType.StoredProcedure
+                        }
+        'cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+        dr = cmd.ExecuteReader()
+        While dr.Read()
+
+            dgv.Rows.Add(
+            dr.GetInt32(0),
+            dr.GetString(1),
+            dr.GetString(2))
+
+        End While
+        dr.Close()
+        Conn.Close()
+        cmd.Parameters.Clear()
+        dgv.ClearSelection()
+    End Sub
+
+    Sub Sel_SystemModuleItems(dgv As DataGridView)
+        dgv.Rows.Clear()
+
+        Using conn As New SqlConnection(StrConn),
+          cmd As New SqlCommand("[spSelSSM_ModuleItemList_ByGroupCode]", conn)
+
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@ID", _SystemGroupID)
+            conn.Open()
+
+            Using dr As SqlDataReader = cmd.ExecuteReader()
+                While dr.Read()
+                    Dim rowIdx As Integer = dgv.Rows.Add()
+                    dgv.Rows(rowIdx).Cells(0).Value = dr.GetInt32(0)          ' ID
+                    dgv.Rows(rowIdx).Cells(1).Value = dr.GetString(1)         ' Code
+                    dgv.Rows(rowIdx).Cells(2).Value = dr.GetString(2)         ' Description
+                    dgv.Rows(rowIdx).Cells(3).Value = dr.GetBoolean(3)   ' isAccess as checkbox
+                    dgv.Rows(rowIdx).Cells(4).Value = dr.GetString(4)         ' Description
+                End While
+            End Using
+        End Using
+
+        dgv.ClearSelection()
+    End Sub
+
+    Sub ProcessDataGridViewGroupAccess(dgv As DataGridView)
+        Try
+            Using conn As New SqlConnection(StrConn),
+              cmd As New SqlCommand("[spInsUpdSSM_SystemSetting_GroupAccess]", conn)
+
+                conn.Open()
+                cmd.CommandType = CommandType.StoredProcedure
+
+                For Each row As DataGridViewRow In dgv.Rows
+                    If row.IsNewRow Then Continue For
+
+                    cmd.Parameters.Clear()
+                    cmd.Parameters.AddWithValue("@GroupCode", _SystemGroupID)
+                    cmd.Parameters.AddWithValue("@ModuleCode", If(row.Cells(1).Value?.ToString(), ""))
+                    cmd.Parameters.AddWithValue("@isAccess", CBool(row.Cells(3).Value))
+                    cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+                    cmd.ExecuteNonQuery()
+                Next
+                MessageBox.Show("Saved!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                frmSSM_SystemGroupAccessMain.btnSaveChanges.Visible = False
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Sub SelUpd_UserAccess_ByEmployeeID()
+
+        Conn = New SqlConnection(StrConn)
+        Conn.Open()
+        cmd = Conn.CreateCommand
+        cmd.CommandText = "[spSelUpdSSM_SystemUserByEmployeeID]"
+        cmd = New SqlCommand(cmd.CommandText, Conn) With {
+                    .CommandType = CommandType.StoredProcedure
+                }
+        cmd.Parameters.AddWithValue("@ID", _SystemUserID)
+        dr = cmd.ExecuteReader()
+
+        If dr.Read = True Then
+            frmSSM_SystemUserAccess_AddUpdAccess.txtEmployeeName.Text = dr.GetString(0)
+            frmSSM_SystemUserAccess_AddUpdAccess.txtUserName.Text = dr.GetString(1)
+
+            Dim Index0 As Integer = frmSSM_SystemUserAccess_AddUpdAccess.cbGroupAccess.FindStringExact(dr(2).ToString())
+            If Index0 <> -1 Then frmSSM_SystemUserAccess_AddUpdAccess.cbGroupAccess.SelectedIndex = Index0
+
+            Dim Index1 As Integer = frmSSM_SystemUserAccess_AddUpdAccess.cbAccessType.FindStringExact(dr(3).ToString())
+            If Index1 <> -1 Then frmSSM_SystemUserAccess_AddUpdAccess.cbAccessType.SelectedIndex = Index1
+        Else
+            MessageBox.Show("Invalid Access." & vbNewLine & "" & vbNewLine & "Make sure that you are using an account registered to this system.", "E-PCM System", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+
+        dr.Close()
+        Conn.Close()
+
+    End Sub
+
+    Sub Sel_SystemUsers(dgv As DataGridView, txtSearch As TextBox)
+        dgv.Rows.Clear()
+        Conn = New SqlConnection(StrConn)
+        Conn.Open()
+        cmd = Conn.CreateCommand
+        cmd.CommandText = "[spSelSSM_AllSystemUser]"
+        cmd = New SqlCommand(cmd.CommandText, Conn) With {
+                        .CommandType = CommandType.StoredProcedure
+                        }
+        cmd.Parameters.AddWithValue("@Search", txtSearch.Text)
+        dr = cmd.ExecuteReader()
+        While dr.Read()
+
+            dgv.Rows.Add(
+            dr.GetInt32(0),
+            dr.GetString(1),
+            dr.GetString(2),
+            dr.GetString(3),
+            dr.GetString(4),
+            dr.GetString(5))
+
+        End While
+        dr.Close()
+        Conn.Close()
+        cmd.Parameters.Clear()
+        dgv.ClearSelection()
+    End Sub
+
+    Sub DropDownListGroupAccess(cbBox As ComboBox)
+
+        cbBox.Items.Clear()
+        Conn = New SqlConnection(StrConn)
+        cmd.CommandText = "[spSelSSM_GroupAccess]"
+        cmd = New SqlCommand(cmd.CommandText, Conn)
+        Conn.Open()
+        dr = cmd.ExecuteReader()
+        While dr.Read()
+            Dim a = dr.GetString(0)
+            cbBox.Items.Add(a)
+        End While
+        dr.Close()
+        Conn.Close()
+
+    End Sub
+
+    Sub DropDownListUserAccess(cbBox As ComboBox)
+
+        cbBox.Items.Clear()
+        Conn = New SqlConnection(StrConn)
+        cmd.CommandText = "[spSelSSM_UserAccess]"
+        cmd = New SqlCommand(cmd.CommandText, Conn)
+        Conn.Open()
+        dr = cmd.ExecuteReader()
+        While dr.Read()
+            Dim a = dr.GetString(0)
+            cbBox.Items.Add(a)
+        End While
+        dr.Close()
+        Conn.Close()
+
+    End Sub
+
+    Sub InsUpd_UserAccess_ByEmployeeID()
+
+        Try
+            Using Conn As New SqlConnection(StrConn),
+            cmd As New SqlCommand("[spInsUpdSSM_SystemSetting_UserAccess]", Conn)
+                Conn.Open()
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@ID", _SystemUserID)
+                cmd.Parameters.AddWithValue("@EUserName", frmSSM_SystemUserAccess_AddUpdAccess.txtUserName.Text)
+                Dim encodedPassword As String = EncodeBase64(frmSSM_SystemUserAccess_AddUpdAccess.txtPassword.Text)
+                cmd.Parameters.AddWithValue("@Password", encodedPassword)
+                cmd.Parameters.AddWithValue("@GroupAccess", frmSSM_SystemUserAccess_AddUpdAccess.cbGroupAccess.Text)
+                cmd.Parameters.AddWithValue("@AccessType", frmSSM_SystemUserAccess_AddUpdAccess.cbAccessType.Text)
+                cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+                If cmd.ExecuteNonQuery = -1 Then
+                    MessageBox.Show("Saved!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    frmSSM_SystemUserAccess_AddUpdAccess.Close()
+                    Call Sel_SystemUsers(frmSSM_SystemUserAccessMain.dgvSystemUsers, frmSSM_SystemUserAccessMain.txtboxSearch)
+                End If
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error Occured: " & ex.Message)
+        Finally
+            Conn.Close()
+            cmd.Parameters.Clear()
+        End Try
+
+    End Sub
+
+    Sub UserAccessByCode()
+
+        Conn = New SqlConnection(StrConn)
+        Conn.Open()
+        cmd = Conn.CreateCommand
+        cmd.CommandText = "[spSelSSM_SystemUserAccessType_ByEmployeeID]"
+        cmd = New SqlCommand(cmd.CommandText, Conn) With {
+                    .CommandType = CommandType.StoredProcedure
+                }
+        cmd.Parameters.AddWithValue("@EmployeeCode", frmMain.ToolStripEmployeeNo.Text)
+        dr = cmd.ExecuteReader()
+
+        If dr.Read = True Then
+            _AllowInsert = dr.GetBoolean(0)
+            _AllowUpdate = dr.GetBoolean(1)
+            _AllowDelete = dr.GetBoolean(2)
+            _AllowView = dr.GetBoolean(3)
+            _AllowPrint = dr.GetBoolean(4)
+            _AllowPost = dr.GetBoolean(5)
+        Else
+            MessageBox.Show("Invalid Access." & vbNewLine & "" & vbNewLine & "Make sure that you are using an account registered to this system.", "E-PCM System", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+
+        dr.Close()
+        Conn.Close()
+
+    End Sub
+
 
     Sub Login_UserRegistration_Clear()
         frmPMS_UserRegistration.cmbboxUserAccount.SelectedIndex = -1
@@ -256,6 +575,58 @@ Module Module_PCMS
     End Sub
 
     '' End of Login Code ---------------------------------------------------------------------------------------------------
+
+    '' Start of One-Time Passcode ---------------------------------------------------------------------------------------------------
+
+    Sub InsertLogin_OneTimePasscode(pin As String)
+        Try
+            Conn = New SqlConnection(StrConn)
+            Conn.Open()
+            cmd = Conn.CreateCommand
+            cmd.CommandText = "[spInsHRIS_Personnel_OneTimePasscode]"
+            cmd = New SqlCommand(cmd.CommandText, Conn) With {
+                    .CommandType = CommandType.StoredProcedure
+                }
+            cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
+            cmd.Parameters.AddWithValue("@PIN", pin)
+            cmd.Parameters.AddWithValue("@isUsed", False)
+            cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+            cmd.ExecuteNonQuery()
+
+        Catch ex As Exception
+            MessageBox.Show("Error Occured: " & ex.Message)
+        Finally
+            Conn.Close()
+            cmd.Parameters.Clear()
+        End Try
+    End Sub
+
+    Sub SelectLogin_OneTimePasscode(lbl As Label)
+
+        Conn = New SqlConnection(StrConn)
+        Conn.Open()
+        cmd = Conn.CreateCommand
+        cmd.CommandText = "[spSelUpdHRIS_Personnel_OneTimePasscode]"
+        cmd = New SqlCommand(cmd.CommandText, Conn) With {
+                    .CommandType = CommandType.StoredProcedure
+                }
+
+        cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
+        dr = cmd.ExecuteReader()
+
+        If dr.Read = True Then
+            lbl.Text = dr.GetString(0)
+            frmHR_PreviewPersonnelDetails_OneTimePasscode.btnRegenerate.Text = "Re-generate"
+        Else
+            MessageBox.Show("No Active One-Time Password." & vbNewLine & "" & vbNewLine & "Please generate a pin to get started.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            lbl.Text = ""
+            frmHR_PreviewPersonnelDetails_OneTimePasscode.btnRegenerate.Text = "Generate"
+        End If
+
+        dr.Close()
+        Conn.Close()
+
+    End Sub
 
     '' Start of Individual Form for Employee Code ---------------------------------------------------------------------------------------------------
 
@@ -1307,12 +1678,14 @@ Module Module_PCMS
         Next
     End Sub
 
-    Sub EmailRegEx_Color(_txtSample As TextBox)
+    Sub EmailRegEx_Color(_txtSample As TextBox, Optional ByRef cancel As Boolean = False)
         Dim emailPattern As String = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
         If Regex.IsMatch(_txtSample.Text, emailPattern) Then
             _txtSample.BackColor = Color.White
         Else
             _txtSample.BackColor = Color.LightCoral
+            MessageBox.Show("Please enter a valid email address.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            cancel = True
         End If
     End Sub
 
@@ -1343,7 +1716,7 @@ Module Module_PCMS
             txt.BackColor = Color.White
         Else
             txt.BackColor = Color.LightCoral
-            MessageBox.Show("Please enter a valid 11-digit mobile number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Please enter a valid 8-digit or 10-digit telephone number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             cancel = True
         End If
     End Sub
@@ -1355,7 +1728,7 @@ Module Module_PCMS
             txt.BackColor = Color.White
         Else
             txt.BackColor = Color.LightCoral
-            MessageBox.Show("Please enter a valid 11-digit mobile number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Please enter a valid 4-digit number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             cancel = True
         End If
     End Sub
@@ -1380,7 +1753,8 @@ Module Module_PCMS
             Select Case True
                 Case TypeOf ctrl Is TextBox
                     DirectCast(ctrl, TextBox).ReadOnly = True
-                    DirectCast(ctrl, TextBox).Cursor = Cursors.No
+                    'DirectCast(ctrl, TextBox).Cursor = Cursors.No
+                    DirectCast(ctrl, TextBox).Enabled = False
                 Case TypeOf ctrl Is ComboBox, TypeOf ctrl Is DateTimePicker, TypeOf ctrl Is CheckBox
                     ctrl.Enabled = False
             End Select
@@ -1398,6 +1772,7 @@ Module Module_PCMS
                 Case TypeOf ctrl Is TextBox
                     DirectCast(ctrl, TextBox).ReadOnly = False
                     DirectCast(ctrl, TextBox).Cursor = Cursors.IBeam
+                    DirectCast(ctrl, TextBox).Enabled = True
                 Case TypeOf ctrl Is ComboBox, TypeOf ctrl Is DateTimePicker, TypeOf ctrl Is CheckBox
                     ctrl.Enabled = True
                     ctrl.Cursor = Cursors.Hand
@@ -1410,6 +1785,13 @@ Module Module_PCMS
         Next
     End Sub
 
+    Sub SetButtonColor(newClickedBtn As Button)
+        If BtnColorText IsNot Nothing Then
+            BtnColorText.BackColor = Color.White
+        End If
+        newClickedBtn.BackColor = Color.Gainsboro
+        BtnColorText = newClickedBtn
+    End Sub
 
 
 End Module

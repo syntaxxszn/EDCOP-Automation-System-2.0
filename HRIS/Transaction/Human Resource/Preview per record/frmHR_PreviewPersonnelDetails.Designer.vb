@@ -62,7 +62,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnCheckList = New System.Windows.Forms.Button()
         Me.ImageListSideBtn = New System.Windows.Forms.ImageList(Me.components)
         Me.btnEmployementHistory = New System.Windows.Forms.Button()
-        Me.btnExport = New System.Windows.Forms.Button()
+        Me.btnOneTimePasscode = New System.Windows.Forms.Button()
         Me.btnPrintContract = New System.Windows.Forms.Button()
         Me.btnDiscard = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
@@ -457,7 +457,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.PanelSideButton.BackColor = System.Drawing.Color.White
         Me.PanelSideButton.Controls.Add(Me.btnCheckList)
         Me.PanelSideButton.Controls.Add(Me.btnEmployementHistory)
-        Me.PanelSideButton.Controls.Add(Me.btnExport)
+        Me.PanelSideButton.Controls.Add(Me.btnOneTimePasscode)
         Me.PanelSideButton.Controls.Add(Me.btnPrintContract)
         Me.PanelSideButton.Controls.Add(Me.btnDiscard)
         Me.PanelSideButton.Controls.Add(Me.btnSave)
@@ -527,19 +527,19 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnEmployementHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEmployementHistory.UseVisualStyleBackColor = False
         '
-        'btnExport
+        'btnOneTimePasscode
         '
-        Me.btnExport.BackColor = System.Drawing.Color.Navy
-        Me.btnExport.FlatAppearance.BorderColor = System.Drawing.Color.Navy
-        Me.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExport.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExport.ForeColor = System.Drawing.Color.White
-        Me.btnExport.Location = New System.Drawing.Point(13, 573)
-        Me.btnExport.Name = "btnExport"
-        Me.btnExport.Size = New System.Drawing.Size(182, 32)
-        Me.btnExport.TabIndex = 106
-        Me.btnExport.Text = "&Export Data"
-        Me.btnExport.UseVisualStyleBackColor = False
+        Me.btnOneTimePasscode.BackColor = System.Drawing.Color.Navy
+        Me.btnOneTimePasscode.FlatAppearance.BorderColor = System.Drawing.Color.Navy
+        Me.btnOneTimePasscode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOneTimePasscode.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOneTimePasscode.ForeColor = System.Drawing.Color.White
+        Me.btnOneTimePasscode.Location = New System.Drawing.Point(13, 573)
+        Me.btnOneTimePasscode.Name = "btnOneTimePasscode"
+        Me.btnOneTimePasscode.Size = New System.Drawing.Size(182, 32)
+        Me.btnOneTimePasscode.TabIndex = 106
+        Me.btnOneTimePasscode.Text = "&One-Time Passcode"
+        Me.btnOneTimePasscode.UseVisualStyleBackColor = False
         '
         'btnPrintContract
         '
@@ -562,7 +562,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnDiscard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDiscard.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDiscard.ForeColor = System.Drawing.Color.White
-        Me.btnDiscard.Location = New System.Drawing.Point(19, 484)
+        Me.btnDiscard.Location = New System.Drawing.Point(19, 469)
         Me.btnDiscard.Name = "btnDiscard"
         Me.btnDiscard.Size = New System.Drawing.Size(167, 32)
         Me.btnDiscard.TabIndex = 104
@@ -576,7 +576,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(13, 446)
+        Me.btnSave.Location = New System.Drawing.Point(13, 431)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(182, 32)
         Me.btnSave.TabIndex = 103
@@ -809,7 +809,7 @@ Partial Class frmHR_PreviewPersonnelDetails
     Friend WithEvents Panel13 As Panel
     Friend WithEvents Panel12 As Panel
     Friend WithEvents Panel9 As Panel
-    Friend WithEvents btnExport As Button
+    Friend WithEvents btnOneTimePasscode As Button
     Friend WithEvents btnPrintContract As Button
     Friend WithEvents PictureBoxHelp As PictureBox
     Friend WithEvents PictureBox1 As PictureBox

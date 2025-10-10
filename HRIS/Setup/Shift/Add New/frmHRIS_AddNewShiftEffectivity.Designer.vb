@@ -71,12 +71,12 @@ Partial Class frmHRIS_AddNewShiftEffectivity
         '
         'btnDiscard
         '
-        Me.btnDiscard.BackColor = System.Drawing.Color.Maroon
+        Me.btnDiscard.BackColor = System.Drawing.Color.White
         Me.btnDiscard.FlatAppearance.BorderColor = System.Drawing.Color.Maroon
         Me.btnDiscard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDiscard.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.btnDiscard.ForeColor = System.Drawing.Color.White
-        Me.btnDiscard.Location = New System.Drawing.Point(150, 161)
+        Me.btnDiscard.ForeColor = System.Drawing.Color.Maroon
+        Me.btnDiscard.Location = New System.Drawing.Point(152, 161)
         Me.btnDiscard.Name = "btnDiscard"
         Me.btnDiscard.Size = New System.Drawing.Size(81, 26)
         Me.btnDiscard.TabIndex = 106
@@ -85,12 +85,12 @@ Partial Class frmHRIS_AddNewShiftEffectivity
         '
         'btnSave
         '
-        Me.btnSave.BackColor = System.Drawing.Color.DarkGreen
+        Me.btnSave.BackColor = System.Drawing.Color.White
         Me.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Green
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(63, 161)
+        Me.btnSave.ForeColor = System.Drawing.Color.DarkGreen
+        Me.btnSave.Location = New System.Drawing.Point(65, 161)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(81, 26)
         Me.btnSave.TabIndex = 105
@@ -230,7 +230,7 @@ Partial Class frmHRIS_AddNewShiftEffectivity
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Fill-up all dates then click &Save button."
         '
-        'frmHR_AddNewShiftEffectivity
+        'frmHRIS_AddNewShiftEffectivity
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -240,7 +240,7 @@ Partial Class frmHRIS_AddNewShiftEffectivity
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "frmHR_AddNewShiftEffectivity"
+        Me.Name = "frmHRIS_AddNewShiftEffectivity"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

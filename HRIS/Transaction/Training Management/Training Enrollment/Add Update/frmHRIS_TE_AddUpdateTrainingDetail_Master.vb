@@ -1,7 +1,5 @@
 ﻿Public Class frmHRIS_TE_AddUpdateTrainingDetail_Master
 
-    Public isUpdate As Boolean = False
-
     Private Sub frmHRIS_TE_AddUpdateTrainingDetail_Master_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         txtName.Text = frmHRIS_Transaction_TrainingEnrollment.lblTrainingName.Text
@@ -45,5 +43,7 @@
         Call ClearTextBoxes(Me)
         Call ResetDatePickers(Me)
         Call ResetComboBoxes(Me)
+        isUpdate = False
     End Sub
+
 End Class

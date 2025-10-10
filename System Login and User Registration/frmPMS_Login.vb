@@ -1,13 +1,7 @@
 ﻿Public Class frmPMS_Login
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
         Application.Exit()
-    End Sub
-
-    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-
-        Login_User()
-
     End Sub
 
     Private Sub txtEmployeeCode_GotFocus(sender As Object, e As EventArgs) Handles txtEmployeeCode.GotFocus
@@ -40,7 +34,7 @@
         End If
     End Sub
 
-    Private Sub frmPMS_Login_Revised_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub frmPMS_Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtEmployeeCode.ForeColor = Color.DarkGray
         txtPassword.ForeColor = Color.DarkGray
 
@@ -57,6 +51,14 @@
         If e.KeyCode = Keys.Enter Then
             btnLogin.PerformClick()
         End If
+    End Sub
+
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+        Call Login_User()
+    End Sub
+
+    Private Sub frmPMS_Login_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Application.Exit()
     End Sub
 
 End Class

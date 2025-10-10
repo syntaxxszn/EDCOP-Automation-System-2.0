@@ -62,6 +62,7 @@ Partial Class frmMainPanelHRM
         Me.btnOption.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnOption.Size = New System.Drawing.Size(284, 38)
         Me.btnOption.TabIndex = 20
+        Me.btnOption.Tag = "1400000000"
         Me.btnOption.Text = "   Options"
         Me.btnOption.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnOption.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -92,6 +93,7 @@ Partial Class frmMainPanelHRM
         Me.btnReport.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnReport.Size = New System.Drawing.Size(284, 38)
         Me.btnReport.TabIndex = 19
+        Me.btnReport.Tag = "1300000000"
         Me.btnReport.Text = "   Report"
         Me.btnReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -113,6 +115,7 @@ Partial Class frmMainPanelHRM
         Me.btnTransaction.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnTransaction.Size = New System.Drawing.Size(284, 42)
         Me.btnTransaction.TabIndex = 18
+        Me.btnTransaction.Tag = "1200000000"
         Me.btnTransaction.Text = " Transaction"
         Me.btnTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTransaction.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -134,6 +137,7 @@ Partial Class frmMainPanelHRM
         Me.btnSetup.Padding = New System.Windows.Forms.Padding(25, 0, 0, 0)
         Me.btnSetup.Size = New System.Drawing.Size(284, 38)
         Me.btnSetup.TabIndex = 4
+        Me.btnSetup.Tag = "1100000000"
         Me.btnSetup.Text = "   Setup"
         Me.btnSetup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnSetup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText

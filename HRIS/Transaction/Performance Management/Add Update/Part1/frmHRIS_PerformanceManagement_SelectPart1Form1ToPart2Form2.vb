@@ -1,7 +1,6 @@
 ﻿Public Class frmHRIS_PerformanceManagement_SelectPart1Form1ToPart2Form2
 
     Public Part1Form1ID As New List(Of Integer)
-    Public isUpdate As Boolean = False
 
     Private Sub frmHRIS_PerformanceManagement_SelectPart1Form1ToPart2Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Proc. : Call the function to refresh the list of available accomplished goal sheet.
@@ -119,4 +118,9 @@
         End If
 
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Call Select_PMAS_Part1Form1_ActiveGoalSheet(dgvActiveGoalSheet)
+    End Sub
+
 End Class

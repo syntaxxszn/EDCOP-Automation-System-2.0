@@ -22,11 +22,11 @@ Partial Class frmHRIS_Setup_AddUpdLeaveCredit
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.txtLeaveCount = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -36,6 +36,8 @@ Partial Class frmHRIS_Setup_AddUpdLeaveCredit
         Me.LeaveType = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RemainingLeave = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateIssued = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStripLeaveCredit = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ZeroOutThisLeaveTypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dtpLeaveIssuance = New System.Windows.Forms.DateTimePicker()
         Me.cbLeaveType = New System.Windows.Forms.ComboBox()
@@ -48,9 +50,11 @@ Partial Class frmHRIS_Setup_AddUpdLeaveCredit
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.dgvLeaveCredits, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStripLeaveCredit.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -69,14 +73,6 @@ Partial Class frmHRIS_Setup_AddUpdLeaveCredit
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(399, 583)
         Me.Panel1.TabIndex = 2
-        '
-        'Panel7
-        '
-        Me.Panel7.BackColor = System.Drawing.Color.White
-        Me.Panel7.Location = New System.Drawing.Point(4, 573)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(423, 10)
-        Me.Panel7.TabIndex = 7
         '
         'Panel4
         '
@@ -102,7 +98,7 @@ Partial Class frmHRIS_Setup_AddUpdLeaveCredit
         Me.txtLeaveCount.Name = "txtLeaveCount"
         Me.txtLeaveCount.Size = New System.Drawing.Size(47, 23)
         Me.txtLeaveCount.TabIndex = 119
-        Me.txtLeaveCount.Text = "00.00"
+        Me.txtLeaveCount.Text = "0.00"
         Me.txtLeaveCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label3
@@ -162,6 +158,7 @@ Partial Class frmHRIS_Setup_AddUpdLeaveCredit
         Me.dgvLeaveCredits.ColumnHeadersHeight = 35
         Me.dgvLeaveCredits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvLeaveCredits.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.LeaveType, Me.RemainingLeave, Me.DateIssued})
+        Me.dgvLeaveCredits.ContextMenuStrip = Me.ContextMenuStripLeaveCredit
         Me.dgvLeaveCredits.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.dgvLeaveCredits.Location = New System.Drawing.Point(13, 130)
         Me.dgvLeaveCredits.MultiSelect = False
@@ -199,6 +196,20 @@ Partial Class frmHRIS_Setup_AddUpdLeaveCredit
         Me.DateIssued.HeaderText = "Issuance Date"
         Me.DateIssued.Name = "DateIssued"
         Me.DateIssued.ReadOnly = True
+        '
+        'ContextMenuStripLeaveCredit
+        '
+        Me.ContextMenuStripLeaveCredit.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ContextMenuStripLeaveCredit.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ZeroOutThisLeaveTypeToolStripMenuItem})
+        Me.ContextMenuStripLeaveCredit.Name = "ContextMenuStripLeaveCredit"
+        Me.ContextMenuStripLeaveCredit.Size = New System.Drawing.Size(222, 26)
+        '
+        'ZeroOutThisLeaveTypeToolStripMenuItem
+        '
+        Me.ZeroOutThisLeaveTypeToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
+        Me.ZeroOutThisLeaveTypeToolStripMenuItem.Name = "ZeroOutThisLeaveTypeToolStripMenuItem"
+        Me.ZeroOutThisLeaveTypeToolStripMenuItem.Size = New System.Drawing.Size(221, 22)
+        Me.ZeroOutThisLeaveTypeToolStripMenuItem.Text = "Zero-Out this Leave Type"
         '
         'Label2
         '
@@ -316,7 +327,15 @@ Partial Class frmHRIS_Setup_AddUpdLeaveCredit
         Me.Panel5.Size = New System.Drawing.Size(10, 557)
         Me.Panel5.TabIndex = 6
         '
-        'frmHR_Setup_AddUpdLeaveCredit
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.White
+        Me.Panel7.Location = New System.Drawing.Point(4, 573)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(423, 10)
+        Me.Panel7.TabIndex = 7
+        '
+        'frmHRIS_Setup_AddUpdLeaveCredit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -327,7 +346,7 @@ Partial Class frmHRIS_Setup_AddUpdLeaveCredit
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "frmHR_Setup_AddUpdLeaveCredit"
+        Me.Name = "frmHRIS_Setup_AddUpdLeaveCredit"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Credit"
@@ -335,6 +354,7 @@ Partial Class frmHRIS_Setup_AddUpdLeaveCredit
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.dgvLeaveCredits, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStripLeaveCredit.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -366,4 +386,6 @@ Partial Class frmHRIS_Setup_AddUpdLeaveCredit
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel5 As Panel
+    Friend WithEvents ContextMenuStripLeaveCredit As ContextMenuStrip
+    Friend WithEvents ZeroOutThisLeaveTypeToolStripMenuItem As ToolStripMenuItem
 End Class

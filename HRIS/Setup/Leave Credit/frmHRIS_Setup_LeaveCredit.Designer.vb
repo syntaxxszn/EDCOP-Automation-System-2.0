@@ -27,9 +27,6 @@ Partial Class frmHRIS_Setup_LeaveCredit
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
@@ -70,6 +67,8 @@ Partial Class frmHRIS_Setup_LeaveCredit
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GetEmployeeCredits = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.GetEmployeeCreditsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
@@ -87,6 +86,14 @@ Partial Class frmHRIS_Setup_LeaveCredit
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStripViewDetail = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ViewLeaveCreditDetailsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewLeaveTakenDetailsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SetPreviousToConvertedToCashToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel30 = New System.Windows.Forms.Panel()
         Me.lblEmployeeName = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -110,9 +117,11 @@ Partial Class frmHRIS_Setup_LeaveCredit
         Me.Panel13.SuspendLayout()
         Me.Panel16.SuspendLayout()
         CType(Me.dgvEmployeeList, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GetEmployeeCredits.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Panel32.SuspendLayout()
         CType(Me.dgvLeaveIssuedList, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStripViewDetail.SuspendLayout()
         Me.Panel30.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -473,6 +482,7 @@ Partial Class frmHRIS_Setup_LeaveCredit
         Me.dgvEmployeeList.ColumnHeadersHeight = 35
         Me.dgvEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvEmployeeList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ShiftID, Me.Column1, Me.Column2, Me.Column4, Me.Column5, Me.Column6})
+        Me.dgvEmployeeList.ContextMenuStrip = Me.GetEmployeeCredits
         Me.dgvEmployeeList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvEmployeeList.Location = New System.Drawing.Point(0, 0)
         Me.dgvEmployeeList.MultiSelect = False
@@ -527,6 +537,20 @@ Partial Class frmHRIS_Setup_LeaveCredit
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
         Me.Column6.Width = 84
+        '
+        'GetEmployeeCredits
+        '
+        Me.GetEmployeeCredits.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GetEmployeeCredits.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GetEmployeeCreditsToolStripMenuItem})
+        Me.GetEmployeeCredits.Name = "GetEmployeeCredits"
+        Me.GetEmployeeCredits.Size = New System.Drawing.Size(203, 26)
+        '
+        'GetEmployeeCreditsToolStripMenuItem
+        '
+        Me.GetEmployeeCreditsToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.user
+        Me.GetEmployeeCreditsToolStripMenuItem.Name = "GetEmployeeCreditsToolStripMenuItem"
+        Me.GetEmployeeCreditsToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
+        Me.GetEmployeeCreditsToolStripMenuItem.Text = "Get Employee Credits"
         '
         'Panel19
         '
@@ -642,13 +666,16 @@ Partial Class frmHRIS_Setup_LeaveCredit
         Me.dgvLeaveIssuedList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvLeaveIssuedList.ColumnHeadersHeight = 35
         Me.dgvLeaveIssuedList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvLeaveIssuedList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8, Me.Column3, Me.Column7, Me.Column8, Me.Column9, Me.Column10})
+        Me.dgvLeaveIssuedList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8, Me.Column3, Me.Column7, Me.Column8, Me.Column9, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column14})
+        Me.dgvLeaveIssuedList.ContextMenuStrip = Me.ContextMenuStripViewDetail
         Me.dgvLeaveIssuedList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvLeaveIssuedList.Location = New System.Drawing.Point(0, 0)
         Me.dgvLeaveIssuedList.MultiSelect = False
         Me.dgvLeaveIssuedList.Name = "dgvLeaveIssuedList"
         Me.dgvLeaveIssuedList.ReadOnly = True
         Me.dgvLeaveIssuedList.RowHeadersVisible = False
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgvLeaveIssuedList.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvLeaveIssuedList.RowTemplate.Height = 30
         Me.dgvLeaveIssuedList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvLeaveIssuedList.Size = New System.Drawing.Size(1030, 186)
@@ -665,46 +692,94 @@ Partial Class frmHRIS_Setup_LeaveCredit
         '
         'Column3
         '
-        Me.Column3.HeaderText = "Leave Type"
+        Me.Column3.HeaderText = "Laeve Type"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
         Me.Column3.Width = 89
         '
         'Column7
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column7.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column7.HeaderText = "Credit"
+        Me.Column7.HeaderText = "Earned Last Year"
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
-        Me.Column7.Width = 64
+        Me.Column7.Width = 117
         '
         'Column8
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column8.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Column8.HeaderText = "Remaining"
+        Me.Column8.HeaderText = "Used Last Year"
         Me.Column8.Name = "Column8"
         Me.Column8.ReadOnly = True
-        Me.Column8.Width = 89
+        Me.Column8.Width = 107
         '
         'Column9
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column9.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Column9.HeaderText = "Date Issued"
+        Me.Column9.HeaderText = "Balance From Last Year"
         Me.Column9.Name = "Column9"
         Me.Column9.ReadOnly = True
-        Me.Column9.Width = 92
+        Me.Column9.Width = 153
         '
         'Column10
         '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column10.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Column10.HeaderText = "is Processed to Payroll?"
+        Me.Column10.HeaderText = "Converted to Cash? (Previous)"
         Me.Column10.Name = "Column10"
         Me.Column10.ReadOnly = True
-        Me.Column10.Width = 154
+        Me.Column10.Width = 191
+        '
+        'Column11
+        '
+        Me.Column11.HeaderText = "Earned This Year"
+        Me.Column11.Name = "Column11"
+        Me.Column11.ReadOnly = True
+        Me.Column11.Width = 117
+        '
+        'Column12
+        '
+        Me.Column12.HeaderText = "Used This Year"
+        Me.Column12.Name = "Column12"
+        Me.Column12.ReadOnly = True
+        Me.Column12.Width = 107
+        '
+        'Column13
+        '
+        Me.Column13.HeaderText = "Total Balance (Excl. Converted)"
+        Me.Column13.Name = "Column13"
+        Me.Column13.ReadOnly = True
+        Me.Column13.Width = 194
+        '
+        'Column14
+        '
+        Me.Column14.HeaderText = "As of Date"
+        Me.Column14.Name = "Column14"
+        Me.Column14.ReadOnly = True
+        Me.Column14.Width = 86
+        '
+        'ContextMenuStripViewDetail
+        '
+        Me.ContextMenuStripViewDetail.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ContextMenuStripViewDetail.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewLeaveCreditDetailsToolStripMenuItem, Me.ViewLeaveTakenDetailsToolStripMenuItem, Me.SetPreviousToConvertedToCashToolStripMenuItem})
+        Me.ContextMenuStripViewDetail.Name = "ContextMenuStripViewDetail"
+        Me.ContextMenuStripViewDetail.Size = New System.Drawing.Size(267, 70)
+        '
+        'ViewLeaveCreditDetailsToolStripMenuItem
+        '
+        Me.ViewLeaveCreditDetailsToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.document
+        Me.ViewLeaveCreditDetailsToolStripMenuItem.Name = "ViewLeaveCreditDetailsToolStripMenuItem"
+        Me.ViewLeaveCreditDetailsToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.ViewLeaveCreditDetailsToolStripMenuItem.Text = "View Leave Credit Details"
+        '
+        'ViewLeaveTakenDetailsToolStripMenuItem
+        '
+        Me.ViewLeaveTakenDetailsToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.document
+        Me.ViewLeaveTakenDetailsToolStripMenuItem.Name = "ViewLeaveTakenDetailsToolStripMenuItem"
+        Me.ViewLeaveTakenDetailsToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.ViewLeaveTakenDetailsToolStripMenuItem.Text = "View Leave Taken Details"
+        '
+        'SetPreviousToConvertedToCashToolStripMenuItem
+        '
+        Me.SetPreviousToConvertedToCashToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.timesheetcorrection
+        Me.SetPreviousToConvertedToCashToolStripMenuItem.Name = "SetPreviousToConvertedToCashToolStripMenuItem"
+        Me.SetPreviousToConvertedToCashToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.SetPreviousToConvertedToCashToolStripMenuItem.Text = "Set Converted to Cash? (Yes/No)"
         '
         'Panel30
         '
@@ -811,7 +886,7 @@ Partial Class frmHRIS_Setup_LeaveCredit
         Me.Panel17.Size = New System.Drawing.Size(1050, 5)
         Me.Panel17.TabIndex = 7
         '
-        'frmHR_Setup_LeaveCredit
+        'frmHRIS_Setup_LeaveCredit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -829,7 +904,7 @@ Partial Class frmHRIS_Setup_LeaveCredit
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmHR_Setup_LeaveCredit"
+        Me.Name = "frmHRIS_Setup_LeaveCredit"
         Me.Text = "Setup - Leave Credits"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -847,9 +922,11 @@ Partial Class frmHRIS_Setup_LeaveCredit
         Me.Panel13.ResumeLayout(False)
         Me.Panel16.ResumeLayout(False)
         CType(Me.dgvEmployeeList, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GetEmployeeCredits.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
         Me.Panel32.ResumeLayout(False)
         CType(Me.dgvLeaveIssuedList, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStripViewDetail.ResumeLayout(False)
         Me.Panel30.ResumeLayout(False)
         Me.Panel30.PerformLayout()
         Me.ResumeLayout(False)
@@ -924,4 +1001,14 @@ Partial Class frmHRIS_Setup_LeaveCredit
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents Column11 As DataGridViewTextBoxColumn
+    Friend WithEvents Column12 As DataGridViewTextBoxColumn
+    Friend WithEvents Column13 As DataGridViewTextBoxColumn
+    Friend WithEvents Column14 As DataGridViewTextBoxColumn
+    Friend WithEvents GetEmployeeCredits As ContextMenuStrip
+    Friend WithEvents GetEmployeeCreditsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStripViewDetail As ContextMenuStrip
+    Friend WithEvents ViewLeaveCreditDetailsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ViewLeaveTakenDetailsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SetPreviousToConvertedToCashToolStripMenuItem As ToolStripMenuItem
 End Class

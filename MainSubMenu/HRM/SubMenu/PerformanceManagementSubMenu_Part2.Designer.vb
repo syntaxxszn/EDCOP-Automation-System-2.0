@@ -25,10 +25,8 @@ Partial Class PerformanceManagementSubMenu_Part2
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PerformanceManagementSubMenu_Part2))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.btnFormC = New System.Windows.Forms.Button()
         Me.btnFormB = New System.Windows.Forms.Button()
         Me.btnFormA = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -41,9 +39,7 @@ Partial Class PerformanceManagementSubMenu_Part2
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.Button6)
-        Me.Panel1.Controls.Add(Me.Button5)
-        Me.Panel1.Controls.Add(Me.Button4)
+        Me.Panel1.Controls.Add(Me.btnFormC)
         Me.Panel1.Controls.Add(Me.btnFormB)
         Me.Panel1.Controls.Add(Me.btnFormA)
         Me.Panel1.Controls.Add(Me.Panel5)
@@ -53,27 +49,8 @@ Partial Class PerformanceManagementSubMenu_Part2
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(239, 265)
+        Me.Panel1.Size = New System.Drawing.Size(239, 168)
         Me.Panel1.TabIndex = 9
-        '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.White
-        Me.Button6.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.Color.Black
-        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.ImageIndex = 0
-        Me.Button6.ImageList = Me.ImageList1
-        Me.Button6.Location = New System.Drawing.Point(12, 208)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(214, 43)
-        Me.Button6.TabIndex = 58
-        Me.Button6.Text = " &Part II - BI-Annual Performance Output Log (BI-APO)"
-        Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button6.UseVisualStyleBackColor = False
         '
         'ImageList1
         '
@@ -81,43 +58,24 @@ Partial Class PerformanceManagementSubMenu_Part2
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         Me.ImageList1.Images.SetKeyName(0, "rptStatement.png")
         '
-        'Button5
+        'btnFormC
         '
-        Me.Button5.BackColor = System.Drawing.Color.White
-        Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.Black
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.ImageIndex = 0
-        Me.Button5.ImageList = Me.ImageList1
-        Me.Button5.Location = New System.Drawing.Point(12, 159)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(214, 43)
-        Me.Button5.TabIndex = 57
-        Me.Button5.Text = "  &Part II - Performance Factor – C ( R2 )"
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.Color.White
-        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.Black
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.ImageIndex = 0
-        Me.Button4.ImageList = Me.ImageList1
-        Me.Button4.Location = New System.Drawing.Point(12, 110)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(214, 43)
-        Me.Button4.TabIndex = 56
-        Me.Button4.Text = "  &Part II - Performance Factor – C ( R1 )"
-        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.btnFormC.BackColor = System.Drawing.Color.White
+        Me.btnFormC.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btnFormC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFormC.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFormC.ForeColor = System.Drawing.Color.Black
+        Me.btnFormC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnFormC.ImageIndex = 0
+        Me.btnFormC.ImageList = Me.ImageList1
+        Me.btnFormC.Location = New System.Drawing.Point(12, 110)
+        Me.btnFormC.Name = "btnFormC"
+        Me.btnFormC.Size = New System.Drawing.Size(214, 43)
+        Me.btnFormC.TabIndex = 57
+        Me.btnFormC.Text = "  &Part II - Performance Factor – C"
+        Me.btnFormC.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnFormC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnFormC.UseVisualStyleBackColor = False
         '
         'btnFormB
         '
@@ -163,7 +121,7 @@ Partial Class PerformanceManagementSubMenu_Part2
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel5.Location = New System.Drawing.Point(0, 2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(2, 261)
+        Me.Panel5.Size = New System.Drawing.Size(2, 164)
         Me.Panel5.TabIndex = 51
         '
         'Panel4
@@ -172,14 +130,14 @@ Partial Class PerformanceManagementSubMenu_Part2
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel4.Location = New System.Drawing.Point(237, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(2, 261)
+        Me.Panel4.Size = New System.Drawing.Size(2, 164)
         Me.Panel4.TabIndex = 50
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Navy
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 263)
+        Me.Panel3.Location = New System.Drawing.Point(0, 166)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(239, 2)
         Me.Panel3.TabIndex = 49
@@ -197,7 +155,7 @@ Partial Class PerformanceManagementSubMenu_Part2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(239, 265)
+        Me.ClientSize = New System.Drawing.Size(239, 168)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -212,9 +170,7 @@ Partial Class PerformanceManagementSubMenu_Part2
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents btnFormC As Button
     Friend WithEvents btnFormB As Button
     Friend WithEvents btnFormA As Button
     Friend WithEvents Panel5 As Panel

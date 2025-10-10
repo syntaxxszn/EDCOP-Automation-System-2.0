@@ -48,4 +48,17 @@ Public Class frmHR_AddNewContract
         End If
         Ins_Personnel_ContractHistory()
     End Sub
+
+    Private Sub frmHR_AddNewContract_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        ClearTextBoxes(Me)
+        ResetComboBoxes(Me)
+        UncheckCheckBoxes(Me)
+        ClearDataGridViewRows(Me)
+        ResetDatePickers(Me)
+    End Sub
+
+    Private Sub btnAddNewOmnibusProject_Click(sender As Object, e As EventArgs) Handles btnAddNewOmnibusProject.Click
+        frmHR_AddNewOmnibusProject.ShowDialog()
+    End Sub
+
 End Class

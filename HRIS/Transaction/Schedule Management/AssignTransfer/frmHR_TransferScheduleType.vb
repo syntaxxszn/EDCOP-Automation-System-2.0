@@ -10,11 +10,13 @@
     End Sub
 
     Private Sub frmHR_TransferScheduleType_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        Me.Dispose()
+        UncheckCheckBoxes(Me)
+        ClearTextBoxes(Me)
+        ResetComboBoxes(Me)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Dispose()
+        Me.Close()
     End Sub
 
     Private Sub btnAssignSchedule_Click(sender As Object, e As EventArgs) Handles btnAssignSchedule.Click

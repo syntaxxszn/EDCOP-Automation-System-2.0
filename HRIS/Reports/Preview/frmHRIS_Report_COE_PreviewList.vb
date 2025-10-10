@@ -33,6 +33,7 @@
     End Sub
 
     Private Sub btnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
+        dgvCOE.ClearSelection()
         Call ShowSubMenuReport_MainPreview_List(New CertificateOfEmploymentSubMenu(), btnCreateNew)
     End Sub
 
@@ -56,7 +57,8 @@
         ElseIf _COEType = 746 Then
             Call PrintRPT_COE_SEPARATED_AND_CLEARED()
         ElseIf _COEType = 747 Then
-            Call PrintRPT_COE_SEPARATED_AND_CLEARED() ''same as the given format also the same
+            'Call PrintRPT_COE_SEPARATED_AND_CLEARED() ''same as the given format also the same
+            MessageBox.Show("No File Format given to this type.", "Contact System Administrator", MessageBoxButtons.OK, MessageBoxIcon.Error)
         ElseIf _COEType = 748 Then
             Call PrintRPT_COE_SEPARATED_AND_NOT_CLEARED()
         Else

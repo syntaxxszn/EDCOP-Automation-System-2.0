@@ -2,8 +2,6 @@
 
 Public Class frmHRIS_Setup_AddUpdJobTitle
 
-    Public isUpdate As Boolean = False
-
     Private Sub frmHR_Setup_AddUpdJobTitle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call DropDownListDepartment(cbDept)
         Call DropDownListJobClassLevel(cbLevel)

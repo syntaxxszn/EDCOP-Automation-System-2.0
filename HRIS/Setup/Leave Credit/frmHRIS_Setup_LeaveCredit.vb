@@ -1,6 +1,5 @@
 ﻿Public Class frmHRIS_Setup_LeaveCredit
 
-
     Private Sub frmHR_Setup_LeaveCredit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Sel_LeaveCredits(dgvEmployeeList, txtboxSearch, toolstriplabelNoOfRecord)
     End Sub
@@ -14,11 +13,17 @@
     End Sub
 
     Private Sub btnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
-        frmHRIS_Setup_AddUpdLeaveCredit.ShowDialog()
+        If dgvEmployeeList.SelectedRows.Count > 0 Then
+            If Not HasUserAccess("insert") Then Return
+            frmHRIS_Setup_AddUpdLeaveCredit.ShowDialog()
+        Else
+            MessageBox.Show("Please select from the employee table before starting to create.", "Edit Forbidden", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If dgvEmployeeList.SelectedRows.Count > 0 Then
+            If Not HasUserAccess("update") Then Return
             frmHRIS_Setup_AddUpdLeaveCredit.ShowDialog()
         Else
             MessageBox.Show("Please select from the employee table before starting to edit.", "Edit Forbidden", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -48,10 +53,15 @@
 
     Private Sub dgvLeaveIssuedList_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvLeaveIssuedList.CellClick
         UnselectDataGridView(dgvLeaveIssuedList)
+        If dgvLeaveIssuedList.SelectedRows.Count > 0 Then
+            Dim selectedRow = dgvLeaveIssuedList.SelectedRows(0)
+            _LeaveTypeID = selectedRow.Cells(0).Value
+        End If
     End Sub
 
     Private Sub dgvEmployeeList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmployeeList.CellDoubleClick
-        frmTK_AddUpdLeaveCredits.ShowDialog()
+        If Not HasUserAccess("update") Then Return
+        frmHRIS_Setup_AddUpdLeaveCredit.ShowDialog()
     End Sub
 
     Private Sub btnSearchFilter_Click(sender As Object, e As EventArgs) Handles btnSearchFilter.Click
@@ -95,4 +105,41 @@
             End If
         End If
     End Sub
+
+    Private Sub GetEmployeeCreditsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GetEmployeeCreditsToolStripMenuItem.Click
+        If dgvEmployeeList.SelectedRows.Count > 0 Then
+            frmHRIS_Setup_SelectDateLeaveCredit.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub ViewLeaveCreditDetailsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewLeaveCreditDetailsToolStripMenuItem.Click
+        If _LeaveTypeID <> 1 AndAlso _LeaveTypeID <> 2 Then
+            MessageBox.Show("No matching records found.", "Search", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return
+        End If
+        frmHRIS_Setup_PreviewLeaveBalances.ShowDialog()
+    End Sub
+
+    Private Sub ViewLeaveTakenDetailsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewLeaveTakenDetailsToolStripMenuItem.Click
+        frmHRIS_Setup_PreviewLeaveTaken.ShowDialog()
+    End Sub
+
+    Private Sub SetPreviousToConvertedToCashToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetPreviousToConvertedToCashToolStripMenuItem.Click
+        If dgvLeaveIssuedList.SelectedRows.Count > 0 Then
+            Dim selectedRow = dgvLeaveIssuedList.SelectedRows(0)
+            Dim stat = If(selectedRow.Cells(5).Value.ToString() = "Yes", 0, 1)
+            Upd_Employee_Leave_Credits_isPayrollProcessed(DateTime.Now.AddYears(-1), stat, selectedRow.Cells(0).Value)
+        End If
+    End Sub
+
+    Private Sub ContextMenuStripViewDetail_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ContextMenuStripViewDetail.Opening
+        If dgvLeaveIssuedList.SelectedRows.Count > 0 Then
+            Dim selectedRow = dgvLeaveIssuedList.SelectedRows(0)
+            Dim validIDs As Integer() = {1, 3, 7, 13, 14, 15}
+            Dim cellValue As Integer = CInt(selectedRow.Cells(0).Value)
+
+            SetPreviousToConvertedToCashToolStripMenuItem.Enabled = validIDs.Contains(cellValue)
+        End If
+    End Sub
+
 End Class

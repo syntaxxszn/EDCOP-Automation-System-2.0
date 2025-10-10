@@ -22,61 +22,18 @@ Public Class frmHRIS_Transaction_EmployeeFile
         MyBase.OnLoad(e)
     End Sub
 
-
-    'Sub DefaultLabelValue()
-
-    '    lblFullName.Text = "----"
-    '    lblEmployeeNo.Text = "----"
-    '    lblJobPosition.Text = "----"
-    '    lblDepartment.Text = "----"
-    '    lblEmpStatus.Text = "----"
-    '    FilePath = Nothing
-    '    GetImageProfile(PictureBoxAddProfile)
-
-    'End Sub
-
     Private Sub ToolStripBtnClose_Click(sender As Object, e As EventArgs) Handles ToolStripBtnClose.Click
         Me.Close()
     End Sub
 
     Private Sub ToolStripBtnNew_Click(sender As Object, e As EventArgs) Handles toolstripBtnNew.Click
-
-        'Ins_PersonnelTempRecord()
-        ' Sel_PersonnelID()
+        If Not HasUserAccess("insert") Then Return
         frmHR_AddNewPersonnel.ShowDialog()
-
     End Sub
 
     Public Sub EmployeeList_Active()
         Sel_Personnel_Active(dgvEmployeeList)
-        'labelEmployeeStatus.Text = "ACTIVE"
-        'labelEmployeeStatus.ForeColor = Color.Green
-        'DefaultLabelValue()
-
     End Sub
-
-    Private Sub EmployeeList_InActive()
-
-        'Sel_Personnel_InActive(dgvEmployeeList)
-        'labelEmployeeStatus.Text = "IN ACTIVE"
-        'labelEmployeeStatus.ForeColor = Color.Maroon
-
-    End Sub
-
-    'Private Sub ActiveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActiveToolStripMenuItem.Click
-
-    '    lblStatus.Text = "Active"
-    '    lblStatus.ForeColor = Color.Green
-    'End Sub
-
-    'Private Sub ClearFilterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearFilterToolStripMenuItem.Click
-    '    lblStatus.Text = "----"
-    '    lblStatus.ForeColor = Color.Black
-    'End Sub
-
-    'Private Sub InactiveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InactiveToolStripMenuItem.Click
-    '    EmployeeList_InActive()
-    'End Sub
 
     Private Sub dgvEmployeeList_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmployeeList.CellClick
 
@@ -101,6 +58,7 @@ Public Class frmHRIS_Transaction_EmployeeFile
             ' Procedure : This code pass the value of Datagrid Cell 3 to 'FilePath String'  See (Code 1) . Then the FilePath will read by "GetImageProfile Function" See  (Code 2).
             ' Code 2
             Call GetImageProfile(PictureBox1)
+
             frmHR_PreviewPersonnelDetails.lblEmpStatus.Text = selectedRow.Cells(6).Value
             lblBirthDate.Text = selectedRow.Cells(7).Value
             lblMobileNumber.Text = selectedRow.Cells(8).Value
@@ -111,15 +69,16 @@ Public Class frmHRIS_Transaction_EmployeeFile
 
     Private Sub dgvEmployeeList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmployeeList.CellDoubleClick
 
-        ' Procedure : This code enable Double click of a row to preview full details of employee based on _strEmployeeID see ( Code 1 ). 
+        ' Procedure : This code enable Double click of a row to preview full details of employee based on _strEmployeeID see ( Code 1 ).
+        If Not HasUserAccess("view") Then Return
         If dgvEmployeeList.SelectedRows.Count > 0 Then
-            Dim selectedRow = dgvEmployeeList.SelectedRows(0)
             frmHR_PreviewPersonnelDetails.ShowDialog()
         End If
+
     End Sub
 
     Private Sub btnSearchFilter_Click(sender As Object, e As EventArgs) Handles btnSearchFilter.Click
-        txtboxSearch.Text = ""
+        txtboxSearch.Clear()
         frmHRIS_Transaction_SearchFilter.ShowDialog()
     End Sub
 
@@ -217,4 +176,12 @@ Public Class frmHRIS_Transaction_EmployeeFile
     Private Sub ToolStripBtnRefresh_Click(sender As Object, e As EventArgs) Handles ToolStripBtnRefresh.Click
         WhatToSearch()
     End Sub
+
+    Private Sub toolstripEdit_Click(sender As Object, e As EventArgs) Handles toolstripEdit.Click
+        If Not HasUserAccess("update") Then Return
+        If dgvEmployeeList.SelectedRows.Count > 0 Then
+            frmHR_PreviewPersonnelDetails.ShowDialog()
+        End If
+    End Sub
+
 End Class

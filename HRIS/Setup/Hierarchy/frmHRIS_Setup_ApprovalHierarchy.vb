@@ -13,12 +13,14 @@
     End Sub
 
     Private Sub btnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
+        If Not HasUserAccess("insert") Then Return
         frmHRIS_Setup_AddUpdApprovalHierarchy.ShowDialog()
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If dgvApprovalList.SelectedRows.Count > 0 Then
-            frmHRIS_Setup_AddUpdApprovalHierarchy.isUpdate = True
+            If Not HasUserAccess("update") Then Return
+            isUpdate = True
             frmHRIS_Setup_AddUpdApprovalHierarchy.ShowDialog()
         Else
             MessageBox.Show("Please select from the hierarchy table before starting to edit.", "Edit Forbidden", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -55,21 +57,25 @@
     End Sub
 
     Private Sub dgvApprovalList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvApprovalList.CellDoubleClick
-        frmHRIS_Setup_AddUpdApprovalHierarchy.isUpdate = True
+        If Not HasUserAccess("update") Then Return
+        isUpdate = True
         frmHRIS_Setup_AddUpdApprovalHierarchy.ShowDialog()
     End Sub
 
     Private Sub AddNewReviewerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddNewReviewerToolStripMenuItem.Click
+        If Not HasUserAccess("insert") Then Return
         frmHRIS_Setup_AddUpdApprovalHierarchyDetail.ShowDialog()
     End Sub
 
     Private Sub EditNameToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditNameToolStripMenuItem.Click
-        frmHRIS_Setup_AddUpdApprovalHierarchyDetail.isUpdate = True
+        If Not HasUserAccess("update") Then Return
+        isUpdate = True
         frmHRIS_Setup_AddUpdApprovalHierarchyDetail.ShowDialog()
     End Sub
 
     Private Sub dgvEmployeeList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmployeeList.CellDoubleClick
-        frmHRIS_Setup_AddUpdApprovalHierarchyDetail.isUpdate = True
+        If Not HasUserAccess("update") Then Return
+        isUpdate = True
         frmHRIS_Setup_AddUpdApprovalHierarchyDetail.ShowDialog()
     End Sub
 
@@ -114,4 +120,13 @@
         End If
     End Sub
 
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        If Not HasUserAccess("delete") Then Return
+        MessageBox.Show("On-going process.", "Exit", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
+        If Not HasUserAccess("delete") Then Return
+        MessageBox.Show("On-going process.", "Exit", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
 End Class

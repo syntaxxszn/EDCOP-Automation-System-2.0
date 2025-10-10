@@ -26,4 +26,10 @@
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         UpdTrainingDetailStatus()
     End Sub
+
+    Private Sub frmHRIS_TR_UpdateStatusAndRemarks_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        ResetComboBoxes(Me)
+        ClearTextBoxes(Me)
+        ResetDatePickers(Me)
+    End Sub
 End Class

@@ -23,8 +23,8 @@ Partial Class frmLoading
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -43,6 +43,17 @@ Partial Class frmLoading
         Me.Panel7.Size = New System.Drawing.Size(285, 47)
         Me.Panel7.TabIndex = 104
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Navy
+        Me.PictureBox1.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.gear
+        Me.PictureBox1.Location = New System.Drawing.Point(247, 8)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 106
+        Me.PictureBox1.TabStop = False
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -54,17 +65,6 @@ Partial Class frmLoading
         Me.Label4.Size = New System.Drawing.Size(190, 13)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "L O A D I N G ,   P L E A S E   W A I T"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Navy
-        Me.PictureBox1.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.gear
-        Me.PictureBox1.Location = New System.Drawing.Point(247, 8)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(30, 30)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 106
-        Me.PictureBox1.TabStop = False
         '
         'PictureBox3
         '
@@ -83,12 +83,13 @@ Partial Class frmLoading
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(285, 47)
         Me.Controls.Add(Me.Panel7)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmLoading"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmLoading"
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

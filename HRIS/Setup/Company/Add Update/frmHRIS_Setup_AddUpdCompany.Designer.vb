@@ -24,49 +24,49 @@ Partial Class frmHRIS_Setup_AddUpdCompany
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel10 = New System.Windows.Forms.Panel()
         Me.txtFaxNo = New System.Windows.Forms.TextBox()
+        Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.txtWebsite = New System.Windows.Forms.TextBox()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.Panel8 = New System.Windows.Forms.Panel()
         Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.txtAddress2 = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.txtAddress1 = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtBusReg = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtCEO = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtLegalName = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtHotline = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtTrunkline = New System.Windows.Forms.TextBox()
-        Me.cbCompanyIndustry = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.cbCompanyOrganization = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtName = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lblHeader = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnDiscard = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.txtAddress2 = New System.Windows.Forms.TextBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblHeader = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtAddress1 = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtTrunkline = New System.Windows.Forms.TextBox()
+        Me.txtBusReg = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.txtCEO = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtLegalName = New System.Windows.Forms.TextBox()
+        Me.cbCompanyOrganization = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtHotline = New System.Windows.Forms.TextBox()
+        Me.cbCompanyIndustry = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -109,7 +109,7 @@ Partial Class frmHRIS_Setup_AddUpdCompany
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(369, 550)
+        Me.Panel1.Size = New System.Drawing.Size(460, 550)
         Me.Panel1.TabIndex = 4
         '
         'Label6
@@ -121,12 +121,30 @@ Partial Class frmHRIS_Setup_AddUpdCompany
         Me.Label6.TabIndex = 144
         Me.Label6.Text = "Fax No.* :"
         '
+        'Panel10
+        '
+        Me.Panel10.BackColor = System.Drawing.Color.Gray
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel10.Location = New System.Drawing.Point(19, 484)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(422, 5)
+        Me.Panel10.TabIndex = 76
+        '
         'txtFaxNo
         '
         Me.txtFaxNo.Location = New System.Drawing.Point(139, 441)
         Me.txtFaxNo.Name = "txtFaxNo"
-        Me.txtFaxNo.Size = New System.Drawing.Size(192, 22)
+        Me.txtFaxNo.Size = New System.Drawing.Size(278, 22)
         Me.txtFaxNo.TabIndex = 143
+        '
+        'Panel9
+        '
+        Me.Panel9.BackColor = System.Drawing.Color.Gray
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel9.Location = New System.Drawing.Point(441, 75)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(5, 414)
+        Me.Panel9.TabIndex = 75
         '
         'Label4
         '
@@ -137,12 +155,29 @@ Partial Class frmHRIS_Setup_AddUpdCompany
         Me.Label4.TabIndex = 142
         Me.Label4.Text = "Hotline* :"
         '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.Gray
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel7.Location = New System.Drawing.Point(19, 70)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(427, 5)
+        Me.Panel7.TabIndex = 74
+        '
         'txtWebsite
         '
         Me.txtWebsite.Location = New System.Drawing.Point(139, 354)
         Me.txtWebsite.Name = "txtWebsite"
-        Me.txtWebsite.Size = New System.Drawing.Size(192, 22)
+        Me.txtWebsite.Size = New System.Drawing.Size(278, 22)
         Me.txtWebsite.TabIndex = 141
+        '
+        'Panel6
+        '
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel6.Location = New System.Drawing.Point(446, 70)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(14, 419)
+        Me.Panel6.TabIndex = 73
         '
         'Label14
         '
@@ -153,19 +188,89 @@ Partial Class frmHRIS_Setup_AddUpdCompany
         Me.Label14.TabIndex = 140
         Me.Label14.Text = "Website* :"
         '
+        'Panel8
+        '
+        Me.Panel8.BackColor = System.Drawing.Color.Gray
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel8.Location = New System.Drawing.Point(14, 70)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(5, 419)
+        Me.Panel8.TabIndex = 72
+        '
         'txtEmail
         '
         Me.txtEmail.Location = New System.Drawing.Point(139, 325)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(192, 22)
+        Me.txtEmail.Size = New System.Drawing.Size(278, 22)
         Me.txtEmail.TabIndex = 139
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.btnReset)
+        Me.Panel5.Controls.Add(Me.btnDiscard)
+        Me.Panel5.Controls.Add(Me.btnSave)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel5.Location = New System.Drawing.Point(14, 489)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(446, 61)
+        Me.Panel5.TabIndex = 71
+        '
+        'btnReset
+        '
+        Me.btnReset.BackColor = System.Drawing.Color.White
+        Me.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.Maroon
+        Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnReset.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReset.ForeColor = System.Drawing.Color.Maroon
+        Me.btnReset.Location = New System.Drawing.Point(0, 18)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(81, 24)
+        Me.btnReset.TabIndex = 105
+        Me.btnReset.Text = "&Reset"
+        Me.btnReset.UseVisualStyleBackColor = False
+        '
+        'btnDiscard
+        '
+        Me.btnDiscard.BackColor = System.Drawing.Color.White
+        Me.btnDiscard.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDiscard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDiscard.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDiscard.ForeColor = System.Drawing.Color.DarkGray
+        Me.btnDiscard.Location = New System.Drawing.Point(264, 18)
+        Me.btnDiscard.Name = "btnDiscard"
+        Me.btnDiscard.Size = New System.Drawing.Size(81, 24)
+        Me.btnDiscard.TabIndex = 104
+        Me.btnDiscard.Text = "&Discard "
+        Me.btnDiscard.UseVisualStyleBackColor = False
+        '
+        'btnSave
+        '
+        Me.btnSave.BackColor = System.Drawing.Color.Green
+        Me.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.Location = New System.Drawing.Point(351, 18)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Size = New System.Drawing.Size(81, 24)
+        Me.btnSave.TabIndex = 103
+        Me.btnSave.Text = "&Save"
+        Me.btnSave.UseVisualStyleBackColor = False
         '
         'txtAddress2
         '
         Me.txtAddress2.Location = New System.Drawing.Point(139, 238)
         Me.txtAddress2.Name = "txtAddress2"
-        Me.txtAddress2.Size = New System.Drawing.Size(192, 22)
+        Me.txtAddress2.Size = New System.Drawing.Size(278, 22)
         Me.txtAddress2.TabIndex = 138
+        '
+        'Panel4
+        '
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel4.Location = New System.Drawing.Point(0, 70)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(14, 480)
+        Me.Panel4.TabIndex = 70
         '
         'Label13
         '
@@ -176,156 +281,6 @@ Partial Class frmHRIS_Setup_AddUpdCompany
         Me.Label13.TabIndex = 137
         Me.Label13.Text = "Address 2* :"
         '
-        'txtAddress1
-        '
-        Me.txtAddress1.Location = New System.Drawing.Point(139, 209)
-        Me.txtAddress1.Name = "txtAddress1"
-        Me.txtAddress1.Size = New System.Drawing.Size(192, 22)
-        Me.txtAddress1.TabIndex = 136
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(37, 212)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(68, 13)
-        Me.Label12.TabIndex = 135
-        Me.Label12.Text = "Address 1* :"
-        '
-        'txtBusReg
-        '
-        Me.txtBusReg.Location = New System.Drawing.Point(139, 180)
-        Me.txtBusReg.Name = "txtBusReg"
-        Me.txtBusReg.Size = New System.Drawing.Size(192, 22)
-        Me.txtBusReg.TabIndex = 134
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(37, 183)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(86, 13)
-        Me.Label10.TabIndex = 133
-        Me.Label10.Text = "Bus. Reg. No.* :"
-        '
-        'txtCEO
-        '
-        Me.txtCEO.Location = New System.Drawing.Point(139, 151)
-        Me.txtCEO.Name = "txtCEO"
-        Me.txtCEO.Size = New System.Drawing.Size(192, 22)
-        Me.txtCEO.TabIndex = 132
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(37, 154)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(46, 13)
-        Me.Label9.TabIndex = 131
-        Me.Label9.Text = "C.E.O* :"
-        '
-        'txtLegalName
-        '
-        Me.txtLegalName.Location = New System.Drawing.Point(139, 122)
-        Me.txtLegalName.Name = "txtLegalName"
-        Me.txtLegalName.Size = New System.Drawing.Size(192, 22)
-        Me.txtLegalName.TabIndex = 130
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(37, 125)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(77, 13)
-        Me.Label8.TabIndex = 129
-        Me.Label8.Text = "Legal Name* :"
-        '
-        'txtHotline
-        '
-        Me.txtHotline.Location = New System.Drawing.Point(139, 412)
-        Me.txtHotline.Name = "txtHotline"
-        Me.txtHotline.Size = New System.Drawing.Size(192, 22)
-        Me.txtHotline.TabIndex = 126
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(38, 328)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(45, 13)
-        Me.Label3.TabIndex = 125
-        Me.Label3.Text = "Email* :"
-        '
-        'txtTrunkline
-        '
-        Me.txtTrunkline.Location = New System.Drawing.Point(139, 383)
-        Me.txtTrunkline.Name = "txtTrunkline"
-        Me.txtTrunkline.Size = New System.Drawing.Size(192, 22)
-        Me.txtTrunkline.TabIndex = 124
-        '
-        'cbCompanyIndustry
-        '
-        Me.cbCompanyIndustry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbCompanyIndustry.DropDownWidth = 200
-        Me.cbCompanyIndustry.FormattingEnabled = True
-        Me.cbCompanyIndustry.Location = New System.Drawing.Point(139, 296)
-        Me.cbCompanyIndustry.Name = "cbCompanyIndustry"
-        Me.cbCompanyIndustry.Size = New System.Drawing.Size(192, 21)
-        Me.cbCompanyIndustry.TabIndex = 123
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(38, 299)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(60, 13)
-        Me.Label1.TabIndex = 122
-        Me.Label1.Text = "Industry* :"
-        '
-        'cbCompanyOrganization
-        '
-        Me.cbCompanyOrganization.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbCompanyOrganization.DropDownWidth = 200
-        Me.cbCompanyOrganization.FormattingEnabled = True
-        Me.cbCompanyOrganization.Location = New System.Drawing.Point(139, 267)
-        Me.cbCompanyOrganization.Name = "cbCompanyOrganization"
-        Me.cbCompanyOrganization.Size = New System.Drawing.Size(192, 21)
-        Me.cbCompanyOrganization.TabIndex = 121
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(38, 386)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 13)
-        Me.Label2.TabIndex = 119
-        Me.Label2.Text = "Trunkline* :"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(37, 270)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(86, 13)
-        Me.Label11.TabIndex = 18
-        Me.Label11.Text = "Organization* :"
-        '
-        'txtName
-        '
-        Me.txtName.Location = New System.Drawing.Point(139, 93)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(192, 22)
-        Me.txtName.TabIndex = 7
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(37, 96)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(47, 13)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Name* :"
-        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.PictureBox1)
@@ -334,7 +289,7 @@ Partial Class frmHRIS_Setup_AddUpdCompany
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(369, 70)
+        Me.Panel2.Size = New System.Drawing.Size(460, 70)
         Me.Panel2.TabIndex = 7
         '
         'PictureBox1
@@ -366,132 +321,177 @@ Partial Class frmHRIS_Setup_AddUpdCompany
         Me.Label7.TabIndex = 1
         Me.Label7.Text = "Fill-up all entry box then click &Save button."
         '
-        'Panel4
+        'txtAddress1
         '
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel4.Location = New System.Drawing.Point(0, 70)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(14, 480)
-        Me.Panel4.TabIndex = 70
+        Me.txtAddress1.Location = New System.Drawing.Point(139, 209)
+        Me.txtAddress1.Name = "txtAddress1"
+        Me.txtAddress1.Size = New System.Drawing.Size(278, 22)
+        Me.txtAddress1.TabIndex = 136
         '
-        'Panel5
+        'Label12
         '
-        Me.Panel5.Controls.Add(Me.btnReset)
-        Me.Panel5.Controls.Add(Me.btnDiscard)
-        Me.Panel5.Controls.Add(Me.btnSave)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(14, 489)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(355, 61)
-        Me.Panel5.TabIndex = 71
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(37, 212)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(68, 13)
+        Me.Label12.TabIndex = 135
+        Me.Label12.Text = "Address 1* :"
         '
-        'btnReset
+        'txtTrunkline
         '
-        Me.btnReset.BackColor = System.Drawing.SystemColors.Control
-        Me.btnReset.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control
-        Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReset.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReset.ForeColor = System.Drawing.Color.Black
-        Me.btnReset.Location = New System.Drawing.Point(260, 18)
-        Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(81, 24)
-        Me.btnReset.TabIndex = 105
-        Me.btnReset.Text = "&Reset"
-        Me.btnReset.UseVisualStyleBackColor = False
+        Me.txtTrunkline.Location = New System.Drawing.Point(139, 383)
+        Me.txtTrunkline.Name = "txtTrunkline"
+        Me.txtTrunkline.Size = New System.Drawing.Size(278, 22)
+        Me.txtTrunkline.TabIndex = 124
         '
-        'btnDiscard
+        'txtBusReg
         '
-        Me.btnDiscard.BackColor = System.Drawing.Color.Maroon
-        Me.btnDiscard.FlatAppearance.BorderColor = System.Drawing.Color.Maroon
-        Me.btnDiscard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDiscard.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDiscard.ForeColor = System.Drawing.Color.White
-        Me.btnDiscard.Location = New System.Drawing.Point(87, 18)
-        Me.btnDiscard.Name = "btnDiscard"
-        Me.btnDiscard.Size = New System.Drawing.Size(81, 24)
-        Me.btnDiscard.TabIndex = 104
-        Me.btnDiscard.Text = "&Discard "
-        Me.btnDiscard.UseVisualStyleBackColor = False
+        Me.txtBusReg.Location = New System.Drawing.Point(139, 180)
+        Me.txtBusReg.Name = "txtBusReg"
+        Me.txtBusReg.Size = New System.Drawing.Size(278, 22)
+        Me.txtBusReg.TabIndex = 134
         '
-        'btnSave
+        'Label5
         '
-        Me.btnSave.BackColor = System.Drawing.Color.Green
-        Me.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Green
-        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSave.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(0, 18)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(81, 24)
-        Me.btnSave.TabIndex = 103
-        Me.btnSave.Text = "&Save"
-        Me.btnSave.UseVisualStyleBackColor = False
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(37, 96)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(47, 13)
+        Me.Label5.TabIndex = 6
+        Me.Label5.Text = "Name* :"
         '
-        'Panel8
+        'Label10
         '
-        Me.Panel8.BackColor = System.Drawing.Color.Gray
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel8.Location = New System.Drawing.Point(14, 70)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(5, 419)
-        Me.Panel8.TabIndex = 72
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(37, 183)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(86, 13)
+        Me.Label10.TabIndex = 133
+        Me.Label10.Text = "Bus. Reg. No.* :"
         '
-        'Panel6
+        'txtName
         '
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel6.Location = New System.Drawing.Point(355, 70)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(14, 419)
-        Me.Panel6.TabIndex = 73
+        Me.txtName.Location = New System.Drawing.Point(139, 93)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(278, 22)
+        Me.txtName.TabIndex = 7
         '
-        'Panel7
+        'txtCEO
         '
-        Me.Panel7.BackColor = System.Drawing.Color.Gray
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(19, 70)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(336, 5)
-        Me.Panel7.TabIndex = 74
+        Me.txtCEO.Location = New System.Drawing.Point(139, 151)
+        Me.txtCEO.Name = "txtCEO"
+        Me.txtCEO.Size = New System.Drawing.Size(278, 22)
+        Me.txtCEO.TabIndex = 132
         '
-        'Panel9
+        'Label11
         '
-        Me.Panel9.BackColor = System.Drawing.Color.Gray
-        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel9.Location = New System.Drawing.Point(350, 75)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(5, 414)
-        Me.Panel9.TabIndex = 75
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(37, 270)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(86, 13)
+        Me.Label11.TabIndex = 18
+        Me.Label11.Text = "Organization* :"
         '
-        'Panel10
+        'Label9
         '
-        Me.Panel10.BackColor = System.Drawing.Color.Gray
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel10.Location = New System.Drawing.Point(19, 484)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(331, 5)
-        Me.Panel10.TabIndex = 76
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(37, 154)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(46, 13)
+        Me.Label9.TabIndex = 131
+        Me.Label9.Text = "C.E.O* :"
         '
-        'frmHR_Setup_AddUpdCompany
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(38, 386)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(66, 13)
+        Me.Label2.TabIndex = 119
+        Me.Label2.Text = "Trunkline* :"
+        '
+        'txtLegalName
+        '
+        Me.txtLegalName.Location = New System.Drawing.Point(139, 122)
+        Me.txtLegalName.Name = "txtLegalName"
+        Me.txtLegalName.Size = New System.Drawing.Size(278, 22)
+        Me.txtLegalName.TabIndex = 130
+        '
+        'cbCompanyOrganization
+        '
+        Me.cbCompanyOrganization.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbCompanyOrganization.DropDownWidth = 200
+        Me.cbCompanyOrganization.FormattingEnabled = True
+        Me.cbCompanyOrganization.Location = New System.Drawing.Point(139, 267)
+        Me.cbCompanyOrganization.Name = "cbCompanyOrganization"
+        Me.cbCompanyOrganization.Size = New System.Drawing.Size(278, 21)
+        Me.cbCompanyOrganization.TabIndex = 121
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(37, 125)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(77, 13)
+        Me.Label8.TabIndex = 129
+        Me.Label8.Text = "Legal Name* :"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(38, 299)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(60, 13)
+        Me.Label1.TabIndex = 122
+        Me.Label1.Text = "Industry* :"
+        '
+        'txtHotline
+        '
+        Me.txtHotline.Location = New System.Drawing.Point(139, 412)
+        Me.txtHotline.Name = "txtHotline"
+        Me.txtHotline.Size = New System.Drawing.Size(278, 22)
+        Me.txtHotline.TabIndex = 126
+        '
+        'cbCompanyIndustry
+        '
+        Me.cbCompanyIndustry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbCompanyIndustry.DropDownWidth = 200
+        Me.cbCompanyIndustry.FormattingEnabled = True
+        Me.cbCompanyIndustry.Location = New System.Drawing.Point(139, 296)
+        Me.cbCompanyIndustry.Name = "cbCompanyIndustry"
+        Me.cbCompanyIndustry.Size = New System.Drawing.Size(278, 21)
+        Me.cbCompanyIndustry.TabIndex = 123
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(38, 328)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(45, 13)
+        Me.Label3.TabIndex = 125
+        Me.Label3.Text = "Email* :"
+        '
+        'frmHRIS_Setup_AddUpdCompany
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
-        Me.ClientSize = New System.Drawing.Size(369, 550)
+        Me.ClientSize = New System.Drawing.Size(460, 550)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "frmHR_Setup_AddUpdCompany"
+        Me.Name = "frmHRIS_Setup_AddUpdCompany"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Company"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel5.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

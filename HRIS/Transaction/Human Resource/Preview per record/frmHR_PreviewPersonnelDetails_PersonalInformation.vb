@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports System.Text.RegularExpressions
 
 Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
 
@@ -11,7 +12,13 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Call Family_Background_Relationship_DropDownList(cbRelationshipPS, cbSRelationhipSC)
         frmHR_PreviewPersonnelDetails.Function_btnUpdates_Hide()
         TabControl1.SelectedTab = TabPageMain
+
         isEdit = False
+
+        If txtAdrCountry1.Text = "" Then
+            txtAdrCountry1.Text = "Philippines"
+        End If
+
     End Sub
 
     Public Sub Function_ReadOnly_isTrue()
@@ -24,13 +31,12 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
         cbForeignAddr_CheckedChanged(cbForeignAddr, EventArgs.Empty)
     End Sub
 
-
     Private Sub txtMobileNoPS_TextChanged(sender As Object, e As EventArgs) Handles txtMobileNoPS.TextChanged
-        MobileNumber_Color(txtMobileNoPS)
+
     End Sub
 
     Private Sub txtMobileNoSC_TextChanged(sender As Object, e As EventArgs) Handles txtMobileNoSC.TextChanged
-        MobileNumber_Color(txtMobileNoSC)
+
     End Sub
 
     Private Sub btnNextTab1_Click(sender As Object, e As EventArgs) Handles btnNextTab1.Click
@@ -105,17 +111,7 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
     End Sub
 
     Private Sub btnClearPS_Click(sender As Object, e As EventArgs) Handles btnRemovePS.Click
-        If dgvParentsAndSiblings.Rows.Count > 0 Then
-            Dim lastRow As DataGridViewRow = dgvParentsAndSiblings.Rows(dgvParentsAndSiblings.Rows.Count - 1)
-            If lastRow.Tag?.ToString() = "New" Then
-                dgvParentsAndSiblings.Rows.Remove(lastRow)
-            ElseIf dgvParentsAndSiblings.SelectedRows.Count > 0 Then
-                Del_Personnel_ParentsAndSiblings_ByID(dgvParentsAndSiblings)
-            Else
-                MsgBox("Nothing to remove.")
-            End If
-            ClearTransactionFieldPS()
-        End If
+        ClearTransactionFieldPS()
     End Sub
 
     Private Sub dgvParentsAndSiblings_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvParentsAndSiblings.CellDoubleClick
@@ -257,7 +253,7 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
         SetPermanentAdrControls(Not cbForeignAddr.Checked)
     End Sub
 
-    Private Sub SetPermanentAdrControls(isEnabled As Boolean) ' Disable controls if checked
+    Public Sub SetPermanentAdrControls(isEnabled As Boolean) ' Disable controls if checked
         For Each ctrl As Control In gbPermanentAdr.Controls
             ctrl.Enabled = isEnabled
             If Not isEnabled Then ' Only clear if disabled
@@ -268,7 +264,7 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
     End Sub
 
     Private Sub cbBank_DropDown(sender As Object, e As EventArgs) Handles cbBank.DropDown
-        Call DropDownListBank()
+        Call DropDownListBank(cbBank)
     End Sub
 
     Private Sub cbAdrRegion2_DropDown(sender As Object, e As EventArgs) Handles cbAdrRegion2.DropDown
@@ -284,17 +280,7 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
     End Sub
 
     Private Sub btnRemoveSC_Click(sender As Object, e As EventArgs) Handles btnRemoveSC.Click
-        If dgvSpouseAndChildren.Rows.Count > 0 Then
-            Dim lastRow As DataGridViewRow = dgvSpouseAndChildren.Rows(dgvSpouseAndChildren.Rows.Count - 1)
-            If lastRow.Tag?.ToString() = "New" Then
-                dgvSpouseAndChildren.Rows.Remove(lastRow)
-            ElseIf dgvSpouseAndChildren.SelectedRows.Count > 0 Then
-                Del_Personnel_SpouseAndChildren_ByID(dgvSpouseAndChildren)
-            Else
-                MsgBox("Nothing to remove.")
-            End If
-            ClearTransactionFieldPS()
-        End If
+        ClearTransactionFieldSC()
     End Sub
 
     Private Sub LinkLabelViewForeignAddress_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabelViewForeignAddress.LinkClicked
@@ -325,5 +311,307 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Call ZipCode_Color(txtAdrZip2, e.Cancel)
     End Sub
 
+    Private Sub cbBirthPlaceRegion_DropDown(sender As Object, e As EventArgs) Handles cbBirthPlaceRegion.DropDown
+        DropDownListRegion(cbBirthPlaceRegion, cbBirthPlaceProvince)
+    End Sub
+
+    Private Sub cbBirthPlaceProvince_DropDown(sender As Object, e As EventArgs) Handles cbBirthPlaceProvince.DropDown
+        DropDownListProvince(cbBirthPlaceRegion, cbBirthPlaceProvince, cbBirthPlaceCity)
+    End Sub
+
+    Private Sub cbBirthPlaceCity_DropDown(sender As Object, e As EventArgs) Handles cbBirthPlaceCity.DropDown
+        DropDownListMunicipality(cbBirthPlaceProvince, cbBirthPlaceCity)
+    End Sub
+
+    Private Sub cbAdrBarangay1_DropDown(sender As Object, e As EventArgs) Handles cbAdrBarangay1.DropDown
+        DropDownListBarangay(cbAdrCity1, cbAdrBarangay1)
+    End Sub
+
+    Private Sub cbAdrBarangay2_DropDown(sender As Object, e As EventArgs) Handles cbAdrBarangay2.DropDown
+        DropDownListBarangay(cbAdrCity2, cbAdrBarangay2)
+    End Sub
+
+    Private Sub cbBirthPlaceRegion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbBirthPlaceRegion.SelectedIndexChanged
+        cbBirthPlaceProvince.SelectedIndex = -1
+        cbBirthPlaceCity.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbBirthPlaceProvince_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbBirthPlaceProvince.SelectedIndexChanged
+        cbBirthPlaceCity.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbAdrRegion1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrRegion1.SelectedIndexChanged
+        cbAdrProvince1.SelectedIndex = -1
+        cbAdrCity1.SelectedIndex = -1
+        cbAdrBarangay1.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbAdrProvince1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrProvince1.SelectedIndexChanged
+        cbAdrCity1.SelectedIndex = -1
+        cbAdrBarangay1.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbAdrCity1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrCity1.SelectedIndexChanged
+        cbAdrBarangay1.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbAdrRegion2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrRegion2.SelectedIndexChanged
+        cbAdrProvince2.SelectedIndex = -1
+        cbAdrCity2.SelectedIndex = -1
+        cbAdrBarangay2.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbAdrProvince2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrProvince2.SelectedIndexChanged
+        cbAdrCity2.SelectedIndex = -1
+        cbAdrBarangay2.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbAdrCity2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrCity2.SelectedIndexChanged
+        cbAdrBarangay1.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbPayrollCategory_DropDown(sender As Object, e As EventArgs) Handles cbPayrollCategory.DropDown
+        DropDownListPayrollCategory(cbPayrollCategory)
+    End Sub
+
+    Private Sub txtHeight_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtHeight.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtWeight_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtWeight.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtAdrZip1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAdrZip1.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtAdrZip2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAdrZip2.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtMobileNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMobileNumber.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTelephone_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelephone.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtboxSSSNo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtboxSSSNo.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtboxTIN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtboxTIN.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtboxPhilHealth_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtboxPhilHealth.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtboxHDMF_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtboxHDMF.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtboxPayrollAccountNo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtboxPayrollAccountNo.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtboxSSSNo_TextChanged(sender As Object, e As EventArgs) Handles txtboxSSSNo.TextChanged
+        Dim digits = New String(txtboxSSSNo.Text.Where(AddressOf Char.IsDigit).ToArray())
+        If digits.Length > 10 Then
+            MessageBox.Show("SSS must be in the format: 01-1234567-1.", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            digits = digits.Substring(0, 10)
+        End If
+
+        Dim formatted = digits
+        If digits.Length > 2 Then
+            formatted = digits.Substring(0, 2) & "-" & digits.Substring(2)
+            If digits.Length > 9 Then
+                formatted = formatted.Insert(10, "-")
+            End If
+        End If
+
+        If txtboxSSSNo.Text <> formatted Then
+            txtboxSSSNo.Text = formatted
+            txtboxSSSNo.SelectionStart = formatted.Length
+        End If
+    End Sub
+
+    Private Sub txtboxSSSNo_Validating(sender As Object, e As CancelEventArgs) Handles txtboxSSSNo.Validating
+        If Not Regex.IsMatch(txtboxSSSNo.Text, "^\d{2}-\d{7}-\d{1}$") Then
+            MessageBox.Show("SSS must be in the format: 01-1234567-1.", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub txtboxTIN_TextChanged(sender As Object, e As EventArgs) Handles txtboxTIN.TextChanged
+        Dim digits = New String(txtboxTIN.Text.Where(AddressOf Char.IsDigit).ToArray())
+
+        If digits.Length > 9 Then
+            MessageBox.Show("TIN must be in the format: 123-123-123", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            digits = digits.Substring(0, 9)
+        End If
+
+        Dim formatted As String = digits
+        If digits.Length > 3 Then formatted = digits.Substring(0, 3) & "-" & digits.Substring(3)
+        If digits.Length > 6 Then formatted = formatted.Insert(7, "-")
+
+        If txtboxTIN.Text <> formatted Then
+            txtboxTIN.Text = formatted
+            txtboxTIN.SelectionStart = formatted.Length
+        End If
+    End Sub
+
+    Private Sub txtboxTIN_Validating(sender As Object, e As CancelEventArgs) Handles txtboxTIN.Validating
+        If Not Regex.IsMatch(txtboxTIN.Text, "^\d{3}-\d{3}-\d{3}$") Then
+            MessageBox.Show("TIN must be in the format: 123-123-123", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub txtboxPhilHealth_TextChanged(sender As Object, e As EventArgs) Handles txtboxPhilHealth.TextChanged
+        Dim digits = New String(txtboxPhilHealth.Text.Where(AddressOf Char.IsDigit).ToArray())
+
+        If digits.Length > 12 Then
+            MessageBox.Show("PhilHealth must be in the format: 01-123456789-1", "Invalid Format")
+            digits = digits.Substring(0, 12)
+        End If
+
+        Dim formatted As String = digits
+        If digits.Length > 2 Then formatted = digits.Substring(0, 2) & "-" & digits.Substring(2)
+        If digits.Length > 11 Then formatted = formatted.Insert(12, "-")
+
+        If txtboxPhilHealth.Text <> formatted Then
+            txtboxPhilHealth.Text = formatted
+            txtboxPhilHealth.SelectionStart = formatted.Length
+        End If
+    End Sub
+
+    Private Sub txtboxPhilHealth_Validating(sender As Object, e As CancelEventArgs) Handles txtboxPhilHealth.Validating
+        If Not Regex.IsMatch(txtboxPhilHealth.Text, "^\d{2}-\d{9}-\d{1}$") Then
+            MessageBox.Show("PhilHealth must be in the format: 01-123456789-1", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub txtboxHDMF_TextChanged(sender As Object, e As EventArgs) Handles txtboxHDMF.TextChanged
+        Dim digits = New String(txtboxHDMF.Text.Where(AddressOf Char.IsDigit).ToArray())
+
+        If digits.Length > 12 Then
+            MessageBox.Show("PAG-IBIG must be in the format: 1234-1234-1234", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            digits = digits.Substring(0, 12)
+        End If
+
+        Dim formatted As String = digits
+        If digits.Length > 4 Then formatted = digits.Substring(0, 4) & "-" & digits.Substring(4)
+        If digits.Length > 8 Then formatted = formatted.Insert(9, "-")
+
+        If txtboxHDMF.Text <> formatted Then
+            txtboxHDMF.Text = formatted
+            txtboxHDMF.SelectionStart = formatted.Length
+        End If
+    End Sub
+
+    Private Sub txtboxHDMF_Validating(sender As Object, e As CancelEventArgs) Handles txtboxHDMF.Validating
+        If Not Regex.IsMatch(txtboxHDMF.Text, "^\d{4}-\d{4}-\d{4}$") Then
+            MessageBox.Show("PAG-IBIG must be in the format: 1234-1234-1234", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub btnNextTab3_Click(sender As Object, e As EventArgs) Handles btnNextTab3.Click
+        TabControl1.SelectedTab = TabPageEmergencyContact
+    End Sub
+
+    Private Sub btnBackTab4_Click(sender As Object, e As EventArgs) Handles btnBackTab4.Click
+        TabControl1.SelectedTab = TabPageFamBackground
+    End Sub
+
+    Private Sub cbMedicalCategory_DropDown(sender As Object, e As EventArgs) Handles cbMedicalCategory.DropDown
+        DropDownListMedicalCategory(cbMedicalCategory)
+    End Sub
+
+    Private Sub cbMedicalCondition_DropDown(sender As Object, e As EventArgs) Handles cbMedicalCondition.DropDown
+        DropDownListMedicalCondition(cbMedicalCondition, cbMedicalCategory)
+    End Sub
+
+    Private Sub TabControl1_TabIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.TabIndexChanged
+        dgvParentsAndSiblings.ClearSelection()
+        dgvSpouseAndChildren.ClearSelection()
+    End Sub
+
+    Private Sub ContextMenuStripPS_Opening(sender As Object, e As CancelEventArgs) Handles ContextMenuStripPS.Opening
+        If Not isEdit Then e.Cancel = True ' <- This stops the context menu from showing
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
+        If dgvParentsAndSiblings.Rows.Count > 0 Then
+            Dim lastRow As DataGridViewRow = dgvParentsAndSiblings.Rows(dgvParentsAndSiblings.Rows.Count - 1)
+            If lastRow.Tag?.ToString() = "New" Then
+                dgvParentsAndSiblings.Rows.Remove(lastRow)
+            ElseIf dgvParentsAndSiblings.SelectedRows.Count > 0 Then
+                Del_Personnel_ParentsAndSiblings_ByID(dgvParentsAndSiblings)
+            End If
+            ClearTransactionFieldPS()
+        End If
+    End Sub
+
+    Private Sub ContextMenuStripSC_Opening(sender As Object, e As CancelEventArgs) Handles ContextMenuStripSC.Opening
+        If Not isEdit Then e.Cancel = True
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem1.Click
+        If dgvSpouseAndChildren.Rows.Count > 0 Then
+            Dim lastRow As DataGridViewRow = dgvSpouseAndChildren.Rows(dgvSpouseAndChildren.Rows.Count - 1)
+            If lastRow.Tag?.ToString() = "New" Then
+                dgvSpouseAndChildren.Rows.Remove(lastRow)
+            ElseIf dgvSpouseAndChildren.SelectedRows.Count > 0 Then
+                Del_Personnel_SpouseAndChildren_ByID(dgvSpouseAndChildren)
+            Else
+                MsgBox("Nothing to remove.")
+            End If
+            ClearTransactionFieldPS()
+        End If
+    End Sub
+
+    Private Sub cbAdrBarangay1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrBarangay1.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub txtMobileNoPS_Validating(sender As Object, e As CancelEventArgs) Handles txtMobileNoPS.Validating
+        MobileNumber_Color(txtMobileNoPS)
+    End Sub
+
+    Private Sub txtMobileNoSC_Validating(sender As Object, e As CancelEventArgs) Handles txtMobileNoSC.Validating
+        MobileNumber_Color(txtMobileNoSC)
+    End Sub
+
+    Private Sub dtpBirthDatePS_ValueChanged(sender As Object, e As EventArgs) Handles dtpBirthDatePS.ValueChanged
+
+    End Sub
 
 End Class

@@ -505,6 +505,7 @@ Partial Class frmHR_PreviewPersonnelDetails_EducationBackground
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(833, 613)
         Me.Controls.Add(Me.Panel1)
+        Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmHR_PreviewPersonnelDetails_EducationBackground"
         Me.ShowIcon = False

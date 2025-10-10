@@ -4,6 +4,18 @@
 
 	Public FilePath As String = ""
 
+	Public _EmployeeName As String
+	Public _EmployeeDepartment As String
+	Public _EmployeePosition As String
+	Public _EmployeeStatus As String
+	Public _StartDate As DateTime = Date.Now
+	Public _EndDate As DateTime = Date.Now
+	Public _ReviewDate As DateTime = Date.Now
+	Public _ProjectDesignation As String
+
+	Public hasInitialized As Boolean = False
+	Public isUpdate As Boolean = False
+
 	Public _strSameAsAddressValidation As Integer
 	Public isOperationDept As Integer
 	Public isInactive As Integer
@@ -16,6 +28,7 @@
 	Public _strShiftEmployeeID As Integer
 
 	Public _strCompanyID As Integer
+	Public _strParentDepartmentID As Integer
 	Public _strDepartmentID As Integer
 	Public _strJobTitleID As Integer
 	Public _strLeaveTypeID As Integer
@@ -26,7 +39,10 @@
 	Public _strPerformancePart1Form1ID As Integer
 	Public _strPerformancePart1Form2ID As Integer
 
+	Public _strPerformancePart2FormID As String
 	Public _strPerformancePart2FormAID As Integer
+	Public _strPerformancePart2FormBID As Integer
+	Public _strPerformancePart2FormCID As Integer
 
 	Public _TrainingListID As Integer
 	Public _TrainingBatchListID As Integer
@@ -61,15 +77,78 @@
 
 	Public _201FileID As Integer
 
-	Public _isEmpTechnical As Boolean = False
-	Public _EmployeeName As String
-	Public _EmployeeDepartment As String
-	Public _EmployeePosition As String
-	Public _StartDate As DateTime = Date.Now
-	Public _EndDate As DateTime = Date.Now
-	Public _ReviewDate As DateTime = Date.Now
-	Public _ProjectDesignation As String
+	Public _LeaveTypeID As Integer
+
 
 	''--->>> End of Module_HRIS <<<---
 
+	''--->>> Module_PCMS <<<---
+
+	Public BtnColorText As Button = Nothing
+
+	Public CurrentForm As Form
+	Public currentSubMenuForm As Form = Nothing
+	Public _strPayPeriodID As Integer
+	Public _strWorkdate As String = Nothing
+	Public _strEmployeeID As Integer
+	Public _strProjectChargeID As Integer = 0
+	Public strEmpIDforInsert As Integer
+	Public strEmployeeNumber As String
+	Public _strUserLevel As String = Nothing
+	Public _strProjectDeptID As Integer = 0
+	Public _strFiledDocs As String = Nothing
+	Public _strIsFlexiSched As Boolean
+	Public _strAttendanceFrom As String
+	Public _strAttendanceTo As String
+	Public _strTimeSheetID As Integer
+	Public _strTimeIn As String = Nothing
+
+	Public MenuAccessList As New List(Of String)
+	Public SubMenuAccessList As New List(Of String)
+
+	Public _SystemGroupID As Integer
+	Public _SystemUserID As Integer
+
+	Public _AllowInsert As Boolean = False
+	Public _AllowUpdate As Boolean = False
+	Public _AllowDelete As Boolean = False
+	Public _AllowView As Boolean = False
+	Public _AllowPrint As Boolean = False
+	Public _AllowPost As Boolean = False
+
+	''--->>> End of Module_PCMS <<<---
+
+	''--->>> Module_Accounting <<<---
+
+	Public _DepartmentChargingID1 As Integer
+	Public _DepartmentChargingID2 As Integer
+	Public _DepartmentChargingID3 As Integer = 0
+
+	Public _ProjectChargingID1 As Integer
+	Public _ProjectChargingID2 As Integer
+	Public _ProjectChargingID3 As Integer
+
+	Public _FiscalPeriodID As Integer
+
+	Public _CashFlowCategoryID As Integer
+	Public _CashFlowCategoryDetailID As Integer
+	Public _CashFlowCategorySubDetailID As Integer
+
+	Public _strCashFlowCategory As String
+	Public _strCashFlowCategoryDetail As String
+
+	Public _strCostCenterID As String
+
+	Public _AccountCategoryID As Integer
+	Public _AccountCategoryDetailID As Integer
+
+	Public _LevelID As Integer
+	Public _ChartLevel1ID As Integer
+	Public _ChartLevel2ID As Integer
+	Public _ChartLevel3ID As Integer
+
+	Public BankID As Integer
+	Public BankDetailID As Integer
+
+	''--->>> End of Module_Accounting <<<---
 End Module

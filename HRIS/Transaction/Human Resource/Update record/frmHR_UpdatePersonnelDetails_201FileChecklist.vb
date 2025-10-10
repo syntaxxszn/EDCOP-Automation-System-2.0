@@ -27,7 +27,7 @@
             Dim filePath = IO.Path.GetFullPath(selectedRow.Cells(6).Value.ToString())
 
             If selectedRow.Cells(5).Value = "" Then
-                MessageBox.Show("No file exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'MessageBox.Show("No file exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
             End If
 
@@ -57,18 +57,18 @@
     End Sub
 
     Private Sub SetToCompleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetToCompleteToolStripMenuItem.Click
-        If dgv201CheckList.SelectedRows.Count > 0 Then
-            With dgv201CheckList.SelectedRows(0).Cells(3)
-                If .Value?.ToString().Trim().ToLower() <> "no" Then
-                    .Value = "No"
-                    .Style.BackColor = Color.White
-                    .Style.ForeColor = Color.Black
-                    .Style.Font = dgv201CheckList.Font
-                    btnRemoveFile.PerformClick() ' Call to remove the file from the server
-                End If
-            End With
-            dgv201CheckList.ClearSelection()
-        End If
+        'If dgv201CheckList.SelectedRows.Count > 0 Then
+        '    With dgv201CheckList.SelectedRows(0).Cells(3)
+        '        If .Value?.ToString().Trim().ToLower() <> "no" Then
+        '            .Value = "No"
+        '            .Style.BackColor = Color.White
+        '            .Style.ForeColor = Color.Black
+        '            .Style.Font = dgv201CheckList.Font
+        '            btnRemoveFile.PerformClick() ' Call to remove the file from the server
+        '        End If
+        '    End With
+        '    dgv201CheckList.ClearSelection()
+        'End If
     End Sub
 
     Private Sub AddRemarksToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddRemarksToolStripMenuItem.Click
@@ -115,4 +115,55 @@
             End If
         End If
     End Sub
+
+    Private Sub dgv201CheckList_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv201CheckList.CellContentClick
+
+    End Sub
+
+    Private Sub CompleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CompleteToolStripMenuItem.Click
+
+        If dgv201CheckList.SelectedRows.Count > 0 Then
+            SetChecklistStatus(dgv201CheckList.SelectedRows(0), "Yes")
+            dgv201CheckList.ClearSelection()
+        End If
+
+    End Sub
+
+    Private Sub IncompleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IncompleteToolStripMenuItem.Click
+
+        If dgv201CheckList.SelectedRows.Count > 0 Then
+            SetChecklistStatus(dgv201CheckList.SelectedRows(0), "No")
+            dgv201CheckList.ClearSelection()
+        End If
+
+    End Sub
+
+    Private Sub SetChecklistStatus(row As DataGridViewRow, status As String)
+        Dim cell = row.Cells(3)
+        Dim current = cell.Value?.ToString().Trim().ToLower()
+
+        If current = status.ToLower() Then
+            Exit Sub
+        End If
+
+        Select Case status.ToLower()
+            Case "yes"
+                cell.Value = "Yes"
+                cell.Style.BackColor = Color.White
+                cell.Style.ForeColor = Color.DarkGreen
+                cell.Style.Font = dgv201CheckList.Font
+
+            Case "no"
+                cell.Value = "No"
+                cell.Style.BackColor = Color.White
+                cell.Style.ForeColor = Color.Black
+                cell.Style.Font = dgv201CheckList.Font
+
+                ' Remove the file if status is set to Incomplete
+                btnRemoveFile.PerformClick()
+        End Select
+
+
+    End Sub
+
 End Class

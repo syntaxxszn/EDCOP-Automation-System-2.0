@@ -1,7 +1,5 @@
 ﻿Public Class frmHRIS_TE_AddUpdateTraining_Master
 
-    Public isUpdate As Boolean = False
-
     Private Sub frmHRIS_TE_AddUpdateTraining_Master_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call TrainingCategoryDropDownList(cbTrainingCategory)
         Call TrainingNatureDropDownList(cbTrainingNature)
@@ -37,4 +35,5 @@
         Call ClearTextBoxes(Me)
         Call ResetComboBoxes(Me)
     End Sub
+
 End Class

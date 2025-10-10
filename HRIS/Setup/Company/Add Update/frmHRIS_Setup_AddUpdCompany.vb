@@ -1,7 +1,5 @@
 ﻿Public Class frmHRIS_Setup_AddUpdCompany
 
-    Public isUpdate As Boolean = False
-
     Private Sub frmHR_AddUpdCompany_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call DropDownListIndustryType(cbCompanyIndustry)
         Call DropDownListOrganizationType(cbCompanyOrganization)
@@ -28,6 +26,7 @@
 
     Private Sub frmHR_AddUpdCompany_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         isUpdate = False
+        ClearField()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSave.Click

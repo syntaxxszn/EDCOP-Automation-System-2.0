@@ -1,7 +1,5 @@
 ﻿Public Class frmHRIS_Setup_AddUpdApprovalHierarchy
 
-    Public isUpdate As Boolean = False
-
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         Call ClearTextBoxes(Me)
     End Sub

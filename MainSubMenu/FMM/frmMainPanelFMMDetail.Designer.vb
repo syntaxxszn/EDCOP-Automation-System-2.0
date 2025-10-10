@@ -25,26 +25,26 @@ Partial Class frmMainPanelFMMDetail
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMainPanelFMMDetail))
         Me.panelSubFMM_SetupDetails = New System.Windows.Forms.Panel()
-        Me.Button19 = New System.Windows.Forms.Button()
+        Me.btnAccountMapping = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.Button18 = New System.Windows.Forms.Button()
-        Me.Button17 = New System.Windows.Forms.Button()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.Button15 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button13 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnAccountBalances = New System.Windows.Forms.Button()
+        Me.btnVoucherStatus = New System.Windows.Forms.Button()
+        Me.btnApproverSetup = New System.Windows.Forms.Button()
+        Me.btnYearEndClosing = New System.Windows.Forms.Button()
+        Me.btnTransactionClosing = New System.Windows.Forms.Button()
+        Me.btnBeginningSubsidiaries = New System.Windows.Forms.Button()
+        Me.btnBeginningProject = New System.Windows.Forms.Button()
+        Me.btnItems = New System.Windows.Forms.Button()
+        Me.btnTaxRates = New System.Windows.Forms.Button()
+        Me.btnSupplier = New System.Windows.Forms.Button()
+        Me.btnSubsidiary = New System.Windows.Forms.Button()
+        Me.btnBankAccounts = New System.Windows.Forms.Button()
+        Me.btnChartOfAccounts = New System.Windows.Forms.Button()
+        Me.btnAccountCategory = New System.Windows.Forms.Button()
+        Me.btnCostCenter = New System.Windows.Forms.Button()
+        Me.btnCashFlowCategory = New System.Windows.Forms.Button()
+        Me.btnFiscalPeriod = New System.Windows.Forms.Button()
+        Me.btnCompany = New System.Windows.Forms.Button()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.panelSubFMM_ProjectStatusDetails = New System.Windows.Forms.Panel()
@@ -159,47 +159,48 @@ Partial Class frmMainPanelFMMDetail
         '
         'panelSubFMM_SetupDetails
         '
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button19)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button18)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button17)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button16)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button15)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button14)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button13)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button12)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button11)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button10)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button9)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button4)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button8)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button7)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button6)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button5)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button3)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button2)
-        Me.panelSubFMM_SetupDetails.Controls.Add(Me.Button1)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnAccountMapping)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnAccountBalances)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnVoucherStatus)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnApproverSetup)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnYearEndClosing)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnTransactionClosing)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnBeginningSubsidiaries)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnBeginningProject)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnItems)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnTaxRates)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnSupplier)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnSubsidiary)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnBankAccounts)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnChartOfAccounts)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnAccountCategory)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnCostCenter)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnCashFlowCategory)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnFiscalPeriod)
+        Me.panelSubFMM_SetupDetails.Controls.Add(Me.btnCompany)
         Me.panelSubFMM_SetupDetails.Controls.Add(Me.Panel10)
         Me.panelSubFMM_SetupDetails.Location = New System.Drawing.Point(12, 12)
         Me.panelSubFMM_SetupDetails.Name = "panelSubFMM_SetupDetails"
-        Me.panelSubFMM_SetupDetails.Size = New System.Drawing.Size(282, 707)
+        Me.panelSubFMM_SetupDetails.Size = New System.Drawing.Size(265, 707)
         Me.panelSubFMM_SetupDetails.TabIndex = 5
         '
-        'Button19
+        'btnAccountMapping
         '
-        Me.Button19.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button19.FlatAppearance.BorderSize = 0
-        Me.Button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button19.ImageIndex = 18
-        Me.Button19.ImageList = Me.ImageList1
-        Me.Button19.Location = New System.Drawing.Point(0, 664)
-        Me.Button19.Name = "Button19"
-        Me.Button19.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button19.Size = New System.Drawing.Size(282, 35)
-        Me.Button19.TabIndex = 23
-        Me.Button19.Text = "   Account Mapping"
-        Me.Button19.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button19.UseVisualStyleBackColor = True
+        Me.btnAccountMapping.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnAccountMapping.FlatAppearance.BorderSize = 0
+        Me.btnAccountMapping.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAccountMapping.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAccountMapping.ImageIndex = 18
+        Me.btnAccountMapping.ImageList = Me.ImageList1
+        Me.btnAccountMapping.Location = New System.Drawing.Point(0, 664)
+        Me.btnAccountMapping.Name = "btnAccountMapping"
+        Me.btnAccountMapping.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnAccountMapping.Size = New System.Drawing.Size(265, 35)
+        Me.btnAccountMapping.TabIndex = 23
+        Me.btnAccountMapping.Tag = "2100000019"
+        Me.btnAccountMapping.Text = "   Account Mapping"
+        Me.btnAccountMapping.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAccountMapping.UseVisualStyleBackColor = True
         '
         'ImageList1
         '
@@ -229,311 +230,329 @@ Partial Class frmMainPanelFMMDetail
         Me.ImageList1.Images.SetKeyName(21, "tknewfile.png")
         Me.ImageList1.Images.SetKeyName(22, "printer.png")
         '
-        'Button18
+        'btnAccountBalances
         '
-        Me.Button18.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button18.FlatAppearance.BorderSize = 0
-        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button18.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button18.ImageIndex = 17
-        Me.Button18.ImageList = Me.ImageList1
-        Me.Button18.Location = New System.Drawing.Point(0, 629)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button18.Size = New System.Drawing.Size(282, 35)
-        Me.Button18.TabIndex = 22
-        Me.Button18.Text = "   Account Balances"
-        Me.Button18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button18.UseVisualStyleBackColor = True
+        Me.btnAccountBalances.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnAccountBalances.FlatAppearance.BorderSize = 0
+        Me.btnAccountBalances.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAccountBalances.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAccountBalances.ImageIndex = 17
+        Me.btnAccountBalances.ImageList = Me.ImageList1
+        Me.btnAccountBalances.Location = New System.Drawing.Point(0, 629)
+        Me.btnAccountBalances.Name = "btnAccountBalances"
+        Me.btnAccountBalances.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnAccountBalances.Size = New System.Drawing.Size(265, 35)
+        Me.btnAccountBalances.TabIndex = 22
+        Me.btnAccountBalances.Tag = "2100000018"
+        Me.btnAccountBalances.Text = "   Account Balances"
+        Me.btnAccountBalances.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAccountBalances.UseVisualStyleBackColor = True
         '
-        'Button17
+        'btnVoucherStatus
         '
-        Me.Button17.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button17.FlatAppearance.BorderSize = 0
-        Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button17.ImageIndex = 16
-        Me.Button17.ImageList = Me.ImageList1
-        Me.Button17.Location = New System.Drawing.Point(0, 594)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button17.Size = New System.Drawing.Size(282, 35)
-        Me.Button17.TabIndex = 21
-        Me.Button17.Text = "   Voucher Status"
-        Me.Button17.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button17.UseVisualStyleBackColor = True
+        Me.btnVoucherStatus.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnVoucherStatus.FlatAppearance.BorderSize = 0
+        Me.btnVoucherStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVoucherStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnVoucherStatus.ImageIndex = 16
+        Me.btnVoucherStatus.ImageList = Me.ImageList1
+        Me.btnVoucherStatus.Location = New System.Drawing.Point(0, 594)
+        Me.btnVoucherStatus.Name = "btnVoucherStatus"
+        Me.btnVoucherStatus.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnVoucherStatus.Size = New System.Drawing.Size(265, 35)
+        Me.btnVoucherStatus.TabIndex = 21
+        Me.btnVoucherStatus.Tag = "2100000017"
+        Me.btnVoucherStatus.Text = "   Voucher Status"
+        Me.btnVoucherStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnVoucherStatus.UseVisualStyleBackColor = True
         '
-        'Button16
+        'btnApproverSetup
         '
-        Me.Button16.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button16.FlatAppearance.BorderSize = 0
-        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button16.ImageIndex = 15
-        Me.Button16.ImageList = Me.ImageList1
-        Me.Button16.Location = New System.Drawing.Point(0, 559)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button16.Size = New System.Drawing.Size(282, 35)
-        Me.Button16.TabIndex = 20
-        Me.Button16.Text = "   Approver Setup"
-        Me.Button16.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button16.UseVisualStyleBackColor = True
+        Me.btnApproverSetup.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnApproverSetup.FlatAppearance.BorderSize = 0
+        Me.btnApproverSetup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnApproverSetup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnApproverSetup.ImageIndex = 15
+        Me.btnApproverSetup.ImageList = Me.ImageList1
+        Me.btnApproverSetup.Location = New System.Drawing.Point(0, 559)
+        Me.btnApproverSetup.Name = "btnApproverSetup"
+        Me.btnApproverSetup.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnApproverSetup.Size = New System.Drawing.Size(265, 35)
+        Me.btnApproverSetup.TabIndex = 20
+        Me.btnApproverSetup.Tag = "2100000016"
+        Me.btnApproverSetup.Text = "   Approver Setup"
+        Me.btnApproverSetup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnApproverSetup.UseVisualStyleBackColor = True
         '
-        'Button15
+        'btnYearEndClosing
         '
-        Me.Button15.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button15.FlatAppearance.BorderSize = 0
-        Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button15.ImageIndex = 14
-        Me.Button15.ImageList = Me.ImageList1
-        Me.Button15.Location = New System.Drawing.Point(0, 524)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button15.Size = New System.Drawing.Size(282, 35)
-        Me.Button15.TabIndex = 19
-        Me.Button15.Text = "   Year End Closing"
-        Me.Button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button15.UseVisualStyleBackColor = True
+        Me.btnYearEndClosing.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnYearEndClosing.FlatAppearance.BorderSize = 0
+        Me.btnYearEndClosing.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnYearEndClosing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnYearEndClosing.ImageIndex = 14
+        Me.btnYearEndClosing.ImageList = Me.ImageList1
+        Me.btnYearEndClosing.Location = New System.Drawing.Point(0, 524)
+        Me.btnYearEndClosing.Name = "btnYearEndClosing"
+        Me.btnYearEndClosing.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnYearEndClosing.Size = New System.Drawing.Size(265, 35)
+        Me.btnYearEndClosing.TabIndex = 19
+        Me.btnYearEndClosing.Tag = "2100000015"
+        Me.btnYearEndClosing.Text = "   Year End Closing"
+        Me.btnYearEndClosing.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnYearEndClosing.UseVisualStyleBackColor = True
         '
-        'Button14
+        'btnTransactionClosing
         '
-        Me.Button14.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button14.FlatAppearance.BorderSize = 0
-        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button14.ImageIndex = 13
-        Me.Button14.ImageList = Me.ImageList1
-        Me.Button14.Location = New System.Drawing.Point(0, 489)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button14.Size = New System.Drawing.Size(282, 35)
-        Me.Button14.TabIndex = 18
-        Me.Button14.Text = "   Transaction Closing"
-        Me.Button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button14.UseVisualStyleBackColor = True
+        Me.btnTransactionClosing.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnTransactionClosing.FlatAppearance.BorderSize = 0
+        Me.btnTransactionClosing.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTransactionClosing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTransactionClosing.ImageIndex = 13
+        Me.btnTransactionClosing.ImageList = Me.ImageList1
+        Me.btnTransactionClosing.Location = New System.Drawing.Point(0, 489)
+        Me.btnTransactionClosing.Name = "btnTransactionClosing"
+        Me.btnTransactionClosing.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnTransactionClosing.Size = New System.Drawing.Size(265, 35)
+        Me.btnTransactionClosing.TabIndex = 18
+        Me.btnTransactionClosing.Tag = "2100000014"
+        Me.btnTransactionClosing.Text = "   Transaction Closing"
+        Me.btnTransactionClosing.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnTransactionClosing.UseVisualStyleBackColor = True
         '
-        'Button13
+        'btnBeginningSubsidiaries
         '
-        Me.Button13.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button13.FlatAppearance.BorderSize = 0
-        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button13.ImageIndex = 12
-        Me.Button13.ImageList = Me.ImageList1
-        Me.Button13.Location = New System.Drawing.Point(0, 454)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button13.Size = New System.Drawing.Size(282, 35)
-        Me.Button13.TabIndex = 17
-        Me.Button13.Text = "   Beginning Subsidiaries"
-        Me.Button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button13.UseVisualStyleBackColor = True
+        Me.btnBeginningSubsidiaries.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnBeginningSubsidiaries.FlatAppearance.BorderSize = 0
+        Me.btnBeginningSubsidiaries.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBeginningSubsidiaries.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBeginningSubsidiaries.ImageIndex = 12
+        Me.btnBeginningSubsidiaries.ImageList = Me.ImageList1
+        Me.btnBeginningSubsidiaries.Location = New System.Drawing.Point(0, 454)
+        Me.btnBeginningSubsidiaries.Name = "btnBeginningSubsidiaries"
+        Me.btnBeginningSubsidiaries.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnBeginningSubsidiaries.Size = New System.Drawing.Size(265, 35)
+        Me.btnBeginningSubsidiaries.TabIndex = 17
+        Me.btnBeginningSubsidiaries.Tag = "2100000013"
+        Me.btnBeginningSubsidiaries.Text = "   Beginning Subsidiaries"
+        Me.btnBeginningSubsidiaries.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBeginningSubsidiaries.UseVisualStyleBackColor = True
         '
-        'Button12
+        'btnBeginningProject
         '
-        Me.Button12.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button12.FlatAppearance.BorderSize = 0
-        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button12.ImageIndex = 11
-        Me.Button12.ImageList = Me.ImageList1
-        Me.Button12.Location = New System.Drawing.Point(0, 419)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button12.Size = New System.Drawing.Size(282, 35)
-        Me.Button12.TabIndex = 16
-        Me.Button12.Text = "   Beginning Project"
-        Me.Button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button12.UseVisualStyleBackColor = True
+        Me.btnBeginningProject.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnBeginningProject.FlatAppearance.BorderSize = 0
+        Me.btnBeginningProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBeginningProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBeginningProject.ImageIndex = 11
+        Me.btnBeginningProject.ImageList = Me.ImageList1
+        Me.btnBeginningProject.Location = New System.Drawing.Point(0, 419)
+        Me.btnBeginningProject.Name = "btnBeginningProject"
+        Me.btnBeginningProject.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnBeginningProject.Size = New System.Drawing.Size(265, 35)
+        Me.btnBeginningProject.TabIndex = 16
+        Me.btnBeginningProject.Tag = "2100000012"
+        Me.btnBeginningProject.Text = "   Beginning Project"
+        Me.btnBeginningProject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBeginningProject.UseVisualStyleBackColor = True
         '
-        'Button11
+        'btnItems
         '
-        Me.Button11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button11.FlatAppearance.BorderSize = 0
-        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button11.ImageIndex = 10
-        Me.Button11.ImageList = Me.ImageList1
-        Me.Button11.Location = New System.Drawing.Point(0, 384)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button11.Size = New System.Drawing.Size(282, 35)
-        Me.Button11.TabIndex = 15
-        Me.Button11.Text = "   Items"
-        Me.Button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button11.UseVisualStyleBackColor = True
+        Me.btnItems.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnItems.FlatAppearance.BorderSize = 0
+        Me.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnItems.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnItems.ImageIndex = 10
+        Me.btnItems.ImageList = Me.ImageList1
+        Me.btnItems.Location = New System.Drawing.Point(0, 384)
+        Me.btnItems.Name = "btnItems"
+        Me.btnItems.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnItems.Size = New System.Drawing.Size(265, 35)
+        Me.btnItems.TabIndex = 15
+        Me.btnItems.Tag = "2100000011"
+        Me.btnItems.Text = "   Items"
+        Me.btnItems.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnItems.UseVisualStyleBackColor = True
         '
-        'Button10
+        'btnTaxRates
         '
-        Me.Button10.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button10.FlatAppearance.BorderSize = 0
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button10.ImageIndex = 9
-        Me.Button10.ImageList = Me.ImageList1
-        Me.Button10.Location = New System.Drawing.Point(0, 349)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button10.Size = New System.Drawing.Size(282, 35)
-        Me.Button10.TabIndex = 14
-        Me.Button10.Text = "   Tax Rates"
-        Me.Button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button10.UseVisualStyleBackColor = True
+        Me.btnTaxRates.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnTaxRates.FlatAppearance.BorderSize = 0
+        Me.btnTaxRates.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTaxRates.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTaxRates.ImageIndex = 9
+        Me.btnTaxRates.ImageList = Me.ImageList1
+        Me.btnTaxRates.Location = New System.Drawing.Point(0, 349)
+        Me.btnTaxRates.Name = "btnTaxRates"
+        Me.btnTaxRates.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnTaxRates.Size = New System.Drawing.Size(265, 35)
+        Me.btnTaxRates.TabIndex = 14
+        Me.btnTaxRates.Tag = "2100000010"
+        Me.btnTaxRates.Text = "   Tax Rates"
+        Me.btnTaxRates.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnTaxRates.UseVisualStyleBackColor = True
         '
-        'Button9
+        'btnSupplier
         '
-        Me.Button9.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button9.FlatAppearance.BorderSize = 0
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button9.ImageIndex = 8
-        Me.Button9.ImageList = Me.ImageList1
-        Me.Button9.Location = New System.Drawing.Point(0, 314)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button9.Size = New System.Drawing.Size(282, 35)
-        Me.Button9.TabIndex = 13
-        Me.Button9.Text = "   Supplier"
-        Me.Button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button9.UseVisualStyleBackColor = True
+        Me.btnSupplier.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSupplier.FlatAppearance.BorderSize = 0
+        Me.btnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSupplier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSupplier.ImageIndex = 8
+        Me.btnSupplier.ImageList = Me.ImageList1
+        Me.btnSupplier.Location = New System.Drawing.Point(0, 314)
+        Me.btnSupplier.Name = "btnSupplier"
+        Me.btnSupplier.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnSupplier.Size = New System.Drawing.Size(265, 35)
+        Me.btnSupplier.TabIndex = 13
+        Me.btnSupplier.Tag = "2100000009"
+        Me.btnSupplier.Text = "   Supplier"
+        Me.btnSupplier.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSupplier.UseVisualStyleBackColor = True
         '
-        'Button4
+        'btnSubsidiary
         '
-        Me.Button4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button4.ImageIndex = 7
-        Me.Button4.ImageList = Me.ImageList1
-        Me.Button4.Location = New System.Drawing.Point(0, 279)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button4.Size = New System.Drawing.Size(282, 35)
-        Me.Button4.TabIndex = 12
-        Me.Button4.Text = "   Subisidiary"
-        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.btnSubsidiary.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSubsidiary.FlatAppearance.BorderSize = 0
+        Me.btnSubsidiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSubsidiary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSubsidiary.ImageIndex = 7
+        Me.btnSubsidiary.ImageList = Me.ImageList1
+        Me.btnSubsidiary.Location = New System.Drawing.Point(0, 279)
+        Me.btnSubsidiary.Name = "btnSubsidiary"
+        Me.btnSubsidiary.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnSubsidiary.Size = New System.Drawing.Size(265, 35)
+        Me.btnSubsidiary.TabIndex = 12
+        Me.btnSubsidiary.Tag = "2100000008"
+        Me.btnSubsidiary.Text = "   Subsidiary"
+        Me.btnSubsidiary.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSubsidiary.UseVisualStyleBackColor = True
         '
-        'Button8
+        'btnBankAccounts
         '
-        Me.Button8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button8.FlatAppearance.BorderSize = 0
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button8.ImageIndex = 6
-        Me.Button8.ImageList = Me.ImageList1
-        Me.Button8.Location = New System.Drawing.Point(0, 244)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button8.Size = New System.Drawing.Size(282, 35)
-        Me.Button8.TabIndex = 11
-        Me.Button8.Text = "   Bank Accounts"
-        Me.Button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button8.UseVisualStyleBackColor = True
+        Me.btnBankAccounts.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnBankAccounts.FlatAppearance.BorderSize = 0
+        Me.btnBankAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBankAccounts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBankAccounts.ImageIndex = 6
+        Me.btnBankAccounts.ImageList = Me.ImageList1
+        Me.btnBankAccounts.Location = New System.Drawing.Point(0, 244)
+        Me.btnBankAccounts.Name = "btnBankAccounts"
+        Me.btnBankAccounts.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnBankAccounts.Size = New System.Drawing.Size(265, 35)
+        Me.btnBankAccounts.TabIndex = 11
+        Me.btnBankAccounts.Tag = "2100000007"
+        Me.btnBankAccounts.Text = "   Bank Accounts"
+        Me.btnBankAccounts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBankAccounts.UseVisualStyleBackColor = True
         '
-        'Button7
+        'btnChartOfAccounts
         '
-        Me.Button7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button7.FlatAppearance.BorderSize = 0
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.ImageIndex = 5
-        Me.Button7.ImageList = Me.ImageList1
-        Me.Button7.Location = New System.Drawing.Point(0, 209)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button7.Size = New System.Drawing.Size(282, 35)
-        Me.Button7.TabIndex = 10
-        Me.Button7.Text = "   Chart of Accounts"
-        Me.Button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.btnChartOfAccounts.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnChartOfAccounts.FlatAppearance.BorderSize = 0
+        Me.btnChartOfAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnChartOfAccounts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnChartOfAccounts.ImageIndex = 5
+        Me.btnChartOfAccounts.ImageList = Me.ImageList1
+        Me.btnChartOfAccounts.Location = New System.Drawing.Point(0, 209)
+        Me.btnChartOfAccounts.Name = "btnChartOfAccounts"
+        Me.btnChartOfAccounts.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnChartOfAccounts.Size = New System.Drawing.Size(265, 35)
+        Me.btnChartOfAccounts.TabIndex = 10
+        Me.btnChartOfAccounts.Tag = "2100000006"
+        Me.btnChartOfAccounts.Text = "   Chart of Accounts"
+        Me.btnChartOfAccounts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnChartOfAccounts.UseVisualStyleBackColor = True
         '
-        'Button6
+        'btnAccountCategory
         '
-        Me.Button6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button6.FlatAppearance.BorderSize = 0
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.ImageIndex = 4
-        Me.Button6.ImageList = Me.ImageList1
-        Me.Button6.Location = New System.Drawing.Point(0, 174)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button6.Size = New System.Drawing.Size(282, 35)
-        Me.Button6.TabIndex = 9
-        Me.Button6.Text = "   Account Category"
-        Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.btnAccountCategory.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnAccountCategory.FlatAppearance.BorderSize = 0
+        Me.btnAccountCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAccountCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAccountCategory.ImageIndex = 4
+        Me.btnAccountCategory.ImageList = Me.ImageList1
+        Me.btnAccountCategory.Location = New System.Drawing.Point(0, 174)
+        Me.btnAccountCategory.Name = "btnAccountCategory"
+        Me.btnAccountCategory.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnAccountCategory.Size = New System.Drawing.Size(265, 35)
+        Me.btnAccountCategory.TabIndex = 9
+        Me.btnAccountCategory.Tag = "2100000005"
+        Me.btnAccountCategory.Text = "   Account Category"
+        Me.btnAccountCategory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAccountCategory.UseVisualStyleBackColor = True
         '
-        'Button5
+        'btnCostCenter
         '
-        Me.Button5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.ImageIndex = 3
-        Me.Button5.ImageList = Me.ImageList1
-        Me.Button5.Location = New System.Drawing.Point(0, 139)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button5.Size = New System.Drawing.Size(282, 35)
-        Me.Button5.TabIndex = 8
-        Me.Button5.Text = "   Cost Center"
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btnCostCenter.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCostCenter.FlatAppearance.BorderSize = 0
+        Me.btnCostCenter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCostCenter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCostCenter.ImageIndex = 3
+        Me.btnCostCenter.ImageList = Me.ImageList1
+        Me.btnCostCenter.Location = New System.Drawing.Point(0, 139)
+        Me.btnCostCenter.Name = "btnCostCenter"
+        Me.btnCostCenter.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnCostCenter.Size = New System.Drawing.Size(265, 35)
+        Me.btnCostCenter.TabIndex = 8
+        Me.btnCostCenter.Tag = "2100000004"
+        Me.btnCostCenter.Text = "   Cost Center"
+        Me.btnCostCenter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCostCenter.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnCashFlowCategory
         '
-        Me.Button3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.ImageIndex = 2
-        Me.Button3.ImageList = Me.ImageList1
-        Me.Button3.Location = New System.Drawing.Point(0, 104)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button3.Size = New System.Drawing.Size(282, 35)
-        Me.Button3.TabIndex = 7
-        Me.Button3.Text = "   Cash Flow Category"
-        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnCashFlowCategory.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCashFlowCategory.FlatAppearance.BorderSize = 0
+        Me.btnCashFlowCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCashFlowCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCashFlowCategory.ImageIndex = 2
+        Me.btnCashFlowCategory.ImageList = Me.ImageList1
+        Me.btnCashFlowCategory.Location = New System.Drawing.Point(0, 104)
+        Me.btnCashFlowCategory.Name = "btnCashFlowCategory"
+        Me.btnCashFlowCategory.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnCashFlowCategory.Size = New System.Drawing.Size(265, 35)
+        Me.btnCashFlowCategory.TabIndex = 7
+        Me.btnCashFlowCategory.Tag = "2100000003"
+        Me.btnCashFlowCategory.Text = "   Cash Flow Category"
+        Me.btnCashFlowCategory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCashFlowCategory.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnFiscalPeriod
         '
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.ImageIndex = 1
-        Me.Button2.ImageList = Me.ImageList1
-        Me.Button2.Location = New System.Drawing.Point(0, 69)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button2.Size = New System.Drawing.Size(282, 35)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "   Fiscal Period"
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnFiscalPeriod.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnFiscalPeriod.FlatAppearance.BorderSize = 0
+        Me.btnFiscalPeriod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFiscalPeriod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnFiscalPeriod.ImageIndex = 1
+        Me.btnFiscalPeriod.ImageList = Me.ImageList1
+        Me.btnFiscalPeriod.Location = New System.Drawing.Point(0, 69)
+        Me.btnFiscalPeriod.Name = "btnFiscalPeriod"
+        Me.btnFiscalPeriod.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnFiscalPeriod.Size = New System.Drawing.Size(265, 35)
+        Me.btnFiscalPeriod.TabIndex = 6
+        Me.btnFiscalPeriod.Tag = "2100000002"
+        Me.btnFiscalPeriod.Text = "   Fiscal Period"
+        Me.btnFiscalPeriod.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnFiscalPeriod.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnCompany
         '
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.ImageIndex = 0
-        Me.Button1.ImageList = Me.ImageList1
-        Me.Button1.Location = New System.Drawing.Point(0, 34)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button1.Size = New System.Drawing.Size(282, 35)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "   Company"
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnCompany.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCompany.FlatAppearance.BorderSize = 0
+        Me.btnCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCompany.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCompany.ImageIndex = 0
+        Me.btnCompany.ImageList = Me.ImageList1
+        Me.btnCompany.Location = New System.Drawing.Point(0, 34)
+        Me.btnCompany.Name = "btnCompany"
+        Me.btnCompany.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnCompany.Size = New System.Drawing.Size(265, 35)
+        Me.btnCompany.TabIndex = 5
+        Me.btnCompany.Tag = "2100000001"
+        Me.btnCompany.Text = "   Company"
+        Me.btnCompany.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCompany.UseVisualStyleBackColor = True
         '
         'Panel10
         '
@@ -541,7 +560,7 @@ Partial Class frmMainPanelFMMDetail
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(282, 34)
+        Me.Panel10.Size = New System.Drawing.Size(265, 34)
         Me.Panel10.TabIndex = 1
         '
         'Label5
@@ -1908,28 +1927,28 @@ Partial Class frmMainPanelFMMDetail
     End Sub
 
     Friend WithEvents panelSubFMM_SetupDetails As Panel
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnBankAccounts As Button
+    Friend WithEvents btnChartOfAccounts As Button
+    Friend WithEvents btnAccountCategory As Button
+    Friend WithEvents btnCostCenter As Button
+    Friend WithEvents btnCashFlowCategory As Button
+    Friend WithEvents btnFiscalPeriod As Button
+    Friend WithEvents btnCompany As Button
     Friend WithEvents Panel10 As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents ImageList1 As ImageList
-    Friend WithEvents Button15 As Button
-    Friend WithEvents Button14 As Button
-    Friend WithEvents Button13 As Button
-    Friend WithEvents Button12 As Button
-    Friend WithEvents Button11 As Button
-    Friend WithEvents Button10 As Button
-    Friend WithEvents Button9 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button19 As Button
-    Friend WithEvents Button18 As Button
-    Friend WithEvents Button17 As Button
-    Friend WithEvents Button16 As Button
+    Friend WithEvents btnYearEndClosing As Button
+    Friend WithEvents btnTransactionClosing As Button
+    Friend WithEvents btnBeginningSubsidiaries As Button
+    Friend WithEvents btnBeginningProject As Button
+    Friend WithEvents btnItems As Button
+    Friend WithEvents btnTaxRates As Button
+    Friend WithEvents btnSupplier As Button
+    Friend WithEvents btnSubsidiary As Button
+    Friend WithEvents btnAccountMapping As Button
+    Friend WithEvents btnAccountBalances As Button
+    Friend WithEvents btnVoucherStatus As Button
+    Friend WithEvents btnApproverSetup As Button
     Friend WithEvents panelSubFMM_ProjectStatusDetails As Panel
     Friend WithEvents Button20 As Button
     Friend WithEvents Button35 As Button

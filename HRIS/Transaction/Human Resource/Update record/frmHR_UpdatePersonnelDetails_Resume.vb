@@ -66,4 +66,8 @@
     Private Sub frmHR_UpdatePersonnelDetails_Resume_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         wbResume.DocumentText = ""
     End Sub
+
+    Private Sub dgvResume_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvResume.CellContentClick
+
+    End Sub
 End Class

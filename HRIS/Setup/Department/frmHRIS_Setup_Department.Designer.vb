@@ -25,14 +25,16 @@ Partial Class frmHRIS_Setup_Department
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHRIS_Setup_Department))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
@@ -63,25 +65,31 @@ Partial Class frmHRIS_Setup_Department
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.dgvDepartmentList = New System.Windows.Forms.DataGridView()
-        Me.ShiftID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
+        Me.Panel39 = New System.Windows.Forms.Panel()
+        Me.dgvMainDepartment = New System.Windows.Forms.DataGridView()
+        Me.Panel38 = New System.Windows.Forms.Panel()
+        Me.Panel37 = New System.Windows.Forms.Panel()
+        Me.Panel36 = New System.Windows.Forms.Panel()
+        Me.Panel35 = New System.Windows.Forms.Panel()
+        Me.Panel34 = New System.Windows.Forms.Panel()
+        Me.Panel33 = New System.Windows.Forms.Panel()
         Me.Panel31 = New System.Windows.Forms.Panel()
+        Me.Panel25 = New System.Windows.Forms.Panel()
+        Me.dgvDivisionHistory = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.lblDivisionListName = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel24 = New System.Windows.Forms.Panel()
+        Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.Panel22 = New System.Windows.Forms.Panel()
         Me.Panel19 = New System.Windows.Forms.Panel()
+        Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Panel22 = New System.Windows.Forms.Panel()
-        Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.Panel24 = New System.Windows.Forms.Panel()
-        Me.Panel25 = New System.Windows.Forms.Panel()
+        Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Panel32 = New System.Windows.Forms.Panel()
         Me.dgvEmployeeList = New System.Windows.Forms.DataGridView()
@@ -91,9 +99,8 @@ Partial Class frmHRIS_Setup_Department
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel33 = New System.Windows.Forms.Panel()
         Me.Panel30 = New System.Windows.Forms.Panel()
-        Me.lblDepartmentName = New System.Windows.Forms.Label()
+        Me.lblEmployeeName = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel29 = New System.Windows.Forms.Panel()
         Me.Panel28 = New System.Windows.Forms.Panel()
@@ -104,6 +111,15 @@ Partial Class frmHRIS_Setup_Department
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -113,9 +129,14 @@ Partial Class frmHRIS_Setup_Department
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        Me.Panel13.SuspendLayout()
-        Me.Panel16.SuspendLayout()
-        CType(Me.dgvDepartmentList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer2.Panel1.SuspendLayout()
+        Me.SplitContainer2.Panel2.SuspendLayout()
+        Me.SplitContainer2.SuspendLayout()
+        Me.Panel39.SuspendLayout()
+        CType(Me.dgvMainDepartment, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvDivisionHistory, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel12.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Panel32.SuspendLayout()
         CType(Me.dgvEmployeeList, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -233,7 +254,7 @@ Partial Class frmHRIS_Setup_Department
         Me.btnSearchFilter.Name = "btnSearchFilter"
         Me.btnSearchFilter.Size = New System.Drawing.Size(137, 23)
         Me.btnSearchFilter.TabIndex = 52
-        Me.btnSearchFilter.Text = "Department"
+        Me.btnSearchFilter.Text = "Division"
         Me.btnSearchFilter.UseVisualStyleBackColor = False
         '
         'Label2
@@ -341,8 +362,8 @@ Partial Class frmHRIS_Setup_Department
         Me.toolstriplabelNoOfRecord.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.toolstriplabelNoOfRecord.ForeColor = System.Drawing.Color.Gold
         Me.toolstriplabelNoOfRecord.Name = "toolstriplabelNoOfRecord"
-        Me.toolstriplabelNoOfRecord.Size = New System.Drawing.Size(150, 22)
-        Me.toolstriplabelNoOfRecord.Text = "toolstriplabelNoOfRecord"
+        Me.toolstriplabelNoOfRecord.Size = New System.Drawing.Size(14, 22)
+        Me.toolstriplabelNoOfRecord.Text = "0"
         '
         'ToolStripLabel4
         '
@@ -413,198 +434,150 @@ Partial Class frmHRIS_Setup_Department
         '
         'SplitContainer1.Panel1
         '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Panel13)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.SplitContainer2)
         '
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel11)
         Me.SplitContainer1.Panel2.Font = New System.Drawing.Font("Segoe UI", 8.75!)
         Me.SplitContainer1.Size = New System.Drawing.Size(1050, 457)
-        Me.SplitContainer1.SplitterDistance = 223
+        Me.SplitContainer1.SplitterDistance = 266
         Me.SplitContainer1.TabIndex = 85
         '
-        'Panel13
+        'SplitContainer2
         '
-        Me.Panel13.Controls.Add(Me.Panel16)
-        Me.Panel13.Controls.Add(Me.Panel19)
-        Me.Panel13.Controls.Add(Me.Panel15)
-        Me.Panel13.Controls.Add(Me.Panel14)
-        Me.Panel13.Controls.Add(Me.Panel12)
-        Me.Panel13.Controls.Add(Me.Panel22)
-        Me.Panel13.Controls.Add(Me.Panel23)
-        Me.Panel13.Controls.Add(Me.Panel24)
-        Me.Panel13.Controls.Add(Me.Panel25)
-        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel13.Font = New System.Drawing.Font("Segoe UI", 8.75!)
-        Me.Panel13.Location = New System.Drawing.Point(0, 0)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(1050, 223)
-        Me.Panel13.TabIndex = 73
+        Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer2.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer2.Name = "SplitContainer2"
+        Me.SplitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
-        'Panel16
+        'SplitContainer2.Panel1
         '
-        Me.Panel16.BackColor = System.Drawing.Color.White
-        Me.Panel16.Controls.Add(Me.dgvDepartmentList)
-        Me.Panel16.Controls.Add(Me.Panel31)
-        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel16.Location = New System.Drawing.Point(10, 10)
-        Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(1030, 203)
-        Me.Panel16.TabIndex = 15
+        Me.SplitContainer2.Panel1.Controls.Add(Me.Panel39)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.Panel38)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.Panel37)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.Panel36)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.Panel35)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.Panel34)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.Panel33)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.Panel31)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.Panel25)
         '
-        'dgvDepartmentList
+        'SplitContainer2.Panel2
         '
-        Me.dgvDepartmentList.AllowUserToAddRows = False
-        Me.dgvDepartmentList.AllowUserToDeleteRows = False
-        Me.dgvDepartmentList.AllowUserToResizeColumns = False
-        Me.dgvDepartmentList.AllowUserToResizeRows = False
-        Me.dgvDepartmentList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgvDepartmentList.BackgroundColor = System.Drawing.Color.White
-        Me.dgvDepartmentList.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.SplitContainer2.Panel2.Controls.Add(Me.dgvDivisionHistory)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.Panel12)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.Panel24)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.Panel23)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.Panel22)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.Panel19)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.Panel16)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.Panel15)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.Panel14)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.Panel13)
+        Me.SplitContainer2.Size = New System.Drawing.Size(1050, 266)
+        Me.SplitContainer2.SplitterDistance = 128
+        Me.SplitContainer2.TabIndex = 0
+        '
+        'Panel39
+        '
+        Me.Panel39.Controls.Add(Me.dgvMainDepartment)
+        Me.Panel39.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel39.Location = New System.Drawing.Point(10, 10)
+        Me.Panel39.Name = "Panel39"
+        Me.Panel39.Size = New System.Drawing.Size(1030, 108)
+        Me.Panel39.TabIndex = 20
+        '
+        'dgvMainDepartment
+        '
+        Me.dgvMainDepartment.AllowUserToAddRows = False
+        Me.dgvMainDepartment.AllowUserToDeleteRows = False
+        Me.dgvMainDepartment.AllowUserToResizeColumns = False
+        Me.dgvMainDepartment.AllowUserToResizeRows = False
+        Me.dgvMainDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.dgvMainDepartment.BackgroundColor = System.Drawing.Color.White
+        Me.dgvMainDepartment.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.75!)
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvDepartmentList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvDepartmentList.ColumnHeadersHeight = 35
-        Me.dgvDepartmentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvDepartmentList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ShiftID, Me.Column1, Me.Column2, Me.Column4, Me.Column5, Me.Column6, Me.Column7})
-        Me.dgvDepartmentList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvDepartmentList.Location = New System.Drawing.Point(0, 0)
-        Me.dgvDepartmentList.MultiSelect = False
-        Me.dgvDepartmentList.Name = "dgvDepartmentList"
-        Me.dgvDepartmentList.ReadOnly = True
-        Me.dgvDepartmentList.RowHeadersVisible = False
-        Me.dgvDepartmentList.RowTemplate.Height = 30
-        Me.dgvDepartmentList.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvDepartmentList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvDepartmentList.Size = New System.Drawing.Size(617, 203)
-        Me.dgvDepartmentList.TabIndex = 5
+        Me.dgvMainDepartment.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvMainDepartment.ColumnHeadersHeight = 35
+        Me.dgvMainDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvMainDepartment.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.Column13, Me.Column12, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn5})
+        Me.dgvMainDepartment.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvMainDepartment.Location = New System.Drawing.Point(0, 0)
+        Me.dgvMainDepartment.MultiSelect = False
+        Me.dgvMainDepartment.Name = "dgvMainDepartment"
+        Me.dgvMainDepartment.ReadOnly = True
+        Me.dgvMainDepartment.RowHeadersVisible = False
+        Me.dgvMainDepartment.RowTemplate.Height = 30
+        Me.dgvMainDepartment.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvMainDepartment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvMainDepartment.Size = New System.Drawing.Size(1030, 108)
+        Me.dgvMainDepartment.TabIndex = 6
         '
-        'ShiftID
+        'Panel38
         '
-        Me.ShiftID.HeaderText = "ID"
-        Me.ShiftID.Name = "ShiftID"
-        Me.ShiftID.ReadOnly = True
-        Me.ShiftID.Visible = False
+        Me.Panel38.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel38.Location = New System.Drawing.Point(10, 118)
+        Me.Panel38.Name = "Panel38"
+        Me.Panel38.Size = New System.Drawing.Size(1030, 5)
+        Me.Panel38.TabIndex = 19
         '
-        'Column1
+        'Panel37
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Column1.FillWeight = 48.61903!
-        Me.Column1.HeaderText = "Code"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
+        Me.Panel37.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel37.Location = New System.Drawing.Point(1040, 10)
+        Me.Panel37.Name = "Panel37"
+        Me.Panel37.Size = New System.Drawing.Size(5, 113)
+        Me.Panel37.TabIndex = 18
         '
-        'Column2
+        'Panel36
         '
-        Me.Column2.FillWeight = 163.2659!
-        Me.Column2.HeaderText = "Department Name"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
+        Me.Panel36.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel36.Location = New System.Drawing.Point(5, 10)
+        Me.Panel36.Name = "Panel36"
+        Me.Panel36.Size = New System.Drawing.Size(5, 113)
+        Me.Panel36.TabIndex = 16
         '
-        'Column4
+        'Panel35
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column4.FillWeight = 45.68528!
-        Me.Column4.HeaderText = "Active ?"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
+        Me.Panel35.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel35.Location = New System.Drawing.Point(5, 5)
+        Me.Panel35.Name = "Panel35"
+        Me.Panel35.Size = New System.Drawing.Size(1040, 5)
+        Me.Panel35.TabIndex = 15
         '
-        'Column5
+        'Panel34
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Column5.FillWeight = 75.28288!
-        Me.Column5.HeaderText = "Resource Count"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
+        Me.Panel34.BackColor = System.Drawing.Color.LightGray
+        Me.Panel34.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel34.Location = New System.Drawing.Point(1045, 5)
+        Me.Panel34.Name = "Panel34"
+        Me.Panel34.Size = New System.Drawing.Size(5, 118)
+        Me.Panel34.TabIndex = 14
         '
-        'Column6
+        'Panel33
         '
-        Me.Column6.FillWeight = 163.2659!
-        Me.Column6.HeaderText = "In - Charge"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        '
-        'Column7
-        '
-        Me.Column7.FillWeight = 103.8809!
-        Me.Column7.HeaderText = "Hotline"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
+        Me.Panel33.BackColor = System.Drawing.Color.LightGray
+        Me.Panel33.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel33.Location = New System.Drawing.Point(5, 123)
+        Me.Panel33.Name = "Panel33"
+        Me.Panel33.Size = New System.Drawing.Size(1045, 5)
+        Me.Panel33.TabIndex = 13
         '
         'Panel31
         '
-        Me.Panel31.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel31.Location = New System.Drawing.Point(617, 0)
+        Me.Panel31.BackColor = System.Drawing.Color.LightGray
+        Me.Panel31.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel31.Location = New System.Drawing.Point(0, 5)
         Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(413, 203)
-        Me.Panel31.TabIndex = 6
-        '
-        'Panel19
-        '
-        Me.Panel19.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel19.Location = New System.Drawing.Point(1040, 10)
-        Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(5, 203)
-        Me.Panel19.TabIndex = 13
-        '
-        'Panel15
-        '
-        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel15.Location = New System.Drawing.Point(10, 213)
-        Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(1035, 5)
-        Me.Panel15.TabIndex = 12
-        '
-        'Panel14
-        '
-        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel14.Location = New System.Drawing.Point(5, 10)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(5, 208)
-        Me.Panel14.TabIndex = 11
-        '
-        'Panel12
-        '
-        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel12.Location = New System.Drawing.Point(5, 5)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(1040, 5)
-        Me.Panel12.TabIndex = 10
-        '
-        'Panel22
-        '
-        Me.Panel22.BackColor = System.Drawing.Color.LightGray
-        Me.Panel22.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel22.Location = New System.Drawing.Point(1045, 5)
-        Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(5, 213)
-        Me.Panel22.TabIndex = 9
-        '
-        'Panel23
-        '
-        Me.Panel23.BackColor = System.Drawing.Color.LightGray
-        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel23.Location = New System.Drawing.Point(5, 218)
-        Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(1045, 5)
-        Me.Panel23.TabIndex = 8
-        '
-        'Panel24
-        '
-        Me.Panel24.BackColor = System.Drawing.Color.LightGray
-        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel24.Location = New System.Drawing.Point(0, 5)
-        Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(5, 218)
-        Me.Panel24.TabIndex = 7
+        Me.Panel31.Size = New System.Drawing.Size(5, 123)
+        Me.Panel31.TabIndex = 10
         '
         'Panel25
         '
@@ -613,7 +586,160 @@ Partial Class frmHRIS_Setup_Department
         Me.Panel25.Location = New System.Drawing.Point(0, 0)
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Size = New System.Drawing.Size(1050, 5)
-        Me.Panel25.TabIndex = 6
+        Me.Panel25.TabIndex = 8
+        '
+        'dgvDivisionHistory
+        '
+        Me.dgvDivisionHistory.AllowUserToAddRows = False
+        Me.dgvDivisionHistory.AllowUserToDeleteRows = False
+        Me.dgvDivisionHistory.AllowUserToResizeColumns = False
+        Me.dgvDivisionHistory.AllowUserToResizeRows = False
+        Me.dgvDivisionHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.dgvDivisionHistory.BackgroundColor = System.Drawing.Color.White
+        Me.dgvDivisionHistory.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvDivisionHistory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvDivisionHistory.ColumnHeadersHeight = 35
+        Me.dgvDivisionHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvDivisionHistory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn13})
+        Me.dgvDivisionHistory.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvDivisionHistory.Location = New System.Drawing.Point(10, 34)
+        Me.dgvDivisionHistory.MultiSelect = False
+        Me.dgvDivisionHistory.Name = "dgvDivisionHistory"
+        Me.dgvDivisionHistory.ReadOnly = True
+        Me.dgvDivisionHistory.RowHeadersVisible = False
+        Me.dgvDivisionHistory.RowTemplate.Height = 30
+        Me.dgvDivisionHistory.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvDivisionHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvDivisionHistory.Size = New System.Drawing.Size(1030, 90)
+        Me.dgvDivisionHistory.TabIndex = 19
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        Me.DataGridViewTextBoxColumn9.Visible = False
+        Me.DataGridViewTextBoxColumn9.Width = 43
+        '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.FillWeight = 163.2659!
+        Me.DataGridViewTextBoxColumn13.HeaderText = "Department Name"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.ReadOnly = True
+        Me.DataGridViewTextBoxColumn13.Width = 114
+        '
+        'Panel12
+        '
+        Me.Panel12.BackColor = System.Drawing.Color.Navy
+        Me.Panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel12.Controls.Add(Me.lblDivisionListName)
+        Me.Panel12.Controls.Add(Me.Label6)
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel12.Location = New System.Drawing.Point(10, 10)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(1030, 24)
+        Me.Panel12.TabIndex = 18
+        '
+        'lblDivisionListName
+        '
+        Me.lblDivisionListName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblDivisionListName.AutoSize = True
+        Me.lblDivisionListName.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDivisionListName.ForeColor = System.Drawing.Color.Gold
+        Me.lblDivisionListName.Location = New System.Drawing.Point(181, 4)
+        Me.lblDivisionListName.Name = "lblDivisionListName"
+        Me.lblDivisionListName.Size = New System.Drawing.Size(14, 15)
+        Me.lblDivisionListName.TabIndex = 1
+        Me.lblDivisionListName.Text = "x"
+        Me.lblDivisionListName.Visible = False
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(5, 4)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(160, 15)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "D I V I S I O N   H I S T O R Y"
+        '
+        'Panel24
+        '
+        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel24.Location = New System.Drawing.Point(1040, 10)
+        Me.Panel24.Name = "Panel24"
+        Me.Panel24.Size = New System.Drawing.Size(5, 114)
+        Me.Panel24.TabIndex = 17
+        '
+        'Panel23
+        '
+        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel23.Location = New System.Drawing.Point(10, 124)
+        Me.Panel23.Name = "Panel23"
+        Me.Panel23.Size = New System.Drawing.Size(1035, 5)
+        Me.Panel23.TabIndex = 16
+        '
+        'Panel22
+        '
+        Me.Panel22.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel22.Location = New System.Drawing.Point(5, 10)
+        Me.Panel22.Name = "Panel22"
+        Me.Panel22.Size = New System.Drawing.Size(5, 119)
+        Me.Panel22.TabIndex = 15
+        '
+        'Panel19
+        '
+        Me.Panel19.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel19.Location = New System.Drawing.Point(5, 5)
+        Me.Panel19.Name = "Panel19"
+        Me.Panel19.Size = New System.Drawing.Size(1040, 5)
+        Me.Panel19.TabIndex = 14
+        '
+        'Panel16
+        '
+        Me.Panel16.BackColor = System.Drawing.Color.LightGray
+        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel16.Location = New System.Drawing.Point(1045, 5)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(5, 124)
+        Me.Panel16.TabIndex = 13
+        '
+        'Panel15
+        '
+        Me.Panel15.BackColor = System.Drawing.Color.LightGray
+        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel15.Location = New System.Drawing.Point(5, 129)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(1045, 5)
+        Me.Panel15.TabIndex = 12
+        '
+        'Panel14
+        '
+        Me.Panel14.BackColor = System.Drawing.Color.LightGray
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel14.Location = New System.Drawing.Point(0, 5)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(5, 129)
+        Me.Panel14.TabIndex = 9
+        '
+        'Panel13
+        '
+        Me.Panel13.BackColor = System.Drawing.Color.LightGray
+        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel13.Location = New System.Drawing.Point(0, 0)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(1050, 5)
+        Me.Panel13.TabIndex = 8
         '
         'Panel11
         '
@@ -630,17 +756,16 @@ Partial Class frmHRIS_Setup_Department
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel11.Location = New System.Drawing.Point(0, 0)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(1050, 230)
+        Me.Panel11.Size = New System.Drawing.Size(1050, 187)
         Me.Panel11.TabIndex = 0
         '
         'Panel32
         '
         Me.Panel32.Controls.Add(Me.dgvEmployeeList)
-        Me.Panel32.Controls.Add(Me.Panel33)
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel32.Location = New System.Drawing.Point(10, 34)
         Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(1030, 186)
+        Me.Panel32.Size = New System.Drawing.Size(1030, 143)
         Me.Panel32.TabIndex = 77
         '
         'dgvEmployeeList
@@ -649,17 +774,17 @@ Partial Class frmHRIS_Setup_Department
         Me.dgvEmployeeList.AllowUserToDeleteRows = False
         Me.dgvEmployeeList.AllowUserToResizeColumns = False
         Me.dgvEmployeeList.AllowUserToResizeRows = False
-        Me.dgvEmployeeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvEmployeeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.dgvEmployeeList.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvEmployeeList.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 8.75!)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvEmployeeList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 8.75!)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvEmployeeList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvEmployeeList.ColumnHeadersHeight = 35
         Me.dgvEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvEmployeeList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8, Me.Column3, Me.Column8, Me.Column9, Me.Column10, Me.Column11})
@@ -671,7 +796,7 @@ Partial Class frmHRIS_Setup_Department
         Me.dgvEmployeeList.RowHeadersVisible = False
         Me.dgvEmployeeList.RowTemplate.Height = 30
         Me.dgvEmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvEmployeeList.Size = New System.Drawing.Size(617, 186)
+        Me.dgvEmployeeList.Size = New System.Drawing.Size(1030, 143)
         Me.dgvEmployeeList.TabIndex = 76
         '
         'DataGridViewTextBoxColumn8
@@ -685,55 +810,51 @@ Partial Class frmHRIS_Setup_Department
         '
         'Column3
         '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle8
         Me.Column3.HeaderText = "Employee Code"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
+        Me.Column3.Width = 115
         '
         'Column8
         '
         Me.Column8.HeaderText = "Employee Name"
         Me.Column8.Name = "Column8"
         Me.Column8.ReadOnly = True
+        Me.Column8.Width = 119
         '
         'Column9
         '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column9.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column9.DefaultCellStyle = DataGridViewCellStyle9
         Me.Column9.HeaderText = "Contract No."
         Me.Column9.Name = "Column9"
         Me.Column9.ReadOnly = True
         '
         'Column10
         '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column10.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column10.DefaultCellStyle = DataGridViewCellStyle10
         Me.Column10.HeaderText = "Contract Start"
         Me.Column10.Name = "Column10"
         Me.Column10.ReadOnly = True
+        Me.Column10.Width = 105
         '
         'Column11
         '
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column11.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column11.DefaultCellStyle = DataGridViewCellStyle11
         Me.Column11.HeaderText = "Contract End"
         Me.Column11.Name = "Column11"
         Me.Column11.ReadOnly = True
-        '
-        'Panel33
-        '
-        Me.Panel33.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel33.Location = New System.Drawing.Point(617, 0)
-        Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(413, 186)
-        Me.Panel33.TabIndex = 7
+        Me.Column11.Width = 101
         '
         'Panel30
         '
         Me.Panel30.BackColor = System.Drawing.Color.Navy
         Me.Panel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel30.Controls.Add(Me.lblDepartmentName)
+        Me.Panel30.Controls.Add(Me.lblEmployeeName)
         Me.Panel30.Controls.Add(Me.Label3)
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel30.Location = New System.Drawing.Point(10, 10)
@@ -741,18 +862,18 @@ Partial Class frmHRIS_Setup_Department
         Me.Panel30.Size = New System.Drawing.Size(1030, 24)
         Me.Panel30.TabIndex = 16
         '
-        'lblDepartmentName
+        'lblEmployeeName
         '
-        Me.lblDepartmentName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblDepartmentName.AutoSize = True
-        Me.lblDepartmentName.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDepartmentName.ForeColor = System.Drawing.Color.Gold
-        Me.lblDepartmentName.Location = New System.Drawing.Point(146, 4)
-        Me.lblDepartmentName.Name = "lblDepartmentName"
-        Me.lblDepartmentName.Size = New System.Drawing.Size(14, 15)
-        Me.lblDepartmentName.TabIndex = 1
-        Me.lblDepartmentName.Text = "x"
-        Me.lblDepartmentName.Visible = False
+        Me.lblEmployeeName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblEmployeeName.AutoSize = True
+        Me.lblEmployeeName.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmployeeName.ForeColor = System.Drawing.Color.Gold
+        Me.lblEmployeeName.Location = New System.Drawing.Point(146, 4)
+        Me.lblEmployeeName.Name = "lblEmployeeName"
+        Me.lblEmployeeName.Size = New System.Drawing.Size(14, 15)
+        Me.lblEmployeeName.TabIndex = 1
+        Me.lblEmployeeName.Text = "x"
+        Me.lblEmployeeName.Visible = False
         '
         'Label3
         '
@@ -771,13 +892,13 @@ Partial Class frmHRIS_Setup_Department
         Me.Panel29.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel29.Location = New System.Drawing.Point(1040, 10)
         Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(5, 210)
+        Me.Panel29.Size = New System.Drawing.Size(5, 167)
         Me.Panel29.TabIndex = 15
         '
         'Panel28
         '
         Me.Panel28.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel28.Location = New System.Drawing.Point(10, 220)
+        Me.Panel28.Location = New System.Drawing.Point(10, 177)
         Me.Panel28.Name = "Panel28"
         Me.Panel28.Size = New System.Drawing.Size(1035, 5)
         Me.Panel28.TabIndex = 14
@@ -787,7 +908,7 @@ Partial Class frmHRIS_Setup_Department
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel27.Location = New System.Drawing.Point(5, 10)
         Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(5, 215)
+        Me.Panel27.Size = New System.Drawing.Size(5, 172)
         Me.Panel27.TabIndex = 13
         '
         'Panel26
@@ -802,7 +923,7 @@ Partial Class frmHRIS_Setup_Department
         '
         Me.Panel21.BackColor = System.Drawing.Color.LightGray
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel21.Location = New System.Drawing.Point(5, 225)
+        Me.Panel21.Location = New System.Drawing.Point(5, 182)
         Me.Panel21.Name = "Panel21"
         Me.Panel21.Size = New System.Drawing.Size(1040, 5)
         Me.Panel21.TabIndex = 11
@@ -813,7 +934,7 @@ Partial Class frmHRIS_Setup_Department
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel20.Location = New System.Drawing.Point(1045, 5)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(5, 225)
+        Me.Panel20.Size = New System.Drawing.Size(5, 182)
         Me.Panel20.TabIndex = 10
         '
         'Panel18
@@ -822,7 +943,7 @@ Partial Class frmHRIS_Setup_Department
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel18.Location = New System.Drawing.Point(0, 5)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(5, 225)
+        Me.Panel18.Size = New System.Drawing.Size(5, 182)
         Me.Panel18.TabIndex = 8
         '
         'Panel17
@@ -842,7 +963,86 @@ Partial Class frmHRIS_Setup_Department
         Me.Panel2.Size = New System.Drawing.Size(10, 566)
         Me.Panel2.TabIndex = 77
         '
-        'frmHR_Setup_Department
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        Me.DataGridViewTextBoxColumn1.Width = 43
+        '
+        'Column13
+        '
+        Me.Column13.HeaderText = "ParentID"
+        Me.Column13.Name = "Column13"
+        Me.Column13.ReadOnly = True
+        Me.Column13.Visible = False
+        Me.Column13.Width = 76
+        '
+        'Column12
+        '
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column12.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column12.HeaderText = "Parent Department"
+        Me.Column12.Name = "Column12"
+        Me.Column12.ReadOnly = True
+        Me.Column12.Width = 118
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewTextBoxColumn2.FillWeight = 48.61903!
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Code"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 59
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.FillWeight = 163.2659!
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Department Name"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 114
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridViewTextBoxColumn4.FillWeight = 45.68528!
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Active ?"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Width = 65
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.FillWeight = 163.2659!
+        Me.DataGridViewTextBoxColumn6.HeaderText = "In - Charge"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewTextBoxColumn6.Width = 82
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.FillWeight = 103.8809!
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Hotline"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        Me.DataGridViewTextBoxColumn7.Width = 70
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridViewTextBoxColumn5.FillWeight = 75.28288!
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Resource Count"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 105
+        '
+        'frmHRIS_Setup_Department
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -860,7 +1060,7 @@ Partial Class frmHRIS_Setup_Department
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmHR_Setup_Department"
+        Me.Name = "frmHRIS_Setup_Department"
         Me.Text = "Setup - Department"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -875,9 +1075,15 @@ Partial Class frmHRIS_Setup_Department
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
-        Me.Panel13.ResumeLayout(False)
-        Me.Panel16.ResumeLayout(False)
-        CType(Me.dgvDepartmentList, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer2.Panel1.ResumeLayout(False)
+        Me.SplitContainer2.Panel2.ResumeLayout(False)
+        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer2.ResumeLayout(False)
+        Me.Panel39.ResumeLayout(False)
+        CType(Me.dgvMainDepartment, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvDivisionHistory, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel12.ResumeLayout(False)
+        Me.Panel12.PerformLayout()
         Me.Panel11.ResumeLayout(False)
         Me.Panel32.ResumeLayout(False)
         CType(Me.dgvEmployeeList, System.ComponentModel.ISupportInitialize).EndInit()
@@ -916,21 +1122,10 @@ Partial Class frmHRIS_Setup_Department
     Friend WithEvents Panel9 As Panel
     Friend WithEvents Panel5 As Panel
     Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents Panel13 As Panel
-    Friend WithEvents Panel16 As Panel
-    Friend WithEvents dgvDepartmentList As DataGridView
-    Friend WithEvents Panel19 As Panel
-    Friend WithEvents Panel15 As Panel
-    Friend WithEvents Panel14 As Panel
-    Friend WithEvents Panel12 As Panel
-    Friend WithEvents Panel22 As Panel
-    Friend WithEvents Panel23 As Panel
-    Friend WithEvents Panel24 As Panel
-    Friend WithEvents Panel25 As Panel
     Friend WithEvents Panel11 As Panel
     Friend WithEvents dgvEmployeeList As DataGridView
     Friend WithEvents Panel30 As Panel
-    Friend WithEvents lblDepartmentName As Label
+    Friend WithEvents lblEmployeeName As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel29 As Panel
     Friend WithEvents Panel28 As Panel
@@ -941,16 +1136,7 @@ Partial Class frmHRIS_Setup_Department
     Friend WithEvents Panel18 As Panel
     Friend WithEvents Panel17 As Panel
     Friend WithEvents ImageListBtn As ImageList
-    Friend WithEvents ShiftID As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Panel31 As Panel
     Friend WithEvents Panel32 As Panel
-    Friend WithEvents Panel33 As Panel
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
@@ -958,4 +1144,38 @@ Partial Class frmHRIS_Setup_Department
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents SplitContainer2 As SplitContainer
+    Friend WithEvents Panel24 As Panel
+    Friend WithEvents Panel23 As Panel
+    Friend WithEvents Panel22 As Panel
+    Friend WithEvents Panel19 As Panel
+    Friend WithEvents Panel16 As Panel
+    Friend WithEvents Panel15 As Panel
+    Friend WithEvents Panel14 As Panel
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents Panel39 As Panel
+    Friend WithEvents Panel38 As Panel
+    Friend WithEvents Panel37 As Panel
+    Friend WithEvents Panel36 As Panel
+    Friend WithEvents Panel35 As Panel
+    Friend WithEvents Panel34 As Panel
+    Friend WithEvents Panel33 As Panel
+    Friend WithEvents Panel31 As Panel
+    Friend WithEvents Panel25 As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents lblDivisionListName As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents dgvMainDepartment As DataGridView
+    Friend WithEvents dgvDivisionHistory As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column13 As DataGridViewTextBoxColumn
+    Friend WithEvents Column12 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
 End Class

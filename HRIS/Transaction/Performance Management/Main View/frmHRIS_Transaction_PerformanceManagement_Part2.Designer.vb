@@ -24,22 +24,24 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHRIS_Transaction_PerformanceManagement_Part2))
-        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle45 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripBtnRefresh = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripLabel7 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripBtnClose = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButtonHelp = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripBtnPrinter = New System.Windows.Forms.ToolStripButton()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -76,6 +78,10 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStripCreateNewForm = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PartIIPerformanceFactorBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PartIIPerformanceFactorCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
@@ -86,14 +92,17 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         Me.Panel25 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Panel32 = New System.Windows.Forms.Panel()
-        Me.dgvEmployeeList = New System.Windows.Forms.DataGridView()
+        Me.dgvPerformanceFactors = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel33 = New System.Windows.Forms.Panel()
+        Me.ContextMenuStripFormFactors = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel30 = New System.Windows.Forms.Panel()
-        Me.lblTitleName = New System.Windows.Forms.Label()
+        Me.lblGoalSheet = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel29 = New System.Windows.Forms.Panel()
         Me.Panel28 = New System.Windows.Forms.Panel()
@@ -115,9 +124,11 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         Me.Panel13.SuspendLayout()
         Me.Panel16.SuspendLayout()
         CType(Me.dgvActiveEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStripCreateNewForm.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Panel32.SuspendLayout()
-        CType(Me.dgvEmployeeList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvPerformanceFactors, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStripFormFactors.SuspendLayout()
         Me.Panel30.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -135,7 +146,7 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         '
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ToolStripSeparator1, Me.ToolStripBtnRefresh, Me.ToolStripLabel7, Me.ToolStripBtnClose, Me.ToolStripButtonHelp})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ToolStripSeparator1, Me.ToolStripBtnRefresh, Me.ToolStripBtnClose, Me.ToolStripButtonHelp, Me.ToolStripBtnPrinter})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(1074, 35)
@@ -162,12 +173,6 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         Me.ToolStripBtnRefresh.Size = New System.Drawing.Size(66, 32)
         Me.ToolStripBtnRefresh.Text = "Refresh"
         '
-        'ToolStripLabel7
-        '
-        Me.ToolStripLabel7.Name = "ToolStripLabel7"
-        Me.ToolStripLabel7.Size = New System.Drawing.Size(109, 32)
-        Me.ToolStripLabel7.Text = "                                  "
-        '
         'ToolStripBtnClose
         '
         Me.ToolStripBtnClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
@@ -185,6 +190,14 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         Me.ToolStripButtonHelp.Name = "ToolStripButtonHelp"
         Me.ToolStripButtonHelp.Size = New System.Drawing.Size(51, 32)
         Me.ToolStripButtonHelp.Text = "Help"
+        '
+        'ToolStripBtnPrinter
+        '
+        Me.ToolStripBtnPrinter.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.printer
+        Me.ToolStripBtnPrinter.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripBtnPrinter.Name = "ToolStripBtnPrinter"
+        Me.ToolStripBtnPrinter.Size = New System.Drawing.Size(61, 32)
+        Me.ToolStripBtnPrinter.Text = "Printer"
         '
         'Panel2
         '
@@ -475,17 +488,18 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         Me.dgvActiveEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvActiveEmployee.BackgroundColor = System.Drawing.Color.White
         Me.dgvActiveEmployee.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle41.Font = New System.Drawing.Font("Segoe UI", 8.75!)
-        DataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvActiveEmployee.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle41
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.75!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvActiveEmployee.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvActiveEmployee.ColumnHeadersHeight = 35
         Me.dgvActiveEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvActiveEmployee.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ShiftID, Me.Column1, Me.Column2, Me.Column4, Me.Column5, Me.Column11, Me.Column6, Me.Column10, Me.Column7})
+        Me.dgvActiveEmployee.ContextMenuStrip = Me.ContextMenuStripCreateNewForm
         Me.dgvActiveEmployee.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvActiveEmployee.Location = New System.Drawing.Point(0, 0)
         Me.dgvActiveEmployee.MultiSelect = False
@@ -508,8 +522,8 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         '
         'Column1
         '
-        DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle42
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
         Me.Column1.FillWeight = 48.61903!
         Me.Column1.HeaderText = "Code"
         Me.Column1.Name = "Column1"
@@ -526,8 +540,8 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         '
         'Column4
         '
-        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle43
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
         Me.Column4.FillWeight = 45.68528!
         Me.Column4.HeaderText = "Position"
         Me.Column4.Name = "Column4"
@@ -536,8 +550,8 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         '
         'Column5
         '
-        DataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle44
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle4
         Me.Column5.FillWeight = 75.28288!
         Me.Column5.HeaderText = "Department"
         Me.Column5.Name = "Column5"
@@ -553,8 +567,8 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         '
         'Column6
         '
-        DataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column6.DefaultCellStyle = DataGridViewCellStyle45
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column6.DefaultCellStyle = DataGridViewCellStyle5
         Me.Column6.FillWeight = 163.2659!
         Me.Column6.HeaderText = "Contract Start Date"
         Me.Column6.Name = "Column6"
@@ -563,8 +577,8 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         '
         'Column10
         '
-        DataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column10.DefaultCellStyle = DataGridViewCellStyle46
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column10.DefaultCellStyle = DataGridViewCellStyle6
         Me.Column10.HeaderText = "Employement Type"
         Me.Column10.Name = "Column10"
         Me.Column10.ReadOnly = True
@@ -572,13 +586,40 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         '
         'Column7
         '
-        DataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.Column7.DefaultCellStyle = DataGridViewCellStyle47
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.Column7.DefaultCellStyle = DataGridViewCellStyle7
         Me.Column7.FillWeight = 103.8809!
         Me.Column7.HeaderText = "Employment Class"
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
         Me.Column7.Width = 119
+        '
+        'ContextMenuStripCreateNewForm
+        '
+        Me.ContextMenuStripCreateNewForm.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.PartIIPerformanceFactorBToolStripMenuItem, Me.PartIIPerformanceFactorCToolStripMenuItem})
+        Me.ContextMenuStripCreateNewForm.Name = "ContextMenuStripPart1Form1"
+        Me.ContextMenuStripCreateNewForm.Size = New System.Drawing.Size(265, 92)
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.document
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(264, 22)
+        Me.ToolStripMenuItem1.Text = "Add Part 2 - Performance Factor – A"
+        '
+        'PartIIPerformanceFactorBToolStripMenuItem
+        '
+        Me.PartIIPerformanceFactorBToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.document
+        Me.PartIIPerformanceFactorBToolStripMenuItem.Name = "PartIIPerformanceFactorBToolStripMenuItem"
+        Me.PartIIPerformanceFactorBToolStripMenuItem.Size = New System.Drawing.Size(264, 22)
+        Me.PartIIPerformanceFactorBToolStripMenuItem.Text = "Add Part 2 - Performance Factor – B"
+        '
+        'PartIIPerformanceFactorCToolStripMenuItem
+        '
+        Me.PartIIPerformanceFactorCToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.document
+        Me.PartIIPerformanceFactorCToolStripMenuItem.Name = "PartIIPerformanceFactorCToolStripMenuItem"
+        Me.PartIIPerformanceFactorCToolStripMenuItem.Size = New System.Drawing.Size(264, 22)
+        Me.PartIIPerformanceFactorCToolStripMenuItem.Text = "Add Part 2 - Performance Factor – C"
         '
         'Panel19
         '
@@ -668,44 +709,44 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         '
         'Panel32
         '
-        Me.Panel32.Controls.Add(Me.dgvEmployeeList)
-        Me.Panel32.Controls.Add(Me.Panel33)
+        Me.Panel32.Controls.Add(Me.dgvPerformanceFactors)
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel32.Location = New System.Drawing.Point(10, 34)
         Me.Panel32.Name = "Panel32"
         Me.Panel32.Size = New System.Drawing.Size(1030, 187)
         Me.Panel32.TabIndex = 77
         '
-        'dgvEmployeeList
+        'dgvPerformanceFactors
         '
-        Me.dgvEmployeeList.AllowUserToAddRows = False
-        Me.dgvEmployeeList.AllowUserToDeleteRows = False
-        Me.dgvEmployeeList.AllowUserToResizeColumns = False
-        Me.dgvEmployeeList.AllowUserToResizeRows = False
-        Me.dgvEmployeeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
-        Me.dgvEmployeeList.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.dgvEmployeeList.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle48.Font = New System.Drawing.Font("Segoe UI", 8.75!)
-        DataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvEmployeeList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle48
-        Me.dgvEmployeeList.ColumnHeadersHeight = 35
-        Me.dgvEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvEmployeeList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8, Me.Column3, Me.Column8, Me.Column9})
-        Me.dgvEmployeeList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvEmployeeList.Location = New System.Drawing.Point(0, 0)
-        Me.dgvEmployeeList.MultiSelect = False
-        Me.dgvEmployeeList.Name = "dgvEmployeeList"
-        Me.dgvEmployeeList.ReadOnly = True
-        Me.dgvEmployeeList.RowHeadersVisible = False
-        Me.dgvEmployeeList.RowTemplate.Height = 30
-        Me.dgvEmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvEmployeeList.Size = New System.Drawing.Size(617, 187)
-        Me.dgvEmployeeList.TabIndex = 76
+        Me.dgvPerformanceFactors.AllowUserToAddRows = False
+        Me.dgvPerformanceFactors.AllowUserToDeleteRows = False
+        Me.dgvPerformanceFactors.AllowUserToResizeColumns = False
+        Me.dgvPerformanceFactors.AllowUserToResizeRows = False
+        Me.dgvPerformanceFactors.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.dgvPerformanceFactors.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.dgvPerformanceFactors.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 8.75!)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvPerformanceFactors.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        Me.dgvPerformanceFactors.ColumnHeadersHeight = 35
+        Me.dgvPerformanceFactors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvPerformanceFactors.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8, Me.Column3, Me.Column8, Me.Column12, Me.Column9})
+        Me.dgvPerformanceFactors.ContextMenuStrip = Me.ContextMenuStripFormFactors
+        Me.dgvPerformanceFactors.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvPerformanceFactors.Location = New System.Drawing.Point(0, 0)
+        Me.dgvPerformanceFactors.MultiSelect = False
+        Me.dgvPerformanceFactors.Name = "dgvPerformanceFactors"
+        Me.dgvPerformanceFactors.ReadOnly = True
+        Me.dgvPerformanceFactors.RowHeadersVisible = False
+        Me.dgvPerformanceFactors.RowTemplate.Height = 30
+        Me.dgvPerformanceFactors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvPerformanceFactors.Size = New System.Drawing.Size(1030, 187)
+        Me.dgvPerformanceFactors.TabIndex = 76
         '
         'DataGridViewTextBoxColumn8
         '
@@ -718,38 +759,61 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         '
         'Column3
         '
-        Me.Column3.HeaderText = "Reviewer Name"
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle9
+        Me.Column3.HeaderText = "File Type"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 114
+        Me.Column3.Width = 77
         '
         'Column8
         '
-        Me.Column8.HeaderText = "Position"
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column8.DefaultCellStyle = DataGridViewCellStyle10
+        Me.Column8.HeaderText = "Average Factor Weight"
         Me.Column8.Name = "Column8"
         Me.Column8.ReadOnly = True
-        Me.Column8.Width = 75
+        Me.Column8.Width = 152
+        '
+        'Column12
+        '
+        Me.Column12.HeaderText = "Reviever"
+        Me.Column12.Name = "Column12"
+        Me.Column12.ReadOnly = True
+        Me.Column12.Width = 76
         '
         'Column9
         '
-        Me.Column9.HeaderText = "Department"
+        Me.Column9.HeaderText = "Active Goal Sheet Detail"
         Me.Column9.Name = "Column9"
         Me.Column9.ReadOnly = True
-        Me.Column9.Width = 95
+        Me.Column9.Width = 157
         '
-        'Panel33
+        'ContextMenuStripFormFactors
         '
-        Me.Panel33.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel33.Location = New System.Drawing.Point(617, 0)
-        Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(413, 187)
-        Me.Panel33.TabIndex = 7
+        Me.ContextMenuStripFormFactors.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrintToolStripMenuItem, Me.DeleteToolStripMenuItem})
+        Me.ContextMenuStripFormFactors.Name = "ContextMenuStripPart1Form1"
+        Me.ContextMenuStripFormFactors.Size = New System.Drawing.Size(108, 48)
+        '
+        'PrintToolStripMenuItem
+        '
+        Me.PrintToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.printer
+        Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.PrintToolStripMenuItem.Text = "Print"
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'Panel30
         '
         Me.Panel30.BackColor = System.Drawing.Color.Navy
         Me.Panel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel30.Controls.Add(Me.lblTitleName)
+        Me.Panel30.Controls.Add(Me.lblGoalSheet)
         Me.Panel30.Controls.Add(Me.Label3)
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel30.Location = New System.Drawing.Point(10, 10)
@@ -757,18 +821,18 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         Me.Panel30.Size = New System.Drawing.Size(1030, 24)
         Me.Panel30.TabIndex = 16
         '
-        'lblTitleName
+        'lblGoalSheet
         '
-        Me.lblTitleName.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTitleName.AutoSize = True
-        Me.lblTitleName.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitleName.ForeColor = System.Drawing.Color.Gold
-        Me.lblTitleName.Location = New System.Drawing.Point(222, 4)
-        Me.lblTitleName.Name = "lblTitleName"
-        Me.lblTitleName.Size = New System.Drawing.Size(14, 15)
-        Me.lblTitleName.TabIndex = 1
-        Me.lblTitleName.Text = "x"
-        Me.lblTitleName.Visible = False
+        Me.lblGoalSheet.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblGoalSheet.AutoSize = True
+        Me.lblGoalSheet.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGoalSheet.ForeColor = System.Drawing.Color.Gold
+        Me.lblGoalSheet.Location = New System.Drawing.Point(222, 4)
+        Me.lblGoalSheet.Name = "lblGoalSheet"
+        Me.lblGoalSheet.Size = New System.Drawing.Size(14, 15)
+        Me.lblGoalSheet.TabIndex = 1
+        Me.lblGoalSheet.Text = "x"
+        Me.lblGoalSheet.Visible = False
         '
         'Label3
         '
@@ -889,9 +953,11 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
         Me.Panel13.ResumeLayout(False)
         Me.Panel16.ResumeLayout(False)
         CType(Me.dgvActiveEmployee, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStripCreateNewForm.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
         Me.Panel32.ResumeLayout(False)
-        CType(Me.dgvEmployeeList, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvPerformanceFactors, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStripFormFactors.ResumeLayout(False)
         Me.Panel30.ResumeLayout(False)
         Me.Panel30.PerformLayout()
         Me.ResumeLayout(False)
@@ -903,7 +969,6 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ToolStripBtnRefresh As ToolStripButton
-    Friend WithEvents ToolStripLabel7 As ToolStripLabel
     Friend WithEvents ToolStripBtnClose As ToolStripButton
     Friend WithEvents ToolStripButtonHelp As ToolStripButton
     Friend WithEvents Panel2 As Panel
@@ -942,14 +1007,9 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
     Friend WithEvents Panel25 As Panel
     Friend WithEvents Panel11 As Panel
     Friend WithEvents Panel32 As Panel
-    Friend WithEvents dgvEmployeeList As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Column9 As DataGridViewTextBoxColumn
-    Friend WithEvents Panel33 As Panel
+    Friend WithEvents dgvPerformanceFactors As DataGridView
     Friend WithEvents Panel30 As Panel
-    Friend WithEvents lblTitleName As Label
+    Friend WithEvents lblGoalSheet As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel29 As Panel
     Friend WithEvents Panel28 As Panel
@@ -969,4 +1029,17 @@ Partial Class frmHRIS_Transaction_PerformanceManagement_Part2
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column12 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents ToolStripBtnPrinter As ToolStripButton
+    Friend WithEvents ContextMenuStripFormFactors As ContextMenuStrip
+    Friend WithEvents PrintToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStripCreateNewForm As ContextMenuStrip
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents PartIIPerformanceFactorBToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PartIIPerformanceFactorCToolStripMenuItem As ToolStripMenuItem
 End Class

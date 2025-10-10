@@ -1,7 +1,5 @@
 ﻿Public Class frmHRIS_AddNewShiftEffectivity
 
-    Public isUpdate As Boolean = False
-
     Private Sub frmHR_AddNewShiftEffectivity_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblHeader.Text = "Add New Shift Effectivity Date"
 
@@ -19,10 +17,12 @@
     End Sub
 
     Private Sub btnDiscard_Click(sender As Object, e As EventArgs) Handles btnDiscard.Click
-        Me.Dispose()
+        Me.Close()
     End Sub
 
     Private Sub frmHR_AddNewShiftEffectivity_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         isUpdate = False
+        ResetDatePickers(Me)
     End Sub
+
 End Class

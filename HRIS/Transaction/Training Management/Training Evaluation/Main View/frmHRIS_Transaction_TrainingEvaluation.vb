@@ -92,7 +92,7 @@
     End Sub
 
     Private Sub btnEvaluateTraining_Click(sender As Object, e As EventArgs) Handles btnEvaluateTraining.Click
-
+        If Not HasUserAccess("insert") Then Return
         If dgvEvaluationTraining.SelectedRows.Count = 0 Then
             MessageBox.Show("Please select a valid training to be evaluated.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
@@ -138,8 +138,7 @@
     End Sub
 
     Private Sub EvaluateThisTrainingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EvaluateThisTrainingToolStripMenuItem.Click
-
-
+        If Not HasUserAccess("insert") Then Return
         btnEvaluateTraining.PerformClick()
 
         'Dim selectedRow = dgvEvaluationTraining.SelectedRows(0)
@@ -250,6 +249,7 @@
     End Sub
 
     Private Sub PrintThisTEFToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintThisTEFToolStripMenuItem.Click
+        If Not HasUserAccess("print") Then Return
         If _TrainingSubDetailID = 0 Then
             MessageBox.Show("Select training first.", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else

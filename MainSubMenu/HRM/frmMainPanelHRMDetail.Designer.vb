@@ -25,32 +25,32 @@ Partial Class frmMainPanelHRMDetail
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMainPanelHRMDetail))
         Me.panelSubHRIS_SetupDetails = New System.Windows.Forms.Panel()
-        Me.ImageListSubMenuIcon = New System.Windows.Forms.ImageList(Me.components)
-        Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.panelSubHRIS_Reports = New System.Windows.Forms.Panel()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.panelSubHRIS_TransactionDetails = New System.Windows.Forms.Panel()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.btnLeaveCredit = New System.Windows.Forms.Button()
+        Me.ImageListSubMenuIcon = New System.Windows.Forms.ImageList(Me.components)
         Me.btnLeaveType = New System.Windows.Forms.Button()
         Me.btnShift = New System.Windows.Forms.Button()
         Me.btnApprovalHierarchy = New System.Windows.Forms.Button()
         Me.btnJobtitle = New System.Windows.Forms.Button()
         Me.btnDepartment = New System.Windows.Forms.Button()
         Me.btnCompany = New System.Windows.Forms.Button()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.panelSubHRIS_Reports = New System.Windows.Forms.Panel()
         Me.btnTrainingReport = New System.Windows.Forms.Button()
         Me.btnCertificateOfEmployment = New System.Windows.Forms.Button()
         Me.btnDepartmentReport = New System.Windows.Forms.Button()
         Me.btnCompanyReport = New System.Windows.Forms.Button()
         Me.btnEmployee = New System.Windows.Forms.Button()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.panelSubHRIS_TransactionDetails = New System.Windows.Forms.Panel()
         Me.btnPerformanceManagement = New System.Windows.Forms.Button()
         Me.btnBenefitAdmin = New System.Windows.Forms.Button()
         Me.btnTrainingManagement = New System.Windows.Forms.Button()
         Me.btnSchedManagement = New System.Windows.Forms.Button()
         Me.btnHumanResource = New System.Windows.Forms.Button()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.panelSubHRIS_SetupDetails.SuspendLayout()
         Me.Panel13.SuspendLayout()
         Me.panelSubHRIS_Reports.SuspendLayout()
@@ -71,8 +71,26 @@ Partial Class frmMainPanelHRMDetail
         Me.panelSubHRIS_SetupDetails.Controls.Add(Me.Panel13)
         Me.panelSubHRIS_SetupDetails.Location = New System.Drawing.Point(18, 10)
         Me.panelSubHRIS_SetupDetails.Name = "panelSubHRIS_SetupDetails"
-        Me.panelSubHRIS_SetupDetails.Size = New System.Drawing.Size(282, 299)
+        Me.panelSubHRIS_SetupDetails.Size = New System.Drawing.Size(282, 291)
         Me.panelSubHRIS_SetupDetails.TabIndex = 4
+        '
+        'btnLeaveCredit
+        '
+        Me.btnLeaveCredit.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnLeaveCredit.FlatAppearance.BorderSize = 0
+        Me.btnLeaveCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLeaveCredit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLeaveCredit.ImageIndex = 6
+        Me.btnLeaveCredit.ImageList = Me.ImageListSubMenuIcon
+        Me.btnLeaveCredit.Location = New System.Drawing.Point(0, 244)
+        Me.btnLeaveCredit.Name = "btnLeaveCredit"
+        Me.btnLeaveCredit.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnLeaveCredit.Size = New System.Drawing.Size(282, 35)
+        Me.btnLeaveCredit.TabIndex = 10
+        Me.btnLeaveCredit.Tag = "1100000007"
+        Me.btnLeaveCredit.Text = "   Leave Credit"
+        Me.btnLeaveCredit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLeaveCredit.UseVisualStyleBackColor = True
         '
         'ImageListSubMenuIcon
         '
@@ -95,6 +113,116 @@ Partial Class frmMainPanelHRMDetail
         Me.ImageListSubMenuIcon.Images.SetKeyName(14, "certificate.png")
         Me.ImageListSubMenuIcon.Images.SetKeyName(15, "dept.png")
         Me.ImageListSubMenuIcon.Images.SetKeyName(16, "employees.png")
+        '
+        'btnLeaveType
+        '
+        Me.btnLeaveType.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnLeaveType.FlatAppearance.BorderSize = 0
+        Me.btnLeaveType.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLeaveType.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLeaveType.ImageIndex = 5
+        Me.btnLeaveType.ImageList = Me.ImageListSubMenuIcon
+        Me.btnLeaveType.Location = New System.Drawing.Point(0, 209)
+        Me.btnLeaveType.Name = "btnLeaveType"
+        Me.btnLeaveType.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnLeaveType.Size = New System.Drawing.Size(282, 35)
+        Me.btnLeaveType.TabIndex = 9
+        Me.btnLeaveType.Tag = "1100000006"
+        Me.btnLeaveType.Text = "   Leave Type"
+        Me.btnLeaveType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLeaveType.UseVisualStyleBackColor = True
+        '
+        'btnShift
+        '
+        Me.btnShift.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnShift.FlatAppearance.BorderSize = 0
+        Me.btnShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnShift.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnShift.ImageIndex = 4
+        Me.btnShift.ImageList = Me.ImageListSubMenuIcon
+        Me.btnShift.Location = New System.Drawing.Point(0, 174)
+        Me.btnShift.Name = "btnShift"
+        Me.btnShift.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnShift.Size = New System.Drawing.Size(282, 35)
+        Me.btnShift.TabIndex = 8
+        Me.btnShift.Tag = "1100000005"
+        Me.btnShift.Text = "   Shift"
+        Me.btnShift.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnShift.UseVisualStyleBackColor = True
+        '
+        'btnApprovalHierarchy
+        '
+        Me.btnApprovalHierarchy.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnApprovalHierarchy.FlatAppearance.BorderSize = 0
+        Me.btnApprovalHierarchy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnApprovalHierarchy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnApprovalHierarchy.ImageIndex = 3
+        Me.btnApprovalHierarchy.ImageList = Me.ImageListSubMenuIcon
+        Me.btnApprovalHierarchy.Location = New System.Drawing.Point(0, 139)
+        Me.btnApprovalHierarchy.Name = "btnApprovalHierarchy"
+        Me.btnApprovalHierarchy.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnApprovalHierarchy.Size = New System.Drawing.Size(282, 35)
+        Me.btnApprovalHierarchy.TabIndex = 7
+        Me.btnApprovalHierarchy.Tag = "1100000004"
+        Me.btnApprovalHierarchy.Text = "   Approval Hierarchy"
+        Me.btnApprovalHierarchy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnApprovalHierarchy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnApprovalHierarchy.UseVisualStyleBackColor = True
+        '
+        'btnJobtitle
+        '
+        Me.btnJobtitle.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnJobtitle.FlatAppearance.BorderSize = 0
+        Me.btnJobtitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnJobtitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnJobtitle.ImageIndex = 2
+        Me.btnJobtitle.ImageList = Me.ImageListSubMenuIcon
+        Me.btnJobtitle.Location = New System.Drawing.Point(0, 104)
+        Me.btnJobtitle.Name = "btnJobtitle"
+        Me.btnJobtitle.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnJobtitle.Size = New System.Drawing.Size(282, 35)
+        Me.btnJobtitle.TabIndex = 6
+        Me.btnJobtitle.Tag = "1100000003"
+        Me.btnJobtitle.Text = "   Job Title / Designation"
+        Me.btnJobtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnJobtitle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnJobtitle.UseVisualStyleBackColor = True
+        '
+        'btnDepartment
+        '
+        Me.btnDepartment.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnDepartment.FlatAppearance.BorderSize = 0
+        Me.btnDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDepartment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDepartment.ImageIndex = 1
+        Me.btnDepartment.ImageList = Me.ImageListSubMenuIcon
+        Me.btnDepartment.Location = New System.Drawing.Point(0, 69)
+        Me.btnDepartment.Name = "btnDepartment"
+        Me.btnDepartment.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnDepartment.Size = New System.Drawing.Size(282, 35)
+        Me.btnDepartment.TabIndex = 5
+        Me.btnDepartment.Tag = "1100000002"
+        Me.btnDepartment.Text = "   Departments"
+        Me.btnDepartment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDepartment.UseVisualStyleBackColor = True
+        '
+        'btnCompany
+        '
+        Me.btnCompany.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCompany.FlatAppearance.BorderSize = 0
+        Me.btnCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCompany.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCompany.ImageIndex = 0
+        Me.btnCompany.ImageList = Me.ImageListSubMenuIcon
+        Me.btnCompany.Location = New System.Drawing.Point(0, 34)
+        Me.btnCompany.Name = "btnCompany"
+        Me.btnCompany.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnCompany.Size = New System.Drawing.Size(282, 35)
+        Me.btnCompany.TabIndex = 4
+        Me.btnCompany.Tag = "1100000001"
+        Me.btnCompany.Text = "   Company"
+        Me.btnCompany.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCompany.UseVisualStyleBackColor = True
         '
         'Panel13
         '
@@ -128,6 +256,96 @@ Partial Class frmMainPanelHRMDetail
         Me.panelSubHRIS_Reports.Size = New System.Drawing.Size(282, 223)
         Me.panelSubHRIS_Reports.TabIndex = 6
         '
+        'btnTrainingReport
+        '
+        Me.btnTrainingReport.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnTrainingReport.FlatAppearance.BorderSize = 0
+        Me.btnTrainingReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTrainingReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTrainingReport.ImageKey = "Performance_Management.png"
+        Me.btnTrainingReport.ImageList = Me.ImageListSubMenuIcon
+        Me.btnTrainingReport.Location = New System.Drawing.Point(0, 174)
+        Me.btnTrainingReport.Name = "btnTrainingReport"
+        Me.btnTrainingReport.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnTrainingReport.Size = New System.Drawing.Size(282, 35)
+        Me.btnTrainingReport.TabIndex = 12
+        Me.btnTrainingReport.Tag = "1300000005"
+        Me.btnTrainingReport.Text = "   Training"
+        Me.btnTrainingReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnTrainingReport.UseVisualStyleBackColor = True
+        '
+        'btnCertificateOfEmployment
+        '
+        Me.btnCertificateOfEmployment.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCertificateOfEmployment.FlatAppearance.BorderSize = 0
+        Me.btnCertificateOfEmployment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCertificateOfEmployment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCertificateOfEmployment.ImageKey = "certificate.png"
+        Me.btnCertificateOfEmployment.ImageList = Me.ImageListSubMenuIcon
+        Me.btnCertificateOfEmployment.Location = New System.Drawing.Point(0, 139)
+        Me.btnCertificateOfEmployment.Name = "btnCertificateOfEmployment"
+        Me.btnCertificateOfEmployment.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnCertificateOfEmployment.Size = New System.Drawing.Size(282, 35)
+        Me.btnCertificateOfEmployment.TabIndex = 14
+        Me.btnCertificateOfEmployment.Tag = "1300000004"
+        Me.btnCertificateOfEmployment.Text = "   COE"
+        Me.btnCertificateOfEmployment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCertificateOfEmployment.UseVisualStyleBackColor = True
+        '
+        'btnDepartmentReport
+        '
+        Me.btnDepartmentReport.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnDepartmentReport.FlatAppearance.BorderSize = 0
+        Me.btnDepartmentReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDepartmentReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnDepartmentReport.ImageKey = "dept.png"
+        Me.btnDepartmentReport.ImageList = Me.ImageListSubMenuIcon
+        Me.btnDepartmentReport.Location = New System.Drawing.Point(0, 104)
+        Me.btnDepartmentReport.Name = "btnDepartmentReport"
+        Me.btnDepartmentReport.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnDepartmentReport.Size = New System.Drawing.Size(282, 35)
+        Me.btnDepartmentReport.TabIndex = 13
+        Me.btnDepartmentReport.Tag = "1300000003"
+        Me.btnDepartmentReport.Text = "   Department"
+        Me.btnDepartmentReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnDepartmentReport.UseVisualStyleBackColor = True
+        '
+        'btnCompanyReport
+        '
+        Me.btnCompanyReport.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCompanyReport.FlatAppearance.BorderSize = 0
+        Me.btnCompanyReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCompanyReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCompanyReport.ImageKey = "Company.png"
+        Me.btnCompanyReport.ImageList = Me.ImageListSubMenuIcon
+        Me.btnCompanyReport.Location = New System.Drawing.Point(0, 69)
+        Me.btnCompanyReport.Name = "btnCompanyReport"
+        Me.btnCompanyReport.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnCompanyReport.Size = New System.Drawing.Size(282, 35)
+        Me.btnCompanyReport.TabIndex = 16
+        Me.btnCompanyReport.Tag = "1300000002"
+        Me.btnCompanyReport.Text = "   Company"
+        Me.btnCompanyReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCompanyReport.UseVisualStyleBackColor = True
+        '
+        'btnEmployee
+        '
+        Me.btnEmployee.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnEmployee.FlatAppearance.BorderSize = 0
+        Me.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnEmployee.ImageIndex = 16
+        Me.btnEmployee.ImageList = Me.ImageListSubMenuIcon
+        Me.btnEmployee.Location = New System.Drawing.Point(0, 34)
+        Me.btnEmployee.Name = "btnEmployee"
+        Me.btnEmployee.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnEmployee.Size = New System.Drawing.Size(282, 35)
+        Me.btnEmployee.TabIndex = 15
+        Me.btnEmployee.Tag = "1300000001"
+        Me.btnEmployee.Text = "   Employee"
+        Me.btnEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnEmployee.UseVisualStyleBackColor = True
+        '
         'Panel11
         '
         Me.Panel11.Controls.Add(Me.Label3)
@@ -157,8 +375,98 @@ Partial Class frmMainPanelHRMDetail
         Me.panelSubHRIS_TransactionDetails.Controls.Add(Me.Panel12)
         Me.panelSubHRIS_TransactionDetails.Location = New System.Drawing.Point(325, 20)
         Me.panelSubHRIS_TransactionDetails.Name = "panelSubHRIS_TransactionDetails"
-        Me.panelSubHRIS_TransactionDetails.Size = New System.Drawing.Size(282, 233)
+        Me.panelSubHRIS_TransactionDetails.Size = New System.Drawing.Size(282, 222)
         Me.panelSubHRIS_TransactionDetails.TabIndex = 5
+        '
+        'btnPerformanceManagement
+        '
+        Me.btnPerformanceManagement.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnPerformanceManagement.FlatAppearance.BorderSize = 0
+        Me.btnPerformanceManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPerformanceManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnPerformanceManagement.ImageIndex = 6
+        Me.btnPerformanceManagement.ImageList = Me.ImageListSubMenuIcon
+        Me.btnPerformanceManagement.Location = New System.Drawing.Point(0, 174)
+        Me.btnPerformanceManagement.Name = "btnPerformanceManagement"
+        Me.btnPerformanceManagement.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnPerformanceManagement.Size = New System.Drawing.Size(282, 35)
+        Me.btnPerformanceManagement.TabIndex = 15
+        Me.btnPerformanceManagement.Tag = "1200000005"
+        Me.btnPerformanceManagement.Text = "   Performance Management"
+        Me.btnPerformanceManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPerformanceManagement.UseVisualStyleBackColor = True
+        '
+        'btnBenefitAdmin
+        '
+        Me.btnBenefitAdmin.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnBenefitAdmin.FlatAppearance.BorderSize = 0
+        Me.btnBenefitAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBenefitAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBenefitAdmin.ImageIndex = 10
+        Me.btnBenefitAdmin.ImageList = Me.ImageListSubMenuIcon
+        Me.btnBenefitAdmin.Location = New System.Drawing.Point(0, 139)
+        Me.btnBenefitAdmin.Name = "btnBenefitAdmin"
+        Me.btnBenefitAdmin.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnBenefitAdmin.Size = New System.Drawing.Size(282, 35)
+        Me.btnBenefitAdmin.TabIndex = 14
+        Me.btnBenefitAdmin.Tag = "1200000004"
+        Me.btnBenefitAdmin.Text = "   Benefit Administration"
+        Me.btnBenefitAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBenefitAdmin.UseVisualStyleBackColor = True
+        '
+        'btnTrainingManagement
+        '
+        Me.btnTrainingManagement.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnTrainingManagement.FlatAppearance.BorderSize = 0
+        Me.btnTrainingManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTrainingManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTrainingManagement.ImageIndex = 9
+        Me.btnTrainingManagement.ImageList = Me.ImageListSubMenuIcon
+        Me.btnTrainingManagement.Location = New System.Drawing.Point(0, 104)
+        Me.btnTrainingManagement.Name = "btnTrainingManagement"
+        Me.btnTrainingManagement.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnTrainingManagement.Size = New System.Drawing.Size(282, 35)
+        Me.btnTrainingManagement.TabIndex = 13
+        Me.btnTrainingManagement.Tag = "1200000003"
+        Me.btnTrainingManagement.Text = "   Training Management"
+        Me.btnTrainingManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnTrainingManagement.UseVisualStyleBackColor = True
+        '
+        'btnSchedManagement
+        '
+        Me.btnSchedManagement.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSchedManagement.FlatAppearance.BorderSize = 0
+        Me.btnSchedManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSchedManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSchedManagement.ImageIndex = 8
+        Me.btnSchedManagement.ImageList = Me.ImageListSubMenuIcon
+        Me.btnSchedManagement.Location = New System.Drawing.Point(0, 69)
+        Me.btnSchedManagement.Name = "btnSchedManagement"
+        Me.btnSchedManagement.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnSchedManagement.Size = New System.Drawing.Size(282, 35)
+        Me.btnSchedManagement.TabIndex = 12
+        Me.btnSchedManagement.Tag = "1200000002"
+        Me.btnSchedManagement.Text = "   Schedule Management"
+        Me.btnSchedManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSchedManagement.UseVisualStyleBackColor = True
+        '
+        'btnHumanResource
+        '
+        Me.btnHumanResource.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnHumanResource.FlatAppearance.BorderSize = 0
+        Me.btnHumanResource.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnHumanResource.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnHumanResource.ImageIndex = 7
+        Me.btnHumanResource.ImageList = Me.ImageListSubMenuIcon
+        Me.btnHumanResource.Location = New System.Drawing.Point(0, 34)
+        Me.btnHumanResource.Name = "btnHumanResource"
+        Me.btnHumanResource.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnHumanResource.Size = New System.Drawing.Size(282, 35)
+        Me.btnHumanResource.TabIndex = 11
+        Me.btnHumanResource.Tag = "1200000001"
+        Me.btnHumanResource.Text = "   Human Resource"
+        Me.btnHumanResource.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnHumanResource.UseVisualStyleBackColor = True
         '
         'Panel12
         '
@@ -178,297 +486,6 @@ Partial Class frmMainPanelHRMDetail
         Me.Label1.Size = New System.Drawing.Size(112, 15)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "HRIS > Transaction"
-        '
-        'btnLeaveCredit
-        '
-        Me.btnLeaveCredit.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnLeaveCredit.FlatAppearance.BorderSize = 0
-        Me.btnLeaveCredit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLeaveCredit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLeaveCredit.ImageIndex = 6
-        Me.btnLeaveCredit.ImageList = Me.ImageListSubMenuIcon
-        Me.btnLeaveCredit.Location = New System.Drawing.Point(0, 244)
-        Me.btnLeaveCredit.Name = "btnLeaveCredit"
-        Me.btnLeaveCredit.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnLeaveCredit.Size = New System.Drawing.Size(282, 35)
-        Me.btnLeaveCredit.TabIndex = 10
-        Me.btnLeaveCredit.Text = "   Leave Credit"
-        Me.btnLeaveCredit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnLeaveCredit.UseVisualStyleBackColor = True
-        '
-        'btnLeaveType
-        '
-        Me.btnLeaveType.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnLeaveType.FlatAppearance.BorderSize = 0
-        Me.btnLeaveType.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLeaveType.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLeaveType.ImageIndex = 5
-        Me.btnLeaveType.ImageList = Me.ImageListSubMenuIcon
-        Me.btnLeaveType.Location = New System.Drawing.Point(0, 209)
-        Me.btnLeaveType.Name = "btnLeaveType"
-        Me.btnLeaveType.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnLeaveType.Size = New System.Drawing.Size(282, 35)
-        Me.btnLeaveType.TabIndex = 9
-        Me.btnLeaveType.Text = "   Leave Type"
-        Me.btnLeaveType.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnLeaveType.UseVisualStyleBackColor = True
-        '
-        'btnShift
-        '
-        Me.btnShift.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnShift.FlatAppearance.BorderSize = 0
-        Me.btnShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnShift.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnShift.ImageIndex = 4
-        Me.btnShift.ImageList = Me.ImageListSubMenuIcon
-        Me.btnShift.Location = New System.Drawing.Point(0, 174)
-        Me.btnShift.Name = "btnShift"
-        Me.btnShift.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnShift.Size = New System.Drawing.Size(282, 35)
-        Me.btnShift.TabIndex = 8
-        Me.btnShift.Text = "   Shift"
-        Me.btnShift.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnShift.UseVisualStyleBackColor = True
-        '
-        'btnApprovalHierarchy
-        '
-        Me.btnApprovalHierarchy.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnApprovalHierarchy.FlatAppearance.BorderSize = 0
-        Me.btnApprovalHierarchy.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnApprovalHierarchy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnApprovalHierarchy.ImageIndex = 3
-        Me.btnApprovalHierarchy.ImageList = Me.ImageListSubMenuIcon
-        Me.btnApprovalHierarchy.Location = New System.Drawing.Point(0, 139)
-        Me.btnApprovalHierarchy.Name = "btnApprovalHierarchy"
-        Me.btnApprovalHierarchy.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnApprovalHierarchy.Size = New System.Drawing.Size(282, 35)
-        Me.btnApprovalHierarchy.TabIndex = 7
-        Me.btnApprovalHierarchy.Text = "   Approval Hierarchy"
-        Me.btnApprovalHierarchy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnApprovalHierarchy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnApprovalHierarchy.UseVisualStyleBackColor = True
-        '
-        'btnJobtitle
-        '
-        Me.btnJobtitle.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnJobtitle.FlatAppearance.BorderSize = 0
-        Me.btnJobtitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnJobtitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnJobtitle.ImageIndex = 2
-        Me.btnJobtitle.ImageList = Me.ImageListSubMenuIcon
-        Me.btnJobtitle.Location = New System.Drawing.Point(0, 104)
-        Me.btnJobtitle.Name = "btnJobtitle"
-        Me.btnJobtitle.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnJobtitle.Size = New System.Drawing.Size(282, 35)
-        Me.btnJobtitle.TabIndex = 6
-        Me.btnJobtitle.Text = "   Job Title / Designation"
-        Me.btnJobtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnJobtitle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnJobtitle.UseVisualStyleBackColor = True
-        '
-        'btnDepartment
-        '
-        Me.btnDepartment.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnDepartment.FlatAppearance.BorderSize = 0
-        Me.btnDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDepartment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDepartment.ImageIndex = 1
-        Me.btnDepartment.ImageList = Me.ImageListSubMenuIcon
-        Me.btnDepartment.Location = New System.Drawing.Point(0, 69)
-        Me.btnDepartment.Name = "btnDepartment"
-        Me.btnDepartment.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnDepartment.Size = New System.Drawing.Size(282, 35)
-        Me.btnDepartment.TabIndex = 5
-        Me.btnDepartment.Text = "   Departments"
-        Me.btnDepartment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnDepartment.UseVisualStyleBackColor = True
-        '
-        'btnCompany
-        '
-        Me.btnCompany.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnCompany.FlatAppearance.BorderSize = 0
-        Me.btnCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCompany.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCompany.ImageIndex = 0
-        Me.btnCompany.ImageList = Me.ImageListSubMenuIcon
-        Me.btnCompany.Location = New System.Drawing.Point(0, 34)
-        Me.btnCompany.Name = "btnCompany"
-        Me.btnCompany.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnCompany.Size = New System.Drawing.Size(282, 35)
-        Me.btnCompany.TabIndex = 4
-        Me.btnCompany.Text = "   Company"
-        Me.btnCompany.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCompany.UseVisualStyleBackColor = True
-        '
-        'btnTrainingReport
-        '
-        Me.btnTrainingReport.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnTrainingReport.FlatAppearance.BorderSize = 0
-        Me.btnTrainingReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTrainingReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTrainingReport.ImageKey = "Performance_Management.png"
-        Me.btnTrainingReport.ImageList = Me.ImageListSubMenuIcon
-        Me.btnTrainingReport.Location = New System.Drawing.Point(0, 174)
-        Me.btnTrainingReport.Name = "btnTrainingReport"
-        Me.btnTrainingReport.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnTrainingReport.Size = New System.Drawing.Size(282, 35)
-        Me.btnTrainingReport.TabIndex = 12
-        Me.btnTrainingReport.Text = "   Training"
-        Me.btnTrainingReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnTrainingReport.UseVisualStyleBackColor = True
-        '
-        'btnCertificateOfEmployment
-        '
-        Me.btnCertificateOfEmployment.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnCertificateOfEmployment.FlatAppearance.BorderSize = 0
-        Me.btnCertificateOfEmployment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCertificateOfEmployment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCertificateOfEmployment.ImageKey = "certificate.png"
-        Me.btnCertificateOfEmployment.ImageList = Me.ImageListSubMenuIcon
-        Me.btnCertificateOfEmployment.Location = New System.Drawing.Point(0, 139)
-        Me.btnCertificateOfEmployment.Name = "btnCertificateOfEmployment"
-        Me.btnCertificateOfEmployment.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnCertificateOfEmployment.Size = New System.Drawing.Size(282, 35)
-        Me.btnCertificateOfEmployment.TabIndex = 14
-        Me.btnCertificateOfEmployment.Text = "   COE"
-        Me.btnCertificateOfEmployment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCertificateOfEmployment.UseVisualStyleBackColor = True
-        '
-        'btnDepartmentReport
-        '
-        Me.btnDepartmentReport.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnDepartmentReport.FlatAppearance.BorderSize = 0
-        Me.btnDepartmentReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDepartmentReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDepartmentReport.ImageKey = "dept.png"
-        Me.btnDepartmentReport.ImageList = Me.ImageListSubMenuIcon
-        Me.btnDepartmentReport.Location = New System.Drawing.Point(0, 104)
-        Me.btnDepartmentReport.Name = "btnDepartmentReport"
-        Me.btnDepartmentReport.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnDepartmentReport.Size = New System.Drawing.Size(282, 35)
-        Me.btnDepartmentReport.TabIndex = 13
-        Me.btnDepartmentReport.Text = "   Department"
-        Me.btnDepartmentReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnDepartmentReport.UseVisualStyleBackColor = True
-        '
-        'btnCompanyReport
-        '
-        Me.btnCompanyReport.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnCompanyReport.FlatAppearance.BorderSize = 0
-        Me.btnCompanyReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCompanyReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCompanyReport.ImageKey = "Company.png"
-        Me.btnCompanyReport.ImageList = Me.ImageListSubMenuIcon
-        Me.btnCompanyReport.Location = New System.Drawing.Point(0, 69)
-        Me.btnCompanyReport.Name = "btnCompanyReport"
-        Me.btnCompanyReport.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnCompanyReport.Size = New System.Drawing.Size(282, 35)
-        Me.btnCompanyReport.TabIndex = 16
-        Me.btnCompanyReport.Text = "   Company"
-        Me.btnCompanyReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCompanyReport.UseVisualStyleBackColor = True
-        '
-        'btnEmployee
-        '
-        Me.btnEmployee.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnEmployee.FlatAppearance.BorderSize = 0
-        Me.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEmployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnEmployee.ImageIndex = 16
-        Me.btnEmployee.ImageList = Me.ImageListSubMenuIcon
-        Me.btnEmployee.Location = New System.Drawing.Point(0, 34)
-        Me.btnEmployee.Name = "btnEmployee"
-        Me.btnEmployee.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnEmployee.Size = New System.Drawing.Size(282, 35)
-        Me.btnEmployee.TabIndex = 15
-        Me.btnEmployee.Text = "   Employee"
-        Me.btnEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnEmployee.UseVisualStyleBackColor = True
-        '
-        'btnPerformanceManagement
-        '
-        Me.btnPerformanceManagement.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnPerformanceManagement.FlatAppearance.BorderSize = 0
-        Me.btnPerformanceManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPerformanceManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPerformanceManagement.ImageIndex = 6
-        Me.btnPerformanceManagement.ImageList = Me.ImageListSubMenuIcon
-        Me.btnPerformanceManagement.Location = New System.Drawing.Point(0, 174)
-        Me.btnPerformanceManagement.Name = "btnPerformanceManagement"
-        Me.btnPerformanceManagement.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnPerformanceManagement.Size = New System.Drawing.Size(282, 35)
-        Me.btnPerformanceManagement.TabIndex = 15
-        Me.btnPerformanceManagement.Text = "   Performance Management"
-        Me.btnPerformanceManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnPerformanceManagement.UseVisualStyleBackColor = True
-        '
-        'btnBenefitAdmin
-        '
-        Me.btnBenefitAdmin.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnBenefitAdmin.FlatAppearance.BorderSize = 0
-        Me.btnBenefitAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBenefitAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBenefitAdmin.ImageIndex = 10
-        Me.btnBenefitAdmin.ImageList = Me.ImageListSubMenuIcon
-        Me.btnBenefitAdmin.Location = New System.Drawing.Point(0, 139)
-        Me.btnBenefitAdmin.Name = "btnBenefitAdmin"
-        Me.btnBenefitAdmin.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnBenefitAdmin.Size = New System.Drawing.Size(282, 35)
-        Me.btnBenefitAdmin.TabIndex = 14
-        Me.btnBenefitAdmin.Text = "   Benefit Administration"
-        Me.btnBenefitAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBenefitAdmin.UseVisualStyleBackColor = True
-        '
-        'btnTrainingManagement
-        '
-        Me.btnTrainingManagement.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnTrainingManagement.FlatAppearance.BorderSize = 0
-        Me.btnTrainingManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTrainingManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTrainingManagement.ImageIndex = 9
-        Me.btnTrainingManagement.ImageList = Me.ImageListSubMenuIcon
-        Me.btnTrainingManagement.Location = New System.Drawing.Point(0, 104)
-        Me.btnTrainingManagement.Name = "btnTrainingManagement"
-        Me.btnTrainingManagement.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnTrainingManagement.Size = New System.Drawing.Size(282, 35)
-        Me.btnTrainingManagement.TabIndex = 13
-        Me.btnTrainingManagement.Text = "   Training Management"
-        Me.btnTrainingManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnTrainingManagement.UseVisualStyleBackColor = True
-        '
-        'btnSchedManagement
-        '
-        Me.btnSchedManagement.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSchedManagement.FlatAppearance.BorderSize = 0
-        Me.btnSchedManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSchedManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSchedManagement.ImageIndex = 8
-        Me.btnSchedManagement.ImageList = Me.ImageListSubMenuIcon
-        Me.btnSchedManagement.Location = New System.Drawing.Point(0, 69)
-        Me.btnSchedManagement.Name = "btnSchedManagement"
-        Me.btnSchedManagement.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnSchedManagement.Size = New System.Drawing.Size(282, 35)
-        Me.btnSchedManagement.TabIndex = 12
-        Me.btnSchedManagement.Text = "   Schedule Management"
-        Me.btnSchedManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSchedManagement.UseVisualStyleBackColor = True
-        '
-        'btnHumanResource
-        '
-        Me.btnHumanResource.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnHumanResource.FlatAppearance.BorderSize = 0
-        Me.btnHumanResource.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHumanResource.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnHumanResource.ImageIndex = 7
-        Me.btnHumanResource.ImageList = Me.ImageListSubMenuIcon
-        Me.btnHumanResource.Location = New System.Drawing.Point(0, 34)
-        Me.btnHumanResource.Name = "btnHumanResource"
-        Me.btnHumanResource.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btnHumanResource.Size = New System.Drawing.Size(282, 35)
-        Me.btnHumanResource.TabIndex = 11
-        Me.btnHumanResource.Text = "   Human Resource"
-        Me.btnHumanResource.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnHumanResource.UseVisualStyleBackColor = True
         '
         'frmMainPanelHRMDetail
         '

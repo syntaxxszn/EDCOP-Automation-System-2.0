@@ -94,7 +94,7 @@ Public Class frmHRIS_PerformanceManagement_AddUpdatePart1Form1
 
     Private Sub kra1fw_TextChanged(sender As Object, e As EventArgs) Handles kra1fw.TextChanged
         If isPopulating Then Exit Sub
-        kra1rfw.Clear()
+        kra1rfw.Text = "0.00"
         For Each cb In {kra1r1, kra1r2, kra1r3, kra1r4, kra1r5}
             cb.Checked = False
         Next
@@ -102,7 +102,7 @@ Public Class frmHRIS_PerformanceManagement_AddUpdatePart1Form1
 
     Private Sub kra2fw_TextChanged(sender As Object, e As EventArgs) Handles kra2fw.TextChanged
         If isPopulating Then Exit Sub
-        kra2rfw.Clear()
+        kra2rfw.Text = "0.00"
         For Each cb In {kra2r1, kra2r2, kra2r3, kra2r4, kra2r5}
             cb.Checked = False
         Next
@@ -110,7 +110,7 @@ Public Class frmHRIS_PerformanceManagement_AddUpdatePart1Form1
 
     Private Sub kra3fw_TextChanged(sender As Object, e As EventArgs) Handles kra3fw.TextChanged
         If isPopulating Then Exit Sub
-        kra3rfw.Clear()
+        kra3rfw.Text = "0.00"
         For Each cb In {kra3r1, kra3r2, kra3r3, kra3r4, kra3r5}
             cb.Checked = False
         Next
@@ -154,12 +154,12 @@ Public Class frmHRIS_PerformanceManagement_AddUpdatePart1Form1
         kra1goals.Clear()
         kra2goals.Clear()
         kra3goals.Clear()
-        kra1fw.Clear()
-        kra2fw.Clear()
-        kra3fw.Clear()
-        kra1rfw.Clear()
-        kra2rfw.Clear()
-        kra3rfw.Clear()
+        kra1fw.Text = "0.00"
+        kra2fw.Text = "0.00"
+        kra3fw.Text = "0.00"
+        kra1rfw.Text = "0.00"
+        kra2rfw.Text = "0.00"
+        kra3rfw.Text = "0.00"
         For Each cb In {kra1r1, kra1r2, kra1r3, kra1r4, kra1r5}
             cb.Checked = False
         Next

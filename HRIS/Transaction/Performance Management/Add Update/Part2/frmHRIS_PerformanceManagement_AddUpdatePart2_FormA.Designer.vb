@@ -24,68 +24,77 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle49 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle45 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle49 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle50 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle56 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle51 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle52 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle53 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle54 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle55 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle56 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle57 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle63 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle58 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle59 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle60 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle61 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle62 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle64 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle70 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle65 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle66 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle67 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle68 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle69 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHRIS_PerformanceManagement_AddUpdatePart2_FormA))
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnNext = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -97,13 +106,9 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Panel29 = New System.Windows.Forms.Panel()
-        Me.txtProjectName = New System.Windows.Forms.TextBox()
-        Me.Label23 = New System.Windows.Forms.Label()
         Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.txtCoveredPeriod = New System.Windows.Forms.TextBox()
+        Me.txtEmploymentStatus = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.txtDepartment = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -122,8 +127,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.btnBackTab1 = New System.Windows.Forms.Button()
         Me.btnNextTab1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtTFW1 = New System.Windows.Forms.TextBox()
+        Me.lblA1FW = New System.Windows.Forms.Label()
         Me.dgvA1 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -137,8 +142,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.btnPrevTab2 = New System.Windows.Forms.Button()
         Me.btnNextTab2 = New System.Windows.Forms.Button()
         Me.Panel17 = New System.Windows.Forms.Panel()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtTFW2 = New System.Windows.Forms.TextBox()
+        Me.lblA2FW = New System.Windows.Forms.Label()
         Me.dgvA2 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -152,8 +157,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.btnPrevTab3 = New System.Windows.Forms.Button()
         Me.btnNextTab3 = New System.Windows.Forms.Button()
         Me.Panel18 = New System.Windows.Forms.Panel()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtTFW3 = New System.Windows.Forms.TextBox()
+        Me.lblA3FW = New System.Windows.Forms.Label()
         Me.dgvA3 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -167,8 +172,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.btnPrevTab4 = New System.Windows.Forms.Button()
         Me.btnNextTab4 = New System.Windows.Forms.Button()
         Me.Panel19 = New System.Windows.Forms.Panel()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
+        Me.txtTFW4 = New System.Windows.Forms.TextBox()
+        Me.lblA4FW = New System.Windows.Forms.Label()
         Me.dgvA4 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -182,8 +187,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.btnPrevTab5 = New System.Windows.Forms.Button()
         Me.btnNextTab5 = New System.Windows.Forms.Button()
         Me.Panel20 = New System.Windows.Forms.Panel()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label19 = New System.Windows.Forms.Label()
+        Me.txtTFW5 = New System.Windows.Forms.TextBox()
+        Me.lblA5FW = New System.Windows.Forms.Label()
         Me.dgvA5 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -197,8 +202,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.btnPrevTab6 = New System.Windows.Forms.Button()
         Me.btnNextTab6 = New System.Windows.Forms.Button()
         Me.Panel21 = New System.Windows.Forms.Panel()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Label21 = New System.Windows.Forms.Label()
+        Me.txtTFW6 = New System.Windows.Forms.TextBox()
+        Me.lblA6FW = New System.Windows.Forms.Label()
         Me.dgvA6 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -212,8 +217,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.btnPrevTab7 = New System.Windows.Forms.Button()
         Me.btnNextTab7 = New System.Windows.Forms.Button()
         Me.Panel22 = New System.Windows.Forms.Panel()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Label24 = New System.Windows.Forms.Label()
+        Me.txtTFW7 = New System.Windows.Forms.TextBox()
+        Me.lblA7FW = New System.Windows.Forms.Label()
         Me.dgvA7 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -227,8 +232,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.btnPrevTab8 = New System.Windows.Forms.Button()
         Me.btnNextTab8 = New System.Windows.Forms.Button()
         Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.Label26 = New System.Windows.Forms.Label()
+        Me.txtTFW8 = New System.Windows.Forms.TextBox()
+        Me.lblA8FW = New System.Windows.Forms.Label()
         Me.dgvA8 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -242,8 +247,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.btnPrevTab9 = New System.Windows.Forms.Button()
         Me.btnNextTab9 = New System.Windows.Forms.Button()
         Me.Panel24 = New System.Windows.Forms.Panel()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Label28 = New System.Windows.Forms.Label()
+        Me.txtTFW9 = New System.Windows.Forms.TextBox()
+        Me.lblA9FW = New System.Windows.Forms.Label()
         Me.dgvA9 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -257,8 +262,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.btnPrevTab10 = New System.Windows.Forms.Button()
         Me.btnNextTab10 = New System.Windows.Forms.Button()
         Me.Panel25 = New System.Windows.Forms.Panel()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.Label30 = New System.Windows.Forms.Label()
+        Me.txtTFW10 = New System.Windows.Forms.TextBox()
+        Me.lblA10FW = New System.Windows.Forms.Label()
         Me.dgvA10 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -272,7 +277,6 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.Panel2.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.Panel8.SuspendLayout()
-        Me.Panel29.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel13.SuspendLayout()
         Me.Panel12.SuspendLayout()
@@ -314,7 +318,6 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         Me.Panel2.BackColor = System.Drawing.Color.Navy
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.btnNext)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Label4)
@@ -323,20 +326,6 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(775, 69)
         Me.Panel2.TabIndex = 4
-        '
-        'btnNext
-        '
-        Me.btnNext.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnNext.BackColor = System.Drawing.Color.Navy
-        Me.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.Navy
-        Me.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNext.ForeColor = System.Drawing.Color.White
-        Me.btnNext.Location = New System.Drawing.Point(605, 22)
-        Me.btnNext.Name = "btnNext"
-        Me.btnNext.Size = New System.Drawing.Size(137, 23)
-        Me.btnNext.TabIndex = 53
-        Me.btnNext.Text = "Test"
-        Me.btnNext.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -438,9 +427,7 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         'Panel8
         '
         Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel8.Controls.Add(Me.Panel29)
         Me.Panel8.Controls.Add(Me.Panel14)
-        Me.Panel8.Controls.Add(Me.Label8)
         Me.Panel8.Controls.Add(Me.Panel13)
         Me.Panel8.Controls.Add(Me.Panel12)
         Me.Panel8.Controls.Add(Me.Panel9)
@@ -449,75 +436,36 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.Panel8.Size = New System.Drawing.Size(721, 87)
         Me.Panel8.TabIndex = 13
         '
-        'Panel29
-        '
-        Me.Panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel29.Controls.Add(Me.txtProjectName)
-        Me.Panel29.Controls.Add(Me.Label23)
-        Me.Panel29.Location = New System.Drawing.Point(224, 42)
-        Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(226, 43)
-        Me.Panel29.TabIndex = 3
-        '
-        'txtProjectName
-        '
-        Me.txtProjectName.BackColor = System.Drawing.Color.White
-        Me.txtProjectName.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtProjectName.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtProjectName.Location = New System.Drawing.Point(6, 22)
-        Me.txtProjectName.Name = "txtProjectName"
-        Me.txtProjectName.ReadOnly = True
-        Me.txtProjectName.Size = New System.Drawing.Size(215, 15)
-        Me.txtProjectName.TabIndex = 14
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(3, 2)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(114, 13)
-        Me.Label23.TabIndex = 1
-        Me.Label23.Text = "Project Designation :"
-        '
         'Panel14
         '
         Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel14.Controls.Add(Me.txtCoveredPeriod)
+        Me.Panel14.Controls.Add(Me.txtEmploymentStatus)
         Me.Panel14.Controls.Add(Me.Label7)
-        Me.Panel14.Location = New System.Drawing.Point(448, 42)
+        Me.Panel14.Location = New System.Drawing.Point(382, 42)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(271, 43)
+        Me.Panel14.Size = New System.Drawing.Size(337, 43)
         Me.Panel14.TabIndex = 2
         '
-        'txtCoveredPeriod
+        'txtEmploymentStatus
         '
-        Me.txtCoveredPeriod.BackColor = System.Drawing.Color.White
-        Me.txtCoveredPeriod.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCoveredPeriod.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCoveredPeriod.Location = New System.Drawing.Point(7, 22)
-        Me.txtCoveredPeriod.Name = "txtCoveredPeriod"
-        Me.txtCoveredPeriod.ReadOnly = True
-        Me.txtCoveredPeriod.Size = New System.Drawing.Size(259, 15)
-        Me.txtCoveredPeriod.TabIndex = 3
-        Me.txtCoveredPeriod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtEmploymentStatus.BackColor = System.Drawing.Color.White
+        Me.txtEmploymentStatus.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtEmploymentStatus.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmploymentStatus.Location = New System.Drawing.Point(7, 22)
+        Me.txtEmploymentStatus.Name = "txtEmploymentStatus"
+        Me.txtEmploymentStatus.ReadOnly = True
+        Me.txtEmploymentStatus.Size = New System.Drawing.Size(325, 15)
+        Me.txtEmploymentStatus.TabIndex = 3
+        Me.txtEmploymentStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(3, 3)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(91, 13)
+        Me.Label7.Size = New System.Drawing.Size(111, 13)
         Me.Label7.TabIndex = 2
-        Me.Label7.Text = "Period Covered :"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(258, 49)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(55, 13)
-        Me.Label8.TabIndex = 1
-        Me.Label8.Text = "Position :"
+        Me.Label7.Text = "Employment Status :"
         '
         'Panel13
         '
@@ -557,7 +505,7 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.Panel12.Controls.Add(Me.Label5)
         Me.Panel12.Location = New System.Drawing.Point(0, 42)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(225, 43)
+        Me.Panel12.Size = New System.Drawing.Size(383, 43)
         Me.Panel12.TabIndex = 1
         '
         'txtPosition
@@ -568,7 +516,7 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.txtPosition.Location = New System.Drawing.Point(6, 22)
         Me.txtPosition.Name = "txtPosition"
         Me.txtPosition.ReadOnly = True
-        Me.txtPosition.Size = New System.Drawing.Size(214, 15)
+        Me.txtPosition.Size = New System.Drawing.Size(369, 15)
         Me.txtPosition.TabIndex = 14
         Me.txtPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -719,33 +667,34 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.txtTFW1)
+        Me.Panel1.Controls.Add(Me.lblA1FW)
         Me.Panel1.Location = New System.Drawing.Point(273, 387)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(458, 39)
         Me.Panel1.TabIndex = 27
         '
-        'TextBox1
+        'txtTFW1
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(315, 11)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(137, 15)
-        Me.TextBox1.TabIndex = 3
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtTFW1.BackColor = System.Drawing.Color.White
+        Me.txtTFW1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTFW1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTFW1.ForeColor = System.Drawing.Color.Navy
+        Me.txtTFW1.Location = New System.Drawing.Point(336, 11)
+        Me.txtTFW1.Name = "txtTFW1"
+        Me.txtTFW1.ReadOnly = True
+        Me.txtTFW1.Size = New System.Drawing.Size(100, 15)
+        Me.txtTFW1.TabIndex = 3
+        Me.txtTFW1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label12
+        'lblA1FW
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(10, 11)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(299, 15)
-        Me.Label12.TabIndex = 2
-        Me.Label12.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
+        Me.lblA1FW.AutoSize = True
+        Me.lblA1FW.Location = New System.Drawing.Point(10, 11)
+        Me.lblA1FW.Name = "lblA1FW"
+        Me.lblA1FW.Size = New System.Drawing.Size(299, 15)
+        Me.lblA1FW.TabIndex = 2
+        Me.lblA1FW.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
         '
         'dgvA1
         '
@@ -767,6 +716,14 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.dgvA1.ColumnHeadersHeight = 35
         Me.dgvA1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvA1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn10, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA1.DefaultCellStyle = DataGridViewCellStyle7
         Me.dgvA1.Location = New System.Drawing.Point(10, 36)
         Me.dgvA1.MultiSelect = False
         Me.dgvA1.Name = "dgvA1"
@@ -906,33 +863,34 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         'Panel17
         '
         Me.Panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel17.Controls.Add(Me.TextBox2)
-        Me.Panel17.Controls.Add(Me.Label13)
+        Me.Panel17.Controls.Add(Me.txtTFW2)
+        Me.Panel17.Controls.Add(Me.lblA2FW)
         Me.Panel17.Location = New System.Drawing.Point(273, 387)
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(458, 39)
         Me.Panel17.TabIndex = 104
         '
-        'TextBox2
+        'txtTFW2
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.White
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(315, 11)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(137, 15)
-        Me.TextBox2.TabIndex = 3
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtTFW2.BackColor = System.Drawing.Color.White
+        Me.txtTFW2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTFW2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTFW2.ForeColor = System.Drawing.Color.Navy
+        Me.txtTFW2.Location = New System.Drawing.Point(336, 11)
+        Me.txtTFW2.Name = "txtTFW2"
+        Me.txtTFW2.ReadOnly = True
+        Me.txtTFW2.Size = New System.Drawing.Size(100, 15)
+        Me.txtTFW2.TabIndex = 3
+        Me.txtTFW2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label13
+        'lblA2FW
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(10, 11)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(299, 15)
-        Me.Label13.TabIndex = 2
-        Me.Label13.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
+        Me.lblA2FW.AutoSize = True
+        Me.lblA2FW.Location = New System.Drawing.Point(10, 11)
+        Me.lblA2FW.Name = "lblA2FW"
+        Me.lblA2FW.Size = New System.Drawing.Size(299, 15)
+        Me.lblA2FW.TabIndex = 2
+        Me.lblA2FW.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
         '
         'dgvA2
         '
@@ -943,17 +901,25 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.dgvA2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvA2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvA2.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvA2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvA2.ColumnHeadersHeight = 35
         Me.dgvA2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvA2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewCheckBoxColumn1, Me.DataGridViewCheckBoxColumn2, Me.DataGridViewCheckBoxColumn3, Me.DataGridViewCheckBoxColumn4, Me.DataGridViewCheckBoxColumn5})
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA2.DefaultCellStyle = DataGridViewCellStyle14
         Me.dgvA2.Location = New System.Drawing.Point(10, 36)
         Me.dgvA2.MultiSelect = False
         Me.dgvA2.Name = "dgvA2"
@@ -978,10 +944,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn1
         '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.NullValue = False
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn1.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.NullValue = False
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn1.DefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridViewCheckBoxColumn1.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn1.HeaderText = "1"
         Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
@@ -990,10 +956,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn2
         '
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.NullValue = False
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn2.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.NullValue = False
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn2.DefaultCellStyle = DataGridViewCellStyle10
         Me.DataGridViewCheckBoxColumn2.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn2.HeaderText = "2"
         Me.DataGridViewCheckBoxColumn2.Name = "DataGridViewCheckBoxColumn2"
@@ -1002,10 +968,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn3
         '
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle10.NullValue = False
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn3.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle11.NullValue = False
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn3.DefaultCellStyle = DataGridViewCellStyle11
         Me.DataGridViewCheckBoxColumn3.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn3.HeaderText = "3"
         Me.DataGridViewCheckBoxColumn3.Name = "DataGridViewCheckBoxColumn3"
@@ -1014,10 +980,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn4
         '
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle11.NullValue = False
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn4.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.NullValue = False
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn4.DefaultCellStyle = DataGridViewCellStyle12
         Me.DataGridViewCheckBoxColumn4.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn4.HeaderText = "4"
         Me.DataGridViewCheckBoxColumn4.Name = "DataGridViewCheckBoxColumn4"
@@ -1026,10 +992,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn5
         '
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.NullValue = False
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn5.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.NullValue = False
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn5.DefaultCellStyle = DataGridViewCellStyle13
         Me.DataGridViewCheckBoxColumn5.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn5.HeaderText = "5"
         Me.DataGridViewCheckBoxColumn5.Name = "DataGridViewCheckBoxColumn5"
@@ -1093,33 +1059,34 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         'Panel18
         '
         Me.Panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel18.Controls.Add(Me.TextBox3)
-        Me.Panel18.Controls.Add(Me.Label15)
+        Me.Panel18.Controls.Add(Me.txtTFW3)
+        Me.Panel18.Controls.Add(Me.lblA3FW)
         Me.Panel18.Location = New System.Drawing.Point(273, 387)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(458, 39)
         Me.Panel18.TabIndex = 104
         '
-        'TextBox3
+        'txtTFW3
         '
-        Me.TextBox3.BackColor = System.Drawing.Color.White
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(315, 11)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(137, 15)
-        Me.TextBox3.TabIndex = 3
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtTFW3.BackColor = System.Drawing.Color.White
+        Me.txtTFW3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTFW3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTFW3.ForeColor = System.Drawing.Color.Navy
+        Me.txtTFW3.Location = New System.Drawing.Point(336, 11)
+        Me.txtTFW3.Name = "txtTFW3"
+        Me.txtTFW3.ReadOnly = True
+        Me.txtTFW3.Size = New System.Drawing.Size(100, 15)
+        Me.txtTFW3.TabIndex = 3
+        Me.txtTFW3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label15
+        'lblA3FW
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(10, 11)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(299, 15)
-        Me.Label15.TabIndex = 2
-        Me.Label15.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
+        Me.lblA3FW.AutoSize = True
+        Me.lblA3FW.Location = New System.Drawing.Point(10, 11)
+        Me.lblA3FW.Name = "lblA3FW"
+        Me.lblA3FW.Size = New System.Drawing.Size(299, 15)
+        Me.lblA3FW.TabIndex = 2
+        Me.lblA3FW.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
         '
         'dgvA3
         '
@@ -1130,17 +1097,25 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.dgvA3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvA3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvA3.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvA3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
         Me.dgvA3.ColumnHeadersHeight = 35
         Me.dgvA3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvA3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewCheckBoxColumn6, Me.DataGridViewCheckBoxColumn7, Me.DataGridViewCheckBoxColumn8, Me.DataGridViewCheckBoxColumn9, Me.DataGridViewCheckBoxColumn10})
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA3.DefaultCellStyle = DataGridViewCellStyle21
         Me.dgvA3.Location = New System.Drawing.Point(10, 36)
         Me.dgvA3.MultiSelect = False
         Me.dgvA3.Name = "dgvA3"
@@ -1165,10 +1140,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn6
         '
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle14.NullValue = False
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn6.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle16.NullValue = False
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn6.DefaultCellStyle = DataGridViewCellStyle16
         Me.DataGridViewCheckBoxColumn6.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn6.HeaderText = "1"
         Me.DataGridViewCheckBoxColumn6.Name = "DataGridViewCheckBoxColumn6"
@@ -1177,10 +1152,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn7
         '
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle15.NullValue = False
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn7.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle17.NullValue = False
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn7.DefaultCellStyle = DataGridViewCellStyle17
         Me.DataGridViewCheckBoxColumn7.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn7.HeaderText = "2"
         Me.DataGridViewCheckBoxColumn7.Name = "DataGridViewCheckBoxColumn7"
@@ -1189,10 +1164,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn8
         '
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle16.NullValue = False
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn8.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle18.NullValue = False
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn8.DefaultCellStyle = DataGridViewCellStyle18
         Me.DataGridViewCheckBoxColumn8.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn8.HeaderText = "3"
         Me.DataGridViewCheckBoxColumn8.Name = "DataGridViewCheckBoxColumn8"
@@ -1201,10 +1176,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn9
         '
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle17.NullValue = False
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn9.DefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle19.NullValue = False
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn9.DefaultCellStyle = DataGridViewCellStyle19
         Me.DataGridViewCheckBoxColumn9.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn9.HeaderText = "4"
         Me.DataGridViewCheckBoxColumn9.Name = "DataGridViewCheckBoxColumn9"
@@ -1213,10 +1188,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn10
         '
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle18.NullValue = False
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn10.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle20.NullValue = False
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn10.DefaultCellStyle = DataGridViewCellStyle20
         Me.DataGridViewCheckBoxColumn10.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn10.HeaderText = "5"
         Me.DataGridViewCheckBoxColumn10.Name = "DataGridViewCheckBoxColumn10"
@@ -1279,33 +1254,34 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         'Panel19
         '
         Me.Panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel19.Controls.Add(Me.TextBox4)
-        Me.Panel19.Controls.Add(Me.Label17)
+        Me.Panel19.Controls.Add(Me.txtTFW4)
+        Me.Panel19.Controls.Add(Me.lblA4FW)
         Me.Panel19.Location = New System.Drawing.Point(273, 387)
         Me.Panel19.Name = "Panel19"
         Me.Panel19.Size = New System.Drawing.Size(458, 39)
         Me.Panel19.TabIndex = 104
         '
-        'TextBox4
+        'txtTFW4
         '
-        Me.TextBox4.BackColor = System.Drawing.Color.White
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(315, 11)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(137, 15)
-        Me.TextBox4.TabIndex = 3
-        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtTFW4.BackColor = System.Drawing.Color.White
+        Me.txtTFW4.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTFW4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTFW4.ForeColor = System.Drawing.Color.Navy
+        Me.txtTFW4.Location = New System.Drawing.Point(336, 11)
+        Me.txtTFW4.Name = "txtTFW4"
+        Me.txtTFW4.ReadOnly = True
+        Me.txtTFW4.Size = New System.Drawing.Size(100, 15)
+        Me.txtTFW4.TabIndex = 3
+        Me.txtTFW4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label17
+        'lblA4FW
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(10, 11)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(299, 15)
-        Me.Label17.TabIndex = 2
-        Me.Label17.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
+        Me.lblA4FW.AutoSize = True
+        Me.lblA4FW.Location = New System.Drawing.Point(10, 11)
+        Me.lblA4FW.Name = "lblA4FW"
+        Me.lblA4FW.Size = New System.Drawing.Size(299, 15)
+        Me.lblA4FW.TabIndex = 2
+        Me.lblA4FW.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
         '
         'dgvA4
         '
@@ -1316,17 +1292,25 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.dgvA4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvA4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvA4.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvA4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle22.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
         Me.dgvA4.ColumnHeadersHeight = 35
         Me.dgvA4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvA4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewCheckBoxColumn11, Me.DataGridViewCheckBoxColumn12, Me.DataGridViewCheckBoxColumn13, Me.DataGridViewCheckBoxColumn14, Me.DataGridViewCheckBoxColumn15})
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle28.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA4.DefaultCellStyle = DataGridViewCellStyle28
         Me.dgvA4.Location = New System.Drawing.Point(10, 36)
         Me.dgvA4.MultiSelect = False
         Me.dgvA4.Name = "dgvA4"
@@ -1351,10 +1335,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn11
         '
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle20.NullValue = False
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn11.DefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle23.NullValue = False
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn11.DefaultCellStyle = DataGridViewCellStyle23
         Me.DataGridViewCheckBoxColumn11.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn11.HeaderText = "1"
         Me.DataGridViewCheckBoxColumn11.Name = "DataGridViewCheckBoxColumn11"
@@ -1363,10 +1347,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn12
         '
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle21.NullValue = False
-        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn12.DefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle24.NullValue = False
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn12.DefaultCellStyle = DataGridViewCellStyle24
         Me.DataGridViewCheckBoxColumn12.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn12.HeaderText = "2"
         Me.DataGridViewCheckBoxColumn12.Name = "DataGridViewCheckBoxColumn12"
@@ -1375,10 +1359,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn13
         '
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle22.NullValue = False
-        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn13.DefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle25.NullValue = False
+        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn13.DefaultCellStyle = DataGridViewCellStyle25
         Me.DataGridViewCheckBoxColumn13.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn13.HeaderText = "3"
         Me.DataGridViewCheckBoxColumn13.Name = "DataGridViewCheckBoxColumn13"
@@ -1387,10 +1371,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn14
         '
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle23.NullValue = False
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn14.DefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle26.NullValue = False
+        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn14.DefaultCellStyle = DataGridViewCellStyle26
         Me.DataGridViewCheckBoxColumn14.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn14.HeaderText = "4"
         Me.DataGridViewCheckBoxColumn14.Name = "DataGridViewCheckBoxColumn14"
@@ -1399,10 +1383,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn15
         '
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle24.NullValue = False
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn15.DefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle27.NullValue = False
+        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn15.DefaultCellStyle = DataGridViewCellStyle27
         Me.DataGridViewCheckBoxColumn15.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn15.HeaderText = "5"
         Me.DataGridViewCheckBoxColumn15.Name = "DataGridViewCheckBoxColumn15"
@@ -1465,33 +1449,34 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         'Panel20
         '
         Me.Panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel20.Controls.Add(Me.TextBox5)
-        Me.Panel20.Controls.Add(Me.Label19)
+        Me.Panel20.Controls.Add(Me.txtTFW5)
+        Me.Panel20.Controls.Add(Me.lblA5FW)
         Me.Panel20.Location = New System.Drawing.Point(273, 387)
         Me.Panel20.Name = "Panel20"
         Me.Panel20.Size = New System.Drawing.Size(458, 39)
         Me.Panel20.TabIndex = 104
         '
-        'TextBox5
+        'txtTFW5
         '
-        Me.TextBox5.BackColor = System.Drawing.Color.White
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(315, 11)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(137, 15)
-        Me.TextBox5.TabIndex = 3
-        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtTFW5.BackColor = System.Drawing.Color.White
+        Me.txtTFW5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTFW5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTFW5.ForeColor = System.Drawing.Color.Navy
+        Me.txtTFW5.Location = New System.Drawing.Point(336, 11)
+        Me.txtTFW5.Name = "txtTFW5"
+        Me.txtTFW5.ReadOnly = True
+        Me.txtTFW5.Size = New System.Drawing.Size(100, 15)
+        Me.txtTFW5.TabIndex = 3
+        Me.txtTFW5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label19
+        'lblA5FW
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(10, 11)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(299, 15)
-        Me.Label19.TabIndex = 2
-        Me.Label19.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
+        Me.lblA5FW.AutoSize = True
+        Me.lblA5FW.Location = New System.Drawing.Point(10, 11)
+        Me.lblA5FW.Name = "lblA5FW"
+        Me.lblA5FW.Size = New System.Drawing.Size(299, 15)
+        Me.lblA5FW.TabIndex = 2
+        Me.lblA5FW.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
         '
         'dgvA5
         '
@@ -1502,17 +1487,25 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.dgvA5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvA5.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvA5.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle25.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvA5.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle29.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA5.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
         Me.dgvA5.ColumnHeadersHeight = 35
         Me.dgvA5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvA5.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewCheckBoxColumn16, Me.DataGridViewCheckBoxColumn17, Me.DataGridViewCheckBoxColumn18, Me.DataGridViewCheckBoxColumn19, Me.DataGridViewCheckBoxColumn20})
+        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle35.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA5.DefaultCellStyle = DataGridViewCellStyle35
         Me.dgvA5.Location = New System.Drawing.Point(10, 36)
         Me.dgvA5.MultiSelect = False
         Me.dgvA5.Name = "dgvA5"
@@ -1537,10 +1530,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn16
         '
-        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle26.NullValue = False
-        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn16.DefaultCellStyle = DataGridViewCellStyle26
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle30.NullValue = False
+        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn16.DefaultCellStyle = DataGridViewCellStyle30
         Me.DataGridViewCheckBoxColumn16.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn16.HeaderText = "1"
         Me.DataGridViewCheckBoxColumn16.Name = "DataGridViewCheckBoxColumn16"
@@ -1549,10 +1542,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn17
         '
-        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle27.NullValue = False
-        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn17.DefaultCellStyle = DataGridViewCellStyle27
+        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle31.NullValue = False
+        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn17.DefaultCellStyle = DataGridViewCellStyle31
         Me.DataGridViewCheckBoxColumn17.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn17.HeaderText = "2"
         Me.DataGridViewCheckBoxColumn17.Name = "DataGridViewCheckBoxColumn17"
@@ -1561,10 +1554,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn18
         '
-        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle28.NullValue = False
-        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn18.DefaultCellStyle = DataGridViewCellStyle28
+        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle32.NullValue = False
+        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn18.DefaultCellStyle = DataGridViewCellStyle32
         Me.DataGridViewCheckBoxColumn18.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn18.HeaderText = "3"
         Me.DataGridViewCheckBoxColumn18.Name = "DataGridViewCheckBoxColumn18"
@@ -1573,10 +1566,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn19
         '
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle29.NullValue = False
-        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn19.DefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle33.NullValue = False
+        DataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn19.DefaultCellStyle = DataGridViewCellStyle33
         Me.DataGridViewCheckBoxColumn19.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn19.HeaderText = "4"
         Me.DataGridViewCheckBoxColumn19.Name = "DataGridViewCheckBoxColumn19"
@@ -1585,10 +1578,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn20
         '
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle30.NullValue = False
-        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn20.DefaultCellStyle = DataGridViewCellStyle30
+        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle34.NullValue = False
+        DataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn20.DefaultCellStyle = DataGridViewCellStyle34
         Me.DataGridViewCheckBoxColumn20.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn20.HeaderText = "5"
         Me.DataGridViewCheckBoxColumn20.Name = "DataGridViewCheckBoxColumn20"
@@ -1651,33 +1644,34 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         'Panel21
         '
         Me.Panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel21.Controls.Add(Me.TextBox6)
-        Me.Panel21.Controls.Add(Me.Label21)
+        Me.Panel21.Controls.Add(Me.txtTFW6)
+        Me.Panel21.Controls.Add(Me.lblA6FW)
         Me.Panel21.Location = New System.Drawing.Point(273, 387)
         Me.Panel21.Name = "Panel21"
         Me.Panel21.Size = New System.Drawing.Size(458, 39)
         Me.Panel21.TabIndex = 104
         '
-        'TextBox6
+        'txtTFW6
         '
-        Me.TextBox6.BackColor = System.Drawing.Color.White
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(315, 11)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.ReadOnly = True
-        Me.TextBox6.Size = New System.Drawing.Size(137, 15)
-        Me.TextBox6.TabIndex = 3
-        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtTFW6.BackColor = System.Drawing.Color.White
+        Me.txtTFW6.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTFW6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTFW6.ForeColor = System.Drawing.Color.Navy
+        Me.txtTFW6.Location = New System.Drawing.Point(336, 11)
+        Me.txtTFW6.Name = "txtTFW6"
+        Me.txtTFW6.ReadOnly = True
+        Me.txtTFW6.Size = New System.Drawing.Size(100, 15)
+        Me.txtTFW6.TabIndex = 3
+        Me.txtTFW6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label21
+        'lblA6FW
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(10, 11)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(299, 15)
-        Me.Label21.TabIndex = 2
-        Me.Label21.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
+        Me.lblA6FW.AutoSize = True
+        Me.lblA6FW.Location = New System.Drawing.Point(10, 11)
+        Me.lblA6FW.Name = "lblA6FW"
+        Me.lblA6FW.Size = New System.Drawing.Size(299, 15)
+        Me.lblA6FW.TabIndex = 2
+        Me.lblA6FW.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
         '
         'dgvA6
         '
@@ -1688,17 +1682,25 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.dgvA6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvA6.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvA6.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle31.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvA6.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle36.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA6.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle36
         Me.dgvA6.ColumnHeadersHeight = 35
         Me.dgvA6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvA6.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn11, Me.DataGridViewCheckBoxColumn21, Me.DataGridViewCheckBoxColumn22, Me.DataGridViewCheckBoxColumn23, Me.DataGridViewCheckBoxColumn24, Me.DataGridViewCheckBoxColumn25})
+        DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle42.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA6.DefaultCellStyle = DataGridViewCellStyle42
         Me.dgvA6.Location = New System.Drawing.Point(10, 36)
         Me.dgvA6.MultiSelect = False
         Me.dgvA6.Name = "dgvA6"
@@ -1723,10 +1725,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn21
         '
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle32.NullValue = False
-        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn21.DefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle37.NullValue = False
+        DataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn21.DefaultCellStyle = DataGridViewCellStyle37
         Me.DataGridViewCheckBoxColumn21.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn21.HeaderText = "1"
         Me.DataGridViewCheckBoxColumn21.Name = "DataGridViewCheckBoxColumn21"
@@ -1735,10 +1737,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn22
         '
-        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle33.NullValue = False
-        DataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn22.DefaultCellStyle = DataGridViewCellStyle33
+        DataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle38.NullValue = False
+        DataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn22.DefaultCellStyle = DataGridViewCellStyle38
         Me.DataGridViewCheckBoxColumn22.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn22.HeaderText = "2"
         Me.DataGridViewCheckBoxColumn22.Name = "DataGridViewCheckBoxColumn22"
@@ -1747,10 +1749,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn23
         '
-        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle34.NullValue = False
-        DataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn23.DefaultCellStyle = DataGridViewCellStyle34
+        DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle39.NullValue = False
+        DataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn23.DefaultCellStyle = DataGridViewCellStyle39
         Me.DataGridViewCheckBoxColumn23.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn23.HeaderText = "3"
         Me.DataGridViewCheckBoxColumn23.Name = "DataGridViewCheckBoxColumn23"
@@ -1759,10 +1761,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn24
         '
-        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle35.NullValue = False
-        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn24.DefaultCellStyle = DataGridViewCellStyle35
+        DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle40.NullValue = False
+        DataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn24.DefaultCellStyle = DataGridViewCellStyle40
         Me.DataGridViewCheckBoxColumn24.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn24.HeaderText = "4"
         Me.DataGridViewCheckBoxColumn24.Name = "DataGridViewCheckBoxColumn24"
@@ -1771,10 +1773,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn25
         '
-        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle36.NullValue = False
-        DataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn25.DefaultCellStyle = DataGridViewCellStyle36
+        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle41.NullValue = False
+        DataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn25.DefaultCellStyle = DataGridViewCellStyle41
         Me.DataGridViewCheckBoxColumn25.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn25.HeaderText = "5"
         Me.DataGridViewCheckBoxColumn25.Name = "DataGridViewCheckBoxColumn25"
@@ -1837,33 +1839,34 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         'Panel22
         '
         Me.Panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel22.Controls.Add(Me.TextBox7)
-        Me.Panel22.Controls.Add(Me.Label24)
+        Me.Panel22.Controls.Add(Me.txtTFW7)
+        Me.Panel22.Controls.Add(Me.lblA7FW)
         Me.Panel22.Location = New System.Drawing.Point(273, 387)
         Me.Panel22.Name = "Panel22"
         Me.Panel22.Size = New System.Drawing.Size(458, 39)
         Me.Panel22.TabIndex = 104
         '
-        'TextBox7
+        'txtTFW7
         '
-        Me.TextBox7.BackColor = System.Drawing.Color.White
-        Me.TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(315, 11)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.ReadOnly = True
-        Me.TextBox7.Size = New System.Drawing.Size(137, 15)
-        Me.TextBox7.TabIndex = 3
-        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtTFW7.BackColor = System.Drawing.Color.White
+        Me.txtTFW7.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTFW7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTFW7.ForeColor = System.Drawing.Color.Navy
+        Me.txtTFW7.Location = New System.Drawing.Point(336, 11)
+        Me.txtTFW7.Name = "txtTFW7"
+        Me.txtTFW7.ReadOnly = True
+        Me.txtTFW7.Size = New System.Drawing.Size(100, 15)
+        Me.txtTFW7.TabIndex = 3
+        Me.txtTFW7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label24
+        'lblA7FW
         '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(10, 11)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(299, 15)
-        Me.Label24.TabIndex = 2
-        Me.Label24.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
+        Me.lblA7FW.AutoSize = True
+        Me.lblA7FW.Location = New System.Drawing.Point(10, 11)
+        Me.lblA7FW.Name = "lblA7FW"
+        Me.lblA7FW.Size = New System.Drawing.Size(299, 15)
+        Me.lblA7FW.TabIndex = 2
+        Me.lblA7FW.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
         '
         'dgvA7
         '
@@ -1874,17 +1877,25 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.dgvA7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvA7.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvA7.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle37.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvA7.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle37
+        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle43.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA7.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle43
         Me.dgvA7.ColumnHeadersHeight = 35
         Me.dgvA7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvA7.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewCheckBoxColumn26, Me.DataGridViewCheckBoxColumn27, Me.DataGridViewCheckBoxColumn28, Me.DataGridViewCheckBoxColumn29, Me.DataGridViewCheckBoxColumn30})
+        DataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle49.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA7.DefaultCellStyle = DataGridViewCellStyle49
         Me.dgvA7.Location = New System.Drawing.Point(10, 36)
         Me.dgvA7.MultiSelect = False
         Me.dgvA7.Name = "dgvA7"
@@ -1909,10 +1920,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn26
         '
-        DataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle38.NullValue = False
-        DataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn26.DefaultCellStyle = DataGridViewCellStyle38
+        DataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle44.NullValue = False
+        DataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn26.DefaultCellStyle = DataGridViewCellStyle44
         Me.DataGridViewCheckBoxColumn26.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn26.HeaderText = "1"
         Me.DataGridViewCheckBoxColumn26.Name = "DataGridViewCheckBoxColumn26"
@@ -1921,10 +1932,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn27
         '
-        DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle39.NullValue = False
-        DataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn27.DefaultCellStyle = DataGridViewCellStyle39
+        DataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle45.NullValue = False
+        DataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn27.DefaultCellStyle = DataGridViewCellStyle45
         Me.DataGridViewCheckBoxColumn27.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn27.HeaderText = "2"
         Me.DataGridViewCheckBoxColumn27.Name = "DataGridViewCheckBoxColumn27"
@@ -1933,10 +1944,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn28
         '
-        DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle40.NullValue = False
-        DataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn28.DefaultCellStyle = DataGridViewCellStyle40
+        DataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle46.NullValue = False
+        DataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn28.DefaultCellStyle = DataGridViewCellStyle46
         Me.DataGridViewCheckBoxColumn28.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn28.HeaderText = "3"
         Me.DataGridViewCheckBoxColumn28.Name = "DataGridViewCheckBoxColumn28"
@@ -1945,10 +1956,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn29
         '
-        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle41.NullValue = False
-        DataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn29.DefaultCellStyle = DataGridViewCellStyle41
+        DataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle47.NullValue = False
+        DataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn29.DefaultCellStyle = DataGridViewCellStyle47
         Me.DataGridViewCheckBoxColumn29.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn29.HeaderText = "4"
         Me.DataGridViewCheckBoxColumn29.Name = "DataGridViewCheckBoxColumn29"
@@ -1957,10 +1968,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn30
         '
-        DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle42.NullValue = False
-        DataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn30.DefaultCellStyle = DataGridViewCellStyle42
+        DataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle48.NullValue = False
+        DataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn30.DefaultCellStyle = DataGridViewCellStyle48
         Me.DataGridViewCheckBoxColumn30.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn30.HeaderText = "5"
         Me.DataGridViewCheckBoxColumn30.Name = "DataGridViewCheckBoxColumn30"
@@ -2023,33 +2034,34 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         'Panel23
         '
         Me.Panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel23.Controls.Add(Me.TextBox8)
-        Me.Panel23.Controls.Add(Me.Label26)
+        Me.Panel23.Controls.Add(Me.txtTFW8)
+        Me.Panel23.Controls.Add(Me.lblA8FW)
         Me.Panel23.Location = New System.Drawing.Point(273, 387)
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(458, 39)
         Me.Panel23.TabIndex = 104
         '
-        'TextBox8
+        'txtTFW8
         '
-        Me.TextBox8.BackColor = System.Drawing.Color.White
-        Me.TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox8.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(315, 11)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.ReadOnly = True
-        Me.TextBox8.Size = New System.Drawing.Size(137, 15)
-        Me.TextBox8.TabIndex = 3
-        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtTFW8.BackColor = System.Drawing.Color.White
+        Me.txtTFW8.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTFW8.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTFW8.ForeColor = System.Drawing.Color.Navy
+        Me.txtTFW8.Location = New System.Drawing.Point(336, 11)
+        Me.txtTFW8.Name = "txtTFW8"
+        Me.txtTFW8.ReadOnly = True
+        Me.txtTFW8.Size = New System.Drawing.Size(100, 15)
+        Me.txtTFW8.TabIndex = 3
+        Me.txtTFW8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label26
+        'lblA8FW
         '
-        Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(10, 11)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(299, 15)
-        Me.Label26.TabIndex = 2
-        Me.Label26.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
+        Me.lblA8FW.AutoSize = True
+        Me.lblA8FW.Location = New System.Drawing.Point(10, 11)
+        Me.lblA8FW.Name = "lblA8FW"
+        Me.lblA8FW.Size = New System.Drawing.Size(299, 15)
+        Me.lblA8FW.TabIndex = 2
+        Me.lblA8FW.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
         '
         'dgvA8
         '
@@ -2060,17 +2072,25 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.dgvA8.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvA8.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvA8.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle43.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvA8.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle43
+        DataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle50.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle50.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle50.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA8.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle50
         Me.dgvA8.ColumnHeadersHeight = 35
         Me.dgvA8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvA8.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewCheckBoxColumn31, Me.DataGridViewCheckBoxColumn32, Me.DataGridViewCheckBoxColumn33, Me.DataGridViewCheckBoxColumn34, Me.DataGridViewCheckBoxColumn35})
+        DataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle56.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle56.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle56.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA8.DefaultCellStyle = DataGridViewCellStyle56
         Me.dgvA8.Location = New System.Drawing.Point(10, 36)
         Me.dgvA8.MultiSelect = False
         Me.dgvA8.Name = "dgvA8"
@@ -2095,10 +2115,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn31
         '
-        DataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle44.NullValue = False
-        DataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn31.DefaultCellStyle = DataGridViewCellStyle44
+        DataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle51.NullValue = False
+        DataGridViewCellStyle51.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn31.DefaultCellStyle = DataGridViewCellStyle51
         Me.DataGridViewCheckBoxColumn31.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn31.HeaderText = "1"
         Me.DataGridViewCheckBoxColumn31.Name = "DataGridViewCheckBoxColumn31"
@@ -2107,10 +2127,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn32
         '
-        DataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle45.NullValue = False
-        DataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn32.DefaultCellStyle = DataGridViewCellStyle45
+        DataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle52.NullValue = False
+        DataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn32.DefaultCellStyle = DataGridViewCellStyle52
         Me.DataGridViewCheckBoxColumn32.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn32.HeaderText = "2"
         Me.DataGridViewCheckBoxColumn32.Name = "DataGridViewCheckBoxColumn32"
@@ -2119,10 +2139,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn33
         '
-        DataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle46.NullValue = False
-        DataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn33.DefaultCellStyle = DataGridViewCellStyle46
+        DataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle53.NullValue = False
+        DataGridViewCellStyle53.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn33.DefaultCellStyle = DataGridViewCellStyle53
         Me.DataGridViewCheckBoxColumn33.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn33.HeaderText = "3"
         Me.DataGridViewCheckBoxColumn33.Name = "DataGridViewCheckBoxColumn33"
@@ -2131,10 +2151,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn34
         '
-        DataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle47.NullValue = False
-        DataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn34.DefaultCellStyle = DataGridViewCellStyle47
+        DataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle54.NullValue = False
+        DataGridViewCellStyle54.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn34.DefaultCellStyle = DataGridViewCellStyle54
         Me.DataGridViewCheckBoxColumn34.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn34.HeaderText = "4"
         Me.DataGridViewCheckBoxColumn34.Name = "DataGridViewCheckBoxColumn34"
@@ -2143,10 +2163,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn35
         '
-        DataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle48.NullValue = False
-        DataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn35.DefaultCellStyle = DataGridViewCellStyle48
+        DataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle55.NullValue = False
+        DataGridViewCellStyle55.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn35.DefaultCellStyle = DataGridViewCellStyle55
         Me.DataGridViewCheckBoxColumn35.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn35.HeaderText = "5"
         Me.DataGridViewCheckBoxColumn35.Name = "DataGridViewCheckBoxColumn35"
@@ -2209,33 +2229,34 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         'Panel24
         '
         Me.Panel24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel24.Controls.Add(Me.TextBox9)
-        Me.Panel24.Controls.Add(Me.Label28)
+        Me.Panel24.Controls.Add(Me.txtTFW9)
+        Me.Panel24.Controls.Add(Me.lblA9FW)
         Me.Panel24.Location = New System.Drawing.Point(273, 387)
         Me.Panel24.Name = "Panel24"
         Me.Panel24.Size = New System.Drawing.Size(458, 39)
         Me.Panel24.TabIndex = 104
         '
-        'TextBox9
+        'txtTFW9
         '
-        Me.TextBox9.BackColor = System.Drawing.Color.White
-        Me.TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox9.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.Location = New System.Drawing.Point(315, 11)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.ReadOnly = True
-        Me.TextBox9.Size = New System.Drawing.Size(137, 15)
-        Me.TextBox9.TabIndex = 3
-        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtTFW9.BackColor = System.Drawing.Color.White
+        Me.txtTFW9.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTFW9.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTFW9.ForeColor = System.Drawing.Color.Navy
+        Me.txtTFW9.Location = New System.Drawing.Point(336, 11)
+        Me.txtTFW9.Name = "txtTFW9"
+        Me.txtTFW9.ReadOnly = True
+        Me.txtTFW9.Size = New System.Drawing.Size(100, 15)
+        Me.txtTFW9.TabIndex = 3
+        Me.txtTFW9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label28
+        'lblA9FW
         '
-        Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(10, 11)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(299, 15)
-        Me.Label28.TabIndex = 2
-        Me.Label28.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
+        Me.lblA9FW.AutoSize = True
+        Me.lblA9FW.Location = New System.Drawing.Point(10, 11)
+        Me.lblA9FW.Name = "lblA9FW"
+        Me.lblA9FW.Size = New System.Drawing.Size(299, 15)
+        Me.lblA9FW.TabIndex = 2
+        Me.lblA9FW.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
         '
         'dgvA9
         '
@@ -2246,17 +2267,25 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.dgvA9.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvA9.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvA9.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle49.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvA9.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle49
+        DataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle57.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle57.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA9.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle57
         Me.dgvA9.ColumnHeadersHeight = 35
         Me.dgvA9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvA9.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewCheckBoxColumn36, Me.DataGridViewCheckBoxColumn37, Me.DataGridViewCheckBoxColumn38, Me.DataGridViewCheckBoxColumn39, Me.DataGridViewCheckBoxColumn40})
+        DataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle63.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle63.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle63.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle63.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle63.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle63.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA9.DefaultCellStyle = DataGridViewCellStyle63
         Me.dgvA9.Location = New System.Drawing.Point(10, 36)
         Me.dgvA9.MultiSelect = False
         Me.dgvA9.Name = "dgvA9"
@@ -2281,10 +2310,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn36
         '
-        DataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle50.NullValue = False
-        DataGridViewCellStyle50.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn36.DefaultCellStyle = DataGridViewCellStyle50
+        DataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle58.NullValue = False
+        DataGridViewCellStyle58.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn36.DefaultCellStyle = DataGridViewCellStyle58
         Me.DataGridViewCheckBoxColumn36.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn36.HeaderText = "1"
         Me.DataGridViewCheckBoxColumn36.Name = "DataGridViewCheckBoxColumn36"
@@ -2293,10 +2322,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn37
         '
-        DataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle51.NullValue = False
-        DataGridViewCellStyle51.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn37.DefaultCellStyle = DataGridViewCellStyle51
+        DataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle59.NullValue = False
+        DataGridViewCellStyle59.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn37.DefaultCellStyle = DataGridViewCellStyle59
         Me.DataGridViewCheckBoxColumn37.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn37.HeaderText = "2"
         Me.DataGridViewCheckBoxColumn37.Name = "DataGridViewCheckBoxColumn37"
@@ -2305,10 +2334,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn38
         '
-        DataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle52.NullValue = False
-        DataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn38.DefaultCellStyle = DataGridViewCellStyle52
+        DataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle60.NullValue = False
+        DataGridViewCellStyle60.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn38.DefaultCellStyle = DataGridViewCellStyle60
         Me.DataGridViewCheckBoxColumn38.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn38.HeaderText = "3"
         Me.DataGridViewCheckBoxColumn38.Name = "DataGridViewCheckBoxColumn38"
@@ -2317,10 +2346,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn39
         '
-        DataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle53.NullValue = False
-        DataGridViewCellStyle53.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn39.DefaultCellStyle = DataGridViewCellStyle53
+        DataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle61.NullValue = False
+        DataGridViewCellStyle61.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn39.DefaultCellStyle = DataGridViewCellStyle61
         Me.DataGridViewCheckBoxColumn39.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn39.HeaderText = "4"
         Me.DataGridViewCheckBoxColumn39.Name = "DataGridViewCheckBoxColumn39"
@@ -2329,10 +2358,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn40
         '
-        DataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle54.NullValue = False
-        DataGridViewCellStyle54.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn40.DefaultCellStyle = DataGridViewCellStyle54
+        DataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle62.NullValue = False
+        DataGridViewCellStyle62.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn40.DefaultCellStyle = DataGridViewCellStyle62
         Me.DataGridViewCheckBoxColumn40.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn40.HeaderText = "5"
         Me.DataGridViewCheckBoxColumn40.Name = "DataGridViewCheckBoxColumn40"
@@ -2389,39 +2418,40 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.btnNextTab10.Name = "btnNextTab10"
         Me.btnNextTab10.Size = New System.Drawing.Size(82, 23)
         Me.btnNextTab10.TabIndex = 105
-        Me.btnNextTab10.Text = "Next"
+        Me.btnNextTab10.Text = "Save"
         Me.btnNextTab10.UseVisualStyleBackColor = False
         '
         'Panel25
         '
         Me.Panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel25.Controls.Add(Me.TextBox10)
-        Me.Panel25.Controls.Add(Me.Label30)
+        Me.Panel25.Controls.Add(Me.txtTFW10)
+        Me.Panel25.Controls.Add(Me.lblA10FW)
         Me.Panel25.Location = New System.Drawing.Point(273, 387)
         Me.Panel25.Name = "Panel25"
         Me.Panel25.Size = New System.Drawing.Size(458, 39)
         Me.Panel25.TabIndex = 104
         '
-        'TextBox10
+        'txtTFW10
         '
-        Me.TextBox10.BackColor = System.Drawing.Color.White
-        Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox10.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.Location = New System.Drawing.Point(315, 11)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.ReadOnly = True
-        Me.TextBox10.Size = New System.Drawing.Size(137, 15)
-        Me.TextBox10.TabIndex = 3
-        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtTFW10.BackColor = System.Drawing.Color.White
+        Me.txtTFW10.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTFW10.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTFW10.ForeColor = System.Drawing.Color.Navy
+        Me.txtTFW10.Location = New System.Drawing.Point(336, 11)
+        Me.txtTFW10.Name = "txtTFW10"
+        Me.txtTFW10.ReadOnly = True
+        Me.txtTFW10.Size = New System.Drawing.Size(100, 15)
+        Me.txtTFW10.TabIndex = 3
+        Me.txtTFW10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label30
+        'lblA10FW
         '
-        Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(10, 11)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(299, 15)
-        Me.Label30.TabIndex = 2
-        Me.Label30.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
+        Me.lblA10FW.AutoSize = True
+        Me.lblA10FW.Location = New System.Drawing.Point(10, 11)
+        Me.lblA10FW.Name = "lblA10FW"
+        Me.lblA10FW.Size = New System.Drawing.Size(299, 15)
+        Me.lblA10FW.TabIndex = 2
+        Me.lblA10FW.Text = "Average Rating x Factor Weight [6%] = Weighed Score :"
         '
         'dgvA10
         '
@@ -2432,17 +2462,25 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.dgvA10.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvA10.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvA10.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle55.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle55.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle55.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle55.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle55.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle55.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvA10.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle55
+        DataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle64.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle64.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle64.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle64.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle64.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle64.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA10.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle64
         Me.dgvA10.ColumnHeadersHeight = 35
         Me.dgvA10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvA10.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewCheckBoxColumn41, Me.DataGridViewCheckBoxColumn42, Me.DataGridViewCheckBoxColumn43, Me.DataGridViewCheckBoxColumn44, Me.DataGridViewCheckBoxColumn45})
+        DataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle70.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle70.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle70.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle70.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle70.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvA10.DefaultCellStyle = DataGridViewCellStyle70
         Me.dgvA10.Location = New System.Drawing.Point(10, 36)
         Me.dgvA10.MultiSelect = False
         Me.dgvA10.Name = "dgvA10"
@@ -2467,10 +2505,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn41
         '
-        DataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle56.NullValue = False
-        DataGridViewCellStyle56.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn41.DefaultCellStyle = DataGridViewCellStyle56
+        DataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle65.NullValue = False
+        DataGridViewCellStyle65.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn41.DefaultCellStyle = DataGridViewCellStyle65
         Me.DataGridViewCheckBoxColumn41.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn41.HeaderText = "1"
         Me.DataGridViewCheckBoxColumn41.Name = "DataGridViewCheckBoxColumn41"
@@ -2479,10 +2517,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn42
         '
-        DataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle57.NullValue = False
-        DataGridViewCellStyle57.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn42.DefaultCellStyle = DataGridViewCellStyle57
+        DataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle66.NullValue = False
+        DataGridViewCellStyle66.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn42.DefaultCellStyle = DataGridViewCellStyle66
         Me.DataGridViewCheckBoxColumn42.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn42.HeaderText = "2"
         Me.DataGridViewCheckBoxColumn42.Name = "DataGridViewCheckBoxColumn42"
@@ -2491,10 +2529,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn43
         '
-        DataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle58.NullValue = False
-        DataGridViewCellStyle58.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn43.DefaultCellStyle = DataGridViewCellStyle58
+        DataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle67.NullValue = False
+        DataGridViewCellStyle67.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn43.DefaultCellStyle = DataGridViewCellStyle67
         Me.DataGridViewCheckBoxColumn43.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn43.HeaderText = "3"
         Me.DataGridViewCheckBoxColumn43.Name = "DataGridViewCheckBoxColumn43"
@@ -2503,10 +2541,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn44
         '
-        DataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle59.NullValue = False
-        DataGridViewCellStyle59.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn44.DefaultCellStyle = DataGridViewCellStyle59
+        DataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle68.NullValue = False
+        DataGridViewCellStyle68.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn44.DefaultCellStyle = DataGridViewCellStyle68
         Me.DataGridViewCheckBoxColumn44.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn44.HeaderText = "4"
         Me.DataGridViewCheckBoxColumn44.Name = "DataGridViewCheckBoxColumn44"
@@ -2515,10 +2553,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         '
         'DataGridViewCheckBoxColumn45
         '
-        DataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle60.NullValue = False
-        DataGridViewCellStyle60.SelectionBackColor = System.Drawing.Color.Navy
-        Me.DataGridViewCheckBoxColumn45.DefaultCellStyle = DataGridViewCellStyle60
+        DataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle69.NullValue = False
+        DataGridViewCellStyle69.SelectionBackColor = System.Drawing.Color.Navy
+        Me.DataGridViewCheckBoxColumn45.DefaultCellStyle = DataGridViewCellStyle69
         Me.DataGridViewCheckBoxColumn45.FillWeight = 46.90355!
         Me.DataGridViewCheckBoxColumn45.HeaderText = "5"
         Me.DataGridViewCheckBoxColumn45.Name = "DataGridViewCheckBoxColumn45"
@@ -2571,9 +2609,6 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         Me.Panel8.ResumeLayout(False)
-        Me.Panel8.PerformLayout()
-        Me.Panel29.ResumeLayout(False)
-        Me.Panel29.PerformLayout()
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
         Me.Panel13.ResumeLayout(False)
@@ -2649,13 +2684,9 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Panel8 As Panel
-    Friend WithEvents Panel29 As Panel
-    Friend WithEvents txtProjectName As TextBox
-    Friend WithEvents Label23 As Label
     Friend WithEvents Panel14 As Panel
-    Friend WithEvents txtCoveredPeriod As TextBox
+    Friend WithEvents txtEmploymentStatus As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
     Friend WithEvents Panel13 As Panel
     Friend WithEvents txtDepartment As TextBox
     Friend WithEvents Label6 As Label
@@ -2675,7 +2706,6 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents Label11 As Label
     Friend WithEvents dgvA1 As DataGridView
-    Friend WithEvents btnNext As Button
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewCheckBoxColumn
@@ -2684,15 +2714,15 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
     Friend WithEvents Column5 As DataGridViewCheckBoxColumn
     Friend WithEvents Column6 As DataGridViewCheckBoxColumn
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label12 As Label
+    Friend WithEvents txtTFW1 As TextBox
+    Friend WithEvents lblA1FW As Label
     Friend WithEvents btnNextTab1 As Button
     Friend WithEvents btnBackTab1 As Button
     Friend WithEvents btnPrevTab2 As Button
     Friend WithEvents btnNextTab2 As Button
     Friend WithEvents Panel17 As Panel
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label13 As Label
+    Friend WithEvents txtTFW2 As TextBox
+    Friend WithEvents lblA2FW As Label
     Friend WithEvents dgvA2 As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
@@ -2705,8 +2735,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
     Friend WithEvents btnPrevTab3 As Button
     Friend WithEvents btnNextTab3 As Button
     Friend WithEvents Panel18 As Panel
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label15 As Label
+    Friend WithEvents txtTFW3 As TextBox
+    Friend WithEvents lblA3FW As Label
     Friend WithEvents dgvA3 As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
@@ -2720,8 +2750,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
     Friend WithEvents btnPrevTab4 As Button
     Friend WithEvents btnNextTab4 As Button
     Friend WithEvents Panel19 As Panel
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Label17 As Label
+    Friend WithEvents txtTFW4 As TextBox
+    Friend WithEvents lblA4FW As Label
     Friend WithEvents dgvA4 As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
@@ -2735,8 +2765,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
     Friend WithEvents btnPrevTab5 As Button
     Friend WithEvents btnNextTab5 As Button
     Friend WithEvents Panel20 As Panel
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents Label19 As Label
+    Friend WithEvents txtTFW5 As TextBox
+    Friend WithEvents lblA5FW As Label
     Friend WithEvents dgvA5 As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
@@ -2750,8 +2780,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
     Friend WithEvents btnPrevTab6 As Button
     Friend WithEvents btnNextTab6 As Button
     Friend WithEvents Panel21 As Panel
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Label21 As Label
+    Friend WithEvents txtTFW6 As TextBox
+    Friend WithEvents lblA6FW As Label
     Friend WithEvents dgvA6 As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
@@ -2765,8 +2795,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
     Friend WithEvents btnPrevTab7 As Button
     Friend WithEvents btnNextTab7 As Button
     Friend WithEvents Panel22 As Panel
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents Label24 As Label
+    Friend WithEvents txtTFW7 As TextBox
+    Friend WithEvents lblA7FW As Label
     Friend WithEvents dgvA7 As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
@@ -2780,8 +2810,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
     Friend WithEvents btnPrevTab8 As Button
     Friend WithEvents btnNextTab8 As Button
     Friend WithEvents Panel23 As Panel
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents Label26 As Label
+    Friend WithEvents txtTFW8 As TextBox
+    Friend WithEvents lblA8FW As Label
     Friend WithEvents dgvA8 As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
@@ -2795,8 +2825,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
     Friend WithEvents btnPrevTab9 As Button
     Friend WithEvents btnNextTab9 As Button
     Friend WithEvents Panel24 As Panel
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents Label28 As Label
+    Friend WithEvents txtTFW9 As TextBox
+    Friend WithEvents lblA9FW As Label
     Friend WithEvents dgvA9 As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
@@ -2810,8 +2840,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart2_FormA
     Friend WithEvents btnPrevTab10 As Button
     Friend WithEvents btnNextTab10 As Button
     Friend WithEvents Panel25 As Panel
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents Label30 As Label
+    Friend WithEvents txtTFW10 As TextBox
+    Friend WithEvents lblA10FW As Label
     Friend WithEvents dgvA10 As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn

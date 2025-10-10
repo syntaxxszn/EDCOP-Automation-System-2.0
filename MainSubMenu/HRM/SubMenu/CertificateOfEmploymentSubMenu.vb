@@ -57,8 +57,6 @@
 
     Private Sub btnSeparateWithGaps_Click(sender As Object, e As EventArgs) Handles btnSeparateWithGaps.Click
         Me.Close()
-        _COEType = 747
-        frmHRIS_Report_EmployeeList.lblHeader.Text = btnSeparateWithGaps.Text
-        frmHRIS_Report_EmployeeList.ShowDialog()
+        MessageBox.Show("No File Format given to this type.", "Contact System Administrator", MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
 End Class

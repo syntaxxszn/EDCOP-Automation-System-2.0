@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-Imports System.Windows.Forms
 Imports System.Text.RegularExpressions
 
 
@@ -12,8 +11,9 @@ Public Class frmHR_AddNewPersonnel
         FilePath = "\\192.168.0.250\references\DIMS_APPS_INST\Images Profile\default_image.png"
         Call GetImageProfile(PictureBoxAddProfile)
         _strEmployeeID = 0 'this is to reset and tell the stored proc that its new employee and needs to be inserted
-
         Call Family_Background_Relationship_DropDownList(cbRelationshipPS, cbSRelationhipSC)
+        txtAdrCountry1.Text = "PHILIPPINES"
+        txtAdrCountry2.Text = "PHILIPPINES"
 
     End Sub
 
@@ -30,25 +30,16 @@ Public Class frmHR_AddNewPersonnel
     End Sub
 
     Private Sub cbAdrProvince_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrProvince1.SelectedIndexChanged
-
+        cbAdrCity1.SelectedIndex = -1
+        cbAdrBarangay1.SelectedIndex = -1
     End Sub
 
     Private Sub cbAdrProvince_DropDown(sender As Object, e As EventArgs) Handles cbAdrProvince1.DropDown
         DropDownListProvince(cbAdrRegion1, cbAdrProvince1, cbAdrCity1)
     End Sub
 
-    Private Sub cbAdrRegion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrRegion1.SelectedIndexChanged
-
-
-    End Sub
-
-
     Private Sub cbAdrRegion_DropDown(sender As Object, e As EventArgs) Handles cbAdrRegion1.DropDown
         DropDownListRegion(cbAdrRegion1, cbAdrProvince1)
-    End Sub
-
-    Private Sub cbAdrCity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrCity1.SelectedIndexChanged
-
     End Sub
 
     Private Sub cbAdrCity_DropDown(sender As Object, e As EventArgs) Handles cbAdrCity1.DropDown
@@ -56,7 +47,7 @@ Public Class frmHR_AddNewPersonnel
     End Sub
 
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click
-
+        If Not HasUserAccess("insert") Then Return
         Dim basePath As String = "\\192.168.0.250\references\DIMS_APPS_INST\Images Profile\"
         Using ofd As New OpenFileDialog With {.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp|All files|*.*"}
             If ofd.ShowDialog() = DialogResult.OK Then
@@ -108,19 +99,10 @@ Public Class frmHR_AddNewPersonnel
 
     Private Sub cbGender_DropDown(sender As Object, e As EventArgs) Handles cbGender.DropDown
         DropDownListGender(cbGender)
-
-    End Sub
-
-    Private Sub cbCitizenship_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbCitizenship.SelectedIndexChanged
-
     End Sub
 
     Private Sub cbCitizenship_DropDown(sender As Object, e As EventArgs) Handles cbCitizenship.DropDown
         DropDownListCitizenship(cbCitizenship)
-    End Sub
-
-    Private Sub cbReligion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbReligion.SelectedIndexChanged
-
     End Sub
 
     Private Sub cbReligion_DropDown(sender As Object, e As EventArgs) Handles cbReligion.DropDown
@@ -139,25 +121,8 @@ Public Class frmHR_AddNewPersonnel
         DropDownListCivilStatus(cbCivilStatus)
     End Sub
 
-    Private Sub cbTaxCode_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbTaxCode.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub cbTaxCode_DropDown(sender As Object, e As EventArgs) Handles cbTaxCode.DropDown
-        DropDownListTaxCode()
-    End Sub
-
-
-    Private Sub cbPrefix_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPrefix.SelectedIndexChanged
-
-    End Sub
-
     Private Sub cbPrefix_DropDown(sender As Object, e As EventArgs) Handles cbPrefix.DropDown
         PrefixDropDownList()
-    End Sub
-
-    Private Sub cbSuffix_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSuffix.SelectedIndexChanged
-
     End Sub
 
     Private Sub cbSuffix_DropDown(sender As Object, e As EventArgs) Handles cbSuffix.DropDown
@@ -229,13 +194,14 @@ Public Class frmHR_AddNewPersonnel
     End Sub
 
     Private Sub cbBank_DropDown(sender As Object, e As EventArgs) Handles cbBank.DropDown
-        DropDownListBank()
+        DropDownListBank(cbBank)
     End Sub
 
     Sub ClearField_PersonnelDetails()
         dtpDateofBirth.ResetText()
         txtAge.Clear()
-        txtPlaceofBirth.Clear()
+        cbBirthPlaceCity.SelectedIndex = -1
+        cbBirthPlaceProvince.SelectedIndex = -1
         cbGender.SelectedIndex = -1
         txtHeight.Clear()
         txtWeight.Clear()
@@ -245,9 +211,8 @@ Public Class frmHR_AddNewPersonnel
         txtTelephone.Clear()
         txtMobileNumber.Clear()
         txtEmailAddress.Clear()
-        cbTaxCode.SelectedIndex = -1
         txtAdrStreet1.Clear()
-        txtAdrBrgy1.Clear()
+        cbAdrBarangay1.SelectedIndex = -1
         cbAdrRegion1.SelectedIndex = -1
         cbAdrProvince1.SelectedIndex = -1
         cbAdrCity1.SelectedIndex = -1
@@ -255,7 +220,7 @@ Public Class frmHR_AddNewPersonnel
         cbPresentAdr.CheckState = CheckState.Unchecked
 
         txtAdrStreet2.Clear()
-        txtAdrBrgy2.Clear()
+        cbAdrBarangay2.SelectedIndex = -1
         cbAdrRegion2.SelectedIndex = -1
         cbAdrProvince2.SelectedIndex = -1
         cbAdrCity2.SelectedIndex = -1
@@ -265,7 +230,7 @@ Public Class frmHR_AddNewPersonnel
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-
+        If Not HasUserAccess("insert") Then Return
         If isExist Then
             MessageBox.Show("This Employee Code exists in the database.", "Error Occured", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
@@ -275,7 +240,15 @@ Public Class frmHR_AddNewPersonnel
            String.IsNullOrWhiteSpace(txtLastName.Text) OrElse
            String.IsNullOrWhiteSpace(txtFirstName.Text) OrElse
            String.IsNullOrWhiteSpace(cbPronouns.Text) Then
-            MessageBox.Show("Some fields are required, please check and try again.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Employee Code, Firstname, Lastname and Pronouns are required.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        If String.IsNullOrWhiteSpace(txtECFullName1.Text) OrElse
+           String.IsNullOrWhiteSpace(txtECEmailAddress1.Text) OrElse
+           String.IsNullOrWhiteSpace(txtECMobileNo1.Text) Then
+            MessageBox.Show("Please provide atleast 1 Emergency Contact.", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TabControl1.SelectedTab = TabPage4
             Return
         End If
 
@@ -291,6 +264,7 @@ Public Class frmHR_AddNewPersonnel
                 Call ProcessDataGridViewParentsAndSiblings(dgvParentsAndSiblings)
                 Call ProcessDataGridViewSpouseAndChildren(dgvSpouseAndChildren)
                 Call Ins_Personnel_AddressDetails()
+                Call Ins_EmergencyContact()
                 'InsUpd_Personnel_Identification() Not updated as stored procedure is edited to accept insert and update
                 'Ins_PersonnelTempRecord() removed by [2024-1435] and integrated it in the stored proc
                 'Sel_PersonnelID()
@@ -302,21 +276,21 @@ Public Class frmHR_AddNewPersonnel
 
     End Sub
 
-    Private Sub cbRelationshipPS_SelectedIndexChanged(sender As Object, e As EventArgs)
+    'Private Sub cbRelationshipPS_SelectedIndexChanged(sender As Object, e As EventArgs)
 
-    End Sub
+    'End Sub
 
-    Private Sub cbRelationshipPS_DropDown(sender As Object, e As EventArgs)
-        DropDownListDependentsParentSiblings(cbRelationshipPS)
-    End Sub
+    'Private Sub cbRelationshipPS_DropDown(sender As Object, e As EventArgs)
+    '    DropDownListDependentsParentSiblings(cbRelationshipPS)
+    'End Sub
 
-    Private Sub cbSRelationhipSC_SelectedIndexChanged(sender As Object, e As EventArgs)
+    'Private Sub cbSRelationhipSC_SelectedIndexChanged(sender As Object, e As EventArgs)
 
-    End Sub
+    'End Sub
 
-    Private Sub cbSRelationhipSC_DropDown(sender As Object, e As EventArgs)
-        DropDownListDependentsSpouse(cbSRelationhipSC)
-    End Sub
+    'Private Sub cbSRelationhipSC_DropDown(sender As Object, e As EventArgs)
+    '    DropDownListDependentsSpouse(cbSRelationhipSC)
+    'End Sub
 
     Private Sub btnAddPS_Click(sender As Object, e As EventArgs) Handles btnAddPS.Click
         If String.IsNullOrWhiteSpace(txtFullNamePS.Text) OrElse
@@ -451,10 +425,6 @@ Public Class frmHR_AddNewPersonnel
         End If
     End Sub
 
-    Private Sub frmHR_AddNewPersonnel_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-
-    End Sub
-
     Private Sub dgvParentsAndSiblings_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvParentsAndSiblings.CellDoubleClick
         If dgvParentsAndSiblings.SelectedRows.Count > 0 Then
             Dim selectedRow = dgvParentsAndSiblings.SelectedRows(0)
@@ -481,14 +451,6 @@ Public Class frmHR_AddNewPersonnel
         End If
     End Sub
 
-    Private Sub txtMobileNoPS_TextChanged(sender As Object, e As EventArgs) Handles txtMobileNoPS.TextChanged
-        MobileNumber_Color(txtMobileNoPS)
-    End Sub
-
-    Private Sub txtMobileNoSC_TextChanged(sender As Object, e As EventArgs) Handles txtMobileNoSC.TextChanged
-        MobileNumber_Color(txtMobileNoSC)
-    End Sub
-
     Private Sub txtCode_Validating(sender As Object, e As CancelEventArgs) Handles txtCode.Validating
 
         If Not Regex.IsMatch(txtCode.Text, "^\d{4}-\d{4}$") Then
@@ -506,4 +468,308 @@ Public Class frmHR_AddNewPersonnel
 
     End Sub
 
+    Private Sub txtMobileNoPS_Validating(sender As Object, e As CancelEventArgs) Handles txtMobileNoPS.Validating
+        MobileNumber_Color(txtMobileNoPS, e.Cancel)
+    End Sub
+
+    Private Sub txtMobileNoSC_Validating(sender As Object, e As CancelEventArgs) Handles txtMobileNoSC.Validating
+        MobileNumber_Color(txtMobileNoSC, e.Cancel)
+    End Sub
+
+    Private Sub txtHeight_Validating(sender As Object, e As CancelEventArgs) Handles txtHeight.Validating
+        Textbox_NumericFormat(txtHeight, e.Cancel)
+    End Sub
+
+    Private Sub txtWeight_Validating(sender As Object, e As CancelEventArgs) Handles txtWeight.Validating
+        Textbox_NumericFormat(txtWeight, e.Cancel)
+    End Sub
+
+    Private Sub txtAdrZip1_Validating(sender As Object, e As CancelEventArgs) Handles txtAdrZip1.Validating
+        ZipCode_Color(txtAdrZip1, e.Cancel)
+    End Sub
+
+    Private Sub PictureBoxAddProfile_Click(sender As Object, e As EventArgs)
+        If Not HasUserAccess("insert") Then Return
+        Dim basePath As String = "\\192.168.0.250\references\DIMS_APPS_INST\Images Profile\"
+        Using ofd As New OpenFileDialog With {.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp|All files|*.*"}
+            If ofd.ShowDialog() = DialogResult.OK Then
+                Dim destPath As String = basePath & IO.Path.GetFileName(ofd.FileName)
+                ' Check if file exists
+                If IO.File.Exists(destPath) Then
+                    MessageBox.Show("Image already exists in the destination!", "Duplicate Image", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Return
+                Else
+                    IO.File.Copy(ofd.FileName, destPath) ' Copy if not exists
+                End If
+                FilePath = destPath
+                PictureBoxAddProfile.Image = Image.FromFile(destPath)
+                PictureBoxAddProfile.SizeMode = PictureBoxSizeMode.StretchImage
+            End If
+        End Using
+    End Sub
+
+    Private Sub PictureBoxAddProfile_Click_1(sender As Object, e As EventArgs) Handles PictureBoxAddProfile.Click
+        Dim basePath As String = "\\192.168.0.250\references\DIMS_APPS_INST\Images Profile\"
+
+        Using ofd As New OpenFileDialog With {.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp|All files|*.*"}
+            If ofd.ShowDialog() = DialogResult.OK Then
+                Dim destPath As String = basePath & IO.Path.GetFileName(ofd.FileName)
+
+                ' Check if file exists
+                If IO.File.Exists(destPath) Then
+                    MessageBox.Show("Image already exists in the destination!", "Duplicate Image", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Return
+                Else
+                    IO.File.Copy(ofd.FileName, destPath) ' Copy original to destination
+                End If
+
+                FilePath = destPath
+
+                ' Load and convert image to 2x2 inches (192x192 pixels at 96 DPI)
+                Dim originalImage As Image = Image.FromFile(destPath)
+                Dim targetWidth As Integer = 2 * 96 ' 192 pixels
+                Dim targetHeight As Integer = 2 * 96 ' 192 pixels
+
+                Dim resizedImage As New Bitmap(targetWidth, targetHeight)
+                Using g As Graphics = Graphics.FromImage(resizedImage)
+                    g.InterpolationMode = Drawing2D.InterpolationMode.HighQualityBicubic
+                    g.DrawImage(originalImage, 0, 0, targetWidth, targetHeight)
+                End Using
+
+                resizedImage.SetResolution(96, 96) ' Set DPI metadata (optional but good practice)
+
+                ' Set resized image to PictureBox
+                PictureBoxAddProfile.Image = resizedImage
+                PictureBoxAddProfile.SizeMode = PictureBoxSizeMode.StretchImage
+            End If
+        End Using
+
+    End Sub
+
+    Private Sub txtboxSSSNo_TextChanged(sender As Object, e As EventArgs) Handles txtboxSSSNo.TextChanged
+        Dim digits = New String(txtboxSSSNo.Text.Where(AddressOf Char.IsDigit).ToArray())
+        If digits.Length > 10 Then
+            MessageBox.Show("SSS must be in the format: 01-1234567-1.", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            digits = digits.Substring(0, 10)
+        End If
+
+        Dim formatted = digits
+        If digits.Length > 2 Then
+            formatted = digits.Substring(0, 2) & "-" & digits.Substring(2)
+            If digits.Length > 9 Then
+                formatted = formatted.Insert(10, "-")
+            End If
+        End If
+
+        If txtboxSSSNo.Text <> formatted Then
+            txtboxSSSNo.Text = formatted
+            txtboxSSSNo.SelectionStart = formatted.Length
+        End If
+    End Sub
+
+    Private Sub txtboxSSSNo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtboxSSSNo.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtboxSSSNo_Validating(sender As Object, e As CancelEventArgs) Handles txtboxSSSNo.Validating
+        If Not Regex.IsMatch(txtboxSSSNo.Text, "^\d{2}-\d{7}-\d{1}$") Then
+            MessageBox.Show("SSS must be in the format: 01-1234567-1.", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub txtboxTIN_TextChanged(sender As Object, e As EventArgs) Handles txtboxTIN.TextChanged
+        Dim digits = New String(txtboxTIN.Text.Where(AddressOf Char.IsDigit).ToArray())
+
+        If digits.Length > 9 Then
+            MessageBox.Show("TIN must be in the format: 123-123-123", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            digits = digits.Substring(0, 9)
+        End If
+
+        Dim formatted As String = digits
+        If digits.Length > 3 Then formatted = digits.Substring(0, 3) & "-" & digits.Substring(3)
+        If digits.Length > 6 Then formatted = formatted.Insert(7, "-")
+
+        If txtboxTIN.Text <> formatted Then
+            txtboxTIN.Text = formatted
+            txtboxTIN.SelectionStart = formatted.Length
+        End If
+    End Sub
+
+    Private Sub txtboxTIN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtboxTIN.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtboxTIN_Validating(sender As Object, e As CancelEventArgs) Handles txtboxTIN.Validating
+        If Not Regex.IsMatch(txtboxTIN.Text, "^\d{3}-\d{3}-\d{3}$") Then
+            MessageBox.Show("TIN must be in the format: 123-123-123", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub txtboxPhilHealth_TextChanged(sender As Object, e As EventArgs) Handles txtboxPhilHealth.TextChanged
+        Dim digits = New String(txtboxPhilHealth.Text.Where(AddressOf Char.IsDigit).ToArray())
+
+        If digits.Length > 12 Then
+            MessageBox.Show("PhilHealth must be in the format: 01-123456789-1", "Invalid Format")
+            digits = digits.Substring(0, 12)
+        End If
+
+        Dim formatted As String = digits
+        If digits.Length > 2 Then formatted = digits.Substring(0, 2) & "-" & digits.Substring(2)
+        If digits.Length > 11 Then formatted = formatted.Insert(12, "-")
+
+        If txtboxPhilHealth.Text <> formatted Then
+            txtboxPhilHealth.Text = formatted
+            txtboxPhilHealth.SelectionStart = formatted.Length
+        End If
+    End Sub
+
+    Private Sub txtboxPhilHealth_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtboxPhilHealth.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtboxPhilHealth_Validating(sender As Object, e As CancelEventArgs) Handles txtboxPhilHealth.Validating
+        If Not Regex.IsMatch(txtboxPhilHealth.Text, "^\d{2}-\d{9}-\d{1}$") Then
+            MessageBox.Show("PhilHealth must be in the format: 01-123456789-1", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub cbPayrollCategory_DropDown(sender As Object, e As EventArgs) Handles cbPayrollCategory.DropDown
+        DropDownListPayrollCategory(cbPayrollCategory)
+    End Sub
+
+    Private Sub cbPayrollCategory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPayrollCategory.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub cbAdrBarangay1_DropDown(sender As Object, e As EventArgs) Handles cbAdrBarangay1.DropDown
+        DropDownListBarangay(cbAdrCity1, cbAdrBarangay1)
+    End Sub
+
+    Private Sub cbAdrRegion1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrRegion1.SelectedIndexChanged
+        cbAdrProvince1.SelectedIndex = -1
+        cbAdrCity1.SelectedIndex = -1
+        cbAdrBarangay1.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbAdrCity1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrCity1.SelectedIndexChanged
+        cbAdrBarangay1.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbAdrRegion2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrRegion2.SelectedIndexChanged
+        cbAdrProvince2.SelectedIndex = -1
+        cbAdrCity2.SelectedIndex = -1
+        cbAdrBarangay2.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbAdrProvince2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrProvince2.SelectedIndexChanged
+        cbAdrCity2.SelectedIndex = -1
+        cbAdrBarangay2.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbAdrCity2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrCity2.SelectedIndexChanged
+        cbAdrBarangay2.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbAdrBarangay2_DropDown(sender As Object, e As EventArgs) Handles cbAdrBarangay2.DropDown
+        DropDownListBarangay(cbAdrCity2, cbAdrBarangay2)
+    End Sub
+
+    Private Sub cbBirthPlaceRegion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbBirthPlaceRegion.SelectedIndexChanged
+        cbBirthPlaceProvince.SelectedIndex = -1
+        cbBirthPlaceCity.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbBirthPlaceRegion_DropDown(sender As Object, e As EventArgs) Handles cbBirthPlaceRegion.DropDown
+        DropDownListRegion(cbBirthPlaceRegion, cbBirthPlaceProvince)
+    End Sub
+
+    Private Sub cbBirthPlaceProvince_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbBirthPlaceProvince.SelectedIndexChanged
+        cbBirthPlaceCity.SelectedIndex = -1
+    End Sub
+
+    Private Sub cbBirthPlaceProvince_DropDown(sender As Object, e As EventArgs) Handles cbBirthPlaceProvince.DropDown
+        DropDownListProvince(cbBirthPlaceRegion, cbBirthPlaceProvince, cbBirthPlaceCity)
+    End Sub
+
+    Private Sub cbBirthPlaceCity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbBirthPlaceCity.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub cbBirthPlaceCity_DropDown(sender As Object, e As EventArgs) Handles cbBirthPlaceCity.DropDown
+        DropDownListMunicipality(cbBirthPlaceProvince, cbBirthPlaceCity)
+    End Sub
+
+    Private Sub txtTelephone_Validating(sender As Object, e As CancelEventArgs) Handles txtTelephone.Validating
+        TelephoneNumber_Color(txtTelephone, e.Cancel)
+    End Sub
+
+    Private Sub txtMobileNumber_Validating(sender As Object, e As CancelEventArgs) Handles txtMobileNumber.Validating
+        MobileNumber_Color(txtMobileNumber, e.Cancel)
+    End Sub
+
+    Private Sub txtEmailAddress_Validating(sender As Object, e As CancelEventArgs) Handles txtEmailAddress.Validating
+        EmailRegEx_Color(txtEmailAddress, e.Cancel)
+    End Sub
+
+    Private Sub frmHR_AddNewPersonnel_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        ClearTextBoxes(Me)
+        ResetComboBoxes(Me)
+        ResetDatePickers(Me)
+        UncheckCheckBoxes(Me)
+        ClearDataGridViewRows(Me)
+    End Sub
+
+    Private Sub txtboxHDMF_TextChanged(sender As Object, e As EventArgs) Handles txtboxHDMF.TextChanged
+        Dim digits = New String(txtboxHDMF.Text.Where(AddressOf Char.IsDigit).ToArray())
+
+        If digits.Length > 12 Then
+            MessageBox.Show("PAG-IBIG must be in the format: 1234-1234-1234", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            digits = digits.Substring(0, 12)
+        End If
+
+        Dim formatted As String = digits
+        If digits.Length > 4 Then formatted = digits.Substring(0, 4) & "-" & digits.Substring(4)
+        If digits.Length > 8 Then formatted = formatted.Insert(9, "-")
+
+        If txtboxHDMF.Text <> formatted Then
+            txtboxHDMF.Text = formatted
+            txtboxHDMF.SelectionStart = formatted.Length
+        End If
+    End Sub
+
+    Private Sub txtboxHDMF_Validating(sender As Object, e As CancelEventArgs) Handles txtboxHDMF.Validating
+        If Not Regex.IsMatch(txtboxHDMF.Text, "^\d{4}-\d{4}-\d{4}$") Then
+            MessageBox.Show("PAG-IBIG must be in the format: 1234-1234-1234", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub cbMedicalCategory_DropDown(sender As Object, e As EventArgs) Handles cbMedicalCategory.DropDown
+        DropDownListMedicalCategory(cbMedicalCategory)
+    End Sub
+
+    Private Sub cbMedicalCondition_DropDown(sender As Object, e As EventArgs) Handles cbMedicalCondition.DropDown
+        DropDownListMedicalCondition(cbMedicalCondition, cbMedicalCategory)
+    End Sub
+
+    Private Sub cbMedicalCategory_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbMedicalCategory.SelectedIndexChanged
+        cbMedicalCondition.SelectedIndex = -1
+    End Sub
+
+    Private Sub btnEmergencyContacts_Click(sender As Object, e As EventArgs) Handles btnEmergencyContacts.Click
+        TabControl1.SelectedTab = TabPage4
+    End Sub
+
+    Private Sub txtCode_TextChanged(sender As Object, e As EventArgs) Handles txtCode.TextChanged
+
+    End Sub
 End Class

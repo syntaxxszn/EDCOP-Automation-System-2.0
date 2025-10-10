@@ -120,15 +120,21 @@
   <metadata name="ToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="ToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="ToolStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>111, 18</value>
+  </metadata>
   <metadata name="ImageListBtn.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>327, 17</value>
+    <value>209, 15</value>
   </metadata>
   <data name="ImageListBtn.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABI
-        CgAAAk1TRnQBSQFMAgEBAgEAAWgBAQFoAQEBGQEAARkBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABy
+        CQAAAk1TRnQBSQFMAgEBAgEAAbABAQGwAQEBGQEAARkBAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABZAMAARkDAAEBAQABCAUAAcQBCRgAAYACAAGAAwACgAEAAYADAAGAAQABgAEAAoACAAPAAQABwAHc
         AcABAAHwAcoBpgEAATMFAAEzAQABMwEAATMBAAIzAgADFgEAAxwBAAMiAQADKQEAA1UBAANNAQADQgEA
         AzkBAAGAAXwB/wEAAlAB/wEAAZMBAAHWAQAB/wHsAcwBAAHGAdYB7wEAAdYC5wEAAZABqQGtAgAB/wEz
@@ -156,34 +162,34 @@
         AZkBzAEAAf8BmQH/AQAB/wHMAgAB/wHMATMBAAH/AcwBZgEAAf8BzAGZAQAB/wLMAQAB/wHMAf8BAAL/
         ATMBAAHMAf8BZgEAAv8BmQEAAv8BzAEAAmYB/wEAAWYB/wFmAQABZgL/AQAB/wJmAQAB/wFmAf8BAAL/
         AWYBAAEhAQABpQEAA18BAAN3AQADhgEAA5YBAAPLAQADsgEAA9cBAAPdAQAD4wEAA+oBAAPxAQAD+AEA
-        AfAB+wH/AQABpAKgAQADgAMAAf8CAAH/AwAC/wEAAf8DAAH/AQAB/wEAAv8CAAP/IQAB/wHzAdwB2wPU
-        AdsB3AHzAf9XAAH/ARkL1AEZAf8/AAH0AZcGcQGYAf8LAAH/AdsN1AHbAf88AAH/AZcKcQGYCQAB9BHU
-        AfQ6AAH/DnEB/wYAAf8T1AH/OAAB/xBxBQAB/wHbA9QB2w/UAdsB/zcAEXEBmAQAARkD1AHbAv8BGQHc
-        DdQBGTYAAfAIcQLCCHEB/wIAAf8F1AT/ARkN1AH/NQAJcQL/CHEBmAIAAfMF1AEZBP8BGQzUAfM1AAlx
-        Av8JcQIAAQkF1AHcBf8BGQvUAdw0AAHzCXEC/wlxAgAB2wbUARkF/wEZCtQB2zQAAQgFcQn/AcIFcQIA
-        CNQBGQX/ARkK1DQAAZgFcQn/AcIFcQIACdQBGQX/ARkJ1DQAAfAJcQL/CXECAArUARkF/wHcCNQ0AAH/
-        CXEC/wlxAgAB2wrUARkD/wEZAdQBGQbUAds1AAlxAv8IcQGXAgABCQvUARkB/wEZAdQBGQH/ARkF1AHc
-        NQABmAhxAv8IcQH0AgAB8wzUAdwB1AEZA/8B2wTUAfM2ABFxAZcDAAH/DdQBGQP/AfQF1AH/NgAB9BBx
-        Af8EAAEZDdQBGQH/AfQF1AEZOAAB8A5xAf8FAAH/AdsN1AHbBdQB2wH/OQAB9AxxAf8HAAH/E9QB/zwA
-        AZgIcQHwCgAB9BHUAfQ/AAH/AfABmAEIAfMOAAH/AdsN1AHbAf9UAAH/ARkL1AEZAf9XAAH/AfMBCQHb
-        A9QB2wEJAfMB/zkAAUIBTQE+BwABPgMAASgDAAFkAwABGQMAAQEBAAEBBQABkAEBFgAD/wEABP8BAAEf
-        AcAJAAP/AfwBAAEHAcAJAAH/AQABPwH4AQABAwHACQAB/AEAAR8B8AEAAQEBwAkAAfgBAAEHAeACAAHA
-        CQAB8AEAAQcBwAIAAUAJAAHwAQABAwHAAgABQAkAAeABAAEBAYAMAAHgAQABAQGADAAB4AEAAQEBgAwA
-        AcABAAEBAYAMAAHAAQABAQGADAABwAEAAQEBgAwAAcABAAEBAYAMAAHAAQABAQGADAAB4AEAAQEBgAwA
-        AeABAAEBAYAMAAHwAQABAwGADAAB8AEAAQMBwAIAAUAJAAH4AQABBwHAAgABQAkAAfwBAAEPAeACAAHA
-        CQAB/wEAAT8B8AEAAQEBwAkAAf8BwQH/AfgBAAEDAcAJAAP/AfwBAAEHAcAJAAT/AQABHwHACQAL
+        AfAB+wH/AQABpAKgAQADgAMAAf8CAAH/AwAC/wEAAf8DAAH/AQAB/wEAAv8CAAP/0QAB9AGXBnEBmAH/
+        WAAB/wGXCnEBmBkAAf88AAH/DnEB/xYAAmkBkzoAAf8QcRYABGk5ABFxAZgVAAVpNwAB8AhxAsIIcQH/
+        CwAPaTYACXEC/whxAZgLABBpNQAJcQL/CXELABBpNAAB8wlxAv8JcQcAAd0ByAH/AQAPaTUAAQgFcQn/
+        AcIFcQYAAckCyAH/CgAFaTYAAZgFcQn/AcIFcQUABMgB/woABGk3AAHwCXEC/wlxBAAPyAEAAmkBkzgA
+        Af8JcQL/CXEDABDIAgAB/zoACXEC/whxAZcCAAHQEMg9AAGYCHEC/whxAfQDAAHQD8g+ABFxAZcFAAH0
+        BMgJ5gH/PgAB9BBxAf8GAAH/A8gB/0gAAfAOcQH/CQACyAH/SQAB9AxxAf8LAAHITAABmAhxAfBcAAH/
+        AfABmAEIAfP/AB4AAUIBTQE+BwABPgMAASgDAAFkAwABGQMAAQEBAAEBBQABkAEBFgAD/wEABv8BwAkA
+        Bv8BwAkAAf8BAAE/A/8BwAkAAfwBAAEfAv8B9wHACQAB+AEAAQcC/wHjAcAJAAHwAQABBwL/AeEBwAkA
+        AfABAAEDAv8B4AHACQAB4AEAAQEB/wHAAQABQAkAAeABAAEBAf8BwAsAAeABAAEBAf8BwAsAAcABAAEB
+        AfwBQAEAAUAJAAHAAQABAQH4AX8B4AHACQABwAEAAQEB8AF/AeEBwAkAAcABAAEBAeABAAEjAcAJAAHA
+        AQABAQHAAQABNwHACQAB4AEAAQEBgAEAAT8BwAkAAeABAAEBAcABAAE/AcAJAAHwAQABAwHgAQABPwHA
+        CQAB8AEAAQMB8AF/Af8BwAkAAfgBAAEHAfwBfwH/AcAJAAH8AQABDwH+Av8BwAkAAf8BAAE/A/8BwAkA
+        Af8BwQT/AcAJAAb/AcAJAAb/AcAJAAs=
 </value>
   </data>
   <metadata name="ToolStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>111, 18</value>
   </metadata>
+  <metadata name="ContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>331, 15</value>
+  </metadata>
+  <metadata name="ContextMenuStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>488, 15</value>
+  </metadata>
   <metadata name="ShiftID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Code.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Description.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -216,22 +222,34 @@
   <metadata name="IsFlexi.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ShiftDetailsID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>449, 17</value>
-  </metadata>
-  <metadata name="DataGridViewTextBoxColumn8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Period.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="DataGridViewTextBoxColumn9.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="EmployeeID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="EmployeeCode.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ContextMenuStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>606, 17</value>
+  <metadata name="EmployeeName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="EmployeePosition.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="EmployeeDepartment.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ShiftCode.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="RestDay.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Remarks.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
 </root>

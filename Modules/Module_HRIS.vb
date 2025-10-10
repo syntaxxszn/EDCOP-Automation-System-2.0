@@ -6,11 +6,29 @@ Module Module_HRIS
 		If PanelTagID = 101 Then
 			frmHR_PreviewPersonnelDetails_PersonalInformation.LinkLabelViewForeignAddress.Text = If(isEdit, "Add Address", "View Address")
 			If isEdit Then
+
 				Call frmHR_PreviewPersonnelDetails.Function_btnUpdates_Show()
 				Call frmHR_PreviewPersonnelDetails_PersonalInformation.function_ReadOnly_isFalse()
+
+				frmHR_PreviewPersonnelDetails_PersonalInformation.btnAddPS.Enabled = isEdit
+				frmHR_PreviewPersonnelDetails_PersonalInformation.btnAddSC.Enabled = isEdit
+				frmHR_PreviewPersonnelDetails_PersonalInformation.btnRemovePS.Enabled = isEdit
+				frmHR_PreviewPersonnelDetails_PersonalInformation.btnRemoveSC.Enabled = isEdit
+
+				If frmHR_PreviewPersonnelDetails_PersonalInformation.cbPresentAdr.Checked Then
+					frmHR_PreviewPersonnelDetails_PersonalInformation.SetPermanentAdrControls(Not frmHR_PreviewPersonnelDetails_PersonalInformation.cbPresentAdr.Checked)
+				End If
+
 			Else
+
 				Call frmHR_PreviewPersonnelDetails.Function_btnUpdates_Hide()
 				Call frmHR_PreviewPersonnelDetails_PersonalInformation.Function_ReadOnly_isTrue()
+
+				frmHR_PreviewPersonnelDetails_PersonalInformation.btnAddPS.Enabled = isEdit
+				frmHR_PreviewPersonnelDetails_PersonalInformation.btnAddSC.Enabled = isEdit
+				frmHR_PreviewPersonnelDetails_PersonalInformation.btnRemovePS.Enabled = isEdit
+				frmHR_PreviewPersonnelDetails_PersonalInformation.btnRemoveSC.Enabled = isEdit
+
 			End If
 		ElseIf PanelTagID = 102 Then
 			If isEdit Then
@@ -136,80 +154,119 @@ Module Module_HRIS
 	End Sub
 
 	Sub Sel_Personnel_PersonalInformation_ByEmployeeID()
-
-		Conn = New SqlConnection(StrConn)
-		Conn.Open()
-		cmd = Conn.CreateCommand
-		cmd.CommandText = "[spSelUpdHRIS_Personnel_PreviewDetailsByID]"
-		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+		Try
+			Conn = New SqlConnection(StrConn)
+			Conn.Open()
+			cmd = Conn.CreateCommand
+			cmd.CommandText = "[spSelUpdHRIS_Personnel_PreviewDetailsByID]"
+			cmd = New SqlCommand(cmd.CommandText, Conn) With {
 						.CommandType = CommandType.StoredProcedure
 						}
-		cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
-		dr = cmd.ExecuteReader()
-		While dr.Read()
+			cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
+			dr = cmd.ExecuteReader()
 
-			frmHR_PreviewPersonnelDetails.lblFullName.Text = dr.GetString(2)
-			frmHR_PreviewPersonnelDetails.lblEmployeeNo.Text = dr.GetString(1)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.dtpDateofBirth.Text = dr.GetString(3)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAge.Text = dr.GetInt32(4)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtPlaceofBirth.Text = dr.GetString(5)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.cbGender.Text = dr.GetString(6)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtHeight.Text = dr.GetString(7)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtWeight.Text = dr.GetString(8)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.cbCitizenship.Text = dr.GetString(9)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.cbCivilStatus.Text = dr.GetString(10)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.cbReligion.Text = dr.GetString(11)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtEmailAddress.Text = dr.GetString(12)
+			While dr.Read()
 
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrStreet1.Text = dr.GetString(13)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrBrgy1.Text = dr.GetString(14)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrRegion1.Text = dr.GetString(15)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrProvince1.Text = dr.GetString(16)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrCity1.Text = dr.GetString(17)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrCountry1.Text = dr.GetString(18)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrZip1.Text = dr.GetString(19)
+				frmHR_PreviewPersonnelDetails.lblFullName.Text = dr.GetString(2)
+				frmHR_PreviewPersonnelDetails.lblEmployeeNo.Text = dr.GetString(1)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.dtpDateofBirth.Text = dr.GetString(3)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtAge.Text = dr.GetInt32(4)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbBirthPlaceRegion.Text = dr.GetString(5)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbGender.Text = dr.GetString(6)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtHeight.Text = dr.GetString(7)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtWeight.Text = dr.GetString(8)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbCitizenship.Text = dr.GetString(9)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbCivilStatus.Text = dr.GetString(10)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbReligion.Text = dr.GetString(11)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtEmailAddress.Text = dr.GetString(12)
 
-			frmHR_PreviewPersonnelDetails_PersonalInformation.cbPresentAdr.CheckState = If(dr.GetInt32(20) = 1, CheckState.Checked, CheckState.Unchecked)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.cbForeignAddr.CheckState = If(dr.GetInt32(21) = 1, CheckState.Checked, CheckState.Unchecked)
-			frmHR_AddUpdForeignAddress.txtForeignAddress.Text = dr.GetString(22)
-			' Name : Dela Pena, Jerome [2024-1435]
-			' Date Created : 02-24-25
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrStreet1.Text = dr.GetString(13)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrBarangay1.Text = dr.GetString(14)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrRegion1.Text = dr.GetString(15)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrProvince1.Text = dr.GetString(16)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrCity1.Text = dr.GetString(17)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrCountry1.Text = dr.GetString(18)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrZip1.Text = dr.GetString(19)
 
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrStreet2.Text = dr.GetString(23)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrBrgy2.Text = dr.GetString(24)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrRegion2.Text = dr.GetString(25)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrProvince2.Text = dr.GetString(26)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrCity2.Text = dr.GetString(27)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrCountry2.Text = dr.GetString(28)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrZip2.Text = dr.GetString(29)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbPresentAdr.CheckState = If(dr.GetInt32(20) = 1, CheckState.Checked, CheckState.Unchecked)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbForeignAddr.CheckState = If(dr.GetInt32(21) = 1, CheckState.Checked, CheckState.Unchecked)
+				frmHR_AddUpdForeignAddress.txtForeignAddress.Text = dr.GetString(22)
+				' Name : Dela Pena, Jerome [2024-1435]
+				' Date Created : 02-24-25
 
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxSSSNo.Text = dr.GetString(30)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxTIN.Text = dr.GetString(31)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPhilHealth.Text = dr.GetString(32)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxHDMF.Text = dr.GetString(33)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPRCNo.Text = dr.GetString(34)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPRCIssuanceDate.Value = If(dr.IsDBNull(35), DateTime.Now, dr.GetDateTime(35))
-			frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPRCExpiryDate.Value = If(dr.IsDBNull(36), DateTime.Now, dr.GetDateTime(36))
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPTRNo.Text = dr.GetString(37)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPTRIssuanceDate.Value = If(dr.IsDBNull(38), DateTime.Now, dr.GetDateTime(38))
-			frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPTRExpiryDate.Value = If(dr.IsDBNull(39), DateTime.Now, dr.GetDateTime(39))
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPayrollAccountNo.Text = dr.GetString(40)
-			''No Bank Accouunt and Payroll Category 
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrStreet2.Text = dr.GetString(23)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrBarangay2.Text = dr.GetString(24)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrRegion2.Text = dr.GetString(25)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrProvince2.Text = dr.GetString(26)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrCity2.Text = dr.GetString(27)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrCountry2.Text = dr.GetString(28)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrZip2.Text = dr.GetString(29)
 
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtTelephone.Text = dr.GetString(41)
-			frmHR_PreviewPersonnelDetails_PersonalInformation.txtMobileNumber.Text = dr.GetString(42)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxSSSNo.Text = dr.GetString(30)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxTIN.Text = dr.GetString(31)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPhilHealth.Text = dr.GetString(32)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxHDMF.Text = dr.GetString(33)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPRCNo.Text = dr.GetString(34)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPRCIssuanceDate.Value = If(dr.IsDBNull(35), DateTime.Now, dr.GetDateTime(35))
+				frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPRCExpiryDate.Value = If(dr.IsDBNull(36), DateTime.Now, dr.GetDateTime(36))
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPTRNo.Text = dr.GetString(37)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPTRIssuanceDate.Value = If(dr.IsDBNull(38), DateTime.Now, dr.GetDateTime(38))
+				frmHR_PreviewPersonnelDetails_PersonalInformation.dtpPTRExpiryDate.Value = If(dr.IsDBNull(39), DateTime.Now, dr.GetDateTime(39))
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPayrollAccountNo.Text = dr.GetString(40)
 
-		End While
-		dr.Close()
-		Conn.Close()
-		cmd.Parameters.Clear()
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtTelephone.Text = dr.GetString(41)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtMobileNumber.Text = dr.GetString(42)
+
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbBirthPlaceProvince.Text = dr.GetString(43)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbBirthPlaceCity.Text = dr.GetString(44)
+
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbBank.Text = dr.GetString(45)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbPayrollCategory.Text = dr.GetString(46)
+
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtECFullName1.Text = dr.GetString(47)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtECEmailAddress1.Text = dr.GetString(48)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtECMobileNo1.Text = dr.GetString(49)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtECFullName2.Text = dr.GetString(50)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtECEmailAddress2.Text = dr.GetString(51)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtECMobileNo2.Text = dr.GetString(52)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtECFullName3.Text = dr.GetString(53)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtECEmailAddress3.Text = dr.GetString(54)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtECMobileNo3.Text = dr.GetString(55)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbMedicalCategory.Text = dr.GetString(56)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.cbMedicalCondition.Text = dr.GetString(57)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.chEnvironmentalAllergy.Checked = dr.GetBoolean(58)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.chFoodAllergy.Checked = dr.GetBoolean(59)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.chDrugAllergy.Checked = dr.GetBoolean(60)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.chInsectAllergy.Checked = dr.GetBoolean(61)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtECAllergy.Text = dr.GetString(62)
+				frmHR_PreviewPersonnelDetails_PersonalInformation.txtECMedicalNotes.Text = dr.GetString(63)
+
+			End While
+
+		Catch ex As Exception
+			MessageBox.Show("Error Occured : " & ex.Message, "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		Finally
+			dr.Close()
+			Conn.Close()
+			cmd.Parameters.Clear()
+		End Try
+
 	End Sub
 
 	Sub BrowseProfilePic(_profilePicImage As PictureBox)
 		Dim basePath As String = "\\192.168.0.250\references\DIMS_APPS_INST\Images Profile\"
 		Using ofd As New OpenFileDialog With {.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp|All files|*.*"}
 			If ofd.ShowDialog() = DialogResult.OK Then
+				Dim fileInfo As New IO.FileInfo(ofd.FileName)
+
+				' Limit to 2MB (2 * 1024 * 1024 bytes)
+				If fileInfo.Length > 2 * 1024 * 1024 Then
+					MessageBox.Show("Sorry, file size must be less than 2MB.", "File Too Large", MessageBoxButtons.OK, MessageBoxIcon.Error)
+					Return
+				End If
+
 				Dim destPath As String = basePath & IO.Path.GetFileName(ofd.FileName)
+
 				' Check if file exists
 				If IO.File.Exists(destPath) Then
 					MessageBox.Show("Image already exists in the destination!", "Duplicate Image", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -217,15 +274,16 @@ Module Module_HRIS
 				Else
 					IO.File.Copy(ofd.FileName, destPath) ' Copy if not exists
 				End If
+
 				FilePath = destPath
 				_profilePicImage.Image = Image.FromFile(destPath)
 				_profilePicImage.SizeMode = PictureBoxSizeMode.StretchImage
 
-				Try : Call Ins_Personnel_ProfilePic()
+				Try
+					Call Ins_Personnel_ProfilePic()
 				Catch ex As Exception
 					MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 				End Try
-
 			End If
 		End Using
 	End Sub
@@ -236,7 +294,6 @@ Module Module_HRIS
 			_profilePicImage.Image = Image.FromFile(FilePath)
 		Else
 			_profilePicImage.SizeMode = PictureBoxSizeMode.StretchImage
-			'_profilePicImage.Image = Image.FromFile("D:\SOFT DEV TEAM WORK\ROME\6-5-2024\JD\EDCOP Project Monitoring System\Resources\pc14.png")
 		End If
 	End Sub
 
@@ -558,47 +615,6 @@ Module Module_HRIS
 		_dgvPersonnelList.ClearSelection()
 	End Sub
 
-	Sub Search_DGVDepartment(dgv As DataGridView, txtSearch As TextBox)
-
-		dgv.Rows.Clear()
-		Conn = New SqlConnection(StrConn)
-		Conn.Open()
-		cmd = Conn.CreateCommand
-		cmd.CommandText = "[spSelHRIS_DepartmentSearch]"
-		cmd = New SqlCommand(cmd.CommandText, Conn) With {
-						.CommandType = CommandType.StoredProcedure
-						}
-		cmd.Parameters.AddWithValue("@Search", txtSearch.Text)
-		dr = cmd.ExecuteReader()
-		If dr.HasRows Then
-
-			While dr.Read()
-
-				dgv.Rows.Add(
-			dr.GetInt32(0),
-			dr.GetString(1),
-			dr.GetString(2),
-			dr.GetString(3),
-			dr.GetString(4),
-			dr.GetString(5),
-			dr.GetString(6))
-
-
-			End While
-
-		Else
-
-			MessageBox.Show("Search not found.", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
-		End If
-
-		dr.Dispose()
-		Conn.Dispose()
-		cmd.Parameters.Clear()
-		dgv.ClearSelection()
-
-	End Sub
-
 	Sub Sel_Personnel_TransferHistory_ByEmployeeID(_dgvTransferHistory As DataGridView)
 
 		_dgvTransferHistory.Rows.Clear()
@@ -763,8 +779,11 @@ Module Module_HRIS
 		cmd.Parameters.AddWithValue("@Suffix", frmHR_AddNewPersonnel.cbSuffix.Text)
 
 		cmd.Parameters.AddWithValue("@BirthDate", frmHR_AddNewPersonnel.dtpDateofBirth.Text)
+
 		'  cmd.Parameters.AddWithValue("@Age", frmHR_AddNewPersonnel.txtAge.Text)
-		cmd.Parameters.AddWithValue("@BirthPlace", frmHR_AddNewPersonnel.txtPlaceofBirth.Text)
+		'cmd.Parameters.AddWithValue("@BirthPlaceCity", frmHR_AddNewPersonnel.cbBirthPlaceCity.Text)
+		'cmd.Parameters.AddWithValue("@BirthPlaceRegion", frmHR_AddNewPersonnel.cbBirthPlaceProvince.Text)
+
 		cmd.Parameters.AddWithValue("@Gender", frmHR_AddNewPersonnel.cbGender.Text)
 		cmd.Parameters.AddWithValue("@Height", frmHR_AddNewPersonnel.txtHeight.Text)
 		cmd.Parameters.AddWithValue("@Weight", frmHR_AddNewPersonnel.txtWeight.Text)
@@ -777,9 +796,9 @@ Module Module_HRIS
 		cmd.Parameters.AddWithValue("@CellPhoneNo", frmHR_AddNewPersonnel.txtMobileNumber.Text)
 		cmd.Parameters.AddWithValue("@EmailAddress", frmHR_AddNewPersonnel.txtEmailAddress.Text)
 
-		cmd.Parameters.AddWithValue("@TaxCode", frmHR_AddNewPersonnel.cbTaxCode.Text)
+		'cmd.Parameters.AddWithValue("@TaxCode", frmHR_AddNewPersonnel.cbTaxCode.Text)
 
-		' cmd.Parameters.AddWithValue("@TaxCode", frmHR_AddNewPersonnel.cbPayrollCategory.Text)
+		cmd.Parameters.AddWithValue("@PayrollCategory", frmHR_AddNewPersonnel.cbPayrollCategory.Text)
 		cmd.Parameters.AddWithValue("@PayrollAccountNo", frmHR_AddNewPersonnel.txtboxPayrollAccountNo.Text)
 		cmd.Parameters.AddWithValue("@BankName", frmHR_AddNewPersonnel.cbBank.Text)
 
@@ -790,17 +809,21 @@ Module Module_HRIS
 		cmd.Parameters.Add(returnParam)
 
 		Try
+
 			Conn.Open()
 			cmd.ExecuteNonQuery()
 			_strEmployeeID = If(IsDBNull(returnParam.Value), 0, Convert.ToInt32(returnParam.Value))
 
 			If _strEmployeeID > 0 Then
 				MessageBox.Show("Saved.")
+				frmHR_AddNewPersonnel.Close()
 			End If
 
 		Finally
+
 			Conn.Close()
 			cmd.Parameters.Clear()
+
 		End Try
 
 	End Sub
@@ -816,8 +839,13 @@ Module Module_HRIS
 				}
 
 		cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+
+		cmd.Parameters.AddWithValue("@BirthPlaceCity", frmHR_AddNewPersonnel.cbBirthPlaceCity.Text)
+		cmd.Parameters.AddWithValue("@BirthPlaceProvince", frmHR_AddNewPersonnel.cbBirthPlaceProvince.Text)
+		cmd.Parameters.AddWithValue("@BirthPlaceRegion", frmHR_AddNewPersonnel.cbBirthPlaceRegion.Text)
+
 		cmd.Parameters.AddWithValue("@StreetAdd1", frmHR_AddNewPersonnel.txtAdrStreet1.Text)
-		cmd.Parameters.AddWithValue("@BrgyAdd1", frmHR_AddNewPersonnel.txtAdrBrgy1.Text)
+		cmd.Parameters.AddWithValue("@BrgyAdd1", frmHR_AddNewPersonnel.cbAdrBarangay1.Text)
 		cmd.Parameters.AddWithValue("@MunicipalityName1", frmHR_AddNewPersonnel.cbAdrCity1.Text)
 		cmd.Parameters.AddWithValue("@ProvinceName1", frmHR_AddNewPersonnel.cbAdrProvince1.Text)
 		cmd.Parameters.AddWithValue("@RegionName1", frmHR_AddNewPersonnel.cbAdrRegion1.Text)
@@ -827,7 +855,7 @@ Module Module_HRIS
 		cmd.Parameters.AddWithValue("@SameAsPresentAdd", _strSameAsAddressValidation)
 
 		cmd.Parameters.AddWithValue("@StreetAdd2", frmHR_AddNewPersonnel.txtAdrStreet2.Text)
-		cmd.Parameters.AddWithValue("@BrgyAdd2", frmHR_AddNewPersonnel.txtAdrBrgy2.Text)
+		cmd.Parameters.AddWithValue("@BrgyAdd2", frmHR_AddNewPersonnel.cbAdrBarangay2.Text)
 		cmd.Parameters.AddWithValue("@MunicipalityName2", frmHR_AddNewPersonnel.cbAdrCity2.Text)
 		cmd.Parameters.AddWithValue("@ProvinceName2", frmHR_AddNewPersonnel.cbAdrProvince2.Text)
 		cmd.Parameters.AddWithValue("@RegionName2", frmHR_AddNewPersonnel.cbAdrRegion2.Text)
@@ -835,13 +863,10 @@ Module Module_HRIS
 		cmd.Parameters.AddWithValue("@PostalCode2", frmHR_AddNewPersonnel.txtAdrZip2.Text)
 		cmd.Parameters.AddWithValue("@ModifiedBy", frmMain.ToolStripEmployeeNo.Text)
 
-		If cmd.ExecuteNonQuery = -1 Then
-			frmHR_AddNewPersonnel.Dispose()
-		Else
-			MessageBox.Show("Invalid")
-		End If
-		Conn.Close()
+		cmd.ExecuteNonQuery()
 
+		Conn.Close()
+		cmd.Parameters.Clear()
 	End Sub
 
 	Sub Ins_Personnel_Identification()
@@ -963,6 +988,40 @@ Module Module_HRIS
 
 	End Sub
 
+	Sub Ins_EmergencyContact()
+
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spInsUpdHRIS_Personnel_EmergencyContact]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+						}
+
+		cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+		cmd.Parameters.AddWithValue("@Person1", frmHR_AddNewPersonnel.txtECFullName1.Text)
+		cmd.Parameters.AddWithValue("@EmailAddress1", frmHR_AddNewPersonnel.txtECEmailAddress1.Text)
+		cmd.Parameters.AddWithValue("@MobileNo1", frmHR_AddNewPersonnel.txtECMobileNo1.Text)
+		cmd.Parameters.AddWithValue("@Person2", frmHR_AddNewPersonnel.txtECFullName2.Text)
+		cmd.Parameters.AddWithValue("@EmailAddress2", frmHR_AddNewPersonnel.txtECEmailAddress2.Text)
+		cmd.Parameters.AddWithValue("@MobileNo2", frmHR_AddNewPersonnel.txtECMobileNo2.Text)
+		cmd.Parameters.AddWithValue("@Person3", frmHR_AddNewPersonnel.txtECFullName3.Text)
+		cmd.Parameters.AddWithValue("@EmailAddress3", frmHR_AddNewPersonnel.txtECEmailAddress3.Text)
+		cmd.Parameters.AddWithValue("@MobileNo3", frmHR_AddNewPersonnel.txtECMobileNo3.Text)
+		cmd.Parameters.AddWithValue("@MedicalCondition", frmHR_AddNewPersonnel.cbMedicalCondition.Text)
+		cmd.Parameters.AddWithValue("@EA", frmHR_AddNewPersonnel.chEnvironmentalAllergy.Checked)
+		cmd.Parameters.AddWithValue("@FA", frmHR_AddNewPersonnel.chFoodAllergy.Checked)
+		cmd.Parameters.AddWithValue("@DA", frmHR_AddNewPersonnel.chDrugAllergy.Checked)
+		cmd.Parameters.AddWithValue("@IA", frmHR_AddNewPersonnel.chInsectAllergy.Checked)
+		cmd.Parameters.AddWithValue("@SpecifiedAllergy", frmHR_AddNewPersonnel.txtECAllergy.Text)
+		cmd.Parameters.AddWithValue("@MedicalNotes", frmHR_AddNewPersonnel.txtECMedicalNotes.Text)
+		cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+
+		cmd.ExecuteNonQuery()
+		Conn.Close()
+		cmd.Parameters.Clear()
+	End Sub
+
 	'--->>> Personnel Information Update <<<---
 
 	Sub InsUpd_PersonnelDetails()
@@ -977,7 +1036,7 @@ Module Module_HRIS
 
 		cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
 		cmd.Parameters.AddWithValue("@Birthdate", frmHR_PreviewPersonnelDetails_PersonalInformation.dtpDateofBirth.Text)
-		cmd.Parameters.AddWithValue("@BirthPlace", frmHR_PreviewPersonnelDetails_PersonalInformation.txtPlaceofBirth.Text)
+		'cmd.Parameters.AddWithValue("@BirthPlace", frmHR_PreviewPersonnelDetails_PersonalInformation.cbBirthPlaceProvince.Text)
 		cmd.Parameters.AddWithValue("@Gender", frmHR_PreviewPersonnelDetails_PersonalInformation.cbGender.Text)
 		cmd.Parameters.AddWithValue("@Height", frmHR_PreviewPersonnelDetails_PersonalInformation.txtHeight.Text)
 		cmd.Parameters.AddWithValue("@Weight", frmHR_PreviewPersonnelDetails_PersonalInformation.txtWeight.Text)
@@ -988,16 +1047,20 @@ Module Module_HRIS
 		cmd.Parameters.AddWithValue("@CellphoneNo", frmHR_PreviewPersonnelDetails_PersonalInformation.txtMobileNumber.Text)
 		cmd.Parameters.AddWithValue("@EmailAddress", frmHR_PreviewPersonnelDetails_PersonalInformation.txtEmailAddress.Text)
 
+		cmd.Parameters.AddWithValue("@Bank", frmHR_PreviewPersonnelDetails_PersonalInformation.cbBank.Text)
+		cmd.Parameters.AddWithValue("@PayrollAccountNo", frmHR_PreviewPersonnelDetails_PersonalInformation.txtboxPayrollAccountNo.Text)
+		cmd.Parameters.AddWithValue("@PayrollCategory", frmHR_PreviewPersonnelDetails_PersonalInformation.cbPayrollCategory.Text)
+
 		'cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
 
 		If cmd.ExecuteNonQuery = -1 Then
 			MessageBox.Show("Saved.")
 			frmHR_PreviewPersonnelDetails.btnEdit.PerformClick()
-			If frmHRIS_Transaction_EmployeeFile.txtboxSearch.Text <> "" Then
-				Call Search_DGVPersonnel(frmHRIS_Transaction_EmployeeFile.dgvEmployeeList, frmHRIS_Transaction_EmployeeFile.txtboxSearch, True)
-			Else
-				Call frmHRIS_Transaction_EmployeeFile.EmployeeList_Active()
-			End If
+			'If frmHRIS_Transaction_EmployeeFile.txtboxSearch.Text <> "" Then
+			'	Call Search_DGVPersonnel(frmHRIS_Transaction_EmployeeFile.dgvEmployeeList, frmHRIS_Transaction_EmployeeFile.txtboxSearch, False)
+			'Else
+			'	Call frmHRIS_Transaction_EmployeeFile.EmployeeList_Active()
+			'End If
 		Else
 			MessageBox.Show("Cannot update, Something went wrong. ", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error)
 		End If
@@ -1018,8 +1081,13 @@ Module Module_HRIS
 					}
 
 		cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+
+		cmd.Parameters.AddWithValue("@BirthPlaceRegion", frmHR_PreviewPersonnelDetails_PersonalInformation.cbBirthPlaceRegion.Text)
+		cmd.Parameters.AddWithValue("@BirthPlaceProvince", frmHR_PreviewPersonnelDetails_PersonalInformation.cbBirthPlaceProvince.Text)
+		cmd.Parameters.AddWithValue("@BirthPlaceCity", frmHR_PreviewPersonnelDetails_PersonalInformation.cbBirthPlaceCity.Text)
+
 		cmd.Parameters.AddWithValue("@StreetAdd1", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrStreet1.Text)
-		cmd.Parameters.AddWithValue("@BrgyAdd1", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrBrgy1.Text)
+		cmd.Parameters.AddWithValue("@BrgyAdd1", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrBarangay1.Text)
 		cmd.Parameters.AddWithValue("@MunicipalityName1", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrCity1.Text)
 		cmd.Parameters.AddWithValue("@ProvinceName1", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrProvince1.Text)
 		cmd.Parameters.AddWithValue("@RegionName1", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrRegion1.Text)
@@ -1029,7 +1097,7 @@ Module Module_HRIS
 		cmd.Parameters.AddWithValue("@SameAsPresentAdd", _strSameAsAddressValidation)
 
 		cmd.Parameters.AddWithValue("@StreetAdd2", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrStreet2.Text)
-		cmd.Parameters.AddWithValue("@BrgyAdd2", frmHR_PreviewPersonnelDetails_PersonalInformation.txtAdrBrgy2.Text)
+		cmd.Parameters.AddWithValue("@BrgyAdd2", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrBarangay2.Text)
 		cmd.Parameters.AddWithValue("@MunicipalityName2", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrCity2.Text)
 		cmd.Parameters.AddWithValue("@ProvinceName2", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrProvince2.Text)
 		cmd.Parameters.AddWithValue("@RegionName2", frmHR_PreviewPersonnelDetails_PersonalInformation.cbAdrRegion2.Text)
@@ -1067,6 +1135,40 @@ Module Module_HRIS
 		cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
 		cmd.ExecuteNonQuery()
 
+		Conn.Close()
+		cmd.Parameters.Clear()
+	End Sub
+
+	Sub InsUpd_EmergencyContact()
+
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spInsUpdHRIS_Personnel_EmergencyContact]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+						}
+
+		cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+		cmd.Parameters.AddWithValue("@Person1", frmHR_PreviewPersonnelDetails_PersonalInformation.txtECFullName1.Text)
+		cmd.Parameters.AddWithValue("@EmailAddress1", frmHR_PreviewPersonnelDetails_PersonalInformation.txtECEmailAddress1.Text)
+		cmd.Parameters.AddWithValue("@MobileNo1", frmHR_PreviewPersonnelDetails_PersonalInformation.txtECMobileNo1.Text)
+		cmd.Parameters.AddWithValue("@Person2", frmHR_PreviewPersonnelDetails_PersonalInformation.txtECFullName2.Text)
+		cmd.Parameters.AddWithValue("@EmailAddress2", frmHR_PreviewPersonnelDetails_PersonalInformation.txtECEmailAddress2.Text)
+		cmd.Parameters.AddWithValue("@MobileNo2", frmHR_PreviewPersonnelDetails_PersonalInformation.txtECMobileNo2.Text)
+		cmd.Parameters.AddWithValue("@Person3", frmHR_PreviewPersonnelDetails_PersonalInformation.txtECFullName3.Text)
+		cmd.Parameters.AddWithValue("@EmailAddress3", frmHR_PreviewPersonnelDetails_PersonalInformation.txtECEmailAddress3.Text)
+		cmd.Parameters.AddWithValue("@MobileNo3", frmHR_PreviewPersonnelDetails_PersonalInformation.txtECMobileNo3.Text)
+		cmd.Parameters.AddWithValue("@MedicalCondition", frmHR_PreviewPersonnelDetails_PersonalInformation.cbMedicalCondition.Text)
+		cmd.Parameters.AddWithValue("@EA", frmHR_PreviewPersonnelDetails_PersonalInformation.chEnvironmentalAllergy.Checked)
+		cmd.Parameters.AddWithValue("@FA", frmHR_PreviewPersonnelDetails_PersonalInformation.chFoodAllergy.Checked)
+		cmd.Parameters.AddWithValue("@DA", frmHR_PreviewPersonnelDetails_PersonalInformation.chDrugAllergy.Checked)
+		cmd.Parameters.AddWithValue("@IA", frmHR_PreviewPersonnelDetails_PersonalInformation.chInsectAllergy.Checked)
+		cmd.Parameters.AddWithValue("@SpecifiedAllergy", frmHR_PreviewPersonnelDetails_PersonalInformation.txtECAllergy.Text)
+		cmd.Parameters.AddWithValue("@MedicalNotes", frmHR_PreviewPersonnelDetails_PersonalInformation.txtECMedicalNotes.Text)
+		cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+
+		cmd.ExecuteNonQuery()
 		Conn.Close()
 		cmd.Parameters.Clear()
 	End Sub
@@ -1183,26 +1285,26 @@ Module Module_HRIS
 
 	End Sub
 
-	Sub DropDownListTaxCode()
+	'Sub DropDownListTaxCode()
 
-		frmHR_AddNewPersonnel.cbTaxCode.Items.Clear()
-		Conn = New SqlConnection(StrConn)
-		cmd.CommandText = "[spSelHRIS_TaxCode]"
-		cmd = New SqlCommand(cmd.CommandText, Conn)
-		Conn.Open()
-		dr = cmd.ExecuteReader()
-		While dr.Read()
-			Dim a = dr.GetString(0)
-			frmHR_AddNewPersonnel.cbTaxCode.Items.Add(a)
-		End While
-		dr.Close()
-		Conn.Close()
+	'	frmHR_AddNewPersonnel.cbTaxCode.Items.Clear()
+	'	Conn = New SqlConnection(StrConn)
+	'	cmd.CommandText = "[spSelHRIS_TaxCode]"
+	'	cmd = New SqlCommand(cmd.CommandText, Conn)
+	'	Conn.Open()
+	'	dr = cmd.ExecuteReader()
+	'	While dr.Read()
+	'		Dim a = dr.GetString(0)
+	'		frmHR_AddNewPersonnel.cbTaxCode.Items.Add(a)
+	'	End While
+	'	dr.Close()
+	'	Conn.Close()
 
-	End Sub
+	'End Sub
 
-	Sub DropDownListBank()
+	Sub DropDownListBank(cb As ComboBox)
 
-		frmHR_AddNewPersonnel.cbBank.Items.Clear()
+		cb.Items.Clear()
 		Conn = New SqlConnection(StrConn)
 		cmd.CommandText = "[spSelHRIS_Bank]"
 		cmd = New SqlCommand(cmd.CommandText, Conn)
@@ -1210,7 +1312,24 @@ Module Module_HRIS
 		dr = cmd.ExecuteReader()
 		While dr.Read()
 			Dim a = dr.GetString(0)
-			frmHR_AddNewPersonnel.cbBank.Items.Add(a)
+			cb.Items.Add(a)
+		End While
+		dr.Close()
+		Conn.Close()
+
+	End Sub
+
+	Sub DropDownListPayrollCategory(cbox As ComboBox)
+
+		cbox.Items.Clear()
+		Conn = New SqlConnection(StrConn)
+		cmd.CommandText = "[spSelHRIS_PayrollCategory]"
+		cmd = New SqlCommand(cmd.CommandText, Conn)
+		Conn.Open()
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+			Dim a = dr.GetString(0)
+			cbox.Items.Add(a)
 		End While
 		dr.Close()
 		Conn.Close()
@@ -1273,6 +1392,28 @@ Module Module_HRIS
 
 			Dim a = dr.GetString(0)
 			_cmbMunicipality.Items.Add(a)
+
+		End While
+		dr.Close()
+		Conn.Close()
+
+	End Sub
+
+	Sub DropDownListBarangay(_cmbMunicipality As ComboBox, _cmbBarangay As ComboBox)
+
+		Conn = New SqlConnection(StrConn)
+		_cmbBarangay.Items.Clear()
+		cmd.CommandText = "[spSelHRIS_Barangay]"
+		cmd = New SqlCommand(cmd.CommandText, Conn)
+		cmd.CommandType = CommandType.StoredProcedure
+		Conn.Open()
+		cmd.Parameters.AddWithValue("@CityName", _cmbMunicipality.Text)
+		dr = cmd.ExecuteReader()
+
+		While dr.Read()
+
+			Dim a = dr.GetString(0)
+			_cmbBarangay.Items.Add(a)
 
 		End While
 		dr.Close()
@@ -1343,6 +1484,45 @@ Module Module_HRIS
 
 	End Sub
 
+	Sub DropDownListMedicalCategory(cb As ComboBox)
+
+		cb.Items.Clear()
+		Conn = New SqlConnection(StrConn)
+		cmd.CommandText = "[spSelHRIS_MedicalCategory]"
+		cmd = New SqlCommand(cmd.CommandText, Conn)
+		Conn.Open()
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+			Dim a = dr.GetString(0)
+			cb.Items.Add(a)
+		End While
+		dr.Close()
+		Conn.Close()
+
+	End Sub
+
+	Sub DropDownListMedicalCondition(cb As ComboBox, cb1 As ComboBox)
+
+		Conn = New SqlConnection(StrConn)
+		cb.Items.Clear()
+		cmd.CommandText = "[spSelHRIS_MedicalCondition]"
+		cmd = New SqlCommand(cmd.CommandText, Conn)
+		cmd.CommandType = CommandType.StoredProcedure
+		Conn.Open()
+		cmd.Parameters.AddWithValue("@Category", cb1.Text)
+		dr = cmd.ExecuteReader()
+
+		While dr.Read()
+
+			Dim a = dr.GetString(0)
+			cb.Items.Add(a)
+
+		End While
+		dr.Close()
+		Conn.Close()
+
+	End Sub
+
 	Sub SelPopulate_EmployeeName(cmbEmployeeName As ComboBox)
 
 		cmbEmployeeName.AutoCompleteMode = AutoCompleteMode.None
@@ -1362,6 +1542,27 @@ Module Module_HRIS
 
 		End While
 		cmbEmployeeName.AutoCompleteCustomSource = col
+		dr.Close()
+		Conn.Close()
+
+	End Sub
+
+	Sub DropDownListParentDepartment(cbBox As ComboBox)
+
+		Conn = New SqlConnection(StrConn)
+		cbBox.Items.Clear()
+		cmd.CommandText = "[spSelHRIS_ParentDepartment]"
+		cmd = New SqlCommand(cmd.CommandText, Conn)
+		cmd.CommandType = CommandType.StoredProcedure
+		Conn.Open()
+		dr = cmd.ExecuteReader()
+
+		While dr.Read()
+
+			Dim a = dr.GetString(0)
+			cbBox.Items.Add(a)
+
+		End While
 		dr.Close()
 		Conn.Close()
 
@@ -1968,30 +2169,75 @@ Module Module_HRIS
 
 	End Sub
 
-	Sub SelPopulate_ActivePart1Form1List(cBox As ComboBox)
+	Sub SelPopulate_ActivePart1Form1AList(cBox As ComboBox, idx As Integer)
 
-		cBox.AutoCompleteMode = AutoCompleteMode.None
-		cBox.AutoCompleteSource = AutoCompleteSource.CustomSource
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spSelHRIS_PMAS_ActivePart1Form1AList]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", idx)
+				cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+				cBox.Items.Clear()
+				Dim idDictionary As New Dictionary(Of String, Integer)()
+				Using reader As SqlDataReader = cmd.ExecuteReader()
+					While reader.Read()
+						Dim id As Integer = reader.GetInt32(0)
+						Dim val As String = reader.GetString(1)
+						idDictionary.Add(val, id)
+						cBox.Items.Add(val)
+					End While
+				End Using
+				cBox.Tag = idDictionary
+			End Using
+		End Using
 
-		Dim col As New AutoCompleteStringCollection()
-		Conn = New SqlConnection(StrConn)
-		cBox.Items.Clear()
-		Conn.Open()
-		cmd = Conn.CreateCommand
-		cmd.CommandText = "[spSelHRIS_PMAS_ActivePart1Form1List]"
-		cmd = New SqlCommand(cmd.CommandText, Conn) With {
-						.CommandType = CommandType.StoredProcedure
-						}
-		cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
-		dr = cmd.ExecuteReader()
-		While dr.Read()
-			Dim a = dr.GetString(0)
-			col.Add(a)
-			cBox.Items.Add(a)
-		End While
-		cBox.AutoCompleteCustomSource = col
-		dr.Close()
-		Conn.Close()
+	End Sub
+
+	Sub SelPopulate_ActivePart1Form1BList(cBox As ComboBox, idx As Integer)
+
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spSelHRIS_PMAS_ActivePart1Form1BList]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", idx)
+				cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+				cBox.Items.Clear()
+				Dim idDictionary As New Dictionary(Of String, Integer)()
+				Using reader As SqlDataReader = cmd.ExecuteReader()
+					While reader.Read()
+						Dim id As Integer = reader.GetInt32(0)
+						Dim val As String = reader.GetString(1)
+						idDictionary.Add(val, id)
+						cBox.Items.Add(val)
+					End While
+				End Using
+				cBox.Tag = idDictionary
+			End Using
+		End Using
+
+	End Sub
+
+	Sub SelPopulate_ActivePart1Form1CList(cBox As ComboBox, idx As Integer)
+
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spSelHRIS_PMAS_ActivePart1Form1CList]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", idx)
+				cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+				cBox.Items.Clear()
+				Dim idDictionary As New Dictionary(Of String, Integer)()
+				Using reader As SqlDataReader = cmd.ExecuteReader()
+					While reader.Read()
+						Dim id As Integer = reader.GetInt32(0)
+						Dim val As String = reader.GetString(1)
+						idDictionary.Add(val, id)
+						cBox.Items.Add(val)
+					End While
+				End Using
+				cBox.Tag = idDictionary
+			End Using
+		End Using
 
 	End Sub
 
@@ -2131,9 +2377,34 @@ Module Module_HRIS
 
 	End Sub
 
-	Sub Sel_Department(dgv As DataGridView, txtbox As TextBox)
+	Sub Sel_DepartmentHistory(dgv As DataGridView)
 
-		txtbox.Clear()
+		dgv.Rows.Clear()
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spSelHRIS_MainDepartment]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+						}
+		cmd.Parameters.AddWithValue("@ID", _strParentDepartmentID)
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			dgv.Rows.Add(
+			dr.GetInt32(0),
+			dr.GetString(1))
+
+		End While
+		dr.Close()
+		Conn.Close()
+		cmd.Parameters.Clear()
+		dgv.ClearSelection()
+
+	End Sub
+
+	Sub Sel_Department(dgv As DataGridView, txtSearch As TextBox)
+
 		dgv.Rows.Clear()
 		Conn = New SqlConnection(StrConn)
 		Conn.Open()
@@ -2142,19 +2413,26 @@ Module Module_HRIS
 		cmd = New SqlCommand(cmd.CommandText, Conn) With {
 						.CommandType = CommandType.StoredProcedure
 						}
+		cmd.Parameters.AddWithValue("@Search", txtSearch.Text)
 		dr = cmd.ExecuteReader()
-		While dr.Read()
 
-			dgv.Rows.Add(
-			dr.GetInt32(0),
-			dr.GetString(1),
-			dr.GetString(2),
-			dr.GetString(3),
-			dr.GetInt32(4),
-			dr.GetString(5),
-			dr.GetString(6))
+		If dr.HasRows Then
+			While dr.Read()
+				dgv.Rows.Add(
+				dr.GetInt32(0),
+				dr.GetInt32(1),
+				dr.GetString(2),
+				dr.GetString(3),
+				dr.GetString(4),
+				dr.GetString(5),
+				dr.GetString(6),
+				dr.GetString(7),
+				dr.GetInt32(8))
+			End While
+		Else
+			MessageBox.Show("Search not found.", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		End If
 
-		End While
 		dr.Close()
 		Conn.Close()
 		cmd.Parameters.Clear()
@@ -2207,12 +2485,16 @@ Module Module_HRIS
 		While dr.Read()
 
 			dgv.Rows.Add(
-			dr.GetInt32(0),
-			dr.GetString(1),
-			dr.GetDecimal(2),
-			dr.GetDecimal(3),
-			dr.GetString(4),
-			dr.GetString(5))
+				dr.GetInt32(0),
+				dr.GetString(1),
+				dr.GetDecimal(2),
+				dr.GetDecimal(3),
+				dr.GetDecimal(4),
+				dr.GetString(5),
+				dr.GetDecimal(6),
+				dr.GetDecimal(7),
+				dr.GetDecimal(8),
+				If(dr.IsDBNull(9), "", dr.GetString(9)))
 
 		End While
 		dr.Close()
@@ -2223,6 +2505,7 @@ Module Module_HRIS
 	End Sub
 
 	Sub InsUpd_Employee_Leave_Credits(dataGridView As DataGridView)
+
 		Try
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -2232,7 +2515,7 @@ Module Module_HRIS
 					For Each row As DataGridViewRow In dataGridView.Rows
 						cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
 						cmd.Parameters.AddWithValue("@LeaveType", If(IsDBNull(row.Cells(0).Value), "", row.Cells(0).Value.ToString()))
-						cmd.Parameters.AddWithValue("@LeaveCredit", If(IsDBNull(row.Cells(1).Value), 0, CInt(row.Cells(1).Value)))
+						cmd.Parameters.AddWithValue("@LeaveCredit", If(IsDBNull(row.Cells(1).Value), 0D, CDec(row.Cells(1).Value)))
 						cmd.Parameters.AddWithValue("@DateIssued", If(IsDBNull(row.Cells(2).Value), "", row.Cells(2).Value.ToString()))
 						cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
 						cmd.ExecuteNonQuery()
@@ -2242,7 +2525,117 @@ Module Module_HRIS
 				End Using
 			End Using
 			MessageBox.Show("Saved!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-			frmHRIS_Setup_AddUpdLeaveCredit.Dispose()
+			frmHRIS_Setup_AddUpdLeaveCredit.Close()
+		Catch ex As Exception
+			MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		End Try
+
+	End Sub
+
+	Sub InsUpd_Employee_Leave_Credits_ByWorkDate()
+		Try
+			Using Conn As New SqlConnection(StrConn)
+				Conn.Open()
+				Using cmd As New SqlCommand("[spInsHRIS_Employee_LeaveAccumulation]", Conn)
+					cmd.CommandType = CommandType.StoredProcedure
+
+					cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
+					cmd.Parameters.AddWithValue("@AsOfDate", frmHRIS_Setup_SelectDateLeaveCredit.dtpAsOfDate.Value)
+					cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text.Trim())
+
+					If cmd.ExecuteNonQuery() = -1 Then
+						MessageBox.Show("Saved!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+						frmHRIS_Setup_SelectDateLeaveCredit.Close()
+						Sel_LeaveCredit_ByEmployeeID(frmHRIS_Setup_LeaveCredit.dgvLeaveIssuedList)
+					End If
+
+				End Using
+			End Using
+		Catch ex As Exception
+			MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		End Try
+	End Sub
+
+	Sub Sel_AccumulatedLeaveCredit_ByEmployeeID(dgv As DataGridView)
+
+		dgv.Rows.Clear()
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spSelHRIS_AccumulatedLeaveCredits_ByEmployeeID]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+						}
+		cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
+		cmd.Parameters.AddWithValue("@TypeID", _LeaveTypeID)
+
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			dgv.Rows.Add(
+				dr.GetString(0),
+				dr.GetString(1),
+				dr.GetDecimal(2),
+				dr.GetDecimal(3))
+
+		End While
+		dr.Close()
+		Conn.Close()
+		cmd.Parameters.Clear()
+		dgv.ClearSelection()
+
+	End Sub
+
+	Sub Sel_AccumulatedLeaveTaken_ByEmployeeID(dgv As DataGridView)
+
+		dgv.Rows.Clear()
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spSelHRIS_AccumulatedLeaveTaken_ByEmployeeID]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+						}
+		cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
+		cmd.Parameters.AddWithValue("@TypeID", _LeaveTypeID)
+
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			dgv.Rows.Add(
+				dr.GetString(0),
+				dr.GetString(1),
+				dr.GetString(2),
+				dr.GetDecimal(3))
+
+		End While
+		dr.Close()
+		Conn.Close()
+		cmd.Parameters.Clear()
+		dgv.ClearSelection()
+
+	End Sub
+
+	Sub Upd_Employee_Leave_Credits_isPayrollProcessed(DateToday As DateTime, bool As Boolean, type As Integer)
+		Try
+			Using Conn As New SqlConnection(StrConn)
+				Conn.Open()
+				Using cmd As New SqlCommand("[spUpdHRIS_Employee_Leave_isPayrollProcessed]", Conn)
+					cmd.CommandType = CommandType.StoredProcedure
+
+					cmd.Parameters.AddWithValue("@EmployeeID", _strEmployeeID)
+					cmd.Parameters.AddWithValue("@Type", type)
+					cmd.Parameters.AddWithValue("@AsOfDate", DateToday)
+					cmd.Parameters.AddWithValue("@Status", bool)
+					cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text.Trim())
+
+					If cmd.ExecuteNonQuery() = -1 Then
+						MessageBox.Show("Saved!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+						Sel_LeaveCredit_ByEmployeeID(frmHRIS_Setup_LeaveCredit.dgvLeaveIssuedList)
+					End If
+
+				End Using
+			End Using
 		Catch ex As Exception
 			MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 		End Try
@@ -2730,13 +3123,14 @@ Module Module_HRIS
 			cmd.Parameters.AddWithValue("@InCharge", frmHRIS_Setup_AddUpdDepartment.cbInCharge.Text)
 			cmd.Parameters.AddWithValue("@Hotline", frmHRIS_Setup_AddUpdDepartment.txtHotline.Text)
 			cmd.Parameters.AddWithValue("@IsOperationDept", isOperationDept)
-			cmd.Parameters.AddWithValue("@IsInactive", isInactive)
+			cmd.Parameters.AddWithValue("@ParentDept", frmHRIS_Setup_AddUpdDepartment.cbParentDept.Text)
+			cmd.Parameters.AddWithValue("@IsInactive", False)
 			cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
 			If cmd.ExecuteNonQuery = -1 Then
 
 				'\\ This Code will Select the Data after Insert.
 
-				Call Sel_Department(frmHRIS_Setup_Department.dgvDepartmentList, frmHRIS_Setup_Department.txtboxSearch)
+				Call Sel_Department(frmHRIS_Setup_Department.dgvMainDepartment, frmHRIS_Setup_Department.txtboxSearch)
 				Call frmHRIS_Setup_AddUpdDepartment.Dispose()
 
 			End If
@@ -2759,6 +3153,7 @@ Module Module_HRIS
 
 				Using dr As SqlDataReader = cmd.ExecuteReader()
 					If dr.Read() Then
+
 						frmHRIS_Setup_AddUpdDepartment.txtCode.Text = dr.GetString(0)
 						frmHRIS_Setup_AddUpdDepartment.txtDeptName.Text = dr.GetString(1)
 
@@ -2767,7 +3162,11 @@ Module Module_HRIS
 
 						frmHRIS_Setup_AddUpdDepartment.txtHotline.Text = dr.GetString(3)
 						frmHRIS_Setup_AddUpdDepartment.checkboxOperationDept.Checked = dr.GetBoolean(4)
-						frmHRIS_Setup_AddUpdDepartment.checkboxIsInactive.Checked = dr.GetBoolean(5)
+						'frmHRIS_Setup_AddUpdDepartment.checkboxIsInactive.Checked = dr.GetBoolean(5)
+
+						Dim parentDept As Integer = frmHRIS_Setup_AddUpdDepartment.cbParentDept.FindStringExact(dr(5).ToString())
+						If parentDept <> -1 Then frmHRIS_Setup_AddUpdDepartment.cbParentDept.SelectedIndex = parentDept
+
 					End If
 				End Using
 			End Using
@@ -2873,12 +3272,9 @@ Module Module_HRIS
 				cmd.Parameters.AddWithValue("@FaxNo", frmHRIS_Setup_AddUpdCompany.txtFaxNo.Text)
 				cmd.Parameters.AddWithValue("@ModifiedBy", frmMain.ToolStripEmployeeNo.Text)
 				If cmd.ExecuteNonQuery = -1 Then
-
 					'\\ This Code will Select the Data after Insert.
-
 					Call Sel_Company(frmHRIS_Setup_Company.dgvCompanyList)
-					Call frmHRIS_Setup_AddUpdCompany.Dispose()
-
+					Call frmHRIS_Setup_AddUpdCompany.Close()
 				End If
 			End Using
 
@@ -2888,6 +3284,7 @@ Module Module_HRIS
 			Conn.Close()
 			cmd.Parameters.Clear()
 		End Try
+
 	End Sub
 
 	Sub SelUpd_Company_By_ID()
@@ -2918,7 +3315,6 @@ Module Module_HRIS
 						frmHRIS_Setup_AddUpdCompany.txtTrunkline.Text = dr.GetString(10)
 						frmHRIS_Setup_AddUpdCompany.txtHotline.Text = dr.GetString(11)
 						frmHRIS_Setup_AddUpdCompany.txtFaxNo.Text = dr.GetString(12)
-
 					End If
 				End Using
 			End Using
@@ -3087,7 +3483,7 @@ Module Module_HRIS
 			If cmd.ExecuteNonQuery = -1 Then
 				'Ins_ShiftTempRecord()
 				'Sel_ShiftID()
-				Sel_ShiftAll(frmHRIS_Setup_Shift.dgvAllShift)
+				'Sel_ShiftAll(frmHRIS_Setup_Shift.dgvAllShift)
 				frmHRIS_AddNewShift.Dispose()
 			End If
 		Catch ex As Exception
@@ -3117,8 +3513,9 @@ Module Module_HRIS
 			If cmd.ExecuteNonQuery = -1 Then
 				'Ins_ShiftTempRecord()
 				'Sel_ShiftID()
-				Sel_Shift_EffectivityDate_ByID(frmHRIS_Setup_Shift.dgvEffectivityDate)
-				frmHRIS_AddNewShiftEffectivity.Dispose()
+				'Sel_Shift_EffectivityDate_ByID(frmHRIS_Setup_Shift.dgvShiftDetails)
+				Sel_Assign_ScheduleShift_Detail(frmHRIS_Setup_Shift.dgvShiftDetails)
+				frmHRIS_AddNewShiftEffectivity.Close()
 			End If
 		Catch ex As Exception
 			MessageBox.Show("Error Occured: " & ex.Message)
@@ -3287,33 +3684,35 @@ Module Module_HRIS
 			cmd As New SqlCommand("[spInsUpdHRIS_ShiftAssignedToEmployee]", Conn)
 				Conn.Open()
 				cmd.CommandType = CommandType.StoredProcedure
-				cmd.Parameters.AddWithValue("@ShiftType", frmHR_AssignScheduleType.cbScheduleType.Text)
-				cmd.Parameters.AddWithValue("@ShiftEffectivityDate", frmHR_AssignScheduleType.cbEffectivityPeriod.Text)
+				'cmd.Parameters.AddWithValue("@ShiftType", frmHR_AssignScheduleType.cbScheduleType.Text)
+				cmd.Parameters.AddWithValue("@ShiftDetailID", _strShiftEffectivityID)
 				cmd.Parameters.AddWithValue("@EmployeeID", _strShiftEmployeeID)
 
-				If frmHR_AssignScheduleType.chMonday.Checked Then restDaysList.Add("2")
-				If frmHR_AssignScheduleType.chTuesday.Checked Then restDaysList.Add("3")
-				If frmHR_AssignScheduleType.chWednesday.Checked Then restDaysList.Add("4")
-				If frmHR_AssignScheduleType.chThursday.Checked Then restDaysList.Add("5")
-				If frmHR_AssignScheduleType.chFriday.Checked Then restDaysList.Add("6")
-				If frmHR_AssignScheduleType.chSaturday.Checked Then restDaysList.Add("7")
-				If frmHR_AssignScheduleType.chSunday.Checked Then restDaysList.Add("1")
+				If frmHRIS_AssignScheduleType.chMonday.Checked Then restDaysList.Add("2")
+				If frmHRIS_AssignScheduleType.chTuesday.Checked Then restDaysList.Add("3")
+				If frmHRIS_AssignScheduleType.chWednesday.Checked Then restDaysList.Add("4")
+				If frmHRIS_AssignScheduleType.chThursday.Checked Then restDaysList.Add("5")
+				If frmHRIS_AssignScheduleType.chFriday.Checked Then restDaysList.Add("6")
+				If frmHRIS_AssignScheduleType.chSaturday.Checked Then restDaysList.Add("7")
+				If frmHRIS_AssignScheduleType.chSunday.Checked Then restDaysList.Add("1")
 
 				Dim restDays As String = String.Join(",", restDaysList)
 				cmd.Parameters.AddWithValue("@RestDay", restDays)
 
-				cmd.Parameters.AddWithValue("@Remarks", frmHR_AssignScheduleType.txtRemarks.Text)
+				cmd.Parameters.AddWithValue("@Remarks", frmHRIS_AssignScheduleType.txtRemarks.Text)
 				cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
 				cmd.ExecuteNonQuery()
 
-				Sel_ScheduleShift_SubDetails(frmHRIS_Transaction_AssignEmployeeSchedule.dgvShiftSubDetails)
+				Sel_Assign_ScheduleShift_SubDetail(frmHRIS_Setup_Shift.dgvShiftSubDetails)
 				MessageBox.Show("Success! Schedule Assigned to Employee.")
 			End Using
-			frmHR_AssignScheduleType.Dispose()
+			frmHRIS_AssignScheduleType.Close()
 			restDaysList.Clear()
+
 		Catch ex As Exception
 			MessageBox.Show("Error Occured: " & ex.Message)
 		End Try
+
 	End Sub
 
 	Sub Update_ScheduleShiftType_To_Employee()
@@ -3392,6 +3791,161 @@ Module Module_HRIS
 				End Using
 			End Using
 		End Using
+	End Sub
+
+	Sub Sel_Assign_ScheduleShift(dgv As DataGridView)
+
+		dgv.Rows.Clear()
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spSelHRIS_Assign_Shift]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+						}
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			dgv.Rows.Add(
+			dr.GetInt32(0),
+			dr.GetString(1),
+			dr.GetString(2),
+			dr.GetString(3),
+			dr.GetString(4),
+			dr.GetDecimal(5),
+			dr.GetDecimal(6),
+			dr.GetString(7),
+			dr.GetString(8),
+			dr.GetDecimal(9),
+			dr.GetString(10),
+			dr.GetString(11))
+
+		End While
+		dr.Close()
+		Conn.Close()
+		cmd.Parameters.Clear()
+		dgv.ClearSelection()
+
+	End Sub
+
+	Sub Sel_Assign_ScheduleShift_Detail(dgv As DataGridView)
+
+		dgv.Rows.Clear()
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spSelHRIS_Assign_ShiftDetail]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+						}
+		cmd.Parameters.AddWithValue("@ParentID", _strShiftID)
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			dgv.Rows.Add(
+			dr.GetInt32(0),
+			dr.GetString(1))
+
+		End While
+		dr.Close()
+		Conn.Close()
+		cmd.Parameters.Clear()
+		dgv.ClearSelection()
+
+	End Sub
+
+	Sub Sel_Assign_ScheduleShift_SubDetail(dgv As DataGridView)
+
+		dgv.Rows.Clear()
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spSelHRIS_Assign_ShiftSubDetail]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+						}
+		cmd.Parameters.AddWithValue("@ShiftDetailID", _strShiftEffectivityID)
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			dgv.Rows.Add(
+			dr.GetInt32(0),
+			dr.GetString(1),
+			dr.GetString(2),
+			dr.GetString(3),
+			dr.GetString(4),
+			dr.GetString(5),
+			dr.GetString(6),
+			dr.GetString(7))
+
+		End While
+		dr.Close()
+		Conn.Close()
+		cmd.Parameters.Clear()
+		dgv.ClearSelection()
+
+	End Sub
+
+	Sub Sel_Shift_Personnel_Active(dgvPersonnelList As DataGridView)
+
+		dgvPersonnelList.Rows.Clear()
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spSelHRIS_Assign_ActiveEmployees]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+						}
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			dgvPersonnelList.Rows.Add(
+			dr.GetInt32(0),
+			dr.GetString(1),
+			dr.GetString(2),
+			dr.GetString(3),
+			dr.GetString(4))
+
+		End While
+		dr.Close()
+		Conn.Close()
+		cmd.Parameters.Clear()
+		dgvPersonnelList.ClearSelection()
+
+	End Sub
+
+	Sub Search_Shift_Personnel_Active(dgv As DataGridView, _txtBoxItemName As TextBox)
+
+		dgv.Rows.Clear()
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spSelHRIS_Assign_ActiveEmployees]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+						}
+
+		cmd.Parameters.AddWithValue("@Search", _txtBoxItemName.Text)
+
+		dr = cmd.ExecuteReader()
+		If dr.HasRows Then
+			While dr.Read()
+
+				dgv.Rows.Add(
+				dr.GetInt32(0),
+				dr.GetString(1),
+				dr.GetString(2),
+				dr.GetString(3),
+				dr.GetString(4))
+
+			End While
+		Else
+			MessageBox.Show("Record not found.", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		End If
+		dr.Dispose()
+		Conn.Dispose()
+		dgv.ClearSelection()
+
 	End Sub
 
 
@@ -3922,13 +4476,13 @@ Module Module_HRIS
 		cmd.Parameters.AddWithValue("@Department", frmHR_AddNewContract.cbDepartment.Text)
 		cmd.Parameters.AddWithValue("@StartDate", frmHR_AddNewContract.dtpContractStart.Value)
 		cmd.Parameters.AddWithValue("@EndDate", frmHR_AddNewContract.dtpContractEnd.Value)
-		cmd.Parameters.AddWithValue("@MonthlyRate", frmHR_AddNewContract.txtMonthlyRate.Text)
-		cmd.Parameters.AddWithValue("@ProjectDiff", frmHR_AddNewContract.txtProjectDiff.Text)
+		cmd.Parameters.AddWithValue("@MonthlyRate", Decimal.Parse(frmHR_AddNewContract.txtMonthlyRate.Text.Replace(",", "")))
+		cmd.Parameters.AddWithValue("@ProjectDiff", Decimal.Parse(frmHR_AddNewContract.txtProjectDiff.Text.Replace(",", "")))
 		cmd.Parameters.AddWithValue("@JobTitle", frmHR_AddNewContract.cbJobPosition.Text)
 		cmd.Parameters.AddWithValue("@Class", frmHR_AddNewContract.cbJobClassLevel.Text)
 		cmd.Parameters.AddWithValue("@Supervisor", frmHR_AddNewContract.cbSuperior.Text)
 		cmd.Parameters.AddWithValue("@Location", frmHR_AddNewContract.cbLocation.Text)
-		cmd.Parameters.AddWithValue("@FieldAllowance", frmHR_AddNewContract.txtFieldAllowance.Text)
+		cmd.Parameters.AddWithValue("@FieldAllowance", Decimal.Parse(frmHR_AddNewContract.txtFieldAllowance.Text.Replace(",", "")))
 		cmd.Parameters.AddWithValue("@ContractNotes", frmHR_AddNewContract.txtContractNotes.Text)
 		cmd.Parameters.AddWithValue("@ProjectNotes", frmHR_AddNewContract.txtProjectNotes.Text)
 		cmd.Parameters.AddWithValue("@Remarks", frmHR_AddNewContract.txtRemarks.Text)
@@ -3939,7 +4493,7 @@ Module Module_HRIS
 		cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
 
 		If cmd.ExecuteNonQuery = -1 Then
-			frmHR_AddNewContract.Dispose()
+			frmHR_AddNewContract.Close()
 			Sel_HRIS_Personnel_ContractHistory_ByID(frmHR_PreviewPersonnelDetails_Contracts.dgvContracts, True)
 		End If
 
@@ -4287,6 +4841,7 @@ Module Module_HRIS
 
 		Conn.Close()
 		cmd.Parameters.Clear()
+		MessageBox.Show("Saved.", "EDCOP Project Monitoring System", MessageBoxButtons.OK, MessageBoxIcon.Information)
 		Call Sel_HRIS_Personnel_COE_Issued_List(frmHRIS_Report_COE_PreviewList.dgvCOE) 'to update dgv
 	End Sub
 
@@ -6363,6 +6918,7 @@ Module Module_HRIS
 			cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
 
 			If cmd.ExecuteNonQuery = -1 Then
+				MessageBox.Show("Saved.", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
 				Call Sel_PMAS_Part1Form1_ByEmployeeID(frmHRIS_Transaction_PerformanceManagement_Part1.dgvPerformanceRecordPart1)
 				Call frmHRIS_PerformanceManagement_AddUpdatePart1Form1.Dispose()
 			End If
@@ -6411,41 +6967,6 @@ Module Module_HRIS
 		dgv.ClearSelection()
 
 	End Sub
-
-	Sub Select_PMAS_Part2FormA_Value(dgv1 As DataGridView, dgv2 As DataGridView, dgv3 As DataGridView, dgv4 As DataGridView, dgv5 As DataGridView, dgv6 As DataGridView, dgv7 As DataGridView, dgv8 As DataGridView, dgv9 As DataGridView, dgv10 As DataGridView)
-		LoadDataToGrid("[spSelHRIS_PMAS_Part2FactorA_Value1]", dgv1)
-		LoadDataToGrid("[spSelHRIS_PMAS_Part2FactorA_Value2]", dgv2)
-		LoadDataToGrid("[spSelHRIS_PMAS_Part2FactorA_Value3]", dgv3)
-		LoadDataToGrid("[spSelHRIS_PMAS_Part2FactorA_Value4]", dgv4)
-		LoadDataToGrid("[spSelHRIS_PMAS_Part2FactorA_Value5]", dgv5)
-		LoadDataToGrid("[spSelHRIS_PMAS_Part2FactorA_Value6]", dgv6)
-		LoadDataToGrid("[spSelHRIS_PMAS_Part2FactorA_Value7]", dgv7)
-		LoadDataToGrid("[spSelHRIS_PMAS_Part2FactorA_Value8]", dgv8)
-		LoadDataToGrid("[spSelHRIS_PMAS_Part2FactorA_Value9]", dgv9)
-		LoadDataToGrid("[spSelHRIS_PMAS_Part2FactorA_Value10]", dgv10)
-	End Sub
-
-	Private Sub LoadDataToGrid(storedProcedure As String, dgv As DataGridView)
-		dgv.Rows.Clear()
-
-		Using conn As New SqlConnection(StrConn)
-			Using cmd As New SqlCommand(storedProcedure, conn)
-				cmd.CommandType = CommandType.StoredProcedure
-				conn.Open()
-
-				Using dr As SqlDataReader = cmd.ExecuteReader()
-					While dr.Read()
-						Dim rowIdx As Integer = dgv.Rows.Add()
-						dgv.Rows(rowIdx).Cells(0).Value = dr.GetInt32(0)  ' ID
-						dgv.Rows(rowIdx).Cells(1).Value = dr.GetString(1) ' Value
-					End While
-				End Using
-			End Using
-		End Using
-
-		dgv.ClearSelection()
-	End Sub
-
 
 	Sub SelUpd_PMAS_Part1Form1_ByID()
 		Using Conn As New SqlConnection(StrConn)
@@ -6498,30 +7019,6 @@ Module Module_HRIS
 				End Using
 			End Using
 		End Using
-	End Sub
-
-	Sub Select_PMAS_Part1Form1_ActiveGoalSheet(dgv As DataGridView)
-
-		dgv.Rows.Clear()
-		Conn = New SqlConnection(StrConn)
-		Conn.Open()
-		cmd = Conn.CreateCommand
-		cmd.CommandText = "[spSelHRIS_PMAS_ActiveGoalSheet]"
-		cmd = New SqlCommand(cmd.CommandText, Conn) With {
-						.CommandType = CommandType.StoredProcedure
-						}
-		cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
-		dr = cmd.ExecuteReader()
-		While dr.Read()
-			dgv.Rows.Add(
-			dr.GetInt32(0),
-			dr.GetString(1),
-			dr.GetString(2))
-		End While
-		dr.Close()
-		Conn.Close()
-		dgv.ClearSelection()
-
 	End Sub
 
 	Sub Select_PMAS_Part1Form2_SummarySheet_By4ID()
@@ -6818,9 +7315,12 @@ Module Module_HRIS
 
 			If cmd.ExecuteNonQuery = -1 Then
 				'Call Sel_PerformancePart1Form1_ByEmployeeID(frmHRIS_Transaction_PerformanceManagement.dgvPerformanceRecordPart1)
+
+				MessageBox.Show("Saved.", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
 				Call frmHRIS_PerformanceManagement_AddUpdatePart1Form2_4_Projectsp2.Dispose()
 				Call frmHRIS_PerformanceManagement_AddUpdatePart1Form2_4_Projectsp1.Dispose()
 				Call frmHRIS_PerformanceManagement_SelectPart1Form1ToPart2Form2.Dispose()
+
 			End If
 
 		Catch ex As Exception
@@ -6886,6 +7386,30 @@ Module Module_HRIS
 
 	End Sub
 
+	Sub Select_PMAS_Part1Form1_ActiveGoalSheet(dgv As DataGridView)
+
+		dgv.Rows.Clear()
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spSelHRIS_PMAS_ActiveGoalSheet]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+						}
+		cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+			dgv.Rows.Add(
+			dr.GetInt32(0),
+			dr.GetString(1),
+			dr.GetString(2))
+		End While
+		dr.Close()
+		Conn.Close()
+		dgv.ClearSelection()
+
+	End Sub
+
 	Sub SelUpd_PMAS_Part1Form2_ByID()
 		Using Conn As New SqlConnection(StrConn)
 			Conn.Open()
@@ -6904,6 +7428,966 @@ Module Module_HRIS
 				End Using
 			End Using
 		End Using
+	End Sub
+
+	Sub Select_PMAS_Part2FormA_Value(dgv1 As DataGridView, dgv2 As DataGridView, dgv3 As DataGridView, dgv4 As DataGridView, dgv5 As DataGridView, dgv6 As DataGridView, dgv7 As DataGridView, dgv8 As DataGridView, dgv9 As DataGridView, dgv10 As DataGridView)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorA_Value1]", dgv1)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorA_Value2]", dgv2)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorA_Value3]", dgv3)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorA_Value4]", dgv4)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorA_Value5]", dgv5)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorA_Value6]", dgv6)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorA_Value7]", dgv7)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorA_Value8]", dgv8)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorA_Value9]", dgv9)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorA_Value10]", dgv10)
+	End Sub
+
+	Sub Select_LoadDataToGrid_PMAS_Form(storedProcedure As String, dgv As DataGridView)
+		dgv.Rows.Clear()
+
+		Using conn As New SqlConnection(StrConn)
+			Using cmd As New SqlCommand(storedProcedure, conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				conn.Open()
+
+				Using dr As SqlDataReader = cmd.ExecuteReader()
+					While dr.Read()
+						Dim rowIdx As Integer = dgv.Rows.Add()
+						dgv.Rows(rowIdx).Cells(0).Value = dr.GetInt32(0)  ' ID
+						dgv.Rows(rowIdx).Cells(1).Value = dr.GetString(1) ' Value
+					End While
+				End Using
+			End Using
+		End Using
+
+		dgv.ClearSelection()
+	End Sub
+
+	Sub Select_PMAS_Part2FormB_Value(dgv1 As DataGridView, dgv2 As DataGridView, dgv3 As DataGridView, dgv4 As DataGridView, dgv5 As DataGridView, dgv6 As DataGridView, dgv7 As DataGridView, dgv8 As DataGridView)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorB_Value1]", dgv1)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorB_Value2]", dgv2)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorB_Value3]", dgv3)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorB_Value4]", dgv4)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorB_Value5]", dgv5)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorB_Value6]", dgv6)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorB_Value7]", dgv7)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorB_Value8]", dgv8)
+	End Sub
+
+	Sub Select_PMAS_Part2FormC_Value(dgv1 As DataGridView, dgv2 As DataGridView, dgv3 As DataGridView, dgv4 As DataGridView, dgv5 As DataGridView, dgv6 As DataGridView, dgv7 As DataGridView, dgv8 As DataGridView)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorC_Value1]", dgv1)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorC_Value2]", dgv2)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorC_Value3]", dgv3)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorC_Value4]", dgv4)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorC_Value5]", dgv5)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorC_Value6]", dgv6)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorC_Value7]", dgv7)
+		Select_LoadDataToGrid_PMAS_Form("[spSelHRIS_PMAS_Part2FactorC_Value8]", dgv8)
+	End Sub
+
+	Sub InsUpd_PMAS_Part2FormA()
+
+		Try
+			Conn = New SqlConnection(StrConn)
+			Conn.Open()
+			cmd = Conn.CreateCommand
+			cmd.CommandText = "[spInsUpdHRIS_PMAS_Part2Form1_PerformanceFactorA]"
+			cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+					}
+
+			cmd.Parameters.AddWithValue("@ID", _strPerformancePart2FormAID)
+			cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+			cmd.Parameters.AddWithValue("@Part1ID", _strPerformancePart1Form1ID)
+
+			Dim table1 As New DataTable()
+			table1.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A1.ForEach(Sub(id) table1.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@A1", table1).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@A1").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWA1", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW1.Text)
+			cmd.Parameters.AddWithValue("@AFWA1", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.txtTFW1.Text)
+
+			Dim table2 As New DataTable()
+			table2.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A2.ForEach(Sub(id) table2.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@A2", table2).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@A2").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWA2", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW2.Text)
+			cmd.Parameters.AddWithValue("@AFWA2", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.txtTFW2.Text)
+
+			Dim table3 As New DataTable()
+			table3.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A3.ForEach(Sub(id) table3.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@A3", table3).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@A3").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWA3", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW3.Text)
+			cmd.Parameters.AddWithValue("@AFWA3", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.txtTFW3.Text)
+
+			Dim table4 As New DataTable()
+			table4.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A4.ForEach(Sub(item) table4.Rows.Add(item))
+			cmd.Parameters.AddWithValue("@A4", table4).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@A4").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWA4", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW4.Text)
+			cmd.Parameters.AddWithValue("@AFWA4", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.txtTFW4.Text)
+
+			Dim table5 As New DataTable()
+			table5.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A5.ForEach(Sub(id) table5.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@A5", table5).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@A5").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWA5", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW5.Text)
+			cmd.Parameters.AddWithValue("@AFWA5", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.txtTFW5.Text)
+
+			Dim table6 As New DataTable()
+			table6.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A6.ForEach(Sub(id) table6.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@A6", table6).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@A6").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWA6", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW6.Text)
+			cmd.Parameters.AddWithValue("@AFWA6", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.txtTFW6.Text)
+
+			Dim table7 As New DataTable()
+			table7.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A7.ForEach(Sub(id) table7.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@A7", table7).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@A7").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWA7", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW7.Text)
+			cmd.Parameters.AddWithValue("@AFWA7", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.txtTFW7.Text)
+
+			Dim table8 As New DataTable()
+			table8.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A8.ForEach(Sub(id) table8.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@A8", table8).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@A8").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWA8", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW8.Text)
+			cmd.Parameters.AddWithValue("@AFWA8", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.txtTFW8.Text)
+
+			Dim table9 As New DataTable()
+			table9.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A9.ForEach(Sub(item) table9.Rows.Add(item))
+			cmd.Parameters.AddWithValue("@A9", table9).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@A9").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWA9", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW9.Text)
+			cmd.Parameters.AddWithValue("@AFWA9", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.txtTFW9.Text)
+
+			Dim table10 As New DataTable()
+			table10.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A10.ForEach(Sub(id) table10.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@A10", table10).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@A10").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWA10", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW10.Text)
+			cmd.Parameters.AddWithValue("@AFWA10", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.txtTFW10.Text)
+
+			cmd.Parameters.AddWithValue("@Reviewer", frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.cbReviewer.Text)
+			cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+
+			If cmd.ExecuteNonQuery = -1 Then
+				MessageBox.Show("Saved.", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+				Call Sel_PMAS_Part2AllForms_ByEmployeeID(frmHRIS_Transaction_PerformanceManagement_Part2.dgvPerformanceFactors)
+				Call frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.Dispose()
+				Call frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.Dispose()
+			End If
+
+		Catch ex As Exception
+			MessageBox.Show("Error Occured: " & ex.Message)
+		Finally
+			Conn.Close()
+			cmd.Parameters.Clear()
+		End Try
+
+	End Sub
+
+	Sub Sel_PMAS_Part2AllForms_ByEmployeeID(dgv As DataGridView)
+
+		dgv.Rows.Clear()
+		Conn = New SqlConnection(StrConn)
+		Conn.Open()
+		cmd = Conn.CreateCommand
+		cmd.CommandText = "[spSelHRIS_PMAS_Part2Forms_AllType_ByEmployeeID]"
+		cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+						}
+		cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
+		dr = cmd.ExecuteReader()
+		While dr.Read()
+
+			dgv.Rows.Add(
+			dr.GetString(0),
+			dr.GetString(1),
+			dr.GetDecimal(2),
+			dr.GetString(3),
+			dr.GetString(4))
+
+		End While
+		dr.Close()
+		Conn.Close()
+		cmd.Parameters.Clear()
+		dgv.ClearSelection()
+
+	End Sub
+
+	Sub SelUpd_PMAS_Part2FormA_ByID()
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As SqlCommand = Conn.CreateCommand()
+				cmd.CommandText = "[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactor_ByID]"
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", _strPerformancePart2FormAID)
+
+				Using dr As SqlDataReader = cmd.ExecuteReader()
+					If dr.Read() Then
+
+						Dim Index As Integer = frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.cbPart1.FindStringExact(dr(0).ToString())
+						If Index <> -1 Then frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.cbPart1.SelectedIndex = Index
+
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW1.Text = dr.GetDecimal(1)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW2.Text = dr.GetDecimal(2)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW3.Text = dr.GetDecimal(3)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW4.Text = dr.GetDecimal(4)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW5.Text = dr.GetDecimal(5)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW6.Text = dr.GetDecimal(6)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW7.Text = dr.GetDecimal(7)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW8.Text = dr.GetDecimal(8)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW9.Text = dr.GetDecimal(9)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.txtFW10.Text = dr.GetDecimal(10)
+
+						Dim Index1 As Integer = frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.cbReviewer.FindStringExact(dr(11).ToString())
+						If Index1 <> -1 Then frmHRIS_PerformanceManagement_AddUpdatePart2_FormA_Values.cbReviewer.SelectedIndex = Index1
+
+
+					End If
+				End Using
+			End Using
+		End Using
+	End Sub
+
+	Sub SelUpd_PMAS_Part2FormB_ByID()
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As SqlCommand = Conn.CreateCommand()
+				cmd.CommandText = "[spSelUpdHRIS_PMAS_Part2FormB_PerformanceFactor_ByID]"
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", _strPerformancePart2FormBID)
+
+				Using dr As SqlDataReader = cmd.ExecuteReader()
+					If dr.Read() Then
+
+						Dim Index As Integer = frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.cbPart1.FindStringExact(dr(0).ToString())
+						If Index <> -1 Then frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.cbPart1.SelectedIndex = Index
+
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW1.Text = dr.GetDecimal(1)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW2.Text = dr.GetDecimal(2)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW3.Text = dr.GetDecimal(3)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW4.Text = dr.GetDecimal(4)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW5.Text = dr.GetDecimal(5)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW6.Text = dr.GetDecimal(6)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW7.Text = dr.GetDecimal(7)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW8.Text = dr.GetDecimal(8)
+
+						Dim Index1 As Integer = frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.cbReviewer.FindStringExact(dr(9).ToString())
+						If Index1 <> -1 Then frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.cbReviewer.SelectedIndex = Index1
+
+					End If
+				End Using
+			End Using
+		End Using
+	End Sub
+
+	Sub SelUpd_PMAS_Part2FormC_ByID()
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As SqlCommand = Conn.CreateCommand()
+				cmd.CommandText = "[spSelUpdHRIS_PMAS_Part2FormC_PerformanceFactor_ByID]"
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", _strPerformancePart2FormCID)
+
+				Using dr As SqlDataReader = cmd.ExecuteReader()
+					If dr.Read() Then
+
+						Dim Index As Integer = frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.cbPart1.FindStringExact(dr(0).ToString())
+						If Index <> -1 Then frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.cbPart1.SelectedIndex = Index
+
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW1.Text = dr.GetDecimal(1)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW2.Text = dr.GetDecimal(2)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW3.Text = dr.GetDecimal(3)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW4.Text = dr.GetDecimal(4)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW5.Text = dr.GetDecimal(5)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW6.Text = dr.GetDecimal(6)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW7.Text = dr.GetDecimal(7)
+						frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW8.Text = dr.GetDecimal(8)
+
+						Dim Index1 As Integer = frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.cbReviewer.FindStringExact(dr(9).ToString())
+						If Index1 <> -1 Then frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.cbReviewer.SelectedIndex = Index1
+
+					End If
+				End Using
+			End Using
+		End Using
+	End Sub
+
+	Sub SelUpd_PMAS_Part2FormA_Value(dgv1 As DataGridView, dgv2 As DataGridView, dgv3 As DataGridView, dgv4 As DataGridView, dgv5 As DataGridView, dgv6 As DataGridView, dgv7 As DataGridView, dgv8 As DataGridView, dgv9 As DataGridView, dgv10 As DataGridView, id As Integer)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorA1_ByID]", dgv1, frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A1, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorA2_ByID]", dgv2, frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A2, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorA3_ByID]", dgv3, frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A3, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorA4_ByID]", dgv4, frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A4, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorA5_ByID]", dgv5, frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A5, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorA6_ByID]", dgv6, frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A6, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorA7_ByID]", dgv7, frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A7, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorA8_ByID]", dgv8, frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A8, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorA9_ByID]", dgv9, frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A9, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorA10_ByID]", dgv10, frmHRIS_PerformanceManagement_AddUpdatePart2_FormA.A10, id)
+	End Sub
+
+	Sub SelUpd_LoadDataToGrid_PMAS_Part2Form(storedProcedure As String, dgv As DataGridView, lst As List(Of Integer), id As Integer)
+		dgv.Rows.Clear()
+		lst.Clear()
+
+		Using conn As New SqlConnection(StrConn)
+			Using cmd As New SqlCommand(storedProcedure, conn)
+				conn.Open()
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", id)
+				Using dr As SqlDataReader = cmd.ExecuteReader()
+					While dr.Read()
+						Dim rowIdx As Integer = dgv.Rows.Add()
+
+						dgv.Rows(rowIdx).Cells(0).Value = dr.GetInt64(0) ' ID
+						dgv.Rows(rowIdx).Cells(1).Value = dr.GetString(1) ' Description/Text
+
+						Dim foundValue As Integer = 0
+
+						' For columns 2 to 6 (checkbox columns), check if value is not zero
+						For colIdx As Integer = 2 To 6
+							Dim val As Integer = dr.GetInt32(colIdx)
+							Dim chkCell As DataGridViewCheckBoxCell = CType(dgv.Rows(rowIdx).Cells(colIdx), DataGridViewCheckBoxCell)
+							chkCell.Value = (val <> 0)
+
+							If val <> 0 Then
+								foundValue = colIdx - 1 ' Adjust so column 2 = value 1, column 3 = value 2, etc.
+							End If
+						Next
+
+						lst.Add(foundValue) 'store all non-zero or the rating from the db
+					End While
+				End Using
+			End Using
+		End Using
+
+		dgv.ClearSelection()
+	End Sub
+
+	Sub SelUpd_PMAS_Part2FormB_Value(dgv1 As DataGridView, dgv2 As DataGridView, dgv3 As DataGridView, dgv4 As DataGridView, dgv5 As DataGridView, dgv6 As DataGridView, dgv7 As DataGridView, dgv8 As DataGridView, id As Integer)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorB1_ByID]", dgv1, frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B1, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorB2_ByID]", dgv2, frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B2, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorB3_ByID]", dgv3, frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B3, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorB4_ByID]", dgv4, frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B4, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorB5_ByID]", dgv5, frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B5, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorB6_ByID]", dgv6, frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B6, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorB7_ByID]", dgv7, frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B7, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorB8_ByID]", dgv8, frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B8, id)
+	End Sub
+
+	Sub SelUpd_PMAS_Part2FormC_Value(dgv1 As DataGridView, dgv2 As DataGridView, dgv3 As DataGridView, dgv4 As DataGridView, dgv5 As DataGridView, dgv6 As DataGridView, dgv7 As DataGridView, dgv8 As DataGridView, id As Integer)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorC1_ByID]", dgv1, frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C1, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorC2_ByID]", dgv2, frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C2, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorC3_ByID]", dgv3, frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C3, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorC4_ByID]", dgv4, frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C4, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorC5_ByID]", dgv5, frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C5, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorC6_ByID]", dgv6, frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C6, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorC7_ByID]", dgv7, frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C7, id)
+		Call SelUpd_LoadDataToGrid_PMAS_Part2Form("[spSelUpdHRIS_PMAS_Part2FormA_PerformanceFactorC8_ByID]", dgv8, frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C8, id)
+	End Sub
+
+	Sub InsUpd_PMAS_Part2FormB()
+
+		Try
+			Conn = New SqlConnection(StrConn)
+			Conn.Open()
+			cmd = Conn.CreateCommand
+			cmd.CommandText = "[spInsUpdHRIS_PMAS_Part2Form1_PerformanceFactorB]"
+			cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+					}
+
+			cmd.Parameters.AddWithValue("@ID", _strPerformancePart2FormBID)
+			cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+			cmd.Parameters.AddWithValue("@Part1ID", _strPerformancePart1Form1ID)
+
+			Dim table1 As New DataTable()
+			table1.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B1.ForEach(Sub(id) table1.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@B1", table1).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@B1").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWB1", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW1.Text)
+			cmd.Parameters.AddWithValue("@AFWB1", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.txtTFW1.Text)
+
+			Dim table2 As New DataTable()
+			table2.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B2.ForEach(Sub(id) table2.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@B2", table2).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@B2").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWB2", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW2.Text)
+			cmd.Parameters.AddWithValue("@AFWB2", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.txtTFW2.Text)
+
+			Dim table3 As New DataTable()
+			table3.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B3.ForEach(Sub(id) table3.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@B3", table3).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@B3").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWB3", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW3.Text)
+			cmd.Parameters.AddWithValue("@AFWB3", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.txtTFW3.Text)
+
+			Dim table4 As New DataTable()
+			table4.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B4.ForEach(Sub(item) table4.Rows.Add(item))
+			cmd.Parameters.AddWithValue("@B4", table4).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@B4").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWB4", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW4.Text)
+			cmd.Parameters.AddWithValue("@AFWB4", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.txtTFW4.Text)
+
+			Dim table5 As New DataTable()
+			table5.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B5.ForEach(Sub(id) table5.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@B5", table5).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@B5").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWB5", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW5.Text)
+			cmd.Parameters.AddWithValue("@AFWB5", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.txtTFW5.Text)
+
+			Dim table6 As New DataTable()
+			table6.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B6.ForEach(Sub(id) table6.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@B6", table6).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@B6").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWB6", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW6.Text)
+			cmd.Parameters.AddWithValue("@AFWB6", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.txtTFW6.Text)
+
+			Dim table7 As New DataTable()
+			table7.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B7.ForEach(Sub(id) table7.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@B7", table7).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@B7").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWB7", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW7.Text)
+			cmd.Parameters.AddWithValue("@AFWB7", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.txtTFW7.Text)
+
+			Dim table8 As New DataTable()
+			table8.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.B8.ForEach(Sub(id) table8.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@B8", table8).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@B8").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWB8", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.txtFW8.Text)
+			cmd.Parameters.AddWithValue("@AFWB8", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.txtTFW8.Text)
+
+			cmd.Parameters.AddWithValue("@Reviewer", frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.cbReviewer.Text)
+			cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+
+			If cmd.ExecuteNonQuery = -1 Then
+				MessageBox.Show("Saved.", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+				Call Sel_PMAS_Part2AllForms_ByEmployeeID(frmHRIS_Transaction_PerformanceManagement_Part2.dgvPerformanceFactors)
+				Call frmHRIS_PerformanceManagement_AddUpdatePart2_FormB.Dispose()
+				Call frmHRIS_PerformanceManagement_AddUpdatePart2_FormB_Values.Dispose()
+			End If
+
+		Catch ex As Exception
+			MessageBox.Show("Error Occured: " & ex.Message)
+		Finally
+			Conn.Close()
+			cmd.Parameters.Clear()
+		End Try
+
+	End Sub
+
+	Sub InsUpd_PMAS_Part2FormC()
+
+		Try
+			Conn = New SqlConnection(StrConn)
+			Conn.Open()
+			cmd = Conn.CreateCommand
+			cmd.CommandText = "[spInsUpdHRIS_PMAS_Part2Form1_PerformanceFactorC]"
+			cmd = New SqlCommand(cmd.CommandText, Conn) With {
+						.CommandType = CommandType.StoredProcedure
+					}
+
+			cmd.Parameters.AddWithValue("@ID", _strPerformancePart2FormCID)
+			cmd.Parameters.AddWithValue("@PersonnelID", _strEmployeeID)
+			cmd.Parameters.AddWithValue("@Part1ID", _strPerformancePart1Form1ID)
+
+			Dim table1 As New DataTable()
+			table1.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C1.ForEach(Sub(id) table1.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@C1", table1).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@C1").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWC1", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW1.Text)
+			cmd.Parameters.AddWithValue("@AFWC1", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.txtTFW1.Text)
+
+			Dim table2 As New DataTable()
+			table2.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C2.ForEach(Sub(id) table2.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@C2", table2).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@C2").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWC2", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW2.Text)
+			cmd.Parameters.AddWithValue("@AFWC2", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.txtTFW2.Text)
+
+			Dim table3 As New DataTable()
+			table3.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C3.ForEach(Sub(id) table3.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@C3", table3).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@C3").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWC3", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW3.Text)
+			cmd.Parameters.AddWithValue("@AFWC3", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.txtTFW3.Text)
+
+			Dim table4 As New DataTable()
+			table4.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C4.ForEach(Sub(item) table4.Rows.Add(item))
+			cmd.Parameters.AddWithValue("@C4", table4).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@C4").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWC4", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW4.Text)
+			cmd.Parameters.AddWithValue("@AFWC4", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.txtTFW4.Text)
+
+			Dim table5 As New DataTable()
+			table5.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C5.ForEach(Sub(id) table5.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@C5", table5).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@C5").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWC5", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW5.Text)
+			cmd.Parameters.AddWithValue("@AFWC5", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.txtTFW5.Text)
+
+			Dim table6 As New DataTable()
+			table6.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C6.ForEach(Sub(id) table6.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@C6", table6).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@C6").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWC6", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW6.Text)
+			cmd.Parameters.AddWithValue("@AFWC6", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.txtTFW6.Text)
+
+			Dim table7 As New DataTable()
+			table7.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C7.ForEach(Sub(id) table7.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@C7", table7).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@C7").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWC7", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW7.Text)
+			cmd.Parameters.AddWithValue("@AFWC7", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.txtTFW7.Text)
+
+			Dim table8 As New DataTable()
+			table8.Columns.Add("ID", GetType(Integer))
+			frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.C8.ForEach(Sub(id) table8.Rows.Add(id))
+			cmd.Parameters.AddWithValue("@C8", table8).SqlDbType = SqlDbType.Structured
+			cmd.Parameters("@C8").TypeName = "dbo.IntList"
+
+			cmd.Parameters.AddWithValue("@FWC8", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.txtFW8.Text)
+			cmd.Parameters.AddWithValue("@AFWC8", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.txtTFW8.Text)
+
+			cmd.Parameters.AddWithValue("@Reviewer", frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.cbReviewer.Text)
+			cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+
+			If cmd.ExecuteNonQuery = -1 Then
+				MessageBox.Show("Saved.", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+				Call Sel_PMAS_Part2AllForms_ByEmployeeID(frmHRIS_Transaction_PerformanceManagement_Part2.dgvPerformanceFactors)
+				Call frmHRIS_PerformanceManagement_AddUpdatePart2_FormC.Dispose()
+				Call frmHRIS_PerformanceManagement_AddUpdatePart2_FormC_Values.Dispose()
+			End If
+
+		Catch ex As Exception
+			MessageBox.Show("Error Occured: " & ex.Message)
+		Finally
+			Conn.Close()
+			cmd.Parameters.Clear()
+		End Try
+
+	End Sub
+
+	Sub Del_PMAS_Part1Form1_ByID(dgv As DataGridView)
+		If MessageBox.Show("Are you sure you want to delete this from the list?", "Warning Message", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spDelHRIS_PMAS_Part1Form1]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", _strPerformancePart1Form1ID)
+				cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+				cmd.ExecuteNonQuery()
+				MsgBox("Deletion Success!")
+			End Using
+		End Using
+		dgv.Rows.Remove(dgv.SelectedRows(0))
+	End Sub
+
+	Sub Del_PMAS_Part1Form2_ByID(dgv As DataGridView)
+		If MessageBox.Show("Are you sure you want to delete this from the list?", "Warning Message", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spDelHRIS_PMAS_Part1Form2]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", _strPerformancePart1Form2ID)
+				cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+				cmd.ExecuteNonQuery()
+				MsgBox("Deletion Success!")
+			End Using
+		End Using
+		dgv.Rows.Remove(dgv.SelectedRows(0))
+	End Sub
+
+	Sub Del_PMAS_Part2FormFactorA_ByID(dgv As DataGridView)
+		If MessageBox.Show("Are you sure you want to delete this from the list?", "Warning Message", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spDelHRIS_PMAS_Part2Factor_A]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", _strPerformancePart2FormAID)
+				cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+				cmd.ExecuteNonQuery()
+				MsgBox("Deletion Success!")
+			End Using
+		End Using
+		dgv.Rows.Remove(dgv.SelectedRows(0))
+	End Sub
+
+	Sub Del_PMAS_Part2FormFactorB_ByID(dgv As DataGridView)
+		If MessageBox.Show("Are you sure you want to delete this from the list?", "Warning Message", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spDelHRIS_PMAS_Part2Factor_B]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", _strPerformancePart2FormBID)
+				cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+				cmd.ExecuteNonQuery()
+				MsgBox("Deletion Success!")
+			End Using
+		End Using
+		dgv.Rows.Remove(dgv.SelectedRows(0))
+	End Sub
+
+	Sub Del_PMAS_Part2FormFactorC_ByID(dgv As DataGridView)
+		If MessageBox.Show("Are you sure you want to delete this from the list?", "Warning Message", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
+		Using Conn As New SqlConnection(StrConn)
+			Conn.Open()
+			Using cmd As New SqlCommand("[spDelHRIS_PMAS_Part2Factor_C]", Conn)
+				cmd.CommandType = CommandType.StoredProcedure
+				cmd.Parameters.AddWithValue("@ID", _strPerformancePart2FormCID)
+				cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
+				cmd.ExecuteNonQuery()
+				MsgBox("Deletion Success!")
+			End Using
+		End Using
+		dgv.Rows.Remove(dgv.SelectedRows(0))
+	End Sub
+
+	''--->>> Reports - PMAS <<<---
+
+	Sub PrintRPT_PMAS_Part1Form1()
+		' Show loading form
+		frmLoading.Show()
+		frmLoading.Refresh() ' Force UI update before running long operations
+
+		Try
+			Dim rpt As New rptHRIS_PMAS_Part1_Form1
+			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+
+			Using Conn As New SqlConnection(StrConn)
+				Conn.Open()
+				Using cmd As New SqlCommand("[spRptHRIS_PMAS_Part1_Form1]", Conn)
+					cmd.CommandType = CommandType.StoredProcedure
+					cmd.Parameters.AddWithValue("@ID", _strPerformancePart1Form1ID)
+					Using dr As SqlDataReader = cmd.ExecuteReader()
+						If dr.HasRows Then
+							rpt.SetParameterValue("@ID", _strPerformancePart1Form1ID)
+							frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ReportSource = rpt
+							frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.Refresh()
+							frmHRIS_Report_CrystalReportsHolder.ShowDialog()
+						Else
+							MessageBox.Show("Error Occurred, please try again.", "EDCOP Project Monitoring System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+						End If
+					End Using
+				End Using
+			End Using
+
+			Conn.Close()
+			dr.Close()
+
+		Catch ex As Exception
+			MessageBox.Show($"Please Contact System Administrator.{vbCrLf}Error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		Finally
+			frmLoading.Close() ' Ensure loading form is closed properly
+		End Try
+
+	End Sub
+
+	'Sub Check_ProjectNumber_Part1Form2()
+	'	Dim isMoreThan4 As Integer = 0
+	'	Conn = New SqlConnection(StrConn)
+	'	Conn.Open()
+	'	cmd = Conn.CreateCommand
+	'	cmd.CommandText = "[spSelHRIS_PMAS_CheckProjectNumber_Part1Form2]"
+	'	cmd = New SqlCommand(cmd.CommandText, Conn) With {
+	'					.CommandType = CommandType.StoredProcedure
+	'					}
+	'	cmd.Parameters.AddWithValue("@ID", _strPerformancePart1Form2ID)
+
+	'	isMoreThan4 = cmd.ExecuteScalar
+
+	'	If isMoreThan4 Then
+	'		PrintRPT_PMAS_Part1Form2_Projects_8()
+	'	Else
+	'		PrintRPT_PMAS_Part1Form2_Projects_4()
+	'	End If
+
+	'	Conn.Close()
+	'	cmd.Parameters.Clear()
+	'End Sub
+
+	'Sub PrintRPT_PMAS_Part1Form2_Projects_4()
+	'	' Show loading form
+	'	frmLoading.Show()
+	'	frmLoading.Refresh() ' Force UI update before running long operations
+
+	'	Try
+	'		Dim rpt As New rptHRIS_PMAS_Part1_Form2_Projects4
+	'		rpt.SetDatabaseLogon("sa", "3dcoP2024")
+
+	'		Using Conn As New SqlConnection(StrConn)
+	'			Conn.Open()
+	'			Using cmd As New SqlCommand("[spRptHRIS_PMAS_Part1_Form2_Project4]", Conn)
+	'				cmd.CommandType = CommandType.StoredProcedure
+	'				cmd.Parameters.AddWithValue("@ID", _strPerformancePart1Form2ID)
+	'				Using dr As SqlDataReader = cmd.ExecuteReader()
+	'					If dr.HasRows Then
+	'						rpt.SetParameterValue("@ID", _strPerformancePart1Form2ID)
+	'						frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ReportSource = rpt
+	'						frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.Refresh()
+	'						frmHRIS_Report_CrystalReportsHolder.ShowDialog()
+	'					Else
+	'						MessageBox.Show("Error Occurred, please try again.", "EDCOP Project Monitoring System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+	'					End If
+	'				End Using
+	'			End Using
+	'		End Using
+
+	'		Conn.Close()
+	'		dr.Close()
+
+	'	Catch ex As Exception
+	'		MessageBox.Show($"Please Contact System Administrator.{vbCrLf}Error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+	'	Finally
+	'		frmLoading.Close() ' Ensure loading form is closed properly
+	'	End Try
+
+	'End Sub
+
+	'Sub PrintRPT_PMAS_Part1Form2_Projects_8()
+	'	' Show loading form
+	'	frmLoading.Show()
+	'	frmLoading.Refresh() ' Force UI update before running long operations
+
+	'	Try
+	'		Dim rpt As New rptHRIS_PMAS_Part1_Form2_Projects8
+	'		rpt.SetDatabaseLogon("sa", "3dcoP2024")
+
+	'		Using Conn As New SqlConnection(StrConn)
+	'			Conn.Open()
+	'			Using cmd As New SqlCommand("[spRptHRIS_PMAS_Part1_Form2_Project8]", Conn)
+	'				cmd.CommandType = CommandType.StoredProcedure
+	'				cmd.Parameters.AddWithValue("@ID", _strPerformancePart1Form2ID)
+	'				Using dr As SqlDataReader = cmd.ExecuteReader()
+	'					If dr.HasRows Then
+	'						rpt.SetParameterValue("@ID", _strPerformancePart1Form2ID)
+	'						frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ReportSource = rpt
+	'						frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.Refresh()
+	'						frmHRIS_Report_CrystalReportsHolder.ShowDialog()
+	'					Else
+	'						MessageBox.Show("Error Occurred, please try again.", "EDCOP Project Monitoring System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+	'					End If
+	'				End Using
+	'			End Using
+	'		End Using
+
+	'		Conn.Close()
+	'		dr.Close()
+
+	'	Catch ex As Exception
+	'		MessageBox.Show($"Please Contact System Administrator.{vbCrLf}Error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+	'	Finally
+	'		frmLoading.Close() ' Ensure loading form is closed properly
+	'	End Try
+
+	'End Sub
+
+	Sub PrintRPT_PMAS_Part1Form2_POSS()
+		' Show loading form
+		frmLoading.Show()
+		frmLoading.Refresh() ' Force UI update before running long operations
+
+		Try
+			Dim rpt As New rptHRIS_PMAS_Part1_Form2_POSS
+			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+
+			Using Conn As New SqlConnection(StrConn)
+				Conn.Open()
+				Using cmd As New SqlCommand("[spRptHRIS_PMAS_Part1_Form2_POSS]", Conn)
+					cmd.CommandType = CommandType.StoredProcedure
+					cmd.Parameters.AddWithValue("@ID", _strPerformancePart1Form2ID)
+					Using dr As SqlDataReader = cmd.ExecuteReader()
+						If dr.HasRows Then
+							rpt.SetParameterValue("@ID", _strPerformancePart1Form2ID)
+							frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ReportSource = rpt
+							frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.Refresh()
+							frmHRIS_Report_CrystalReportsHolder.ShowDialog()
+						Else
+							MessageBox.Show("Error Occurred, please try again.", "EDCOP Project Monitoring System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+						End If
+					End Using
+				End Using
+			End Using
+
+			Conn.Close()
+			dr.Close()
+
+		Catch ex As Exception
+			MessageBox.Show($"Please Contact System Administrator.{vbCrLf}Error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		Finally
+			frmLoading.Close() ' Ensure loading form is closed properly
+		End Try
+
+	End Sub
+
+	Sub PrintRPT_PMAS_Part2Factor_A()
+		' Show loading form
+		frmLoading.Show()
+		frmLoading.Refresh() ' Force UI update before running long operations
+
+		Try
+			Dim rpt As New rptHRIS_PMAS_Part2_Factor_A
+			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+
+			Using Conn As New SqlConnection(StrConn)
+				Conn.Open()
+				Using cmd As New SqlCommand("[spRptHRIS_PMAS_Part2_Factor_A]", Conn)
+					cmd.CommandType = CommandType.StoredProcedure
+					cmd.Parameters.AddWithValue("@ID", _strPerformancePart2FormAID)
+					Using dr As SqlDataReader = cmd.ExecuteReader()
+						If dr.HasRows Then
+							rpt.SetParameterValue("@ID", _strPerformancePart2FormAID)
+							frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ReportSource = rpt
+							frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.Refresh()
+							frmHRIS_Report_CrystalReportsHolder.ShowDialog()
+						Else
+							MessageBox.Show("Error Occurred, please try again.", "EDCOP Project Monitoring System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+						End If
+					End Using
+				End Using
+			End Using
+
+			Conn.Close()
+			dr.Close()
+
+		Catch ex As Exception
+			MessageBox.Show($"Please Contact System Administrator.{vbCrLf}Error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		Finally
+			frmLoading.Close() ' Ensure loading form is closed properly
+		End Try
+
+	End Sub
+
+
+	Sub PrintRPT_PMAS_Part2Factor_B()
+		' Show loading form
+		frmLoading.Show()
+		frmLoading.Refresh() ' Force UI update before running long operations
+
+		Try
+			Dim rpt As New rptHRIS_PMAS_Part2_Factor_B
+			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+
+			Using Conn As New SqlConnection(StrConn)
+				Conn.Open()
+				Using cmd As New SqlCommand("[spRptHRIS_PMAS_Part2_Factor_B]", Conn)
+					cmd.CommandType = CommandType.StoredProcedure
+					cmd.Parameters.AddWithValue("@ID", _strPerformancePart2FormBID)
+					Using dr As SqlDataReader = cmd.ExecuteReader()
+						If dr.HasRows Then
+							rpt.SetParameterValue("@ID", _strPerformancePart2FormBID)
+							frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ReportSource = rpt
+							frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.Refresh()
+							frmHRIS_Report_CrystalReportsHolder.ShowDialog()
+						Else
+							MessageBox.Show("Error Occurred, please try again.", "EDCOP Project Monitoring System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+						End If
+					End Using
+				End Using
+			End Using
+
+			Conn.Close()
+			dr.Close()
+
+		Catch ex As Exception
+			MessageBox.Show($"Please Contact System Administrator.{vbCrLf}Error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		Finally
+			frmLoading.Close() ' Ensure loading form is closed properly
+		End Try
+
+	End Sub
+
+	Sub PrintRPT_PMAS_Part2Factor_C()
+		' Show loading form
+		frmLoading.Show()
+		frmLoading.Refresh() ' Force UI update before running long operations
+
+		Try
+			Dim rpt As New rptHRIS_PMAS_Part2_Factor_C
+			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+
+			Using Conn As New SqlConnection(StrConn)
+				Conn.Open()
+				Using cmd As New SqlCommand("[spRptHRIS_PMAS_Part2_Factor_C]", Conn)
+					cmd.CommandType = CommandType.StoredProcedure
+					cmd.Parameters.AddWithValue("@ID", _strPerformancePart2FormCID)
+					Using dr As SqlDataReader = cmd.ExecuteReader()
+						If dr.HasRows Then
+							rpt.SetParameterValue("@ID", _strPerformancePart2FormCID)
+							frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ReportSource = rpt
+							frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.Refresh()
+							frmHRIS_Report_CrystalReportsHolder.ShowDialog()
+						Else
+							MessageBox.Show("Error Occurred, please try again.", "EDCOP Project Monitoring System", MessageBoxButtons.OK, MessageBoxIcon.Information)
+						End If
+					End Using
+				End Using
+			End Using
+
+			Conn.Close()
+			dr.Close()
+
+		Catch ex As Exception
+			MessageBox.Show($"Please Contact System Administrator.{vbCrLf}Error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		Finally
+			frmLoading.Close() ' Ensure loading form is closed properly
+		End Try
+
 	End Sub
 
 End Module

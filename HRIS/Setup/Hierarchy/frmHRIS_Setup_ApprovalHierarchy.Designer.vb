@@ -84,7 +84,6 @@ Partial Class frmHRIS_Setup_ApprovalHierarchy
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditNameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel33 = New System.Windows.Forms.Panel()
         Me.Panel30 = New System.Windows.Forms.Panel()
         Me.lblTitleName = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -618,7 +617,6 @@ Partial Class frmHRIS_Setup_ApprovalHierarchy
         'Panel32
         '
         Me.Panel32.Controls.Add(Me.dgvEmployeeList)
-        Me.Panel32.Controls.Add(Me.Panel33)
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel32.Location = New System.Drawing.Point(10, 34)
         Me.Panel32.Name = "Panel32"
@@ -631,7 +629,7 @@ Partial Class frmHRIS_Setup_ApprovalHierarchy
         Me.dgvEmployeeList.AllowUserToDeleteRows = False
         Me.dgvEmployeeList.AllowUserToResizeColumns = False
         Me.dgvEmployeeList.AllowUserToResizeRows = False
-        Me.dgvEmployeeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.dgvEmployeeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvEmployeeList.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.dgvEmployeeList.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -654,7 +652,7 @@ Partial Class frmHRIS_Setup_ApprovalHierarchy
         Me.dgvEmployeeList.RowHeadersVisible = False
         Me.dgvEmployeeList.RowTemplate.Height = 30
         Me.dgvEmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvEmployeeList.Size = New System.Drawing.Size(617, 187)
+        Me.dgvEmployeeList.Size = New System.Drawing.Size(1030, 187)
         Me.dgvEmployeeList.TabIndex = 76
         '
         'DataGridViewTextBoxColumn8
@@ -707,14 +705,6 @@ Partial Class frmHRIS_Setup_ApprovalHierarchy
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(129, 22)
         Me.ToolStripMenuItem1.Text = "Delete"
-        '
-        'Panel33
-        '
-        Me.Panel33.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel33.Location = New System.Drawing.Point(617, 0)
-        Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(413, 187)
-        Me.Panel33.TabIndex = 7
         '
         'Panel30
         '
@@ -821,7 +811,7 @@ Partial Class frmHRIS_Setup_ApprovalHierarchy
         Me.Panel17.Size = New System.Drawing.Size(1050, 5)
         Me.Panel17.TabIndex = 7
         '
-        'frmHR_Setup_ApprovalHierarchy
+        'frmHRIS_Setup_ApprovalHierarchy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -838,7 +828,7 @@ Partial Class frmHRIS_Setup_ApprovalHierarchy
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmHR_Setup_ApprovalHierarchy"
+        Me.Name = "frmHRIS_Setup_ApprovalHierarchy"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.Text = "Setup - Approval Hierarchy"
@@ -913,7 +903,6 @@ Partial Class frmHRIS_Setup_ApprovalHierarchy
     Friend WithEvents Panel11 As Panel
     Friend WithEvents Panel32 As Panel
     Friend WithEvents dgvEmployeeList As DataGridView
-    Friend WithEvents Panel33 As Panel
     Friend WithEvents Panel30 As Panel
     Friend WithEvents lblTitleName As Label
     Friend WithEvents Label3 As Label

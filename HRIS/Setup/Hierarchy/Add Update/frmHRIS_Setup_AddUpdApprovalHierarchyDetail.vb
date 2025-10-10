@@ -1,7 +1,5 @@
 ﻿Public Class frmHRIS_Setup_AddUpdApprovalHierarchyDetail
 
-    Public isUpdate As Boolean = False
-
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
         Call ResetComboBoxes(Me)
     End Sub
@@ -31,4 +29,5 @@
         isUpdate = False
         ResetComboBoxes(Me)
     End Sub
+
 End Class

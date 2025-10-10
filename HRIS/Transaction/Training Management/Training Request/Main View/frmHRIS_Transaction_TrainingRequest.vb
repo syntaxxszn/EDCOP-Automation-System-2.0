@@ -134,28 +134,33 @@
     End Sub
 
     Private Sub btnAddNewRequest_Click(sender As Object, e As EventArgs) Handles btnAddNewRequest.Click
+        If Not HasUserAccess("insert") Then Return
         frmHRIS_TR_AddUpdateTrainingRequest.ShowDialog()
     End Sub
 
     Private Sub btnEditTrainingRequest_Click(sender As Object, e As EventArgs) Handles btnEditTrainingRequest.Click
+        If Not HasUserAccess("update") Then Return
         If dgvTrainingRequest.SelectedRows.Count = 0 Then
             MessageBox.Show("Oooppss... Select from the list first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Return
         End If
 
-        frmHRIS_TR_AddUpdateTrainingRequest.isUpdate = True
+        isUpdate = True
         frmHRIS_TR_AddUpdateTrainingRequest.ShowDialog()
     End Sub
 
     Private Sub dgvTrainingRequest_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTrainingRequest.CellDoubleClick
+        If Not HasUserAccess("update") Then Return
         btnEditTrainingRequest.PerformClick()
     End Sub
 
     Private Sub EditTrainingRequestToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditTrainingRequestToolStripMenuItem.Click
+        If Not HasUserAccess("update") Then Return
         btnEditTrainingRequest.PerformClick()
     End Sub
 
     Private Sub AddTrainingParticipantsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddTrainingParticipantsToolStripMenuItem.Click
+        If Not HasUserAccess("insert") Then Return
         frmHRIS_TR_AddUpdTrainingParticipants.ShowDialog()
     End Sub
 
@@ -168,6 +173,7 @@
     End Sub
 
     Private Sub DeleteThisTrainingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteThisTrainingToolStripMenuItem.Click
+        If Not HasUserAccess("delete") Then Return
         If dgvEmployeeList.Rows.Count <> 0 Then
             If MessageBox.Show("Are you sure you want to delete this request and its participant(s)?", "Warning Message", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
             Call Del_TrainingRequest_By_ID(dgvTrainingRequest)
@@ -192,6 +198,7 @@
     End Sub
 
     Private Sub UpdateStatusToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateStatusToolStripMenuItem.Click
+        If Not HasUserAccess("update") Then Return
         frmHRIS_TR_UpdateStatusAndRemarks.ShowDialog()
     End Sub
 

@@ -2,8 +2,6 @@
 
 Public Class frmHRIS_TR_AddUpdateTrainingRequest
 
-    Public isUpdate As Boolean = False
-
     Private Sub frmHR_AddUpdateTrainingRequest_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If isUpdate Then
@@ -36,10 +34,12 @@ Public Class frmHRIS_TR_AddUpdateTrainingRequest
     End Sub
 
     Private Sub frmHR_AddUpdateTrainingRequest_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        If Not Me.IsDisposed Then Me.Dispose()
+        isUpdate = False
+        ClearTextBoxes(Me)
+        ResetDatePickers(Me)
     End Sub
 
     Private Sub btnClearTextFields_Click(sender As Object, e As EventArgs) Handles btnClearTextFields.Click
-        Me.Dispose()
+        Me.Close()
     End Sub
 End Class

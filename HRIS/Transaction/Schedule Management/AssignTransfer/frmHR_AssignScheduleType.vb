@@ -31,6 +31,9 @@
     End Sub
 
     Private Sub frmHR_AssignScheduleType_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        Me.Dispose()
+        ClearDataGridViewRows(Me)
+        ClearTextBoxes(Me)
+        UncheckCheckBoxes(Me)
     End Sub
+
 End Class

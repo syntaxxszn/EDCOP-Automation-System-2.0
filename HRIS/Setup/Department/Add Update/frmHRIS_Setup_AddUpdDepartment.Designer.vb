@@ -23,6 +23,7 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblHeader = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -44,11 +45,11 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtHotline = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.checkboxIsInactive = New System.Windows.Forms.CheckBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.cbParentDept = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -61,6 +62,16 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(434, 70)
         Me.Panel1.TabIndex = 1
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.folder
+        Me.PictureBox1.Location = New System.Drawing.Point(14, 15)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
         '
         'lblHeader
         '
@@ -87,7 +98,7 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         Me.Panel2.Controls.Add(Me.btnDiscard)
         Me.Panel2.Controls.Add(Me.btnSave)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 267)
+        Me.Panel2.Location = New System.Drawing.Point(0, 286)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(434, 61)
         Me.Panel2.TabIndex = 68
@@ -139,7 +150,7 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 70)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(14, 197)
+        Me.Panel3.Size = New System.Drawing.Size(14, 216)
         Me.Panel3.TabIndex = 69
         '
         'Panel4
@@ -147,34 +158,34 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel4.Location = New System.Drawing.Point(420, 70)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(14, 197)
+        Me.Panel4.Size = New System.Drawing.Size(14, 216)
         Me.Panel4.TabIndex = 70
         '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.Gray
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel6.Location = New System.Drawing.Point(19, 262)
+        Me.Panel6.Location = New System.Drawing.Point(17, 283)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(396, 5)
+        Me.Panel6.Size = New System.Drawing.Size(400, 3)
         Me.Panel6.TabIndex = 74
         '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.Gray
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(19, 70)
+        Me.Panel5.Location = New System.Drawing.Point(17, 70)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(396, 5)
+        Me.Panel5.Size = New System.Drawing.Size(400, 3)
         Me.Panel5.TabIndex = 73
         '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.Gray
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel7.Location = New System.Drawing.Point(415, 70)
+        Me.Panel7.Location = New System.Drawing.Point(417, 70)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(5, 197)
+        Me.Panel7.Size = New System.Drawing.Size(3, 216)
         Me.Panel7.TabIndex = 72
         '
         'Panel8
@@ -183,13 +194,13 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel8.Location = New System.Drawing.Point(14, 70)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(5, 197)
+        Me.Panel8.Size = New System.Drawing.Size(3, 216)
         Me.Panel8.TabIndex = 71
         '
         'txtCode
         '
         Me.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCode.Location = New System.Drawing.Point(127, 93)
+        Me.txtCode.Location = New System.Drawing.Point(127, 126)
         Me.txtCode.Name = "txtCode"
         Me.txtCode.Size = New System.Drawing.Size(267, 22)
         Me.txtCode.TabIndex = 76
@@ -198,7 +209,7 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.Label3.Location = New System.Drawing.Point(41, 97)
+        Me.Label3.Location = New System.Drawing.Point(41, 130)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 13)
         Me.Label3.TabIndex = 75
@@ -207,7 +218,7 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         'txtDeptName
         '
         Me.txtDeptName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDeptName.Location = New System.Drawing.Point(127, 121)
+        Me.txtDeptName.Location = New System.Drawing.Point(127, 154)
         Me.txtDeptName.Name = "txtDeptName"
         Me.txtDeptName.Size = New System.Drawing.Size(267, 22)
         Me.txtDeptName.TabIndex = 78
@@ -216,7 +227,7 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.Label4.Location = New System.Drawing.Point(41, 125)
+        Me.Label4.Location = New System.Drawing.Point(41, 158)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(78, 13)
         Me.Label4.TabIndex = 77
@@ -225,7 +236,7 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         'checkboxOperationDept
         '
         Me.checkboxOperationDept.AutoSize = True
-        Me.checkboxOperationDept.Location = New System.Drawing.Point(127, 151)
+        Me.checkboxOperationDept.Location = New System.Drawing.Point(127, 184)
         Me.checkboxOperationDept.Name = "checkboxOperationDept"
         Me.checkboxOperationDept.Size = New System.Drawing.Size(115, 17)
         Me.checkboxOperationDept.TabIndex = 79
@@ -239,7 +250,7 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         Me.cbInCharge.Font = New System.Drawing.Font("Segoe UI", 8.75!)
         Me.cbInCharge.ForeColor = System.Drawing.Color.Black
         Me.cbInCharge.FormattingEnabled = True
-        Me.cbInCharge.Location = New System.Drawing.Point(127, 174)
+        Me.cbInCharge.Location = New System.Drawing.Point(127, 207)
         Me.cbInCharge.Name = "cbInCharge"
         Me.cbInCharge.Size = New System.Drawing.Size(267, 23)
         Me.cbInCharge.TabIndex = 80
@@ -248,7 +259,7 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.Label5.Location = New System.Drawing.Point(41, 178)
+        Me.Label5.Location = New System.Drawing.Point(41, 211)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(64, 13)
         Me.Label5.TabIndex = 81
@@ -257,7 +268,7 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         'txtHotline
         '
         Me.txtHotline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtHotline.Location = New System.Drawing.Point(127, 203)
+        Me.txtHotline.Location = New System.Drawing.Point(127, 236)
         Me.txtHotline.Name = "txtHotline"
         Me.txtHotline.Size = New System.Drawing.Size(267, 22)
         Me.txtHotline.TabIndex = 83
@@ -266,39 +277,42 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.Label6.Location = New System.Drawing.Point(41, 207)
+        Me.Label6.Location = New System.Drawing.Point(41, 240)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(56, 13)
         Me.Label6.TabIndex = 82
         Me.Label6.Text = "Hotline *:"
         '
-        'checkboxIsInactive
+        'cbParentDept
         '
-        Me.checkboxIsInactive.AutoSize = True
-        Me.checkboxIsInactive.Location = New System.Drawing.Point(127, 234)
-        Me.checkboxIsInactive.Name = "checkboxIsInactive"
-        Me.checkboxIsInactive.Size = New System.Drawing.Size(81, 17)
-        Me.checkboxIsInactive.TabIndex = 84
-        Me.checkboxIsInactive.Text = "Is Inactive?"
-        Me.checkboxIsInactive.UseVisualStyleBackColor = True
+        Me.cbParentDept.BackColor = System.Drawing.SystemColors.Control
+        Me.cbParentDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbParentDept.Font = New System.Drawing.Font("Segoe UI", 8.75!)
+        Me.cbParentDept.ForeColor = System.Drawing.Color.Black
+        Me.cbParentDept.FormattingEnabled = True
+        Me.cbParentDept.Location = New System.Drawing.Point(127, 97)
+        Me.cbParentDept.Name = "cbParentDept"
+        Me.cbParentDept.Size = New System.Drawing.Size(267, 23)
+        Me.cbParentDept.TabIndex = 84
         '
-        'PictureBox1
+        'Label1
         '
-        Me.PictureBox1.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.folder
-        Me.PictureBox1.Location = New System.Drawing.Point(14, 15)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(40, 40)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.Label1.Location = New System.Drawing.Point(41, 101)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(82, 13)
+        Me.Label1.TabIndex = 85
+        Me.Label1.Text = "Parent Dept. *:"
         '
-        'frmHR_Setup_AddUpdDepartment
+        'frmHRIS_Setup_AddUpdDepartment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(434, 328)
-        Me.Controls.Add(Me.checkboxIsInactive)
+        Me.ClientSize = New System.Drawing.Size(434, 347)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.cbParentDept)
         Me.Controls.Add(Me.txtHotline)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -320,14 +334,14 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "frmHR_Setup_AddUpdDepartment"
+        Me.Name = "frmHRIS_Setup_AddUpdDepartment"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Department"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -356,5 +370,6 @@ Partial Class frmHRIS_Setup_AddUpdDepartment
     Friend WithEvents Label5 As Label
     Friend WithEvents txtHotline As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents checkboxIsInactive As CheckBox
+    Friend WithEvents cbParentDept As ComboBox
+    Friend WithEvents Label1 As Label
 End Class

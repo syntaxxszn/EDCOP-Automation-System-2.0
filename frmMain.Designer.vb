@@ -53,16 +53,16 @@ Partial Class frmMain
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.SplitSideContainer = New System.Windows.Forms.SplitContainer()
         Me.panelSubAU = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnAboutUs = New System.Windows.Forms.Button()
         Me.ImageListMenu = New System.Windows.Forms.ImageList(Me.components)
         Me.panelSubCU = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.panelSubSS = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnContactUs = New System.Windows.Forms.Button()
+        Me.panelSubSSS = New System.Windows.Forms.Panel()
+        Me.btnSSS = New System.Windows.Forms.Button()
         Me.panelSubTL = New System.Windows.Forms.Panel()
-        Me.Button11 = New System.Windows.Forms.Button()
+        Me.btnTrailLogs = New System.Windows.Forms.Button()
         Me.panelSubBDM = New System.Windows.Forms.Panel()
-        Me.Button10 = New System.Windows.Forms.Button()
+        Me.btnBDM = New System.Windows.Forms.Button()
         Me.panelSubTKM = New System.Windows.Forms.Panel()
         Me.btnTKM = New System.Windows.Forms.Button()
         Me.panelSubPMM = New System.Windows.Forms.Panel()
@@ -74,9 +74,29 @@ Partial Class frmMain
         Me.PanelHolder = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblWelcomeName = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PanelMainHolder = New System.Windows.Forms.Panel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.picBoxNotif2 = New System.Windows.Forms.PictureBox()
+        Me.Panel19 = New System.Windows.Forms.Panel()
+        Me.Panel20 = New System.Windows.Forms.Panel()
+        Me.Panel21 = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.picBoxNotif1 = New System.Windows.Forms.PictureBox()
+        Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
@@ -89,6 +109,16 @@ Partial Class frmMain
         Me.SplitSideContainer.Panel2.SuspendLayout()
         Me.SplitSideContainer.SuspendLayout()
         Me.Panel8.SuspendLayout()
+        Me.PanelMainHolder.SuspendLayout()
+        Me.Panel9.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel10.SuspendLayout()
+        Me.Panel17.SuspendLayout()
+        CType(Me.picBoxNotif2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel11.SuspendLayout()
+        CType(Me.picBoxNotif1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -283,6 +313,7 @@ Partial Class frmMain
         '
         'Panel4
         '
+        Me.Panel4.AutoScroll = True
         Me.Panel4.Controls.Add(Me.SplitSideContainer)
         Me.Panel4.Controls.Add(Me.Panel8)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
@@ -301,15 +332,15 @@ Partial Class frmMain
         'SplitSideContainer.Panel1
         '
         Me.SplitSideContainer.Panel1.Controls.Add(Me.panelSubAU)
-        Me.SplitSideContainer.Panel1.Controls.Add(Me.Button3)
+        Me.SplitSideContainer.Panel1.Controls.Add(Me.btnAboutUs)
         Me.SplitSideContainer.Panel1.Controls.Add(Me.panelSubCU)
-        Me.SplitSideContainer.Panel1.Controls.Add(Me.Button2)
-        Me.SplitSideContainer.Panel1.Controls.Add(Me.panelSubSS)
-        Me.SplitSideContainer.Panel1.Controls.Add(Me.Button1)
+        Me.SplitSideContainer.Panel1.Controls.Add(Me.btnContactUs)
+        Me.SplitSideContainer.Panel1.Controls.Add(Me.panelSubSSS)
+        Me.SplitSideContainer.Panel1.Controls.Add(Me.btnSSS)
         Me.SplitSideContainer.Panel1.Controls.Add(Me.panelSubTL)
-        Me.SplitSideContainer.Panel1.Controls.Add(Me.Button11)
+        Me.SplitSideContainer.Panel1.Controls.Add(Me.btnTrailLogs)
         Me.SplitSideContainer.Panel1.Controls.Add(Me.panelSubBDM)
-        Me.SplitSideContainer.Panel1.Controls.Add(Me.Button10)
+        Me.SplitSideContainer.Panel1.Controls.Add(Me.btnBDM)
         Me.SplitSideContainer.Panel1.Controls.Add(Me.panelSubTKM)
         Me.SplitSideContainer.Panel1.Controls.Add(Me.btnTKM)
         Me.SplitSideContainer.Panel1.Controls.Add(Me.panelSubPMM)
@@ -325,38 +356,39 @@ Partial Class frmMain
         Me.SplitSideContainer.Panel2.Controls.Add(Me.PanelHolder)
         Me.SplitSideContainer.Panel2.Controls.Add(Me.Panel14)
         Me.SplitSideContainer.Size = New System.Drawing.Size(284, 612)
-        Me.SplitSideContainer.SplitterDistance = 313
+        Me.SplitSideContainer.SplitterDistance = 308
         Me.SplitSideContainer.TabIndex = 2
         '
         'panelSubAU
         '
         Me.panelSubAU.AutoScroll = True
         Me.panelSubAU.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelSubAU.Location = New System.Drawing.Point(0, 649)
+        Me.panelSubAU.Location = New System.Drawing.Point(0, 655)
         Me.panelSubAU.Name = "panelSubAU"
         Me.panelSubAU.Size = New System.Drawing.Size(284, 26)
         Me.panelSubAU.TabIndex = 23
         '
-        'Button3
+        'btnAboutUs
         '
-        Me.Button3.BackColor = System.Drawing.Color.Navy
-        Me.Button3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.ImageIndex = 7
-        Me.Button3.ImageList = Me.ImageListMenu
-        Me.Button3.Location = New System.Drawing.Point(0, 600)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button3.Size = New System.Drawing.Size(284, 49)
-        Me.Button3.TabIndex = 22
-        Me.Button3.Text = "  About Us"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.btnAboutUs.BackColor = System.Drawing.Color.Navy
+        Me.btnAboutUs.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnAboutUs.FlatAppearance.BorderSize = 0
+        Me.btnAboutUs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAboutUs.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAboutUs.ForeColor = System.Drawing.Color.White
+        Me.btnAboutUs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAboutUs.ImageIndex = 7
+        Me.btnAboutUs.ImageList = Me.ImageListMenu
+        Me.btnAboutUs.Location = New System.Drawing.Point(0, 606)
+        Me.btnAboutUs.Name = "btnAboutUs"
+        Me.btnAboutUs.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnAboutUs.Size = New System.Drawing.Size(284, 49)
+        Me.btnAboutUs.TabIndex = 22
+        Me.btnAboutUs.Tag = "9000000000"
+        Me.btnAboutUs.Text = "  About Us"
+        Me.btnAboutUs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAboutUs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAboutUs.UseVisualStyleBackColor = False
         '
         'ImageListMenu
         '
@@ -374,126 +406,131 @@ Partial Class frmMain
         Me.ImageListMenu.Images.SetKeyName(9, "accounting.png")
         Me.ImageListMenu.Images.SetKeyName(10, "circular-economy.png")
         Me.ImageListMenu.Images.SetKeyName(11, "real-time.png")
+        Me.ImageListMenu.Images.SetKeyName(12, "icons8-settings-100.png")
         '
         'panelSubCU
         '
         Me.panelSubCU.AutoScroll = True
         Me.panelSubCU.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelSubCU.Location = New System.Drawing.Point(0, 574)
+        Me.panelSubCU.Location = New System.Drawing.Point(0, 580)
         Me.panelSubCU.Name = "panelSubCU"
         Me.panelSubCU.Size = New System.Drawing.Size(284, 26)
         Me.panelSubCU.TabIndex = 21
         '
-        'Button2
+        'btnContactUs
         '
-        Me.Button2.BackColor = System.Drawing.Color.Navy
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.ImageIndex = 7
-        Me.Button2.ImageList = Me.ImageListMenu
-        Me.Button2.Location = New System.Drawing.Point(0, 525)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button2.Size = New System.Drawing.Size(284, 49)
-        Me.Button2.TabIndex = 20
-        Me.Button2.Text = "  Contact Us"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnContactUs.BackColor = System.Drawing.Color.Navy
+        Me.btnContactUs.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnContactUs.FlatAppearance.BorderSize = 0
+        Me.btnContactUs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnContactUs.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnContactUs.ForeColor = System.Drawing.Color.White
+        Me.btnContactUs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnContactUs.ImageIndex = 7
+        Me.btnContactUs.ImageList = Me.ImageListMenu
+        Me.btnContactUs.Location = New System.Drawing.Point(0, 531)
+        Me.btnContactUs.Name = "btnContactUs"
+        Me.btnContactUs.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnContactUs.Size = New System.Drawing.Size(284, 49)
+        Me.btnContactUs.TabIndex = 20
+        Me.btnContactUs.Tag = "8000000000"
+        Me.btnContactUs.Text = "  Contact Us"
+        Me.btnContactUs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnContactUs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnContactUs.UseVisualStyleBackColor = False
         '
-        'panelSubSS
+        'panelSubSSS
         '
-        Me.panelSubSS.AutoScroll = True
-        Me.panelSubSS.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelSubSS.Location = New System.Drawing.Point(0, 499)
-        Me.panelSubSS.Name = "panelSubSS"
-        Me.panelSubSS.Size = New System.Drawing.Size(284, 26)
-        Me.panelSubSS.TabIndex = 19
+        Me.panelSubSSS.AutoScroll = True
+        Me.panelSubSSS.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelSubSSS.Location = New System.Drawing.Point(0, 505)
+        Me.panelSubSSS.Name = "panelSubSSS"
+        Me.panelSubSSS.Size = New System.Drawing.Size(284, 26)
+        Me.panelSubSSS.TabIndex = 19
         '
-        'Button1
+        'btnSSS
         '
-        Me.Button1.BackColor = System.Drawing.Color.Navy
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.ImageIndex = 7
-        Me.Button1.ImageList = Me.ImageListMenu
-        Me.Button1.Location = New System.Drawing.Point(0, 450)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button1.Size = New System.Drawing.Size(284, 49)
-        Me.Button1.TabIndex = 18
-        Me.Button1.Text = "  System Settings"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnSSS.BackColor = System.Drawing.Color.Navy
+        Me.btnSSS.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSSS.FlatAppearance.BorderSize = 0
+        Me.btnSSS.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSSS.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSSS.ForeColor = System.Drawing.Color.White
+        Me.btnSSS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSSS.ImageIndex = 12
+        Me.btnSSS.ImageList = Me.ImageListMenu
+        Me.btnSSS.Location = New System.Drawing.Point(0, 456)
+        Me.btnSSS.Name = "btnSSS"
+        Me.btnSSS.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnSSS.Size = New System.Drawing.Size(284, 49)
+        Me.btnSSS.TabIndex = 18
+        Me.btnSSS.Tag = "7000000000"
+        Me.btnSSS.Text = "  System Settings"
+        Me.btnSSS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSSS.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSSS.UseVisualStyleBackColor = False
         '
         'panelSubTL
         '
         Me.panelSubTL.AutoScroll = True
         Me.panelSubTL.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelSubTL.Location = New System.Drawing.Point(0, 424)
+        Me.panelSubTL.Location = New System.Drawing.Point(0, 430)
         Me.panelSubTL.Name = "panelSubTL"
         Me.panelSubTL.Size = New System.Drawing.Size(284, 26)
         Me.panelSubTL.TabIndex = 17
         '
-        'Button11
+        'btnTrailLogs
         '
-        Me.Button11.BackColor = System.Drawing.Color.Navy
-        Me.Button11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button11.FlatAppearance.BorderSize = 0
-        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button11.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button11.ForeColor = System.Drawing.Color.White
-        Me.Button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button11.ImageIndex = 7
-        Me.Button11.ImageList = Me.ImageListMenu
-        Me.Button11.Location = New System.Drawing.Point(0, 375)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button11.Size = New System.Drawing.Size(284, 49)
-        Me.Button11.TabIndex = 16
-        Me.Button11.Text = "  Trail Logs"
-        Me.Button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button11.UseVisualStyleBackColor = False
+        Me.btnTrailLogs.BackColor = System.Drawing.Color.Navy
+        Me.btnTrailLogs.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnTrailLogs.FlatAppearance.BorderSize = 0
+        Me.btnTrailLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTrailLogs.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTrailLogs.ForeColor = System.Drawing.Color.White
+        Me.btnTrailLogs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTrailLogs.ImageIndex = 7
+        Me.btnTrailLogs.ImageList = Me.ImageListMenu
+        Me.btnTrailLogs.Location = New System.Drawing.Point(0, 381)
+        Me.btnTrailLogs.Name = "btnTrailLogs"
+        Me.btnTrailLogs.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnTrailLogs.Size = New System.Drawing.Size(284, 49)
+        Me.btnTrailLogs.TabIndex = 16
+        Me.btnTrailLogs.Tag = "6000000000"
+        Me.btnTrailLogs.Text = "  Trail Logs"
+        Me.btnTrailLogs.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnTrailLogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnTrailLogs.UseVisualStyleBackColor = False
         '
         'panelSubBDM
         '
         Me.panelSubBDM.AutoScroll = True
         Me.panelSubBDM.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panelSubBDM.Location = New System.Drawing.Point(0, 349)
+        Me.panelSubBDM.Location = New System.Drawing.Point(0, 355)
         Me.panelSubBDM.Name = "panelSubBDM"
         Me.panelSubBDM.Size = New System.Drawing.Size(284, 26)
         Me.panelSubBDM.TabIndex = 15
         '
-        'Button10
+        'btnBDM
         '
-        Me.Button10.BackColor = System.Drawing.Color.Navy
-        Me.Button10.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button10.FlatAppearance.BorderSize = 0
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button10.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button10.ForeColor = System.Drawing.Color.White
-        Me.Button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button10.ImageIndex = 10
-        Me.Button10.ImageList = Me.ImageListMenu
-        Me.Button10.Location = New System.Drawing.Point(0, 300)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Button10.Size = New System.Drawing.Size(284, 49)
-        Me.Button10.TabIndex = 14
-        Me.Button10.Text = "  Business Development Module"
-        Me.Button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button10.UseVisualStyleBackColor = False
+        Me.btnBDM.BackColor = System.Drawing.Color.Navy
+        Me.btnBDM.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnBDM.FlatAppearance.BorderSize = 0
+        Me.btnBDM.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBDM.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBDM.ForeColor = System.Drawing.Color.White
+        Me.btnBDM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBDM.ImageIndex = 10
+        Me.btnBDM.ImageList = Me.ImageListMenu
+        Me.btnBDM.Location = New System.Drawing.Point(0, 306)
+        Me.btnBDM.Name = "btnBDM"
+        Me.btnBDM.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnBDM.Size = New System.Drawing.Size(284, 49)
+        Me.btnBDM.TabIndex = 14
+        Me.btnBDM.Tag = "5000000000"
+        Me.btnBDM.Text = "  Business Development Module"
+        Me.btnBDM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBDM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBDM.UseVisualStyleBackColor = False
         '
         'panelSubTKM
         '
@@ -501,7 +538,7 @@ Partial Class frmMain
         Me.panelSubTKM.Dock = System.Windows.Forms.DockStyle.Top
         Me.panelSubTKM.Location = New System.Drawing.Point(0, 274)
         Me.panelSubTKM.Name = "panelSubTKM"
-        Me.panelSubTKM.Size = New System.Drawing.Size(284, 26)
+        Me.panelSubTKM.Size = New System.Drawing.Size(284, 32)
         Me.panelSubTKM.TabIndex = 13
         '
         'btnTKM
@@ -520,6 +557,7 @@ Partial Class frmMain
         Me.btnTKM.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnTKM.Size = New System.Drawing.Size(284, 49)
         Me.btnTKM.TabIndex = 12
+        Me.btnTKM.Tag = "4000000000"
         Me.btnTKM.Text = "  Timekeeping Module"
         Me.btnTKM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnTKM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -549,6 +587,7 @@ Partial Class frmMain
         Me.btnPMM.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnPMM.Size = New System.Drawing.Size(284, 49)
         Me.btnPMM.TabIndex = 10
+        Me.btnPMM.Tag = "3000000000"
         Me.btnPMM.Text = "  Puchase Management Module"
         Me.btnPMM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnPMM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -579,6 +618,7 @@ Partial Class frmMain
         Me.btnFMM.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnFMM.Size = New System.Drawing.Size(284, 49)
         Me.btnFMM.TabIndex = 8
+        Me.btnFMM.Tag = "2000000000"
         Me.btnFMM.Text = "  Finance Management Module"
         Me.btnFMM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnFMM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -608,6 +648,7 @@ Partial Class frmMain
         Me.btnHRM.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnHRM.Size = New System.Drawing.Size(284, 49)
         Me.btnHRM.TabIndex = 6
+        Me.btnHRM.Tag = "1000000000"
         Me.btnHRM.Text = "  Human Resource Module"
         Me.btnHRM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnHRM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -619,7 +660,7 @@ Partial Class frmMain
         Me.PanelHolder.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelHolder.Location = New System.Drawing.Point(0, 3)
         Me.PanelHolder.Name = "PanelHolder"
-        Me.PanelHolder.Size = New System.Drawing.Size(284, 292)
+        Me.PanelHolder.Size = New System.Drawing.Size(284, 297)
         Me.PanelHolder.TabIndex = 1
         '
         'Panel14
@@ -633,22 +674,22 @@ Partial Class frmMain
         '
         'Panel8
         '
-        Me.Panel8.Controls.Add(Me.Label4)
+        Me.Panel8.Controls.Add(Me.lblWelcomeName)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Location = New System.Drawing.Point(0, 0)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(284, 61)
         Me.Panel8.TabIndex = 0
         '
-        'Label4
+        'lblWelcomeName
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.Label4.Location = New System.Drawing.Point(6, 14)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(156, 21)
-        Me.Label4.TabIndex = 1
-        Me.Label4.Text = "Welcome Friendship!"
+        Me.lblWelcomeName.AutoSize = True
+        Me.lblWelcomeName.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.lblWelcomeName.Location = New System.Drawing.Point(6, 18)
+        Me.lblWelcomeName.Name = "lblWelcomeName"
+        Me.lblWelcomeName.Size = New System.Drawing.Size(156, 21)
+        Me.lblWelcomeName.TabIndex = 1
+        Me.lblWelcomeName.Text = "Welcome Friendship!"
         '
         'Panel3
         '
@@ -662,11 +703,224 @@ Partial Class frmMain
         'PanelMainHolder
         '
         Me.PanelMainHolder.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.PanelMainHolder.Controls.Add(Me.Panel9)
         Me.PanelMainHolder.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelMainHolder.Location = New System.Drawing.Point(293, 54)
         Me.PanelMainHolder.Name = "PanelMainHolder"
         Me.PanelMainHolder.Size = New System.Drawing.Size(945, 673)
         Me.PanelMainHolder.TabIndex = 16
+        '
+        'Panel9
+        '
+        Me.Panel9.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel9.Controls.Add(Me.GroupBox1)
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel9.Location = New System.Drawing.Point(0, 0)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(945, 673)
+        Me.Panel9.TabIndex = 13
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.White
+        Me.GroupBox1.Controls.Add(Me.PictureBox2)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Panel10)
+        Me.GroupBox1.Controls.Add(Me.PictureBox1)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(943, 671)
+        Me.GroupBox1.TabIndex = 0
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "<System Bulletin >"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.loudspeaker
+        Me.PictureBox2.Location = New System.Drawing.Point(515, 30)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 4
+        Me.PictureBox2.TabStop = False
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(571, 46)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(160, 23)
+        Me.Label5.TabIndex = 3
+        Me.Label5.Text = "ANNOUNCEMENTS"
+        '
+        'Panel10
+        '
+        Me.Panel10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel10.Controls.Add(Me.Panel17)
+        Me.Panel10.Controls.Add(Me.Panel11)
+        Me.Panel10.Controls.Add(Me.Label1)
+        Me.Panel10.Controls.Add(Me.Label3)
+        Me.Panel10.Location = New System.Drawing.Point(26, 97)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(893, 543)
+        Me.Panel10.TabIndex = 2
+        '
+        'Panel17
+        '
+        Me.Panel17.Controls.Add(Me.picBoxNotif2)
+        Me.Panel17.Controls.Add(Me.Panel19)
+        Me.Panel17.Controls.Add(Me.Panel20)
+        Me.Panel17.Controls.Add(Me.Panel21)
+        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel17.Location = New System.Drawing.Point(99, 0)
+        Me.Panel17.Name = "Panel17"
+        Me.Panel17.Size = New System.Drawing.Size(515, 543)
+        Me.Panel17.TabIndex = 5
+        '
+        'picBoxNotif2
+        '
+        Me.picBoxNotif2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.picBoxNotif2.Location = New System.Drawing.Point(3, 3)
+        Me.picBoxNotif2.Name = "picBoxNotif2"
+        Me.picBoxNotif2.Size = New System.Drawing.Size(512, 537)
+        Me.picBoxNotif2.TabIndex = 4
+        Me.picBoxNotif2.TabStop = False
+        '
+        'Panel19
+        '
+        Me.Panel19.BackColor = System.Drawing.Color.Navy
+        Me.Panel19.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel19.Location = New System.Drawing.Point(0, 3)
+        Me.Panel19.Name = "Panel19"
+        Me.Panel19.Size = New System.Drawing.Size(3, 537)
+        Me.Panel19.TabIndex = 2
+        '
+        'Panel20
+        '
+        Me.Panel20.BackColor = System.Drawing.Color.Navy
+        Me.Panel20.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel20.Location = New System.Drawing.Point(0, 540)
+        Me.Panel20.Name = "Panel20"
+        Me.Panel20.Size = New System.Drawing.Size(515, 3)
+        Me.Panel20.TabIndex = 1
+        '
+        'Panel21
+        '
+        Me.Panel21.BackColor = System.Drawing.Color.Navy
+        Me.Panel21.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel21.Location = New System.Drawing.Point(0, 0)
+        Me.Panel21.Name = "Panel21"
+        Me.Panel21.Size = New System.Drawing.Size(515, 3)
+        Me.Panel21.TabIndex = 0
+        '
+        'Panel11
+        '
+        Me.Panel11.Controls.Add(Me.Panel16)
+        Me.Panel11.Controls.Add(Me.picBoxNotif1)
+        Me.Panel11.Controls.Add(Me.Panel15)
+        Me.Panel11.Controls.Add(Me.Panel13)
+        Me.Panel11.Controls.Add(Me.Panel12)
+        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel11.Location = New System.Drawing.Point(614, 0)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(279, 543)
+        Me.Panel11.TabIndex = 4
+        '
+        'Panel16
+        '
+        Me.Panel16.BackColor = System.Drawing.Color.Navy
+        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel16.Location = New System.Drawing.Point(276, 3)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(3, 537)
+        Me.Panel16.TabIndex = 3
+        '
+        'picBoxNotif1
+        '
+        Me.picBoxNotif1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.picBoxNotif1.Location = New System.Drawing.Point(3, 3)
+        Me.picBoxNotif1.Name = "picBoxNotif1"
+        Me.picBoxNotif1.Size = New System.Drawing.Size(276, 537)
+        Me.picBoxNotif1.TabIndex = 3
+        Me.picBoxNotif1.TabStop = False
+        '
+        'Panel15
+        '
+        Me.Panel15.BackColor = System.Drawing.Color.Navy
+        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel15.Location = New System.Drawing.Point(0, 3)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(3, 537)
+        Me.Panel15.TabIndex = 2
+        '
+        'Panel13
+        '
+        Me.Panel13.BackColor = System.Drawing.Color.Navy
+        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel13.Location = New System.Drawing.Point(0, 540)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(279, 3)
+        Me.Panel13.TabIndex = 1
+        '
+        'Panel12
+        '
+        Me.Panel12.BackColor = System.Drawing.Color.Navy
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel12.Location = New System.Drawing.Point(0, 0)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(279, 3)
+        Me.Panel12.TabIndex = 0
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(10, 44)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(598, 391)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = resources.GetString("Label1.Text")
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(10, 10)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(147, 19)
+        Me.Label3.TabIndex = 0
+        Me.Label3.Text = "Welcome ka EDCOP!"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.loudspeaker
+        Me.PictureBox1.Location = New System.Drawing.Point(6, 30)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(62, 46)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(121, 23)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "WHAT'S NEW?"
         '
         'Panel6
         '
@@ -720,6 +974,18 @@ Partial Class frmMain
         Me.SplitSideContainer.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
+        Me.PanelMainHolder.ResumeLayout(False)
+        Me.Panel9.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
+        Me.Panel17.ResumeLayout(False)
+        CType(Me.picBoxNotif2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel11.ResumeLayout(False)
+        CType(Me.picBoxNotif1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -754,10 +1020,8 @@ Partial Class frmMain
     Friend WithEvents PanelMainHolder As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents SplitSideContainer As SplitContainer
-    Friend WithEvents Panel14 As Panel
     Friend WithEvents Panel8 As Panel
-    Friend WithEvents Label4 As Label
-    Friend WithEvents PanelHolder As Panel
+    Friend WithEvents lblWelcomeName As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents panelSubHRM As Panel
     Friend WithEvents btnHRM As Button
@@ -768,16 +1032,38 @@ Partial Class frmMain
     Friend WithEvents panelSubTKM As Panel
     Friend WithEvents btnTKM As Button
     Friend WithEvents panelSubTL As Panel
-    Friend WithEvents Button11 As Button
+    Friend WithEvents btnTrailLogs As Button
     Friend WithEvents panelSubBDM As Panel
-    Friend WithEvents Button10 As Button
-    Friend WithEvents panelSubSS As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnBDM As Button
+    Friend WithEvents panelSubSSS As Panel
+    Friend WithEvents btnSSS As Button
     Friend WithEvents panelSubAU As Panel
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnAboutUs As Button
     Friend WithEvents panelSubCU As Panel
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnContactUs As Button
     Friend WithEvents ImageListMenu As ImageList
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents picBoxNotif1 As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents Panel16 As Panel
+    Friend WithEvents Panel15 As Panel
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Panel17 As Panel
+    Friend WithEvents Panel19 As Panel
+    Friend WithEvents Panel20 As Panel
+    Friend WithEvents Panel21 As Panel
+    Friend WithEvents picBoxNotif2 As PictureBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PanelHolder As Panel
+    Friend WithEvents Panel14 As Panel
 End Class

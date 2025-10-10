@@ -1,18 +1,21 @@
 ﻿Public Class frmMainPanelFMM
 
-    Private BtnColorText As Button = Nothing
-
-    Private Sub SetButtonColor(newClickedBtn As Button)
-        If BtnColorText IsNot Nothing Then
-            BtnColorText.BackColor = Color.White
-        End If
-        newClickedBtn.BackColor = Color.Gainsboro
-        BtnColorText = newClickedBtn
-    End Sub
-
     Private Sub btnSetup_Click(sender As Object, e As EventArgs) Handles btnSetup.Click
-        SetButtonColor(btnSetup)
-        frmMain.switchPanelHolder(frmMainPanelFMMDetail.panelSubFMM_SetupDetails)
+        If HasMenuAccess(btnSetup) Then
+            SubMenuLoadAccess(btnSetup)
+            For Each btn In {frmMainPanelFMMDetail.btnCompany, frmMainPanelFMMDetail.btnFiscalPeriod, frmMainPanelFMMDetail.btnCashFlowCategory,
+                frmMainPanelFMMDetail.btnCostCenter, frmMainPanelFMMDetail.btnAccountCategory, frmMainPanelFMMDetail.btnChartOfAccounts,
+                frmMainPanelFMMDetail.btnBankAccounts, frmMainPanelFMMDetail.btnSubsidiary, frmMainPanelFMMDetail.btnSupplier, frmMainPanelFMMDetail.btnTaxRates,
+                frmMainPanelFMMDetail.btnItems, frmMainPanelFMMDetail.btnBeginningProject, frmMainPanelFMMDetail.btnBeginningSubsidiaries, frmMainPanelFMMDetail.btnTransactionClosing,
+                frmMainPanelFMMDetail.btnYearEndClosing, frmMainPanelFMMDetail.btnApproverSetup, frmMainPanelFMMDetail.btnVoucherStatus, frmMainPanelFMMDetail.btnAccountBalances,
+                frmMainPanelFMMDetail.btnAccountMapping}
+                btn.Visible = SubMenuAccessList.Contains(btn.Tag?.ToString())
+            Next
+            SetButtonColor(btnSetup)
+            frmMain.switchPanelHolder(frmMainPanelFMMDetail.panelSubFMM_SetupDetails)
+        Else
+            Return
+        End If
     End Sub
 
     Private Sub btnProjectStatus_Click(sender As Object, e As EventArgs) Handles btnProjectStatus.Click
@@ -64,4 +67,5 @@
         SetButtonColor(btnOtherReports)
         frmMain.switchPanelHolder(frmMainPanelFMMDetail.panelSubFMM_OtherReportsDetails)
     End Sub
+
 End Class

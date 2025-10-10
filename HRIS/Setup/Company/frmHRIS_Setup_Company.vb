@@ -9,13 +9,15 @@
     End Sub
 
     Private Sub btnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
+        If Not HasUserAccess("insert") Then Return
         dgvCompanyList.ClearSelection()
         frmHRIS_Setup_AddUpdCompany.ShowDialog()
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        If Not HasUserAccess("update") Then Return
         If dgvCompanyList.SelectedRows.Count > 0 Then
-            frmHRIS_Setup_AddUpdCompany.isUpdate = True
+            isUpdate = True
             frmHRIS_Setup_AddUpdCompany.ShowDialog()
         Else
             MessageBox.Show("Please select from the company table before starting to edit.", "Edit Forbidden", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -67,10 +69,12 @@
     End Sub
 
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
-
+        If Not HasUserAccess("delete") Then Return
+        MsgBox("Not Yet Working")
     End Sub
 
     Private Sub btnSearchFilter_Click(sender As Object, e As EventArgs) Handles btnSearchFilter.Click
+
         Select Case btnSearchFilter.Text
             Case "Company"
                 btnSearchFilter.Text = "Department"
@@ -78,6 +82,7 @@
                 btnSearchFilter.Text = "Company"
         End Select
         txtboxSearch.Clear()
+
     End Sub
 
     Private Sub txtboxSearch_TextChanged(sender As Object, e As EventArgs) Handles txtboxSearch.TextChanged
@@ -113,8 +118,10 @@
     End Sub
 
     Private Sub dgvCompanyList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCompanyList.CellDoubleClick
-        frmHRIS_Setup_AddUpdCompany.isUpdate = True
+        If Not HasUserAccess("update") Then Return
+        isUpdate = True
         frmHRIS_Setup_AddUpdCompany.ShowDialog()
     End Sub
+
 
 End Class

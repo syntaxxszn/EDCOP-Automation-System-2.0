@@ -1,7 +1,5 @@
 ﻿Public Class frmHRIS_PerformanceManagement_AddUpdateProjectCoveredPeriod
 
-    Public isUpdate As Boolean = False
-
     Private Sub frmHRIS_PerformanceManagement_AddUpdateProjectCoveredPeriod_Support_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call SelPopulate_ProjectList(cbProjectList)
         Call DropDownListJobPosition(cbJobPosition)

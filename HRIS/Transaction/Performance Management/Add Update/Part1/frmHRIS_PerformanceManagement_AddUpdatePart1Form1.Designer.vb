@@ -46,9 +46,13 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart1Form1
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Panel29 = New System.Windows.Forms.Panel()
+        Me.txtProjectName = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.txtCoveredPeriod = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.txtDepartment = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -212,13 +216,10 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart1Form1
         Me.TextBox40 = New System.Windows.Forms.TextBox()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtProjectName = New System.Windows.Forms.TextBox()
-        Me.Panel29 = New System.Windows.Forms.Panel()
-        Me.Label23 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.Panel8.SuspendLayout()
+        Me.Panel29.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel13.SuspendLayout()
         Me.Panel12.SuspendLayout()
@@ -288,7 +289,6 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart1Form1
         Me.Panel85.SuspendLayout()
         Me.Panel86.SuspendLayout()
         Me.Panel87.SuspendLayout()
-        Me.Panel29.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
@@ -520,6 +520,37 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart1Form1
         Me.Panel8.Size = New System.Drawing.Size(721, 87)
         Me.Panel8.TabIndex = 13
         '
+        'Panel29
+        '
+        Me.Panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel29.Controls.Add(Me.txtProjectName)
+        Me.Panel29.Controls.Add(Me.Label23)
+        Me.Panel29.Location = New System.Drawing.Point(224, 42)
+        Me.Panel29.Name = "Panel29"
+        Me.Panel29.Size = New System.Drawing.Size(226, 43)
+        Me.Panel29.TabIndex = 3
+        '
+        'txtProjectName
+        '
+        Me.txtProjectName.BackColor = System.Drawing.Color.White
+        Me.txtProjectName.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtProjectName.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtProjectName.Location = New System.Drawing.Point(6, 22)
+        Me.txtProjectName.Name = "txtProjectName"
+        Me.txtProjectName.ReadOnly = True
+        Me.txtProjectName.Size = New System.Drawing.Size(215, 15)
+        Me.txtProjectName.TabIndex = 14
+        Me.txtProjectName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(3, 2)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(114, 13)
+        Me.Label23.TabIndex = 1
+        Me.Label23.Text = "Project Designation :"
+        '
         'Panel14
         '
         Me.Panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -550,6 +581,15 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart1Form1
         Me.Label7.Size = New System.Drawing.Size(91, 13)
         Me.Label7.TabIndex = 2
         Me.Label7.Text = "Period Covered :"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(258, 49)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(55, 13)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "Position :"
         '
         'Panel13
         '
@@ -2307,49 +2347,11 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart1Form1
         Me.ImageList1.Images.SetKeyName(1, "housemonitoring.png")
         Me.ImageList1.Images.SetKeyName(2, "feedback.png")
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(258, 49)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(55, 13)
-        Me.Label8.TabIndex = 1
-        Me.Label8.Text = "Position :"
-        '
-        'txtProjectName
-        '
-        Me.txtProjectName.BackColor = System.Drawing.Color.White
-        Me.txtProjectName.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtProjectName.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtProjectName.Location = New System.Drawing.Point(6, 22)
-        Me.txtProjectName.Name = "txtProjectName"
-        Me.txtProjectName.ReadOnly = True
-        Me.txtProjectName.Size = New System.Drawing.Size(215, 15)
-        Me.txtProjectName.TabIndex = 14
-        '
-        'Panel29
-        '
-        Me.Panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel29.Controls.Add(Me.txtProjectName)
-        Me.Panel29.Controls.Add(Me.Label23)
-        Me.Panel29.Location = New System.Drawing.Point(224, 42)
-        Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(226, 43)
-        Me.Panel29.TabIndex = 3
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(3, 2)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(114, 13)
-        Me.Label23.TabIndex = 1
-        Me.Label23.Text = "Project Designation :"
-        '
         'frmHRIS_PerformanceManagement_AddUpdatePart1Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(775, 907)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel11)
@@ -2377,6 +2379,8 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart1Form1
         Me.Panel7.PerformLayout()
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
+        Me.Panel29.ResumeLayout(False)
+        Me.Panel29.PerformLayout()
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
         Me.Panel13.ResumeLayout(False)
@@ -2504,8 +2508,6 @@ Partial Class frmHRIS_PerformanceManagement_AddUpdatePart1Form1
         Me.Panel86.PerformLayout()
         Me.Panel87.ResumeLayout(False)
         Me.Panel87.PerformLayout()
-        Me.Panel29.ResumeLayout(False)
-        Me.Panel29.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

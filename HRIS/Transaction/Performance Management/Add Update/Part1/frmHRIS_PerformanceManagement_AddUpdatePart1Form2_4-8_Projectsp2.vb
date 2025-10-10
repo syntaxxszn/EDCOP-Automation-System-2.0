@@ -30,7 +30,7 @@
 
         End If
 
-        If frmHRIS_PerformanceManagement_SelectPart1Form1ToPart2Form2.isUpdate Then
+        If isUpdate Then
             SelUpd_PMAS_Part1Form2_ByID()
         End If
 
@@ -52,6 +52,11 @@
             String.IsNullOrWhiteSpace(txtQ3.Text) OrElse
             String.IsNullOrWhiteSpace(txtQ4.Text) Then
             MessageBox.Show("Error! Please fill up all fields required.")
+            Return
+        End If
+
+        If lblTotalWeighedAverage.Text = "0.00" Then
+            MessageBox.Show("You cannot save an empty rating.")
             Return
         End If
 

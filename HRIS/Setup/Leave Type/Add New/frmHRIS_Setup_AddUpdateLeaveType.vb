@@ -2,8 +2,6 @@
 
 Public Class frmHRIS_Setup_AddUpdateLeaveType
 
-    Public isUpdate As Boolean = False
-
     Private Sub frmHR_AddNewLeaveType_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblHeader.Text = "Add New Leave Type"
 
@@ -34,4 +32,5 @@ Public Class frmHRIS_Setup_AddUpdateLeaveType
         Call UncheckCheckBoxes(Me)
         isUpdate = False
     End Sub
+
 End Class
