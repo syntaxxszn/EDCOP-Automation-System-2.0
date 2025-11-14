@@ -33,6 +33,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lblNotice = New System.Windows.Forms.Label()
         Me.lblEmpStatus = New System.Windows.Forms.Label()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.ImageListBtn = New System.Windows.Forms.ImageList(Me.components)
@@ -104,7 +105,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_view
+        Me.PictureBox1.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.social_media
         Me.PictureBox1.Location = New System.Drawing.Point(12, 15)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(40, 40)
@@ -128,9 +129,9 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
         Me.Label1.Location = New System.Drawing.Point(58, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(182, 20)
+        Me.Label1.Size = New System.Drawing.Size(127, 20)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Previewing 201 Data File"
+        Me.Label1.Text = "Employee Profile"
         '
         'Label2
         '
@@ -170,6 +171,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.lblNotice)
         Me.Panel2.Controls.Add(Me.lblEmpStatus)
         Me.Panel2.Controls.Add(Me.btnEdit)
         Me.Panel2.Controls.Add(Me.Label11)
@@ -189,6 +191,16 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1055, 155)
         Me.Panel2.TabIndex = 57
+        '
+        'lblNotice
+        '
+        Me.lblNotice.AutoSize = True
+        Me.lblNotice.ForeColor = System.Drawing.Color.Maroon
+        Me.lblNotice.Location = New System.Drawing.Point(704, 75)
+        Me.lblNotice.Name = "lblNotice"
+        Me.lblNotice.Size = New System.Drawing.Size(178, 13)
+        Me.lblNotice.TabIndex = 14
+        Me.lblNotice.Text = "Notice: Unsaved data will be lost."
         '
         'lblEmpStatus
         '
@@ -568,6 +580,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnDiscard.TabIndex = 104
         Me.btnDiscard.Text = "&Discard "
         Me.btnDiscard.UseVisualStyleBackColor = False
+        Me.btnDiscard.Visible = False
         '
         'btnSave
         '
@@ -582,6 +595,7 @@ Partial Class frmHR_PreviewPersonnelDetails
         Me.btnSave.TabIndex = 103
         Me.btnSave.Text = "&Save Changes"
         Me.btnSave.UseVisualStyleBackColor = False
+        Me.btnSave.Visible = False
         '
         'btnPerformanceAppraisal
         '
@@ -816,4 +830,5 @@ Partial Class frmHR_PreviewPersonnelDetails
     Friend WithEvents btnEmployementHistory As Button
     Friend WithEvents btnCheckList As Button
     Friend WithEvents ImageListBtn As ImageList
+    Friend WithEvents lblNotice As Label
 End Class

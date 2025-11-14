@@ -29,16 +29,10 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.dgv201CheckList = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContextMenuStrip201FileChecklist = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SetToCompleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CompleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NotApplicableNAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IncompleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddRemarksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -47,6 +41,14 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnRemoveFile = New System.Windows.Forms.Button()
         Me.btnAddNewFile = New System.Windows.Forms.Button()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel6.SuspendLayout()
@@ -113,7 +115,7 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
         Me.dgv201CheckList.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgv201CheckList.ColumnHeadersHeight = 35
         Me.dgv201CheckList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgv201CheckList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column7, Me.Column2, Me.Column4, Me.Column5, Me.Column3, Me.Column6})
+        Me.dgv201CheckList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column7, Me.Column2, Me.Column4, Me.Column5, Me.Column3, Me.Column6, Me.Column8})
         Me.dgv201CheckList.ContextMenuStrip = Me.ContextMenuStrip201FileChecklist
         Me.dgv201CheckList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv201CheckList.Location = New System.Drawing.Point(0, 0)
@@ -126,60 +128,6 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
         Me.dgv201CheckList.Size = New System.Drawing.Size(801, 545)
         Me.dgv201CheckList.TabIndex = 88
         '
-        'Column1
-        '
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        Me.Column1.Width = 43
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "FileID"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Visible = False
-        Me.Column7.Width = 59
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "File Type"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 70
-        '
-        'Column4
-        '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle1
-        Me.Column4.HeaderText = "Completed"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 88
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Remarks"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 75
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "File Name"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 76
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "File Path"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Visible = False
-        Me.Column6.Width = 68
-        '
         'ContextMenuStrip201FileChecklist
         '
         Me.ContextMenuStrip201FileChecklist.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -189,7 +137,7 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
         '
         'SetToCompleteToolStripMenuItem
         '
-        Me.SetToCompleteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CompleteToolStripMenuItem, Me.IncompleteToolStripMenuItem})
+        Me.SetToCompleteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CompleteToolStripMenuItem, Me.NotApplicableNAToolStripMenuItem, Me.IncompleteToolStripMenuItem})
         Me.SetToCompleteToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.timesheetcorrection
         Me.SetToCompleteToolStripMenuItem.Name = "SetToCompleteToolStripMenuItem"
         Me.SetToCompleteToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
@@ -199,14 +147,21 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
         '
         Me.CompleteToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.yes
         Me.CompleteToolStripMenuItem.Name = "CompleteToolStripMenuItem"
-        Me.CompleteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CompleteToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.CompleteToolStripMenuItem.Text = "Complete (Yes)"
+        '
+        'NotApplicableNAToolStripMenuItem
+        '
+        Me.NotApplicableNAToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_do_not_disturb_100
+        Me.NotApplicableNAToolStripMenuItem.Name = "NotApplicableNAToolStripMenuItem"
+        Me.NotApplicableNAToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
+        Me.NotApplicableNAToolStripMenuItem.Text = "Not Applicable (N/A)"
         '
         'IncompleteToolStripMenuItem
         '
         Me.IncompleteToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
         Me.IncompleteToolStripMenuItem.Name = "IncompleteToolStripMenuItem"
-        Me.IncompleteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.IncompleteToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
         Me.IncompleteToolStripMenuItem.Text = "Incomplete (No)"
         '
         'AddRemarksToolStripMenuItem
@@ -286,6 +241,68 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
         Me.btnAddNewFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAddNewFile.UseVisualStyleBackColor = False
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        Me.Column1.Width = 43
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "FileID"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Visible = False
+        Me.Column7.Width = 61
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "File Type"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 70
+        '
+        'Column4
+        '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Column4.HeaderText = "Completed"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 88
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Remarks"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 75
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "File Name"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 76
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "File Path"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Visible = False
+        Me.Column6.Width = 70
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "isEdited"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        Me.Column8.Visible = False
+        Me.Column8.Width = 73
+        '
         'frmHR_UpdatePersonnelDetails_201FileChecklist
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -323,6 +340,9 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
     Friend WithEvents SetToCompleteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AddRemarksToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Label1 As Label
+    Friend WithEvents CompleteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents IncompleteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NotApplicableNAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
@@ -330,6 +350,5 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklist
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents CompleteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents IncompleteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
 End Class

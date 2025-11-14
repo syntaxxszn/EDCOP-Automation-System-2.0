@@ -44,12 +44,12 @@ Partial Class frmSSM_SystemUserAccessMain
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtboxSearch = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.toolstriplabelNoOfRecord = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -229,15 +229,6 @@ Partial Class frmSSM_SystemUserAccessMain
         Me.Label4.TabIndex = 54
         Me.Label4.Text = "Search "
         '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "document.png")
-        Me.ImageList1.Images.SetKeyName(1, "icons8-add-96.png")
-        Me.ImageList1.Images.SetKeyName(2, "pen.png")
-        Me.ImageList1.Images.SetKeyName(3, "timesheetcorrection.png")
-        '
         'ToolStrip2
         '
         Me.ToolStrip2.BackColor = System.Drawing.Color.Navy
@@ -279,6 +270,15 @@ Partial Class frmSSM_SystemUserAccessMain
         Me.ToolStripLabel4.Name = "ToolStripLabel4"
         Me.ToolStripLabel4.Size = New System.Drawing.Size(24, 22)
         Me.ToolStripLabel4.Text = "] --"
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "document.png")
+        Me.ImageList1.Images.SetKeyName(1, "icons8-add-96.png")
+        Me.ImageList1.Images.SetKeyName(2, "pen.png")
+        Me.ImageList1.Images.SetKeyName(3, "timesheetcorrection.png")
         '
         'Panel8
         '
@@ -452,7 +452,7 @@ Partial Class frmSSM_SystemUserAccessMain
         Me.Column4.HeaderText = "Access Type"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
-        Me.Column4.Width = 84
+        Me.Column4.Width = 83
         '
         'Column5
         '

@@ -26,6 +26,8 @@ Partial Class HumanResourceReportSubMenu_Employee
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HumanResourceReportSubMenu_Employee))
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn201FileSummary = New System.Windows.Forms.Button()
+        Me.btn201CheckList = New System.Windows.Forms.Button()
         Me.btnEmployeeBirthdate = New System.Windows.Forms.Button()
         Me.btnLeaveEncashment = New System.Windows.Forms.Button()
         Me.btnLeaveBalances = New System.Windows.Forms.Button()
@@ -40,7 +42,6 @@ Partial Class HumanResourceReportSubMenu_Employee
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnCurrentWithCompensationItemizedWithGap = New System.Windows.Forms.Button()
         Me.btnActiveEmployee = New System.Windows.Forms.Button()
-        Me.btn201CheckList = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -53,6 +54,7 @@ Partial Class HumanResourceReportSubMenu_Employee
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.btn201FileSummary)
         Me.Panel1.Controls.Add(Me.btn201CheckList)
         Me.Panel1.Controls.Add(Me.btnEmployeeBirthdate)
         Me.Panel1.Controls.Add(Me.btnLeaveEncashment)
@@ -71,8 +73,46 @@ Partial Class HumanResourceReportSubMenu_Employee
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(237, 560)
+        Me.Panel1.Size = New System.Drawing.Size(237, 607)
         Me.Panel1.TabIndex = 6
+        '
+        'btn201FileSummary
+        '
+        Me.btn201FileSummary.BackColor = System.Drawing.Color.White
+        Me.btn201FileSummary.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn201FileSummary.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn201FileSummary.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn201FileSummary.ForeColor = System.Drawing.Color.Black
+        Me.btn201FileSummary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn201FileSummary.ImageIndex = 0
+        Me.btn201FileSummary.ImageList = Me.ImageList1
+        Me.btn201FileSummary.Location = New System.Drawing.Point(12, 404)
+        Me.btn201FileSummary.Name = "btn201FileSummary"
+        Me.btn201FileSummary.Size = New System.Drawing.Size(214, 43)
+        Me.btn201FileSummary.TabIndex = 62
+        Me.btn201FileSummary.Text = " &Employee 201 File Summary"
+        Me.btn201FileSummary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn201FileSummary.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn201FileSummary.UseVisualStyleBackColor = False
+        '
+        'btn201CheckList
+        '
+        Me.btn201CheckList.BackColor = System.Drawing.Color.White
+        Me.btn201CheckList.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.btn201CheckList.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn201CheckList.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn201CheckList.ForeColor = System.Drawing.Color.Black
+        Me.btn201CheckList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn201CheckList.ImageIndex = 0
+        Me.btn201CheckList.ImageList = Me.ImageList1
+        Me.btn201CheckList.Location = New System.Drawing.Point(12, 355)
+        Me.btn201CheckList.Name = "btn201CheckList"
+        Me.btn201CheckList.Size = New System.Drawing.Size(214, 43)
+        Me.btn201CheckList.TabIndex = 61
+        Me.btn201CheckList.Text = " &Employee 201 File Checklist"
+        Me.btn201CheckList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn201CheckList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn201CheckList.UseVisualStyleBackColor = False
         '
         'btnEmployeeBirthdate
         '
@@ -84,7 +124,7 @@ Partial Class HumanResourceReportSubMenu_Employee
         Me.btnEmployeeBirthdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnEmployeeBirthdate.ImageIndex = 0
         Me.btnEmployeeBirthdate.ImageList = Me.ImageList1
-        Me.btnEmployeeBirthdate.Location = New System.Drawing.Point(12, 502)
+        Me.btnEmployeeBirthdate.Location = New System.Drawing.Point(12, 551)
         Me.btnEmployeeBirthdate.Name = "btnEmployeeBirthdate"
         Me.btnEmployeeBirthdate.Size = New System.Drawing.Size(214, 43)
         Me.btnEmployeeBirthdate.TabIndex = 60
@@ -103,7 +143,7 @@ Partial Class HumanResourceReportSubMenu_Employee
         Me.btnLeaveEncashment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLeaveEncashment.ImageIndex = 0
         Me.btnLeaveEncashment.ImageList = Me.ImageList1
-        Me.btnLeaveEncashment.Location = New System.Drawing.Point(12, 453)
+        Me.btnLeaveEncashment.Location = New System.Drawing.Point(12, 502)
         Me.btnLeaveEncashment.Name = "btnLeaveEncashment"
         Me.btnLeaveEncashment.Size = New System.Drawing.Size(214, 43)
         Me.btnLeaveEncashment.TabIndex = 59
@@ -122,7 +162,7 @@ Partial Class HumanResourceReportSubMenu_Employee
         Me.btnLeaveBalances.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnLeaveBalances.ImageIndex = 0
         Me.btnLeaveBalances.ImageList = Me.ImageList1
-        Me.btnLeaveBalances.Location = New System.Drawing.Point(12, 404)
+        Me.btnLeaveBalances.Location = New System.Drawing.Point(12, 453)
         Me.btnLeaveBalances.Name = "btnLeaveBalances"
         Me.btnLeaveBalances.Size = New System.Drawing.Size(214, 43)
         Me.btnLeaveBalances.TabIndex = 58
@@ -232,7 +272,7 @@ Partial Class HumanResourceReportSubMenu_Employee
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel5.Location = New System.Drawing.Point(0, 2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(2, 556)
+        Me.Panel5.Size = New System.Drawing.Size(2, 603)
         Me.Panel5.TabIndex = 51
         '
         'Panel4
@@ -241,14 +281,14 @@ Partial Class HumanResourceReportSubMenu_Employee
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel4.Location = New System.Drawing.Point(235, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(2, 556)
+        Me.Panel4.Size = New System.Drawing.Size(2, 603)
         Me.Panel4.TabIndex = 50
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Navy
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 558)
+        Me.Panel3.Location = New System.Drawing.Point(0, 605)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(237, 2)
         Me.Panel3.TabIndex = 49
@@ -300,30 +340,11 @@ Partial Class HumanResourceReportSubMenu_Employee
         Me.btnActiveEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnActiveEmployee.UseVisualStyleBackColor = False
         '
-        'btn201CheckList
-        '
-        Me.btn201CheckList.BackColor = System.Drawing.Color.White
-        Me.btn201CheckList.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.btn201CheckList.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn201CheckList.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn201CheckList.ForeColor = System.Drawing.Color.Black
-        Me.btn201CheckList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn201CheckList.ImageIndex = 0
-        Me.btn201CheckList.ImageList = Me.ImageList1
-        Me.btn201CheckList.Location = New System.Drawing.Point(12, 355)
-        Me.btn201CheckList.Name = "btn201CheckList"
-        Me.btn201CheckList.Size = New System.Drawing.Size(214, 43)
-        Me.btn201CheckList.TabIndex = 61
-        Me.btn201CheckList.Text = " &Employee 201 File Checklist"
-        Me.btn201CheckList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn201CheckList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btn201CheckList.UseVisualStyleBackColor = False
-        '
         'HumanResourceReportSubMenu_Employee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(237, 560)
+        Me.ClientSize = New System.Drawing.Size(237, 607)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -354,4 +375,5 @@ Partial Class HumanResourceReportSubMenu_Employee
     Friend WithEvents btnActiveEmployee As Button
     Friend WithEvents btnEmployeeBirthdate As Button
     Friend WithEvents btn201CheckList As Button
+    Friend WithEvents btn201FileSummary As Button
 End Class

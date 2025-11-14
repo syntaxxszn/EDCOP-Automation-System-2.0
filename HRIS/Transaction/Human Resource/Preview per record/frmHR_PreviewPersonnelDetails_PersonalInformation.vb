@@ -375,13 +375,13 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
     End Sub
 
     Private Sub txtHeight_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtHeight.KeyPress
-        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+        If Not (Char.IsControl(e.KeyChar) Or Char.IsDigit(e.KeyChar) Or (e.KeyChar = "."c AndAlso Not txtHeight.Text.Contains("."))) Then
             e.Handled = True
         End If
     End Sub
 
     Private Sub txtWeight_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtWeight.KeyPress
-        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+        If Not (Char.IsControl(e.KeyChar) Or Char.IsDigit(e.KeyChar) Or (e.KeyChar = "."c AndAlso Not txtWeight.Text.Contains("."))) Then
             e.Handled = True
         End If
     End Sub
@@ -462,6 +462,7 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
     End Sub
 
     Private Sub txtboxSSSNo_Validating(sender As Object, e As CancelEventArgs) Handles txtboxSSSNo.Validating
+        If String.IsNullOrWhiteSpace(txtboxSSSNo.Text) Then Exit Sub
         If Not Regex.IsMatch(txtboxSSSNo.Text, "^\d{2}-\d{7}-\d{1}$") Then
             MessageBox.Show("SSS must be in the format: 01-1234567-1.", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             e.Cancel = True
@@ -487,6 +488,7 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
     End Sub
 
     Private Sub txtboxTIN_Validating(sender As Object, e As CancelEventArgs) Handles txtboxTIN.Validating
+        If String.IsNullOrWhiteSpace(txtboxSSSNo.Text) Then Exit Sub
         If Not Regex.IsMatch(txtboxTIN.Text, "^\d{3}-\d{3}-\d{3}$") Then
             MessageBox.Show("TIN must be in the format: 123-123-123", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             e.Cancel = True
@@ -512,6 +514,7 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
     End Sub
 
     Private Sub txtboxPhilHealth_Validating(sender As Object, e As CancelEventArgs) Handles txtboxPhilHealth.Validating
+        If String.IsNullOrWhiteSpace(txtboxSSSNo.Text) Then Exit Sub
         If Not Regex.IsMatch(txtboxPhilHealth.Text, "^\d{2}-\d{9}-\d{1}$") Then
             MessageBox.Show("PhilHealth must be in the format: 01-123456789-1", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             e.Cancel = True
@@ -537,6 +540,7 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
     End Sub
 
     Private Sub txtboxHDMF_Validating(sender As Object, e As CancelEventArgs) Handles txtboxHDMF.Validating
+        If String.IsNullOrWhiteSpace(txtboxSSSNo.Text) Then Exit Sub
         If Not Regex.IsMatch(txtboxHDMF.Text, "^\d{4}-\d{4}-\d{4}$") Then
             MessageBox.Show("PAG-IBIG must be in the format: 1234-1234-1234", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             e.Cancel = True
@@ -598,10 +602,6 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
         End If
     End Sub
 
-    Private Sub cbAdrBarangay1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAdrBarangay1.SelectedIndexChanged
-
-    End Sub
-
     Private Sub txtMobileNoPS_Validating(sender As Object, e As CancelEventArgs) Handles txtMobileNoPS.Validating
         MobileNumber_Color(txtMobileNoPS)
     End Sub
@@ -610,8 +610,5 @@ Public Class frmHR_PreviewPersonnelDetails_PersonalInformation
         MobileNumber_Color(txtMobileNoSC)
     End Sub
 
-    Private Sub dtpBirthDatePS_ValueChanged(sender As Object, e As EventArgs) Handles dtpBirthDatePS.ValueChanged
-
-    End Sub
 
 End Class

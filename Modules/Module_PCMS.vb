@@ -119,8 +119,8 @@ Module Module_PCMS
 
             ' Position submenu at 3/4 of the button's width, centered vertically
             Dim buttonLocation As Point = button.PointToScreen(Point.Empty)
-            subMenuForm.Location = New Point(buttonLocation.X + (button.Width * 3.5 \ 4),
-                                         buttonLocation.Y + (button.Height \ 2) - (subMenuForm.Height \ 2))
+            subMenuForm.Location = New Point(buttonLocation.X + (button.Width * 3 \ 4),
+                                         buttonLocation.Y + (button.Height \ 5) - (subMenuForm.Height \ 2))
 
             AddHandler subMenuForm.Deactivate, AddressOf SubMenuForm_Deactivate
             subMenuForm.Show()
@@ -159,7 +159,7 @@ Module Module_PCMS
 
         If dr.Read = True Then
 
-            _strEmployeeID = dr.GetInt32(0)
+            _strLoginEmployeeID = dr.GetInt32(0)
             frmMain.ToolStripEmployeeNo.Text = dr.GetString(1)
             _strUserLevel = dr.GetString(2)
             frmMain.ToolStripEmployeeName.Text = dr.GetString(3)
@@ -172,8 +172,8 @@ Module Module_PCMS
             frmPMS_Login.txtEmployeeCode.Clear()
             frmPMS_Login.txtPassword.Clear()
 
-
-            frmMain.lblWelcomeName.Text = "Welcome! " & frmMain.ToolStripEmployeeName.Text
+            'frmMain.lblWelcomeName.Text = "Welcome! " & frmMain.ToolStripEmployeeName.Text
+            frmMain.lblWelcomeName.Text = "Welcome frenny!"
 
             If frmMain Is Nothing OrElse frmMain.IsDisposed Then
                 frmMain = New frmMain()
@@ -184,12 +184,13 @@ Module Module_PCMS
             Call GroupAccessByCode()
             Call UserAccessByCode()
             Call frmMain.Show()
+            Call frmMain.AdjustSplitContainerToContents()
 
         Else
 
             MessageBox.Show("Invalid Access." & vbNewLine & "" & vbNewLine & "Make sure that you are using an account registered to this system.", "E-PCM System", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            frmPMS_Login.txtEmployeeCode.Clear()
-            frmPMS_Login.txtPassword.Clear()
+            frmPMS_Login.txtEmployeeCode.Text = "Employee Code"
+            frmPMS_Login.txtPassword.Text = "Password"
 
         End If
 

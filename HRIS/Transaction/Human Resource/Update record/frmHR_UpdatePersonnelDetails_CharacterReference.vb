@@ -2,6 +2,7 @@
     Private Sub frmHR_UpdatePersonnelDetails_CharacterReference_Load(sender As Object, e As EventArgs) Handles Me.Load
         Call SelUpd_HRIS_Personnel_CharacterReference_ByID(dgvCharRef)
         Call ClearTextBoxes(Me)
+        btnAddUpdCharRef.Text = "Add"
     End Sub
 
     Private Sub dgvCharRef_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCharRef.CellDoubleClick
@@ -15,6 +16,7 @@
             txtEmailAdd.Text = selectedRow.Cells(6).Value
             txtCompanyAdd.Text = selectedRow.Cells(7).Value
             txtRelationship.Text = selectedRow.Cells(8).Value
+            btnAddUpdCharRef.Text = "Update"
         End If
     End Sub
 
@@ -62,9 +64,28 @@
         dgvCharRef.ClearSelection()
         _PersonnelCharRefID1 = _PersonnelCharRefID2
         ClearTextBoxes(Me)
+        btnAddUpdCharRef.Text = "Add"
     End Sub
 
-    Private Sub btnDelEmployee_Click(sender As Object, e As EventArgs) Handles btnDelEmployee.Click
+    'Private Sub btnDelEmployee_Click(sender As Object, e As EventArgs)
+    '    If dgvCharRef.Rows.Count > 0 Then
+    '        Dim lastRow As DataGridViewRow = dgvCharRef.Rows(dgvCharRef.Rows.Count - 1)
+    '        If lastRow.Tag?.ToString() = "New" Then
+    '            dgvCharRef.Rows.Remove(lastRow)
+    '        ElseIf dgvCharRef.SelectedRows.Count > 0 Then
+    '            Del_Personnel_CharacterReference_ByID(dgvCharRef)
+    '        Else
+    '            MsgBox("Nothing to remove.")
+    '        End If
+    '        ClearTransactionField()
+    '    End If
+    'End Sub
+
+    Private Sub btnClearTextFields_Click(sender As Object, e As EventArgs) Handles btnClearTextFields.Click
+        ClearTransactionField()
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
         If dgvCharRef.Rows.Count > 0 Then
             Dim lastRow As DataGridViewRow = dgvCharRef.Rows(dgvCharRef.Rows.Count - 1)
             If lastRow.Tag?.ToString() = "New" Then
@@ -76,10 +97,6 @@
             End If
             ClearTransactionField()
         End If
-    End Sub
-
-    Private Sub btnClearTextFields_Click(sender As Object, e As EventArgs) Handles btnClearTextFields.Click
-        ClearTransactionField()
     End Sub
 
 End Class

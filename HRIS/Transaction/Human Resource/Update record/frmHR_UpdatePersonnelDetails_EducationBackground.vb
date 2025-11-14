@@ -8,6 +8,7 @@ Public Class frmHR_UpdatePersonnelDetails_EducationBackground
         Call ClearTextBoxes(Me)
         Call ResetDatePickers(Me)
         Call ResetComboBoxes(Me)
+        btnAddUpdEducation.Text = "Add"
     End Sub
 
     Private Sub dgvEducationBackground_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEducationBackground.CellDoubleClick
@@ -23,6 +24,7 @@ Public Class frmHR_UpdatePersonnelDetails_EducationBackground
             txtAwardsRecogCerti.Text = selectedRow.Cells(7).Value
             txtEducEmailAdr.Text = selectedRow.Cells(8).Value
             txtEducTelNo.Text = selectedRow.Cells(9).Value
+            btnAddUpdEducation.Text = "Update"
         End If
     End Sub
 
@@ -65,9 +67,35 @@ Public Class frmHR_UpdatePersonnelDetails_EducationBackground
         ClearTextBoxes(Me)
         ResetDatePickers(Me)
         cbEducationAttainment.SelectedIndex = -1
+        btnAddUpdEducation.Text = "Add"
     End Sub
 
-    Private Sub btnDelEducation_Click(sender As Object, e As EventArgs) Handles btnDelEducation.Click
+    'Private Sub btnDelEducation_Click(sender As Object, e As EventArgs)
+    '    If dgvEducationBackground.Rows.Count > 0 Then
+    '        Dim lastRow As DataGridViewRow = dgvEducationBackground.Rows(dgvEducationBackground.Rows.Count - 1)
+    '        If lastRow.Tag?.ToString() = "New" Then
+    '            dgvEducationBackground.Rows.Remove(lastRow)
+    '        ElseIf dgvEducationBackground.SelectedRows.Count > 0 Then
+    '            Del_Personnel_EducationBackground_ByID(dgvEducationBackground)
+    '        Else
+    '            MsgBox("Nothing to remove.")
+    '        End If
+    '        ClearTransactionField()
+    '    End If
+    'End Sub
+
+    Private Sub btnClearTextFields_Click(sender As Object, e As EventArgs) Handles btnClearTextFields.Click
+        ClearTransactionField()
+    End Sub
+
+    Private Sub dgvEducationBackground_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEducationBackground.CellClick
+        If dgvEducationBackground.SelectedRows.Count > 0 Then
+            Dim selectedRow = dgvEducationBackground.SelectedRows(0)
+            _PersonnelEducationID1 = selectedRow.Cells(0).Value
+        End If
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
         If dgvEducationBackground.Rows.Count > 0 Then
             Dim lastRow As DataGridViewRow = dgvEducationBackground.Rows(dgvEducationBackground.Rows.Count - 1)
             If lastRow.Tag?.ToString() = "New" Then
@@ -81,14 +109,4 @@ Public Class frmHR_UpdatePersonnelDetails_EducationBackground
         End If
     End Sub
 
-    Private Sub btnClearTextFields_Click(sender As Object, e As EventArgs) Handles btnClearTextFields.Click
-        ClearTransactionField()
-    End Sub
-
-    Private Sub dgvEducationBackground_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEducationBackground.CellClick
-        If dgvEducationBackground.SelectedRows.Count > 0 Then
-            Dim selectedRow = dgvEducationBackground.SelectedRows(0)
-            _PersonnelEducationID1 = selectedRow.Cells(0).Value
-        End If
-    End Sub
 End Class

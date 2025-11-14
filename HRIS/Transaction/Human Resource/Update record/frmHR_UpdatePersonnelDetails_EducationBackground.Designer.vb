@@ -22,6 +22,7 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelUpdEducationBackground = New System.Windows.Forms.Panel()
@@ -38,6 +39,8 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -45,7 +48,6 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         Me.gbEmployment = New System.Windows.Forms.GroupBox()
         Me.btnAddUpdEducation = New System.Windows.Forms.Button()
         Me.btnClearTextFields = New System.Windows.Forms.Button()
-        Me.btnDelEducation = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtDegree = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -69,6 +71,7 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         Me.Panel14.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.dgvEducationBackground, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.gbEmployment.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -118,6 +121,7 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         Me.dgvEducationBackground.ColumnHeadersHeight = 35
         Me.dgvEducationBackground.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvEducationBackground.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10})
+        Me.dgvEducationBackground.ContextMenuStrip = Me.ContextMenuStrip1
         Me.dgvEducationBackground.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvEducationBackground.Location = New System.Drawing.Point(0, 0)
         Me.dgvEducationBackground.MultiSelect = False
@@ -208,6 +212,19 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         Me.Column10.ReadOnly = True
         Me.Column10.Width = 114
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(108, 26)
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.LightGray
@@ -248,7 +265,6 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         '
         Me.gbEmployment.Controls.Add(Me.btnAddUpdEducation)
         Me.gbEmployment.Controls.Add(Me.btnClearTextFields)
-        Me.gbEmployment.Controls.Add(Me.btnDelEducation)
         Me.gbEmployment.Controls.Add(Me.Label10)
         Me.gbEmployment.Controls.Add(Me.txtDegree)
         Me.gbEmployment.Controls.Add(Me.Label9)
@@ -284,11 +300,11 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         Me.btnAddUpdEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddUpdEducation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddUpdEducation.ForeColor = System.Drawing.Color.White
-        Me.btnAddUpdEducation.Location = New System.Drawing.Point(675, 87)
+        Me.btnAddUpdEducation.Location = New System.Drawing.Point(674, 110)
         Me.btnAddUpdEducation.Name = "btnAddUpdEducation"
         Me.btnAddUpdEducation.Size = New System.Drawing.Size(120, 26)
         Me.btnAddUpdEducation.TabIndex = 113
-        Me.btnAddUpdEducation.Text = "&Add / Update"
+        Me.btnAddUpdEducation.Text = "&Add"
         Me.btnAddUpdEducation.UseVisualStyleBackColor = False
         '
         'btnClearTextFields
@@ -298,26 +314,12 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         Me.btnClearTextFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearTextFields.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearTextFields.ForeColor = System.Drawing.Color.White
-        Me.btnClearTextFields.Location = New System.Drawing.Point(675, 151)
+        Me.btnClearTextFields.Location = New System.Drawing.Point(674, 142)
         Me.btnClearTextFields.Name = "btnClearTextFields"
         Me.btnClearTextFields.Size = New System.Drawing.Size(120, 26)
         Me.btnClearTextFields.TabIndex = 112
         Me.btnClearTextFields.Text = "Clear &Fields"
         Me.btnClearTextFields.UseVisualStyleBackColor = False
-        '
-        'btnDelEducation
-        '
-        Me.btnDelEducation.BackColor = System.Drawing.Color.Maroon
-        Me.btnDelEducation.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed
-        Me.btnDelEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelEducation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelEducation.ForeColor = System.Drawing.Color.White
-        Me.btnDelEducation.Location = New System.Drawing.Point(675, 119)
-        Me.btnDelEducation.Name = "btnDelEducation"
-        Me.btnDelEducation.Size = New System.Drawing.Size(120, 26)
-        Me.btnDelEducation.TabIndex = 111
-        Me.btnDelEducation.Text = "&Delete Record"
-        Me.btnDelEducation.UseVisualStyleBackColor = False
         '
         'Label10
         '
@@ -499,6 +501,7 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
         Me.Panel14.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         CType(Me.dgvEducationBackground, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.gbEmployment.ResumeLayout(False)
         Me.gbEmployment.PerformLayout()
         Me.ResumeLayout(False)
@@ -514,7 +517,6 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
     Friend WithEvents Panel2 As Panel
     Friend WithEvents gbEmployment As GroupBox
     Friend WithEvents btnClearTextFields As Button
-    Friend WithEvents btnDelEducation As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents txtDegree As TextBox
     Friend WithEvents Label9 As Label
@@ -546,4 +548,6 @@ Partial Class frmHR_UpdatePersonnelDetails_EducationBackground
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
 End Class

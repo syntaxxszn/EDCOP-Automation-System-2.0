@@ -1,5 +1,7 @@
 ﻿Public Class frmHR_UpdatePersonnelDetails_201FileChecklist
 
+    Private docx As String
+
     Private Sub frmHR_UpdatePersonnelDetails_201FileChecklist_Load(sender As Object, e As EventArgs) Handles Me.Load
         Call Sel_HRIS_Personnel_201FileChecklist_ByID(dgv201CheckList)
     End Sub
@@ -8,10 +10,17 @@
         If dgv201CheckList.SelectedRows.Count > 0 Then
             Dim selectedRow = dgv201CheckList.SelectedRows(0)
             _201FileID = selectedRow.Cells(1).Value
+            docx = selectedRow.Cells(3).Value
         End If
     End Sub
 
     Private Sub btnAddNewFile_Click(sender As Object, e As EventArgs) Handles btnAddNewFile.Click
+
+        If docx = "Yes" Then
+            MessageBox.Show("This file is already processed. Contact System Administrator if this is a mistake.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
         If dgv201CheckList.SelectedRows.Count > 0 Then
             Browse201Files(dgv201CheckList)
         Else
@@ -20,25 +29,31 @@
     End Sub
 
     Private Sub btnRemoveFile_Click(sender As Object, e As EventArgs) Handles btnRemoveFile.Click
+
         If dgv201CheckList.SelectedRows.Count > 0 Then
+
+            If docx = "Yes" Then
+                MessageBox.Show("This file is already processed. Contact System Administrator if this is a mistake.", "Edit Forbidden", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Exit Sub
+            End If
 
             Dim selectedRow = dgv201CheckList.SelectedRows(0)
             Dim fileid = selectedRow.Cells(1).Value
             Dim filePath = IO.Path.GetFullPath(selectedRow.Cells(6).Value.ToString())
 
             If selectedRow.Cells(5).Value = "" Then
-                'MessageBox.Show("No file exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("No file exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
             End If
 
             If MessageBox.Show("Are you sure you want to delete this file?", "Warning Message", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
             If IO.File.Exists(filePath) Then
                 Try
-                    IO.File.Delete(filePath)
-                    'selectedRow.Cells(3).Value = "No"
-                    'selectedRow.Cells(4).Value = ""
-                    'selectedRow.Cells(5).Value = ""
-                    Del_Personnel_201FileChecklist_ByID(fileid)
+                    'IO.File.Delete(filePath) '--to delete file from file server
+                    'Del_Personnel_201FileChecklist_ByID(fileid) '--to delete file from db server
+                    dgv201CheckList.SelectedRows(0).Cells(5).Value = ""
+                    dgv201CheckList.SelectedRows(0).Cells(6).Value = ""
+                    dgv201CheckList.SelectedRows(0).Cells(7).Value = 1
                     MessageBox.Show("File deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Catch ex As Exception
                     MessageBox.Show("Error deleting file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -46,29 +61,18 @@
             Else
                 If MessageBox.Show("File not found. Would you like to remove it from the list?", "Warning Message", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
                 Try
-                    Del_Personnel_201FileChecklist_ByID(fileid)
+                    'Del_Personnel_201FileChecklist_ByID(fileid)
+                    dgv201CheckList.SelectedRows(0).Cells(5).Value = ""
+                    dgv201CheckList.SelectedRows(0).Cells(6).Value = ""
+                    dgv201CheckList.SelectedRows(0).Cells(7).Value = 1
                     MessageBox.Show("File deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Catch ex As Exception
                     MessageBox.Show("Error deleting file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
             End If
-            Call Sel_HRIS_Personnel_201FileChecklist_ByID(dgv201CheckList)
+            'Call Sel_HRIS_Personnel_201FileChecklist_ByID(dgv201CheckList)
         End If
-    End Sub
 
-    Private Sub SetToCompleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SetToCompleteToolStripMenuItem.Click
-        'If dgv201CheckList.SelectedRows.Count > 0 Then
-        '    With dgv201CheckList.SelectedRows(0).Cells(3)
-        '        If .Value?.ToString().Trim().ToLower() <> "no" Then
-        '            .Value = "No"
-        '            .Style.BackColor = Color.White
-        '            .Style.ForeColor = Color.Black
-        '            .Style.Font = dgv201CheckList.Font
-        '            btnRemoveFile.PerformClick() ' Call to remove the file from the server
-        '        End If
-        '    End With
-        '    dgv201CheckList.ClearSelection()
-        'End If
     End Sub
 
     Private Sub AddRemarksToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddRemarksToolStripMenuItem.Click
@@ -104,9 +108,13 @@
         If dgv201CheckList.Columns(e.ColumnIndex).Name = "Column4" AndAlso e.Value IsNot Nothing Then
             Dim cellValue As String = e.Value.ToString().Trim().ToLower()
 
-            If cellValue = "yes" Then
+            If cellValue = "yes" OrElse cellValue = "submitted" Then
                 e.CellStyle.BackColor = Color.DarkGreen
                 e.CellStyle.ForeColor = Color.White
+                e.CellStyle.Font = New Font(dgv201CheckList.Font, FontStyle.Bold)
+            ElseIf cellValue = "pending" Then
+                e.CellStyle.BackColor = Color.Gold
+                e.CellStyle.ForeColor = Color.Black
                 e.CellStyle.Font = New Font(dgv201CheckList.Font, FontStyle.Bold)
             Else
                 e.CellStyle.BackColor = Color.White
@@ -123,7 +131,7 @@
     Private Sub CompleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CompleteToolStripMenuItem.Click
 
         If dgv201CheckList.SelectedRows.Count > 0 Then
-            SetChecklistStatus(dgv201CheckList.SelectedRows(0), "Yes")
+            SetChecklistStatus(dgv201CheckList.SelectedRows(0), "Submitted")
             dgv201CheckList.ClearSelection()
         End If
 
@@ -146,24 +154,34 @@
             Exit Sub
         End If
 
-        Select Case status.ToLower()
-            Case "yes"
-                cell.Value = "Yes"
-                cell.Style.BackColor = Color.White
-                cell.Style.ForeColor = Color.DarkGreen
-                cell.Style.Font = dgv201CheckList.Font
+        If docx = "Yes" Then
+            MessageBox.Show("This file is already processed. Contact System Administrator if this is a mistake.", "Edit Forbidden", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
 
+        row.Cells(7).Value = 1
+        Select Case status.ToLower()
+            Case "submitted"
+                cell.Value = "Submitted"
+            Case "not applicable"
+                cell.Value = "Not Applicable"
+                row.Cells(5).Value = ""
             Case "no"
                 cell.Value = "No"
-                cell.Style.BackColor = Color.White
-                cell.Style.ForeColor = Color.Black
-                cell.Style.Font = dgv201CheckList.Font
-
-                ' Remove the file if status is set to Incomplete
-                btnRemoveFile.PerformClick()
+                row.Cells(5).Value = ""
         End Select
 
+    End Sub
+
+    Private Sub NotApplicableNAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NotApplicableNAToolStripMenuItem.Click
+
+        If dgv201CheckList.SelectedRows.Count > 0 Then
+            SetChecklistStatus(dgv201CheckList.SelectedRows(0), "Not Applicable")
+            dgv201CheckList.ClearSelection()
+        End If
 
     End Sub
+
+
 
 End Class

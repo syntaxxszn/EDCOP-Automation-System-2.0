@@ -7,6 +7,7 @@ Public Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         Call ClearTextBoxes(Me)
         Call ResetDatePickers(Me)
         Call ResetComboBoxes(Me)
+        btnAddUpdEducation.Text = "Add"
     End Sub
 
     Private Sub DropDownLists()
@@ -85,6 +86,7 @@ Public Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         cbSeparationType.SelectedIndex = -1
         cbSpecializationType.SelectedIndex = -1
         cbEmploymentType.SelectedIndex = -1
+        btnAddUpdEducation.Text = "Add"
     End Sub
 
     Private Sub dgvEmploymentHistory_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmploymentHistory.CellClick
@@ -122,6 +124,7 @@ Public Class frmHR_UpdatePersonnelDetails_EmploymentHistory
 
             Dim type4 As Integer = cbSeparationType.FindStringExact(selectedRow.Cells(16).Value.ToString())
             If type4 <> -1 Then cbSeparationType.SelectedIndex = type4
+            btnAddUpdEducation.Text = "Update"
         End If
     End Sub
 
@@ -129,7 +132,29 @@ Public Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         ClearTransactionField()
     End Sub
 
-    Private Sub btnDelEmploymentHistory_Click(sender As Object, e As EventArgs) Handles btnDelEmploymentHistory.Click
+    'Private Sub btnDelEmploymentHistory_Click(sender As Object, e As EventArgs)
+    '    If dgvEmploymentHistory.Rows.Count > 0 Then
+    '        Dim lastRow As DataGridViewRow = dgvEmploymentHistory.Rows(dgvEmploymentHistory.Rows.Count - 1)
+    '        If lastRow.Tag?.ToString() = "New" Then
+    '            dgvEmploymentHistory.Rows.Remove(lastRow)
+    '        ElseIf dgvEmploymentHistory.SelectedRows.Count > 0 Then
+    '            Call Del_Personnel_EmploymentHistory_ByID(dgvEmploymentHistory)
+    '        Else
+    '            MsgBox("Nothing to remove.")
+    '        End If
+    '        ClearTransactionField()
+    '    End If
+    'End Sub
+
+    Private Sub txtSalary_Validating(sender As Object, e As CancelEventArgs) Handles txtSalary.Validating
+        Call Textbox_NumericFormat(txtSalary, e.Cancel)
+    End Sub
+
+    Private Sub txtAllowances_Validating(sender As Object, e As CancelEventArgs) Handles txtAllowances.Validating
+        Call Textbox_NumericFormat(txtAllowances, e.Cancel)
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
         If dgvEmploymentHistory.Rows.Count > 0 Then
             Dim lastRow As DataGridViewRow = dgvEmploymentHistory.Rows(dgvEmploymentHistory.Rows.Count - 1)
             If lastRow.Tag?.ToString() = "New" Then
@@ -141,13 +166,5 @@ Public Class frmHR_UpdatePersonnelDetails_EmploymentHistory
             End If
             ClearTransactionField()
         End If
-    End Sub
-
-    Private Sub txtSalary_Validating(sender As Object, e As CancelEventArgs) Handles txtSalary.Validating
-        Call Textbox_NumericFormat(txtSalary, e.Cancel)
-    End Sub
-
-    Private Sub txtAllowances_Validating(sender As Object, e As CancelEventArgs) Handles txtAllowances.Validating
-        Call Textbox_NumericFormat(txtAllowances, e.Cancel)
     End Sub
 End Class

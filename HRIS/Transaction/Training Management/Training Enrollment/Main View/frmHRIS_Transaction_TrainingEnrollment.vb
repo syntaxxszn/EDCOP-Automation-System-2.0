@@ -280,4 +280,6 @@
     Private Sub UpdateTrainingResultToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateTrainingResultToolStripMenuItem.Click
         If Not HasUserAccess("update") Then Return
     End Sub
+
+
 End Class

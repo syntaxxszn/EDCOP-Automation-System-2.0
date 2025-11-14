@@ -22,6 +22,7 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.PanelUpdCharacterReference = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -41,7 +42,6 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.gbEmployment = New System.Windows.Forms.GroupBox()
         Me.btnClearTextFields = New System.Windows.Forms.Button()
-        Me.btnDelEmployee = New System.Windows.Forms.Button()
         Me.btnAddUpdCharRef = New System.Windows.Forms.Button()
         Me.txtRelationship = New System.Windows.Forms.TextBox()
         Me.txtDepartment = New System.Windows.Forms.TextBox()
@@ -59,11 +59,14 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCompany = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelUpdCharacterReference.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.dgvCharRef, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbEmployment.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelUpdCharacterReference
@@ -226,7 +229,6 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         'gbEmployment
         '
         Me.gbEmployment.Controls.Add(Me.btnClearTextFields)
-        Me.gbEmployment.Controls.Add(Me.btnDelEmployee)
         Me.gbEmployment.Controls.Add(Me.btnAddUpdCharRef)
         Me.gbEmployment.Controls.Add(Me.txtRelationship)
         Me.gbEmployment.Controls.Add(Me.txtDepartment)
@@ -259,26 +261,12 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         Me.btnClearTextFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearTextFields.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearTextFields.ForeColor = System.Drawing.Color.White
-        Me.btnClearTextFields.Location = New System.Drawing.Point(671, 102)
+        Me.btnClearTextFields.Location = New System.Drawing.Point(667, 102)
         Me.btnClearTextFields.Name = "btnClearTextFields"
         Me.btnClearTextFields.Size = New System.Drawing.Size(120, 26)
         Me.btnClearTextFields.TabIndex = 115
         Me.btnClearTextFields.Text = "&Clear Fields"
         Me.btnClearTextFields.UseVisualStyleBackColor = False
-        '
-        'btnDelEmployee
-        '
-        Me.btnDelEmployee.BackColor = System.Drawing.Color.Maroon
-        Me.btnDelEmployee.FlatAppearance.BorderColor = System.Drawing.Color.Maroon
-        Me.btnDelEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelEmployee.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelEmployee.ForeColor = System.Drawing.Color.White
-        Me.btnDelEmployee.Location = New System.Drawing.Point(671, 70)
-        Me.btnDelEmployee.Name = "btnDelEmployee"
-        Me.btnDelEmployee.Size = New System.Drawing.Size(120, 26)
-        Me.btnDelEmployee.TabIndex = 114
-        Me.btnDelEmployee.Text = "&Delete Record"
-        Me.btnDelEmployee.UseVisualStyleBackColor = False
         '
         'btnAddUpdCharRef
         '
@@ -287,11 +275,11 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         Me.btnAddUpdCharRef.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddUpdCharRef.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddUpdCharRef.ForeColor = System.Drawing.Color.White
-        Me.btnAddUpdCharRef.Location = New System.Drawing.Point(671, 38)
+        Me.btnAddUpdCharRef.Location = New System.Drawing.Point(667, 70)
         Me.btnAddUpdCharRef.Name = "btnAddUpdCharRef"
         Me.btnAddUpdCharRef.Size = New System.Drawing.Size(120, 26)
         Me.btnAddUpdCharRef.TabIndex = 113
-        Me.btnAddUpdCharRef.Text = "&Add / Update "
+        Me.btnAddUpdCharRef.Text = "&Add"
         Me.btnAddUpdCharRef.UseVisualStyleBackColor = False
         '
         'txtRelationship
@@ -424,6 +412,19 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Company / Employer* :"
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(108, 26)
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
         'frmHR_UpdatePersonnelDetails_CharacterReference
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -443,6 +444,7 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
         CType(Me.dgvCharRef, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbEmployment.ResumeLayout(False)
         Me.gbEmployment.PerformLayout()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -450,7 +452,6 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
     Friend WithEvents PanelUpdCharacterReference As Panel
     Friend WithEvents gbEmployment As GroupBox
     Friend WithEvents btnClearTextFields As Button
-    Friend WithEvents btnDelEmployee As Button
     Friend WithEvents btnAddUpdCharRef As Button
     Friend WithEvents txtRelationship As TextBox
     Friend WithEvents txtDepartment As TextBox
@@ -484,4 +485,6 @@ Partial Class frmHR_UpdatePersonnelDetails_CharacterReference
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -71,8 +71,10 @@
             Dim selectedRow = dgvCOE.SelectedRows(0)
             frmHRIS_Report_RequestPurpose.txtReferenceNo.Text = selectedRow.Cells(2).Value
             frmHRIS_Report_RequestPurpose.txtPurpose.Text = selectedRow.Cells(9).Value
+            isUpdate = True
             frmHRIS_Report_RequestPurpose.ShowDialog()
         Else
+            isUpdate = False
             Return
         End If
     End Sub
@@ -83,10 +85,12 @@
             _COEID1 = selectedRow.Cells(0).Value
             _strEmployeeID = selectedRow.Cells(1).Value
             _COEType = selectedRow.Cells(10).Value
+            'MsgBox(_COEType)
         End If
     End Sub
 
     Private Sub ToolStripRefresh_Click(sender As Object, e As EventArgs) Handles ToolStripRefresh.Click
         Call Sel_HRIS_Personnel_COE_Issued_List(dgvCOE)
     End Sub
+
 End Class

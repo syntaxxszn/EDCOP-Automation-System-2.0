@@ -57,6 +57,9 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
         Me.Column19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuPojectContracts = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.AddUpdateProjectOmnibusContractsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteRecordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -94,18 +97,17 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
         Me.cbEmploymentType = New System.Windows.Forms.ComboBox()
         Me.btnAddUpdContract = New System.Windows.Forms.Button()
         Me.btnClearTextFields = New System.Windows.Forms.Button()
-        Me.btnDelEducation = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtFieldAllowance = New System.Windows.Forms.TextBox()
         Me.dtpContractStart = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ContextMenuPojectContracts = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.dgvContracts, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuPojectContracts.SuspendLayout()
         Me.gbEmploymentContract.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -155,6 +157,7 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
         Me.dgvContracts.ColumnHeadersHeight = 35
         Me.dgvContracts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvContracts.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column6, Me.Column8, Me.Column3, Me.Column4, Me.Column10, Me.Column14, Me.Column7, Me.Column9, Me.Column13, Me.Column12, Me.Column15, Me.Column16, Me.Column11, Me.Column17, Me.Column18, Me.Column19, Me.Column5, Me.Column20})
+        Me.dgvContracts.ContextMenuStrip = Me.ContextMenuPojectContracts
         Me.dgvContracts.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvContracts.Location = New System.Drawing.Point(0, 0)
         Me.dgvContracts.MultiSelect = False
@@ -336,6 +339,26 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
         Me.Column20.ReadOnly = True
         Me.Column20.Width = 83
         '
+        'ContextMenuPojectContracts
+        '
+        Me.ContextMenuPojectContracts.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddUpdateProjectOmnibusContractsToolStripMenuItem, Me.DeleteRecordToolStripMenuItem})
+        Me.ContextMenuPojectContracts.Name = "ContextMenuPojectContracts"
+        Me.ContextMenuPojectContracts.Size = New System.Drawing.Size(292, 48)
+        '
+        'AddUpdateProjectOmnibusContractsToolStripMenuItem
+        '
+        Me.AddUpdateProjectOmnibusContractsToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_add_96
+        Me.AddUpdateProjectOmnibusContractsToolStripMenuItem.Name = "AddUpdateProjectOmnibusContractsToolStripMenuItem"
+        Me.AddUpdateProjectOmnibusContractsToolStripMenuItem.Size = New System.Drawing.Size(291, 22)
+        Me.AddUpdateProjectOmnibusContractsToolStripMenuItem.Text = "Add / Update Project Omnibus Contracts"
+        '
+        'DeleteRecordToolStripMenuItem
+        '
+        Me.DeleteRecordToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
+        Me.DeleteRecordToolStripMenuItem.Name = "DeleteRecordToolStripMenuItem"
+        Me.DeleteRecordToolStripMenuItem.Size = New System.Drawing.Size(291, 22)
+        Me.DeleteRecordToolStripMenuItem.Text = "Delete Record"
+        '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.LightGray
@@ -406,7 +429,6 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
         Me.gbEmploymentContract.Controls.Add(Me.cbEmploymentType)
         Me.gbEmploymentContract.Controls.Add(Me.btnAddUpdContract)
         Me.gbEmploymentContract.Controls.Add(Me.btnClearTextFields)
-        Me.gbEmploymentContract.Controls.Add(Me.btnDelEducation)
         Me.gbEmploymentContract.Controls.Add(Me.Label10)
         Me.gbEmploymentContract.Controls.Add(Me.txtFieldAllowance)
         Me.gbEmploymentContract.Controls.Add(Me.dtpContractStart)
@@ -707,11 +729,11 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
         Me.btnAddUpdContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddUpdContract.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddUpdContract.ForeColor = System.Drawing.Color.White
-        Me.btnAddUpdContract.Location = New System.Drawing.Point(632, 148)
+        Me.btnAddUpdContract.Location = New System.Drawing.Point(632, 175)
         Me.btnAddUpdContract.Name = "btnAddUpdContract"
         Me.btnAddUpdContract.Size = New System.Drawing.Size(120, 26)
         Me.btnAddUpdContract.TabIndex = 113
-        Me.btnAddUpdContract.Text = "&Add / Update"
+        Me.btnAddUpdContract.Text = "&Add"
         Me.btnAddUpdContract.UseVisualStyleBackColor = False
         '
         'btnClearTextFields
@@ -721,26 +743,12 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
         Me.btnClearTextFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClearTextFields.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearTextFields.ForeColor = System.Drawing.Color.White
-        Me.btnClearTextFields.Location = New System.Drawing.Point(632, 212)
+        Me.btnClearTextFields.Location = New System.Drawing.Point(632, 207)
         Me.btnClearTextFields.Name = "btnClearTextFields"
         Me.btnClearTextFields.Size = New System.Drawing.Size(120, 26)
         Me.btnClearTextFields.TabIndex = 112
         Me.btnClearTextFields.Text = "Clear &Fields"
         Me.btnClearTextFields.UseVisualStyleBackColor = False
-        '
-        'btnDelEducation
-        '
-        Me.btnDelEducation.BackColor = System.Drawing.Color.Maroon
-        Me.btnDelEducation.FlatAppearance.BorderColor = System.Drawing.Color.Maroon
-        Me.btnDelEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelEducation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelEducation.ForeColor = System.Drawing.Color.White
-        Me.btnDelEducation.Location = New System.Drawing.Point(632, 180)
-        Me.btnDelEducation.Name = "btnDelEducation"
-        Me.btnDelEducation.Size = New System.Drawing.Size(120, 26)
-        Me.btnDelEducation.TabIndex = 111
-        Me.btnDelEducation.Text = "&Delete Record"
-        Me.btnDelEducation.UseVisualStyleBackColor = False
         '
         'Label10
         '
@@ -794,11 +802,6 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Employment Type* :"
         '
-        'ContextMenuPojectContracts
-        '
-        Me.ContextMenuPojectContracts.Name = "ContextMenuPojectContracts"
-        Me.ContextMenuPojectContracts.Size = New System.Drawing.Size(61, 4)
-        '
         'frmHR_UpdatePersonnelDetails_Contracts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -816,6 +819,7 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
         Me.Panel14.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         CType(Me.dgvContracts, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuPojectContracts.ResumeLayout(False)
         Me.gbEmploymentContract.ResumeLayout(False)
         Me.gbEmploymentContract.PerformLayout()
         Me.ResumeLayout(False)
@@ -827,7 +831,6 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
     Friend WithEvents cbEmploymentType As ComboBox
     Friend WithEvents btnAddUpdContract As Button
     Friend WithEvents btnClearTextFields As Button
-    Friend WithEvents btnDelEducation As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents txtFieldAllowance As TextBox
     Friend WithEvents dtpContractStart As DateTimePicker
@@ -891,4 +894,6 @@ Partial Class frmHR_UpdatePersonnelDetails_Contracts
     Friend WithEvents Column19 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column20 As DataGridViewTextBoxColumn
+    Friend WithEvents AddUpdateProjectOmnibusContractsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DeleteRecordToolStripMenuItem As ToolStripMenuItem
 End Class

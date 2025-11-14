@@ -18,6 +18,7 @@
     Private Sub btnShift_Click(sender As Object, e As EventArgs) Handles btnShift.Click
         If HasSubMenuAccess(btnShift) Then
             SetButtonColor(btnShift)
+            frmHRIS_Setup_Shift.ToolStripLabel1.Text = "Human Resources Module > Setup > Shift"
             OpenChildForm_Revision(frmHRIS_Setup_Shift)
         Else
             MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -27,7 +28,9 @@
     Private Sub btnSchedManagement_Click(sender As Object, e As EventArgs) Handles btnSchedManagement.Click
         If HasSubMenuAccess(btnSchedManagement) Then
             SetButtonColor(btnSchedManagement)
-            OpenChildForm_Revision(frmHRIS_Transaction_AssignEmployeeSchedule)
+            frmHRIS_Setup_Shift.ToolStripLabel1.Text = "Human Resources Module > Transaction > Schedule Management"
+            OpenChildForm_Revision(frmHRIS_Setup_Shift)
+            'MessageBox.Show("On-going Development :)", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
@@ -147,6 +150,10 @@
         Else
             MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
+    End Sub
+
+    Private Sub btnProjectStaff_Click(sender As Object, e As EventArgs) Handles btnProjectStaff.Click
+        OpenChildForm_Revision(frmPSCR_Main)
     End Sub
 
 End Class

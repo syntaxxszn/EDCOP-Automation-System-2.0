@@ -50,15 +50,24 @@ Public Class frmHR_AddNewContract
     End Sub
 
     Private Sub frmHR_AddNewContract_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+
         ClearTextBoxes(Me)
         ResetComboBoxes(Me)
         UncheckCheckBoxes(Me)
         ClearDataGridViewRows(Me)
         ResetDatePickers(Me)
+        txtContractNo.Text = "EC-00-00-212-0000"
+        txtProjectDiff.Text = "0.00"
+        txtMonthlyRate.Text = "0.00"
+        txtFieldAllowance.Text = "0.00"
+
     End Sub
 
     Private Sub btnAddNewOmnibusProject_Click(sender As Object, e As EventArgs) Handles btnAddNewOmnibusProject.Click
         frmHR_AddNewOmnibusProject.ShowDialog()
     End Sub
 
+    Private Sub btnDiscard_Click(sender As Object, e As EventArgs) Handles btnDiscard.Click
+        Me.Close()
+    End Sub
 End Class

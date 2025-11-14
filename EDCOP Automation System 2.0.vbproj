@@ -8,14 +8,16 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>EDCOP_Project_Monitoring_System.My.MyApplication</StartupObject>
     <RootNamespace>EDCOP_Project_Monitoring_System</RootNamespace>
-    <AssemblyName>EDCOP Project Monitoring System</AssemblyName>
+    <AssemblyName>EDCOP Automation System v2</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\192.168.0.250\references\DIMS_APPS_INST\E-PCM System\</PublishUrl>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>\\192.168.0.250\references\DIMS_APPS_INST\EAS 2.0_HRIS Module user testing ins\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,9 +27,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>\\192.168.0.250\references\DIMS_APPS_INST\E-PCM System\</UpdateUrl>
-    <ApplicationRevision>32</ApplicationRevision>
-    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <UpdateUrl>\\192.168.0.250\references\DIMS_APPS_INST\EAS 2.0_HRIS Module user testing ins\</UpdateUrl>
+    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -39,7 +41,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>EDCOP Project Monitoring System.xml</DocumentationFile>
+    <DocumentationFile>EDCOP Automation System v2.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -49,7 +51,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>EDCOP Project Monitoring System.xml</DocumentationFile>
+    <DocumentationFile>EDCOP Automation System v2.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -90,6 +92,15 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.3595.46, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.WebView2.1.0.3595.46\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.3595.46, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.WebView2.1.0.3595.46\lib\net462\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.3595.46, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.WebView2.1.0.3595.46\lib\net462\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -134,6 +145,18 @@
       <DependentUpon>frmFMIS_Setup_AccountCategory.vb</DependentUpon>
     </Compile>
     <Compile Include="FMIS\Setup\Account Category\frmFMIS_Setup_AccountCategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Bank Accounts\Add Update\frmFMIS_Setup_AddUpdBankAccount.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdBankAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Bank Accounts\Add Update\frmFMIS_Setup_AddUpdBankAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Bank Accounts\Add Update\frmFMIS_Setup_AddUpdBankName.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdBankName.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Bank Accounts\Add Update\frmFMIS_Setup_AddUpdBankName.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FMIS\Setup\Bank Accounts\frmFMIS_Setup_BankAccount.Designer.vb">
@@ -196,11 +219,59 @@
     <Compile Include="FMIS\Setup\Cost Center\frmFMIS_Setup_CostCenter.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeBirthdate_List.vb">
+    <Compile Include="FMIS\Setup\Subsidiary\Add Update\frmFMIS_Setup_AddUpdSubsidiaryAccount.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdSubsidiaryAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Subsidiary\Add Update\frmFMIS_Setup_AddUpdSubsidiaryAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Subsidiary\Add Update\frmFMIS_Setup_AddUpdSubsidiaryType.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdSubsidiaryType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Subsidiary\Add Update\frmFMIS_Setup_AddUpdSubsidiaryType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Subsidiary\frmFMIS_Setup_Subsidiary.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_Subsidiary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Subsidiary\frmFMIS_Setup_Subsidiary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Supplier\Add Update\frmFMIS_Setup_AddUpdSupplierAccount.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdSupplierAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Supplier\Add Update\frmFMIS_Setup_AddUpdSupplierAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Supplier\Add Update\frmFMIS_Setup_AddUpdSupplierType.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdSupplierType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Supplier\Add Update\frmFMIS_Setup_AddUpdSupplierType.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Supplier\frmFMIS_Setup_Supplier.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_Supplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Supplier\frmFMIS_Setup_Supplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_Employee201FileSummary.vb">
+      <DependentUpon>rptHRIS_Employee201FileSummary.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeBirthdate_List.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptHRIS_EmployeeBirthdate_List.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHRIS_Report_SendAsEmail.Designer.vb">
+      <DependentUpon>frmHRIS_Report_SendAsEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Reports\frmHRIS_Report_SendAsEmail.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="HRIS\Setup\Leave Credit\Add New\frmHRIS_Setup_SelectDateLeaveCredit.Designer.vb">
       <DependentUpon>frmHRIS_Setup_SelectDateLeaveCredit.vb</DependentUpon>
@@ -236,6 +307,18 @@
       <DependentUpon>frmHR_PreviewPersonnelDetails_OneTimePasscode.vb</DependentUpon>
     </Compile>
     <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_OneTimePasscode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_ProfileImage.Designer.vb">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_ProfileImage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_ProfileImage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HRIS\Transaction\PSCR\frmPSCR_Main.Designer.vb">
+      <DependentUpon>frmPSCR_Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HRIS\Transaction\PSCR\frmPSCR_Main.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainSubMenu\FMM\SubMenu\CashDisbursementSubMenu.Designer.vb">
@@ -310,151 +393,151 @@
     <Compile Include="HRIS\Options\frmHRIS_Options_MainView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\HRIS_COE_SEPARATED_AND_NOT_CLEARED.vb">
+    <Compile Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_SEPARATED_AND_NOT_CLEARED.vb">
       <DependentUpon>HRIS_COE_SEPARATED_AND_NOT_CLEARED.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\HRIS_COE_SEPARATED_AND_CLEARED.vb">
+    <Compile Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_SEPARATED_AND_CLEARED.vb">
       <DependentUpon>HRIS_COE_SEPARATED_AND_CLEARED.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\ListofParticipant.vb">
+    <Compile Include="HRIS\Reports\Files\Training\ListofParticipant.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListofParticipant.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form1.vb">
+    <Compile Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part1_Form1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptHRIS_PMAS_Part1_Form1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form2_POSS.vb">
+    <Compile Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part1_Form2_POSS.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptHRIS_PMAS_Part1_Form2_POSS.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form2_Projects8.vb">
+    <Compile Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part1_Form2_Projects8.vb">
       <DependentUpon>rptHRIS_PMAS_Part1_Form2_Projects8.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form2_Projects4.vb">
+    <Compile Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part1_Form2_Projects4.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptHRIS_PMAS_Part1_Form2_Projects4.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part2_Factor_C.vb">
+    <Compile Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part2_Factor_C.vb">
       <DependentUpon>rptHRIS_PMAS_Part2_Factor_C.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part2_Factor_B.vb">
+    <Compile Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part2_Factor_B.vb">
       <DependentUpon>rptHRIS_PMAS_Part2_Factor_B.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_PMAS_Part2_Factor_A.vb">
+    <Compile Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part2_Factor_A.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptHRIS_PMAS_Part2_Factor_A.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_Training_Masterlist.vb">
+    <Compile Include="HRIS\Reports\Files\Training\rptHRIS_Training_Masterlist.vb">
       <DependentUpon>rptHRIS_Training_Masterlist.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_Department_Masterlist.vb">
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_Department_Masterlist.vb">
       <DependentUpon>rptHRIS_Department_Masterlist.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_Company_Masterlist.vb">
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_Company_Masterlist.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptHRIS_Company_Masterlist.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_Employee201FileCheckList.vb">
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_Employee201FileCheckList.vb">
       <DependentUpon>rptHRIS_Employee201FileCheckList.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_Employee201_File.vb">
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_Employee201_File.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptHRIS_Employee201_File.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeAdhocInfo_List.vb">
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeAdhocInfo_List.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptHRIS_EmployeeAdhocInfo_List.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_Employee201FileCheckListx .vb">
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_Employee201FileCheckListx .vb">
       <DependentUpon>rptHRIS_Employee201FileCheckListx .rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeByJobPosition_List.vb">
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeByJobPosition_List.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptHRIS_EmployeeByJobPosition_List.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeLeaveBalances_List.vb">
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeLeaveBalances_List.vb">
       <DependentUpon>rptHRIS_EmployeeLeaveBalances_List.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeBirthdate_Listx.vb">
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeBirthdate_Listx.vb">
       <DependentUpon>rptHRIS_EmployeeBirthdate_Listx.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeLeaveEncashment_List.vb">
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeLeaveEncashment_List.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptHRIS_EmployeeLeaveEncashment_List.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_isActiveEmployee_List.vb">
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_isActiveEmployee_List.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptHRIS_isActiveEmployee_List.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\rptHRIS_EmployeeByDepartment_List.vb">
+    <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeByDepartment_List.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptHRIS_EmployeeByDepartment_List.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\TrainingEvaluationR1.vb">
+    <Compile Include="HRIS\Reports\Files\Training\TrainingEvaluationR1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TrainingEvaluationR1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\TrainingRequest.vb">
+    <Compile Include="HRIS\Reports\Files\Training\TrainingRequest.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TrainingRequest.rpt</DependentUpon>
@@ -767,43 +850,49 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\Module_GlobalVariables.vb" />
+    <Compile Include="System Login and User Registration\frmPMS_ForgotPassword.Designer.vb">
+      <DependentUpon>frmPMS_ForgotPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System Login and User Registration\frmPMS_ForgotPassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="System Login and User Registration\frmPMS_Login.Designer.vb">
       <DependentUpon>frmPMS_Login.vb</DependentUpon>
     </Compile>
     <Compile Include="System Login and User Registration\frmPMS_Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED.vb">
+    <Compile Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED.vb">
       <DependentUpon>HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED.vb">
+    <Compile Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED.vb">
       <DependentUpon>HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED_WITH_GAP.vb">
+    <Compile Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED_WITH_GAP.vb">
       <DependentUpon>HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED_WITH_GAP.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED_WITH_GAP.vb">
+    <Compile Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED_WITH_GAP.vb">
       <DependentUpon>HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED_WITH_GAP.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_GAP.vb">
+    <Compile Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_CURRENT_WITH_GAP.vb">
       <DependentUpon>HRIS_COE_CURRENT_WITH_GAP.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="HRIS\Reports\Files\HRIS_COE_CURRENT_NO_GAP.vb">
+    <Compile Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_CURRENT_NO_GAP.vb">
       <DependentUpon>HRIS_COE_CURRENT_NO_GAP.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
@@ -1408,6 +1497,12 @@
     <EmbeddedResource Include="FMIS\Setup\Account Category\frmFMIS_Setup_AccountCategory.resx">
       <DependentUpon>frmFMIS_Setup_AccountCategory.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Bank Accounts\Add Update\frmFMIS_Setup_AddUpdBankAccount.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdBankAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Bank Accounts\Add Update\frmFMIS_Setup_AddUpdBankName.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdBankName.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FMIS\Setup\Bank Accounts\frmFMIS_Setup_BankAccount.resx">
       <DependentUpon>frmFMIS_Setup_BankAccount.vb</DependentUpon>
     </EmbeddedResource>
@@ -1438,9 +1533,34 @@
     <EmbeddedResource Include="FMIS\Setup\Cost Center\frmFMIS_Setup_CostCenter.resx">
       <DependentUpon>frmFMIS_Setup_CostCenter.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeBirthdate_List.rpt">
+    <EmbeddedResource Include="FMIS\Setup\Subsidiary\Add Update\frmFMIS_Setup_AddUpdSubsidiaryAccount.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdSubsidiaryAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Subsidiary\Add Update\frmFMIS_Setup_AddUpdSubsidiaryType.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdSubsidiaryType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Subsidiary\frmFMIS_Setup_Subsidiary.resx">
+      <DependentUpon>frmFMIS_Setup_Subsidiary.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Supplier\Add Update\frmFMIS_Setup_AddUpdSupplierAccount.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdSupplierAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Supplier\Add Update\frmFMIS_Setup_AddUpdSupplierType.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdSupplierType.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Supplier\frmFMIS_Setup_Supplier.resx">
+      <DependentUpon>frmFMIS_Setup_Supplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_Employee201FileSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHRIS_Employee201FileSummary.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeBirthdate_List.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_EmployeeBirthdate_List.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Reports\frmHRIS_Report_SendAsEmail.resx">
+      <DependentUpon>frmHRIS_Report_SendAsEmail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Setup\Leave Credit\Add New\frmHRIS_Setup_SelectDateLeaveCredit.resx">
       <DependentUpon>frmHRIS_Setup_SelectDateLeaveCredit.vb</DependentUpon>
@@ -1459,6 +1579,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_OneTimePasscode.resx">
       <DependentUpon>frmHR_PreviewPersonnelDetails_OneTimePasscode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\Human Resource\Preview per record\frmHR_PreviewPersonnelDetails_ProfileImage.resx">
+      <DependentUpon>frmHR_PreviewPersonnelDetails_ProfileImage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HRIS\Transaction\PSCR\frmPSCR_Main.resx">
+      <DependentUpon>frmPSCR_Main.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainSubMenu\FMM\SubMenu\CashDisbursementSubMenu.resx">
       <DependentUpon>CashDisbursementSubMenu.vb</DependentUpon>
@@ -1496,103 +1622,103 @@
     <EmbeddedResource Include="HRIS\Options\frmHRIS_Options_MainView.resx">
       <DependentUpon>frmHRIS_Options_MainView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_SEPARATED_AND_NOT_CLEARED.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_SEPARATED_AND_NOT_CLEARED.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>HRIS_COE_SEPARATED_AND_NOT_CLEARED.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_SEPARATED_AND_CLEARED.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_SEPARATED_AND_CLEARED.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>HRIS_COE_SEPARATED_AND_CLEARED.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\ListofParticipant.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Training\ListofParticipant.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListofParticipant.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form1.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part1_Form1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_PMAS_Part1_Form1.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form2_POSS.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part1_Form2_POSS.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_PMAS_Part1_Form2_POSS.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form2_Projects8.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part1_Form2_Projects8.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_PMAS_Part1_Form2_Projects8.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part1_Form2_Projects4.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part1_Form2_Projects4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_PMAS_Part1_Form2_Projects4.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part2_Factor_C.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part2_Factor_C.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_PMAS_Part2_Factor_C.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part2_Factor_B.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part2_Factor_B.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_PMAS_Part2_Factor_B.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_PMAS_Part2_Factor_A.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\PMAS\rptHRIS_PMAS_Part2_Factor_A.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_PMAS_Part2_Factor_A.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_Training_Masterlist.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Training\rptHRIS_Training_Masterlist.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_Training_Masterlist.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_Department_Masterlist.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_Department_Masterlist.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_Department_Masterlist.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_Company_Masterlist.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_Company_Masterlist.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_Company_Masterlist.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_Employee201FileCheckList.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_Employee201FileCheckList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_Employee201FileCheckList.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_Employee201_File.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_Employee201_File.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_Employee201_File.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeAdhocInfo_List.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeAdhocInfo_List.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_EmployeeAdhocInfo_List.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_Employee201FileCheckListx .rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_Employee201FileCheckListx .rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_Employee201FileCheckListx .vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeByJobPosition_List.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeByJobPosition_List.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_EmployeeByJobPosition_List.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeLeaveBalances_List.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeLeaveBalances_List.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_EmployeeLeaveBalances_List.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeBirthdate_Listx.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeBirthdate_Listx.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_EmployeeBirthdate_Listx.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeLeaveEncashment_List.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeLeaveEncashment_List.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_EmployeeLeaveEncashment_List.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_isActiveEmployee_List.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_isActiveEmployee_List.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_isActiveEmployee_List.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\rptHRIS_EmployeeByDepartment_List.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_EmployeeByDepartment_List.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptHRIS_EmployeeByDepartment_List.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\TrainingEvaluationR1.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Training\TrainingEvaluationR1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TrainingEvaluationR1.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\TrainingRequest.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\Training\TrainingRequest.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TrainingRequest.vb</LastGenOutput>
     </EmbeddedResource>
@@ -1749,30 +1875,33 @@
     <EmbeddedResource Include="MainSubMenu\SSS\frmMainPanelSSMDetail.resx">
       <DependentUpon>frmMainPanelSSMDetail.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="System Login and User Registration\frmPMS_ForgotPassword.resx">
+      <DependentUpon>frmPMS_ForgotPassword.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="System Login and User Registration\frmPMS_Login.resx">
       <DependentUpon>frmPMS_Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED_WITH_GAP.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED_WITH_GAP.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED_WITH_GAP.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED_WITH_GAP.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED_WITH_GAP.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED_WITH_GAP.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_CURRENT_WITH_GAP.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_CURRENT_WITH_GAP.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>HRIS_COE_CURRENT_WITH_GAP.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="HRIS\Reports\Files\HRIS_COE_CURRENT_NO_GAP.rpt">
+    <EmbeddedResource Include="HRIS\Reports\Files\COE - Regular\HRIS_COE_CURRENT_NO_GAP.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>HRIS_COE_CURRENT_NO_GAP1.vb</LastGenOutput>
     </EmbeddedResource>
@@ -2090,6 +2219,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\check-out.png" />
   </ItemGroup>
   <ItemGroup>
@@ -2236,13 +2366,27 @@
     <None Include="Resources\icons8-lock.gif" />
     <None Include="Resources\open_eye.png" />
     <None Include="Resources\close_eye.png" />
+    <None Include="Resources\social-media.gif" />
+    <None Include="Resources\icons8-do-not-disturb-100.png" />
+    <None Include="Resources\message.png" />
+    <None Include="Resources\transfer.png" />
+    <None Include="Resources\prev1.png" />
+    <None Include="Resources\next1.png" />
     <Content Include="sssss.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="HRIS\Reports\Files\COE - Consultant\" />
     <Folder Include="HRIS\Transaction\Benefit Administration\" />
     <Folder Include="TKM\Reports\" />
     <Folder Include="TKM\Transaction\TimeSheetManualEntry\" />
     <Folder Include="TKM\Transaction\TimeSheetPreparation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="packages\Microsoft.Web.WebView2.1.0.3595.46\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.3595.46\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.Web.WebView2.1.0.3595.46\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Web.WebView2.1.0.3595.46\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
 </Project>

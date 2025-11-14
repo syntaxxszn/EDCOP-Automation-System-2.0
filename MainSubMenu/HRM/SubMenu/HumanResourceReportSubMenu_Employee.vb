@@ -91,6 +91,7 @@ Public Class HumanResourceReportSubMenu_Employee
     End Sub
 
     Private Sub btnCurrentWithCompensationItemizedWithGap_Click(sender As Object, e As EventArgs) Handles btnCurrentWithCompensationItemizedWithGap.Click
+        Me.Close()
         MessageBox.Show($"Please Contact System Administrator.{vbCrLf}Error occurred: Not yet working.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
     End Sub
 
@@ -102,5 +103,15 @@ Public Class HumanResourceReportSubMenu_Employee
         End If
         frmHRIS_Report_EmployeeList.WhatReportType = 2
         frmHRIS_Report_EmployeeList.ShowDialog()
+    End Sub
+
+    Private Sub btn201FileSummary_Click(sender As Object, e As EventArgs) Handles btn201FileSummary.Click
+        Me.Close()
+        If Not _AllowPrint Then
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+        PrintRPT_Employee_201FileSummary()
+        OpenChildForm_Revision(frmHRIS_Report_MainPreview)
     End Sub
 End Class

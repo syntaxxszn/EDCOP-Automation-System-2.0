@@ -61,7 +61,8 @@
     Private Sub btnChartOfAccounts_Click(sender As Object, e As EventArgs) Handles btnChartOfAccounts.Click
         If HasSubMenuAccess(btnChartOfAccounts) Then
             SetButtonColor(btnChartOfAccounts)
-            ShowSubMenu(New ChartOfAccountsSubMenu(), btnChartOfAccounts)
+            'ShowSubMenu(New ChartOfAccountsSubMenu(), btnChartOfAccounts)
+            OpenChildForm_Revision(frmFMIS_Setup_ChartOfAccounts)
         Else
             MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
@@ -76,4 +77,21 @@
         End If
     End Sub
 
+    Private Sub btnSubsidiary_Click(sender As Object, e As EventArgs) Handles btnSubsidiary.Click
+        If HasSubMenuAccess(btnSubsidiary) Then
+            SetButtonColor(btnSubsidiary)
+            OpenChildForm_Revision(frmFMIS_Setup_Subsidiary)
+        Else
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub btnSupplier_Click(sender As Object, e As EventArgs) Handles btnSupplier.Click
+        If HasSubMenuAccess(btnSupplier) Then
+            SetButtonColor(btnSupplier)
+            OpenChildForm_Revision(frmFMIS_Setup_Supplier)
+        Else
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
 End Class

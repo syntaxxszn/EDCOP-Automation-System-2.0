@@ -66,4 +66,7 @@
         frmHRIS_Setup_AddUpdDepartment.ShowDialog()
     End Sub
 
+    Private Sub txtboxSearch_TextChanged(sender As Object, e As EventArgs) Handles txtboxSearch.TextChanged
+
+    End Sub
 End Class

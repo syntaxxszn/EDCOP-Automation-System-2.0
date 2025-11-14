@@ -63,16 +63,6 @@ Partial Class frmHRIS_Transaction_EmployeeFile
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.dgvEmployeeList = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.lblEmailAddress = New System.Windows.Forms.Label()
@@ -113,6 +103,16 @@ Partial Class frmHRIS_Transaction_EmployeeFile
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.toolstripLblSelected = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel6 = New System.Windows.Forms.ToolStripLabel()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -262,7 +262,7 @@ Partial Class frmHRIS_Transaction_EmployeeFile
         Me.btnSearchFilter.FlatAppearance.BorderColor = System.Drawing.Color.Navy
         Me.btnSearchFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearchFilter.ForeColor = System.Drawing.Color.White
-        Me.btnSearchFilter.Location = New System.Drawing.Point(372, 37)
+        Me.btnSearchFilter.Location = New System.Drawing.Point(369, 37)
         Me.btnSearchFilter.Name = "btnSearchFilter"
         Me.btnSearchFilter.Size = New System.Drawing.Size(104, 24)
         Me.btnSearchFilter.TabIndex = 44
@@ -284,7 +284,7 @@ Partial Class frmHRIS_Transaction_EmployeeFile
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 7.5!)
-        Me.Label2.Location = New System.Drawing.Point(90, 16)
+        Me.Label2.Location = New System.Drawing.Point(90, 22)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(202, 12)
         Me.Label2.TabIndex = 41
@@ -315,7 +315,7 @@ Partial Class frmHRIS_Transaction_EmployeeFile
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(28, 43)
+        Me.Label1.Location = New System.Drawing.Point(37, 43)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 15)
         Me.Label1.TabIndex = 38
@@ -440,86 +440,6 @@ Partial Class frmHRIS_Transaction_EmployeeFile
         Me.dgvEmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvEmployeeList.Size = New System.Drawing.Size(1280, 374)
         Me.dgvEmployeeList.TabIndex = 74
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column1.HeaderText = "ID"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Visible = False
-        Me.Column1.Width = 5
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Employee No."
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 106
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column3.HeaderText = "Employee Name"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 200
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "EmployeeJobTitle"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Visible = False
-        Me.Column5.Width = 124
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "EmployeeDept"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Visible = False
-        Me.Column4.Width = 109
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "ImagePathValue"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Visible = False
-        Me.Column6.Width = 117
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "EmpStatus"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Visible = False
-        Me.Column7.Width = 88
-        '
-        'Column14
-        '
-        Me.Column14.HeaderText = "BirthDate"
-        Me.Column14.Name = "Column14"
-        Me.Column14.ReadOnly = True
-        Me.Column14.Visible = False
-        Me.Column14.Width = 81
-        '
-        'Column15
-        '
-        Me.Column15.HeaderText = "MobileNum"
-        Me.Column15.Name = "Column15"
-        Me.Column15.ReadOnly = True
-        Me.Column15.Visible = False
-        Me.Column15.Width = 96
-        '
-        'Column16
-        '
-        Me.Column16.HeaderText = "EmailAddress"
-        Me.Column16.Name = "Column16"
-        Me.Column16.ReadOnly = True
-        Me.Column16.Visible = False
-        Me.Column16.Width = 103
         '
         'Panel15
         '
@@ -680,10 +600,10 @@ Partial Class frmHRIS_Transaction_EmployeeFile
         '
         Me.lblEmployeeNo.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblEmployeeNo.AutoSize = True
-        Me.lblEmployeeNo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmployeeNo.Location = New System.Drawing.Point(110, 66)
+        Me.lblEmployeeNo.Font = New System.Drawing.Font("Segoe UI", 10.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmployeeNo.Location = New System.Drawing.Point(109, 63)
         Me.lblEmployeeNo.Name = "lblEmployeeNo"
-        Me.lblEmployeeNo.Size = New System.Drawing.Size(90, 15)
+        Me.lblEmployeeNo.Size = New System.Drawing.Size(115, 20)
         Me.lblEmployeeNo.TabIndex = 77
         Me.lblEmployeeNo.Text = "lblEmployeeNo"
         '
@@ -944,6 +864,86 @@ Partial Class frmHRIS_Transaction_EmployeeFile
         Me.ToolStripLabel6.Name = "ToolStripLabel6"
         Me.ToolStripLabel6.Size = New System.Drawing.Size(31, 22)
         Me.ToolStripLabel6.Text = ">>>"
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column1.HeaderText = "ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        Me.Column1.Width = 5
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Employee No."
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 106
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column3.HeaderText = "Employee Name"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 250
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "EmployeeJobTitle"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Visible = False
+        Me.Column5.Width = 124
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "EmployeeDept"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Visible = False
+        Me.Column4.Width = 109
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "ImagePathValue"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Visible = False
+        Me.Column6.Width = 117
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "EmpStatus"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Visible = False
+        Me.Column7.Width = 88
+        '
+        'Column14
+        '
+        Me.Column14.HeaderText = "BirthDate"
+        Me.Column14.Name = "Column14"
+        Me.Column14.ReadOnly = True
+        Me.Column14.Visible = False
+        Me.Column14.Width = 81
+        '
+        'Column15
+        '
+        Me.Column15.HeaderText = "MobileNum"
+        Me.Column15.Name = "Column15"
+        Me.Column15.ReadOnly = True
+        Me.Column15.Visible = False
+        Me.Column15.Width = 96
+        '
+        'Column16
+        '
+        Me.Column16.HeaderText = "EmailAddress"
+        Me.Column16.Name = "Column16"
+        Me.Column16.ReadOnly = True
+        Me.Column16.Visible = False
+        Me.Column16.Width = 103
         '
         'frmHRIS_Transaction_EmployeeFile
         '

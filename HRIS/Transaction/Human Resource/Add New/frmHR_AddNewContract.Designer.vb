@@ -52,22 +52,16 @@ Partial Class frmHR_AddNewContract
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.chContractEnd = New System.Windows.Forms.CheckBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtRemarks = New System.Windows.Forms.TextBox()
         Me.dtpContractEnd = New System.Windows.Forms.DateTimePicker()
         Me.dtpContractStart = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtProjectNotes = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtContractNotes = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtRemarks = New System.Windows.Forms.TextBox()
-        Me.txtProjectNotes = New System.Windows.Forms.TextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.txtContractNotes = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cbLocation = New System.Windows.Forms.ComboBox()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -145,22 +139,16 @@ Partial Class frmHR_AddNewContract
         Me.Panel10.Controls.Add(Me.Label7)
         Me.Panel10.Controls.Add(Me.Label18)
         Me.Panel10.Controls.Add(Me.chContractEnd)
-        Me.Panel10.Controls.Add(Me.TextBox2)
+        Me.Panel10.Controls.Add(Me.txtRemarks)
         Me.Panel10.Controls.Add(Me.dtpContractEnd)
         Me.Panel10.Controls.Add(Me.dtpContractStart)
-        Me.Panel10.Controls.Add(Me.TextBox3)
+        Me.Panel10.Controls.Add(Me.txtProjectNotes)
         Me.Panel10.Controls.Add(Me.Label6)
         Me.Panel10.Controls.Add(Me.Label19)
-        Me.Panel10.Controls.Add(Me.TextBox4)
+        Me.Panel10.Controls.Add(Me.txtContractNotes)
         Me.Panel10.Controls.Add(Me.Label20)
         Me.Panel10.Controls.Add(Me.Panel12)
-        Me.Panel10.Controls.Add(Me.Label8)
-        Me.Panel10.Controls.Add(Me.txtRemarks)
-        Me.Panel10.Controls.Add(Me.txtProjectNotes)
-        Me.Panel10.Controls.Add(Me.Label14)
-        Me.Panel10.Controls.Add(Me.txtContractNotes)
         Me.Panel10.Controls.Add(Me.Label13)
-        Me.Panel10.Controls.Add(Me.Label9)
         Me.Panel10.Controls.Add(Me.Label10)
         Me.Panel10.Controls.Add(Me.cbLocation)
         Me.Panel10.Controls.Add(Me.Label15)
@@ -395,7 +383,7 @@ Partial Class frmHR_AddNewContract
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(421, 249)
+        Me.Label7.Location = New System.Drawing.Point(421, 163)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(85, 13)
         Me.Label7.TabIndex = 207
@@ -413,24 +401,24 @@ Partial Class frmHR_AddNewContract
         'chContractEnd
         '
         Me.chContractEnd.AutoSize = True
-        Me.chContractEnd.Location = New System.Drawing.Point(519, 250)
+        Me.chContractEnd.Location = New System.Drawing.Point(519, 164)
         Me.chContractEnd.Name = "chContractEnd"
         Me.chContractEnd.Size = New System.Drawing.Size(15, 14)
         Me.chContractEnd.TabIndex = 206
         Me.chContractEnd.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'txtRemarks
         '
-        Me.TextBox2.Location = New System.Drawing.Point(147, 551)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(581, 23)
-        Me.TextBox2.TabIndex = 235
+        Me.txtRemarks.Location = New System.Drawing.Point(147, 551)
+        Me.txtRemarks.Multiline = True
+        Me.txtRemarks.Name = "txtRemarks"
+        Me.txtRemarks.Size = New System.Drawing.Size(581, 23)
+        Me.txtRemarks.TabIndex = 235
         '
         'dtpContractEnd
         '
         Me.dtpContractEnd.Enabled = False
-        Me.dtpContractEnd.Location = New System.Drawing.Point(544, 245)
+        Me.dtpContractEnd.Location = New System.Drawing.Point(544, 159)
         Me.dtpContractEnd.Name = "dtpContractEnd"
         Me.dtpContractEnd.Size = New System.Drawing.Size(184, 22)
         Me.dtpContractEnd.TabIndex = 205
@@ -438,24 +426,24 @@ Partial Class frmHR_AddNewContract
         '
         'dtpContractStart
         '
-        Me.dtpContractStart.Location = New System.Drawing.Point(520, 214)
+        Me.dtpContractStart.Location = New System.Drawing.Point(520, 128)
         Me.dtpContractStart.Name = "dtpContractStart"
         Me.dtpContractStart.Size = New System.Drawing.Size(208, 22)
         Me.dtpContractStart.TabIndex = 204
         Me.dtpContractStart.Value = New Date(1990, 1, 1, 0, 0, 0, 0)
         '
-        'TextBox3
+        'txtProjectNotes
         '
-        Me.TextBox3.Location = New System.Drawing.Point(147, 503)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(581, 42)
-        Me.TextBox3.TabIndex = 234
+        Me.txtProjectNotes.Location = New System.Drawing.Point(147, 503)
+        Me.txtProjectNotes.Multiline = True
+        Me.txtProjectNotes.Name = "txtProjectNotes"
+        Me.txtProjectNotes.Size = New System.Drawing.Size(581, 42)
+        Me.txtProjectNotes.TabIndex = 234
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(421, 220)
+        Me.Label6.Location = New System.Drawing.Point(421, 134)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(89, 13)
         Me.Label6.TabIndex = 203
@@ -470,13 +458,13 @@ Partial Class frmHR_AddNewContract
         Me.Label19.TabIndex = 233
         Me.Label19.Text = "Project Notes :"
         '
-        'TextBox4
+        'txtContractNotes
         '
-        Me.TextBox4.Location = New System.Drawing.Point(147, 460)
-        Me.TextBox4.Multiline = True
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(581, 37)
-        Me.TextBox4.TabIndex = 232
+        Me.txtContractNotes.Location = New System.Drawing.Point(147, 460)
+        Me.txtContractNotes.Multiline = True
+        Me.txtContractNotes.Name = "txtContractNotes"
+        Me.txtContractNotes.Size = New System.Drawing.Size(581, 37)
+        Me.txtContractNotes.TabIndex = 232
         '
         'Label20
         '
@@ -495,48 +483,6 @@ Partial Class frmHR_AddNewContract
         Me.Panel12.Size = New System.Drawing.Size(2, 259)
         Me.Panel12.TabIndex = 230
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(422, 190)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(56, 13)
-        Me.Label8.TabIndex = 229
-        Me.Label8.Text = "Remarks :"
-        '
-        'txtRemarks
-        '
-        Me.txtRemarks.Location = New System.Drawing.Point(520, 186)
-        Me.txtRemarks.Multiline = True
-        Me.txtRemarks.Name = "txtRemarks"
-        Me.txtRemarks.Size = New System.Drawing.Size(208, 23)
-        Me.txtRemarks.TabIndex = 228
-        '
-        'txtProjectNotes
-        '
-        Me.txtProjectNotes.Location = New System.Drawing.Point(520, 157)
-        Me.txtProjectNotes.Multiline = True
-        Me.txtProjectNotes.Name = "txtProjectNotes"
-        Me.txtProjectNotes.Size = New System.Drawing.Size(208, 23)
-        Me.txtProjectNotes.TabIndex = 227
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(421, 162)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(81, 13)
-        Me.Label14.TabIndex = 226
-        Me.Label14.Text = "Project Notes :"
-        '
-        'txtContractNotes
-        '
-        Me.txtContractNotes.Location = New System.Drawing.Point(520, 128)
-        Me.txtContractNotes.Multiline = True
-        Me.txtContractNotes.Name = "txtContractNotes"
-        Me.txtContractNotes.Size = New System.Drawing.Size(208, 23)
-        Me.txtContractNotes.TabIndex = 225
-        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -545,15 +491,6 @@ Partial Class frmHR_AddNewContract
         Me.Label13.Size = New System.Drawing.Size(94, 13)
         Me.Label13.TabIndex = 224
         Me.Label13.Text = "Field Allowance :"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(421, 132)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(90, 13)
-        Me.Label9.TabIndex = 223
-        Me.Label9.Text = "Contract Notes :"
         '
         'Label10
         '
@@ -637,6 +574,7 @@ Partial Class frmHR_AddNewContract
         Me.txtFieldAllowance.Name = "txtFieldAllowance"
         Me.txtFieldAllowance.Size = New System.Drawing.Size(114, 22)
         Me.txtFieldAllowance.TabIndex = 214
+        Me.txtFieldAllowance.Text = "0.00"
         '
         'chDefaultContract
         '
@@ -665,6 +603,7 @@ Partial Class frmHR_AddNewContract
         Me.txtProjectDiff.Name = "txtProjectDiff"
         Me.txtProjectDiff.Size = New System.Drawing.Size(114, 22)
         Me.txtProjectDiff.TabIndex = 211
+        Me.txtProjectDiff.Text = "0.00"
         '
         'Label12
         '
@@ -681,6 +620,7 @@ Partial Class frmHR_AddNewContract
         Me.txtMonthlyRate.Name = "txtMonthlyRate"
         Me.txtMonthlyRate.Size = New System.Drawing.Size(114, 22)
         Me.txtMonthlyRate.TabIndex = 209
+        Me.txtMonthlyRate.Text = "0.00"
         '
         'Label11
         '
@@ -929,22 +869,16 @@ Partial Class frmHR_AddNewContract
     Friend WithEvents Label7 As Label
     Friend WithEvents Label18 As Label
     Friend WithEvents chContractEnd As CheckBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtRemarks As TextBox
     Friend WithEvents dtpContractEnd As DateTimePicker
     Friend WithEvents dtpContractStart As DateTimePicker
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtProjectNotes As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label19 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtContractNotes As TextBox
     Friend WithEvents Label20 As Label
     Friend WithEvents Panel12 As Panel
-    Friend WithEvents Label8 As Label
-    Friend WithEvents txtRemarks As TextBox
-    Friend WithEvents txtProjectNotes As TextBox
-    Friend WithEvents Label14 As Label
-    Friend WithEvents txtContractNotes As TextBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents cbLocation As ComboBox
     Friend WithEvents Label15 As Label

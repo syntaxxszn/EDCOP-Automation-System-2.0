@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+
 Public Class frmMain
 
     Private Sub frmMain_revise_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -14,8 +15,19 @@ Public Class frmMain
         picBoxNotif2.Image = Image.FromFile(imageFileName2)
         picBoxNotif2.SizeMode = PictureBoxSizeMode.StretchImage
 
+        'Panel17.Visible = False
+        'Panel11.Visible = False
+        'PictureBox2.Visible = False
         'lblWelcomeName.Text = "Welcome, " & ToolStripEmployeeName.Text
 
+        Dim htmlPath As String = "\\192.168.0.250\references\DIMS_APPS_INST\Weather\windy.html"
+        Dim fileUri As New Uri(htmlPath)   ' Convert to URI
+        WebView21.Source = fileUri         ' Assign to WebView2
+
+        'Me.Controls.Add(web)
+        'web.Dock = DockStyle.Fill
+        'Await web.EnsureCoreWebView2Async()
+        'web.Source = New Uri("https://www.windy.com/")
 
     End Sub
 
@@ -173,6 +185,7 @@ Public Class frmMain
         ShowSubMenu(panelSubHRM)
         switchPanelHRM(frmMainPanelHRM.PanelHRM)
         'frmMainPanelHRM.btnSetup.PerformClick()
+        AdjustSplitContainerToContents()
 
     End Sub
 
@@ -189,16 +202,20 @@ Public Class frmMain
         ShowSubMenu(panelSubFMM)
         switchPanelFMM(frmMainPanelFMM.PanelFMM)
         'frmMainPanelFMM.btnSetup.PerformClick()
+        AdjustSplitContainerToContents()
+
     End Sub
 
     Private Sub btnPMM_Click(sender As Object, e As EventArgs) Handles btnPMM.Click
         ShowSubMenu(panelSubPMM)
         switchPanelPMM(frmMainPanelPMM.PanelPMM)
+        AdjustSplitContainerToContents()
     End Sub
 
     Private Sub btnTKM_Click(sender As Object, e As EventArgs) Handles btnTKM.Click
         ShowSubMenu(panelSubTKM)
         switchPanelTKM(frmMainPanelTKM.PanelTKM)
+        AdjustSplitContainerToContents()
     End Sub
 
     Private Sub frmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
@@ -225,6 +242,26 @@ Public Class frmMain
     Private Sub btnSSS_Click(sender As Object, e As EventArgs) Handles btnSSS.Click
         ShowSubMenu(panelSubSSS)
         switchPanelSSS(frmMainPanelSSM.PanelSSS)
+        AdjustSplitContainerToContents()
+    End Sub
+
+    Public Sub AdjustSplitContainerToContents()
+        Dim totalHeight As Integer = 0
+
+        ' Go through all visible controls in Panel1
+        For Each ctrl As Control In SplitSideContainer.Panel1.Controls
+            If ctrl.Visible Then
+                ' Get bottom edge of control relative to the top of the panel
+                Dim bottomEdge As Integer = ctrl.Top + ctrl.Height + ctrl.Margin.Bottom
+                If bottomEdge > totalHeight Then totalHeight = bottomEdge
+            End If
+        Next
+
+        ' Make sure it doesn’t exceed the container height
+        totalHeight = Math.Min(totalHeight, SplitSideContainer.Height - SplitSideContainer.SplitterWidth - 330)
+
+        ' Adjust SplitterDistance
+        SplitSideContainer.SplitterDistance = totalHeight
     End Sub
 
 

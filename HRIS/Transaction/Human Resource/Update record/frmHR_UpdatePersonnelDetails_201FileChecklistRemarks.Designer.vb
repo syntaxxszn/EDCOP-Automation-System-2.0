@@ -210,7 +210,7 @@ Partial Class frmHR_UpdatePersonnelDetails_201FileChecklistRemarks
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Text"
+        Me.Text = "Remarks"
         Me.Panel1.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()

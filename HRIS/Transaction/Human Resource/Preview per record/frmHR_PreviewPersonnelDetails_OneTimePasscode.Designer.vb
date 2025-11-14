@@ -23,6 +23,7 @@ Partial Class frmHR_PreviewPersonnelDetails_OneTimePasscode
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblHeader = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -36,7 +37,6 @@ Partial Class frmHR_PreviewPersonnelDetails_OneTimePasscode
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.lblPinCode = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -51,6 +51,16 @@ Partial Class frmHR_PreviewPersonnelDetails_OneTimePasscode
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(385, 70)
         Me.Panel2.TabIndex = 9
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_lock
+        Me.PictureBox1.Location = New System.Drawing.Point(14, 15)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
         '
         'lblHeader
         '
@@ -67,9 +77,9 @@ Partial Class frmHR_PreviewPersonnelDetails_OneTimePasscode
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(64, 41)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(249, 13)
+        Me.Label7.Size = New System.Drawing.Size(267, 13)
         Me.Label7.TabIndex = 1
-        Me.Label7.Text = "This code can be used for employee data entry."
+        Me.Label7.Text = "This code can only be use for employee data entry."
         '
         'Panel4
         '
@@ -148,11 +158,11 @@ Partial Class frmHR_PreviewPersonnelDetails_OneTimePasscode
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(84, 92)
+        Me.Label2.Location = New System.Drawing.Point(37, 92)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(222, 13)
+        Me.Label2.Size = New System.Drawing.Size(313, 13)
         Me.Label2.TabIndex = 110
-        Me.Label2.Text = "This code will expire upon immediate use."
+        Me.Label2.Text = "This code will expire upon immediate use or after 24-Hours."
         '
         'Panel5
         '
@@ -171,16 +181,6 @@ Partial Class frmHR_PreviewPersonnelDetails_OneTimePasscode
         Me.lblPinCode.Size = New System.Drawing.Size(63, 20)
         Me.lblPinCode.TabIndex = 108
         Me.lblPinCode.Text = "000000"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_lock
-        Me.PictureBox1.Location = New System.Drawing.Point(14, 15)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(40, 40)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
         '
         'frmHR_PreviewPersonnelDetails_OneTimePasscode
         '
@@ -202,12 +202,13 @@ Partial Class frmHR_PreviewPersonnelDetails_OneTimePasscode
         Me.Controls.Add(Me.Panel2)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.HelpButton = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmHR_PreviewPersonnelDetails_OneTimePasscode"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "OTP"
         Me.TopMost = True
         Me.Panel2.ResumeLayout(False)

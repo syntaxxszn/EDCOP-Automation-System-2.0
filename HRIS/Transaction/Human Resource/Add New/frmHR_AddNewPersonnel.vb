@@ -232,7 +232,7 @@ Public Class frmHR_AddNewPersonnel
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If Not HasUserAccess("insert") Then Return
         If isExist Then
-            MessageBox.Show("This Employee Code exists in the database.", "Error Occured", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("This Employee Code exists in the database.", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 
@@ -240,7 +240,12 @@ Public Class frmHR_AddNewPersonnel
            String.IsNullOrWhiteSpace(txtLastName.Text) OrElse
            String.IsNullOrWhiteSpace(txtFirstName.Text) OrElse
            String.IsNullOrWhiteSpace(cbPronouns.Text) Then
-            MessageBox.Show("Employee Code, Firstname, Lastname and Pronouns are required.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Employee Code, Firstname, Lastname and Pronouns are required.", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        If String.IsNullOrWhiteSpace(txtEmailAddress.Text) Then
+            MessageBox.Show("An active Email Address is required.", "EAS 2.0 [System Notice]", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End If
 

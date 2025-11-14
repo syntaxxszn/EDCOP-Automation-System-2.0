@@ -1030,9 +1030,9 @@ Partial Class frmHR_PreviewPersonnelDetails_PersonalInformation
         Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(309, 227)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(25, 13)
+        Me.Label4.Size = New System.Drawing.Size(23, 13)
         Me.Label4.TabIndex = 62
-        Me.Label4.Text = "lbs."
+        Me.Label4.Text = "kg."
         '
         'Label19
         '

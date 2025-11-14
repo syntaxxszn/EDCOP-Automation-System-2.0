@@ -44,4 +44,13 @@
         Call Sel_SystemUsers(dgvSystemUsers, txtboxSearch)
     End Sub
 
+    Private Sub ToolStripBtnClose_Click(sender As Object, e As EventArgs) Handles ToolStripBtnClose.Click
+
+        Me.Close()
+
+    End Sub
+
+    Private Sub ToolStripBtnRefresh_Click(sender As Object, e As EventArgs) Handles ToolStripBtnRefresh.Click
+        Call Sel_SystemUsers(dgvSystemUsers, txtboxSearch)
+    End Sub
 End Class

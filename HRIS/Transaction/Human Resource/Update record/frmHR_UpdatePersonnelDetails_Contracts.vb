@@ -3,8 +3,15 @@
 Public Class frmHR_UpdatePersonnelDetails_Contracts
 
     Private Sub frmHR_UpdatePersonnelDetails_Contracts_Load(sender As Object, e As EventArgs) Handles Me.Load
+
         'Call SelUpd_HRIS_Personnel_ContractHistory_ByID(dgvContracts)
         'Call DropDownLists()
+        Call ClearTextBoxes(Me)
+        Call ResetDatePickers(Me)
+        txtMonthlyRate.Text = "0.00"
+        txtProjectDiff.Text = "0.00"
+        txtFieldAllowance.Text = "0.00"
+
     End Sub
 
     Protected Overrides Sub OnLoad(e As EventArgs)
@@ -30,23 +37,24 @@ Public Class frmHR_UpdatePersonnelDetails_Contracts
         Call DropDownListLocation(cbLocation)
         Call DropDownListSignatoryEmployeeName(cbSignatory1)
         Call DropDownListSignatoryEmployeeName(cbSignatory2)
+        btnAddUpdContract.Text = "Add"
     End Sub
 
-    Public Sub New()
-        InitializeComponent()
-        Dim menuItem1 As New ToolStripMenuItem("Add / Update Project Omnibus Contracts")
-        AddHandler menuItem1.Click, AddressOf ToolStripMenuItemAddSelection_Click
-        ContextMenuPojectContracts.Items.AddRange(New ToolStripItem() {menuItem1})
-        dgvContracts.ContextMenuStrip = ContextMenuPojectContracts
-    End Sub
+    'Public Sub New()
+    '    InitializeComponent()
+    '    Dim menuItem1 As New ToolStripMenuItem("Add / Update Project Omnibus Contracts")
+    '    AddHandler menuItem1.Click, AddressOf ToolStripMenuItemAddSelection_Click
+    '    ContextMenuPojectContracts.Items.AddRange(New ToolStripItem() {menuItem1})
+    '    dgvContracts.ContextMenuStrip = ContextMenuPojectContracts
+    'End Sub
 
-    Private Sub ToolStripMenuItemAddSelection_Click(sender As Object, e As EventArgs)
+    'Private Sub ToolStripMenuItemAddSelection_Click(sender As Object, e As EventArgs)
 
-    End Sub
+    'End Sub
 
-    Private Sub ContextMenuPojectContracts_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ContextMenuPojectContracts.Opening
-        If dgvContracts.SelectedCells.Count = 0 Then e.Cancel = True
-    End Sub
+    'Private Sub ContextMenuPojectContracts_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ContextMenuPojectContracts.Opening
+    '    If dgvContracts.SelectedCells.Count = 0 Then e.Cancel = True
+    'End Sub
 
     Private Sub chContractEnd_CheckedChanged(sender As Object, e As EventArgs) Handles chContractEnd.CheckedChanged
         dtpContractEnd.Enabled = chContractEnd.Checked
@@ -57,11 +65,15 @@ Public Class frmHR_UpdatePersonnelDetails_Contracts
         If dgvContracts.SelectedRows.Count > 0 Then
             Dim selectedRow = dgvContracts.SelectedRows(0)
             txtContractNo.Text = If(selectedRow.Cells(1).Value.ToString() = "New", "", selectedRow.Cells(1).Value.ToString())
+
             Dim typeIndex As Integer = cbEmploymentType.FindStringExact(selectedRow.Cells(2).Value.ToString())
             If typeIndex <> -1 Then cbEmploymentType.SelectedIndex = typeIndex
+
             Dim deptIndex As Integer = cbDepartment.FindStringExact(selectedRow.Cells(3).Value.ToString())
             If deptIndex <> -1 Then cbDepartment.SelectedIndex = deptIndex
+
             dtpContractStart.Value = If(IsDate(selectedRow.Cells(4).Value), CDate(selectedRow.Cells(4).Value), New Date(1990, 1, 1))
+
             Dim hasValue As Boolean = Not IsDBNull(selectedRow.Cells(5).Value) AndAlso selectedRow.Cells(5).Value IsNot Nothing AndAlso selectedRow.Cells(5).Value.ToString() <> ""
             dtpContractEnd.Value = If(hasValue, CDate(selectedRow.Cells(5).Value), New Date(1990, 1, 1))
             chContractEnd.Checked = hasValue
@@ -85,6 +97,7 @@ Public Class frmHR_UpdatePersonnelDetails_Contracts
             If sig2Index <> -1 Then cbSignatory2.SelectedIndex = sig2Index
             chDefaultContract.Checked = selectedRow.Cells(18).Value.ToString() = "Yes"
             chOverTimeAllowed.Checked = selectedRow.Cells(19).Value.ToString() = "Yes"
+            btnAddUpdContract.Text = "Update"
         End If
     End Sub
 
@@ -108,6 +121,10 @@ Public Class frmHR_UpdatePersonnelDetails_Contracts
         chDefaultContract.Checked = False
         chOverTimeAllowed.Checked = False
         _ContractID1 = _ContractID2
+        btnAddUpdContract.Text = "Add"
+        txtMonthlyRate.Text = "0.00"
+        txtProjectDiff.Text = "0.00"
+        txtFieldAllowance.Text = "0.00"
     End Sub
 
     Private Sub btnAddUpdContract_Click(sender As Object, e As EventArgs) Handles btnAddUpdContract.Click
@@ -166,24 +183,26 @@ Public Class frmHR_UpdatePersonnelDetails_Contracts
                                                                txtContractNotes.Text, txtProjectNotes.Text, txtRemarks.Text, cbSignatory1.Text, cbSignatory2.Text,
                                                                If(chDefaultContract.Checked, "Yes", "No"), If(chOverTimeAllowed.Checked, "Yes", "No"))
             dgvContracts.Rows(newRowIndex).Tag = "New"
+            dgvContracts.Sort(dgvContracts.Columns(4), System.ComponentModel.ListSortDirection.Descending)
+
             _ContractID2 += 1
         End If
         ClearTransactionField()
     End Sub
 
-    Private Sub btnDelEducation_Click(sender As Object, e As EventArgs) Handles btnDelEducation.Click
-        If dgvContracts.Rows.Count > 0 Then
-            Dim lastRow As DataGridViewRow = dgvContracts.Rows(dgvContracts.Rows.Count - 1)
-            If lastRow.Tag?.ToString() = "New" Then
-                dgvContracts.Rows.Remove(lastRow)
-            ElseIf dgvContracts.SelectedRows.Count > 0 Then
-                Del_Personnel_ContractsHistory_ByID(dgvContracts)
-            Else
-                MsgBox("Nothing to remove.")
-            End If
-            ClearTransactionField()
-        End If
-    End Sub
+    'Private Sub btnDelEducation_Click(sender As Object, e As EventArgs)
+    '    If dgvContracts.Rows.Count > 0 Then
+    '        Dim lastRow As DataGridViewRow = dgvContracts.Rows(dgvContracts.Rows.Count - 1)
+    '        If lastRow.Tag?.ToString() = "New" Then
+    '            dgvContracts.Rows.Remove(lastRow)
+    '        ElseIf dgvContracts.SelectedRows.Count > 0 Then
+    '            Del_Personnel_ContractsHistory_ByID(dgvContracts)
+    '        Else
+    '            MsgBox("Nothing to remove.")
+    '        End If
+    '        ClearTransactionField()
+    '    End If
+    'End Sub
 
     Private Sub txtMonthlyRate_Validating(sender As Object, e As CancelEventArgs) Handles txtMonthlyRate.Validating
         Textbox_NumericFormat(txtMonthlyRate, e.Cancel)
@@ -197,4 +216,17 @@ Public Class frmHR_UpdatePersonnelDetails_Contracts
         Textbox_NumericFormat(txtFieldAllowance, e.Cancel)
     End Sub
 
+    Private Sub DeleteRecordToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteRecordToolStripMenuItem.Click
+        If dgvContracts.Rows.Count > 0 Then
+            Dim lastRow As DataGridViewRow = dgvContracts.Rows(dgvContracts.Rows.Count - 1)
+            If lastRow.Tag?.ToString() = "New" Then
+                dgvContracts.Rows.Remove(lastRow)
+            ElseIf dgvContracts.SelectedRows.Count > 0 Then
+                Del_Personnel_ContractsHistory_ByID(dgvContracts)
+            Else
+                MsgBox("Nothing to remove.")
+            End If
+            ClearTransactionField()
+        End If
+    End Sub
 End Class

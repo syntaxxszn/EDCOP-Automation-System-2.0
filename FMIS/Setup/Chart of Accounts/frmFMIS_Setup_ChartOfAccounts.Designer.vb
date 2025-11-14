@@ -804,6 +804,7 @@ Partial Class frmFMIS_Setup_ChartOfAccounts
         Me.txtCategory1Discrepancy.TabIndex = 4
         Me.txtCategory1Discrepancy.Text = "0.00"
         Me.txtCategory1Discrepancy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtCategory1Discrepancy.Visible = False
         '
         'lblCategory1Balance
         '
@@ -1163,6 +1164,7 @@ Partial Class frmFMIS_Setup_ChartOfAccounts
         Me.txtCategory2Discrepancy.TabIndex = 3
         Me.txtCategory2Discrepancy.Text = "0.00"
         Me.txtCategory2Discrepancy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtCategory2Discrepancy.Visible = False
         '
         'lblCategory2Balance
         '
@@ -1584,7 +1586,7 @@ Partial Class frmFMIS_Setup_ChartOfAccounts
         Me.Panel54.Size = New System.Drawing.Size(371, 5)
         Me.Panel54.TabIndex = 0
         '
-        'frmFMIS_Setup_ChartOfAccounts_External
+        'frmFMIS_Setup_ChartOfAccounts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -1600,7 +1602,7 @@ Partial Class frmFMIS_Setup_ChartOfAccounts
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "frmFMIS_Setup_ChartOfAccounts_External"
+        Me.Name = "frmFMIS_Setup_ChartOfAccounts"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.Text = "frmFMIS_Setup_ChartOfAccounts"

@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+
 Module Module_HRIS
 
 	Sub FunctionBtnEdit_Enable()
@@ -780,7 +781,7 @@ Module Module_HRIS
 
 		cmd.Parameters.AddWithValue("@BirthDate", frmHR_AddNewPersonnel.dtpDateofBirth.Text)
 
-		'  cmd.Parameters.AddWithValue("@Age", frmHR_AddNewPersonnel.txtAge.Text)
+		'cmd.Parameters.AddWithValue("@Age", frmHR_AddNewPersonnel.txtAge.Text)
 		'cmd.Parameters.AddWithValue("@BirthPlaceCity", frmHR_AddNewPersonnel.cbBirthPlaceCity.Text)
 		'cmd.Parameters.AddWithValue("@BirthPlaceRegion", frmHR_AddNewPersonnel.cbBirthPlaceProvince.Text)
 
@@ -815,8 +816,11 @@ Module Module_HRIS
 			_strEmployeeID = If(IsDBNull(returnParam.Value), 0, Convert.ToInt32(returnParam.Value))
 
 			If _strEmployeeID > 0 Then
-				MessageBox.Show("Saved.")
+				'MessageBox.Show("Saved.")
+
 				frmHR_AddNewPersonnel.Close()
+				Call frmHRIS_Transaction_EmployeeFile.WhatToSearch()
+
 			End If
 
 		Finally
@@ -1054,7 +1058,7 @@ Module Module_HRIS
 		'cmd.Parameters.AddWithValue("@Username", frmMain.ToolStripEmployeeNo.Text)
 
 		If cmd.ExecuteNonQuery = -1 Then
-			MessageBox.Show("Saved.")
+			'MessageBox.Show("Saved.")
 			frmHR_PreviewPersonnelDetails.btnEdit.PerformClick()
 			'If frmHRIS_Transaction_EmployeeFile.txtboxSearch.Text <> "" Then
 			'	Call Search_DGVPersonnel(frmHRIS_Transaction_EmployeeFile.dgvEmployeeList, frmHRIS_Transaction_EmployeeFile.txtboxSearch, False)
@@ -4602,7 +4606,8 @@ Module Module_HRIS
 							dr.GetString(3),
 							dr.GetString(4),
 							dr.GetString(5),
-							dr.GetString(6))
+							dr.GetString(6),
+							dr.GetInt32(7))
 					End While
 				End Using
 				dgv.ClearSelection()
@@ -4621,26 +4626,25 @@ Module Module_HRIS
 
 			If ofd.ShowDialog() <> DialogResult.OK Then Exit Sub
 
-			Dim fileName = IO.Path.GetFileName(ofd.FileName)
-			Dim destPath = IO.Path.Combine(basePath, fileName)
-			Dim ext = IO.Path.GetExtension(fileName).ToLower()
+			Dim ext As String = IO.Path.GetExtension(ofd.FileName).ToLower()
+			Dim randomName As String = IO.Path.GetRandomFileName().Replace(".", "")
+			Dim newFileName As String = frmHR_PreviewPersonnelDetails.lblFullName.Text & "_" & _201FileID & "_" & randomName & IO.Path.GetExtension(ofd.FileName).ToLower()
+			Dim destPath As String = IO.Path.Combine(basePath, newFileName)
 
-			If IO.File.Exists(destPath) Then
-				MessageBox.Show("File already exists!", "Duplicate", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-				Exit Sub
-			End If
+			IO.File.Copy(ofd.FileName, destPath, overwrite:=False)
 
-			IO.File.Copy(ofd.FileName, destPath)
-
-			dgv.SelectedRows(0).Cells(5).Value = fileName
+			dgv.SelectedRows(0).Cells(5).Value = newFileName
 			dgv.SelectedRows(0).Cells(6).Value = destPath
+			dgv.SelectedRows(0).Cells(7).Value = 1
 
 			With dgv.SelectedRows(0).Cells(3)
-				.Value = "Yes"
+				.Value = "Submitted"
 				.Style.BackColor = Color.DarkGreen
 				.Style.ForeColor = Color.White
 				.Style.Font = New Font(dgv.Font, FontStyle.Bold)
 			End With
+
+			'Call Sel_HRIS_Personnel_201FileChecklist_ByID(frmHR_UpdatePersonnelDetails_201FileChecklist.dgv201CheckList)
 
 			dgv.ClearSelection()
 
@@ -4665,6 +4669,7 @@ Module Module_HRIS
 					cmd.Parameters.AddWithValue("@FileName", If(row.Cells(5).Value?.ToString(), ""))
 					cmd.Parameters.AddWithValue("@isCompleted", If(row.Cells(3).Value?.ToString(), ""))
 					cmd.Parameters.AddWithValue("@Remarks", If(row.Cells(4).Value?.ToString(), ""))
+					cmd.Parameters.AddWithValue("@isEdited", If(IsNumeric(row.Cells(7).Value), CInt(row.Cells(7).Value), DBNull.Value))
 					cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
 
 					cmd.ExecuteNonQuery()
@@ -4698,7 +4703,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_Employee201FileCheckList
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -4820,7 +4826,6 @@ Module Module_HRIS
 		End Using
 	End Sub
 
-
 	Sub InsUpd_COE_References()
 
 		Conn = New SqlConnection(StrConn)
@@ -4846,11 +4851,16 @@ Module Module_HRIS
 	End Sub
 
 	Sub PrintRPT_COE_Current_NO_GAP()
-		frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ShowProgressAnimation(True)
+
+		' Show loading form
+		frmLoading.Show()
+		frmLoading.Refresh()
+
 		Dim rpt = New HRIS_COE_CURRENT_NO_GAP
-		Dim user As String = "sa"
-		Dim pwd As String = "3dcoP2024"
-		rpt.SetDatabaseLogon(user, pwd)
+
+		rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+		rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
+
 		Conn = New SqlConnection(StrConn)
 		Try
 			Conn.Open()
@@ -4864,12 +4874,13 @@ Module Module_HRIS
 			cmd.Parameters.AddWithValue("@TypeID", _COEType)
 			dr = cmd.ExecuteReader()
 			If dr.HasRows Then
-				MsgBox("Please wait while data is being loaded...")
+
 				While (dr.Read)
 					rpt.SetParameterValue("@EmployeeID", _strEmployeeID)
 					rpt.SetParameterValue("@ID", _COEID1)
 					rpt.SetParameterValue("@TypeID", _COEType)
 				End While
+
 				frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ReportSource = rpt
 				frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.Refresh()
 				frmHRIS_Report_CrystalReportsHolder.ShowDialog()
@@ -4879,17 +4890,24 @@ Module Module_HRIS
 			End If
 		Catch ex As Exception
 			MsgBox("Please Contact System Administrator." & vbCrLf & "Error occurred: " & ex.Message)
+		Finally
+			dr.Close()
+			Conn.Close()
+			frmLoading.Close()
 		End Try
-		dr.Close()
-		Conn.Close()
+
 	End Sub
 
 	Sub PrintRPT_COE_Current_WITH_GAP()
-		frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ShowProgressAnimation(True)
+
+		frmLoading.Show()
+		frmLoading.Refresh()
+
 		Dim rpt = New HRIS_COE_CURRENT_WITH_GAP
-		Dim user As String = "sa"
-		Dim pwd As String = "3dcoP2024"
-		rpt.SetDatabaseLogon(user, pwd)
+
+		rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+		rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
+
 		Conn = New SqlConnection(StrConn)
 		Try
 			Conn.Open()
@@ -4903,12 +4921,13 @@ Module Module_HRIS
 			cmd.Parameters.AddWithValue("@TypeID", _COEType)
 			dr = cmd.ExecuteReader()
 			If dr.HasRows Then
-				MsgBox("Please wait while data is being loaded...")
+
 				While (dr.Read)
 					rpt.SetParameterValue("@EmployeeID", _strEmployeeID)
 					rpt.SetParameterValue("@ID", _COEID1)
 					rpt.SetParameterValue("@TypeID", _COEType)
 				End While
+
 				frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ReportSource = rpt
 				frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.Refresh()
 				frmHRIS_Report_CrystalReportsHolder.ShowDialog()
@@ -4918,17 +4937,24 @@ Module Module_HRIS
 			End If
 		Catch ex As Exception
 			MsgBox("Please Contact System Administrator." & vbCrLf & "Error occurred: " & ex.Message)
+		Finally
+			dr.Close()
+			Conn.Close()
+			frmLoading.Close()
 		End Try
-		dr.Close()
-		Conn.Close()
+
 	End Sub
 
 	Sub PrintRPT_COE_Current_WITH_COMPENSATION_ITEMIZED()
-		frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ShowProgressAnimation(True)
+
+		frmLoading.Show()
+		frmLoading.Refresh()
+
 		Dim rpt = New HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED
-		Dim user As String = "sa"
-		Dim pwd As String = "3dcoP2024"
-		rpt.SetDatabaseLogon(user, pwd)
+
+		rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+		rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
+
 		Conn = New SqlConnection(StrConn)
 		Try
 			Conn.Open()
@@ -4942,12 +4968,13 @@ Module Module_HRIS
 			cmd.Parameters.AddWithValue("@TypeID", _COEType)
 			dr = cmd.ExecuteReader()
 			If dr.HasRows Then
-				MsgBox("Please wait while data is being loaded...")
+
 				While (dr.Read)
 					rpt.SetParameterValue("@EmployeeID", _strEmployeeID)
 					rpt.SetParameterValue("@ID", _COEID1)
 					rpt.SetParameterValue("@TypeID", _COEType)
 				End While
+
 				frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ReportSource = rpt
 				frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.Refresh()
 				frmHRIS_Report_CrystalReportsHolder.ShowDialog()
@@ -4957,17 +4984,24 @@ Module Module_HRIS
 			End If
 		Catch ex As Exception
 			MsgBox("Please Contact System Administrator." & vbCrLf & "Error occurred: " & ex.Message)
+		Finally
+			dr.Close()
+			Conn.Close()
+			frmLoading.Close()
 		End Try
-		dr.Close()
-		Conn.Close()
+
 	End Sub
 
 	Sub PrintRPT_COE_Current_WITH_COMPENSATION_ITEMIZED_WITH_GAP()
-		frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ShowProgressAnimation(True)
+
+		frmLoading.Show()
+		frmLoading.Refresh()
+
 		Dim rpt = New HRIS_COE_CURRENT_WITH_COMPENSATION_ITEMIZED_WITH_GAP
-		Dim user As String = "sa"
-		Dim pwd As String = "3dcoP2024"
-		rpt.SetDatabaseLogon(user, pwd)
+
+		rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+		rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
+
 		Conn = New SqlConnection(StrConn)
 		Try
 			Conn.Open()
@@ -4981,12 +5015,13 @@ Module Module_HRIS
 			cmd.Parameters.AddWithValue("@TypeID", _COEType)
 			dr = cmd.ExecuteReader()
 			If dr.HasRows Then
-				MsgBox("Please wait while data is being loaded...")
+
 				While (dr.Read)
 					rpt.SetParameterValue("@EmployeeID", _strEmployeeID)
 					rpt.SetParameterValue("@ID", _COEID1)
 					rpt.SetParameterValue("@TypeID", _COEType)
 				End While
+
 				frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ReportSource = rpt
 				frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.Refresh()
 				frmHRIS_Report_CrystalReportsHolder.ShowDialog()
@@ -4996,17 +5031,24 @@ Module Module_HRIS
 			End If
 		Catch ex As Exception
 			MsgBox("Please Contact System Administrator." & vbCrLf & "Error occurred: " & ex.Message)
+		Finally
+			dr.Close()
+			Conn.Close()
+			frmLoading.Close()
 		End Try
-		dr.Close()
-		Conn.Close()
+
 	End Sub
 
 	Sub PrintRPT_COE_Current_WITH_COMPENSATION_ANNUALIZED()
-		frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ShowProgressAnimation(True)
+
+		frmLoading.Show()
+		frmLoading.Refresh()
+
 		Dim rpt = New HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED
-		Dim user As String = "sa"
-		Dim pwd As String = "3dcoP2024"
-		rpt.SetDatabaseLogon(user, pwd)
+
+		rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+		rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
+
 		Conn = New SqlConnection(StrConn)
 		Try
 			Conn.Open()
@@ -5020,12 +5062,13 @@ Module Module_HRIS
 			cmd.Parameters.AddWithValue("@TypeID", _COEType)
 			dr = cmd.ExecuteReader()
 			If dr.HasRows Then
-				MsgBox("Please wait while data is being loaded...")
+
 				While (dr.Read)
 					rpt.SetParameterValue("@EmployeeID", _strEmployeeID)
 					rpt.SetParameterValue("@ID", _COEID1)
 					rpt.SetParameterValue("@TypeID", _COEType)
 				End While
+
 				frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ReportSource = rpt
 				frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.Refresh()
 				frmHRIS_Report_CrystalReportsHolder.ShowDialog()
@@ -5035,17 +5078,24 @@ Module Module_HRIS
 			End If
 		Catch ex As Exception
 			MsgBox("Please Contact System Administrator." & vbCrLf & "Error occurred: " & ex.Message)
+		Finally
+			dr.Close()
+			Conn.Close()
+			frmLoading.Close()
 		End Try
-		dr.Close()
-		Conn.Close()
+
 	End Sub
 
 	Sub PrintRPT_COE_Current_WITH_COMPENSATION_ANNUALIZED_WITH_GAP()
-		frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ShowProgressAnimation(True)
+
+		frmLoading.Show()
+		frmLoading.Refresh()
+
 		Dim rpt = New HRIS_COE_CURRENT_WITH_COMPENSATION_ANNUALIZED_WITH_GAP
-		Dim user As String = "sa"
-		Dim pwd As String = "3dcoP2024"
-		rpt.SetDatabaseLogon(user, pwd)
+
+		rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+		rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
+
 		Conn = New SqlConnection(StrConn)
 		Try
 			Conn.Open()
@@ -5059,12 +5109,13 @@ Module Module_HRIS
 			cmd.Parameters.AddWithValue("@TypeID", _COEType)
 			dr = cmd.ExecuteReader()
 			If dr.HasRows Then
-				MsgBox("Please wait while data is being loaded...")
+
 				While (dr.Read)
 					rpt.SetParameterValue("@EmployeeID", _strEmployeeID)
 					rpt.SetParameterValue("@ID", _COEID1)
 					rpt.SetParameterValue("@TypeID", _COEType)
 				End While
+
 				frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ReportSource = rpt
 				frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.Refresh()
 				frmHRIS_Report_CrystalReportsHolder.ShowDialog()
@@ -5074,9 +5125,12 @@ Module Module_HRIS
 			End If
 		Catch ex As Exception
 			MsgBox("Please Contact System Administrator." & vbCrLf & "Error occurred: " & ex.Message)
+		Finally
+			dr.Close()
+			Conn.Close()
+			frmLoading.Close()
 		End Try
-		dr.Close()
-		Conn.Close()
+
 	End Sub
 
 	Sub PrintRPT_COE_SEPARATED_AND_CLEARED()
@@ -5086,7 +5140,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New HRIS_COE_SEPARATED_AND_CLEARED
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -5133,7 +5188,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New HRIS_COE_SEPARATED_AND_NOT_CLEARED
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -5186,7 +5242,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_isActiveEmployee_List
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -5224,7 +5281,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_EmployeeByDepartment_List
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -5259,7 +5317,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_EmployeeAdhocInfo_List
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -5294,7 +5353,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_EmployeeByJobPosition_List
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -5333,7 +5393,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_EmployeeLeaveEncashment_List
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -5368,7 +5429,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_EmployeeLeaveBalances_List
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -5397,20 +5459,72 @@ Module Module_HRIS
 	End Sub
 
 	Sub PrintRPT_Employee_Birthdates()
+
+		' Show loading form
+		frmLoading.Show()
+		frmLoading.Refresh()
+
+		Try
+			Dim rpt As New rptHRIS_EmployeeBirthdate_List()
+
+			' === dynamic connection info ===
+			Dim crConn As New CrystalDecisions.Shared.ConnectionInfo()
+			crConn.ServerName = ServerIP
+			crConn.DatabaseName = DatabaseName
+			crConn.UserID = DBUser
+			crConn.Password = DBPass
+
+			' === Apply connection info to main report ===
+			For Each t As CrystalDecisions.CrystalReports.Engine.Table In rpt.Database.Tables
+				Dim logonInfo As CrystalDecisions.Shared.TableLogOnInfo = t.LogOnInfo
+				logonInfo.ConnectionInfo = crConn
+				t.ApplyLogOnInfo(logonInfo)
+			Next
+
+			' === Apply to subreports (if any) ===
+			For Each sr As CrystalDecisions.CrystalReports.Engine.ReportDocument In rpt.Subreports
+				For Each t As CrystalDecisions.CrystalReports.Engine.Table In sr.Database.Tables
+					Dim logonInfo As CrystalDecisions.Shared.TableLogOnInfo = t.LogOnInfo
+					logonInfo.ConnectionInfo = crConn
+					t.ApplyLogOnInfo(logonInfo)
+				Next
+			Next
+
+			' verify if db is found
+			rpt.VerifyDatabase()
+			rpt.Refresh()
+
+			' === Set report source ===
+			frmHRIS_Report_MainPreview.HRIS_CrystalReports_Holder.ReportSource = rpt
+			frmHRIS_Report_MainPreview.HRIS_CrystalReports_Holder.Refresh()
+
+		Catch ex As Exception
+			MessageBox.Show($"Please Contact System Administrator.{vbCrLf}Error occurred: {ex.Message}",
+						"Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		Finally
+			frmLoading.Close()
+		End Try
+
+	End Sub
+
+	Sub PrintRPT_Employee_201File()
 		' Show loading form
 		frmLoading.Show()
 		frmLoading.Refresh() ' Force UI update before running long operations
 
 		Try
-			Dim rpt As New rptHRIS_EmployeeBirthdate_List
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			Dim rpt As New rptHRIS_Employee201_File
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
-				Using cmd As New SqlCommand("[spRptHRIS_Employee_Birthdate_List]", Conn)
+				Using cmd As New SqlCommand("[spRptHRIS_Employee201_File]", Conn)
 					cmd.CommandType = CommandType.StoredProcedure
+					cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
 					Using dr As SqlDataReader = cmd.ExecuteReader()
 						If dr.HasRows Then
+							rpt.SetParameterValue("@ID", _strEmployeeID)
 							frmHRIS_Report_MainPreview.HRIS_CrystalReports_Holder.ReportSource = rpt
 							frmHRIS_Report_MainPreview.HRIS_CrystalReports_Holder.Refresh()
 						Else
@@ -5431,23 +5545,24 @@ Module Module_HRIS
 
 	End Sub
 
-	Sub PrintRPT_Employee_201File()
+	Sub PrintRPT_Employee_201FileSummary()
 		' Show loading form
 		frmLoading.Show()
 		frmLoading.Refresh() ' Force UI update before running long operations
 
 		Try
-			Dim rpt As New rptHRIS_Employee201_File
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			Dim rpt As New rptHRIS_Employee201FileSummary
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
-				Using cmd As New SqlCommand("[spRptHRIS_Employee201_File]", Conn)
+				Using cmd As New SqlCommand("[spRptHRIS_Employee201FileCheck_List_Summary]", Conn)
 					cmd.CommandType = CommandType.StoredProcedure
-					cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
+					'cmd.Parameters.AddWithValue("@ID", _strEmployeeID)
 					Using dr As SqlDataReader = cmd.ExecuteReader()
 						If dr.HasRows Then
-							rpt.SetParameterValue("@ID", _strEmployeeID)
+							'rpt.SetParameterValue("@ID", _strEmployeeID)
 							frmHRIS_Report_MainPreview.HRIS_CrystalReports_Holder.ReportSource = rpt
 							frmHRIS_Report_MainPreview.HRIS_CrystalReports_Holder.Refresh()
 						Else
@@ -5480,7 +5595,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_Company_Masterlist
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -5521,7 +5637,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_Department_Masterlist
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -5562,7 +5679,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_Training_Masterlist
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -6714,9 +6832,8 @@ Module Module_HRIS
 		frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ShowProgressAnimation(True)
 		Dim TrainingRequest As New TrainingRequest
 
-		Dim user As String = "sa"
-		Dim pwd As String = "3dcoP2024"
-		TrainingRequest.SetDatabaseLogon(user, pwd)
+		TrainingRequest.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+		TrainingRequest.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 		Conn = New SqlConnection(StrConn)
 		Conn.Open()
@@ -6749,9 +6866,8 @@ Module Module_HRIS
 		frmHRIS_Report_CrystalReportsHolder.HRIS_CrystalReports_Holder.ShowProgressAnimation(True)
 		Dim TrainingParticipant As New ListofParticipant
 
-		Dim user As String = "sa"
-		Dim pwd As String = "3dcoP2024"
-		TrainingParticipant.SetDatabaseLogon(user, pwd)
+		TrainingParticipant.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+		TrainingParticipant.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 		Conn = New SqlConnection(StrConn)
 		Conn.Open()
@@ -8107,7 +8223,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_PMAS_Part1_Form1
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -8244,7 +8361,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_PMAS_Part1_Form2_POSS
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -8282,7 +8400,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_PMAS_Part2_Factor_A
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -8321,7 +8440,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_PMAS_Part2_Factor_B
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -8359,7 +8479,8 @@ Module Module_HRIS
 
 		Try
 			Dim rpt As New rptHRIS_PMAS_Part2_Factor_C
-			rpt.SetDatabaseLogon("sa", "3dcoP2024")
+			rpt.DataSourceConnections(0).SetConnection(ServerIP, DatabaseName, DBUser, DBPass)
+			rpt.DataSourceConnections(0).SetLogon(DBUser, DBPass)
 
 			Using Conn As New SqlConnection(StrConn)
 				Conn.Open()
@@ -8389,5 +8510,49 @@ Module Module_HRIS
 		End Try
 
 	End Sub
+
+
+	Sub Sel_IHB_PCSR_ProjectList(dgv As DataGridView, txtbox As TextBox, txt As ToolStripLabel)
+		dgv.Rows.Clear()
+		Try
+			Using Conn As New SqlConnection(StrConn)
+				Conn.Open()
+				Using cmd As New SqlCommand("[spSelIHB_PCSR_AllProjectList]", Conn)
+					cmd.CommandType = CommandType.StoredProcedure
+					cmd.Parameters.AddWithValue("@txt", txtbox.Text)
+					Dim returnParam As New SqlParameter("@NumRec", SqlDbType.Int)
+					returnParam.Direction = ParameterDirection.Output
+					cmd.Parameters.Add(returnParam)
+
+					Using dr As SqlDataReader = cmd.ExecuteReader()
+						While dr.Read()
+							txt.Text = If(IsDBNull(returnParam.Value), 0, returnParam.Value)
+							dgv.Rows.Add(
+							dr.GetInt32(0),
+							dr.GetInt32(1),
+							dr.GetString(2),
+							dr.GetString(3),
+							dr.GetString(4),
+							dr.GetString(5),
+							dr.GetString(6),
+							dr.GetString(7))
+						End While
+					End Using
+					txt.Text = If(IsDBNull(returnParam.Value), "0", returnParam.Value.ToString())
+				End Using
+			End Using
+		Catch ex As Exception
+			MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+		End Try
+		dgv.ClearSelection()
+	End Sub
+
+
+
+
+
+
+
+
 
 End Module

@@ -64,6 +64,11 @@ Partial Class frmSSM_SystemGroupAccessMain
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvModuleItem = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.Panel45 = New System.Windows.Forms.Panel()
         Me.Panel44 = New System.Windows.Forms.Panel()
@@ -81,11 +86,6 @@ Partial Class frmSSM_SystemGroupAccessMain
         Me.Panel36 = New System.Windows.Forms.Panel()
         Me.Panel34 = New System.Windows.Forms.Panel()
         Me.Panel31 = New System.Windows.Forms.Panel()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.ToolStrip2.SuspendLayout()
@@ -484,6 +484,44 @@ Partial Class frmSSM_SystemGroupAccessMain
         Me.dgvModuleItem.Size = New System.Drawing.Size(676, 462)
         Me.dgvModuleItem.TabIndex = 105
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        Me.DataGridViewTextBoxColumn1.Width = 43
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Module Code"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Width = 94
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Description"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.Width = 91
+        '
+        'Column3
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.NullValue = False
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Navy
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Column3.HeaderText = "Has Access?"
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 66
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Parent Code"
+        Me.Column4.Name = "Column4"
+        Me.Column4.Visible = False
+        Me.Column4.Width = 87
+        '
         'SplitContainer2
         '
         Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
@@ -652,44 +690,6 @@ Partial Class frmSSM_SystemGroupAccessMain
         Me.Panel31.Name = "Panel31"
         Me.Panel31.Size = New System.Drawing.Size(696, 5)
         Me.Panel31.TabIndex = 7
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Visible = False
-        Me.DataGridViewTextBoxColumn1.Width = 43
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Module Code"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Width = 94
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Description"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Width = 91
-        '
-        'Column3
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.NullValue = False
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Navy
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Column3.HeaderText = "Has Access?"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 66
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Parent Code"
-        Me.Column4.Name = "Column4"
-        Me.Column4.Visible = False
-        Me.Column4.Width = 87
         '
         'frmSSM_SystemGroupAccessMain
         '

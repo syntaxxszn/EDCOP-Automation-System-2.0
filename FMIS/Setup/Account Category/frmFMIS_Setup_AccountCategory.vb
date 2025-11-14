@@ -52,6 +52,8 @@
         If dgvAccountCategoryMain.SelectedRows.Count > 0 Then
             Dim selectedRow = dgvAccountCategoryMain.SelectedRows(0)
             _AccountCategoryID = selectedRow.Cells(0).Value
+            _AccountCategoryDetailID = 0
+            lblCostCenter.Visible = False
             Sel_Setup_AccountCategory_ByTypeID(dgvAccountCategoryDetail)
         End If
     End Sub
@@ -61,6 +63,7 @@
         If dgvAccountCategoryDetail.SelectedRows.Count > 0 Then
             Dim selectedRow = dgvAccountCategoryDetail.SelectedRows(0)
             _AccountCategoryDetailID = selectedRow.Cells(0).Value
+            lblCostCenter.Text = selectedRow.Cells(1).Value
         End If
     End Sub
 
@@ -189,6 +192,10 @@
         isUpdate = True
         frmFMIS_Setup_AddUpdAccountCategoryDetail.ShowDialog()
 
+    End Sub
+
+    Private Sub lblCostCenter_TextChanged(sender As Object, e As EventArgs) Handles lblCostCenter.TextChanged
+        lblCostCenter.Visible = True
     End Sub
 
 End Class

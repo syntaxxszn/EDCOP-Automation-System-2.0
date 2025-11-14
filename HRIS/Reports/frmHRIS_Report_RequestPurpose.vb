@@ -1,9 +1,7 @@
 ﻿Public Class frmHRIS_Report_RequestPurpose
 
-    Public isUpdate As Boolean = False
-
     Private Sub frmHRIS_Report_RequestPurpose_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If isUpdate Then
+        If Not isUpdate Then
             _COEID1 = 0
         End If
     End Sub

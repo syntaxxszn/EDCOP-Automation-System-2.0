@@ -15,7 +15,7 @@ Public Class frmHRIS_Transaction_EmployeeFile
 
         ' Load data
         Call EmployeeList_Active()
-        Call SelectFirstRowInEmployeeList()
+        ' Call SelectFirstRowInEmployeeList()
 
         ' Close loading form after loading is complete
         frmLoading.Close()
@@ -124,10 +124,10 @@ Public Class frmHRIS_Transaction_EmployeeFile
         ClearQuickPreviewPanel()
 
         If rowCount <> 100 Then
-            ' Just set it to "Filtered" if rows is not equal to 100 anymore
-            btnStatus.Text = "Filtered"
-            btnStatus.BackColor = Color.Navy
-            btnStatus.FlatAppearance.BorderColor = Color.Blue
+            '' Just set it to "Filtered" if rows is not equal to 100 anymore
+            'btnStatus.Text = "Filtered"
+            'btnStatus.BackColor = Color.Navy
+            'btnStatus.FlatAppearance.BorderColor = Color.Blue
         Else
             ' Set appearance based on current "stat" toggle
             btnStatus.Text = If(stat, "Active", "Inactive")
@@ -150,13 +150,21 @@ Public Class frmHRIS_Transaction_EmployeeFile
         WhatToSearch()
     End Sub
 
-    Private Sub WhatToSearch()
-        If stat Then
-            Search_DGVPersonnel(dgvEmployeeList, txtboxSearch, False)
-        Else
-            Search_DGVPersonnel(dgvEmployeeList, txtboxSearch, True)
-        End If
-        ClearQuickPreviewPanel()
+    Public Sub WhatToSearch()
+        Try
+            frmLoading.Show()
+            frmLoading.Refresh() ' Force UI update before running long operations
+            If stat Then
+                Search_DGVPersonnel(dgvEmployeeList, txtboxSearch, False)
+            Else
+                Search_DGVPersonnel(dgvEmployeeList, txtboxSearch, True)
+            End If
+            ClearQuickPreviewPanel()
+        Catch ex As Exception
+            MessageBox.Show($"Please Contact System Administrator.{vbCrLf}Error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            frmLoading.Close() ' Ensure loading form is closed properly
+        End Try
     End Sub
 
     Private Sub ClearQuickPreviewPanel()
@@ -182,6 +190,11 @@ Public Class frmHRIS_Transaction_EmployeeFile
         If dgvEmployeeList.SelectedRows.Count > 0 Then
             frmHR_PreviewPersonnelDetails.ShowDialog()
         End If
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        frmHR_PreviewPersonnelDetails_ProfileImage.PictureBox.Image = PictureBox1.Image
+        frmHR_PreviewPersonnelDetails_ProfileImage.Show()
     End Sub
 
 End Class

@@ -22,6 +22,7 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -43,13 +44,14 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnClearTextFields = New System.Windows.Forms.Button()
-        Me.btnDelEmploymentHistory = New System.Windows.Forms.Button()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.btnAddUpdEducation = New System.Windows.Forms.Button()
         Me.cbEmploymentType = New System.Windows.Forms.ComboBox()
@@ -87,6 +89,7 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         Me.Panel14.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.dgvEmploymentHistory, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -136,6 +139,7 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         Me.dgvEmploymentHistory.ColumnHeadersHeight = 35
         Me.dgvEmploymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvEmploymentHistory.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column7, Me.Column6, Me.Column16, Me.Column3, Me.Column4, Me.Column17, Me.Column13, Me.Column11, Me.Column12, Me.Column5, Me.Column19, Me.Column8, Me.Column9, Me.Column15, Me.Column18})
+        Me.dgvEmploymentHistory.ContextMenuStrip = Me.ContextMenuStrip1
         Me.dgvEmploymentHistory.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvEmploymentHistory.Location = New System.Drawing.Point(0, 0)
         Me.dgvEmploymentHistory.MultiSelect = False
@@ -267,6 +271,19 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         Me.Column18.ReadOnly = True
         Me.Column18.Width = 105
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(108, 26)
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
+        '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.LightGray
@@ -306,7 +323,6 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.btnClearTextFields)
-        Me.GroupBox1.Controls.Add(Me.btnDelEmploymentHistory)
         Me.GroupBox1.Controls.Add(Me.Label16)
         Me.GroupBox1.Controls.Add(Me.btnAddUpdEducation)
         Me.GroupBox1.Controls.Add(Me.cbEmploymentType)
@@ -362,20 +378,6 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         Me.btnClearTextFields.Text = "Clear &Fields"
         Me.btnClearTextFields.UseVisualStyleBackColor = False
         '
-        'btnDelEmploymentHistory
-        '
-        Me.btnDelEmploymentHistory.BackColor = System.Drawing.Color.Maroon
-        Me.btnDelEmploymentHistory.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed
-        Me.btnDelEmploymentHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelEmploymentHistory.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelEmploymentHistory.ForeColor = System.Drawing.Color.White
-        Me.btnDelEmploymentHistory.Location = New System.Drawing.Point(676, 197)
-        Me.btnDelEmploymentHistory.Name = "btnDelEmploymentHistory"
-        Me.btnDelEmploymentHistory.Size = New System.Drawing.Size(120, 26)
-        Me.btnDelEmploymentHistory.TabIndex = 121
-        Me.btnDelEmploymentHistory.Text = "&Delete Record"
-        Me.btnDelEmploymentHistory.UseVisualStyleBackColor = False
-        '
         'Label16
         '
         Me.Label16.AutoSize = True
@@ -392,11 +394,11 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         Me.btnAddUpdEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddUpdEducation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddUpdEducation.ForeColor = System.Drawing.Color.White
-        Me.btnAddUpdEducation.Location = New System.Drawing.Point(676, 165)
+        Me.btnAddUpdEducation.Location = New System.Drawing.Point(676, 197)
         Me.btnAddUpdEducation.Name = "btnAddUpdEducation"
         Me.btnAddUpdEducation.Size = New System.Drawing.Size(120, 26)
         Me.btnAddUpdEducation.TabIndex = 116
-        Me.btnAddUpdEducation.Text = "&Add / Update"
+        Me.btnAddUpdEducation.Text = "&Add"
         Me.btnAddUpdEducation.UseVisualStyleBackColor = False
         '
         'cbEmploymentType
@@ -677,6 +679,7 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
         Me.Panel14.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         CType(Me.dgvEmploymentHistory, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -719,7 +722,6 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
     Friend WithEvents Label16 As Label
     Friend WithEvents cbEmploymentType As ComboBox
     Friend WithEvents btnClearTextFields As Button
-    Friend WithEvents btnDelEmploymentHistory As Button
     Friend WithEvents Panel14 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents dgvEmploymentHistory As DataGridView
@@ -744,4 +746,6 @@ Partial Class frmHR_UpdatePersonnelDetails_EmploymentHistory
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents Column15 As DataGridViewTextBoxColumn
     Friend WithEvents Column18 As DataGridViewTextBoxColumn
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
 End Class

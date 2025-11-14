@@ -59,9 +59,11 @@ Partial Class frmFMIS_Setup_BankAccount
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.dgvBankAccount = New System.Windows.Forms.DataGridView()
+        Me.dgvBankName = New System.Windows.Forms.DataGridView()
         Me.AccountCategoryMainID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.AddNewAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
@@ -72,7 +74,14 @@ Partial Class frmFMIS_Setup_BankAccount
         Me.Panel25 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Panel32 = New System.Windows.Forms.Panel()
-        Me.dgvBankAccountDetail = New System.Windows.Forms.DataGridView()
+        Me.dgvBankAccount = New System.Windows.Forms.DataGridView()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel30 = New System.Windows.Forms.Panel()
         Me.lblCostCenter = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -84,13 +93,6 @@ Partial Class frmFMIS_Setup_BankAccount
         Me.Panel20 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -102,10 +104,11 @@ Partial Class frmFMIS_Setup_BankAccount
         Me.SplitContainer1.SuspendLayout()
         Me.Panel13.SuspendLayout()
         Me.Panel16.SuspendLayout()
-        CType(Me.dgvBankAccount, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvBankName, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.Panel11.SuspendLayout()
         Me.Panel32.SuspendLayout()
-        CType(Me.dgvBankAccountDetail, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvBankAccount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel30.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -236,7 +239,7 @@ Partial Class frmFMIS_Setup_BankAccount
         Me.btnSearchFilter.Name = "btnSearchFilter"
         Me.btnSearchFilter.Size = New System.Drawing.Size(137, 23)
         Me.btnSearchFilter.TabIndex = 52
-        Me.btnSearchFilter.Text = "Account"
+        Me.btnSearchFilter.Text = "Bank Name"
         Me.btnSearchFilter.UseVisualStyleBackColor = False
         '
         'Label2
@@ -329,8 +332,8 @@ Partial Class frmFMIS_Setup_BankAccount
         Me.ToolStripLabel3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripLabel3.ForeColor = System.Drawing.Color.White
         Me.ToolStripLabel3.Name = "ToolStripLabel3"
-        Me.ToolStripLabel3.Size = New System.Drawing.Size(142, 22)
-        Me.ToolStripLabel3.Text = "B A N K   A C C O U N T S"
+        Me.ToolStripLabel3.Size = New System.Drawing.Size(111, 22)
+        Me.ToolStripLabel3.Text = "B A N K   N A M E S"
         '
         'ToolStripLabel2
         '
@@ -439,22 +442,22 @@ Partial Class frmFMIS_Setup_BankAccount
         'Panel16
         '
         Me.Panel16.BackColor = System.Drawing.Color.White
-        Me.Panel16.Controls.Add(Me.dgvBankAccount)
+        Me.Panel16.Controls.Add(Me.dgvBankName)
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel16.Location = New System.Drawing.Point(10, 10)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(1030, 194)
         Me.Panel16.TabIndex = 15
         '
-        'dgvBankAccount
+        'dgvBankName
         '
-        Me.dgvBankAccount.AllowUserToAddRows = False
-        Me.dgvBankAccount.AllowUserToDeleteRows = False
-        Me.dgvBankAccount.AllowUserToResizeColumns = False
-        Me.dgvBankAccount.AllowUserToResizeRows = False
-        Me.dgvBankAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dgvBankAccount.BackgroundColor = System.Drawing.Color.White
-        Me.dgvBankAccount.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvBankName.AllowUserToAddRows = False
+        Me.dgvBankName.AllowUserToDeleteRows = False
+        Me.dgvBankName.AllowUserToResizeColumns = False
+        Me.dgvBankName.AllowUserToResizeRows = False
+        Me.dgvBankName.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvBankName.BackgroundColor = System.Drawing.Color.White
+        Me.dgvBankName.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.75!)
@@ -462,21 +465,22 @@ Partial Class frmFMIS_Setup_BankAccount
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBankAccount.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvBankAccount.ColumnHeadersHeight = 35
-        Me.dgvBankAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvBankAccount.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.AccountCategoryMainID, Me.Column1})
-        Me.dgvBankAccount.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvBankAccount.Location = New System.Drawing.Point(0, 0)
-        Me.dgvBankAccount.MultiSelect = False
-        Me.dgvBankAccount.Name = "dgvBankAccount"
-        Me.dgvBankAccount.ReadOnly = True
-        Me.dgvBankAccount.RowHeadersVisible = False
-        Me.dgvBankAccount.RowTemplate.Height = 30
-        Me.dgvBankAccount.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvBankAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvBankAccount.Size = New System.Drawing.Size(1030, 194)
-        Me.dgvBankAccount.TabIndex = 10
+        Me.dgvBankName.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvBankName.ColumnHeadersHeight = 35
+        Me.dgvBankName.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvBankName.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.AccountCategoryMainID, Me.Column1})
+        Me.dgvBankName.ContextMenuStrip = Me.ContextMenuStrip1
+        Me.dgvBankName.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvBankName.Location = New System.Drawing.Point(0, 0)
+        Me.dgvBankName.MultiSelect = False
+        Me.dgvBankName.Name = "dgvBankName"
+        Me.dgvBankName.ReadOnly = True
+        Me.dgvBankName.RowHeadersVisible = False
+        Me.dgvBankName.RowTemplate.Height = 30
+        Me.dgvBankName.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvBankName.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvBankName.Size = New System.Drawing.Size(1030, 194)
+        Me.dgvBankName.TabIndex = 10
         '
         'AccountCategoryMainID
         '
@@ -492,6 +496,20 @@ Partial Class frmFMIS_Setup_BankAccount
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
         Me.Column1.Width = 86
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNewAccountToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 26)
+        '
+        'AddNewAccountToolStripMenuItem
+        '
+        Me.AddNewAccountToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_add_96
+        Me.AddNewAccountToolStripMenuItem.Name = "AddNewAccountToolStripMenuItem"
+        Me.AddNewAccountToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AddNewAccountToolStripMenuItem.Text = "Add New Account"
         '
         'Panel19
         '
@@ -581,22 +599,22 @@ Partial Class frmFMIS_Setup_BankAccount
         '
         'Panel32
         '
-        Me.Panel32.Controls.Add(Me.dgvBankAccountDetail)
+        Me.Panel32.Controls.Add(Me.dgvBankAccount)
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel32.Location = New System.Drawing.Point(10, 34)
         Me.Panel32.Name = "Panel32"
         Me.Panel32.Size = New System.Drawing.Size(1030, 195)
         Me.Panel32.TabIndex = 77
         '
-        'dgvBankAccountDetail
+        'dgvBankAccount
         '
-        Me.dgvBankAccountDetail.AllowUserToAddRows = False
-        Me.dgvBankAccountDetail.AllowUserToDeleteRows = False
-        Me.dgvBankAccountDetail.AllowUserToResizeColumns = False
-        Me.dgvBankAccountDetail.AllowUserToResizeRows = False
-        Me.dgvBankAccountDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dgvBankAccountDetail.BackgroundColor = System.Drawing.Color.White
-        Me.dgvBankAccountDetail.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvBankAccount.AllowUserToAddRows = False
+        Me.dgvBankAccount.AllowUserToDeleteRows = False
+        Me.dgvBankAccount.AllowUserToResizeColumns = False
+        Me.dgvBankAccount.AllowUserToResizeRows = False
+        Me.dgvBankAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvBankAccount.BackgroundColor = System.Drawing.Color.White
+        Me.dgvBankAccount.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 8.75!)
@@ -604,21 +622,71 @@ Partial Class frmFMIS_Setup_BankAccount
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBankAccountDetail.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvBankAccountDetail.ColumnHeadersHeight = 35
-        Me.dgvBankAccountDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvBankAccountDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column7, Me.Column6})
-        Me.dgvBankAccountDetail.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvBankAccountDetail.Location = New System.Drawing.Point(0, 0)
-        Me.dgvBankAccountDetail.MultiSelect = False
-        Me.dgvBankAccountDetail.Name = "dgvBankAccountDetail"
-        Me.dgvBankAccountDetail.ReadOnly = True
-        Me.dgvBankAccountDetail.RowHeadersVisible = False
-        Me.dgvBankAccountDetail.RowTemplate.Height = 30
-        Me.dgvBankAccountDetail.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvBankAccountDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvBankAccountDetail.Size = New System.Drawing.Size(1030, 195)
-        Me.dgvBankAccountDetail.TabIndex = 15
+        Me.dgvBankAccount.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvBankAccount.ColumnHeadersHeight = 35
+        Me.dgvBankAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvBankAccount.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column7, Me.Column6})
+        Me.dgvBankAccount.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvBankAccount.Location = New System.Drawing.Point(0, 0)
+        Me.dgvBankAccount.MultiSelect = False
+        Me.dgvBankAccount.Name = "dgvBankAccount"
+        Me.dgvBankAccount.ReadOnly = True
+        Me.dgvBankAccount.RowHeadersVisible = False
+        Me.dgvBankAccount.RowTemplate.Height = 30
+        Me.dgvBankAccount.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvBankAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvBankAccount.Size = New System.Drawing.Size(1030, 195)
+        Me.dgvBankAccount.TabIndex = 15
+        '
+        'ID
+        '
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
+        Me.ID.Visible = False
+        Me.ID.Width = 43
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Account Code"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 99
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Account Title"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 94
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Branch Name"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 96
+        '
+        'Column5
+        '
+        Me.Column5.HeaderText = "Account Number"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Width = 114
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "Currency"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        Me.Column7.Width = 80
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "Foreign Account"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Width = 110
         '
         'Panel30
         '
@@ -725,60 +793,11 @@ Partial Class frmFMIS_Setup_BankAccount
         Me.Panel17.Size = New System.Drawing.Size(1050, 5)
         Me.Panel17.TabIndex = 7
         '
-        'ID
-        '
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        Me.ID.Visible = False
-        Me.ID.Width = 43
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Account Code"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 99
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Account Title"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 94
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Branch Name"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        Me.Column4.Width = 96
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Account Number"
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        Me.Column5.Width = 114
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "Currency"
-        Me.Column7.Name = "Column7"
-        Me.Column7.ReadOnly = True
-        Me.Column7.Width = 80
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Foreign Account"
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Width = 110
-        '
         'frmFMIS_Setup_BankAccount
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1076, 603)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel7)
@@ -812,10 +831,11 @@ Partial Class frmFMIS_Setup_BankAccount
         Me.SplitContainer1.ResumeLayout(False)
         Me.Panel13.ResumeLayout(False)
         Me.Panel16.ResumeLayout(False)
-        CType(Me.dgvBankAccount, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvBankName, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.Panel11.ResumeLayout(False)
         Me.Panel32.ResumeLayout(False)
-        CType(Me.dgvBankAccountDetail, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvBankAccount, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel30.ResumeLayout(False)
         Me.Panel30.PerformLayout()
         Me.ResumeLayout(False)
@@ -855,7 +875,7 @@ Partial Class frmFMIS_Setup_BankAccount
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents Panel13 As Panel
     Friend WithEvents Panel16 As Panel
-    Friend WithEvents dgvBankAccount As DataGridView
+    Friend WithEvents dgvBankName As DataGridView
     Friend WithEvents Panel19 As Panel
     Friend WithEvents Panel15 As Panel
     Friend WithEvents Panel14 As Panel
@@ -866,7 +886,7 @@ Partial Class frmFMIS_Setup_BankAccount
     Friend WithEvents Panel25 As Panel
     Friend WithEvents Panel11 As Panel
     Friend WithEvents Panel32 As Panel
-    Friend WithEvents dgvBankAccountDetail As DataGridView
+    Friend WithEvents dgvBankAccount As DataGridView
     Friend WithEvents Panel30 As Panel
     Friend WithEvents lblCostCenter As Label
     Friend WithEvents Label3 As Label
@@ -887,4 +907,6 @@ Partial Class frmFMIS_Setup_BankAccount
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents AddNewAccountToolStripMenuItem As ToolStripMenuItem
 End Class

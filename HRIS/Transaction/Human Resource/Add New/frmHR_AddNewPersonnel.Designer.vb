@@ -24,14 +24,14 @@ Partial Class frmHR_AddNewPersonnel
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHR_AddNewPersonnel))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle45 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBoxHelp = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -285,6 +285,9 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label81 = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lblNotice = New System.Windows.Forms.Label()
+        Me.Label108 = New System.Windows.Forms.Label()
+        Me.Label109 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBoxHelp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -317,6 +320,7 @@ Partial Class frmHR_AddNewPersonnel
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label108)
         Me.Panel1.Controls.Add(Me.PictureBoxHelp)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -362,9 +366,9 @@ Partial Class frmHR_AddNewPersonnel
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(64, 41)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(226, 13)
+        Me.Label2.Size = New System.Drawing.Size(258, 13)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Fill-up all entry box then click &Save button."
+        Me.Label2.Text = "Fill-up required entry box then click &Save button."
         '
         'Panel6
         '
@@ -431,6 +435,7 @@ Partial Class frmHR_AddNewPersonnel
         '
         'Panel4
         '
+        Me.Panel4.Controls.Add(Me.lblNotice)
         Me.Panel4.Controls.Add(Me.Panel11)
         Me.Panel4.Controls.Add(Me.PictureBoxAddProfile)
         Me.Panel4.Controls.Add(Me.Panel7)
@@ -1252,6 +1257,7 @@ Partial Class frmHR_AddNewPersonnel
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.White
+        Me.GroupBox2.Controls.Add(Me.Label109)
         Me.GroupBox2.Controls.Add(Me.Label77)
         Me.GroupBox2.Controls.Add(Me.cbBirthPlaceRegion)
         Me.GroupBox2.Controls.Add(Me.Label80)
@@ -2122,14 +2128,14 @@ Partial Class frmHR_AddNewPersonnel
         Me.dgvSpouseAndChildren.AllowUserToResizeRows = False
         Me.dgvSpouseAndChildren.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvSpouseAndChildren.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSpouseAndChildren.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle41.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        DataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSpouseAndChildren.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle41
         Me.dgvSpouseAndChildren.ColumnHeadersHeight = 35
         Me.dgvSpouseAndChildren.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvSpouseAndChildren.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.scRelationship, Me.scName, Me.scBirthDate, Me.scAge, Me.scContactNo})
@@ -2167,9 +2173,9 @@ Partial Class frmHR_AddNewPersonnel
         '
         'scBirthDate
         '
-        DataGridViewCellStyle2.Format = "D"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.scBirthDate.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle42.Format = "D"
+        DataGridViewCellStyle42.NullValue = Nothing
+        Me.scBirthDate.DefaultCellStyle = DataGridViewCellStyle42
         Me.scBirthDate.HeaderText = "Birth Date"
         Me.scBirthDate.Name = "scBirthDate"
         Me.scBirthDate.ReadOnly = True
@@ -2177,8 +2183,8 @@ Partial Class frmHR_AddNewPersonnel
         '
         'scAge
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.scAge.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.scAge.DefaultCellStyle = DataGridViewCellStyle43
         Me.scAge.HeaderText = "Age"
         Me.scAge.Name = "scAge"
         Me.scAge.ReadOnly = True
@@ -2186,8 +2192,8 @@ Partial Class frmHR_AddNewPersonnel
         '
         'scContactNo
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.scContactNo.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.scContactNo.DefaultCellStyle = DataGridViewCellStyle44
         Me.scContactNo.HeaderText = "Mobile Number"
         Me.scContactNo.Name = "scContactNo"
         Me.scContactNo.ReadOnly = True
@@ -2364,14 +2370,14 @@ Partial Class frmHR_AddNewPersonnel
         Me.dgvParentsAndSiblings.AllowUserToResizeRows = False
         Me.dgvParentsAndSiblings.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvParentsAndSiblings.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvParentsAndSiblings.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle45.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        DataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvParentsAndSiblings.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle45
         Me.dgvParentsAndSiblings.ColumnHeadersHeight = 35
         Me.dgvParentsAndSiblings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvParentsAndSiblings.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.psRelationship, Me.psFullName, Me.psBirthDate, Me.psAge, Me.psContactNo})
@@ -2409,9 +2415,9 @@ Partial Class frmHR_AddNewPersonnel
         '
         'psBirthDate
         '
-        DataGridViewCellStyle6.Format = "D"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.psBirthDate.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle46.Format = "D"
+        DataGridViewCellStyle46.NullValue = Nothing
+        Me.psBirthDate.DefaultCellStyle = DataGridViewCellStyle46
         Me.psBirthDate.HeaderText = "Birth Date"
         Me.psBirthDate.Name = "psBirthDate"
         Me.psBirthDate.ReadOnly = True
@@ -2419,8 +2425,8 @@ Partial Class frmHR_AddNewPersonnel
         '
         'psAge
         '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.psAge.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.psAge.DefaultCellStyle = DataGridViewCellStyle47
         Me.psAge.HeaderText = "Age"
         Me.psAge.Name = "psAge"
         Me.psAge.ReadOnly = True
@@ -2428,8 +2434,8 @@ Partial Class frmHR_AddNewPersonnel
         '
         'psContactNo
         '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.psContactNo.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.psContactNo.DefaultCellStyle = DataGridViewCellStyle48
         Me.psContactNo.HeaderText = "Mobile Number"
         Me.psContactNo.Name = "psContactNo"
         Me.psContactNo.ReadOnly = True
@@ -3159,6 +3165,38 @@ Partial Class frmHR_AddNewPersonnel
         Me.Panel2.Size = New System.Drawing.Size(839, 10)
         Me.Panel2.TabIndex = 66
         '
+        'lblNotice
+        '
+        Me.lblNotice.AutoSize = True
+        Me.lblNotice.ForeColor = System.Drawing.Color.Maroon
+        Me.lblNotice.Location = New System.Drawing.Point(859, 128)
+        Me.lblNotice.Name = "lblNotice"
+        Me.lblNotice.Size = New System.Drawing.Size(178, 13)
+        Me.lblNotice.TabIndex = 108
+        Me.lblNotice.Text = "Notice: Unsaved data will be lost."
+        '
+        'Label108
+        '
+        Me.Label108.AutoSize = True
+        Me.Label108.ForeColor = System.Drawing.Color.Navy
+        Me.Label108.Location = New System.Drawing.Point(450, 42)
+        Me.Label108.Name = "Label108"
+        Me.Label108.Size = New System.Drawing.Size(485, 13)
+        Me.Label108.TabIndex = 146
+        Me.Label108.Text = "Employee Code, Name, Pronouns, Email Address and atleast 1 Emergency Contact is r" &
+    "equired."
+        '
+        'Label109
+        '
+        Me.Label109.AutoSize = True
+        Me.Label109.ForeColor = System.Drawing.Color.Navy
+        Me.Label109.Location = New System.Drawing.Point(115, 410)
+        Me.Label109.Name = "Label109"
+        Me.Label109.Size = New System.Drawing.Size(234, 39)
+        Me.Label109.TabIndex = 147
+        Me.Label109.Text = "Active Email Address will be used to receive " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "One-Time Passcode ( OTP ) for On-B" &
+    "oarding " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "process and delivery of electronic payslip."
+        '
         'frmHR_AddNewPersonnel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3182,6 +3220,7 @@ Partial Class frmHR_AddNewPersonnel
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmHR_AddNewPersonnel"
+        Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Add New Personnel"
@@ -3489,4 +3528,7 @@ Partial Class frmHR_AddNewPersonnel
     Friend WithEvents chDrugAllergy As CheckBox
     Friend WithEvents Label102 As Label
     Friend WithEvents Label107 As Label
+    Friend WithEvents lblNotice As Label
+    Friend WithEvents Label108 As Label
+    Friend WithEvents Label109 As Label
 End Class

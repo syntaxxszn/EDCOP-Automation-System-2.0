@@ -1322,7 +1322,7 @@ Module Module_FMIS
             dgv.Rows.Clear()
             Using Conn As New SqlConnection(StrConn)
                 Conn.Open()
-                Using cmd As New SqlCommand("[spSelFMIS_BankAccounts]", Conn)
+                Using cmd As New SqlCommand("[spSelFMIS_All_BankAccounts]", Conn)
                     cmd.CommandType = CommandType.StoredProcedure
                     cmd.Parameters.AddWithValue("@txt", frmFMIS_Setup_BankAccount.txtboxSearch.Text)
 
@@ -1351,7 +1351,7 @@ Module Module_FMIS
         Conn = New SqlConnection(StrConn)
         Conn.Open()
         cmd = Conn.CreateCommand
-        cmd.CommandText = "[spSelFMIS_BankAccounts_Detail]"
+        cmd.CommandText = "[spSelFMIS_All_BankAccounts_Detail]"
         cmd = New SqlCommand(cmd.CommandText, Conn) With {
                         .CommandType = CommandType.StoredProcedure
                         }
@@ -1362,7 +1362,11 @@ Module Module_FMIS
             dgv.Rows.Add(
             dr.GetInt32(0),
             dr.GetString(1),
-            dr.GetString(2))
+            dr.GetString(2),
+            dr.GetString(3),
+            dr.GetString(4),
+            dr.GetString(5),
+            dr.GetString(6))
 
         End While
         dr.Close()
@@ -1372,7 +1376,552 @@ Module Module_FMIS
 
     End Sub
 
+    Sub InsUpd_Setup_BankName()
 
+        Try
 
+            Using Conn As New SqlConnection(StrConn),
+            cmd As New SqlCommand("[spInsUpdFMIS_Setup_BankName]", Conn)
+                Conn.Open()
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@ID", BankID)
+                cmd.Parameters.AddWithValue("@BankName", frmFMIS_Setup_AddUpdBankName.txtName.Text)
+                cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+                If cmd.ExecuteNonQuery = -1 Then
+                    '\\ This Code will Select the Data after Insert.
+                    MessageBox.Show("Saved.", "EAS 2.0 --[System Notice]--", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Call Sel_Setup_BankAccounts(frmFMIS_Setup_BankAccount.dgvBankName)
+                    Call frmFMIS_Setup_AddUpdBankName.Close()
+                End If
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error Occured: " & ex.Message, "EAS 2.0 --[System Notice]--", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            Conn.Close()
+            cmd.Parameters.Clear()
+        End Try
+
+    End Sub
+
+    Sub SelUpd_Setup_BankName_ByID()
+        Using Conn As New SqlConnection(StrConn)
+            Conn.Open()
+            Using cmd As SqlCommand = Conn.CreateCommand()
+                cmd.CommandText = "[spSelUpdFMIS_Setup_BankName_ByID]"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@ID", BankID)
+
+                Using dr As SqlDataReader = cmd.ExecuteReader()
+                    If dr.Read() Then
+                        frmFMIS_Setup_AddUpdBankName.txtName.Text = dr.GetString(0)
+                    End If
+                End Using
+
+            End Using
+        End Using
+    End Sub
+
+    Sub DropDownListCurrency(cBox As ComboBox)
+
+        Dim col As New AutoCompleteStringCollection()
+        Conn = New SqlConnection(StrConn)
+        cBox.Items.Clear()
+        cmd.CommandText = "[spSelFMIS_Currency]"
+        cmd = New SqlCommand(cmd.CommandText, Conn)
+        Conn.Open()
+        dr = cmd.ExecuteReader()
+        While dr.Read()
+
+            Dim a = dr.GetString(0)
+            col.Add(a)
+            cBox.Items.Add(a)
+
+        End While
+        cBox.AutoCompleteCustomSource = col
+        dr.Close()
+        Conn.Close()
+
+    End Sub
+
+    Sub DropDownListBankCategoryAccount(cBox As ComboBox)
+
+        Dim col As New AutoCompleteStringCollection()
+        Conn = New SqlConnection(StrConn)
+        cBox.Items.Clear()
+        cmd.CommandText = "[spSelFMIS_BankCategoryAccount]"
+        cmd = New SqlCommand(cmd.CommandText, Conn)
+        Conn.Open()
+        dr = cmd.ExecuteReader()
+        While dr.Read()
+
+            Dim a = dr.GetString(0)
+            col.Add(a)
+            cBox.Items.Add(a)
+
+        End While
+        cBox.AutoCompleteCustomSource = col
+        dr.Close()
+        Conn.Close()
+
+    End Sub
+
+    Sub SelUpd_Setup_BankAccount_ByID()
+        Using Conn As New SqlConnection(StrConn)
+            Conn.Open()
+            Using cmd As SqlCommand = Conn.CreateCommand()
+                cmd.CommandText = "[spSelUpdFMIS_Setup_BankAccount_ByID]"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@ID", BankDetailID)
+
+                Using dr As SqlDataReader = cmd.ExecuteReader()
+                    If dr.Read() Then
+
+                        frmFMIS_Setup_AddUpdBankAccount.txtName.Text = dr.GetString(0)
+
+                        Dim Index1 As Integer = frmFMIS_Setup_AddUpdBankAccount.cbAccountTitle.FindStringExact(dr(1).ToString())
+                        If Index1 <> -1 Then frmFMIS_Setup_AddUpdBankAccount.cbAccountTitle.SelectedIndex = Index1
+
+                        frmFMIS_Setup_AddUpdBankAccount.txtBranchName.Text = dr.GetString(2)
+                        frmFMIS_Setup_AddUpdBankAccount.txtAccountNo.Text = dr.GetString(3)
+
+                        Dim Index2 As Integer = frmFMIS_Setup_AddUpdBankAccount.cbCurrency.FindStringExact(dr(4).ToString())
+                        If Index2 <> -1 Then frmFMIS_Setup_AddUpdBankAccount.cbCurrency.SelectedIndex = Index2
+
+                        frmFMIS_Setup_AddUpdBankAccount.chForeign.Checked = dr.GetBoolean(5)
+                    End If
+                End Using
+
+            End Using
+        End Using
+    End Sub
+
+    Sub InsUpd_Setup_BankAccount()
+
+        Try
+
+            Using Conn As New SqlConnection(StrConn),
+                cmd As New SqlCommand("[spInsUpdFMIS_Setup_BankAccount]", Conn)
+                Conn.Open()
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@ID", BankDetailID)
+                cmd.Parameters.AddWithValue("@BankName", frmFMIS_Setup_AddUpdBankAccount.txtName.Text)
+                cmd.Parameters.AddWithValue("@AccountName", frmFMIS_Setup_AddUpdBankAccount.cbAccountTitle.Text)
+                cmd.Parameters.AddWithValue("@BranchName", frmFMIS_Setup_AddUpdBankAccount.txtBranchName.Text)
+                cmd.Parameters.AddWithValue("@AccountNo", frmFMIS_Setup_AddUpdBankAccount.txtAccountNo.Text)
+                cmd.Parameters.AddWithValue("@Currency", frmFMIS_Setup_AddUpdBankAccount.cbCurrency.Text)
+                cmd.Parameters.AddWithValue("@ForeignAcc", frmFMIS_Setup_AddUpdBankAccount.chForeign.Checked)
+                cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+                If cmd.ExecuteNonQuery = -1 Then
+                    '\\ This Code will Select the Data after Insert.
+                    MessageBox.Show("Saved.", "EAS 2.0 --[System Notice]--", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Call Sel_Setup_BankAccounts_ByID(frmFMIS_Setup_BankAccount.dgvBankAccount)
+                    Call frmFMIS_Setup_AddUpdBankAccount.Close()
+                End If
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error Occured: " & ex.Message, "EAS 2.0 --[System Notice]--", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            Conn.Close()
+            cmd.Parameters.Clear()
+        End Try
+
+    End Sub
+
+    '-------------->>>> SUBSIDIARY <<<<-----------------
+
+    Sub Sel_Setup_Subsidiary(dgv As DataGridView, lbl As ToolStripLabel)
+
+        dgv.Rows.Clear()
+        Try
+            Using Conn As New SqlConnection(StrConn)
+                Conn.Open()
+                Using cmd As New SqlCommand("[spSelFMIS_All_Subsidiary]", Conn)
+                    cmd.CommandType = CommandType.StoredProcedure
+                    cmd.Parameters.AddWithValue("@txt", frmFMIS_Setup_Subsidiary.txtboxSearch.Text)
+                    Dim returnParam As New SqlParameter("@NumRec", SqlDbType.Int)
+                    returnParam.Direction = ParameterDirection.Output
+                    cmd.Parameters.Add(returnParam)
+
+                    Using dr As SqlDataReader = cmd.ExecuteReader()
+                        While dr.Read()
+                            lbl.Text = If(IsDBNull(returnParam.Value), 0, returnParam.Value)
+                            dgv.Rows.Add(
+                                dr.GetInt32(0),
+                                dr.GetString(1))
+                        End While
+                    End Using
+
+                    lbl.Text = If(IsDBNull(returnParam.Value), "0", returnParam.Value.ToString())
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        dgv.ClearSelection()
+
+    End Sub
+
+    Sub Sel_Setup_SubsidiaryAccount_ByID(dgv As DataGridView)
+
+        dgv.Rows.Clear()
+        Conn = New SqlConnection(StrConn)
+        Conn.Open()
+        cmd = Conn.CreateCommand
+        cmd.CommandText = "[spSelFMIS_All_Subsidiary_Detail]"
+        cmd = New SqlCommand(cmd.CommandText, Conn) With {
+                        .CommandType = CommandType.StoredProcedure
+                        }
+        cmd.Parameters.AddWithValue("@ID", SubsidiaryTypeID)
+        dr = cmd.ExecuteReader()
+        While dr.Read()
+
+            dgv.Rows.Add(
+            dr.GetInt32(0),
+            dr.GetString(1),
+            dr.GetString(2),
+            dr.GetString(3),
+            dr.GetString(4),
+            dr.GetString(5))
+
+        End While
+        dr.Close()
+        Conn.Close()
+        cmd.Parameters.Clear()
+        dgv.ClearSelection()
+
+    End Sub
+
+    Sub SelUpd_Setup_SubsidiaryType_ByID()
+        Using Conn As New SqlConnection(StrConn)
+            Conn.Open()
+            Using cmd As SqlCommand = Conn.CreateCommand()
+                cmd.CommandText = "[spSelUpdFMIS_Setup_Subsidiary_ByID]"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@ID", SubsidiaryTypeID)
+
+                Using dr As SqlDataReader = cmd.ExecuteReader()
+                    If dr.Read() Then
+                        frmFMIS_Setup_AddUpdSubsidiaryType.txtType.Text = dr.GetString(0)
+                    End If
+                End Using
+
+            End Using
+        End Using
+    End Sub
+
+    Sub InsUpd_Setup_SubsidiaryType()
+
+        Try
+
+            Using Conn As New SqlConnection(StrConn),
+            cmd As New SqlCommand("[spInsUpdFMIS_Setup_Subsidiary]", Conn)
+                Conn.Open()
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@ID", SubsidiaryTypeID)
+                cmd.Parameters.AddWithValue("@SubsidiaryType", frmFMIS_Setup_AddUpdSubsidiaryType.txtType.Text)
+                cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+                If cmd.ExecuteNonQuery = -1 Then
+                    '\\ This Code will Select the Data after Insert.
+                    MessageBox.Show("Saved.", "EAS 2.0 --[System Notice]--", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Call Sel_Setup_Subsidiary(frmFMIS_Setup_Subsidiary.dgvType, frmFMIS_Setup_Subsidiary.toolstriplabelNoOfRecord)
+                    Call frmFMIS_Setup_AddUpdSubsidiaryType.Close()
+                End If
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error Occured: " & ex.Message, "EAS 2.0 --[System Notice]--", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            Conn.Close()
+            cmd.Parameters.Clear()
+        End Try
+
+    End Sub
+
+    Sub SelUpd_Setup_SubsidiaryAccount_ByID()
+        Using Conn As New SqlConnection(StrConn)
+            Conn.Open()
+            Using cmd As SqlCommand = Conn.CreateCommand()
+                cmd.CommandText = "[spSelUpdFMIS_Setup_Subsidiary_Account_ByID]"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@ID", SubsidiaryAccountID)
+
+                Using dr As SqlDataReader = cmd.ExecuteReader()
+                    If dr.Read() Then
+                        frmFMIS_Setup_AddUpdSubsidiaryAccount.txtCode.Text = dr.GetString(0)
+                        frmFMIS_Setup_AddUpdSubsidiaryAccount.txtTitle.Text = dr.GetString(1)
+                        frmFMIS_Setup_AddUpdSubsidiaryAccount.txtAddress.Text = dr.GetString(2)
+                        frmFMIS_Setup_AddUpdSubsidiaryAccount.txtBalance.Text = dr.GetDecimal(3).ToString()
+                        frmFMIS_Setup_AddUpdSubsidiaryAccount.txtContactPerson.Text = dr.GetString(4)
+                        frmFMIS_Setup_AddUpdSubsidiaryAccount.txtContactNumber.Text = dr.GetString(5)
+                        frmFMIS_Setup_AddUpdSubsidiaryAccount.txtTIN.Text = dr.GetString(6)
+                        frmFMIS_Setup_AddUpdSubsidiaryAccount.chActive.Checked = (dr.GetInt32(7) = 396)
+                        frmFMIS_Setup_AddUpdSubsidiaryAccount.chDocumented.Checked = Convert.ToBoolean(dr(8))
+                        frmFMIS_Setup_AddUpdSubsidiaryAccount.chAccredited.Checked = Convert.ToBoolean(dr(9))
+                        Dim regValue As Integer = dr.GetInt32(10)
+                        frmFMIS_Setup_AddUpdSubsidiaryAccount.rbNonVat.Checked = (regValue = 0)
+                        frmFMIS_Setup_AddUpdSubsidiaryAccount.rbVat.Checked = (regValue = 1)
+                        frmFMIS_Setup_AddUpdSubsidiaryAccount.rbZero.Checked = (regValue = 2)
+                    End If
+                End Using
+
+            End Using
+        End Using
+    End Sub
+
+    Sub InsUpd_Setup_SubsidiaryAccount()
+
+        Try
+
+            Dim StatusID As Integer = 397
+            Dim Documented As Boolean = False
+            Dim Accredited As Boolean = False
+
+            Using Conn As New SqlConnection(StrConn),
+            cmd As New SqlCommand("[spInsUpdFMIS_Setup_SubsidiaryAccount]", Conn)
+                Conn.Open()
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@ID", SubsidiaryAccountID)
+                cmd.Parameters.AddWithValue("@supTypeID", 0)
+                cmd.Parameters.AddWithValue("@Code", frmFMIS_Setup_AddUpdSubsidiaryAccount.txtCode.Text)
+                cmd.Parameters.AddWithValue("@Name", frmFMIS_Setup_AddUpdSubsidiaryAccount.txtTitle.Text)
+                cmd.Parameters.AddWithValue("@Address", frmFMIS_Setup_AddUpdSubsidiaryAccount.txtAddress.Text)
+                cmd.Parameters.AddWithValue("@Balance", frmFMIS_Setup_AddUpdSubsidiaryAccount.txtBalance.Text)
+                cmd.Parameters.AddWithValue("@ContactPerson", frmFMIS_Setup_AddUpdSubsidiaryAccount.txtContactPerson.Text)
+                cmd.Parameters.AddWithValue("@ContactNumber", frmFMIS_Setup_AddUpdSubsidiaryAccount.txtContactNumber.Text)
+                cmd.Parameters.AddWithValue("@TIN", frmFMIS_Setup_AddUpdSubsidiaryAccount.txtTIN.Text)
+                If frmFMIS_Setup_AddUpdSubsidiaryAccount.chActive.Checked Then
+                    StatusID = 396
+                End If
+                cmd.Parameters.AddWithValue("@StatusID", StatusID)
+                If frmFMIS_Setup_AddUpdSubsidiaryAccount.chDocumented.Checked Then
+                    Documented = True
+                End If
+                cmd.Parameters.AddWithValue("@isDocumented", Documented)
+                If frmFMIS_Setup_AddUpdSubsidiaryAccount.chAccredited.Checked Then
+                    Accredited = True
+                End If
+                cmd.Parameters.AddWithValue("@isAccredited", Accredited)
+                Dim selectedReg As Integer = If(frmFMIS_Setup_AddUpdSubsidiaryAccount.rbNonVat.Checked, 0,
+                                If(frmFMIS_Setup_AddUpdSubsidiaryAccount.rbVat.Checked, 1, 2))
+                cmd.Parameters.AddWithValue("@reg", selectedReg)
+                cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+                If cmd.ExecuteNonQuery = -1 Then
+                    '\\ This Code will Select the Data after Insert.
+                    MessageBox.Show("Saved.", "EAS 2.0 --[System Notice]--", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Call Sel_Setup_SubsidiaryAccount_ByID(frmFMIS_Setup_Subsidiary.dgvSubsidiaryAccount)
+                    Call frmFMIS_Setup_AddUpdSubsidiaryAccount.Close()
+                End If
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error Occured: " & ex.Message, "EAS 2.0 --[System Notice]--", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            Conn.Close()
+            cmd.Parameters.Clear()
+        End Try
+
+    End Sub
+
+    '-------------->>>> SUPPLIER <<<<-----------------
+
+    Sub Sel_Setup_SupplierType(dgv As DataGridView, lbl As ToolStripLabel)
+
+        dgv.Rows.Clear()
+        Try
+            Using Conn As New SqlConnection(StrConn)
+                Conn.Open()
+                Using cmd As New SqlCommand("[spSelFMIS_All_SupplierType]", Conn)
+                    cmd.CommandType = CommandType.StoredProcedure
+                    cmd.Parameters.AddWithValue("@txt", frmFMIS_Setup_Supplier.txtboxSearch.Text)
+                    Dim returnParam As New SqlParameter("@NumRec", SqlDbType.Int)
+                    returnParam.Direction = ParameterDirection.Output
+                    cmd.Parameters.Add(returnParam)
+
+                    Using dr As SqlDataReader = cmd.ExecuteReader()
+                        While dr.Read()
+                            lbl.Text = If(IsDBNull(returnParam.Value), 0, returnParam.Value)
+                            dgv.Rows.Add(
+                                dr.GetInt32(0),
+                                dr.GetString(1),
+                                dr.GetString(2))
+                        End While
+                    End Using
+
+                    lbl.Text = If(IsDBNull(returnParam.Value), "0", returnParam.Value.ToString())
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        dgv.ClearSelection()
+
+    End Sub
+
+    Sub Sel_Setup_SupplierAccount_ByID(dgv As DataGridView)
+
+        dgv.Rows.Clear()
+        Conn = New SqlConnection(StrConn)
+        Conn.Open()
+        cmd = Conn.CreateCommand
+        cmd.CommandText = "[spSelFMIS_All_Supplier_Detail]"
+        cmd = New SqlCommand(cmd.CommandText, Conn) With {
+                        .CommandType = CommandType.StoredProcedure
+                        }
+        cmd.Parameters.AddWithValue("@ID", SupplierTypeID)
+        dr = cmd.ExecuteReader()
+        While dr.Read()
+
+            dgv.Rows.Add(
+            dr.GetInt32(0),
+            dr.GetString(1),
+            dr.GetString(2),
+            dr.GetString(3),
+            dr.GetString(4),
+            dr.GetDecimal(5),
+            dr.GetString(6),
+            dr.GetString(7))
+
+        End While
+        dr.Close()
+        Conn.Close()
+        cmd.Parameters.Clear()
+        dgv.ClearSelection()
+
+    End Sub
+
+    Sub SelUpd_Setup_SupplierType_ByID()
+        Using Conn As New SqlConnection(StrConn)
+            Conn.Open()
+            Using cmd As SqlCommand = Conn.CreateCommand()
+                cmd.CommandText = "[spSelUpdFMIS_Setup_Supplier_ByID]"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@ID", SupplierTypeID)
+
+                Using dr As SqlDataReader = cmd.ExecuteReader()
+                    If dr.Read() Then
+                        frmFMIS_Setup_AddUpdSupplierType.txtType.Text = dr.GetString(0)
+                        frmFMIS_Setup_AddUpdSupplierType.txtDesc.Text = dr.GetString(1)
+                    End If
+                End Using
+
+            End Using
+        End Using
+    End Sub
+
+    Sub InsUpd_Setup_SupplierType()
+
+        Try
+
+            Using Conn As New SqlConnection(StrConn),
+            cmd As New SqlCommand("[spInsUpdFMIS_Setup_Supplier]", Conn)
+                Conn.Open()
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@ID", SupplierTypeID)
+                cmd.Parameters.AddWithValue("@SupplierType", frmFMIS_Setup_AddUpdSupplierType.txtType.Text)
+                cmd.Parameters.AddWithValue("@SupplierDesc", frmFMIS_Setup_AddUpdSupplierType.txtDesc.Text)
+                cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+                If cmd.ExecuteNonQuery = -1 Then
+                    '\\ This Code will Select the Data after Insert.
+                    MessageBox.Show("Saved.", "EAS 2.0 --[System Notice]--", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Call Sel_Setup_SupplierType(frmFMIS_Setup_Supplier.dgvType, frmFMIS_Setup_Supplier.toolstriplabelNoOfRecord)
+                    Call frmFMIS_Setup_AddUpdSupplierType.Close()
+                End If
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error Occured: " & ex.Message, "EAS 2.0 --[System Notice]--", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            Conn.Close()
+            cmd.Parameters.Clear()
+        End Try
+
+    End Sub
+
+    Sub InsUpd_Setup_SupplierAccount()
+
+        Try
+
+            Dim StatusID As Integer = 397
+            Dim Documented As Boolean = False
+            Dim Accredited As Boolean = False
+
+            Using Conn As New SqlConnection(StrConn),
+            cmd As New SqlCommand("[spInsUpdFMIS_Setup_SubsidiaryAccount]", Conn)
+                Conn.Open()
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@ID", SupplierAccountID)
+                cmd.Parameters.AddWithValue("@supTypeID", SupplierTypeID)
+                cmd.Parameters.AddWithValue("@Code", frmFMIS_Setup_AddUpdSupplierAccount.txtCode.Text)
+                cmd.Parameters.AddWithValue("@Name", frmFMIS_Setup_AddUpdSupplierAccount.txtTitle.Text)
+                cmd.Parameters.AddWithValue("@Address", frmFMIS_Setup_AddUpdSupplierAccount.txtAddress.Text)
+                cmd.Parameters.AddWithValue("@Balance", frmFMIS_Setup_AddUpdSupplierAccount.txtBalance.Text)
+                cmd.Parameters.AddWithValue("@ContactPerson", frmFMIS_Setup_AddUpdSupplierAccount.txtContactPerson.Text)
+                cmd.Parameters.AddWithValue("@ContactNumber", frmFMIS_Setup_AddUpdSupplierAccount.txtContactNumber.Text)
+                cmd.Parameters.AddWithValue("@TIN", frmFMIS_Setup_AddUpdSupplierAccount.txtTIN.Text)
+                If frmFMIS_Setup_AddUpdSupplierAccount.chActive.Checked Then
+                    StatusID = 396
+                End If
+                cmd.Parameters.AddWithValue("@StatusID", StatusID)
+                If frmFMIS_Setup_AddUpdSupplierAccount.chDocumented.Checked Then
+                    Documented = True
+                End If
+                cmd.Parameters.AddWithValue("@isDocumented", Documented)
+                If frmFMIS_Setup_AddUpdSupplierAccount.chAccredited.Checked Then
+                    Accredited = True
+                End If
+                cmd.Parameters.AddWithValue("@isAccredited", Accredited)
+                Dim selectedReg As Integer = If(frmFMIS_Setup_AddUpdSupplierAccount.rbNonVat.Checked, 0,
+                                If(frmFMIS_Setup_AddUpdSupplierAccount.rbVat.Checked, 1, 2))
+                cmd.Parameters.AddWithValue("@reg", selectedReg)
+                cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+                If cmd.ExecuteNonQuery = -1 Then
+                    '\\ This Code will Select the Data after Insert.
+                    MessageBox.Show("Saved.", "EAS 2.0 --[System Notice]--", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Call Sel_Setup_SupplierAccount_ByID(frmFMIS_Setup_Supplier.dgvSupplierAccount)
+                    Call frmFMIS_Setup_AddUpdSupplierAccount.Close()
+                End If
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show("Error Occured: " & ex.Message, "EAS 2.0 --[System Notice]--", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            Conn.Close()
+            cmd.Parameters.Clear()
+        End Try
+
+    End Sub
+
+    Sub SelUpd_Setup_SupplierAccount_ByID()
+        Using Conn As New SqlConnection(StrConn)
+            Conn.Open()
+            Using cmd As SqlCommand = Conn.CreateCommand()
+                cmd.CommandText = "[spSelUpdFMIS_Setup_Subsidiary_Account_ByID]"
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@ID", SupplierAccountID)
+
+                Using dr As SqlDataReader = cmd.ExecuteReader()
+                    If dr.Read() Then
+                        frmFMIS_Setup_AddUpdSupplierAccount.txtCode.Text = dr.GetString(0)
+                        frmFMIS_Setup_AddUpdSupplierAccount.txtTitle.Text = dr.GetString(1)
+                        frmFMIS_Setup_AddUpdSupplierAccount.txtAddress.Text = dr.GetString(2)
+                        frmFMIS_Setup_AddUpdSupplierAccount.txtBalance.Text = dr.GetDecimal(3).ToString()
+                        frmFMIS_Setup_AddUpdSupplierAccount.txtContactPerson.Text = dr.GetString(4)
+                        frmFMIS_Setup_AddUpdSupplierAccount.txtContactNumber.Text = dr.GetString(5)
+                        frmFMIS_Setup_AddUpdSupplierAccount.txtTIN.Text = dr.GetString(6)
+                        frmFMIS_Setup_AddUpdSupplierAccount.chActive.Checked = (dr.GetInt32(7) = 396)
+                        frmFMIS_Setup_AddUpdSupplierAccount.chDocumented.Checked = Convert.ToBoolean(dr(8))
+                        frmFMIS_Setup_AddUpdSupplierAccount.chAccredited.Checked = Convert.ToBoolean(dr(9))
+                        Dim regValue As Integer = dr.GetInt32(10)
+                        frmFMIS_Setup_AddUpdSupplierAccount.rbNonVat.Checked = (regValue = 0)
+                        frmFMIS_Setup_AddUpdSupplierAccount.rbVat.Checked = (regValue = 1)
+                        frmFMIS_Setup_AddUpdSupplierAccount.rbZero.Checked = (regValue = 2)
+                    End If
+                End Using
+
+            End Using
+        End Using
+    End Sub
 
 End Module

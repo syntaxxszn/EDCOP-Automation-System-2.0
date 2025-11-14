@@ -84,6 +84,8 @@
 
 	''--->>> Module_PCMS <<<---
 
+	Public _strLoginEmployeeID As Integer '' ID of User who uses or currently logged-in to the system
+
 	Public BtnColorText As Button = Nothing
 
 	Public CurrentForm As Form
@@ -150,5 +152,10 @@
 	Public BankID As Integer
 	Public BankDetailID As Integer
 
+	Public SubsidiaryTypeID As Integer
+	Public SubsidiaryAccountID As Integer
+
+	Public SupplierTypeID As Integer
+	Public SupplierAccountID As Integer
 	''--->>> End of Module_Accounting <<<---
 End Module

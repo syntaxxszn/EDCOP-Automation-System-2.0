@@ -8,6 +8,7 @@ Public Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
         Call ResetComboBoxes(Me)
         Call ClearTextBoxes(Me)
         Call DropDownListSupervisorEmployeeName3(cbSuperior)
+        btnAddUpdAppraisal.Text = "Add"
     End Sub
 
     Private Sub btnAddUpdAppraisal_Click(sender As Object, e As EventArgs) Handles btnAddUpdAppraisal.Click
@@ -51,6 +52,7 @@ Public Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
         ClearTextBoxes(Me)
         ResetDatePickers(Me)
         cbSuperior.SelectedIndex = -1
+        btnAddUpdAppraisal.Text = "Add"
     End Sub
 
     Private Sub dgvPerformanceAppraisal_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPerformanceAppraisal.CellClick
@@ -72,6 +74,7 @@ Public Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
             txtRating.Text = selectedRow.Cells(4).Value
             dtpFollowUp.Value = selectedRow.Cells(5).Value
             txtRemarks.Text = selectedRow.Cells(6).Value
+            btnAddUpdAppraisal.Text = "Update"
         End If
     End Sub
 
@@ -79,7 +82,25 @@ Public Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
         ClearTransactionField()
     End Sub
 
-    Private Sub btnDelAppraisal_Click(sender As Object, e As EventArgs) Handles btnDelAppraisal.Click
+    'Private Sub btnDelAppraisal_Click(sender As Object, e As EventArgs)
+    '    If dgvPerformanceAppraisal.Rows.Count > 0 Then
+    '        Dim lastRow As DataGridViewRow = dgvPerformanceAppraisal.Rows(dgvPerformanceAppraisal.Rows.Count - 1)
+    '        If lastRow.Tag?.ToString() = "New" Then
+    '            dgvPerformanceAppraisal.Rows.Remove(lastRow)
+    '        ElseIf dgvPerformanceAppraisal.SelectedRows.Count > 0 Then
+    '            Call Del_Personnel_PerformanceAppraisal_ByID(dgvPerformanceAppraisal)
+    '        Else
+    '            MsgBox("Nothing to remove.")
+    '        End If
+    '        ClearTransactionField()
+    '    End If
+    'End Sub
+
+    Private Sub txtRating_Validating(sender As Object, e As CancelEventArgs) Handles txtRating.Validating
+        Call Textbox_NumericFormat(txtRating, e.Cancel)
+    End Sub
+
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
         If dgvPerformanceAppraisal.Rows.Count > 0 Then
             Dim lastRow As DataGridViewRow = dgvPerformanceAppraisal.Rows(dgvPerformanceAppraisal.Rows.Count - 1)
             If lastRow.Tag?.ToString() = "New" Then
@@ -92,9 +113,4 @@ Public Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
             ClearTransactionField()
         End If
     End Sub
-
-    Private Sub txtRating_Validating(sender As Object, e As CancelEventArgs) Handles txtRating.Validating
-        Call Textbox_NumericFormat(txtRating, e.Cancel)
-    End Sub
-
 End Class

@@ -36,6 +36,7 @@ Partial Class frmMain
         Me.StatusbarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CloseAllWindowsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TicketsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
@@ -79,26 +80,28 @@ Partial Class frmMain
         Me.PanelMainHolder = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Panel18 = New System.Windows.Forms.Panel()
+        Me.Panel22 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
-        Me.picBoxNotif2 = New System.Windows.Forms.PictureBox()
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.Panel20 = New System.Windows.Forms.Panel()
         Me.Panel21 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.WebView21 = New Microsoft.Web.WebView2.WinForms.WebView2()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.picBoxNotif1 = New System.Windows.Forms.PictureBox()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.picBoxNotif2 = New System.Windows.Forms.PictureBox()
+        Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel23 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -112,14 +115,17 @@ Partial Class frmMain
         Me.PanelMainHolder.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel10.SuspendLayout()
+        Me.Panel18.SuspendLayout()
+        Me.Panel22.SuspendLayout()
         Me.Panel17.SuspendLayout()
-        CType(Me.picBoxNotif2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel11.SuspendLayout()
+        CType(Me.WebView21, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picBoxNotif1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picBoxNotif2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel10.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.Panel23.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -135,7 +141,7 @@ Partial Class frmMain
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.White
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SystemsToolStripMenuItem, Me.ViewToolStripMenuItem, Me.RecentToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SystemsToolStripMenuItem, Me.ViewToolStripMenuItem, Me.RecentToolStripMenuItem, Me.TicketsToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1238, 44)
@@ -146,8 +152,9 @@ Partial Class frmMain
         '
         Me.SystemsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConnectToolStripMenuItem, Me.PrinterSetupToolStripMenuItem, Me.LogOffToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.SystemsToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SystemsToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.gear
         Me.SystemsToolStripMenuItem.Name = "SystemsToolStripMenuItem"
-        Me.SystemsToolStripMenuItem.Size = New System.Drawing.Size(63, 40)
+        Me.SystemsToolStripMenuItem.Size = New System.Drawing.Size(79, 40)
         Me.SystemsToolStripMenuItem.Text = "Systems"
         '
         'ConnectToolStripMenuItem
@@ -178,8 +185,9 @@ Partial Class frmMain
         '
         Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolbarToolStripMenuItem, Me.StatusbarToolStripMenuItem})
         Me.ViewToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ViewToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.eye1
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(45, 40)
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(61, 40)
         Me.ViewToolStripMenuItem.Text = "View"
         '
         'ToolbarToolStripMenuItem
@@ -198,8 +206,9 @@ Partial Class frmMain
         '
         Me.RecentToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseAllWindowsToolStripMenuItem})
         Me.RecentToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RecentToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.transfer
         Me.RecentToolStripMenuItem.Name = "RecentToolStripMenuItem"
-        Me.RecentToolStripMenuItem.Size = New System.Drawing.Size(55, 40)
+        Me.RecentToolStripMenuItem.Size = New System.Drawing.Size(71, 40)
         Me.RecentToolStripMenuItem.Text = "Recent"
         '
         'CloseAllWindowsToolStripMenuItem
@@ -207,6 +216,13 @@ Partial Class frmMain
         Me.CloseAllWindowsToolStripMenuItem.Name = "CloseAllWindowsToolStripMenuItem"
         Me.CloseAllWindowsToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.CloseAllWindowsToolStripMenuItem.Text = "Close All Windows"
+        '
+        'TicketsToolStripMenuItem
+        '
+        Me.TicketsToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.message
+        Me.TicketsToolStripMenuItem.Name = "TicketsToolStripMenuItem"
+        Me.TicketsToolStripMenuItem.Size = New System.Drawing.Size(71, 40)
+        Me.TicketsToolStripMenuItem.Text = "Tickets"
         '
         'HelpToolStripMenuItem
         '
@@ -407,6 +423,8 @@ Partial Class frmMain
         Me.ImageListMenu.Images.SetKeyName(10, "circular-economy.png")
         Me.ImageListMenu.Images.SetKeyName(11, "real-time.png")
         Me.ImageListMenu.Images.SetKeyName(12, "icons8-settings-100.png")
+        Me.ImageListMenu.Images.SetKeyName(13, "next.png")
+        Me.ImageListMenu.Images.SetKeyName(14, "prev.png")
         '
         'panelSubCU
         '
@@ -724,8 +742,8 @@ Partial Class frmMain
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.White
-        Me.GroupBox1.Controls.Add(Me.PictureBox2)
-        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.Panel18)
+        Me.GroupBox1.Controls.Add(Me.picBoxNotif2)
         Me.GroupBox1.Controls.Add(Me.Panel10)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -738,62 +756,36 @@ Partial Class frmMain
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "<System Bulletin >"
         '
-        'PictureBox2
+        'Panel18
         '
-        Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.loudspeaker
-        Me.PictureBox2.Location = New System.Drawing.Point(515, 30)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(50, 50)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 4
-        Me.PictureBox2.TabStop = False
+        Me.Panel18.Controls.Add(Me.Panel22)
+        Me.Panel18.Controls.Add(Me.Panel11)
+        Me.Panel18.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel18.Location = New System.Drawing.Point(92, 18)
+        Me.Panel18.Name = "Panel18"
+        Me.Panel18.Size = New System.Drawing.Size(848, 650)
+        Me.Panel18.TabIndex = 6
         '
-        'Label5
+        'Panel22
         '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(571, 46)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(160, 23)
-        Me.Label5.TabIndex = 3
-        Me.Label5.Text = "ANNOUNCEMENTS"
-        '
-        'Panel10
-        '
-        Me.Panel10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel10.Controls.Add(Me.Panel17)
-        Me.Panel10.Controls.Add(Me.Panel11)
-        Me.Panel10.Controls.Add(Me.Label1)
-        Me.Panel10.Controls.Add(Me.Label3)
-        Me.Panel10.Location = New System.Drawing.Point(26, 97)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(893, 543)
-        Me.Panel10.TabIndex = 2
+        Me.Panel22.Controls.Add(Me.Panel17)
+        Me.Panel22.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel22.Location = New System.Drawing.Point(0, 0)
+        Me.Panel22.Name = "Panel22"
+        Me.Panel22.Size = New System.Drawing.Size(571, 650)
+        Me.Panel22.TabIndex = 5
         '
         'Panel17
         '
-        Me.Panel17.Controls.Add(Me.picBoxNotif2)
+        Me.Panel17.Controls.Add(Me.Panel23)
         Me.Panel17.Controls.Add(Me.Panel19)
         Me.Panel17.Controls.Add(Me.Panel20)
         Me.Panel17.Controls.Add(Me.Panel21)
-        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel17.Location = New System.Drawing.Point(99, 0)
+        Me.Panel17.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel17.Location = New System.Drawing.Point(0, 0)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(515, 543)
+        Me.Panel17.Size = New System.Drawing.Size(571, 650)
         Me.Panel17.TabIndex = 5
-        '
-        'picBoxNotif2
-        '
-        Me.picBoxNotif2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.picBoxNotif2.Location = New System.Drawing.Point(3, 3)
-        Me.picBoxNotif2.Name = "picBoxNotif2"
-        Me.picBoxNotif2.Size = New System.Drawing.Size(512, 537)
-        Me.picBoxNotif2.TabIndex = 4
-        Me.picBoxNotif2.TabStop = False
         '
         'Panel19
         '
@@ -801,16 +793,16 @@ Partial Class frmMain
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel19.Location = New System.Drawing.Point(0, 3)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(3, 537)
+        Me.Panel19.Size = New System.Drawing.Size(3, 644)
         Me.Panel19.TabIndex = 2
         '
         'Panel20
         '
         Me.Panel20.BackColor = System.Drawing.Color.Navy
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel20.Location = New System.Drawing.Point(0, 540)
+        Me.Panel20.Location = New System.Drawing.Point(0, 647)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(515, 3)
+        Me.Panel20.Size = New System.Drawing.Size(571, 3)
         Me.Panel20.TabIndex = 1
         '
         'Panel21
@@ -819,7 +811,7 @@ Partial Class frmMain
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel21.Location = New System.Drawing.Point(0, 0)
         Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(515, 3)
+        Me.Panel21.Size = New System.Drawing.Size(571, 3)
         Me.Panel21.TabIndex = 0
         '
         'Panel11
@@ -830,18 +822,30 @@ Partial Class frmMain
         Me.Panel11.Controls.Add(Me.Panel13)
         Me.Panel11.Controls.Add(Me.Panel12)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel11.Location = New System.Drawing.Point(614, 0)
+        Me.Panel11.Location = New System.Drawing.Point(571, 0)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(279, 543)
+        Me.Panel11.Size = New System.Drawing.Size(277, 650)
         Me.Panel11.TabIndex = 4
+        '
+        'WebView21
+        '
+        Me.WebView21.AllowExternalDrop = True
+        Me.WebView21.CreationProperties = Nothing
+        Me.WebView21.DefaultBackgroundColor = System.Drawing.Color.White
+        Me.WebView21.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebView21.Location = New System.Drawing.Point(0, 0)
+        Me.WebView21.Name = "WebView21"
+        Me.WebView21.Size = New System.Drawing.Size(568, 644)
+        Me.WebView21.TabIndex = 3
+        Me.WebView21.ZoomFactor = 1.0R
         '
         'Panel16
         '
         Me.Panel16.BackColor = System.Drawing.Color.Navy
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel16.Location = New System.Drawing.Point(276, 3)
+        Me.Panel16.Location = New System.Drawing.Point(274, 3)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(3, 537)
+        Me.Panel16.Size = New System.Drawing.Size(3, 644)
         Me.Panel16.TabIndex = 3
         '
         'picBoxNotif1
@@ -849,7 +853,7 @@ Partial Class frmMain
         Me.picBoxNotif1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.picBoxNotif1.Location = New System.Drawing.Point(3, 3)
         Me.picBoxNotif1.Name = "picBoxNotif1"
-        Me.picBoxNotif1.Size = New System.Drawing.Size(276, 537)
+        Me.picBoxNotif1.Size = New System.Drawing.Size(274, 644)
         Me.picBoxNotif1.TabIndex = 3
         Me.picBoxNotif1.TabStop = False
         '
@@ -859,16 +863,16 @@ Partial Class frmMain
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel15.Location = New System.Drawing.Point(0, 3)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(3, 537)
+        Me.Panel15.Size = New System.Drawing.Size(3, 644)
         Me.Panel15.TabIndex = 2
         '
         'Panel13
         '
         Me.Panel13.BackColor = System.Drawing.Color.Navy
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel13.Location = New System.Drawing.Point(0, 540)
+        Me.Panel13.Location = New System.Drawing.Point(0, 647)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(279, 3)
+        Me.Panel13.Size = New System.Drawing.Size(277, 3)
         Me.Panel13.TabIndex = 1
         '
         'Panel12
@@ -877,8 +881,28 @@ Partial Class frmMain
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel12.Location = New System.Drawing.Point(0, 0)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(279, 3)
+        Me.Panel12.Size = New System.Drawing.Size(277, 3)
         Me.Panel12.TabIndex = 0
+        '
+        'picBoxNotif2
+        '
+        Me.picBoxNotif2.Location = New System.Drawing.Point(189, 23)
+        Me.picBoxNotif2.Name = "picBoxNotif2"
+        Me.picBoxNotif2.Size = New System.Drawing.Size(75, 57)
+        Me.picBoxNotif2.TabIndex = 4
+        Me.picBoxNotif2.TabStop = False
+        '
+        'Panel10
+        '
+        Me.Panel10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel10.Controls.Add(Me.Label1)
+        Me.Panel10.Controls.Add(Me.Label3)
+        Me.Panel10.Location = New System.Drawing.Point(26, 97)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(238, 571)
+        Me.Panel10.TabIndex = 2
         '
         'Label1
         '
@@ -941,6 +965,15 @@ Partial Class frmMain
         Me.Panel2.Size = New System.Drawing.Size(1238, 10)
         Me.Panel2.TabIndex = 1
         '
+        'Panel23
+        '
+        Me.Panel23.Controls.Add(Me.WebView21)
+        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel23.Location = New System.Drawing.Point(3, 3)
+        Me.Panel23.Name = "Panel23"
+        Me.Panel23.Size = New System.Drawing.Size(568, 644)
+        Me.Panel23.TabIndex = 3
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -978,15 +1011,18 @@ Partial Class frmMain
         Me.Panel9.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel18.ResumeLayout(False)
+        Me.Panel22.ResumeLayout(False)
+        Me.Panel17.ResumeLayout(False)
+        Me.Panel11.ResumeLayout(False)
+        CType(Me.WebView21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBoxNotif1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picBoxNotif2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
-        Me.Panel17.ResumeLayout(False)
-        CType(Me.picBoxNotif2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel11.ResumeLayout(False)
-        CType(Me.picBoxNotif1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        Me.Panel23.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1062,8 +1098,11 @@ Partial Class frmMain
     Friend WithEvents Panel20 As Panel
     Friend WithEvents Panel21 As Panel
     Friend WithEvents picBoxNotif2 As PictureBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PanelHolder As Panel
     Friend WithEvents Panel14 As Panel
+    Friend WithEvents TicketsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents WebView21 As Microsoft.Web.WebView2.WinForms.WebView2
+    Friend WithEvents Panel18 As Panel
+    Friend WithEvents Panel22 As Panel
+    Friend WithEvents Panel23 As Panel
 End Class

@@ -39,18 +39,6 @@ Public Class frmHRIS_Report_CrystalReportsHolder
     End Sub
 
     Private Sub btnCOESendEmail_Click(sender As Object, e As EventArgs) Handles btnCOESendEmail.Click
-        'Dim smtp As New SmtpClient("smtp-mail.outlook.com")
-        'smtp.Port = 587
-        'smtp.Credentials = New Net.NetworkCredential("jerome.delapena1031@outlook.com", "lzpdeswmwgqsdfhp")
-        'smtp.EnableSsl = True
-
-        'Dim mail As New MailMessage()
-        'mail.From = New MailAddress("jerome.delapena1031@outlook.com")
-        'mail.To.Add("jerome.delapena1031@gmail.com")
-        'mail.Subject = "Test Email"
-        'mail.Body = "This is a test email from VB.NET."
-
-        'smtp.Send(mail)
-        'MessageBox.Show("Email Sent Successfully!")
+        frmHRIS_Report_SendAsEmail.ShowDialog()
     End Sub
 End Class

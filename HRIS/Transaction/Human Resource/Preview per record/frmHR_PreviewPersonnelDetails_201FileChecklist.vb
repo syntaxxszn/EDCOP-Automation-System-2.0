@@ -34,6 +34,10 @@
                 e.CellStyle.BackColor = Color.DarkGreen
                 e.CellStyle.ForeColor = Color.White
                 e.CellStyle.Font = New Font(dgv201CheckList.Font, FontStyle.Bold)
+            ElseIf cellValue = "pending" Then
+                e.CellStyle.BackColor = Color.Gold
+                e.CellStyle.ForeColor = Color.Black
+                e.CellStyle.Font = New Font(dgv201CheckList.Font, FontStyle.Bold)
             Else
                 e.CellStyle.BackColor = Color.White
                 e.CellStyle.ForeColor = Color.Black

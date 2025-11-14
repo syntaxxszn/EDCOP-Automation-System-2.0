@@ -26,7 +26,7 @@ Partial Class frmPMS_Login
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabelForgotPassword = New System.Windows.Forms.LinkLabel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -38,7 +38,7 @@ Partial Class frmPMS_Login
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblDeploymentVersion = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
@@ -56,7 +56,7 @@ Partial Class frmPMS_Login
         Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel3.Controls.Add(Me.LinkLabel2)
         Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.LinkLabel1)
+        Me.Panel3.Controls.Add(Me.LinkLabelForgotPassword)
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.Panel4)
@@ -91,17 +91,17 @@ Partial Class frmPMS_Login
         Me.Label2.TabIndex = 27
         Me.Label2.Text = "Don't have an account?"
         '
-        'LinkLabel1
+        'LinkLabelForgotPassword
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.Navy
-        Me.LinkLabel1.Location = New System.Drawing.Point(181, 178)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(104, 15)
-        Me.LinkLabel1.TabIndex = 26
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Forgot password?"
+        Me.LinkLabelForgotPassword.AutoSize = True
+        Me.LinkLabelForgotPassword.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.LinkLabelForgotPassword.LinkColor = System.Drawing.Color.Navy
+        Me.LinkLabelForgotPassword.Location = New System.Drawing.Point(181, 178)
+        Me.LinkLabelForgotPassword.Name = "LinkLabelForgotPassword"
+        Me.LinkLabelForgotPassword.Size = New System.Drawing.Size(104, 15)
+        Me.LinkLabelForgotPassword.TabIndex = 26
+        Me.LinkLabelForgotPassword.TabStop = True
+        Me.LinkLabelForgotPassword.Text = "Forgot password?"
         '
         'Label1
         '
@@ -206,7 +206,7 @@ Partial Class frmPMS_Login
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BackgroundImage = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.login_bg
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.lblDeploymentVersion)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
@@ -226,16 +226,16 @@ Partial Class frmPMS_Login
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
         '
-        'Label4
+        'lblDeploymentVersion
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(74, 210)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(73, 13)
-        Me.Label4.TabIndex = 15
-        Me.Label4.Text = "lblVersionNo"
+        Me.lblDeploymentVersion.AutoSize = True
+        Me.lblDeploymentVersion.BackColor = System.Drawing.Color.Transparent
+        Me.lblDeploymentVersion.ForeColor = System.Drawing.Color.White
+        Me.lblDeploymentVersion.Location = New System.Drawing.Point(74, 210)
+        Me.lblDeploymentVersion.Name = "lblDeploymentVersion"
+        Me.lblDeploymentVersion.Size = New System.Drawing.Size(73, 13)
+        Me.lblDeploymentVersion.TabIndex = 15
+        Me.lblDeploymentVersion.Text = "lblVersionNo"
         '
         'Label3
         '
@@ -294,7 +294,7 @@ Partial Class frmPMS_Login
     Friend WithEvents Panel3 As Panel
     Friend WithEvents LinkLabel2 As LinkLabel
     Friend WithEvents Label2 As Label
-    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents LinkLabelForgotPassword As LinkLabel
     Friend WithEvents Label1 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel4 As Panel
@@ -306,7 +306,7 @@ Partial Class frmPMS_Login
     Friend WithEvents btnLogin As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lblDeploymentVersion As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label6 As Label
 End Class

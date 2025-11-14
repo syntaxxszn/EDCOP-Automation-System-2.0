@@ -22,7 +22,8 @@ Partial Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -34,6 +35,8 @@ Partial Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -43,7 +46,6 @@ Partial Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtRemarks = New System.Windows.Forms.TextBox()
         Me.btnClearTextFields = New System.Windows.Forms.Button()
-        Me.btnDelAppraisal = New System.Windows.Forms.Button()
         Me.btnAddUpdAppraisal = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtRating = New System.Windows.Forms.TextBox()
@@ -58,6 +60,7 @@ Partial Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
         Me.Panel14.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.dgvPerformanceAppraisal, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -107,6 +110,7 @@ Partial Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
         Me.dgvPerformanceAppraisal.ColumnHeadersHeight = 35
         Me.dgvPerformanceAppraisal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvPerformanceAppraisal.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column7, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
+        Me.dgvPerformanceAppraisal.ContextMenuStrip = Me.ContextMenuStrip1
         Me.dgvPerformanceAppraisal.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvPerformanceAppraisal.Location = New System.Drawing.Point(0, 0)
         Me.dgvPerformanceAppraisal.MultiSelect = False
@@ -149,8 +153,8 @@ Partial Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
         '
         'Column4
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle1
         Me.Column4.HeaderText = "Rating"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
@@ -169,6 +173,19 @@ Partial Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
         Me.Column6.Width = 75
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(108, 26)
+        '
+        'DeleteToolStripMenuItem
+        '
+        Me.DeleteToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
+        Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'Panel5
         '
@@ -212,7 +229,6 @@ Partial Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtRemarks)
         Me.GroupBox1.Controls.Add(Me.btnClearTextFields)
-        Me.GroupBox1.Controls.Add(Me.btnDelAppraisal)
         Me.GroupBox1.Controls.Add(Me.btnAddUpdAppraisal)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.txtRating)
@@ -269,20 +285,6 @@ Partial Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
         Me.btnClearTextFields.Text = "Clear &Fields"
         Me.btnClearTextFields.UseVisualStyleBackColor = False
         '
-        'btnDelAppraisal
-        '
-        Me.btnDelAppraisal.BackColor = System.Drawing.Color.Maroon
-        Me.btnDelAppraisal.FlatAppearance.BorderColor = System.Drawing.Color.DarkRed
-        Me.btnDelAppraisal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelAppraisal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelAppraisal.ForeColor = System.Drawing.Color.White
-        Me.btnDelAppraisal.Location = New System.Drawing.Point(669, 58)
-        Me.btnDelAppraisal.Name = "btnDelAppraisal"
-        Me.btnDelAppraisal.Size = New System.Drawing.Size(120, 26)
-        Me.btnDelAppraisal.TabIndex = 121
-        Me.btnDelAppraisal.Text = "&Delete Record"
-        Me.btnDelAppraisal.UseVisualStyleBackColor = False
-        '
         'btnAddUpdAppraisal
         '
         Me.btnAddUpdAppraisal.BackColor = System.Drawing.Color.DarkGreen
@@ -290,11 +292,11 @@ Partial Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
         Me.btnAddUpdAppraisal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddUpdAppraisal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddUpdAppraisal.ForeColor = System.Drawing.Color.White
-        Me.btnAddUpdAppraisal.Location = New System.Drawing.Point(669, 26)
+        Me.btnAddUpdAppraisal.Location = New System.Drawing.Point(669, 58)
         Me.btnAddUpdAppraisal.Name = "btnAddUpdAppraisal"
         Me.btnAddUpdAppraisal.Size = New System.Drawing.Size(120, 26)
         Me.btnAddUpdAppraisal.TabIndex = 116
-        Me.btnAddUpdAppraisal.Text = "&Add / Update"
+        Me.btnAddUpdAppraisal.Text = "&Add"
         Me.btnAddUpdAppraisal.UseVisualStyleBackColor = False
         '
         'Label12
@@ -392,6 +394,7 @@ Partial Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
         Me.Panel14.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         CType(Me.dgvPerformanceAppraisal, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -407,7 +410,6 @@ Partial Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
     Friend WithEvents Panel2 As Panel
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnClearTextFields As Button
-    Friend WithEvents btnDelAppraisal As Button
     Friend WithEvents btnAddUpdAppraisal As Button
     Friend WithEvents Label12 As Label
     Friend WithEvents txtRating As TextBox
@@ -429,4 +431,6 @@ Partial Class frmHR_UpdatePersonnelDetails_PerformanceAppraisal
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
 End Class

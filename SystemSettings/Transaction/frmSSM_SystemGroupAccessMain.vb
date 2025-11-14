@@ -98,4 +98,8 @@
 
     End Sub
 
+    Private Sub ToolStripBtnClose_Click(sender As Object, e As EventArgs) Handles ToolStripBtnClose.Click
+        Me.Close()
+
+    End Sub
 End Class
