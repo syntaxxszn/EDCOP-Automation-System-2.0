@@ -94,4 +94,14 @@
             MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
+
+    Private Sub btnTaxRates_Click(sender As Object, e As EventArgs) Handles btnTaxRates.Click
+        If HasSubMenuAccess(btnTaxRates) Then
+            SetButtonColor(btnTaxRates)
+            OpenChildForm_Revision(frmFMIS_Setup_TaxRates)
+        Else
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
 End Class

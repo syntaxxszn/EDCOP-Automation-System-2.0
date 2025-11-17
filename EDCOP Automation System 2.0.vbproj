@@ -255,6 +255,18 @@
     <Compile Include="FMIS\Setup\Supplier\frmFMIS_Setup_Supplier.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FMIS\Setup\Tax Rates\Add Update\frmFMIS_Setup_AddUpdTaxRates.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdTaxRates.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Tax Rates\Add Update\frmFMIS_Setup_AddUpdTaxRates.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Tax Rates\frmFMIS_Setup_TaxRates.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_TaxRates.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Tax Rates\frmFMIS_Setup_TaxRates.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_Employee201FileSummary.vb">
       <DependentUpon>rptHRIS_Employee201FileSummary.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1550,6 +1562,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMIS\Setup\Supplier\frmFMIS_Setup_Supplier.resx">
       <DependentUpon>frmFMIS_Setup_Supplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Tax Rates\Add Update\frmFMIS_Setup_AddUpdTaxRates.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdTaxRates.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Tax Rates\frmFMIS_Setup_TaxRates.resx">
+      <DependentUpon>frmFMIS_Setup_TaxRates.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_Employee201FileSummary.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

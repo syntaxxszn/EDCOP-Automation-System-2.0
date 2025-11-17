@@ -49,6 +49,7 @@ Module Module_Connection
         Catch ex As Exception
             MessageBox.Show($"Unable to load database configuration: {ex.Message}",
                             "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Application.Exit()
         End Try
 
     End Sub

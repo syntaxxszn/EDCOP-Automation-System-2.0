@@ -157,5 +157,8 @@
 
 	Public SupplierTypeID As Integer
 	Public SupplierAccountID As Integer
+
+	Public TaxRateID As Integer
+
 	''--->>> End of Module_Accounting <<<---
 End Module

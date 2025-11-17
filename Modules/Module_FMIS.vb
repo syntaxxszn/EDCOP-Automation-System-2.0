@@ -1924,4 +1924,40 @@ Module Module_FMIS
         End Using
     End Sub
 
+    '-------------->>>> TAX RATES <<<<-----------------
+
+    Sub Sel_Setup_TaxRates(dgv As DataGridView, lbl As ToolStripLabel)
+
+        dgv.Rows.Clear()
+        Try
+            Using Conn As New SqlConnection(StrConn)
+                Conn.Open()
+                Using cmd As New SqlCommand("[spSelFMIS_All_TaxRates]", Conn)
+                    cmd.CommandType = CommandType.StoredProcedure
+                    cmd.Parameters.AddWithValue("@txt", frmFMIS_Setup_TaxRates.txtboxSearch.Text)
+                    Dim returnParam As New SqlParameter("@NumRec", SqlDbType.Int)
+                    returnParam.Direction = ParameterDirection.Output
+                    cmd.Parameters.Add(returnParam)
+
+                    Using dr As SqlDataReader = cmd.ExecuteReader()
+                        While dr.Read()
+                            lbl.Text = If(IsDBNull(returnParam.Value), 0, returnParam.Value)
+                            dgv.Rows.Add(
+                                dr.GetInt32(0),
+                                dr.GetString(1),
+                                dr.GetString(2),
+                            dr.GetDecimal(3))
+                        End While
+                    End Using
+
+                    lbl.Text = If(IsDBNull(returnParam.Value), "0", returnParam.Value.ToString())
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        dgv.ClearSelection()
+
+    End Sub
+
 End Module
