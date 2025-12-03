@@ -23,12 +23,12 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblNotice = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -688,14 +688,14 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.dgvRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvRequest.BackgroundColor = System.Drawing.Color.White
         Me.dgvRequest.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRequest.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRequest.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvRequest.ColumnHeadersHeight = 35
         Me.dgvRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvRequest.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CompanyID, Me.RequestName, Me.RequestNumber, Me.RequestAmount, Me.RequestAmountDue})
@@ -734,16 +734,16 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         '
         'RequestAmount
         '
-        DataGridViewCellStyle28.Format = "N2"
-        Me.RequestAmount.DefaultCellStyle = DataGridViewCellStyle28
+        DataGridViewCellStyle2.Format = "N2"
+        Me.RequestAmount.DefaultCellStyle = DataGridViewCellStyle2
         Me.RequestAmount.HeaderText = "Amount"
         Me.RequestAmount.Name = "RequestAmount"
         Me.RequestAmount.ReadOnly = True
         '
         'RequestAmountDue
         '
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.RequestAmountDue.DefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.RequestAmountDue.DefaultCellStyle = DataGridViewCellStyle3
         Me.RequestAmountDue.HeaderText = "Amount Due"
         Me.RequestAmountDue.Name = "RequestAmountDue"
         Me.RequestAmountDue.ReadOnly = True
@@ -964,7 +964,7 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.txtVoucherNumber.ReadOnly = True
         Me.txtVoucherNumber.Size = New System.Drawing.Size(171, 23)
         Me.txtVoucherNumber.TabIndex = 3
-        Me.txtVoucherNumber.Text = "RFP-0000-000"
+        Me.txtVoucherNumber.Text = "RFP-0000-001"
         '
         'Label2
         '
@@ -1051,14 +1051,14 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.dgvAccountTitle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.dgvAccountTitle.BackgroundColor = System.Drawing.Color.White
         Me.dgvAccountTitle.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle30.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvAccountTitle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle30
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvAccountTitle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvAccountTitle.ColumnHeadersHeight = 35
         Me.dgvAccountTitle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvAccountTitle.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.AccountTitleID, Me.TransactionAccountTitleID, Me.TransactionAccountTitle, Me.TransactionAmount, Me.TransactionProjectNameID, Me.TransactionProjectName, Me.TransactionProjectDeptID, Me.TransactionProjectPTypeID, Me.TransactionSubsidiaryID, Me.TransactionSubsidiaryName, Me.TransactionSubsidiaryTypeID, Me.TransactionDateRange, Me.TransactionDays})
@@ -1102,9 +1102,9 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         '
         'TransactionAmount
         '
-        DataGridViewCellStyle31.Format = "N2"
-        DataGridViewCellStyle31.NullValue = Nothing
-        Me.TransactionAmount.DefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle5.Format = "N2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.TransactionAmount.DefaultCellStyle = DataGridViewCellStyle5
         Me.TransactionAmount.FillWeight = 76.14214!
         Me.TransactionAmount.HeaderText = "Amount"
         Me.TransactionAmount.Name = "TransactionAmount"
@@ -1155,8 +1155,8 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         '
         'TransactionSubsidiaryName
         '
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.TransactionSubsidiaryName.DefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.TransactionSubsidiaryName.DefaultCellStyle = DataGridViewCellStyle6
         Me.TransactionSubsidiaryName.FillWeight = 105.8564!
         Me.TransactionSubsidiaryName.HeaderText = "Subsidiary Name"
         Me.TransactionSubsidiaryName.Name = "TransactionSubsidiaryName"
