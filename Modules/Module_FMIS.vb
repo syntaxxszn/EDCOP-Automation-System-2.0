@@ -3372,6 +3372,28 @@ Module Module_FMIS
 
     End Sub
 
+    Sub SelRequestVoucherNumber(selectedDate As DateTime)
+
+        Try
+            Using Conn As New SqlConnection(StrConn),
+          cmd As New SqlCommand("[spSelFMIS_RFP_VoucherNo]", Conn)
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+                cmd.Parameters.AddWithValue("@date", selectedDate)
+                cmd.Parameters.AddWithValue("@id", RequestVoucherID)
+                Dim voucherCodeParam As New SqlParameter("@VoucherCode", SqlDbType.VarChar, 20)
+                voucherCodeParam.Direction = ParameterDirection.Output
+                cmd.Parameters.Add(voucherCodeParam)
+                Conn.Open()
+                cmd.ExecuteNonQuery()
+                frmFMIS_CashJournal_AddUpdateRequestForPayment.txtVoucherNumber.Text = cmd.Parameters("@VoucherCode").Value.ToString()
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
+
 
 
 

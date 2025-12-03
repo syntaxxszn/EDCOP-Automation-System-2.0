@@ -23,12 +23,12 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblNotice = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -124,6 +124,8 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.TransactionSubsidiaryTypeID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TransactionDateRange = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TransactionDays = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.AddNewAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel39 = New System.Windows.Forms.Panel()
         Me.lblDiscrepancyAmount = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -151,8 +153,6 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.cbAccountTitle = New System.Windows.Forms.ComboBox()
         Me.txtTransactionAmount = New System.Windows.Forms.TextBox()
         Me.cbProjectName = New System.Windows.Forms.ComboBox()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.AddNewAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -165,8 +165,8 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.Panel21.SuspendLayout()
         Me.Panel28.SuspendLayout()
         CType(Me.dgvAccountTitle, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel39.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
+        Me.Panel39.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
@@ -542,6 +542,7 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         'Button5
         '
         Me.Button5.BackColor = System.Drawing.Color.White
+        Me.Button5.Enabled = False
         Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.DarkCyan
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -577,6 +578,7 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         'Button2
         '
         Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.Enabled = False
         Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -585,7 +587,7 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(120, 26)
         Me.Button2.TabIndex = 145
-        Me.Button2.Text = "&Add / Update"
+        Me.Button2.Text = "&Add"
         Me.Button2.UseVisualStyleBackColor = False
         '
         'Label27
@@ -636,6 +638,7 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.Panel1.Controls.Add(Me.Panel17)
         Me.Panel1.Controls.Add(Me.Panel18)
         Me.Panel1.Controls.Add(Me.Panel19)
+        Me.Panel1.Enabled = False
         Me.Panel1.Location = New System.Drawing.Point(549, 19)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(450, 139)
@@ -685,14 +688,14 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.dgvRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvRequest.BackgroundColor = System.Drawing.Color.White
         Me.dgvRequest.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRequest.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRequest.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle20
         Me.dgvRequest.ColumnHeadersHeight = 35
         Me.dgvRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvRequest.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CompanyID, Me.RequestName, Me.RequestNumber, Me.RequestAmount, Me.RequestAmountDue})
@@ -731,16 +734,16 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         '
         'RequestAmount
         '
-        DataGridViewCellStyle13.Format = "N2"
-        Me.RequestAmount.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle28.Format = "N2"
+        Me.RequestAmount.DefaultCellStyle = DataGridViewCellStyle28
         Me.RequestAmount.HeaderText = "Amount"
         Me.RequestAmount.Name = "RequestAmount"
         Me.RequestAmount.ReadOnly = True
         '
         'RequestAmountDue
         '
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.RequestAmountDue.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.RequestAmountDue.DefaultCellStyle = DataGridViewCellStyle29
         Me.RequestAmountDue.HeaderText = "Amount Due"
         Me.RequestAmountDue.Name = "RequestAmountDue"
         Me.RequestAmountDue.ReadOnly = True
@@ -955,6 +958,7 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         '
         Me.txtVoucherNumber.BackColor = System.Drawing.Color.White
         Me.txtVoucherNumber.Cursor = System.Windows.Forms.Cursors.No
+        Me.txtVoucherNumber.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtVoucherNumber.Location = New System.Drawing.Point(516, 22)
         Me.txtVoucherNumber.Name = "txtVoucherNumber"
         Me.txtVoucherNumber.ReadOnly = True
@@ -1047,14 +1051,14 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.dgvAccountTitle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.dgvAccountTitle.BackgroundColor = System.Drawing.Color.White
         Me.dgvAccountTitle.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvAccountTitle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle30.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvAccountTitle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle30
         Me.dgvAccountTitle.ColumnHeadersHeight = 35
         Me.dgvAccountTitle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvAccountTitle.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.AccountTitleID, Me.TransactionAccountTitleID, Me.TransactionAccountTitle, Me.TransactionAmount, Me.TransactionProjectNameID, Me.TransactionProjectName, Me.TransactionProjectDeptID, Me.TransactionProjectPTypeID, Me.TransactionSubsidiaryID, Me.TransactionSubsidiaryName, Me.TransactionSubsidiaryTypeID, Me.TransactionDateRange, Me.TransactionDays})
@@ -1098,9 +1102,9 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         '
         'TransactionAmount
         '
-        DataGridViewCellStyle16.Format = "N2"
-        DataGridViewCellStyle16.NullValue = Nothing
-        Me.TransactionAmount.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle31.Format = "N2"
+        DataGridViewCellStyle31.NullValue = Nothing
+        Me.TransactionAmount.DefaultCellStyle = DataGridViewCellStyle31
         Me.TransactionAmount.FillWeight = 76.14214!
         Me.TransactionAmount.HeaderText = "Amount"
         Me.TransactionAmount.Name = "TransactionAmount"
@@ -1151,8 +1155,8 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         '
         'TransactionSubsidiaryName
         '
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.TransactionSubsidiaryName.DefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.TransactionSubsidiaryName.DefaultCellStyle = DataGridViewCellStyle32
         Me.TransactionSubsidiaryName.FillWeight = 105.8564!
         Me.TransactionSubsidiaryName.HeaderText = "Subsidiary Name"
         Me.TransactionSubsidiaryName.Name = "TransactionSubsidiaryName"
@@ -1183,6 +1187,20 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.TransactionDays.Name = "TransactionDays"
         Me.TransactionDays.ReadOnly = True
         Me.TransactionDays.Width = 86
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNewAccountToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(124, 26)
+        '
+        'AddNewAccountToolStripMenuItem
+        '
+        Me.AddNewAccountToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
+        Me.AddNewAccountToolStripMenuItem.Name = "AddNewAccountToolStripMenuItem"
+        Me.AddNewAccountToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.AddNewAccountToolStripMenuItem.Text = "Remove"
         '
         'Panel39
         '
@@ -1373,7 +1391,7 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(120, 26)
         Me.btnAdd.TabIndex = 143
-        Me.btnAdd.Text = "&Add / Update"
+        Me.btnAdd.Text = "&Add"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
         'Label23
@@ -1445,20 +1463,6 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.cbProjectName.Size = New System.Drawing.Size(221, 23)
         Me.cbProjectName.TabIndex = 120
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNewAccountToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(124, 26)
-        '
-        'AddNewAccountToolStripMenuItem
-        '
-        Me.AddNewAccountToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
-        Me.AddNewAccountToolStripMenuItem.Name = "AddNewAccountToolStripMenuItem"
-        Me.AddNewAccountToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
-        Me.AddNewAccountToolStripMenuItem.Text = "Remove"
-        '
         'frmFMIS_CashJournal_AddUpdateRequestForPayment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1501,9 +1505,9 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.Panel21.ResumeLayout(False)
         Me.Panel28.ResumeLayout(False)
         CType(Me.dgvAccountTitle, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.Panel39.ResumeLayout(False)
         Me.Panel39.PerformLayout()
-        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

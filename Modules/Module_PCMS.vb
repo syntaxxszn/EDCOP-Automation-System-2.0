@@ -1798,7 +1798,7 @@ Module Module_PCMS
 
     Sub ValidateComboBoxSelection(cb As ComboBox, e As CancelEventArgs, message As String)
         If cb.SelectedIndex = -1 OrElse Not cb.Items.Contains(cb.Text) Then
-            MessageBox.Show("An error occurred: ", message, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(message, "System Notice", MessageBoxButtons.OK, MessageBoxIcon.Error)
             e.Cancel = True
             cb.Focus()
             cb.DroppedDown = True

@@ -4,6 +4,7 @@ Public Class frmFMIS_CashJournal_AddUpdateRequestForPayment
 
     Private Sub frmFMIS_CashJournal_AddUpdateRequestForPayment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call DropDownList()
+        Call SelRequestVoucherNumber(DateTime.Now)
 
         lblHeader.Text = "Add New Request For Payment Voucher"
         If isUpdate Then
@@ -176,6 +177,7 @@ Public Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         cbSubsidiary.SelectedIndex = -1
         txtNoDays.Clear()
         txtDateRange.Clear()
+        btnAdd.Text = "Add"
     End Sub
 
     Private Sub dgvAccountTitle_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAccountTitle.CellContentClick
@@ -202,6 +204,7 @@ Public Class frmFMIS_CashJournal_AddUpdateRequestForPayment
             VoucherSubsidiaryID2 = selectedRow.Cells(10).Value
             txtDateRange.Text = selectedRow.Cells(11).Value
             txtNoDays.Text = selectedRow.Cells(12).Value
+            btnAdd.Text = "Update"
         End If
 
     End Sub
@@ -223,38 +226,100 @@ Public Class frmFMIS_CashJournal_AddUpdateRequestForPayment
     End Sub
 
     Private Sub cbPayee_Validating(sender As Object, e As CancelEventArgs) Handles cbPayee.Validating
+        If cbPayee.Text = "" Then Exit Sub
         Call ValidateComboBoxSelection(CType(sender, ComboBox), e, "Please select a valid payee from the list.")
     End Sub
 
     Private Sub cbType_Validating(sender As Object, e As CancelEventArgs) Handles cbType.Validating
+        If cbType.Text = "" Then Exit Sub
         Call ValidateComboBoxSelection(CType(sender, ComboBox), e, "Please select a valid type from the list.")
     End Sub
 
     Private Sub cbStatus_Validating(sender As Object, e As CancelEventArgs) Handles cbStatus.Validating
+        If cbStatus.Text = "" Then Exit Sub
         Call ValidateComboBoxSelection(CType(sender, ComboBox), e, "Please select a valid status from the list.")
     End Sub
 
     Private Sub cbDepartment_Validating(sender As Object, e As CancelEventArgs) Handles cbDepartment.Validating
+        If cbDepartment.Text = "" Then Exit Sub
         Call ValidateComboBoxSelection(CType(sender, ComboBox), e, "Please select a valid department from the list.")
     End Sub
 
     Private Sub cbCostCenter_Validating(sender As Object, e As CancelEventArgs) Handles cbCostCenter.Validating
+        If cbCostCenter.Text = "" Then Exit Sub
         Call ValidateComboBoxSelection(CType(sender, ComboBox), e, "Please select a valid cost center from the list.")
     End Sub
 
     Private Sub cbAccountTitle_Validating(sender As Object, e As CancelEventArgs) Handles cbAccountTitle.Validating
+        If cbAccountTitle.Text = "" Then Exit Sub
         Call ValidateComboBoxSelection(CType(sender, ComboBox), e, "Please select a valid account title from the list.")
     End Sub
 
     Private Sub cbProjectName_Validating(sender As Object, e As CancelEventArgs) Handles cbProjectName.Validating
+        If cbProjectName.Text = "" Then Exit Sub
         Call ValidateComboBoxSelection(CType(sender, ComboBox), e, "Please select a valid project from the list.")
     End Sub
 
     Private Sub cbSubsidiary_Validating(sender As Object, e As CancelEventArgs) Handles cbSubsidiary.Validating
+        If cbSubsidiary.Text = "" Then Exit Sub
         Call ValidateComboBoxSelection(CType(sender, ComboBox), e, "Please select a valid subsidiary from the list.")
     End Sub
 
     Private Sub txtReqAmount_TextChanged(sender As Object, e As EventArgs) Handles txtReqAmount.TextChanged
         Call DiscrepancyAmount()
     End Sub
+
+    Private Sub txtInPaymentOf_TextChanged(sender As Object, e As EventArgs) Handles txtInPaymentOf.TextChanged
+        Call DiscrepancyAmount()
+    End Sub
+
+    Private Sub btnDiscard_Click(sender As Object, e As EventArgs) Handles btnDiscard.Click
+        Me.Close()
+    End Sub
+
+    Private Sub frmFMIS_CashJournal_AddUpdateRequestForPayment_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+
+        ClearTextBoxes(Me)
+        ResetComboBoxes(Me)
+        ResetDatePickers(Me)
+        ResetRadioButtons(Me)
+        ClearDataGridViewRows(Me)
+        isUpdate = False
+        txtVoucherNumber.Text = "RFP-0000-000"
+        txtInPaymentOf.Text = "0.00"
+        txtReqAmount.Text = "0.00"
+        txtTransactionAmount.Text = "0.00"
+        TextBox9.Text = "0.00"
+        TextBox1.Text = "0.00"
+        txtNoDays.Text = "0"
+        btnAdd.Text = "Add"
+
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
+        If String.IsNullOrWhiteSpace(cbPayee.Text) OrElse cbPayee.SelectedIndex = -1 OrElse
+               String.IsNullOrWhiteSpace(txtParticulars.Text) OrElse
+               String.IsNullOrWhiteSpace(txtInPaymentOf.Text) OrElse
+               String.IsNullOrWhiteSpace(cbType.Text) OrElse
+               String.IsNullOrWhiteSpace(cbStatus.Text) OrElse
+               String.IsNullOrWhiteSpace(cbDepartment.Text) OrElse
+               String.IsNullOrWhiteSpace(cbCostCenter.Text) OrElse
+                     dgvAccountTitle.Rows.Count = 0 Then
+            MessageBox.Show("Please fill up all required fields to submit.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        If lblDiscrepancyAmount.Text = "0.00" OrElse
+          MessageBox.Show("Discrepancy found. Proceed?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            'InsUpdRequestForPaymentVoucherAndDetail(dgvAccountTitle)
+        End If
+
+    End Sub
+
+    Private Sub dtpVoucherDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpVoucherDate.ValueChanged
+        If isUpdate Then Exit Sub
+        SelRequestVoucherNumber(dtpVoucherDate.Value)
+    End Sub
+
 End Class
