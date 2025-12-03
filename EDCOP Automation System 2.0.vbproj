@@ -129,6 +129,36 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FMIS\Cash Journal\Request For Payment\Add Update\frmFMIS_CashJournal_AddUpdateRequestForPayment.Designer.vb">
+      <DependentUpon>frmFMIS_CashJournal_AddUpdateRequestForPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Cash Journal\Request For Payment\Add Update\frmFMIS_CashJournal_AddUpdateRequestForPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Cash Journal\Request For Payment\frmFMIS_CashJournal_RequestForPayment.Designer.vb">
+      <DependentUpon>frmFMIS_CashJournal_RequestForPayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Cash Journal\Request For Payment\frmFMIS_CashJournal_RequestForPayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Account Balances\Add Update\frmFMIS_Setup_AddAccountBalances.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddAccountBalances.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Account Balances\Add Update\frmFMIS_Setup_AddAccountBalances.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Account Balances\Add Update\frmFMIS_Setup_UpdAccountBalances.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_UpdAccountBalances.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Account Balances\Add Update\frmFMIS_Setup_UpdAccountBalances.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Account Balances\frmFMIS_Setup_AccountBalances.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AccountBalances.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Account Balances\frmFMIS_Setup_AccountBalances.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FMIS\Setup\Account Category\Add Update\frmFMIS_Setup_AddUpdAccountCategory.Designer.vb">
       <DependentUpon>frmFMIS_Setup_AddUpdAccountCategory.vb</DependentUpon>
     </Compile>
@@ -147,6 +177,24 @@
     <Compile Include="FMIS\Setup\Account Category\frmFMIS_Setup_AccountCategory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FMIS\Setup\Account Mapping\Add Update\frmFMIS_Setup_AddUpdAccountMapping.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdAccountMapping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Account Mapping\Add Update\frmFMIS_Setup_AddUpdAccountMapping.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Account Mapping\frmFMIS_Setup_AccountMapping.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AccountMapping.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Account Mapping\frmFMIS_Setup_AccountMapping.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Approver Setup\frmFMIS_Setup_ApproverSetup.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_ApproverSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Approver Setup\frmFMIS_Setup_ApproverSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FMIS\Setup\Bank Accounts\Add Update\frmFMIS_Setup_AddUpdBankAccount.Designer.vb">
       <DependentUpon>frmFMIS_Setup_AddUpdBankAccount.vb</DependentUpon>
     </Compile>
@@ -163,6 +211,36 @@
       <DependentUpon>frmFMIS_Setup_BankAccount.vb</DependentUpon>
     </Compile>
     <Compile Include="FMIS\Setup\Bank Accounts\frmFMIS_Setup_BankAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Beginning Project\Add Update\frmFMIS_Setup_AddUpdProjectDetail.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdProjectDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Beginning Project\Add Update\frmFMIS_Setup_AddUpdProjectDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Beginning Project\Add Update\frmFMIS_Setup_AddUpdProjectList.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdProjectList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Beginning Project\Add Update\frmFMIS_Setup_AddUpdProjectList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Beginning Project\frmFMIS_Setup_BeginningProject.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_BeginningProject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Beginning Project\frmFMIS_Setup_BeginningProject.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Beginning Subsidiaries\Add Update\frmFMIS_Setup_AddUpdSubsidiaryDetail.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdSubsidiaryDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Beginning Subsidiaries\Add Update\frmFMIS_Setup_AddUpdSubsidiaryDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Beginning Subsidiaries\frmFMIS_Setup_BeginningSubsidiaries.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_BeginningSubsidiaries.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Beginning Subsidiaries\frmFMIS_Setup_BeginningSubsidiaries.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FMIS\Setup\Cash Flow Category\Add Update\frmFMIS_Setup_AddUpdCashFlowCategoryDetail.Designer.vb">
@@ -219,6 +297,30 @@
     <Compile Include="FMIS\Setup\Cost Center\frmFMIS_Setup_CostCenter.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FMIS\Setup\Items\Add Update\frmFMIS_Setup_AddUpdItemCategory.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdItemCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Items\Add Update\frmFMIS_Setup_AddUpdItemCategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Items\Add Update\frmFMIS_Setup_AddUpdItemOPE.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdItemOPE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Items\Add Update\frmFMIS_Setup_AddUpdItemOPE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Items\Add Update\frmFMIS_Setup_AddUpdItemOPEDetail.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdItemOPEDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Items\Add Update\frmFMIS_Setup_AddUpdItemOPEDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Items\frmFMIS_Setup_Items.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_Items.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Items\frmFMIS_Setup_Items.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FMIS\Setup\Subsidiary\Add Update\frmFMIS_Setup_AddUpdSubsidiaryAccount.Designer.vb">
       <DependentUpon>frmFMIS_Setup_AddUpdSubsidiaryAccount.vb</DependentUpon>
     </Compile>
@@ -265,6 +367,30 @@
       <DependentUpon>frmFMIS_Setup_TaxRates.vb</DependentUpon>
     </Compile>
     <Compile Include="FMIS\Setup\Tax Rates\frmFMIS_Setup_TaxRates.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Transaction Closing\Add Update\frmFMIS_Setup_AddUpdTransactionClosing.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdTransactionClosing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Transaction Closing\Add Update\frmFMIS_Setup_AddUpdTransactionClosing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Transaction Closing\frmFMIS_Setup_TransactionClosing.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_TransactionClosing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Transaction Closing\frmFMIS_Setup_TransactionClosing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Year End Closing\Add Update\frmFMIS_Setup_AddUpdYearEndClosing.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_AddUpdYearEndClosing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Year End Closing\Add Update\frmFMIS_Setup_AddUpdYearEndClosing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMIS\Setup\Year End Closing\frmFMIS_Setup_YearEndClosing.Designer.vb">
+      <DependentUpon>frmFMIS_Setup_YearEndClosing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FMIS\Setup\Year End Closing\frmFMIS_Setup_YearEndClosing.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HRIS\Reports\Files\Employee\rptHRIS_Employee201FileSummary.vb">
@@ -1500,6 +1626,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FMIS\Cash Journal\Request For Payment\Add Update\frmFMIS_CashJournal_AddUpdateRequestForPayment.resx">
+      <DependentUpon>frmFMIS_CashJournal_AddUpdateRequestForPayment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Cash Journal\Request For Payment\frmFMIS_CashJournal_RequestForPayment.resx">
+      <DependentUpon>frmFMIS_CashJournal_RequestForPayment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Account Balances\Add Update\frmFMIS_Setup_AddAccountBalances.resx">
+      <DependentUpon>frmFMIS_Setup_AddAccountBalances.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Account Balances\Add Update\frmFMIS_Setup_UpdAccountBalances.resx">
+      <DependentUpon>frmFMIS_Setup_UpdAccountBalances.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Account Balances\frmFMIS_Setup_AccountBalances.resx">
+      <DependentUpon>frmFMIS_Setup_AccountBalances.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FMIS\Setup\Account Category\Add Update\frmFMIS_Setup_AddUpdAccountCategory.resx">
       <DependentUpon>frmFMIS_Setup_AddUpdAccountCategory.vb</DependentUpon>
     </EmbeddedResource>
@@ -1509,6 +1650,15 @@
     <EmbeddedResource Include="FMIS\Setup\Account Category\frmFMIS_Setup_AccountCategory.resx">
       <DependentUpon>frmFMIS_Setup_AccountCategory.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Account Mapping\Add Update\frmFMIS_Setup_AddUpdAccountMapping.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdAccountMapping.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Account Mapping\frmFMIS_Setup_AccountMapping.resx">
+      <DependentUpon>frmFMIS_Setup_AccountMapping.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Approver Setup\frmFMIS_Setup_ApproverSetup.resx">
+      <DependentUpon>frmFMIS_Setup_ApproverSetup.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FMIS\Setup\Bank Accounts\Add Update\frmFMIS_Setup_AddUpdBankAccount.resx">
       <DependentUpon>frmFMIS_Setup_AddUpdBankAccount.vb</DependentUpon>
     </EmbeddedResource>
@@ -1517,6 +1667,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMIS\Setup\Bank Accounts\frmFMIS_Setup_BankAccount.resx">
       <DependentUpon>frmFMIS_Setup_BankAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Beginning Project\Add Update\frmFMIS_Setup_AddUpdProjectDetail.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdProjectDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Beginning Project\Add Update\frmFMIS_Setup_AddUpdProjectList.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdProjectList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Beginning Project\frmFMIS_Setup_BeginningProject.resx">
+      <DependentUpon>frmFMIS_Setup_BeginningProject.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Beginning Subsidiaries\Add Update\frmFMIS_Setup_AddUpdSubsidiaryDetail.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdSubsidiaryDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Beginning Subsidiaries\frmFMIS_Setup_BeginningSubsidiaries.resx">
+      <DependentUpon>frmFMIS_Setup_BeginningSubsidiaries.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMIS\Setup\Cash Flow Category\Add Update\frmFMIS_Setup_AddUpdCashFlowCategoryDetail.resx">
       <DependentUpon>frmFMIS_Setup_AddUpdCashFlowCategoryDetail.vb</DependentUpon>
@@ -1545,6 +1710,18 @@
     <EmbeddedResource Include="FMIS\Setup\Cost Center\frmFMIS_Setup_CostCenter.resx">
       <DependentUpon>frmFMIS_Setup_CostCenter.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Items\Add Update\frmFMIS_Setup_AddUpdItemCategory.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdItemCategory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Items\Add Update\frmFMIS_Setup_AddUpdItemOPE.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdItemOPE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Items\Add Update\frmFMIS_Setup_AddUpdItemOPEDetail.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdItemOPEDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Items\frmFMIS_Setup_Items.resx">
+      <DependentUpon>frmFMIS_Setup_Items.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FMIS\Setup\Subsidiary\Add Update\frmFMIS_Setup_AddUpdSubsidiaryAccount.resx">
       <DependentUpon>frmFMIS_Setup_AddUpdSubsidiaryAccount.vb</DependentUpon>
     </EmbeddedResource>
@@ -1568,6 +1745,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FMIS\Setup\Tax Rates\frmFMIS_Setup_TaxRates.resx">
       <DependentUpon>frmFMIS_Setup_TaxRates.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Transaction Closing\Add Update\frmFMIS_Setup_AddUpdTransactionClosing.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdTransactionClosing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Transaction Closing\frmFMIS_Setup_TransactionClosing.resx">
+      <DependentUpon>frmFMIS_Setup_TransactionClosing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Year End Closing\Add Update\frmFMIS_Setup_AddUpdYearEndClosing.resx">
+      <DependentUpon>frmFMIS_Setup_AddUpdYearEndClosing.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FMIS\Setup\Year End Closing\frmFMIS_Setup_YearEndClosing.resx">
+      <DependentUpon>frmFMIS_Setup_YearEndClosing.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HRIS\Reports\Files\Employee\rptHRIS_Employee201FileSummary.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -2390,9 +2579,13 @@
     <None Include="Resources\transfer.png" />
     <None Include="Resources\prev1.png" />
     <None Include="Resources\next1.png" />
+    <None Include="Resources\account.png" />
+    <None Include="Resources\clock.png" />
     <Content Include="sssss.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="FMIS\Cash Journal\Cash Disbursement\" />
+    <Folder Include="FMIS\Cash Journal\Cash Receipts\" />
     <Folder Include="HRIS\Reports\Files\COE - Consultant\" />
     <Folder Include="HRIS\Transaction\Benefit Administration\" />
     <Folder Include="TKM\Reports\" />

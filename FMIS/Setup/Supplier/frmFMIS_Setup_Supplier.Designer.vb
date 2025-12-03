@@ -24,16 +24,13 @@ Partial Class frmFMIS_Setup_Supplier
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFMIS_Setup_Supplier))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripBtnRefresh = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripLabel7 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripBtnClose = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButtonHelp = New System.Windows.Forms.ToolStripButton()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -43,9 +40,7 @@ Partial Class frmFMIS_Setup_Supplier
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtboxSearch = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnEdit = New System.Windows.Forms.Button()
         Me.ImageListBtn = New System.Windows.Forms.ImageList(Me.components)
-        Me.btnCreateNew = New System.Windows.Forms.Button()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
@@ -65,7 +60,6 @@ Partial Class frmFMIS_Setup_Supplier
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.AddNewAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
@@ -96,6 +90,12 @@ Partial Class frmFMIS_Setup_Supplier
         Me.Panel20 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.AddNewAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnEdit = New System.Windows.Forms.Button()
+        Me.btnCreateNew = New System.Windows.Forms.Button()
+        Me.ToolStripBtnRefresh = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripBtnClose = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButtonHelp = New System.Windows.Forms.ToolStripButton()
         Me.Panel1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -148,37 +148,11 @@ Partial Class frmFMIS_Setup_Supplier
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 35)
         '
-        'ToolStripBtnRefresh
-        '
-        Me.ToolStripBtnRefresh.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_refresh_96
-        Me.ToolStripBtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripBtnRefresh.Name = "ToolStripBtnRefresh"
-        Me.ToolStripBtnRefresh.Size = New System.Drawing.Size(66, 32)
-        Me.ToolStripBtnRefresh.Text = "Refresh"
-        '
         'ToolStripLabel7
         '
         Me.ToolStripLabel7.Name = "ToolStripLabel7"
         Me.ToolStripLabel7.Size = New System.Drawing.Size(109, 32)
         Me.ToolStripLabel7.Text = "                                  "
-        '
-        'ToolStripBtnClose
-        '
-        Me.ToolStripBtnClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripBtnClose.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
-        Me.ToolStripBtnClose.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripBtnClose.Name = "ToolStripBtnClose"
-        Me.ToolStripBtnClose.Size = New System.Drawing.Size(55, 32)
-        Me.ToolStripBtnClose.Text = "Close"
-        '
-        'ToolStripButtonHelp
-        '
-        Me.ToolStripButtonHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripButtonHelp.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.question
-        Me.ToolStripButtonHelp.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButtonHelp.Name = "ToolStripButtonHelp"
-        Me.ToolStripButtonHelp.Size = New System.Drawing.Size(51, 32)
-        Me.ToolStripButtonHelp.Text = "Help"
         '
         'Panel2
         '
@@ -275,48 +249,12 @@ Partial Class frmFMIS_Setup_Supplier
         Me.Label4.TabIndex = 49
         Me.Label4.Text = "Search "
         '
-        'btnEdit
-        '
-        Me.btnEdit.BackColor = System.Drawing.Color.White
-        Me.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.Navy
-        Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEdit.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEdit.ForeColor = System.Drawing.Color.Navy
-        Me.btnEdit.ImageIndex = 1
-        Me.btnEdit.ImageList = Me.ImageListBtn
-        Me.btnEdit.Location = New System.Drawing.Point(127, 14)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(115, 39)
-        Me.btnEdit.TabIndex = 48
-        Me.btnEdit.Text = " &Edit"
-        Me.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnEdit.UseVisualStyleBackColor = False
-        '
         'ImageListBtn
         '
         Me.ImageListBtn.ImageStream = CType(resources.GetObject("ImageListBtn.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImageListBtn.TransparentColor = System.Drawing.Color.Transparent
         Me.ImageListBtn.Images.SetKeyName(0, "icons8-add-96.png")
         Me.ImageListBtn.Images.SetKeyName(1, "pen.png")
-        '
-        'btnCreateNew
-        '
-        Me.btnCreateNew.BackColor = System.Drawing.Color.White
-        Me.btnCreateNew.FlatAppearance.BorderColor = System.Drawing.Color.Navy
-        Me.btnCreateNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCreateNew.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCreateNew.ForeColor = System.Drawing.Color.Navy
-        Me.btnCreateNew.ImageIndex = 0
-        Me.btnCreateNew.ImageList = Me.ImageListBtn
-        Me.btnCreateNew.Location = New System.Drawing.Point(6, 14)
-        Me.btnCreateNew.Name = "btnCreateNew"
-        Me.btnCreateNew.Size = New System.Drawing.Size(115, 39)
-        Me.btnCreateNew.TabIndex = 47
-        Me.btnCreateNew.Text = " &Create New"
-        Me.btnCreateNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnCreateNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCreateNew.UseVisualStyleBackColor = False
         '
         'ToolStrip2
         '
@@ -469,14 +407,14 @@ Partial Class frmFMIS_Setup_Supplier
         Me.dgvType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvType.BackgroundColor = System.Drawing.Color.White
         Me.dgvType.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 8.75!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvType.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.75!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvType.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvType.ColumnHeadersHeight = 35
         Me.dgvType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvType.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.AccountCategoryMainID, Me.Column1, Me.Column9})
@@ -521,13 +459,6 @@ Partial Class frmFMIS_Setup_Supplier
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddNewAccountToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 26)
-        '
-        'AddNewAccountToolStripMenuItem
-        '
-        Me.AddNewAccountToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_add_96
-        Me.AddNewAccountToolStripMenuItem.Name = "AddNewAccountToolStripMenuItem"
-        Me.AddNewAccountToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.AddNewAccountToolStripMenuItem.Text = "Add New Account"
         '
         'Panel19
         '
@@ -633,14 +564,14 @@ Partial Class frmFMIS_Setup_Supplier
         Me.dgvSupplierAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvSupplierAccount.BackgroundColor = System.Drawing.Color.White
         Me.dgvSupplierAccount.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.75!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvSupplierAccount.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 8.75!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvSupplierAccount.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvSupplierAccount.ColumnHeadersHeight = 35
         Me.dgvSupplierAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvSupplierAccount.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column7, Me.Column6, Me.Column8})
@@ -732,7 +663,7 @@ Partial Class frmFMIS_Setup_Supplier
         Me.lblDetail.AutoSize = True
         Me.lblDetail.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDetail.ForeColor = System.Drawing.Color.Gold
-        Me.lblDetail.Location = New System.Drawing.Point(189, 4)
+        Me.lblDetail.Location = New System.Drawing.Point(179, 4)
         Me.lblDetail.Name = "lblDetail"
         Me.lblDetail.Size = New System.Drawing.Size(14, 15)
         Me.lblDetail.TabIndex = 1
@@ -818,6 +749,75 @@ Partial Class frmFMIS_Setup_Supplier
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(1050, 5)
         Me.Panel17.TabIndex = 7
+        '
+        'AddNewAccountToolStripMenuItem
+        '
+        Me.AddNewAccountToolStripMenuItem.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_add_96
+        Me.AddNewAccountToolStripMenuItem.Name = "AddNewAccountToolStripMenuItem"
+        Me.AddNewAccountToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AddNewAccountToolStripMenuItem.Text = "Add New Account"
+        '
+        'btnEdit
+        '
+        Me.btnEdit.BackColor = System.Drawing.Color.White
+        Me.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.Navy
+        Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEdit.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEdit.ForeColor = System.Drawing.Color.Navy
+        Me.btnEdit.ImageIndex = 1
+        Me.btnEdit.ImageList = Me.ImageListBtn
+        Me.btnEdit.Location = New System.Drawing.Point(127, 14)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(115, 39)
+        Me.btnEdit.TabIndex = 48
+        Me.btnEdit.Text = " &Edit"
+        Me.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnEdit.UseVisualStyleBackColor = False
+        '
+        'btnCreateNew
+        '
+        Me.btnCreateNew.BackColor = System.Drawing.Color.White
+        Me.btnCreateNew.FlatAppearance.BorderColor = System.Drawing.Color.Navy
+        Me.btnCreateNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCreateNew.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCreateNew.ForeColor = System.Drawing.Color.Navy
+        Me.btnCreateNew.ImageIndex = 0
+        Me.btnCreateNew.ImageList = Me.ImageListBtn
+        Me.btnCreateNew.Location = New System.Drawing.Point(6, 14)
+        Me.btnCreateNew.Name = "btnCreateNew"
+        Me.btnCreateNew.Size = New System.Drawing.Size(115, 39)
+        Me.btnCreateNew.TabIndex = 47
+        Me.btnCreateNew.Text = " &Create New"
+        Me.btnCreateNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCreateNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCreateNew.UseVisualStyleBackColor = False
+        '
+        'ToolStripBtnRefresh
+        '
+        Me.ToolStripBtnRefresh.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_refresh_96
+        Me.ToolStripBtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripBtnRefresh.Name = "ToolStripBtnRefresh"
+        Me.ToolStripBtnRefresh.Size = New System.Drawing.Size(66, 32)
+        Me.ToolStripBtnRefresh.Text = "Refresh"
+        '
+        'ToolStripBtnClose
+        '
+        Me.ToolStripBtnClose.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripBtnClose.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.icons8_close_48
+        Me.ToolStripBtnClose.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripBtnClose.Name = "ToolStripBtnClose"
+        Me.ToolStripBtnClose.Size = New System.Drawing.Size(55, 32)
+        Me.ToolStripBtnClose.Text = "Close"
+        '
+        'ToolStripButtonHelp
+        '
+        Me.ToolStripButtonHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.ToolStripButtonHelp.Image = Global.EDCOP_Project_Monitoring_System.My.Resources.Resources.question
+        Me.ToolStripButtonHelp.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButtonHelp.Name = "ToolStripButtonHelp"
+        Me.ToolStripButtonHelp.Size = New System.Drawing.Size(51, 32)
+        Me.ToolStripButtonHelp.Text = "Help"
         '
         'frmFMIS_Setup_Supplier
         '

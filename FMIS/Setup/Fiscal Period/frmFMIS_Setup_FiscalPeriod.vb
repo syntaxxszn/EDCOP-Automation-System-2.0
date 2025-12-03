@@ -12,6 +12,8 @@
 
     Private Sub ToolStripBtnRefresh_Click(sender As Object, e As EventArgs) Handles ToolStripBtnRefresh.Click
         Sel_Setup_FiscalPeriod(dgvFiscalPeriod, toolstriplabelNoOfRecord)
+        lblHeader.Text = ""
+        _FiscalPeriodID = 0
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
@@ -28,6 +30,7 @@
         If dgvFiscalPeriod.SelectedRows.Count > 0 Then
             Dim selectedRow = dgvFiscalPeriod.SelectedRows(0)
             _FiscalPeriodID = selectedRow.Cells(0).Value
+            lblHeader.Text = selectedRow.Cells(1).Value
         End If
     End Sub
 

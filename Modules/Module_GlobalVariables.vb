@@ -160,5 +160,47 @@
 
 	Public TaxRateID As Integer
 
+	Public ItemCategoryID As Integer
+	Public ItemOPEID As Integer
+	Public ItemSubDetailID As Integer
+
+	Public BeginProjectID As Integer
+	Public BeginProjectDetailID As Integer
+
+	Public TransactionClosingID As Integer
+
+	Public YearEndClosingID As Integer
+
+	Public AccountBalancesYear As Integer
+	Public AccountBalancesID As Integer
+
+	Public AccountMappingInternal As String = ""
+
+	'Vouchers
+	Public PayeeTypeID As Integer
+
+	Public VoucherDepartmentID1 As Integer
+	Public VoucherDepartmentID2 As Integer
+	Public VoucherDepartmentID3 As Integer = 0
+
+	Public VoucherCostCenterID1 As Integer
+	Public VoucherCostCenterID2 As Integer
+	Public VoucherCostCenterID3 As Integer = 0
+
+	Public VoucherAccountTitleID1 As Integer
+	Public VoucherAccountTitleID2 As Integer
+	Public VoucherAccountTitleID3 As Integer = 1000000
+
+	Public VoucherProjectNameID1 As Integer
+	Public VoucherProjectNameID2 As Integer
+	Public VoucherProjectNameID3 As Integer
+
+	Public VoucherSubsidiaryID1 As Integer
+	Public VoucherSubsidiaryID2 As Integer
+
+	Public RequestVoucherID As Integer
+	Public RequestVoucherDetailID As Integer
+
+
 	''--->>> End of Module_Accounting <<<---
 End Module

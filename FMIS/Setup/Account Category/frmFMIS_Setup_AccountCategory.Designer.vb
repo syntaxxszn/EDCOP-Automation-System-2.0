@@ -24,11 +24,11 @@ Partial Class frmFMIS_Setup_AccountCategory
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFMIS_Setup_AccountCategory))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
@@ -99,6 +99,7 @@ Partial Class frmFMIS_Setup_AccountCategory
         Me.Panel20 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.lblHeader = New System.Windows.Forms.ToolStripLabel()
         Me.Panel1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -326,7 +327,7 @@ Partial Class frmFMIS_Setup_AccountCategory
         '
         Me.ToolStrip2.BackColor = System.Drawing.Color.Navy
         Me.ToolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel2, Me.toolstriplabelNoOfRecord, Me.ToolStripLabel4})
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel3, Me.ToolStripLabel2, Me.toolstriplabelNoOfRecord, Me.ToolStripLabel4, Me.lblHeader})
         Me.ToolStrip2.Location = New System.Drawing.Point(0, 68)
         Me.ToolStrip2.Name = "ToolStrip2"
         Me.ToolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -465,14 +466,14 @@ Partial Class frmFMIS_Setup_AccountCategory
         Me.dgvAccountCategoryMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvAccountCategoryMain.BackgroundColor = System.Drawing.Color.White
         Me.dgvAccountCategoryMain.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.75!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvAccountCategoryMain.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 8.75!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvAccountCategoryMain.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvAccountCategoryMain.ColumnHeadersHeight = 35
         Me.dgvAccountCategoryMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvAccountCategoryMain.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.AccountCategoryMainID, Me.AccountCategoryMainCode, Me.AccountCategoryMainType, Me.AccountCategoryMainBalance})
@@ -499,8 +500,8 @@ Partial Class frmFMIS_Setup_AccountCategory
         '
         'AccountCategoryMainCode
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.AccountCategoryMainCode.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.AccountCategoryMainCode.DefaultCellStyle = DataGridViewCellStyle10
         Me.AccountCategoryMainCode.HeaderText = "Code"
         Me.AccountCategoryMainCode.Name = "AccountCategoryMainCode"
         Me.AccountCategoryMainCode.ReadOnly = True
@@ -515,8 +516,8 @@ Partial Class frmFMIS_Setup_AccountCategory
         '
         'AccountCategoryMainBalance
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.AccountCategoryMainBalance.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.AccountCategoryMainBalance.DefaultCellStyle = DataGridViewCellStyle11
         Me.AccountCategoryMainBalance.HeaderText = "Normal Balance"
         Me.AccountCategoryMainBalance.Name = "AccountCategoryMainBalance"
         Me.AccountCategoryMainBalance.ReadOnly = True
@@ -654,14 +655,14 @@ Partial Class frmFMIS_Setup_AccountCategory
         Me.dgvAccountCategoryDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvAccountCategoryDetail.BackgroundColor = System.Drawing.Color.White
         Me.dgvAccountCategoryDetail.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 8.75!)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvAccountCategoryDetail.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 8.75!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvAccountCategoryDetail.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvAccountCategoryDetail.ColumnHeadersHeight = 35
         Me.dgvAccountCategoryDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvAccountCategoryDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.AccountCategoryDetailCode, Me.AccountCategoryDetailType})
@@ -688,8 +689,8 @@ Partial Class frmFMIS_Setup_AccountCategory
         '
         'AccountCategoryDetailCode
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.AccountCategoryDetailCode.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.AccountCategoryDetailCode.DefaultCellStyle = DataGridViewCellStyle12
         Me.AccountCategoryDetailCode.HeaderText = "Code"
         Me.AccountCategoryDetailCode.Name = "AccountCategoryDetailCode"
         Me.AccountCategoryDetailCode.ReadOnly = True
@@ -741,7 +742,7 @@ Partial Class frmFMIS_Setup_AccountCategory
         Me.lblCostCenter.AutoSize = True
         Me.lblCostCenter.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCostCenter.ForeColor = System.Drawing.Color.Gold
-        Me.lblCostCenter.Location = New System.Drawing.Point(175, 4)
+        Me.lblCostCenter.Location = New System.Drawing.Point(164, 4)
         Me.lblCostCenter.Name = "lblCostCenter"
         Me.lblCostCenter.Size = New System.Drawing.Size(14, 15)
         Me.lblCostCenter.TabIndex = 1
@@ -828,6 +829,13 @@ Partial Class frmFMIS_Setup_AccountCategory
         Me.Panel17.Size = New System.Drawing.Size(1050, 5)
         Me.Panel17.TabIndex = 7
         '
+        'lblHeader
+        '
+        Me.lblHeader.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHeader.ForeColor = System.Drawing.Color.Gold
+        Me.lblHeader.Name = "lblHeader"
+        Me.lblHeader.Size = New System.Drawing.Size(0, 22)
+        '
         'frmFMIS_Setup_AccountCategory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -850,7 +858,7 @@ Partial Class frmFMIS_Setup_AccountCategory
         Me.Name = "frmFMIS_Setup_AccountCategory"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.Text = "frmFMIS_Setup_AccountCategory"
+        Me.Text = "Setup - Account Category"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
@@ -947,4 +955,5 @@ Partial Class frmFMIS_Setup_AccountCategory
     Friend WithEvents ToolStripLabel2 As ToolStripLabel
     Friend WithEvents toolstriplabelNoOfRecord As ToolStripLabel
     Friend WithEvents ToolStripLabel4 As ToolStripLabel
+    Friend WithEvents lblHeader As ToolStripLabel
 End Class

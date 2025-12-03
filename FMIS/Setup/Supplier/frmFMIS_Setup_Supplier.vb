@@ -55,15 +55,16 @@
         If dgvSupplierAccount.SelectedRows.Count > 0 Then
             frmFMIS_Setup_AddUpdSupplierAccount.ShowDialog()
         Else
+            dgvType.ClearSelection()
             frmFMIS_Setup_AddUpdSupplierType.ShowDialog()
         End If
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         isUpdate = True
-        If dgvType.SelectedRows.Count > 0 Then
+        If dgvType.SelectedRows.Count > 0 AndAlso SupplierTypeID <> 0 Then
             frmFMIS_Setup_AddUpdSupplierType.ShowDialog()
-        ElseIf dgvSupplierAccount.SelectedRows.Count > 0 Then
+        ElseIf dgvSupplierAccount.SelectedRows.Count > 0 AndAlso SupplierAccountID <> 0 Then
             frmFMIS_Setup_AddUpdSupplierAccount.ShowDialog()
         Else
             MessageBox.Show("Unknown Action.", "EAS 2.0 --[System Notice]--", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -90,56 +91,49 @@
         Dim keyword As String = txtboxSearch.Text.Trim().ToLower()
         Dim targetGrid As DataGridView = Nothing
 
-        ' Determine which grid to work with based on button text
+        ' Determine target grid
         Select Case btnSearchFilter.Text
             Case "Type"
                 targetGrid = dgvType
                 dgvSupplierAccount.Rows.Clear()
+
             Case "Account"
                 targetGrid = dgvSupplierAccount
         End Select
 
-        ' Exit early if less than 3 characters and not blank (show all if cleared)
-        If targetGrid IsNot Nothing Then
-            If keyword.Length < 3 AndAlso keyword <> "" Then Exit Sub
-        Else
-            Exit Sub
-        End If
+        If targetGrid Is Nothing Then Exit Sub
 
-        ' Proceed if a valid grid is found
-        If targetGrid IsNot Nothing Then
+        ' Require 3 chars (unless cleared)
+        If keyword.Length < 3 AndAlso keyword <> "" Then Exit Sub
 
-            frmLoading.Show()
-            frmLoading.Refresh()
-            Application.DoEvents() ' Allow UI to update
+        frmLoading.Show()
+        frmLoading.Refresh()
 
-            Try
-                targetGrid.Visible = True
-                Dim matchFound As Boolean = False
+        Try
+            targetGrid.Visible = True
+            Dim matchFound As Boolean = False
 
-                For Each row As DataGridViewRow In targetGrid.Rows
-                    If Not row.IsNewRow Then
-                        If keyword = "" Then
-                            row.Visible = True
-                            matchFound = True
-                        Else
-                            Dim cellValue As String = row.Cells(1).Value?.ToString().ToLower()
-                            Dim isMatch As Boolean = (cellValue IsNot Nothing AndAlso cellValue.Contains(keyword))
-                            row.Visible = isMatch
-                            If isMatch Then matchFound = True
-                        End If
-                    End If
-                Next
+            For Each row As DataGridViewRow In targetGrid.Rows
+                If row.IsNewRow Then Continue For
 
-                ' Show message if no match found and keyword is not empty
-                If Not matchFound AndAlso keyword <> "" Then
-                    MessageBox.Show("No matching records found.", "Search", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If keyword = "" Then
+                    row.Visible = True
+                    matchFound = True
+                Else
+                    Dim cellValue As String = If(row.Cells(1).Value, "").ToString().ToLower()
+                    Dim isMatch As Boolean = cellValue.Contains(keyword)
+                    row.Visible = isMatch
+                    If isMatch Then matchFound = True
                 End If
+            Next
 
-            Finally
-                frmLoading.Close()
-            End Try
-        End If
+            If Not matchFound AndAlso keyword <> "" Then
+                MessageBox.Show("No matching records found.", "Search", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
+        Finally
+            frmLoading.Close()
+        End Try
 
     End Sub
 
@@ -156,4 +150,6 @@
     Private Sub lblDetail_TextChanged(sender As Object, e As EventArgs) Handles lblDetail.TextChanged
         lblDetail.Visible = True
     End Sub
+
+
 End Class

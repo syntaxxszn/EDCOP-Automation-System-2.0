@@ -9,6 +9,7 @@
         Call Sel_Setup_AccountCategory(dgvAccountCategoryMain)
         _AccountCategoryID = 0
         _AccountCategoryDetailID = 0
+        lblHeader.Text = ""
 
     End Sub
 
@@ -52,6 +53,7 @@
         If dgvAccountCategoryMain.SelectedRows.Count > 0 Then
             Dim selectedRow = dgvAccountCategoryMain.SelectedRows(0)
             _AccountCategoryID = selectedRow.Cells(0).Value
+            lblHeader.Text = selectedRow.Cells(2).Value
             _AccountCategoryDetailID = 0
             lblCostCenter.Visible = False
             Sel_Setup_AccountCategory_ByTypeID(dgvAccountCategoryDetail)
@@ -137,41 +139,34 @@
     Private Sub txtboxSearch_TextChanged(sender As Object, e As EventArgs) Handles txtboxSearch.TextChanged
 
         Dim keyword As String = txtboxSearch.Text.Trim().ToLower()
-        Dim targetGrid As DataGridView = Nothing
 
-        ' Determine which grid to work with based on button text
-        Select Case btnSearchFilter.Text
-            Case "Account"
-                targetGrid = dgvAccountCategoryMain
-            Case "Detail"
-                targetGrid = dgvAccountCategoryDetail
-        End Select
+        ' Require 3 chars (unless cleared)
+        If keyword.Length < 3 AndAlso keyword <> "" Then Exit Sub
 
-        ' Proceed if a valid grid is found
-        If targetGrid IsNot Nothing Then
-            targetGrid.Visible = True
+        frmLoading.Show()
+        frmLoading.Refresh()
 
-            Dim matchFound As Boolean = False
+        Try
 
-            For Each row As DataGridViewRow In targetGrid.Rows
-                If Not row.IsNewRow Then
-                    If keyword = "" Then
-                        row.Visible = True
-                        matchFound = True
-                    Else
-                        Dim cellValue As String = row.Cells(1).Value?.ToString().ToLower()
-                        Dim isMatch As Boolean = (cellValue IsNot Nothing AndAlso cellValue.Contains(keyword))
-                        row.Visible = isMatch
-                        If isMatch Then matchFound = True
-                    End If
-                End If
-            Next
+            Select Case btnSearchFilter.Text
+                Case "Account"
+                    Call Sel_Setup_AccountCategory(dgvAccountCategoryMain)
 
-            ' Show message if no match found and keyword is not empty
-            If Not matchFound AndAlso keyword <> "" Then
-                MessageBox.Show("No matching records found.", "Search", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Case Else
+                    Call Sel_Setup_AccountCategory_ByTypeID(dgvAccountCategoryDetail)
+
+            End Select
+
+        Finally
+
+            frmLoading.Close()
+
+            If dgvAccountCategoryDetail.Rows.Count = 0 Then
+                MessageBox.Show("No records found.", "Information",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
-        End If
+
+        End Try
 
     End Sub
 
@@ -197,5 +192,7 @@
     Private Sub lblCostCenter_TextChanged(sender As Object, e As EventArgs) Handles lblCostCenter.TextChanged
         lblCostCenter.Visible = True
     End Sub
+
+
 
 End Class

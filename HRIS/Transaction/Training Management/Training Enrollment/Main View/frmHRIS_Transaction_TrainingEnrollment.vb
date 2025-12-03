@@ -281,5 +281,7 @@
         If Not HasUserAccess("update") Then Return
     End Sub
 
+    Private Sub dgvTrainingList_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTrainingList.CellContentClick
 
+    End Sub
 End Class

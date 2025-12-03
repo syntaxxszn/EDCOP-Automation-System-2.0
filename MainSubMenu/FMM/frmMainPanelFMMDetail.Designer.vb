@@ -229,6 +229,10 @@ Partial Class frmMainPanelFMMDetail
         Me.ImageList1.Images.SetKeyName(20, "edit.png")
         Me.ImageList1.Images.SetKeyName(21, "tknewfile.png")
         Me.ImageList1.Images.SetKeyName(22, "printer.png")
+        Me.ImageList1.Images.SetKeyName(23, "chledger.png")
+        Me.ImageList1.Images.SetKeyName(24, "rfp.png")
+        Me.ImageList1.Images.SetKeyName(25, "rfpv.png")
+        Me.ImageList1.Images.SetKeyName(26, "receiptledger.png")
         '
         'btnAccountBalances
         '
@@ -968,14 +972,14 @@ Partial Class frmMainPanelFMMDetail
         Me.btnCashDisbursement.FlatAppearance.BorderSize = 0
         Me.btnCashDisbursement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCashDisbursement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCashDisbursement.ImageIndex = 1
+        Me.btnCashDisbursement.ImageIndex = 24
         Me.btnCashDisbursement.ImageList = Me.ImageList1
         Me.btnCashDisbursement.Location = New System.Drawing.Point(0, 104)
         Me.btnCashDisbursement.Name = "btnCashDisbursement"
         Me.btnCashDisbursement.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnCashDisbursement.Size = New System.Drawing.Size(282, 35)
         Me.btnCashDisbursement.TabIndex = 7
-        Me.btnCashDisbursement.Tag = "33"
+        Me.btnCashDisbursement.Tag = "2600000003"
         Me.btnCashDisbursement.Text = "   Cash Disbursement"
         Me.btnCashDisbursement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCashDisbursement.UseVisualStyleBackColor = True
@@ -986,14 +990,14 @@ Partial Class frmMainPanelFMMDetail
         Me.btnCashReceipts.FlatAppearance.BorderSize = 0
         Me.btnCashReceipts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCashReceipts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCashReceipts.ImageIndex = 1
+        Me.btnCashReceipts.ImageIndex = 26
         Me.btnCashReceipts.ImageList = Me.ImageList1
         Me.btnCashReceipts.Location = New System.Drawing.Point(0, 69)
         Me.btnCashReceipts.Name = "btnCashReceipts"
         Me.btnCashReceipts.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnCashReceipts.Size = New System.Drawing.Size(282, 35)
         Me.btnCashReceipts.TabIndex = 6
-        Me.btnCashReceipts.Tag = "32"
+        Me.btnCashReceipts.Tag = "2600000002"
         Me.btnCashReceipts.Text = "   Cash Receipts"
         Me.btnCashReceipts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCashReceipts.UseVisualStyleBackColor = True
@@ -1004,14 +1008,14 @@ Partial Class frmMainPanelFMMDetail
         Me.btnRequestForPayment.FlatAppearance.BorderSize = 0
         Me.btnRequestForPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRequestForPayment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRequestForPayment.ImageIndex = 0
+        Me.btnRequestForPayment.ImageIndex = 25
         Me.btnRequestForPayment.ImageList = Me.ImageList1
         Me.btnRequestForPayment.Location = New System.Drawing.Point(0, 34)
         Me.btnRequestForPayment.Name = "btnRequestForPayment"
         Me.btnRequestForPayment.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnRequestForPayment.Size = New System.Drawing.Size(282, 35)
         Me.btnRequestForPayment.TabIndex = 5
-        Me.btnRequestForPayment.Tag = "31"
+        Me.btnRequestForPayment.Tag = "2600000001"
         Me.btnRequestForPayment.Text = "   Request For Payment"
         Me.btnRequestForPayment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnRequestForPayment.UseVisualStyleBackColor = True

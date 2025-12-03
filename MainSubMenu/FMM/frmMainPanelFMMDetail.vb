@@ -104,4 +104,94 @@
         End If
     End Sub
 
+    Private Sub btnItems_Click(sender As Object, e As EventArgs) Handles btnItems.Click
+        If HasSubMenuAccess(btnItems) Then
+            SetButtonColor(btnItems)
+            OpenChildForm_Revision(frmFMIS_Setup_Items)
+        Else
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub btnBeginningProject_Click(sender As Object, e As EventArgs) Handles btnBeginningProject.Click
+        If HasSubMenuAccess(btnBeginningProject) Then
+            SetButtonColor(btnBeginningProject)
+            OpenChildForm_Revision(frmFMIS_Setup_BeginningProject)
+        Else
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub btnBeginningSubsidiaries_Click(sender As Object, e As EventArgs) Handles btnBeginningSubsidiaries.Click
+        If HasSubMenuAccess(btnBeginningSubsidiaries) Then
+            SetButtonColor(btnBeginningSubsidiaries)
+            OpenChildForm_Revision(frmFMIS_Setup_BeginningSubsidiaries)
+        Else
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub btnTransactionClosing_Click(sender As Object, e As EventArgs) Handles btnTransactionClosing.Click
+        If HasSubMenuAccess(btnTransactionClosing) Then
+            SetButtonColor(btnTransactionClosing)
+            OpenChildForm_Revision(frmFMIS_Setup_TransactionClosing)
+        Else
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub btnYearEndClosing_Click(sender As Object, e As EventArgs) Handles btnYearEndClosing.Click
+        If HasSubMenuAccess(btnYearEndClosing) Then
+            SetButtonColor(btnYearEndClosing)
+            OpenChildForm_Revision(frmFMIS_Setup_YearEndClosing)
+        Else
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub btnApproverSetup_Click(sender As Object, e As EventArgs) Handles btnApproverSetup.Click
+        If HasSubMenuAccess(btnApproverSetup) Then
+            SetButtonColor(btnApproverSetup)
+            OpenChildForm_Revision(frmFMIS_Setup_ApproverSetup)
+        Else
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub btnVoucherStatus_Click(sender As Object, e As EventArgs) Handles btnVoucherStatus.Click
+        If HasSubMenuAccess(btnVoucherStatus) Then
+            SetButtonColor(btnVoucherStatus)
+            OpenChildForm_Revision(frmFMIS_Setup_ApproverSetup)
+        Else
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub btnAccountBalances_Click(sender As Object, e As EventArgs) Handles btnAccountBalances.Click
+        If HasSubMenuAccess(btnAccountBalances) Then
+            SetButtonColor(btnAccountBalances)
+            OpenChildForm_Revision(frmFMIS_Setup_AccountBalances)
+        Else
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub btnAccountMapping_Click(sender As Object, e As EventArgs) Handles btnAccountMapping.Click
+        If HasSubMenuAccess(btnAccountMapping) Then
+            SetButtonColor(btnAccountMapping)
+            OpenChildForm_Revision(frmFMIS_Setup_AccountMapping)
+        Else
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub btnRequestForPayment_Click(sender As Object, e As EventArgs) Handles btnRequestForPayment.Click
+        If HasSubMenuAccess(btnRequestForPayment) Then
+            SetButtonColor(btnRequestForPayment)
+            OpenChildForm_Revision(frmFMIS_CashJournal_RequestForPayment)
+        Else
+            MessageBox.Show("Access denied. Contact System Administrator if this is a mistake.", "EAS 2.0", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
 End Class

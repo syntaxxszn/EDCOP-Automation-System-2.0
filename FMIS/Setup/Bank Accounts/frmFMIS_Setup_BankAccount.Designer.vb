@@ -815,7 +815,7 @@ Partial Class frmFMIS_Setup_BankAccount
         Me.Name = "frmFMIS_Setup_BankAccount"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.Text = "frmFMIS_Setup_BankAccount"
+        Me.Text = "Setup - Bank Account"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)

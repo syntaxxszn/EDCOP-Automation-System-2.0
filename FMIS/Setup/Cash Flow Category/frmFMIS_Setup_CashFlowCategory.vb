@@ -9,12 +9,15 @@
     End Sub
 
     Private Sub ToolStripBtnRefresh_Click(sender As Object, e As EventArgs) Handles ToolStripBtnRefresh.Click
+
         Sel_Setup_CashFlow_CategoryType(dgvCashFlowType, toolstriplabelNoOfRecord)
         ClearDataGridViewSelectionAll()
         dgvCashFlowSubdetail.Rows.Clear()
         dgvCashFlowDetail.Rows.Clear()
         lblDetailName.Visible = False
         lblSubdetailName.Visible = False
+        lblHeader.Text = ""
+
     End Sub
 
     Private Sub btnCreateNew_Click(sender As Object, e As EventArgs) Handles btnCreateNew.Click
@@ -70,6 +73,7 @@
             Dim selectedRow = dgvCashFlowType.SelectedRows(0)
             _CashFlowCategoryID = selectedRow.Cells(0).Value
             _strCashFlowCategory = selectedRow.Cells(1).Value
+            lblHeader.Text = selectedRow.Cells(1).Value
             Sel_Setup_CashFlow_CategoryDetail(dgvCashFlowDetail)
             lblDetailName.Visible = False
             lblSubdetailName.Visible = False

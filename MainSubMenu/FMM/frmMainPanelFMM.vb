@@ -39,8 +39,18 @@
     End Sub
 
     Private Sub btnCashLedger_Click(sender As Object, e As EventArgs) Handles btnCashLedger.Click
-        SetButtonColor(btnCashLedger)
-        frmMain.switchPanelHolder(frmMainPanelFMMDetail.panelSubFMM_CashJournalDetails)
+
+        If HasMenuAccess(btnCashLedger) Then
+            SubMenuLoadAccess(btnCashLedger)
+            For Each btn In {frmMainPanelFMMDetail.btnRequestForPayment, frmMainPanelFMMDetail.btnCashReceipts, frmMainPanelFMMDetail.btnCashDisbursement}
+                btn.Visible = SubMenuAccessList.Contains(btn.Tag?.ToString())
+            Next
+            SetButtonColor(btnCashLedger)
+            frmMain.switchPanelHolder(frmMainPanelFMMDetail.panelSubFMM_CashJournalDetails)
+        Else
+            Return
+        End If
+
     End Sub
 
     Private Sub btnGeneralJournal_Click(sender As Object, e As EventArgs) Handles btnGeneralJournal.Click

@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Text.RegularExpressions
 Imports System.Security.Cryptography
+Imports System.ComponentModel
+
 
 Module Module_PCMS
 
@@ -1792,6 +1794,15 @@ Module Module_PCMS
         End If
         newClickedBtn.BackColor = Color.Gainsboro
         BtnColorText = newClickedBtn
+    End Sub
+
+    Sub ValidateComboBoxSelection(cb As ComboBox, e As CancelEventArgs, message As String)
+        If cb.SelectedIndex = -1 OrElse Not cb.Items.Contains(cb.Text) Then
+            MessageBox.Show("An error occurred: ", message, MessageBoxButtons.OK, MessageBoxIcon.Error)
+            e.Cancel = True
+            cb.Focus()
+            cb.DroppedDown = True
+        End If
     End Sub
 
 

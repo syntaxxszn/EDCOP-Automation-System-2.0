@@ -777,4 +777,5 @@ Public Class frmHR_AddNewPersonnel
     Private Sub txtCode_TextChanged(sender As Object, e As EventArgs) Handles txtCode.TextChanged
 
     End Sub
+
 End Class

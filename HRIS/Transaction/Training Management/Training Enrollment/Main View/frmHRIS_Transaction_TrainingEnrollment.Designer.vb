@@ -924,7 +924,7 @@ Partial Class frmHRIS_Transaction_TrainingEnrollment
         '
         Me.ContextMenuStripTrainingEnrollees.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EnrollEmployeesToolStripMenuItem, Me.UpdateTrainingResultToolStripMenuItem, Me.RemoveEmployeeToolStripMenuItem})
         Me.ContextMenuStripTrainingEnrollees.Name = "ContextMenuStripTrainingEnrollees"
-        Me.ContextMenuStripTrainingEnrollees.Size = New System.Drawing.Size(193, 92)
+        Me.ContextMenuStripTrainingEnrollees.Size = New System.Drawing.Size(193, 70)
         '
         'EnrollEmployeesToolStripMenuItem
         '
