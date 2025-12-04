@@ -25,7 +25,7 @@ Partial Class frmMain
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Buttonadv = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SystemsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConnectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -131,7 +131,7 @@ Partial Class frmMain
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.Buttonadv)
         Me.Panel1.Controls.Add(Me.MenuStrip1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -139,14 +139,14 @@ Partial Class frmMain
         Me.Panel1.Size = New System.Drawing.Size(1238, 44)
         Me.Panel1.TabIndex = 0
         '
-        'Button1
+        'Buttonadv
         '
-        Me.Button1.Location = New System.Drawing.Point(461, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Buttonadv.Location = New System.Drawing.Point(461, 12)
+        Me.Buttonadv.Name = "Buttonadv"
+        Me.Buttonadv.Size = New System.Drawing.Size(75, 23)
+        Me.Buttonadv.TabIndex = 3
+        Me.Buttonadv.Text = "Button1"
+        Me.Buttonadv.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
@@ -1116,5 +1116,5 @@ Partial Class frmMain
     Friend WithEvents Panel18 As Panel
     Friend WithEvents Panel22 As Panel
     Friend WithEvents Panel23 As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Buttonadv As Button
 End Class
