@@ -1369,7 +1369,6 @@ Partial Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         Me.txtNoDays.Name = "txtNoDays"
         Me.txtNoDays.Size = New System.Drawing.Size(225, 23)
         Me.txtNoDays.TabIndex = 124
-        Me.txtNoDays.Text = "0"
         '
         'Label24
         '

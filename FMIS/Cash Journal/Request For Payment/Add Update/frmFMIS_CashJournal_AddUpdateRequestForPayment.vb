@@ -10,8 +10,8 @@ Public Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         If isUpdate Then
             lblHeader.Text = "Updating Request For Payment Voucher"
             'SelUpdRequestVoucherByID(dgvAccountTitle)
-            'AccountTotal()
-            DiscrepancyAmount()
+            Call AccountTotal()
+            Call DiscrepancyAmount()
         End If
 
         RequestVoucherID = 0 'set to ID = 0 to trigger insert in stored procedure
@@ -291,7 +291,6 @@ Public Class frmFMIS_CashJournal_AddUpdateRequestForPayment
         txtTransactionAmount.Text = "0.00"
         TextBox9.Text = "0.00"
         TextBox1.Text = "0.00"
-        txtNoDays.Text = "0"
         btnAdd.Text = "Add"
 
     End Sub

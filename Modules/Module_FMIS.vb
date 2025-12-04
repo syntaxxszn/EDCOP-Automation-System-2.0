@@ -3394,6 +3394,71 @@ Module Module_FMIS
 
     End Sub
 
+    Sub InsUpdRequestForPaymentVoucherAndDetail(dgv As DataGridView)
+        'If Not frmAccounting_AddUpdateRFPVoucher.isUpdate Then
+        '    SelRequestForPaymentVoucherID()
+        'End If
+        Using Conn As New SqlConnection(StrConn)
+            Conn.Open()
+            Dim transaction As SqlTransaction = Conn.BeginTransaction()
+            Try
+
+                Using cmd As New SqlCommand("[spInsUpdSampleRFP_RequestForPaymentVoucher]", Conn, transaction)
+                    cmd.CommandType = CommandType.StoredProcedure
+                    cmd.Parameters.AddWithValue("@ID", RequestVoucherID)
+                    cmd.Parameters.AddWithValue("@VoucherType", frmFMIS_CashJournal_AddUpdateRequestForPayment.cbType.Text)
+                    cmd.Parameters.AddWithValue("@Remarks", frmFMIS_CashJournal_AddUpdateRequestForPayment.txtParticulars.Text)
+                    cmd.Parameters.AddWithValue("@InPaymentOf", Decimal.Parse(frmFMIS_CashJournal_AddUpdateRequestForPayment.txtInPaymentOf.Text.Replace(",", "")))
+                    cmd.Parameters.AddWithValue("@Date", frmFMIS_CashJournal_AddUpdateRequestForPayment.dtpVoucherDate.Value)
+                    cmd.Parameters.AddWithValue("@ReqDate", frmFMIS_CashJournal_AddUpdateRequestForPayment.dtpRequestDate.Value)
+                    cmd.Parameters.AddWithValue("@DueDate", frmFMIS_CashJournal_AddUpdateRequestForPayment.dtpRequestDueDate.Value)
+                    cmd.Parameters.AddWithValue("@PayeeID", frmFMIS_CashJournal_AddUpdateRequestForPayment.cbPayee.Text)
+                    cmd.Parameters.AddWithValue("@TypeID", PayeeTypeID)
+                    cmd.Parameters.AddWithValue("@Isdept", VoucherDepartmentID1)
+                    cmd.Parameters.AddWithValue("@CDeptID", VoucherDepartmentID2)
+                    cmd.Parameters.AddWithValue("@SR", frmFMIS_CashJournal_AddUpdateRequestForPayment.txtStatusRemarks.Text)
+                    cmd.Parameters.AddWithValue("@Status", frmFMIS_CashJournal_AddUpdateRequestForPayment.cbStatus.Text)
+                    cmd.Parameters.AddWithValue("@ReqAmount", Decimal.Parse(frmFMIS_CashJournal_AddUpdateRequestForPayment.txtReqAmount.Text.Replace(",", "")))
+                    cmd.Parameters.AddWithValue("@CostCenterID", VoucherCostCenterID1)
+                    cmd.Parameters.AddWithValue("@CostCenterDeptID", VoucherCostCenterID2)
+                    cmd.Parameters.AddWithValue("@CostCenterTypeID", VoucherCostCenterID3)
+                    cmd.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+                    cmd.ExecuteNonQuery()
+                End Using
+
+                Using cmdDetail As New SqlCommand("[spInsUpdSampleRFP_RequestForPaymentVoucherDetail]", Conn, transaction)
+                    cmdDetail.CommandType = CommandType.StoredProcedure
+                    For Each row As DataGridViewRow In dgv.Rows
+                        If Not row.IsNewRow Then
+                            cmdDetail.Parameters.Clear()
+                            cmdDetail.Parameters.AddWithValue("@PID", RequestVoucherID)
+                            cmdDetail.Parameters.AddWithValue("@ID", Convert.ToInt32(row.Cells(0).Value))
+                            cmdDetail.Parameters.AddWithValue("@AccountTitleID", Convert.ToInt32(row.Cells(1).Value))
+                            cmdDetail.Parameters.AddWithValue("@Amount", Convert.ToDecimal(row.Cells(3).Value))
+                            cmdDetail.Parameters.AddWithValue("@CCID", Convert.ToInt32(row.Cells(4).Value))
+                            cmdDetail.Parameters.AddWithValue("@DeptID", Convert.ToInt32(row.Cells(6).Value))
+                            cmdDetail.Parameters.AddWithValue("@Ptype", Convert.ToInt32(row.Cells(7).Value))
+                            cmdDetail.Parameters.AddWithValue("@SubID", Convert.ToInt32(row.Cells(8).Value))
+                            cmdDetail.Parameters.AddWithValue("@SubType", Convert.ToInt32(row.Cells(10).Value))
+                            cmdDetail.Parameters.AddWithValue("@DateRange", Convert.ToString(row.Cells(11).Value))
+                            cmdDetail.Parameters.AddWithValue("@NoOfDays", Convert.ToString(row.Cells(12).Value))
+                            cmdDetail.Parameters.AddWithValue("@UserName", frmMain.ToolStripEmployeeNo.Text)
+                            cmdDetail.ExecuteNonQuery()
+                        End If
+                    Next
+                End Using
+
+                transaction.Commit()
+                MessageBox.Show("Success! Request For Payment Voucher saved.")
+                frmFMIS_CashJournal_AddUpdateRequestForPayment.Close()
+
+            Catch ex As Exception
+                transaction.Rollback()
+                MsgBox("Please Contact System Administrator." & vbCrLf & "Error occurred: " & ex.Message)
+            End Try
+
+        End Using
+    End Sub
 
 
 
