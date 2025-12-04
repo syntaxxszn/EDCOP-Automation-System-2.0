@@ -83,11 +83,12 @@ Partial Class frmMain
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.WebView21 = New Microsoft.Web.WebView2.WinForms.WebView2()
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.Panel20 = New System.Windows.Forms.Panel()
         Me.Panel21 = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.WebView21 = New Microsoft.Web.WebView2.WinForms.WebView2()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.picBoxNotif1 = New System.Windows.Forms.PictureBox()
         Me.Panel15 = New System.Windows.Forms.Panel()
@@ -101,7 +102,7 @@ Partial Class frmMain
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -118,18 +119,19 @@ Partial Class frmMain
         Me.Panel18.SuspendLayout()
         Me.Panel22.SuspendLayout()
         Me.Panel17.SuspendLayout()
-        Me.Panel11.SuspendLayout()
+        Me.Panel23.SuspendLayout()
         CType(Me.WebView21, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel11.SuspendLayout()
         CType(Me.picBoxNotif1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picBoxNotif2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel10.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.Panel23.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.MenuStrip1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -787,6 +789,27 @@ Partial Class frmMain
         Me.Panel17.Size = New System.Drawing.Size(571, 650)
         Me.Panel17.TabIndex = 5
         '
+        'Panel23
+        '
+        Me.Panel23.Controls.Add(Me.WebView21)
+        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel23.Location = New System.Drawing.Point(3, 3)
+        Me.Panel23.Name = "Panel23"
+        Me.Panel23.Size = New System.Drawing.Size(568, 644)
+        Me.Panel23.TabIndex = 3
+        '
+        'WebView21
+        '
+        Me.WebView21.AllowExternalDrop = True
+        Me.WebView21.CreationProperties = Nothing
+        Me.WebView21.DefaultBackgroundColor = System.Drawing.Color.White
+        Me.WebView21.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebView21.Location = New System.Drawing.Point(0, 0)
+        Me.WebView21.Name = "WebView21"
+        Me.WebView21.Size = New System.Drawing.Size(568, 644)
+        Me.WebView21.TabIndex = 3
+        Me.WebView21.ZoomFactor = 1.0R
+        '
         'Panel19
         '
         Me.Panel19.BackColor = System.Drawing.Color.Navy
@@ -826,18 +849,6 @@ Partial Class frmMain
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(277, 650)
         Me.Panel11.TabIndex = 4
-        '
-        'WebView21
-        '
-        Me.WebView21.AllowExternalDrop = True
-        Me.WebView21.CreationProperties = Nothing
-        Me.WebView21.DefaultBackgroundColor = System.Drawing.Color.White
-        Me.WebView21.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebView21.Location = New System.Drawing.Point(0, 0)
-        Me.WebView21.Name = "WebView21"
-        Me.WebView21.Size = New System.Drawing.Size(568, 644)
-        Me.WebView21.TabIndex = 3
-        Me.WebView21.ZoomFactor = 1.0R
         '
         'Panel16
         '
@@ -965,14 +976,14 @@ Partial Class frmMain
         Me.Panel2.Size = New System.Drawing.Size(1238, 10)
         Me.Panel2.TabIndex = 1
         '
-        'Panel23
+        'Button1
         '
-        Me.Panel23.Controls.Add(Me.WebView21)
-        Me.Panel23.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel23.Location = New System.Drawing.Point(3, 3)
-        Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(568, 644)
-        Me.Panel23.TabIndex = 3
+        Me.Button1.Location = New System.Drawing.Point(483, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'frmMain
         '
@@ -1014,15 +1025,15 @@ Partial Class frmMain
         Me.Panel18.ResumeLayout(False)
         Me.Panel22.ResumeLayout(False)
         Me.Panel17.ResumeLayout(False)
-        Me.Panel11.ResumeLayout(False)
+        Me.Panel23.ResumeLayout(False)
         CType(Me.WebView21, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel11.ResumeLayout(False)
         CType(Me.picBoxNotif1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picBoxNotif2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        Me.Panel23.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1105,4 +1116,5 @@ Partial Class frmMain
     Friend WithEvents Panel18 As Panel
     Friend WithEvents Panel22 As Panel
     Friend WithEvents Panel23 As Panel
+    Friend WithEvents Button1 As Button
 End Class
